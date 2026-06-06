@@ -26,7 +26,7 @@ const LESSON = {
             ``,
             `# Float casting for decimal numbers`,
             `price = float(input("Price per item: "))`,
-            `qty   = int(input("How many? "))`,
+            `qty = int(input("How many? "))`,
             `print("Total:", price * qty)`,
         ],
         output: [
@@ -46,20 +46,20 @@ const LESSON = {
     quiz: {
         question: `A user types <code>7</code> when asked by input(). What type is the result?`,
         options: [
-            { text: "int, because they typed a whole number", correct: false },
-            { text: "float, because all input is decimal", correct: false },
-            { text: "str, because input() always returns text", correct: true },
-            { text: "It depends on what the user types", correct: false },
+            {text: "int, because they typed a whole number", correct: false},
+            {text: "float, because all input is decimal", correct: false},
+            {text: "str, because input() always returns text", correct: true},
+            {text: "It depends on what the user types", correct: false},
         ],
         correct: "Correct! &nbsp; input() always returns a string — you must cast it to int or float before doing math.",
-        wrong:   "Not quite. &nbsp; input() always returns a string regardless of what the user types.",
+        wrong: "Not quite. &nbsp; input() always returns a string regardless of what the user types.",
     },
 
     project: {
         title: "Tip Calculator",
-        desc:  "Ask the user for a meal price and the tip percentage they want to leave. Calculate the tip amount and the total bill, then print both values.",
+        desc: "Ask the user for a meal price and the tip percentage they want to leave. Calculate the tip amount and the total bill, then print both values.",
     },
 
-    prev: { lesson: 4, title: "Input", href: "../lesson 4.html" },
-    next: null,
+    prev: {lesson: 4, title: "Input", href: "../lesson 4/lesson 4.html"},
+    next: {lesson: 1, title: "Arithmetic Operators", href: "../../Unit 2/lesson 1/lesson 1.html"},
 };

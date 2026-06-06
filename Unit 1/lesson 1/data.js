@@ -40,10 +40,10 @@ const LESSON = {
     quiz: {
         question: `What does <code>print("Hello World!")</code> do?`,
         options: [
-            { text: "It saves the word Hello World! into the computer's memory", correct: false },
-            { text: "It displays the word Hello World! on the screen", correct: true  },
-            { text: "It creates a variable called Hello World!", correct: false },
-            { text: "It causes an error because Hello World! has no quotes", correct: false },
+            {text: "It saves the word Hello World! into the computer's memory", correct: false},
+            {text: "It displays the word Hello World! on the screen", correct: true},
+            {text: "It creates a variable called Hello World!", correct: false},
+            {text: "It causes an error because Hello World! has no quotes", correct: false},
         ],
         correct: "Correct! &nbsp; print() displays whatever is inside the parentheses.",
         wrong: "Not quite. &nbsp; print() is used to display output on the screen.",
@@ -55,5 +55,5 @@ const LESSON = {
     },
 
     prev: null,
-    next: { lesson: 2, title: "Output & Formatting", href: "../lesson 2.html" },
+    next: {lesson: 2, title: "Output & Formatting", href: "../lesson 2/lesson 2.html"},
 };

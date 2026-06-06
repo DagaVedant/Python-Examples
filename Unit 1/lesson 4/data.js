@@ -42,10 +42,10 @@ const LESSON = {
     quiz: {
         question: `What type of value does <code>input()</code> always return?`,
         options: [
-            { text: "An integer", correct: false },
-            { text: "A decimal number", correct: false },
-            { text: "A string (text)", correct: true  },
-            { text: "Whatever type the user types", correct: false },
+            {text: "An integer", correct: false},
+            {text: "A decimal number", correct: false},
+            {text: "A string (text)", correct: true},
+            {text: "Whatever type the user types", correct: false},
         ],
         correct: "Correct! &nbsp; input() always returns a string, even if the user types a number.",
         wrong: "Not quite. &nbsp; input() always gives back a string no matter what the user types.",
@@ -56,6 +56,6 @@ const LESSON = {
         desc: "Ask the user for their name, age, and favourite animal. Then print a personalised greeting card that uses all three answers in a fun sentence.",
     },
 
-    prev: { lesson: 3, title: "Variables", href: "../lesson 3.html" },
-    next: { lesson: 5, title: "Data Types & Casting", href: "../lesson 5.html" },
+    prev: {lesson: 3, title: "Variables", href: "../lesson 3/lesson 3.html"},
+    next: {lesson: 5, title: "Data Types & Casting", href: "../lesson 5/lesson 5.html"},
 };
