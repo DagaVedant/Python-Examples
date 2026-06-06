@@ -53,7 +53,7 @@ const LESSON = {
             {text: "Python handles the conversion automatically", correct: false},
         ],
         correct: "Correct! input() returns a string, so you must cast it with int() or float() before adding.",
-        wrong: "Not quite. input() always returns a string — you need int() or float() first.",
+        wrong: "Not quite. input() always returns a string, so you need int() or float() first.",
     },
 
     project: {

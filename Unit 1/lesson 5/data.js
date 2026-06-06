@@ -18,7 +18,7 @@ const LESSON = {
     code: {
         filename: "lesson_1_5.py",
         lines: [
-            `# input() gives back a string — we cast it to do math`,
+            `# input() gives back a string, so we cast it to do math`,
             `age_text = input("How old are you? ")`,
             `age = int(age_text)`,
             ``,
@@ -51,7 +51,7 @@ const LESSON = {
             {text: "str, because input() always returns text", correct: true},
             {text: "It depends on what the user types", correct: false},
         ],
-        correct: "Correct! input() always returns a string — you must cast it to int or float before doing math.",
+        correct: "Correct! input() always returns a string, so you must cast it to int or float before doing math.",
         wrong: "Not quite. input() always returns a string regardless of what the user types.",
     },
 

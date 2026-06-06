@@ -60,6 +60,6 @@ const LESSON = {
         desc: "Ask the user for their weight in kg and height in metres. Calculate their BMI (weight / height²). Use if/elif/else to print their category: Underweight (< 18.5), Normal (18.5-24.9), Overweight (25-29.9), or Obese (30 or more).",
     },
  
-    prev: {lesson: 2, title: "if / else", href: "../lesson-3-2/index.html"},
-    next: {lesson: 4, title: "Combining Conditions", href: "../lesson-3-4/index.html"},
+    prev: {lesson: 2, title: "if / else", href: "../lesson 2/lesson 2.html"},
+    next: {lesson: 4, title: "Combining Conditions", href: "../lesson 4/lesson 4.html"},
 };

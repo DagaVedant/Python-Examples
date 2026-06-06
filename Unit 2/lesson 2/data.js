@@ -18,10 +18,10 @@ const LESSON = {
     code: {
         filename: "lesson_2_2.py",
         lines: [
-            `# Regular division — always gives a float`,
+            `# Regular division always gives a float`,
             `print(7 / 2)`,
             ``,
-            `# Integer division — drops the decimal`,
+            `# Integer division drops the decimal`,
             `print(7 // 2)`,
             ``,
             `# Remainder / modulo`,
