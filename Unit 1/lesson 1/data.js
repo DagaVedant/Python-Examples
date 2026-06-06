@@ -45,8 +45,8 @@ const LESSON = {
             {text: "It creates a variable called Hello World!", correct: false},
             {text: "It causes an error because Hello World! has no quotes", correct: false},
         ],
-        correct: "Correct! &nbsp; print() displays whatever is inside the parentheses.",
-        wrong: "Not quite. &nbsp; print() is used to display output on the screen.",
+        correct: "Correct! print() displays whatever is inside the parentheses.",
+        wrong: "Not quite. print() is used to display output on the screen.",
     },
 
     project: {

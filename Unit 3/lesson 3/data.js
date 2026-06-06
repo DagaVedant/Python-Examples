@@ -51,8 +51,8 @@ const LESSON = {
             {text: "elif score >= 70, because Python picks the lowest match",  correct: false},
             {text: "None of them because Python requires an exact match", correct: false},
         ],
-        correct: "Correct! &nbsp; Python runs the first branch that is True and skips the rest.",
-        wrong: "Not quite. &nbsp; Python stops at the first True condition, so elif score >= 80.",
+        correct: "Correct! Python runs the first branch that is True and skips the rest.",
+        wrong: "Not quite. Python stops at the first True condition, so elif score >= 80.",
     },
  
     project: {

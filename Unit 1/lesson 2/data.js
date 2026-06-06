@@ -48,15 +48,15 @@ const LESSON = {
     ],
 
     quiz: {
-        question: `Which line prints &nbsp; <code>It's fun</code> &nbsp; without an error?`,
+        question: `Which line prints <code>It's fun</code> without an error?`,
         options: [
             {text: `print('It's fun')`, correct: false},
             {text: `print("It's fun")`, correct: true},
             {text: `print(It's fun)`, correct: false},
             {text: `print("It"s fun")`, correct: false},
         ],
-        correct: "Correct! &nbsp; Using double quotes on the outside lets you put an apostrophe inside without any problem.",
-        wrong: "Not quite. &nbsp; You need to use the opposite type of quote on the outside so Python doesn't get confused.",
+        correct: "Correct! Using double quotes on the outside lets you put an apostrophe inside without any problem.",
+        wrong: "Not quite. You need to use the opposite type of quote on the outside so Python doesn't get confused.",
     },
 
     project: {

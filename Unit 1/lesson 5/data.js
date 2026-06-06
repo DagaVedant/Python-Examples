@@ -51,8 +51,8 @@ const LESSON = {
             {text: "str, because input() always returns text", correct: true},
             {text: "It depends on what the user types", correct: false},
         ],
-        correct: "Correct! &nbsp; input() always returns a string — you must cast it to int or float before doing math.",
-        wrong: "Not quite. &nbsp; input() always returns a string regardless of what the user types.",
+        correct: "Correct! input() always returns a string — you must cast it to int or float before doing math.",
+        wrong: "Not quite. input() always returns a string regardless of what the user types.",
     },
 
     project: {

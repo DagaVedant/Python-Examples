@@ -58,8 +58,8 @@ const LESSON = {
             {text: "10, because + and * cancel each other out", correct: false},
             {text: "It causes an error", correct: false},
         ],
-        correct: "Correct! &nbsp; Multiplication comes before addition, so 4 * 2 = 8 first, then 3 + 8 = 11.",
-        wrong: "Not quite. &nbsp; Python follows order of operations so multiplication runs before addition.",
+        correct: "Correct! Multiplication comes before addition, so 4 * 2 = 8 first, then 3 + 8 = 11.",
+        wrong: "Not quite. Python follows order of operations so multiplication runs before addition.",
     },
 
     project: {

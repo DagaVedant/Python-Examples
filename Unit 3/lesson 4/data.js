@@ -57,8 +57,8 @@ const LESSON_3_4 = {
             {text: "Error, because you can't use and with print", correct: false},
             {text: "True, because at least one condition is True", correct: false},
         ],
-        correct: "Correct! &nbsp; With and, every condition must be True and because 10 < 8 is False, the whole thing is False.",
-        wrong: "Not quite. &nbsp; and requires ALL conditions to be True. One False makes the whole expression False.",
+        correct: "Correct! With and, every condition must be True and because 10 < 8 is False, the whole thing is False.",
+        wrong: "Not quite. and requires ALL conditions to be True. One False makes the whole expression False.",
     },
  
     project: {

@@ -47,8 +47,8 @@ const LESSON = {
             {text: "A string (text)", correct: true},
             {text: "Whatever type the user types", correct: false},
         ],
-        correct: "Correct! &nbsp; input() always returns a string, even if the user types a number.",
-        wrong: "Not quite. &nbsp; input() always gives back a string no matter what the user types.",
+        correct: "Correct! input() always returns a string, even if the user types a number.",
+        wrong: "Not quite. input() always gives back a string no matter what the user types.",
     },
 
     project: {

@@ -60,8 +60,8 @@ const LESSON = {
             {text: "It causes a TypeError", correct: false },
             {text: "Error, because you can't compare int and float", correct: false },
         ],
-        correct: "Correct! &nbsp; Python compares the values, not the data types, so 10 == 10.0 is True.",
-        wrong: "Not quite. &nbsp; Python compares the value, so 10 and 10.0 are considered equal.",
+        correct: "Correct! Python compares the values, not the data types, so 10 == 10.0 is True.",
+        wrong: "Not quite. Python compares the value, so 10 and 10.0 are considered equal.",
     },
  
     project: {

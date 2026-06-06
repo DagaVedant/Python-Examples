@@ -40,14 +40,14 @@ const LESSON = {
     ],
 
     quiz: {
-        question: `What does this print? &nbsp; <code>x = 5 &nbsp;&nbsp; x = 10 &nbsp;&nbsp; print(x)</code>`,
+        question: `What does this print? <code>x = 5  x = 10 print(x)</code>`,
         options: [
             {text: "5 because the first value is permanent", correct: false},
             {text: "10 because the variable was updated", correct: true},
             {text: "Both 5 and 10", correct: false},
             {text: "It will cause an error because you can't change a variable", correct: false},
         ],
-        correct: "Correct! &nbsp; The variable x was updated to 10, so that's what gets printed.",
+        correct: "Correct! The variable x was updated to 10, so that's what gets printed.",
         wrong: "Not quite, because the variable's value can be updated.",
     },
 

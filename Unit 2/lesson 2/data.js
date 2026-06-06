@@ -57,8 +57,8 @@ const LESSON = {
             {text: "2, because it rounds down to the nearest even", correct: false},
             {text: "It causes an error because // is not valid", correct: false},
         ],
-        correct: "Correct! &nbsp; // is integer division so it discards the decimal, so 17 // 5 = 3.",
-        wrong: "Not quite. &nbsp; // gives the whole-number part of the division result only.",
+        correct: "Correct! // is integer division so it discards the decimal, so 17 // 5 = 3.",
+        wrong: "Not quite. // gives the whole-number part of the division result only.",
     },
 
     project: {

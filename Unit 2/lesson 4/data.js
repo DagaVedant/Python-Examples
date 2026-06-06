@@ -57,8 +57,8 @@ const LESSON = {
             {text: "use math", correct: false},
             {text: "Nothing — math functions are always available", correct: false},
         ],
-        correct: "Correct! &nbsp; import math loads the library so all its functions become available.",
-        wrong: "Not quite. &nbsp; You need to write import math at the top of your file first.",
+        correct: "Correct! import math loads the library so all its functions become available.",
+        wrong: "Not quite. You need to write import math at the top of your file first.",
     },
 
     project: {

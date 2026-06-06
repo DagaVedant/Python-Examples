@@ -55,8 +55,8 @@ const LESSON = {
             {text: "Python runs the if block anyway", correct: false},
             {text: "Python asks the user to enter a new value", correct: false},
         ],
-        correct: "Correct! &nbsp; If there is no else, Python simply skips the if block and continues with the rest of the program.",
-        wrong: "Not quite. &nbsp; Python just skips the if block and carries on without any errors.",
+        correct: "Correct! If there is no else, Python simply skips the if block and continues with the rest of the program.",
+        wrong: "Not quite. Python just skips the if block and carries on without any errors.",
     },
  
     project: {
