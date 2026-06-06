@@ -52,20 +52,20 @@ const LESSON_3_4 = {
     quiz: {
         question: `What does <code>print(5 > 3 and 10 < 8)</code> output?`,
         options: [
-            { text: "True, because 5 > 3 is True",                         correct: false },
-            { text: "False, because 10 < 8 is False and both must be True", correct: true  },
-            { text: "Error, because you can't use and with print",          correct: false },
-            { text: "True, because at least one condition is True",         correct: false },
+            {text: "True, because 5 > 3 is True", correct: false},
+            {text: "False, because 10 < 8 is False and both must be True", correct: true},
+            {text: "Error, because you can't use and with print", correct: false},
+            {text: "True, because at least one condition is True", correct: false},
         ],
         correct: "Correct! &nbsp; With and, every condition must be True and because 10 < 8 is False, the whole thing is False.",
-        wrong:   "Not quite. &nbsp; and requires ALL conditions to be True. One False makes the whole expression False.",
+        wrong: "Not quite. &nbsp; and requires ALL conditions to be True. One False makes the whole expression False.",
     },
  
     project: {
         title: "Theme Park Entry",
-        desc:  "Create a theme park entry checker. Ask for the user's age and height. They can enter if they are 10 or older AND at least 130 cm tall, OR if they are accompanied (ask yes/no). Print whether they can enter or not.",
+        desc: "Create a theme park entry checker. Ask for the user's age and height. They can enter if they are 10 or older AND at least 130 cm tall, OR if they are accompanied (ask yes/no). Print whether they can enter or not.",
     },
  
-    prev: { lesson: 3, title: "elif & Multiple Branches", href: "../lesson-3-3/index.html" },
+    prev: {lesson: 3, title: "elif & Multiple Branches", href: "../lesson-3-3/index.html" },
     next: null,
 };
