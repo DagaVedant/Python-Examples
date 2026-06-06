@@ -70,5 +70,5 @@ const LESSON = {
     },
 
     prev: {unit: 4, lesson: 4, title: "Loops & Decisions", href: "../../Unit 4/lesson 4/lesson 4.html"},
-    next: {lesson: 2, title: "Arguments & Parameters", href: "../lesson 2/lesson 2.html"},
+    next: {unit: 5, lesson: 2, title: "Arguments & Parameters", href: "../lesson 2/lesson 2.html"},
 };

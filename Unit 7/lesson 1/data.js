@@ -69,5 +69,5 @@ const LESSON = {
     },
 
     prev: {unit: 6, lesson: 4, title: "Useful List Methods", href: "../../Unit 6/lesson 4/lesson 4.html"},
-    next: {lesson: 2, title: "Accessing Rows & Columns", href: "../lesson 2/lesson 2.html"},
+    next: {unit: 7, lesson: 2, title: "Accessing Rows & Columns", href: "../lesson 2/lesson 2.html"},
 };

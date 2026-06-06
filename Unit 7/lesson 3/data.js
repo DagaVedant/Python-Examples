@@ -68,6 +68,6 @@ const LESSON = {
         desc: "Build a full tic-tac-toe game. Represent the board as a 3x3 2D list. Use nested loops to print it after each turn. Let two players take turns entering a row and column. After each move check all rows, columns, and diagonals for a winner.",
     },
 
-    prev: {lesson: 2, title: "Accessing Rows & Columns", href: "../lesson 2/lesson 2.html"},
+    prev: {unit: 7, lesson: 2, title: "Accessing Rows & Columns", href: "../lesson 2/lesson 2.html"},
     next: null,
 };

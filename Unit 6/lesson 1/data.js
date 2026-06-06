@@ -66,5 +66,5 @@ const LESSON = {
     },
 
     prev: {unit: 5, lesson: 4, title: "Designing with Functions", href: "../../Unit 5/lesson 4/lesson 4.html"},
-    next: {lesson: 2, title: "Adding & Removing Items", href: "../lesson 2/lesson 2.html"},
+    next: {unit: 6, lesson: 2, title: "Adding & Removing Items", href: "../lesson 2/lesson 2.html"},
 };

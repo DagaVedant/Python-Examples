@@ -64,6 +64,6 @@ const LESSON = {
         desc: "Write four functions: add, subtract, multiply, and divide and take two numbers and return the result. Ask the user for two numbers and an operator, call the right function, and print the answer.",
     },
 
-    prev: {lesson: 2, title: "Arguments & Parameters", href: "../lesson 2/lesson 2.html"},
-    next: {lesson: 4, title: "Designing with Functions", href: "../lesson 4/lesson 4.html"},
+    prev: {unit: 5, lesson: 2, title: "Arguments & Parameters", href: "../lesson 2/lesson 2.html"},
+    next: {unit: 5, lesson: 4, title: "Designing with Functions", href: "../lesson 4/lesson 4.html"},
 };

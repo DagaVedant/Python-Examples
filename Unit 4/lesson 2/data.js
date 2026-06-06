@@ -64,6 +64,6 @@ const LESSON = {
         desc: "Loop through numbers 1 to 50. Print Fizz for multiples of 3, Buzz for multiples of 5, FizzBuzz for multiples of both, and the number itself for everything else.",
     },
 
-    prev: {lesson: 1, title: "for Loops", href: "../lesson 1/lesson 1.html"},
-    next: {lesson: 3, title: "while Loops", href: "../lesson 3/lesson 3.html"},
+    prev: {unit: 4, lesson: 1, title: "for Loops", href: "../lesson 1/lesson 1.html"},
+    next: {unit: 4, lesson: 3, title: "while Loops", href: "../lesson 3/lesson 3.html"},
 };

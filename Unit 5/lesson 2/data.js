@@ -63,6 +63,6 @@ const LESSON = {
         desc: "Write a function called <code>greeting_card(name, occasion, message)</code>. It should print a nicely formatted card using all three parameters. Call it at least three times for different people and occasions.",
     },
 
-    prev: {lesson: 1, title: "Defining & Calling Functions", href: "../lesson 1/lesson 1.html"},
-    next: {lesson: 3, title: "Return Values", href: "../lesson 3/lesson 3.html"},
+    prev: {unit: 5, lesson: 1, title: "Defining & Calling Functions", href: "../lesson 1/lesson 1.html"},
+    next: {unit: 5, lesson: 3, title: "Return Values", href: "../lesson 3/lesson 3.html"},
 };

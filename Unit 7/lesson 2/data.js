@@ -69,6 +69,6 @@ const LESSON = {
         desc: "Create a 5x6 seating plan grid filled with names or empty strings. Write a function that prints the plan neatly. Then write a function that lets the user move a person to a new seat by specifying their current and new row and column.",
     },
 
-    prev: {lesson: 1, title: "Lists Inside Lists", href: "../lesson 1/lesson 1.html"},
-    next: {lesson: 3, title: "Looping Over a Grid", href: "../lesson 3/lesson 3.html"},
+    prev: {unit: 7, lesson: 1, title: "Lists Inside Lists", href: "../lesson 1/lesson 1.html"},
+    next: {unit: 7, lesson: 3, title: "Looping Over a Grid", href: "../lesson 3/lesson 3.html"},
 };

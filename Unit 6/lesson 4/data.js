@@ -70,6 +70,6 @@ const LESSON = {
         desc: "Build a leaderboard. Store player names in one list and scores in another. Sort the scores in descending order and print the full leaderboard showing rank, name, and score. Highlight the top player.",
     },
 
-    prev: {lesson: 3, title: "Looping Through Lists", href: "../lesson 3/lesson 3.html"},
+    prev: {unit: 6, lesson: 3, title: "Looping Through Lists", href: "../lesson 3/lesson 3.html"},
     next: {unit: 7, lesson: 1, title: "Lists Inside Lists", href: "../../Unit 7/lesson 1/lesson 1.html"},
 };

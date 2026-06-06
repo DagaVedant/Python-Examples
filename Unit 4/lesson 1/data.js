@@ -67,5 +67,5 @@ const LESSON = {
     },
 
     prev: {unit: 3, lesson: 4, title: "Combining Conditions", href: "../../Unit 3/lesson 4/lesson 4.html"},
-    next: {lesson: 2, title: "range() in Depth", href: "../lesson 2/lesson 2.html"},
+    next: {unit: 4, lesson: 2, title: "range() in Depth", href: "../lesson 2/lesson 2.html"},
 };

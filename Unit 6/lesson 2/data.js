@@ -68,6 +68,6 @@ const LESSON = {
         desc: "Build a simple to-do list. Show a menu: add task, remove task, view tasks, and quit. Use a while loop to keep the menu running. Use append() and remove() to manage the list.",
     },
 
-    prev: {lesson: 1, title: "Creating & Indexing Lists", href: "../lesson 1/lesson 1.html"},
-    next: {lesson: 3, title: "Looping Through Lists", href: "../lesson 3/lesson 3.html"},
+    prev: {unit: 6, lesson: 1, title: "Creating & Indexing Lists", href: "../lesson 1/lesson 1.html"},
+    next: {unit: 6, lesson: 3, title: "Looping Through Lists", href: "../lesson 3/lesson 3.html"},
 };
