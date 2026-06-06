@@ -1,75 +1,14 @@
 <!DOCTYPE html> 
 <html lang="en">
 <head>
+
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<script>
-const LESSON = {
-    unit: 1,
-    lesson: 3,
-    unitTitle: "Getting Started with Python",
-    title: "Variables",
-    readTime: 5,
-
-    goal: "In this lesson, you will learn about variables in Python, how to store values in variables, and learn how to update a variable",
-
-    learn: [
-        "Create and name a variable",
-        "Reuse a value without retyping it",
-        "Update a variable's value",
-    ],
-
-    idea: "a variable is like a container that can hold a value. Instead of writing the same value over and over again, you can store it inside a variable and use it by calling the variable's name. This makes your code easier to read and maintain. You can also update the value of the variable whenever you need to.",
-
-    code: {
-        filename: "lesson_1_3.py",
-        lines: [
-            `# Store values in variables`,
-            `player = "Messi"`,
-            `goals  = 2`,
-            ``,
-            `print(player, "scored", goals, "goals")`,
-            ``,
-            `# Update the variable`,
-            `goals = 3`,
-            `print(player, "now has", goals, "goals")`,
-        ],
-        output: [
-            "Messi scored 2 goals",
-            "Messi now has 3 goals",
-        ],
-    },
-
-    practice: [
-        `Store your name and age in a variable and use ONE print statement to display them in a sentence.`,
-        `Create with a variable that is set to 0, then print it. Then update the variable to 10 and print it again.`
-    ],
-
-    quiz: {
-        question: `What does this print? &nbsp; <code>x = 5 &nbsp;&nbsp; x = 10 &nbsp;&nbsp; print(x)</code>`,
-        options: [
-            { text: "5 because the first value is permanent", correct: false },
-            { text: "10 because the variable was updated", correct: true },
-            { text: "Both 5 and 10", correct: false },
-            { text: "It will cause an error because you can't change a variable", correct: false },
-        ],
-        correct: "Correct! &nbsp; The variable x was updated to 10, so that's what gets printed.",
-        wrong: "Not quite, because the variable's value can be updated.",
-    },
-
-    project: {
-        title: "Scoreboard",
-        desc: "Create a variable for two players and their scores. Print one line showing their names and scores. Then update the scores and print the line again.",
-    },
-
-    prev: { lesson: 2, title: "Output & Formatting", href: "../Lesson_3.html" },
-    next: { lesson: 4, title: "Input", href: "../Lesson_4.html" },
-};
-
-</script>
+<script src="data.js" defer></script>
 
 <title></title>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 
