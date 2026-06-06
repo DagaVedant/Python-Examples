@@ -66,6 +66,6 @@ const LESSON = {
         desc: "Ask the user for the two shorter sides of a right-angled triangle. Use the math library to calculate the hypotenuse and the area. Print both answers rounded to 2 decimal places.",
     },
 
-    prev: {lesson: 3, title: "Numbers from Input", href: "../lesson 3/lesson 3.html"},
-    next: {lesson: 1, title: "Comparisons & Booleans", href: "../../Unit 3/lesson 1/lesson 1.html"},
+    prev: {unit: 2, lesson: 3, title: "Numbers from Input", href: "../lesson 3/lesson 3.html"},
+    next: {unit: 3, lesson: 1, title: "Comparisons & Booleans", href: "../../Unit 3/lesson 1/lesson 1.html"},
 };

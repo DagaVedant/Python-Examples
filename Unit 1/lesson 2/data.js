@@ -64,6 +64,6 @@ const LESSON = {
         desc: "Write a program that prints a fake store receipt. Show at least three items with their prices, a blank line, and then a total at the bottom. Make it look neat using spacing.",
     },
 
-    prev: {lesson: 1, title: "Your First Program", href: "../lesson 1/lesson 1.html"},
-    next: {lesson: 3, title: "Variables", href: "../lesson 3/lesson 3.html"},
+    prev: {unit: 1, lesson: 1, title: "Your First Program", href: "../lesson 1/lesson 1.html"},
+    next: {unit: 1, lesson: 3, title: "Variables", href: "../lesson 3/lesson 3.html"},
 };

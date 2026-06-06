@@ -56,6 +56,6 @@ const LESSON = {
         desc: "Create a variable for two players and their scores. Print one line showing their names and scores. Then update the scores and print the line again.",
     },
 
-    prev: {lesson: 2, title: "Output & Formatting", href: "../lesson 2/lesson 2.html"},
-    next: {lesson: 4, title: "Input", href: "../lesson 4/lesson 4.html"},
+    prev: {unit: 1, lesson: 2, title: "Output & Formatting", href: "../lesson 2/lesson 2.html"},
+    next: {unit: 1, lesson: 4, title: "Input", href: "../lesson 4/lesson 4.html"},
 };

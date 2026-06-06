@@ -55,5 +55,5 @@ const LESSON = {
     },
 
     prev: null,
-    next: {lesson: 2, title: "Output & Formatting", href: "../lesson 2/lesson 2.html"},
+    next: {unit: 1, lesson: 2, title: "Output & Formatting", href: "../lesson 2/lesson 2.html"},
 };
