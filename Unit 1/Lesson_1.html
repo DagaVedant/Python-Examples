@@ -1,0 +1,937 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  
+const LESSON = {
+    unit: 1,
+    lesson: 1,
+    unitTitle: "Getting Started with Python",
+    title: "Your First Program",
+    readTime: 4,
+
+    goal: "In this lesson you will run your very first Python program, learn how to display text on the screen, and write comments to explain your code.",
+
+    learn: [
+        "Run a Python program",
+        "Use print() to display text",
+        "Write comments using #",
+    ],
+
+    idea: "A program is just a list of instructions the computer follows from top to bottom. print() is how you make Python show something on the screen. A comment is a note you write for yourself. In Python, a comment is written using a #.",
+
+    code: {
+        filename: "lesson_1_1.py",
+        lines: [
+            `# This is my first program`,
+            `print("Hello, world!")`,
+            ``,
+            `# You can print as many lines as you want`,
+            `print("My name is Vedant.")`,
+            `print("I am learning Python.")`,
+        ],
+        output: [
+            "Hello, world!",
+            "My name is Vedant.",
+            "I am learning Python.",
+        ],
+    },
+
+    practice: [
+        `Write a Python program that prints three lines: your name, your age, and your favorite hobby.`,
+        `Add comments to explain what each print() statement does.`
+    ],
+
+    quiz: {
+        question: `What does <code>print("Hello World!")</code> do?`,
+        options: [
+            { text: "It saves the word Hello World! into the computer's memory", correct: false },
+            { text: "It displays the word Hello World! on the screen", correct: true  },
+            { text: "It creates a variable called Hello World!", correct: false },
+            { text: "It causes an error because Hello World! has no quotes", correct: false },
+        ],
+        correct: "Correct! &nbsp; print() displays whatever is inside the parentheses.",
+        wrong: "Not quite. &nbsp; print() is used to display output on the screen.",
+    },
+
+    project: {
+        title: "About Me Card",
+        desc: "Write a program that prints a small 'About Me' card. Include your name, age, favourite subject, and one fun fact. Use comments to explain what each lines does.",
+    },
+
+    prev: null,
+    next: { lesson: 2, title: "Output & Formatting", href: "../Lesson_2.html" },
+};
+
+
+</script>
+
+<title></title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg:       #f7f8fa;
+  --surface:  #ffffff;
+  --surface2: #f0f2f5;
+  --border:   #e2e5ea;
+  --border2:  #c8cdd6;
+  --text:     #111827;
+  --text2:    #4b5563;
+  --text3:    #9ca3af;
+  --navy:     #1F3A5F;
+  --blue:     #2563eb;
+  --blue-lt:  #eff6ff;
+  --blue-md:  #bfdbfe;
+  --blue-tx:  #1d4ed8;
+  --green:    #166534;
+  --green-lt: #f0fdf4;
+  --green-md: #bbf7d0;
+  --red:      #dc2626;
+  --red-lt:   #fef2f2;
+  --code:     #1e1e2e;
+  --code-out: #11111b;
+  --code-sep: rgba(255, 255, 255, .07);
+  --ct:       #cdd6f4;
+  --ccm:      #6c7086;
+  --ckw:      #cba6f7;
+  --cfn:      #89b4fa;
+  --cst:      #a6e3a1;
+  --cnm:      #fab387;
+  --cop:      #89dceb;
+  --r:        10px;
+  --rsm:      6px;
+  --rlg:      14px;
+  --ease:     .18s ease;
+}
+
+[data-theme="dark"] {
+  --bg:       #0f1117;
+  --surface:  #1a1d27;
+  --surface2: #222535;
+  --border:   #2d3148;
+  --border2:  #3d4260;
+  --text:     #e8eaf0;
+  --text2:    #9da3b4;
+  --text3:    #5c6382;
+  --navy:     #93b4e0;
+  --blue:     #60a5fa;
+  --blue-lt:  #172038;
+  --blue-md:  #1e3a5f;
+  --blue-tx:  #93c5fd;
+  --green:    #4ade80;
+  --green-lt: #052e16;
+  --green-md: #14532d;
+  --red:      #f87171;
+  --red-lt:   #1f0a0a;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  padding-bottom: 4rem;
+  transition: background var(--ease), color var(--ease);
+}
+
+a { text-decoration: none; }
+strong { font-weight: 600; }
+
+code {
+  font-family: 'DM Mono', monospace;
+  font-size: .82em;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 1px 5px;
+  color: var(--navy);
+  transition: background var(--ease), color var(--ease);
+}
+
+[data-theme="dark"] code { color: var(--blue-tx); }
+
+.bar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  padding: .7rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: background var(--ease), border-color var(--ease);
+}
+
+.crumb {
+  font-size: 13px;
+  color: var(--text3);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.crumb b { font-weight: 500; color: var(--text2); }
+
+.bar-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.progress {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.progress-label { font-size: 12px; color: var(--text3); }
+
+.progress-track {
+  width: 88px;
+  height: 5px;
+  background: var(--surface2);
+  border-radius: 99px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+
+.progress-fill {
+  height: 100%;
+  border-radius: 99px;
+  background: var(--blue);
+  transition: width .4s ease;
+}
+
+.theme-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text2);
+  transition: background var(--ease), border-color var(--ease), color var(--ease);
+}
+
+.theme-btn:hover { background: var(--border); color: var(--text); }
+
+[data-theme="light"] .moon { display: none; }
+[data-theme="dark"]  .sun  { display: none; }
+
+.page {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem;
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11.5px;
+  font-weight: 500;
+  color: var(--blue-tx);
+  background: var(--blue-lt);
+  border: 1px solid var(--blue-md);
+  padding: 3px 10px;
+  border-radius: 20px;
+  margin-bottom: .7rem;
+  transition: background var(--ease), color var(--ease), border-color var(--ease);
+}
+
+h1 {
+  font-size: 30px;
+  font-weight: 600;
+  color: var(--navy);
+  line-height: 1.2;
+  margin-bottom: .4rem;
+  transition: color var(--ease);
+}
+
+.meta {
+  font-size: 13px;
+  color: var(--text3);
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 1.75rem;
+}
+
+.meta-item { display: flex; align-items: center; gap: 5px; }
+
+.goal {
+  border-left: 3px solid var(--blue);
+  background: var(--blue-lt);
+  border-radius: 0 var(--r) var(--r) 0;
+  padding: .9rem 1.1rem;
+  font-size: 14px;
+  color: var(--blue-tx);
+  line-height: 1.7;
+  margin-bottom: 1.75rem;
+  transition: background var(--ease), color var(--ease), border-color var(--ease);
+}
+
+.section-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--text3);
+  margin-bottom: .65rem;
+  transition: color var(--ease);
+}
+
+.learn-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-bottom: 1.75rem;
+}
+
+@media (max-width: 520px) {
+  .learn-grid { grid-template-columns: 1fr; }
+}
+
+.learn-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  padding: .8rem .9rem;
+  font-size: 13px;
+  color: var(--text2);
+  line-height: 1.5;
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+  animation: fadeUp .3s ease both;
+  transition: background var(--ease), border-color var(--ease), color var(--ease);
+}
+
+.learn-card:nth-child(1) { animation-delay: .05s; }
+.learn-card:nth-child(2) { animation-delay: .10s; }
+.learn-card:nth-child(3) { animation-delay: .15s; }
+.learn-card svg { flex-shrink: 0; margin-top: 2px; color: var(--blue); }
+
+hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 1.75rem 0;
+  transition: border-color var(--ease);
+}
+
+.idea {
+  font-size: 15px;
+  line-height: 1.8;
+  color: var(--text);
+  margin-bottom: 1.75rem;
+}
+
+.code-wrap {
+  background: var(--code);
+  border-radius: var(--rlg);
+  overflow: hidden;
+  margin-bottom: 1.75rem;
+}
+
+.code-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: .6rem 1.1rem;
+  border-bottom: 1px solid var(--code-sep);
+}
+
+.code-filename { font-family: 'DM Mono', monospace; font-size: 12px; color: var(--ccm); }
+
+.copy-btn {
+  font-size: 12px;
+  color: var(--ccm);
+  background: rgba(255, 255, 255, .06);
+  border: 1px solid rgba(255, 255, 255, .12);
+  border-radius: 5px;
+  padding: 3px 10px;
+  cursor: pointer;
+  font-family: 'DM Sans', sans-serif;
+  transition: background .15s, color .15s;
+}
+
+.copy-btn:hover { background: rgba(255, 255, 255, .13); color: #cdd6f4; }
+
+.code-body {
+  padding: 1rem 1.2rem;
+  font-family: 'DM Mono', monospace;
+  font-size: 13.5px;
+  line-height: 1.9;
+  overflow-x: auto;
+}
+
+.ckw { color: var(--ckw); }
+.cfn { color: var(--cfn); }
+.cst { color: var(--cst); }
+.cnm { color: var(--cnm); }
+.ccm { color: var(--ccm); font-style: italic; }
+.cop { color: var(--cop); }
+.ctx { color: var(--ct);  }
+
+.output-box {
+  background: var(--code-out);
+  border-top: 1px solid var(--code-sep);
+  padding: .75rem 1.2rem;
+}
+
+.output-label {
+  font-size: 10px;
+  color: var(--ccm);
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  margin-bottom: 5px;
+  font-family: 'DM Mono', monospace;
+}
+
+.output-line { font-family: 'DM Mono', monospace; font-size: 13px; color: var(--cst); line-height: 1.7; }
+
+.practice-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 1.75rem;
+}
+
+.practice-item {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  padding: .8rem 1rem;
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text);
+  animation: fadeUp .3s ease both;
+  transition: background var(--ease), border-color var(--ease), color var(--ease);
+}
+
+.practice-item:nth-child(1) { animation-delay: .05s; }
+.practice-item:nth-child(2) { animation-delay: .10s; }
+
+.practice-num {
+  min-width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--blue-lt);
+  color: var(--blue-tx);
+  border: 1px solid var(--blue-md);
+  font-size: 11.5px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 1px;
+  transition: background var(--ease), color var(--ease), border-color var(--ease);
+}
+
+.quiz-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--rlg);
+  overflow: hidden;
+  margin-bottom: 1.75rem;
+  transition: background var(--ease), border-color var(--ease);
+}
+
+.quiz-header {
+  padding: .85rem 1.1rem;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--navy);
+  transition: color var(--ease), border-color var(--ease);
+}
+
+.quiz-question {
+  padding: 1rem 1.1rem;
+  font-size: 14px;
+  line-height: 1.7;
+  border-bottom: 1px solid var(--border);
+  color: var(--text);
+  transition: color var(--ease), border-color var(--ease);
+}
+
+.quiz-options {
+  padding: .8rem 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: .65rem .9rem;
+  border-radius: var(--rsm);
+  border: 1px solid var(--border);
+  cursor: pointer;
+  font-size: 14px;
+  color: var(--text);
+  user-select: none;
+  transition: border-color .12s, background .12s, color .12s;
+}
+
+.option:hover    { border-color: var(--border2); background: var(--surface2); }
+.option.selected { border-color: var(--blue);    background: var(--blue-lt);  color: var(--blue-tx); }
+.option.correct  { border-color: var(--green);   background: var(--green-lt); color: var(--green);   }
+.option.wrong    { border-color: var(--red);      background: var(--red-lt);   color: var(--red);     }
+
+.option-dot {
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  border: 1.5px solid currentColor;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.option.selected .option-dot::after,
+.option.correct  .option-dot::after {
+  content: '';
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.quiz-footer {
+  padding: .8rem 1.1rem;
+  border-top: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  transition: border-color var(--ease);
+}
+
+.check-btn {
+  padding: .45rem 1.2rem;
+  border-radius: var(--rsm);
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  font-size: 13.5px;
+  font-weight: 500;
+  cursor: pointer;
+  font-family: 'DM Sans', sans-serif;
+  transition: background .12s, border-color .12s, color .12s;
+}
+
+.check-btn:hover:not(:disabled) { background: var(--surface2); border-color: var(--border2); }
+.check-btn:disabled { opacity: .4; cursor: default; }
+
+.reset-btn {
+  padding: .45rem 1.2rem;
+  border-radius: var(--rsm);
+  border: 1px solid var(--red);
+  background: var(--red-lt);
+  color: var(--red);
+  font-size: 13.5px;
+  font-weight: 500;
+  cursor: pointer;
+  font-family: 'DM Sans', sans-serif;
+  transition: background .12s, border-color .12s, opacity .12s;
+  display: none;
+  align-items: center;
+  gap: 6px;
+}
+.reset-btn.show { display: inline-flex; }
+.reset-btn:hover { opacity: .78; }
+
+.quiz-options.locked .option { pointer-events: none; }
+.quiz-options.locked .option:not(.correct):not(.wrong) { opacity: .35; }
+
+.feedback { font-size: 13px; line-height: 1.5; display: none; }
+.feedback.show    { display: block; }
+.feedback.correct { color: var(--green); }
+.feedback.wrong   { color: var(--red); }
+
+.project-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--rlg);
+  padding: 1.1rem 1.2rem;
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  transition: background var(--ease), border-color var(--ease);
+}
+
+.project-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: var(--rsm);
+  background: var(--green-lt);
+  color: var(--green);
+  border: 1px solid var(--green-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background var(--ease), color var(--ease), border-color var(--ease);
+}
+
+.project-icon svg { width: 22px; height: 22px; }
+.project-title    { font-size: 14px; font-weight: 600; color: var(--navy); margin-bottom: .3rem; transition: color var(--ease); }
+.project-desc     { font-size: 13.5px; color: var(--text2); line-height: 1.6; transition: color var(--ease); }
+
+.nav-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2rem;
+  gap: 10px;
+}
+
+.nav-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: .55rem 1.2rem;
+  border-radius: var(--rsm);
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text2);
+  font-size: 13.5px;
+  font-weight: 500;
+  font-family: 'DM Sans', sans-serif;
+  transition: background .12s, border-color .12s, color .12s;
+}
+
+.nav-btn:hover { background: var(--surface2); color: var(--text); border-color: var(--border2); }
+
+.nav-btn.next { background: var(--navy); color: #fff; border-color: var(--navy); }
+[data-theme="dark"] .nav-btn.next { background: var(--blue); border-color: var(--blue); }
+.nav-btn.next:hover { opacity: .88; }
+
+.fade { animation: fadeUp .35s ease both; }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+</style>
+</head>
+<body>
+
+<header class="bar">
+  <nav class="crumb" id="crumb" aria-label="Location">
+    <span id="bc-unit"></span>
+    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+    <b id="bc-lesson"></b>
+  </nav>
+  <div class="bar-right">
+    <div class="progress">
+      <span class="progress-label" id="prog-lbl"></span>
+      <div class="progress-track">
+        <div class="progress-fill" id="prog-fill"></div>
+      </div>
+    </div>
+    <button class="theme-btn" id="tog" aria-label="Toggle dark mode">
+      <svg class="sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      <svg class="moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    </button>
+  </div>
+</header>
+
+<main class="page">
+
+  <header class="fade">
+    <div class="tag">
+      <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+      <span id="tag-txt"></span>
+    </div>
+    <h1 id="h1"></h1>
+    <div class="meta" id="meta"></div>
+  </header>
+
+  <div class="goal fade" id="goal"></div>
+
+  <p class="section-label">What you'll learn</p>
+  <div class="learn-grid" id="learn-grid"></div>
+
+  <hr>
+
+  <p class="section-label">The idea</p>
+  <p class="idea fade" id="idea"></p>
+
+  <p class="section-label">Example</p>
+  <div class="code-wrap">
+    <div class="code-header">
+      <span class="code-filename" id="code-fn"></span>
+      <button class="copy-btn" id="copy-btn">⎘ copy</button>
+    </div>
+    <pre class="code-body" id="code-body"></pre>
+    <div class="output-box">
+      <div class="output-label">Output</div>
+      <div id="out-lines"></div>
+    </div>
+  </div>
+
+  <hr>
+
+  <p class="section-label">Practice</p>
+  <ul class="practice-list" id="practice-list"></ul>
+
+  <hr>
+
+  <p class="section-label">Check your understanding</p>
+  <div class="quiz-card">
+    <div class="quiz-header">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+      Quick check
+    </div>
+    <div class="quiz-question" id="quiz-question"></div>
+    <div class="quiz-options"  id="quiz-options"></div>
+    <div class="quiz-footer">
+      <button class="check-btn" id="check-btn" disabled>Check answer</button>
+      <button class="reset-btn" id="reset-btn">↺ Try again</button>
+      <span class="feedback" id="feedback" role="alert"></span>
+    </div>
+  </div>
+
+  <hr>
+
+  <p class="section-label">Lesson project</p>
+  <div class="project-card">
+    <div class="project-icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+    </div>
+    <div>
+      <p class="project-title" id="proj-title"></p>
+      <p class="project-desc"  id="proj-desc"></p>
+    </div>
+  </div>
+
+  <nav class="nav-row" id="nav-row" aria-label="Lesson navigation"></nav>
+
+</main>
+
+<script>
+const root = document.documentElement;
+root.setAttribute('data-theme', localStorage.getItem('theme') || 'light');
+
+document.getElementById('tog').addEventListener('click', () => {
+  const next = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+  root.setAttribute('data-theme', next);
+  localStorage.setItem('theme', next);
+});
+
+const KEYWORDS = new Set([
+  'if', 'elif', 'else', 'for', 'while', 'def', 'return',
+  'import', 'from', 'in', 'and', 'or', 'not',
+  'True', 'False', 'None', 'global', 'class',
+]);
+
+const BUILTINS = new Set([
+  'print', 'input', 'int', 'float', 'str', 'len',
+  'range', 'type', 'round', 'abs', 'max', 'min',
+  'list', 'dict', 'set', 'tuple',
+]);
+
+function escapeHTML(str) {
+  return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+}
+
+function highlight(line) {
+  if (line === '') return '';
+  if (line.trimStart().startsWith('#')) return `<span class="ccm">${escapeHTML(line)}</span>`;
+
+  let result = '';
+  let i = 0;
+
+  while (i < line.length) {
+    if (line[i] === '"' || line[i] === "'") {
+      const quote = line[i];
+      let str = quote;
+      i++;
+      while (i < line.length && line[i] !== quote) str += line[i++];
+      str += quote;
+      i++;
+      result += `<span class="cst">${escapeHTML(str)}</span>`;
+
+    } else if (/\d/.test(line[i]) && (i === 0 || !/[a-zA-Z_]/.test(line[i - 1]))) {
+      let num = '';
+      while (i < line.length && /[\d.]/.test(line[i])) num += line[i++];
+      result += `<span class="cnm">${num}</span>`;
+
+    } else if (/[a-zA-Z_]/.test(line[i])) {
+      let word = '';
+      while (i < line.length && /\w/.test(line[i])) word += line[i++];
+      if (KEYWORDS.has(word))      result += `<span class="ckw">${word}</span>`;
+      else if (BUILTINS.has(word)) result += `<span class="cfn">${word}</span>`;
+      else                         result += `<span class="ctx">${word}</span>`;
+
+    } else if (/[=+\-*/<>!%]/.test(line[i])) {
+      result += `<span class="cop">${escapeHTML(line[i])}</span>`;
+      i++;
+
+    } else {
+      result += escapeHTML(line[i++]);
+    }
+  }
+
+  return result;
+}
+
+const L = LESSON;
+const LESSONS_IN_UNIT = 5;
+
+document.title = `${L.unit}.${L.lesson} ${L.title}`;
+
+document.getElementById('bc-unit').textContent   = `Unit ${L.unit}: ${L.unitTitle}`;
+document.getElementById('bc-lesson').textContent = `${L.unit}.${L.lesson} ${L.title}`;
+document.getElementById('prog-lbl').textContent  = `${L.lesson} / ${LESSONS_IN_UNIT}`;
+document.getElementById('prog-fill').style.width = `${Math.round(L.lesson / LESSONS_IN_UNIT * 100)}%`;
+document.getElementById('tag-txt').textContent   = `Lesson ${L.unit}.${L.lesson}`;
+document.getElementById('h1').textContent        = L.title;
+
+document.getElementById('meta').innerHTML = `
+  <span class="meta-item">
+    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+    ${L.readTime} min read
+  </span>
+  <span class="meta-item">
+    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+    ${L.practice.length} practice tasks
+  </span>
+  <span class="meta-item">
+    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+    1 check question
+  </span>`;
+
+document.getElementById('goal').textContent     = L.goal;
+document.getElementById('idea').innerHTML       = L.idea;
+document.getElementById('code-fn').textContent  = L.code.filename;
+document.getElementById('code-body').innerHTML  = L.code.lines.map(highlight).join('\n');
+document.getElementById('out-lines').innerHTML  = L.code.output.map(l => `<div class="output-line">${escapeHTML(l)}</div>`).join('');
+document.getElementById('proj-title').textContent = L.project.title;
+document.getElementById('proj-desc').textContent  = L.project.desc;
+
+const learnIcons = [
+  `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>`,
+  `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>`,
+  `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>`,
+];
+
+document.getElementById('learn-grid').innerHTML = L.learn
+  .map((text, i) => `<div class="learn-card">${learnIcons[i] || learnIcons[0]}${text}</div>`)
+  .join('');
+
+document.getElementById('practice-list').innerHTML = L.practice
+  .map((text, i) => `<li class="practice-item"><span class="practice-num">${i + 1}</span><span>${text}</span></li>`)
+  .join('');
+
+document.getElementById('copy-btn').addEventListener('click', function () {
+  navigator.clipboard.writeText(L.code.lines.join('\n')).then(() => {
+    this.textContent = '✓ copied';
+    setTimeout(() => { this.textContent = '⎘ copy'; }, 1800);
+  });
+});
+
+document.getElementById('quiz-question').innerHTML = L.quiz.question;
+document.getElementById('quiz-options').innerHTML = L.quiz.options
+  .map((opt, i) => `
+    <div class="option" data-index="${i}" tabindex="0" role="radio" aria-checked="false">
+      <span class="option-dot"></span>${opt.text}
+    </div>`)
+  .join('');
+
+let chosenOption = null;
+let quizLocked = false;
+
+document.querySelectorAll('.option').forEach(el => {
+  const select = () => {
+    if (quizLocked) return;
+    document.querySelectorAll('.option').forEach(o => o.classList.remove('selected'));
+    el.classList.add('selected');
+    chosenOption = el;
+    document.getElementById('check-btn').disabled = false;
+    document.getElementById('feedback').classList.remove('show');
+  };
+  el.addEventListener('click', select);
+  el.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') select(); });
+});
+
+document.getElementById('check-btn').addEventListener('click', () => {
+  if (!chosenOption) return;
+
+  const index = +chosenOption.dataset.index;
+  const isCorrect = L.quiz.options[index].correct;
+
+  document.querySelectorAll('.option').forEach(o => o.classList.remove('selected', 'correct', 'wrong'));
+  chosenOption.classList.add(isCorrect ? 'correct' : 'wrong');
+
+  if (!isCorrect) {
+    document.querySelectorAll('.option').forEach(o => {
+      if (L.quiz.options[+o.dataset.index].correct) o.classList.add('correct');
+    });
+    quizLocked = true;
+    document.getElementById('quiz-options').classList.add('locked');
+    document.getElementById('reset-btn').classList.add('show');
+  }
+
+  const feedback = document.getElementById('feedback');
+  feedback.textContent = (isCorrect ? '✓ ' : '✗ ') + (isCorrect ? L.quiz.correct : L.quiz.wrong);
+  feedback.className = 'feedback show ' + (isCorrect ? 'correct' : 'wrong');
+  document.getElementById('check-btn').disabled = true;
+});
+
+document.getElementById('reset-btn').addEventListener('click', () => {
+  quizLocked = false;
+  chosenOption = null;
+  document.querySelectorAll('.option').forEach(o => o.classList.remove('selected', 'correct', 'wrong'));
+  document.getElementById('quiz-options').classList.remove('locked');
+  document.getElementById('check-btn').disabled = true;
+  const feedback = document.getElementById('feedback');
+  feedback.className = 'feedback';
+  feedback.textContent = '';
+  document.getElementById('reset-btn').classList.remove('show');
+});
+
+document.getElementById('nav-row').innerHTML =
+  (L.prev
+    ? `<a class="nav-btn" href="${L.prev.href}">
+         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+         ${L.unit}.${L.prev.lesson} ${L.prev.title}
+       </a>`
+    : '<span></span>') +
+  (L.next
+    ? `<a class="nav-btn next" href="${L.next.href}">
+         ${L.unit}.${L.next.lesson} ${L.next.title}
+         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+       </a>`
+    : '<span></span>');
+</script>
+</body>
+</html>
