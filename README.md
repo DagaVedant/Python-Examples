@@ -5,7 +5,8 @@ An interactive, Python Learning course for beginners all on our browser. No down
 ## QUICK PEAK
 
 ![How it looks](public/images/preview.png)
-![Demo Video](public/video/demo.mp4)
+
+check /public/video/demo.mp4 for a quick demo...you might have to download the video because its to big for github
 
 ## How to Try It
 
