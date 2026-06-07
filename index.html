@@ -158,6 +158,11 @@ body.dark .sun { display: none; }
     .unit a:hover { background: #f7f8fa; }
     body.dark .unit a:hover { background: #222535; }
 
+    .unit a.lesson-done { background: #dcfce7; }
+    body.dark .unit a.lesson-done { background: #0d1f13; }
+    .unit a.lesson-done .num { background:#bbf7d0; color:#15803d; border-color:#86efac; }
+    body.dark .unit a.lesson-done .num { background:#1a3326; color:#4ade80; border-color:#1f4433; }
+
     .num {
       width: 44px;
       height: 26px;
@@ -185,19 +190,28 @@ body.dark .sun { display: none; }
 
 <nav>
   <span>Learn Python</span>
-  <button class="theme-btn" id="theme-btn" onclick="toggleTheme()" aria-label="Toggle dark mode">
-  <svg class="sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-  <svg class="moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-</button>
+  <div style="display:flex;align-items:center;gap:16px;">
+    <div style="text-align:right;">
+      <div style="font-size:11px;color:#9ca3af;margin-bottom:4px;" id="overall-label"></div>
+      <div style="width:140px;height:5px;background:#e2e5ea;border-radius:99px;overflow:hidden;">
+        <div id="overall-fill" style="height:100%;background:#16a34a;border-radius:99px;transition:width 0.4s;width:0%;"></div>
+      </div>
+    </div>
+    <button class="theme-btn" id="theme-btn" onclick="toggleTheme()" aria-label="Toggle dark mode">
+      <svg class="sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      <svg class="moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    </button>
+  </div>
 </nav>
 
 <div class="hero">
   <img src="https://s3.dualstack.us-east-2.amazonaws.com/pythondotorg-assets/media/community/logos/python-logo-only.png" alt="Python logo">
   <div>
     <h1>Learn Python</h1>
-    <p>A beginner-friendly course covering the fundamentals of Python — from your first program to loops, functions, and lists.</p>
+    <p>An introduction to the basics of Python programming. Starting from writing your first program to using loops, functions, and lists.</p>
   </div>
 </div>
+
 
 <main class="course" id="course"></main>
 
@@ -215,9 +229,12 @@ body.dark .sun { display: none; }
 
   document.getElementById('course').innerHTML = units.map(unit => `
     <div class="unit">
-      <div class="unit-header">
-        <small>Unit ${unit.number}</small>
-        <strong>${unit.title}</strong>
+      <div class="unit-header" style="display:flex;justify-content:space-between;align-items:center;">
+        <div>
+          <small>Unit ${unit.number}</small>
+          <strong>${unit.title}</strong>
+        </div>
+        <span id="unit-progress-${unit.number}" style="font-size:12px;color:#9ca3af;flex-shrink:0;"></span>
       </div>
       ${unit.lessons.map(lesson => `
         <a href="${encodeURI(`Unit ${unit.number}/lesson ${lesson.number}/lesson ${lesson.number}.html`)}">
@@ -228,6 +245,24 @@ body.dark .sun { display: none; }
           </svg>
         </a>`).join('')}
     </div>`).join('');
+
+  const completed = JSON.parse(localStorage.getItem('completed') || '[]');
+  const totalLessons = units.reduce((sum, unit) => sum + unit.lessons.length, 0);
+
+  document.getElementById('overall-fill').style.width = `${Math.round(completed.length / totalLessons * 100)}%`;
+  document.getElementById('overall-label').textContent = `${completed.length} / ${totalLessons} lessons`;
+
+  units.forEach(unit => {
+    const unitDone = unit.lessons.filter(l => completed.includes(`${unit.number}-${l.number}`)).length;
+    document.getElementById(`unit-progress-${unit.number}`).textContent = `${unitDone} / ${unit.lessons.length}`;
+    unit.lessons.forEach(lesson => {
+      if (completed.includes(`${unit.number}-${lesson.number}`)) {
+        const link = document.querySelector(`a[href*="${encodeURI(`Unit ${unit.number}/lesson ${lesson.number}`)}"]`);
+        if (link) link.classList.add('lesson-done');
+      }
+    });
+  });
+
 </script>
 
 </body>

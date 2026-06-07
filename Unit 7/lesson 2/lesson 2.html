@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 
@@ -138,8 +138,8 @@ code {
 .progress-label { font-size: 12px; color: var(--text3); }
 
 .progress-track {
-  width: 88px;
-  height: 5px;
+  width: 140px;
+  height: 7px;
   background: var(--surface2);
   border-radius: 99px;
   overflow: hidden;
@@ -149,7 +149,7 @@ code {
 .progress-fill {
   height: 100%;
   border-radius: 99px;
-  background: var(--blue);
+  background: var(--green);
   transition: width .4s ease;
 }
 
@@ -861,13 +861,32 @@ document.getElementById('reset-btn').addEventListener('click', () => {
   document.getElementById('reset-btn').classList.remove('show');
 });
 
+const completionKey = `${L.unit}-${L.lesson}`;
+const completed = JSON.parse(localStorage.getItem('completed') || '[]');
+const completeBtn = document.createElement('button');
+completeBtn.className = 'check-btn';
+function updateCompleteBtn() {
+  const isDone = completed.includes(completionKey);
+  completeBtn.textContent = isDone ? '✓ Completed' : 'Mark as complete';
+  completeBtn.style.cssText = isDone ? 'background:var(--green-lt);border-color:var(--green-md);color:var(--green);' : '';
+}
+updateCompleteBtn();
+completeBtn.addEventListener('click', () => {
+  if (!completed.includes(completionKey)) {
+    completed.push(completionKey);
+    localStorage.setItem('completed', JSON.stringify(completed));
+    updateCompleteBtn();
+  }
+});
 document.getElementById('nav-row').innerHTML =
   (L.prev
     ? `<a class="nav-btn" href="${L.prev.href}"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg> ${L.prev.unit}.${L.prev.lesson} ${L.prev.title}</a>`
     : '<span></span>') +
+  '<div id="complete-slot" style="display:flex;justify-content:center;"></div>' +
   (L.next
     ? `<a class="nav-btn next" href="${L.next.href}">${L.next.unit}.${L.next.lesson} ${L.next.title} <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>`
     : '<span></span>');
+document.getElementById('complete-slot').appendChild(completeBtn);
 </script>
 </body>
 </html>
