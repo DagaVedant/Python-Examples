@@ -1,6 +1,7 @@
 const LESSON = {
     unit: 1,
     lesson: 3,
+    unitLessons: 5,
     unitTitle: "Getting Started with Python",
     title: "Variables",
     readTime: 5,

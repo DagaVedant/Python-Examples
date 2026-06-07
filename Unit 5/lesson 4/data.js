@@ -1,7 +1,7 @@
 const LESSON = {
-
     unit: 5,
     lesson: 4,
+    unitLessons: 4,
     unitTitle: "Functions",
     title: "Designing with Functions",
     readTime: 6,

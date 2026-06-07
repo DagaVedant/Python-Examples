@@ -1,7 +1,7 @@
 const LESSON = {
-
     unit: 7,
     lesson: 3,
+    unitLessons: 3,
     unitTitle: "2D Lists",
     title: "Looping Over a Grid",
     readTime: 6,

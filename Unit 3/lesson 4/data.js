@@ -1,7 +1,7 @@
 const LESSON = {
-
     unit: 3,
     lesson: 4,
+    unitLessons: 4,
     unitTitle: "Making Decisions",
     title: "Combining Conditions",
     readTime: 5,

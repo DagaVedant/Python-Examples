@@ -1,7 +1,7 @@
 const LESSON = {
-
     unit: 4,
     lesson: 2,
+    unitLessons: 4,
     unitTitle: "Repetition & Loops",
     title: "range() in Depth",
     readTime: 5,

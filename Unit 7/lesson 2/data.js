@@ -1,7 +1,7 @@
 const LESSON = {
-
     unit: 7,
     lesson: 2,
+    unitLessons: 3,
     unitTitle: "2D Lists",
     title: "Accessing Rows & Columns",
     readTime: 5,

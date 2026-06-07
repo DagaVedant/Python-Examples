@@ -1,6 +1,7 @@
 const LESSON = {
     unit: 2,
     lesson: 1,
+    unitLessons: 4,
     unitTitle: "Number Calculations & Data",
     title: "Arithmetic Operators",
     readTime: 5,

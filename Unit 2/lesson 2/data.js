@@ -1,6 +1,7 @@
 const LESSON = {
     unit: 2,
     lesson: 2,
+    unitLessons: 4,
     unitTitle: "Number Calculations & Data",
     title: "Integer vs Float Division",
     readTime: 5,

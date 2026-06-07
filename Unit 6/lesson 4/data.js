@@ -1,7 +1,7 @@
 const LESSON = {
-
     unit: 6,
     lesson: 4,
+    unitLessons: 4,
     unitTitle: "Lists",
     title: "Useful List Methods",
     readTime: 5,

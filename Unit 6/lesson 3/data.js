@@ -1,7 +1,7 @@
 const LESSON = {
-
     unit: 6,
     lesson: 3,
+    unitLessons: 4,
     unitTitle: "Lists",
     title: "Looping Through Lists",
     readTime: 5,

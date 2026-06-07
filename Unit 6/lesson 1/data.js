@@ -1,7 +1,7 @@
 const LESSON = {
-
     unit: 6,
     lesson: 1,
+    unitLessons: 4,
     unitTitle: "Lists",
     title: "Creating & Indexing Lists",
     readTime: 5,

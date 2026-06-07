@@ -589,7 +589,10 @@ hr {
     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
     <b id="bc-lesson"></b>
   </nav>
-  <div class="bar-right">
+    <div class="bar-right">
+      <a href="../../index.html" class="theme-btn" aria-label="Back to home">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+    </a>
     <div class="progress">
       <span class="progress-label" id="prog-lbl"></span>
       <div class="progress-track">
@@ -744,7 +747,7 @@ function highlight(line) {
 }
 
 const L = LESSON;
-const LESSONS_IN_UNIT = 5;
+const LESSONS_IN_UNIT = L.unitLessons || 5;
 
 document.title = `${L.unit}.${L.lesson} ${L.title}`;
 

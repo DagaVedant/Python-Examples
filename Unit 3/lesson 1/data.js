@@ -1,7 +1,7 @@
 const LESSON = {
- 
     unit: 3,
     lesson: 1,
+    unitLessons: 4,
     unitTitle: "Making Decisions",
     title: "Comparisons & Booleans",
     readTime: 4,
