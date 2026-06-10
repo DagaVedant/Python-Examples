@@ -35,13 +35,8 @@
   --code:     #1e1e2e;
   --code-out: #11111b;
   --code-sep: rgba(255, 255, 255, .07);
-  --ct:       #cdd6f4;
   --ccm:      #6c7086;
-  --ckw:      #cba6f7;
-  --cfn:      #89b4fa;
   --cst:      #a6e3a1;
-  --cnm:      #fab387;
-  --cop:      #89dceb;
   --r:        10px;
   --rsm:      6px;
   --rlg:      14px;
@@ -282,6 +277,7 @@ hr {
 
 .code-wrap {
   background: var(--code);
+  border: 1px solid var(--border);
   border-radius: var(--rlg);
   overflow: hidden;
   margin-bottom: 1.75rem;
@@ -362,6 +358,7 @@ hr {
 .practice-editor-wrap {
   display: none;
   background: var(--code);
+  border: 1px solid var(--border);
   border-radius: var(--r);
   overflow: hidden;
 }
@@ -439,14 +436,6 @@ hr {
 [data-theme="light"] .practice-editor-wrap .cm-gutters {
   border-right-color: #d0d7de;
 }
-
-.ckw { color: var(--ckw); }
-.cfn { color: var(--cfn); }
-.cst { color: var(--cst); }
-.cnm { color: var(--cnm); }
-.ccm { color: var(--ccm); font-style: italic; }
-.cop { color: var(--cop); }
-.ctx { color: var(--ct);  }
 
 .output-box {
   background: var(--code-out);
@@ -824,8 +813,8 @@ document.getElementById('tog').addEventListener('click', () => {
 
 function editorExtensions() {
   return root.getAttribute('data-theme') === 'dark'
-    ? [basicSetup, python(), oneDark]
-    : [basicSetup, python()];
+    ? [basicSetup, EditorView.lineWrapping, python(), oneDark]
+    : [basicSetup, EditorView.lineWrapping, python()];
 }
 
 function rebuildEditors() {
@@ -939,7 +928,7 @@ document.getElementById('practice-list').innerHTML = L.practice
 L.practice.forEach((text, i) => {
   const pe = new EditorView({
     doc: `# ${text}\n`,
-    extensions: [basicSetup, python(), oneDark],
+    extensions: editorExtensions(),
     parent: document.getElementById(`practice-editor-${i}`),
   });
   practiceEditors.push(pe);
@@ -1123,7 +1112,7 @@ let pyodide = null;
 async function getPyodide() {
   if (pyodide) return pyodide;
   document.getElementById('out-lines').innerHTML =
-    '<div class="output-line" style="color:var(--ccm)">Loading Python... (first run only)</div>';
+    '<div class="output-line" style="color:var(--ccm)">Loading Python...</div>';
   await new Promise((resolve, reject) => {
     const s = document.createElement('script');
     s.src = 'https://cdn.jsdelivr.net/pyodide/v0.26.2/full/pyodide.js';
