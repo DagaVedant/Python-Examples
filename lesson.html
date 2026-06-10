@@ -408,7 +408,6 @@ hr {
 .code-body .cm-editor,
 .practice-editor-wrap .cm-editor {
   font-size: 13.5px;
-  background: #1e1e2e;
 }
 .code-body .cm-scroller,
 .practice-editor-wrap .cm-scroller {
@@ -416,13 +415,30 @@ hr {
   line-height: 1.9;
   padding: .6rem 0;
 }
-.code-body .cm-gutters,
-.practice-editor-wrap .cm-gutters {
-  background: #1e1e2e;
-  border-right-color: rgba(255,255,255,.07);
-}
 .code-body .cm-focused,
 .practice-editor-wrap .cm-focused { outline: none; }
+
+[data-theme="dark"] .code-body .cm-editor,
+[data-theme="dark"] .code-body .cm-gutters,
+[data-theme="dark"] .practice-editor-wrap .cm-editor,
+[data-theme="dark"] .practice-editor-wrap .cm-gutters {
+  background: #1e1e2e;
+}
+[data-theme="dark"] .code-body .cm-gutters,
+[data-theme="dark"] .practice-editor-wrap .cm-gutters {
+  border-right-color: rgba(255,255,255,.07);
+}
+
+[data-theme="light"] .code-body .cm-editor,
+[data-theme="light"] .code-body .cm-gutters,
+[data-theme="light"] .practice-editor-wrap .cm-editor,
+[data-theme="light"] .practice-editor-wrap .cm-gutters {
+  background: #f8fafc;
+}
+[data-theme="light"] .code-body .cm-gutters,
+[data-theme="light"] .practice-editor-wrap .cm-gutters {
+  border-right-color: #d0d7de;
+}
 
 .ckw { color: var(--ckw); }
 .cfn { color: var(--cfn); }
@@ -803,7 +819,33 @@ document.getElementById('tog').addEventListener('click', () => {
   const next = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
   root.setAttribute('data-theme', next);
   localStorage.setItem('theme', next);
+  rebuildEditors();
 });
+
+function editorExtensions() {
+  return root.getAttribute('data-theme') === 'dark'
+    ? [basicSetup, python(), oneDark]
+    : [basicSetup, python()];
+}
+
+function rebuildEditors() {
+  const exampleDoc = editor.state.doc.toString();
+  editor.destroy();
+  editor = new EditorView({
+    doc: exampleDoc,
+    extensions: editorExtensions(),
+    parent: document.getElementById('code-body'),
+  });
+  practiceEditors.forEach((pe, i) => {
+    const doc = pe.state.doc.toString();
+    pe.destroy();
+    practiceEditors[i] = new EditorView({
+      doc,
+      extensions: editorExtensions(),
+      parent: document.getElementById(`practice-editor-${i}`),
+    });
+  });
+}
 
 const { createClient } = supabase;
 const db = createClient('https://udzpwekkpedmtudcsyve.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVkenB3ZWtrcGVkbXR1ZGNzeXZlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODEwMzAzMjYsImV4cCI6MjA5NjYwNjMyNn0.xaMqyzNabeeE7bYVbAVwz8HCFIwQrGczF9x1FrXJv-A');
@@ -853,7 +895,7 @@ document.getElementById('code-fn').textContent  = L.code.filename;
 
 editor = new EditorView({
   doc: L.code.lines.join('\n'),
-  extensions: [basicSetup, python(), oneDark],
+  extensions: editorExtensions(),
   parent: document.getElementById('code-body'),
 });
 
