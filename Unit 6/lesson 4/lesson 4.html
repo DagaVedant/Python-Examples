@@ -865,6 +865,14 @@ document.getElementById('reset-btn').addEventListener('click', () => {
   document.getElementById('reset-btn').classList.remove('show');
 });
 
+document.getElementById('nav-row').innerHTML =
+  (L.prev
+    ? `<a class="nav-btn" href="${L.prev.href}"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg> ${L.prev.unit}.${L.prev.lesson} ${L.prev.title}</a>`
+    : '<span></span>') +
+  '<div id="complete-slot" style="display:flex;justify-content:center;"></div>' +
+  (L.next
+    ? `<a class="nav-btn next" href="${L.next.href}">${L.next.unit}.${L.next.lesson} ${L.next.title} <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>`
+    : '<span></span>');
 (async () => {
   const { data: { session } } = await db.auth.getSession();
   if (!session) { window.location.href = '../../login.html'; return; }
