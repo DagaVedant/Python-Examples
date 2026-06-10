@@ -405,20 +405,40 @@ hr {
 [data-theme="light"] .practice-save-btn   { color: var(--text3); background: rgba(0,0,0,.05); border-color: rgba(0,0,0,.12); }
 [data-theme="light"] .practice-save-status { color: var(--text3); }
 
-.code-body .cm-editor {
+.code-body .cm-editor,
+.practice-editor-wrap .cm-editor {
   font-size: 13.5px;
-  background: #1e1e2e;
 }
-.code-body .cm-scroller {
+.code-body .cm-scroller,
+.practice-editor-wrap .cm-scroller {
   font-family: 'DM Mono', monospace !important;
   line-height: 1.9;
   padding: .6rem 0;
 }
-.code-body .cm-gutters {
+.code-body .cm-focused,
+.practice-editor-wrap .cm-focused { outline: none; }
+
+[data-theme="dark"] .code-body .cm-editor,
+[data-theme="dark"] .code-body .cm-gutters,
+[data-theme="dark"] .practice-editor-wrap .cm-editor,
+[data-theme="dark"] .practice-editor-wrap .cm-gutters {
   background: #1e1e2e;
+}
+[data-theme="dark"] .code-body .cm-gutters,
+[data-theme="dark"] .practice-editor-wrap .cm-gutters {
   border-right-color: rgba(255,255,255,.07);
 }
-.code-body .cm-focused { outline: none; }
+
+[data-theme="light"] .code-body .cm-editor,
+[data-theme="light"] .code-body .cm-gutters,
+[data-theme="light"] .practice-editor-wrap .cm-editor,
+[data-theme="light"] .practice-editor-wrap .cm-gutters {
+  background: #f8fafc;
+}
+[data-theme="light"] .code-body .cm-gutters,
+[data-theme="light"] .practice-editor-wrap .cm-gutters {
+  border-right-color: #d0d7de;
+}
 
 .ckw { color: var(--ckw); }
 .cfn { color: var(--cfn); }
@@ -784,9 +804,16 @@ hr {
 </main>
 
 <script type="module">
+
 import { EditorView, basicSetup } from 'https://esm.sh/codemirror@6.0.1';
 import { python } from 'https://esm.sh/@codemirror/lang-python@6.1.6';
 import { oneDark } from 'https://esm.sh/@codemirror/theme-one-dark@6.1.2';
+import { Compartment } from 'https://esm.sh/@codemirror/state@6.4.1';
+
+const themeCompartment = new Compartment();
+const practiceEditors = [];
+let editor;
+
 const root = document.documentElement;
 root.setAttribute('data-theme', localStorage.getItem('theme') || 'light');
 
@@ -794,6 +821,10 @@ document.getElementById('tog').addEventListener('click', () => {
   const next = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
   root.setAttribute('data-theme', next);
   localStorage.setItem('theme', next);
+  const newTheme = next === 'dark' ? oneDark : [];
+  const effect = themeCompartment.reconfigure(newTheme);
+  if (editor) editor.dispatch({ effects: effect });
+  practiceEditors.forEach(pe => pe.dispatch({ effects: effect }));
 });
 
 const { createClient } = supabase;
@@ -842,9 +873,10 @@ document.getElementById('goal').textContent     = L.goal;
 document.getElementById('idea').innerHTML       = L.idea;
 document.getElementById('code-fn').textContent  = L.code.filename;
 
-const editor = new EditorView({
+const isDark = root.getAttribute('data-theme') === 'dark';
+editor = new EditorView({
   doc: L.code.lines.join('\n'),
-  extensions: [basicSetup, python(), oneDark],
+  extensions: [basicSetup, python(), themeCompartment.of(isDark ? oneDark : [])],
   parent: document.getElementById('code-body'),
 });
 
@@ -863,8 +895,69 @@ document.getElementById('learn-grid').innerHTML = L.learn
   .join('');
 
 document.getElementById('practice-list').innerHTML = L.practice
-  .map((text, i) => `<li class="practice-item"><span class="practice-num">${i + 1}</span><span>${text}</span></li>`)
+  .map((text, i) => `
+    <li class="practice-item">
+      <span class="practice-num">${i + 1}</span>
+      <div class="practice-content">
+        <span>${text}</span>
+        <button class="practice-toggle-btn" data-index="${i}">Open editor</button>
+        <div class="practice-editor-wrap" id="practice-wrap-${i}">
+          <div id="practice-editor-${i}"></div>
+          <div class="practice-ide-footer">
+            <button class="practice-run-btn run-btn" data-index="${i}">Run</button>
+            <button class="practice-save-btn" data-index="${i}">Save</button>
+            <span class="practice-save-status" id="practice-save-status-${i}"></span>
+          </div>
+          <div class="practice-output-box">
+            <div class="output-label">Output</div>
+            <div id="practice-output-${i}"></div>
+          </div>
+        </div>
+      </div>
+    </li>`)
   .join('');
+
+L.practice.forEach((text, i) => {
+  const pe = new EditorView({
+    doc: `# ${text}\n`,
+    extensions: [basicSetup, python(), themeCompartment.of(isDark ? oneDark : [])],
+    parent: document.getElementById(`practice-editor-${i}`),
+  });
+  practiceEditors.push(pe);
+});
+
+document.querySelectorAll('.practice-toggle-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const i = btn.dataset.index;
+    const wrap = document.getElementById(`practice-wrap-${i}`);
+    const isOpen = wrap.style.display === 'block';
+    wrap.style.display = isOpen ? 'none' : 'block';
+    btn.textContent = isOpen ? 'Open editor' : 'Close editor';
+    if (!isOpen) practiceEditors[i].requestMeasure();
+  });
+});
+
+document.querySelectorAll('.practice-run-btn').forEach(btn => {
+  btn.addEventListener('click', async () => {
+    const i = +btn.dataset.index;
+    btn.disabled = true;
+    btn.textContent = 'Running...';
+    const outEl = document.getElementById(`practice-output-${i}`);
+    try {
+      const py = await getPyodide();
+      let output = '';
+      py.setStdout({ batched: text => { output += text + '\n'; } });
+      py.runPython(practiceEditors[i].state.doc.toString());
+      outEl.innerHTML = output
+        ? output.trimEnd().split('\n').map(l => `<div class="output-line">${escapeHTML(l)}</div>`).join('')
+        : '<div class="output-line" style="color:var(--ccm)">No output</div>';
+    } catch (err) {
+      outEl.innerHTML = `<div class="output-line output-error">${escapeHTML(err.message)}</div>`;
+    }
+    btn.disabled = false;
+    btn.textContent = 'Run';
+  });
+});
 
 document.getElementById('copy-btn').addEventListener('click', function () {
   navigator.clipboard.writeText(editor.state.doc.toString()).then(() => {
@@ -970,6 +1063,40 @@ document.getElementById('nav-row').innerHTML =
     }
   });
   document.getElementById('complete-slot').appendChild(completeBtn);
+
+  const { data: savesData } = await db
+    .from('practice_saves')
+    .select('task_index, code')
+    .eq('unit', L.unit)
+    .eq('lesson', L.lesson);
+
+  if (savesData) {
+    savesData.forEach(row => {
+      const pe = practiceEditors[row.task_index];
+      if (!pe) return;
+      pe.dispatch({ changes: { from: 0, to: pe.state.doc.length, insert: row.code } });
+      document.getElementById(`practice-save-status-${row.task_index}`).textContent = 'Previously saved';
+    });
+  }
+
+  document.querySelectorAll('.practice-save-btn').forEach(btn => {
+    btn.addEventListener('click', async () => {
+      const i = +btn.dataset.index;
+      const statusEl = document.getElementById(`practice-save-status-${i}`);
+      btn.disabled = true;
+      statusEl.textContent = 'Saving...';
+      const { error } = await db.from('practice_saves').upsert({
+        user_id: session.user.id,
+        unit: L.unit,
+        lesson: L.lesson,
+        task_index: i,
+        code: practiceEditors[i].state.doc.toString(),
+      }, { onConflict: 'user_id,unit,lesson,task_index' });
+      btn.disabled = false;
+      statusEl.textContent = error ? 'Failed to save' : 'Saved';
+    });
+  });
+
 })();
 
 let pyodide = null;
