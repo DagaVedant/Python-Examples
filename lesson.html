@@ -408,6 +408,7 @@ hr {
 .code-body .cm-editor,
 .practice-editor-wrap .cm-editor {
   font-size: 13.5px;
+  background: #1e1e2e;
 }
 .code-body .cm-scroller,
 .practice-editor-wrap .cm-scroller {
@@ -415,30 +416,13 @@ hr {
   line-height: 1.9;
   padding: .6rem 0;
 }
-.code-body .cm-focused,
-.practice-editor-wrap .cm-focused { outline: none; }
-
-[data-theme="dark"] .code-body .cm-editor,
-[data-theme="dark"] .code-body .cm-gutters,
-[data-theme="dark"] .practice-editor-wrap .cm-editor,
-[data-theme="dark"] .practice-editor-wrap .cm-gutters {
+.code-body .cm-gutters,
+.practice-editor-wrap .cm-gutters {
   background: #1e1e2e;
-}
-[data-theme="dark"] .code-body .cm-gutters,
-[data-theme="dark"] .practice-editor-wrap .cm-gutters {
   border-right-color: rgba(255,255,255,.07);
 }
-
-[data-theme="light"] .code-body .cm-editor,
-[data-theme="light"] .code-body .cm-gutters,
-[data-theme="light"] .practice-editor-wrap .cm-editor,
-[data-theme="light"] .practice-editor-wrap .cm-gutters {
-  background: #f8fafc;
-}
-[data-theme="light"] .code-body .cm-gutters,
-[data-theme="light"] .practice-editor-wrap .cm-gutters {
-  border-right-color: #d0d7de;
-}
+.code-body .cm-focused,
+.practice-editor-wrap .cm-focused { outline: none; }
 
 .ckw { color: var(--ckw); }
 .cfn { color: var(--cfn); }
@@ -805,11 +789,10 @@ hr {
 
 <script type="module">
 
-import { EditorView, basicSetup, Compartment } from 'https://esm.sh/codemirror@6.0.1';
+import { EditorView, basicSetup } from 'https://esm.sh/codemirror@6.0.1';
 import { python } from 'https://esm.sh/@codemirror/lang-python@6.1.6';
 import { oneDark } from 'https://esm.sh/@codemirror/theme-one-dark@6.1.2';
 
-const themeCompartment = new Compartment();
 const practiceEditors = [];
 let editor;
 
@@ -820,10 +803,6 @@ document.getElementById('tog').addEventListener('click', () => {
   const next = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
   root.setAttribute('data-theme', next);
   localStorage.setItem('theme', next);
-  const newTheme = next === 'dark' ? oneDark : [];
-  const effect = themeCompartment.reconfigure(newTheme);
-  if (editor) editor.dispatch({ effects: effect });
-  practiceEditors.forEach(pe => pe.dispatch({ effects: effect }));
 });
 
 const { createClient } = supabase;
@@ -872,10 +851,9 @@ document.getElementById('goal').textContent     = L.goal;
 document.getElementById('idea').innerHTML       = L.idea;
 document.getElementById('code-fn').textContent  = L.code.filename;
 
-const isDark = root.getAttribute('data-theme') === 'dark';
 editor = new EditorView({
   doc: L.code.lines.join('\n'),
-  extensions: [basicSetup, python(), themeCompartment.of(isDark ? oneDark : [])],
+  extensions: [basicSetup, python(), oneDark],
   parent: document.getElementById('code-body'),
 });
 
@@ -919,7 +897,7 @@ document.getElementById('practice-list').innerHTML = L.practice
 L.practice.forEach((text, i) => {
   const pe = new EditorView({
     doc: `# ${text}\n`,
-    extensions: [basicSetup, python(), themeCompartment.of(isDark ? oneDark : [])],
+    extensions: [basicSetup, python(), oneDark],
     parent: document.getElementById(`practice-editor-${i}`),
   });
   practiceEditors.push(pe);
