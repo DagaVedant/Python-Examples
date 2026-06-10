@@ -721,65 +721,12 @@ document.getElementById('tog').addEventListener('click', () => {
 const { createClient } = supabase;
 const db = createClient('https://udzpwekkpedmtudcsyve.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVkenB3ZWtrcGVkbXR1ZGNzeXZlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODEwMzAzMjYsImV4cCI6MjA5NjYwNjMyNn0.xaMqyzNabeeE7bYVbAVwz8HCFIwQrGczF9x1FrXJv-A');
 
-const KEYWORDS = new Set([
-  'if', 'elif', 'else', 'for', 'while', 'def', 'return',
-  'import', 'from', 'in', 'and', 'or', 'not',
-  'True', 'False', 'None', 'global', 'class',
-]);
-
-const BUILTINS = new Set([
-  'print', 'input', 'int', 'float', 'str', 'len',
-  'range', 'type', 'round', 'abs', 'max', 'min',
-  'list', 'dict', 'set', 'tuple',
-]);
-
 function escapeHTML(str) {
   return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 }
 
 function lessonURL(u, l) {
   return `lesson.html?unit=${u}&lesson=${l}`;
-}
-
-function highlight(line) {
-  if (line === '') return '';
-  if (line.trimStart().startsWith('#')) return `<span class="ccm">${escapeHTML(line)}</span>`;
-
-  let result = '';
-  let i = 0;
-
-  while (i < line.length) {
-    if (line[i] === '"' || line[i] === "'") {
-      const quote = line[i];
-      let str = quote;
-      i++;
-      while (i < line.length && line[i] !== quote) str += line[i++];
-      str += quote;
-      i++;
-      result += `<span class="cst">${escapeHTML(str)}</span>`;
-
-    } else if (/\d/.test(line[i]) && (i === 0 || !/[a-zA-Z_]/.test(line[i - 1]))) {
-      let num = '';
-      while (i < line.length && /[\d.]/.test(line[i])) num += line[i++];
-      result += `<span class="cnm">${num}</span>`;
-
-    } else if (/[a-zA-Z_]/.test(line[i])) {
-      let word = '';
-      while (i < line.length && /\w/.test(line[i])) word += line[i++];
-      if (KEYWORDS.has(word))      result += `<span class="ckw">${word}</span>`;
-      else if (BUILTINS.has(word)) result += `<span class="cfn">${word}</span>`;
-      else                         result += `<span class="ctx">${word}</span>`;
-
-    } else if (/[=+\-*/<>!%]/.test(line[i])) {
-      result += `<span class="cop">${escapeHTML(line[i])}</span>`;
-      i++;
-
-    } else {
-      result += escapeHTML(line[i++]);
-    }
-  }
-
-  return result;
 }
 
 const params  = new URLSearchParams(location.search);
@@ -972,7 +919,7 @@ document.getElementById('run-btn').addEventListener('click', async () => {
   try {
     const py = await getPyodide();
     let output = '';
-    py.setStdout({ batched: text => { output += text; } });
+    py.setStdout({ batched: text => { output += text + '\n'; } });
     py.runPython(editor.state.doc.toString());
     outEl.innerHTML = output
       ? output.trimEnd().split('\n').map(l => `<div class="output-line">${escapeHTML(l)}</div>`).join('')
