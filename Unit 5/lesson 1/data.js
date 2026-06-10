@@ -1,4 +1,4 @@
-const LESSON = {
+export default {
     unit: 5,
     lesson: 1,
     unitLessons: 4,
@@ -69,6 +69,6 @@ const LESSON = {
         desc: "Write three functions: one that prints the recipe title, one that prints the list of ingredients, and one that prints the steps. Call all three in order to display a full recipe card.",
     },
 
-    prev: {unit: 4, lesson: 4, title: "Loops & Decisions", href: "../../Unit 4/lesson 4/lesson 4.html"},
-    next: {unit: 5, lesson: 2, title: "Arguments & Parameters", href: "../lesson 2/lesson 2.html"},
+    prev: {unit: 4, lesson: 4, title: "Loops & Decisions"},
+    next: {unit: 5, lesson: 2, title: "Arguments & Parameters"},
 };

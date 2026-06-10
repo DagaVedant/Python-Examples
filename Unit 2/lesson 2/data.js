@@ -1,4 +1,4 @@
-const LESSON = {
+export default {
     unit: 2,
     lesson: 2,
     unitLessons: 4,
@@ -67,6 +67,6 @@ const LESSON = {
         desc: "Ask the user for a total restaurant bill and the number of people splitting it. Print how much each person owes as a whole number and how much change is left over.",
     },
 
-    prev: {unit: 2, lesson: 1, title: "Arithmetic Operators", href: "../lesson 1/lesson 1.html"},
-    next: {unit: 2, lesson: 3, title: "Numbers from Input", href: "../lesson 3/lesson 3.html"},
+    prev: {unit: 2, lesson: 1, title: "Arithmetic Operators"},
+    next: {unit: 2, lesson: 3, title: "Numbers from Input"},
 };

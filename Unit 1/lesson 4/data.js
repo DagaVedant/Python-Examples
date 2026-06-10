@@ -1,4 +1,4 @@
-const LESSON = {
+export default {
     unit: 1,
     lesson: 4,
     unitLessons: 5,
@@ -57,6 +57,6 @@ const LESSON = {
         desc: "Ask the user for their name, age, and favourite animal. Then print a personalised greeting card that uses all three answers in a fun sentence.",
     },
 
-    prev: {unit: 1, lesson: 3, title: "Variables", href: "../lesson 3/lesson 3.html"},
-    next: {unit: 1, lesson: 5, title: "Data Types & Casting", href: "../lesson 5/lesson 5.html"},
+    prev: {unit: 1, lesson: 3, title: "Variables"},
+    next: {unit: 1, lesson: 5, title: "Data Types & Casting"},
 };

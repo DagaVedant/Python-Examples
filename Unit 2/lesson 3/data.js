@@ -1,4 +1,4 @@
-const LESSON = {
+export default {
     unit: 2,
     lesson: 3,
     unitLessons: 4,
@@ -62,6 +62,6 @@ const LESSON = {
         desc: "Ask the user for an item name, its price, and how many they want. Apply a 15% discount if the total is over £20. Print a short receipt showing the item, subtotal, any discount, and the final amount.",
     },
 
-    prev: {unit: 2, lesson: 2, title: "Integer vs Float Division", href: "../lesson 2/lesson 2.html"},
-    next: {unit: 2, lesson: 4, title: "Math Library Basics", href: "../lesson 4/lesson 4.html"},
+    prev: {unit: 2, lesson: 2, title: "Integer vs Float Division"},
+    next: {unit: 2, lesson: 4, title: "Math Library Basics"},
 };

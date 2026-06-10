@@ -1,4 +1,4 @@
-const LESSON = {
+export default {
     unit: 4,
     lesson: 3,
     unitLessons: 4,
@@ -66,6 +66,6 @@ const LESSON = {
         desc: "Pick a secret number between 1 and 100. Use a while loop to keep asking the user for guesses. After each wrong guess print Too high or Too low. When they get it right print how many guesses it took.",
     },
 
-    prev: {unit: 4, lesson: 2, title: "range() in Depth", href: "../lesson 2/lesson 2.html"},
-    next: {unit: 4, lesson: 4, title: "Loops & Decisions", href: "../lesson 4/lesson 4.html"},
+    prev: {unit: 4, lesson: 2, title: "range() in Depth"},
+    next: {unit: 4, lesson: 4, title: "Loops & Decisions"},
 };

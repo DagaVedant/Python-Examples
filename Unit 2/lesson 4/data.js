@@ -1,4 +1,4 @@
-const LESSON = {
+export default {
     unit: 2,
     lesson: 4,
     unitLessons: 4,
@@ -67,6 +67,6 @@ const LESSON = {
         desc: "Ask the user for the two shorter sides of a right-angled triangle. Use the math library to calculate the hypotenuse and the area. Print both answers rounded to 2 decimal places.",
     },
 
-    prev: {unit: 2, lesson: 3, title: "Numbers from Input", href: "../lesson 3/lesson 3.html"},
-    next: {unit: 3, lesson: 1, title: "Comparisons & Booleans", href: "../../Unit 3/lesson 1/lesson 1.html"},
+    prev: {unit: 2, lesson: 3, title: "Numbers from Input"},
+    next: {unit: 3, lesson: 1, title: "Comparisons & Booleans"},
 };

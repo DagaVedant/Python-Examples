@@ -1,4 +1,4 @@
-const LESSON = {
+export default {
     unit: 7,
     lesson: 1,
     unitLessons: 3,
@@ -68,6 +68,6 @@ const LESSON = {
         desc: "Create a 3x3 2D list to represent a noughts and crosses board. Fill some cells with X and O. Write a function that prints the board neatly with dividing lines between cells.",
     },
 
-    prev: {unit: 6, lesson: 4, title: "Useful List Methods", href: "../../Unit 6/lesson 4/lesson 4.html"},
-    next: {unit: 7, lesson: 2, title: "Accessing Rows & Columns", href: "../lesson 2/lesson 2.html"},
+    prev: {unit: 6, lesson: 4, title: "Useful List Methods"},
+    next: {unit: 7, lesson: 2, title: "Accessing Rows & Columns"},
 };

@@ -1,4 +1,4 @@
-const LESSON = {
+export default {
     unit: 6,
     lesson: 3,
     unitLessons: 4,
@@ -69,6 +69,6 @@ const LESSON = {
         desc: "Store a list of student names and a matching list of scores. Loop through both lists together using indexes. Print each student's name and score, and at the end print the class average and the name of the top scorer.",
     },
 
-    prev: {unit: 6, lesson: 2, title: "Adding & Removing Items", href: "../lesson 2/lesson 2.html"},
-    next: {unit: 6, lesson: 4, title: "Useful List Methods", href: "../lesson 4/lesson 4.html"},
+    prev: {unit: 6, lesson: 2, title: "Adding & Removing Items"},
+    next: {unit: 6, lesson: 4, title: "Useful List Methods"},
 };

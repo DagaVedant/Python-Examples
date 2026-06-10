@@ -1,4 +1,4 @@
-const LESSON = {
+export default {
     unit: 3,
     lesson: 4,
     unitLessons: 4,
@@ -66,6 +66,6 @@ const LESSON = {
         desc: "Create a theme park entry checker. Ask for the user's age and height. They can enter if they are 10 or older AND at least 130 cm tall, OR if they are accompanied (ask yes/no). Print whether they can enter or not.",
     },
 
-    prev: {unit: 3, lesson: 3, title: "elif & Multiple Branches", href: "../lesson 3/lesson 3.html"},
-    next: {unit: 4, lesson: 1, title: "for Loops", href: "../../Unit 4/lesson 1/lesson 1.html"},
+    prev: {unit: 3, lesson: 3, title: "elif & Multiple Branches"},
+    next: {unit: 4, lesson: 1, title: "for Loops"},
 };

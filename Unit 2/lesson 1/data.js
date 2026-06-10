@@ -1,4 +1,4 @@
-const LESSON = {
+export default {
     unit: 2,
     lesson: 1,
     unitLessons: 4,
@@ -68,6 +68,6 @@ const LESSON = {
         desc: "Ask the user for the length and width of a rectangle. Calculate and print the area and the perimeter. Store everything in clearly named variables.",
     },
 
-    prev: {unit: 1, lesson: 5, title: "Data Types & Casting", href: "../../Unit 1/lesson 5/lesson 5.html"},
-    next: {unit: 2, lesson: 2, title: "Integer vs Float Division", href: "../lesson 2/lesson 2.html"},
+    prev: {unit: 1, lesson: 5, title: "Data Types & Casting"},
+    next: {unit: 2, lesson: 2, title: "Integer vs Float Division"},
 };

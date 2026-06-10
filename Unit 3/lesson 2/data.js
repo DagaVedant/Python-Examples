@@ -1,4 +1,4 @@
-const LESSON = {
+export default {
     unit: 3,
     lesson: 2,
     unitLessons: 4,
@@ -64,6 +64,6 @@ const LESSON = {
         desc: "Ask the user for any whole number. Use if and else with the % operator to print whether the number is odd or even.",
     },
  
-    prev: {unit: 3, lesson: 1, title: "Comparisons & Booleans", href: "../lesson 1/lesson 1.html"},
-    next: {unit: 3, lesson: 3, title: "elif", href: "../lesson 3/lesson 3.html"},
+    prev: {unit: 3, lesson: 1, title: "Comparisons & Booleans"},
+    next: {unit: 3, lesson: 3, title: "elif"},
 };
