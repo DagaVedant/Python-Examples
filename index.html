@@ -223,7 +223,7 @@
         <span class="unit-progress" id="unit-progress-${unit.number}"></span>
       </div>
       ${unit.lessons.map(lesson => `
-        <a href="${encodeURI(`Unit ${unit.number}/lesson ${lesson.number}/lesson ${lesson.number}.html`)}">
+        <a href="lesson.html?unit=${unit.number}&lesson=${lesson.number}">
           <span class="num">${unit.number}.${lesson.number}</span>
           <span>${lesson.title}</span>
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
@@ -249,7 +249,7 @@
 
       unit.lessons.forEach(lesson => {
         if (completed.includes(`${unit.number}-${lesson.number}`)) {
-          const link = document.querySelector(`a[href*="${encodeURI(`Unit ${unit.number}/lesson ${lesson.number}`)}"]`);
+          const link = document.querySelector(`a[href="lesson.html?unit=${unit.number}&lesson=${lesson.number}"]`);
           if (link) link.classList.add('lesson-done');
         }
       });

@@ -1,4 +1,4 @@
-const LESSON = {
+export default {
     unit: 1,
     lesson: 3,
     unitLessons: 5,
@@ -57,6 +57,6 @@ const LESSON = {
         desc: "Create a variable for two players and their scores. Print one line showing their names and scores. Then update the scores and print the line again.",
     },
 
-    prev: {unit: 1, lesson: 2, title: "Output & Formatting", href: "../lesson 2/lesson 2.html"},
-    next: {unit: 1, lesson: 4, title: "Input", href: "../lesson 4/lesson 4.html"},
+    prev: {unit: 1, lesson: 2, title: "Output & Formatting"},
+    next: {unit: 1, lesson: 4, title: "Input"},
 };

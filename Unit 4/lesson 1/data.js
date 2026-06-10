@@ -1,4 +1,4 @@
-const LESSON = {
+export default {
     unit: 4,
     lesson: 1,
     unitLessons: 4,
@@ -66,6 +66,6 @@ const LESSON = {
         desc: "Ask the user which times table they want (e.g. 7). Use a for loop to print every result from 1 to 12, formatted like: 7 x 1 = 7.",
     },
 
-    prev: {unit: 3, lesson: 4, title: "Combining Conditions", href: "../../Unit 3/lesson 4/lesson 4.html"},
-    next: {unit: 4, lesson: 2, title: "range() in Depth", href: "../lesson 2/lesson 2.html"},
+    prev: {unit: 3, lesson: 4, title: "Combining Conditions"},
+    next: {unit: 4, lesson: 2, title: "range() in Depth"},
 };

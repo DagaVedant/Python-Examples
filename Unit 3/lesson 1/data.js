@@ -1,4 +1,4 @@
-const LESSON = {
+export default {
     unit: 3,
     lesson: 1,
     unitLessons: 4,
@@ -69,6 +69,6 @@ const LESSON = {
         desc: "Ask the user for two numbers. Print whether the first is greater than, less than, or equal to the second using three seperate comparisons.",
     },
  
-    prev: {unit: 2, lesson: 4, title: "Math Library Basics", href: "../../Unit 2/lesson 4/lesson 4.html"},
-    next: {unit: 3, lesson: 2, title: "if / else", href: "../lesson 2/lesson 2.html"},
+    prev: {unit: 2, lesson: 4, title: "Math Library Basics"},
+    next: {unit: 3, lesson: 2, title: "if / else"},
 };

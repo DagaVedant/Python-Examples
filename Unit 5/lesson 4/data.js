@@ -1,4 +1,4 @@
-const LESSON = {
+export default {
     unit: 5,
     lesson: 4,
     unitLessons: 4,
@@ -69,6 +69,6 @@ const LESSON = {
         desc: "Build a report card program using at least five functions: one to get the student name, one to get three subject scores, one to calculate the average, one to assign a grade, and one to print the full report.",
     },
 
-    prev: {unit: 5, lesson: 3, title: "Return Values", href: "../lesson 3/lesson 3.html"},
-    next: {unit: 6, lesson: 1, title: "Creating & Indexing Lists", href: "../../Unit 6/lesson 1/lesson 1.html"},
+    prev: {unit: 5, lesson: 3, title: "Return Values"},
+    next: {unit: 6, lesson: 1, title: "Creating & Indexing Lists"},
 };

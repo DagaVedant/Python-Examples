@@ -1,4 +1,4 @@
-const LESSON = {
+export default {
     unit: 4,
     lesson: 4,
     unitLessons: 4,
@@ -62,6 +62,6 @@ const LESSON = {
         desc: "Store a list of at least 8 words. Loop through the list and print only the words that are longer than 4 characters. At the end print how many words passed the filter.",
     },
 
-    prev: {unit: 4, lesson: 3, title: "while Loops", href: "../lesson 3/lesson 3.html"},
-    next: {unit: 5, lesson: 1, title: "Defining & Calling Functions", href: "../../Unit 5/lesson 1/lesson 1.html"},
+    prev: {unit: 4, lesson: 3, title: "while Loops"},
+    next: {unit: 5, lesson: 1, title: "Defining & Calling Functions"},
 };

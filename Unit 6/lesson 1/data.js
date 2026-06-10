@@ -1,4 +1,4 @@
-const LESSON = {
+export default {
     unit: 6,
     lesson: 1,
     unitLessons: 4,
@@ -65,6 +65,6 @@ const LESSON = {
         desc: "Create a list of your top 5 songs, books, or games. Print them out in a numbered list (1 to 5) using indexes. Then print the one you'd recommend most at the bottom.",
     },
 
-    prev: {unit: 5, lesson: 4, title: "Designing with Functions", href: "../../Unit 5/lesson 4/lesson 4.html"},
-    next: {unit: 6, lesson: 2, title: "Adding & Removing Items", href: "../lesson 2/lesson 2.html"},
+    prev: {unit: 5, lesson: 4, title: "Designing with Functions"},
+    next: {unit: 6, lesson: 2, title: "Adding & Removing Items"},
 };

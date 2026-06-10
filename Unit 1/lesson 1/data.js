@@ -1,4 +1,4 @@
-const LESSON = {
+export default {
     unit: 1,
     lesson: 1,
     unitLessons: 5,
@@ -56,5 +56,5 @@ const LESSON = {
     },
 
     prev: null,
-    next: {unit: 1, lesson: 2, title: "Output & Formatting", href: "../lesson 2/lesson 2.html"},
+    next: {unit: 1, lesson: 2, title: "Output & Formatting"},
 };
