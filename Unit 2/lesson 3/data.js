@@ -17,7 +17,7 @@ export default {
     idea: "Every value that comes back from input() is a string. That means you cannot do math with it until you convert it. Wrap it in int() for whole numbers or float() for decimals. Once you have real numbers you can use them in any calculation you like.",
 
     code: {
-        filename: "lesson_2_3.py",
+        filename: "Unit_2_Lesson_3.py",
         lines: [
             `# Get numbers from the user and do maths`,
             `price = float(input("Price per item: "))`,

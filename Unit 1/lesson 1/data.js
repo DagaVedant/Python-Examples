@@ -17,7 +17,7 @@ export default {
     idea: "A program is just a list of instructions the computer follows from top to bottom. print() is how you make Python show something on the screen. A comment is a note you write for yourself. In Python, a comment is written using a #.",
 
     code: {
-        filename: "lesson_1_1.py",
+        filename: "Unit_1_Lesson_1.py",
         lines: [
             `# This is my first program`,
             `print("Hello, world!")`,

@@ -17,7 +17,7 @@ export default {
     idea: "Sometimes one condition is not enough. You can join multiple comparisons together with and, or, and not. With and, every condition must be True. With or, only one has to be True. With not, you reverse whatever comes after it.",
 
     code: {
-        filename: "lesson_3_4.py",
+        filename: "Unit_3_Lesson_4.py",
         lines: [
             `age    = int(input("Age: "))`,
             `height = int(input("Height in cm: "))`,

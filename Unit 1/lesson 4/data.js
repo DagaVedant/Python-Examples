@@ -17,7 +17,7 @@ export default {
     idea: "input() pauses the program and waits for the user to type something. Whatever they type comes back as text, which you can store in a variable and use later. The string you put inside input() is the prompt.",
 
     code: {
-        filename: "lesson_1_4.py",
+        filename: "Unit_1_Lesson_4.py",
         lines: [
             `# Ask the user for their name`,
             `name = input("What is your name? ")`,

@@ -17,7 +17,7 @@ export default {
     idea: "Python lists come with built-in methods that handle common tasks. sort() rearranges items in order. reverse() flips the list. in checks whether a value exists anywhere in the list without needing a loop. count() tells you how many times a value appears. index() gives you the position of the first match.",
 
     code: {
-        filename: "lesson_6_4.py",
+        filename: "Unit_6_Lesson_4.py",
         lines: [
             `numbers = [4, 1, 9, 2, 7, 3]`,
             ``,

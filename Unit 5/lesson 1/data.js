@@ -17,7 +17,7 @@ export default {
     idea: "A function is a named block of code that you define once and can run as many times as you like just by calling its name. This keeps your code organised and avoids copying the same lines over and over. Everything inside the function must be indented.",
 
     code: {
-        filename: "lesson_5_1.py",
+        filename: "Unit_5_Lesson_1.py",
         lines: [
             `# Define a function`,
             `def greet():`,

@@ -17,7 +17,7 @@ export default {
     idea: "A for loop runs a block of code once for each item in a sequence. Each time through the loop, the loop variable holds the current item. This lets you repeat the same action over and over.",
 
     code: {
-        filename: "lesson_4_1.py",
+        filename: "Unit_4_Lesson_1.py",
         lines: [
             `# Print numbers 1 to 5`,
             `for i in range(1, 6):`,

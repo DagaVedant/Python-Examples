@@ -17,7 +17,7 @@ export default {
     idea: "A comparison is a question with a yes or no answer. Python answers it with either True or False (also called Booleans). You can compare numbers, strings, or variables. Comparisons are neccesary for decision making in a program.",
  
     code: {
-        filename: "lesson_3_1.py",
+        filename: "Unit_3_Lesson_1.py",
         lines: [
             `# Comparing numbers`,
             `print(5 > 3)`,

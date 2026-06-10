@@ -17,7 +17,7 @@ export default {
     idea: "range() can take up to three arguments: where to start, where to stop, and how much to step each time. A step of 2 skips every other number. A negative step counts backwards. The stop value is never included in the sequence.",
 
     code: {
-        filename: "lesson_4_2.py",
+        filename: "Unit_4_Lesson_2.py",
         lines: [
             `# Count up by 2`,
             `for n in range(0, 11, 2):`,

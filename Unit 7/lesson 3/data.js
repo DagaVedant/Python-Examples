@@ -17,7 +17,7 @@ export default {
     idea: "To visit every cell in a 2D list you need two loops nested inside each other. The outer loop picks each row one at a time. The inner loop then goes through every item in that row. Together they reach every single cell like reading a table left to right and up to down.",
 
     code: {
-        filename: "lesson_7_3.py",
+        filename: "Unit_7_Lesson_3.py",
         lines: [
             `grid = [`,
             `    [1, 2, 3],`,

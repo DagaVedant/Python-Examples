@@ -17,7 +17,7 @@ export default {
     idea: "A list stores many values in order inside one variable. You reach each item using its index (its position in the list). Python counts positions starting from 0, so the first item is at index 0, the second at index 1, and so on. You can also use negative indexes to count from the end.",
 
     code: {
-        filename: "lesson_6_1.py",
+        filename: "Unit_6_Lesson_1.py",
         lines: [
             `# Creating a list`,
             `fruits = ["apple", "banana", "cherry"]`,

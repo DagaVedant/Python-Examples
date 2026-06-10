@@ -17,7 +17,7 @@ export default {
     idea: "A 2D list is just a list where every item is itself another list. You can think of it as a table, where the outer list holds the rows, and each inner list holds the values in that row. This is perfect for grids, game boards, spreadsheets, or any data that naturally has rows and columns.",
 
     code: {
-        filename: "lesson_7_1.py",
+        filename: "Unit_7_Lesson_1.py",
         lines: [
             `# A 2D list as a grid`,
             `grid = [`,
