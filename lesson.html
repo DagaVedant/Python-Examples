@@ -1,11 +1,10 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-<script src="data.js"></script>
+
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
 <title></title>
@@ -591,7 +590,7 @@ hr {
     <b id="bc-lesson"></b>
   </nav>
     <div class="bar-right">
-      <a href="../../index.html" class="theme-btn" aria-label="Back to home">
+      <a href="index.html" class="theme-btn" aria-label="Back to home">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
     </a>
     <div class="progress">
@@ -680,7 +679,7 @@ hr {
 
 </main>
 
-<script>
+<script type="module">
 const root = document.documentElement;
 root.setAttribute('data-theme', localStorage.getItem('theme') || 'light');
 
@@ -707,6 +706,10 @@ const BUILTINS = new Set([
 
 function escapeHTML(str) {
   return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+}
+
+function lessonURL(u, l) {
+  return `lesson.html?unit=${u}&lesson=${l}`;
 }
 
 function highlight(line) {
@@ -750,7 +753,12 @@ function highlight(line) {
   return result;
 }
 
-const L = LESSON;
+const params  = new URLSearchParams(location.search);
+const unitNum = params.get('unit');
+const lesNum  = params.get('lesson');
+
+const { default: L } = await import(`./Unit ${unitNum}/lesson ${lesNum}/data.js`);
+
 const LESSONS_IN_UNIT = L.unitLessons || 5;
 
 document.title = `${L.unit}.${L.lesson} ${L.title}`;
@@ -867,15 +875,16 @@ document.getElementById('reset-btn').addEventListener('click', () => {
 
 document.getElementById('nav-row').innerHTML =
   (L.prev
-    ? `<a class="nav-btn" href="${L.prev.href}"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg> ${L.prev.unit}.${L.prev.lesson} ${L.prev.title}</a>`
+    ? `<a class="nav-btn" href="${lessonURL(L.prev.unit, L.prev.lesson)}"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg> ${L.prev.unit}.${L.prev.lesson} ${L.prev.title}</a>`
     : '<span></span>') +
   '<div id="complete-slot" style="display:flex;justify-content:center;"></div>' +
   (L.next
-    ? `<a class="nav-btn next" href="${L.next.href}">${L.next.unit}.${L.next.lesson} ${L.next.title} <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>`
+    ? `<a class="nav-btn next" href="${lessonURL(L.next.unit, L.next.lesson)}">${L.next.unit}.${L.next.lesson} ${L.next.title} <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>`
     : '<span></span>');
+
 (async () => {
   const { data: { session } } = await db.auth.getSession();
-  if (!session) { window.location.href = '../../login.html'; return; }
+  if (!session) { window.location.href = 'login.html'; return; }
   const completionKey = `${L.unit}-${L.lesson}`;
   const { data: completionRows } = await db.from('completions').select('unit, lesson');
   const completed = completionRows ? completionRows.map(r => `${r.unit}-${r.lesson}`) : [];
