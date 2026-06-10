@@ -6,6 +6,7 @@
   <title>Learn Python</title>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
+
     body {
       font-family: 'DM Sans', sans-serif;
       background: #f7f8fa;
@@ -14,8 +15,8 @@
       padding-bottom: 60px;
       transition: background 0.2s, color 0.2s;
     }
-
     body.dark { background: #0f1117; color: #e8eaf0; }
+    a { text-decoration: none; }
 
     nav {
       background: white;
@@ -23,52 +24,55 @@
       padding: 14px 24px;
       position: sticky;
       top: 0;
+      z-index: 100;
       display: flex;
       justify-content: space-between;
       align-items: center;
       transition: background 0.2s, border-color 0.2s;
     }
-
     body.dark nav { background: #1a1d27; border-bottom-color: #2d3148; }
 
-    nav span { font-weight: 600; font-size: 15px; color: #1F3A5F; }
-    body.dark nav span { color: #93b4e0; }
+    .nav-brand { font-weight: 600; font-size: 15px; color: #1F3A5F; }
+    body.dark .nav-brand { color: #93b4e0; }
+
+    .nav-right { display: flex; align-items: center; gap: 16px; }
+
+    .nav-progress { text-align: right; }
+    .nav-progress-label { font-size: 11px; color: #9ca3af; display: block; margin-bottom: 4px; }
+    .nav-progress-track {
+      width: 140px;
+      height: 5px;
+      background: #e2e5ea;
+      border-radius: 99px;
+      overflow: hidden;
+    }
+    body.dark .nav-progress-track { background: #2d3148; }
+    .nav-progress-fill {
+      height: 100%;
+      background: #16a34a;
+      border-radius: 99px;
+      transition: width 0.4s;
+      width: 0%;
+    }
 
     .theme-btn {
-        width: 36px;
-        height: 36px;
-        border-radius: 50%;
-        background: #f0f2f5;
-        border: 1px solid #e2e5ea;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: #4b5563;
-        transition: background 0.2s, border-color 0.2s, color 0.2s;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: #f0f2f5;
+      border: 1px solid #e2e5ea;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #4b5563;
+      transition: background 0.2s, border-color 0.2s, color 0.2s;
     }
-
-    .theme-btn:hover { 
-        background: #e2e5ea; 
-    }
-
-    body.dark .theme-btn { 
-        background: #222535; border-color: #2d3148; color: #9da3b4; 
-    }
-
-    body.dark .theme-btn:hover { 
-        background: #2d3148; 
-    }
-
-body:not(.dark) .moon { display: none; }
-body.dark .sun { display: none; }
-
-body:not(.dark) .moon { display: none; }
-body.dark .sun { display: none; }
-
-    body.dark .theme-btn { border-color: #2d3148; color: #9da3b4; }
-    .theme-btn:hover { background: #f0f2f5; }
-    body.dark .theme-btn:hover { background: #222535; }
+    .theme-btn:hover { background: #e2e5ea; }
+    body.dark .theme-btn { background: #222535; border-color: #2d3148; color: #9da3b4; }
+    body.dark .theme-btn:hover { background: #2d3148; }
+    body:not(.dark) .moon { display: none; }
+    body.dark .sun { display: none; }
 
     .hero {
       max-width: 680px;
@@ -78,27 +82,10 @@ body.dark .sun { display: none; }
       align-items: center;
       gap: 20px;
     }
-
     .hero img { width: 64px; height: 64px; }
-
-    .hero h1 {
-      font-size: 32px;
-      font-weight: 600;
-      color: #1F3A5F;
-      margin: 0 0 6px;
-      transition: color 0.2s;
-    }
-
+    .hero h1 { font-size: 32px; font-weight: 600; color: #1F3A5F; margin: 0 0 6px; transition: color 0.2s; }
     body.dark .hero h1 { color: #93b4e0; }
-
-    .hero p {
-      font-size: 15px;
-      color: #4b5563;
-      line-height: 1.7;
-      margin: 0;
-      transition: color 0.2s;
-    }
-
+    .hero p { font-size: 15px; color: #4b5563; line-height: 1.7; margin: 0; transition: color 0.2s; }
     body.dark .hero p { color: #9da3b4; }
 
     .course {
@@ -117,15 +104,16 @@ body.dark .sun { display: none; }
       overflow: hidden;
       transition: background 0.2s, border-color 0.2s;
     }
-
     body.dark .unit { background: #1a1d27; border-color: #2d3148; }
 
     .unit-header {
       padding: 16px 20px;
       border-bottom: 1px solid #e2e5ea;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       transition: border-color 0.2s;
     }
-
     body.dark .unit-header { border-bottom-color: #2d3148; }
 
     .unit-header small {
@@ -137,9 +125,9 @@ body.dark .sun { display: none; }
       display: block;
       margin-bottom: 2px;
     }
-
     .unit-header strong { font-size: 15px; color: #1F3A5F; transition: color 0.2s; }
     body.dark .unit-header strong { color: #93b4e0; }
+    .unit-progress { font-size: 12px; color: #9ca3af; flex-shrink: 0; }
 
     .unit a {
       display: flex;
@@ -148,20 +136,18 @@ body.dark .sun { display: none; }
       padding: 13px 20px;
       border-bottom: 1px solid #f0f2f5;
       color: #111827;
-      text-decoration: none;
       font-size: 14px;
       transition: background 0.1s, color 0.2s, border-color 0.2s;
     }
-
     body.dark .unit a { color: #9da3b4; border-bottom-color: #222535; }
     .unit a:last-child { border-bottom: none; }
     .unit a:hover { background: #f7f8fa; }
     body.dark .unit a:hover { background: #222535; }
 
-    .unit a.lesson-done { background: #dcfce7; }
+    .unit a.lesson-done { background: #f0fdf4; }
     body.dark .unit a.lesson-done { background: #0d1f13; }
-    .unit a.lesson-done .num { background:#bbf7d0; color:#15803d; border-color:#86efac; }
-    body.dark .unit a.lesson-done .num { background:#1a3326; color:#4ade80; border-color:#1f4433; }
+    .unit a.lesson-done .num { background: #bbf7d0; color: #15803d; border-color: #86efac; }
+    body.dark .unit a.lesson-done .num { background: #1a3326; color: #4ade80; border-color: #1f4433; }
 
     .num {
       width: 44px;
@@ -178,26 +164,26 @@ body.dark .sun { display: none; }
       flex-shrink: 0;
       transition: background 0.2s, color 0.2s, border-color 0.2s;
     }
-
     body.dark .num { background: #172038; color: #93c5fd; border-color: #1e3a5f; }
 
     .unit a span { flex: 1; }
     .unit a svg { color: #d1d5db; transition: color 0.1s; }
     .unit a:hover svg { color: #2563eb; }
+
   </style>
 </head>
 <body>
 
 <nav>
-  <span>Learn Python</span>
-  <div style="display:flex;align-items:center;gap:16px;">
-    <div style="text-align:right;">
-      <div style="font-size:11px;color:#9ca3af;margin-bottom:4px;" id="overall-label"></div>
-      <div style="width:140px;height:5px;background:#e2e5ea;border-radius:99px;overflow:hidden;">
-        <div id="overall-fill" style="height:100%;background:#16a34a;border-radius:99px;transition:width 0.4s;width:0%;"></div>
+  <span class="nav-brand">Learn Python</span>
+  <div class="nav-right">
+    <div class="nav-progress">
+      <span class="nav-progress-label" id="overall-label"></span>
+      <div class="nav-progress-track">
+        <div class="nav-progress-fill" id="overall-fill"></div>
       </div>
     </div>
-    <button class="theme-btn" id="theme-btn" onclick="toggleTheme()" aria-label="Toggle dark mode">
+    <button class="theme-btn" onclick="toggleTheme()" aria-label="Toggle dark mode">
       <svg class="sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
       <svg class="moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
     </button>
@@ -208,33 +194,33 @@ body.dark .sun { display: none; }
   <img src="https://s3.dualstack.us-east-2.amazonaws.com/pythondotorg-assets/media/community/logos/python-logo-only.png" alt="Python logo">
   <div>
     <h1>Learn Python</h1>
-    <p>An introduction to the basics of Python programming. Starting from writing your first program to using loops, functions, and lists.</p>
+    <p>An introduction to the basics of Python programming — from writing your first program to using loops, functions, and lists.</p>
   </div>
 </div>
 
-
 <main class="course" id="course"></main>
 
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="course-info.js"></script>
 <script>
 
-    function toggleTheme() {
-        const isDark = document.body.classList.toggle('dark');
-        localStorage.setItem('theme', isDark ? 'dark' : 'light');
-    }
+  const { createClient } = supabase;
+  const db = createClient('https://udzpwekkpedmtudcsyve.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVkenB3ZWtrcGVkbXR1ZGNzeXZlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODEwMzAzMjYsImV4cCI6MjA5NjYwNjMyNn0.xaMqyzNabeeE7bYVbAVwz8HCFIwQrGczF9x1FrXJv-A');
 
-    if (localStorage.getItem('theme') === 'dark') {
-        document.body.classList.add('dark');
-    }
+  function toggleTheme() {
+    const isDark = document.body.classList.toggle('dark');
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+  }
+  if (localStorage.getItem('theme') === 'dark') document.body.classList.add('dark');
 
   document.getElementById('course').innerHTML = units.map(unit => `
     <div class="unit">
-      <div class="unit-header" style="display:flex;justify-content:space-between;align-items:center;">
+      <div class="unit-header">
         <div>
           <small>Unit ${unit.number}</small>
           <strong>${unit.title}</strong>
         </div>
-        <span id="unit-progress-${unit.number}" style="font-size:12px;color:#9ca3af;flex-shrink:0;"></span>
+        <span class="unit-progress" id="unit-progress-${unit.number}"></span>
       </div>
       ${unit.lessons.map(lesson => `
         <a href="${encodeURI(`Unit ${unit.number}/lesson ${lesson.number}/lesson ${lesson.number}.html`)}">
@@ -246,22 +232,29 @@ body.dark .sun { display: none; }
         </a>`).join('')}
     </div>`).join('');
 
-  const completed = JSON.parse(localStorage.getItem('completed') || '[]');
-  const totalLessons = units.reduce((sum, unit) => sum + unit.lessons.length, 0);
+  (async () => {
+    const { data: { session } } = await db.auth.getSession();
+    if (!session) { window.location.href = 'login.html'; return; }
 
-  document.getElementById('overall-fill').style.width = `${Math.round(completed.length / totalLessons * 100)}%`;
-  document.getElementById('overall-label').textContent = `${completed.length} / ${totalLessons} lessons`;
+    const { data: completionRows } = await db.from('completions').select('unit, lesson');
+    const completed = completionRows ? completionRows.map(r => `${r.unit}-${r.lesson}`) : [];
+    const totalLessons = units.reduce((sum, unit) => sum + unit.lessons.length, 0);
 
-  units.forEach(unit => {
-    const unitDone = unit.lessons.filter(l => completed.includes(`${unit.number}-${l.number}`)).length;
-    document.getElementById(`unit-progress-${unit.number}`).textContent = `${unitDone} / ${unit.lessons.length}`;
-    unit.lessons.forEach(lesson => {
-      if (completed.includes(`${unit.number}-${lesson.number}`)) {
-        const link = document.querySelector(`a[href*="${encodeURI(`Unit ${unit.number}/lesson ${lesson.number}`)}"]`);
-        if (link) link.classList.add('lesson-done');
-      }
+    document.getElementById('overall-fill').style.width = `${Math.round(completed.length / totalLessons * 100)}%`;
+    document.getElementById('overall-label').textContent = `${completed.length} / ${totalLessons} lessons`;
+
+    units.forEach(unit => {
+      const unitDone = unit.lessons.filter(l => completed.includes(`${unit.number}-${l.number}`)).length;
+      document.getElementById(`unit-progress-${unit.number}`).textContent = `${unitDone} / ${unit.lessons.length}`;
+
+      unit.lessons.forEach(lesson => {
+        if (completed.includes(`${unit.number}-${lesson.number}`)) {
+          const link = document.querySelector(`a[href*="${encodeURI(`Unit ${unit.number}/lesson ${lesson.number}`)}"]`);
+          if (link) link.classList.add('lesson-done');
+        }
+      });
     });
-  });
+  })();
 
 </script>
 
