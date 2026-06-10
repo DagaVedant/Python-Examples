@@ -17,7 +17,7 @@ export default {
     idea: "Python works like a calculator. You can write math expressions directly in your code and Python will compute them. The order of operations is the same as in maths class (PEMDAS): Parentheses, Exponents, Multiplication and Division (left to right), Addition and Subtraction (left to right).",
 
     code: {
-        filename: "lesson_2_1.py",
+        filename: "Unit_2_Lesson_1.py",
         lines: [
             `# Basic arithmetic`,
             `print(10 + 3)`,

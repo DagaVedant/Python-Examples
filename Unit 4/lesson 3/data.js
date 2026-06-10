@@ -17,7 +17,7 @@ export default {
     idea: "A while loop keeps going as long as its condition is True. Unlike a for loop, you don't tell it how many times to run, it keeps running this a condition is True. IMPORTANT: You must make sure something inside the loop eventually makes the condition False, otherwise it runs forever.",
 
     code: {
-        filename: "lesson_4_3.py",
+        filename: "Unit_4_Lesson_3.py",
         lines: [
             `# Countdown with while`,
             `count = 5`,

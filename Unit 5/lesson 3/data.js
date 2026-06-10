@@ -17,7 +17,7 @@ export default {
     idea: "return sends a value back to whoever called the function. This is much more flexible than just printing inside the function, because you can store the result, use it in a calculation, or pass it to another function. Once Python hits a return statement it exits the function immediately.",
 
     code: {
-        filename: "lesson_5_3.py",
+        filename: "Unit_5_Lesson_3.py",
         lines: [
             `def add(a, b):`,
             `    return a + b`,

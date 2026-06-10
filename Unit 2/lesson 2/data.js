@@ -17,7 +17,7 @@ export default {
     idea: "Python has three division operators. A single slash / always gives you a decimal answer. A double slash // throws away the decimal and gives you only the whole number. The percent sign % gives you what is left over after dividing (the remainder or modulus).",
 
     code: {
-        filename: "lesson_2_2.py",
+        filename: "Unit_2_Lesson_2.py",
         lines: [
             `# Regular division always gives a float`,
             `print(7 / 2)`,

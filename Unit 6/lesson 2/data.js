@@ -17,7 +17,7 @@ export default {
     idea: "Lists are mutable, which means you can change them after you create them. append() adds a new item to the end. pop() removes the last item (or the item at a given index). remove() searches for a value and removes the first match. len() tells you how many items are in the list.",
 
     code: {
-        filename: "lesson_6_2.py",
+        filename: "Unit_6_Lesson_2.py",
         lines: [
             `tasks = ["buy milk", "do homework"]`,
             ``,

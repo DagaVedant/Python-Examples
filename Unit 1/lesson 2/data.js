@@ -17,7 +17,7 @@ export default {
     idea: "You can pass several things to print() separated by commas and it will put a space between them automatically. If you need a quote character inside your text, you can mix single and double quotes. A backslash lets you add special characters like a new line.",
 
     code: {
-        filename: "lesson_1_2.py",
+        filename: "Unit_1_Lesson_2.py",
         lines: [
             `# Printing multiple values at once`,
             `print("Score:", 10, "points")`,

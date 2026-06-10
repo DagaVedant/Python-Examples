@@ -17,7 +17,7 @@ export default {
     idea: "a variable is like a container that can hold a value. Instead of writing the same value over and over again, you can store it inside a variable and use it by calling the variable's name. This makes your code easier to read and maintain. You can also update the value of the variable whenever you need to.",
 
     code: {
-        filename: "lesson_1_3.py",
+        filename: "Unit_1_Lesson_3.py",
         lines: [
             `# Store values in variables`,
             `player = "Messi"`,

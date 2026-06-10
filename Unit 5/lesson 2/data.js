@@ -17,7 +17,7 @@ export default {
     idea: "A parameter is a variable you list inside the brackets of def. An argument is the actual value you pass in when you call the function. Parameters let you write one function that works for many different inputs rather than writing a separate function for each case.",
 
     code: {
-        filename: "lesson_5_2.py",
+        filename: "Unit_5_Lesson_2.py",
         lines: [
             `# One parameter`,
             `def greet(name):`,

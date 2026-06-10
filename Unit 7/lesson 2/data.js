@@ -17,7 +17,7 @@ export default {
     idea: "To get to a single cell you use two indexes in a row: the first picks the row, the second picks the position within that row. grid[1][2] means row 1, column 2. You can use the same syntax on the left of an = sign to change a value.",
 
     code: {
-        filename: "lesson_7_2.py",
+        filename: "Unit_7_Lesson_2.py",
         lines: [
             `grid = [`,
             `    [1, 2, 3],`,

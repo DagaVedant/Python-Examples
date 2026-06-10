@@ -327,6 +327,84 @@ hr {
 
 .output-error { color: #f87171 !important; }
 
+[data-theme="light"] .code-wrap,
+[data-theme="light"] .practice-editor-wrap { background: #f8fafc; }
+[data-theme="light"] .code-header          { border-bottom-color: #d0d7de; }
+[data-theme="light"] .output-box,
+[data-theme="light"] .practice-output-box  { background: #f0f4f8; border-top-color: #d0d7de; }
+[data-theme="light"] .output-label         { color: var(--text3); }
+[data-theme="light"] .output-line          { color: #166534; }
+[data-theme="light"] .code-filename        { color: var(--text3); }
+[data-theme="light"] .copy-btn             { color: var(--text3); background: rgba(0,0,0,.05); border-color: rgba(0,0,0,.12); }
+[data-theme="light"] .run-btn              { color: #166534; background: rgba(22,101,52,.08); border-color: rgba(22,101,52,.2); }
+
+.practice-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: .6rem;
+}
+
+.practice-toggle-btn {
+  align-self: flex-start;
+  font-size: 12px;
+  color: var(--blue-tx);
+  background: var(--blue-lt);
+  border: 1px solid var(--blue-md);
+  border-radius: 5px;
+  padding: 3px 10px;
+  cursor: pointer;
+  font-family: 'DM Sans', sans-serif;
+  transition: background .15s;
+}
+.practice-toggle-btn:hover { opacity: .8; }
+
+.practice-editor-wrap {
+  display: none;
+  background: var(--code);
+  border-radius: var(--r);
+  overflow: hidden;
+}
+
+.practice-ide-footer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: .5rem .8rem;
+  border-top: 1px solid var(--code-sep);
+  background: var(--code);
+}
+
+.practice-save-btn {
+  font-size: 12px;
+  color: var(--ccm);
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 5px;
+  padding: 3px 10px;
+  cursor: pointer;
+  font-family: 'DM Sans', sans-serif;
+  transition: background .15s;
+}
+.practice-save-btn:hover { background: rgba(255,255,255,.13); color: #cdd6f4; }
+.practice-save-btn:disabled { opacity: .5; cursor: default; }
+
+.practice-save-status {
+  font-size: 11px;
+  color: var(--ccm);
+  font-family: 'DM Mono', monospace;
+}
+
+.practice-output-box {
+  background: var(--code-out);
+  border-top: 1px solid var(--code-sep);
+  padding: .75rem 1.2rem;
+}
+
+[data-theme="light"] .practice-ide-footer { background: #f0f4f8; border-top-color: #d0d7de; }
+[data-theme="light"] .practice-save-btn   { color: var(--text3); background: rgba(0,0,0,.05); border-color: rgba(0,0,0,.12); }
+[data-theme="light"] .practice-save-status { color: var(--text3); }
+
 .code-body .cm-editor {
   font-size: 13.5px;
   background: #1e1e2e;

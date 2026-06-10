@@ -17,7 +17,7 @@ export default {
     idea: "Every value in Python has a type. Text is a string (str), whole numbers are integers (int), and decimal numbers are floats (float). Because input() always returns a string, you have to convert it before you can do math, or otherwise known as casting.",
 
     code: {
-        filename: "lesson_1_5.py",
+        filename: "Unit_1_Lesson_5.py",
         lines: [
             `# input() gives back a string, so we cast it to do math`,
             `age_text = input("How old are you? ")`,

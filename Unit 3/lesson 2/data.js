@@ -17,7 +17,7 @@ export default {
     idea: "An if statement runs a block of code only when a condition is True. If the condition is False, Python skips that block and runs the else block instead. The indented lines underneath if or else are the code that is being excuted when that conditon is true.",
  
     code: {
-        filename: "lesson_3_2.py",
+        filename: "Unit_3_Lesson_1.py",
         lines: [
             `age = int(input("How old are you? "))`,
             ``,

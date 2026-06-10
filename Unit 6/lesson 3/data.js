@@ -17,7 +17,7 @@ export default {
     idea: "A for loop can go through every item in a list one by one. Each time through the loop, the loop variable holds the current item. This lets you process an entire list with just a few lines by adding everything up, comparing items, or printing each one with extra formatting.",
 
     code: {
-        filename: "lesson_6_3.py",
+        filename: "Unit_6_Lesson_3.py",
         lines: [
             `scores = [72, 88, 91, 65, 79]`,
             ``,

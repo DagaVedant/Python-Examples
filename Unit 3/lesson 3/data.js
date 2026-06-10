@@ -17,7 +17,7 @@ export default {
     idea: "elif stands for 'else if'. It lets you check a second condition when the first one was False, then a third, and so on. Python works through each branch from top to bottom and runs the first one that is True.",
  
     code: {
-        filename: "lesson_3_3.py",
+        filename: "Unit_3_Lesson_3.py",
         lines: [
             `score = int(input("Enter your score: "))`,
             ``,

@@ -17,7 +17,7 @@ export default {
     idea: "Python comes with a math library full of useful tools that are not available by default. You unlock them by writing import math at the top of your program. After that you can call any of the library's functions using math.function_name(). Think of it like opening a maths toolbox that was sitting in a drawer.",
 
     code: {
-        filename: "lesson_2_4.py",
+        filename: "Unit_2_Lesson_4.py",
         lines: [
             `import math`,
             ``,

@@ -17,7 +17,7 @@ export default {
     idea: "Good programs are built from small functions that each do exactly one thing. When something goes wrong it is easy to find the broken function. When you want to reuse a piece of logic you just call the function again. One function can call another, building up complex behaviour from simple pieces.",
 
     code: {
-        filename: "lesson_5_4.py",
+        filename: "Unit_5_Lesson_4.py",
         lines: [
             `def get_name():`,
             `    return input("Enter your name: ")`,
