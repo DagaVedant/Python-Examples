@@ -311,13 +311,36 @@ hr {
 
 .copy-btn:hover { background: rgba(255, 255, 255, .13); color: #cdd6f4; }
 
-.code-body {
-  padding: 1rem 1.2rem;
-  font-family: 'DM Mono', monospace;
-  font-size: 13.5px;
-  line-height: 1.9;
-  overflow-x: auto;
+.run-btn {
+  font-size: 12px;
+  color: #a6e3a1;
+  background: rgba(166, 227, 161, .12);
+  border: 1px solid rgba(166, 227, 161, .25);
+  border-radius: 5px;
+  padding: 3px 10px;
+  cursor: pointer;
+  font-family: 'DM Sans', sans-serif;
+  transition: background .15s;
 }
+.run-btn:hover:not(:disabled) { background: rgba(166, 227, 161, .22); }
+.run-btn:disabled { opacity: .5; cursor: default; }
+
+.output-error { color: #f87171 !important; }
+
+.code-body .cm-editor {
+  font-size: 13.5px;
+  background: #1e1e2e;
+}
+.code-body .cm-scroller {
+  font-family: 'DM Mono', monospace !important;
+  line-height: 1.9;
+  padding: .6rem 0;
+}
+.code-body .cm-gutters {
+  background: #1e1e2e;
+  border-right-color: rgba(255,255,255,.07);
+}
+.code-body .cm-focused { outline: none; }
 
 .ckw { color: var(--ckw); }
 .cfn { color: var(--cfn); }
@@ -631,9 +654,12 @@ hr {
   <div class="code-wrap">
     <div class="code-header">
       <span class="code-filename" id="code-fn"></span>
-      <button class="copy-btn" id="copy-btn">⎘ copy</button>
+      <div style="display:flex;gap:6px;">
+        <button class="run-btn" id="run-btn">Run</button>
+        <button class="copy-btn" id="copy-btn">Copy</button>
+      </div>
     </div>
-    <pre class="code-body" id="code-body"></pre>
+    <div class="code-body" id="code-body"></div>
     <div class="output-box">
       <div class="output-label">Output</div>
       <div id="out-lines"></div>
@@ -680,6 +706,9 @@ hr {
 </main>
 
 <script type="module">
+import { EditorView, basicSetup } from 'https://esm.sh/codemirror@6.0.1';
+import { python } from 'https://esm.sh/@codemirror/lang-python@6.1.6';
+import { oneDark } from 'https://esm.sh/@codemirror/theme-one-dark@6.1.2';
 const root = document.documentElement;
 root.setAttribute('data-theme', localStorage.getItem('theme') || 'light');
 
@@ -787,7 +816,13 @@ document.getElementById('meta').innerHTML = `
 document.getElementById('goal').textContent     = L.goal;
 document.getElementById('idea').innerHTML       = L.idea;
 document.getElementById('code-fn').textContent  = L.code.filename;
-document.getElementById('code-body').innerHTML  = L.code.lines.map(highlight).join('\n');
+
+const editor = new EditorView({
+  doc: L.code.lines.join('\n'),
+  extensions: [basicSetup, python(), oneDark],
+  parent: document.getElementById('code-body'),
+});
+
 document.getElementById('out-lines').innerHTML  = L.code.output.map(l => `<div class="output-line">${escapeHTML(l)}</div>`).join('');
 document.getElementById('proj-title').textContent = L.project.title;
 document.getElementById('proj-desc').textContent  = L.project.desc;
@@ -807,9 +842,9 @@ document.getElementById('practice-list').innerHTML = L.practice
   .join('');
 
 document.getElementById('copy-btn').addEventListener('click', function () {
-  navigator.clipboard.writeText(L.code.lines.join('\n')).then(() => {
+  navigator.clipboard.writeText(editor.state.doc.toString()).then(() => {
     this.textContent = '✓ copied';
-    setTimeout(() => { this.textContent = '⎘ copy'; }, 1800);
+    setTimeout(() => { this.textContent = 'Copy'; }, 1800);
   });
 });
 
@@ -911,6 +946,44 @@ document.getElementById('nav-row').innerHTML =
   });
   document.getElementById('complete-slot').appendChild(completeBtn);
 })();
+
+let pyodide = null;
+
+async function getPyodide() {
+  if (pyodide) return pyodide;
+  document.getElementById('out-lines').innerHTML =
+    '<div class="output-line" style="color:var(--ccm)">Loading Python... (first run only)</div>';
+  await new Promise((resolve, reject) => {
+    const s = document.createElement('script');
+    s.src = 'https://cdn.jsdelivr.net/pyodide/v0.26.2/full/pyodide.js';
+    s.onload = resolve;
+    s.onerror = reject;
+    document.head.appendChild(s);
+  });
+  pyodide = await loadPyodide({ indexURL: 'https://cdn.jsdelivr.net/pyodide/v0.26.2/full/' });
+  return pyodide;
+}
+
+document.getElementById('run-btn').addEventListener('click', async () => {
+  const btn = document.getElementById('run-btn');
+  btn.disabled = true;
+  btn.textContent = 'Running...';
+  const outEl = document.getElementById('out-lines');
+  try {
+    const py = await getPyodide();
+    let output = '';
+    py.setStdout({ batched: text => { output += text; } });
+    py.runPython(editor.state.doc.toString());
+    outEl.innerHTML = output
+      ? output.trimEnd().split('\n').map(l => `<div class="output-line">${escapeHTML(l)}</div>`).join('')
+      : '<div class="output-line" style="color:var(--ccm)">No output</div>';
+  } catch (err) {
+    outEl.innerHTML = `<div class="output-line output-error">${escapeHTML(err.message)}</div>`;
+  }
+  btn.disabled = false;
+  btn.textContent = 'Run';
+});
+
 </script>
 </body>
 </html>
