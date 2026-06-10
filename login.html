@@ -26,7 +26,7 @@
 </head>
 <body>
 <div class="card">
-    <h1>Learn Python</h1>\
+    <h1>Learn Python</h1>
     <p>Sign in to save your progress across different devices</p>
 
     <label>Email</label>
@@ -45,11 +45,11 @@
 
 <script>
     const { createClient } = supabase;
-    const db = createClient('https://supabase.com/dashboard/project/udzpwekkpedmtudcsyve', 'udzpwekkpedmtudcsyve')
+    const db = createClient('https://udzpwekkpedmtudcsyve.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVkenB3ZWtrcGVkbXR1ZGNzeXZlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODEwMzAzMjYsImV4cCI6MjA5NjYwNjMyNn0.xaMqyzNabeeE7bYVbAVwz8HCFIwQrGczF9x1FrXJv-A')
 
     async function signIn() {
-        const email = document.getElementId('email').value;
-        const password = document.getElementId('password').value;
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
 
         const { error } = await db.auth.signInWithPassword({ email, password })
 
@@ -59,8 +59,8 @@
     }
 
     async function signUp() {
-        const email = document.getElementId('email').value;
-        const password = document.getElementId('password').value;
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
 
         const { error } = await db.auth.signUp({ email, password })
 
@@ -83,5 +83,3 @@
 </script>
 </body>
 </html>
-
-<!-- <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script> -->

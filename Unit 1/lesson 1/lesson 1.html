@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
 
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
@@ -679,7 +681,12 @@ hr {
 
 </main>
 
+
 <script>
+
+const { createClient } = supabase;
+const db = createClient('https://udzpwekkpedmtudcsyve.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVkenB3ZWtrcGVkbXR1ZGNzeXZlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODEwMzAzMjYsImV4cCI6MjA5NjYwNjMyNn0.xaMqyzNabeeE7bYVbAVwz8HCFIwQrGczF9x1FrXJv-A');
+
 const root = document.documentElement;
 root.setAttribute('data-theme', localStorage.getItem('theme') || 'light');
 
@@ -861,32 +868,35 @@ document.getElementById('reset-btn').addEventListener('click', () => {
   document.getElementById('reset-btn').classList.remove('show');
 });
 
-const completionKey = `${L.unit}-${L.lesson}`;
-const completed = JSON.parse(localStorage.getItem('completed') || '[]');
-const completeBtn = document.createElement('button');
-completeBtn.className = 'check-btn';
-function updateCompleteBtn() {
-  const isDone = completed.includes(completionKey);
-  completeBtn.textContent = isDone ? '✓ Completed' : 'Mark as complete';
-  completeBtn.style.cssText = isDone ? 'background:var(--green-lt);border-color:var(--green-md);color:var(--green);' : '';
-}
-updateCompleteBtn();
-completeBtn.addEventListener('click', () => {
-  if (!completed.includes(completionKey)) {
-    completed.push(completionKey);
-    localStorage.setItem('completed', JSON.stringify(completed));
-    updateCompleteBtn();
+(async () => {
+  const { data: { session } } = await db.auth.getSession();
+  if (!session) { window.location.href = '../../login.html'; return; }
+  const completionKey = `${L.unit}-${L.lesson}`;
+  const { data: completionRows } = await db.from('completions').select('unit, lesson');
+  const completed = completionRows ? completionRows.map(r => `${r.unit}-${r.lesson}`) : [];
+  const completeBtn = document.createElement('button');
+  completeBtn.className = 'check-btn';
+  function updateCompleteBtn() {
+    const isDone = completed.includes(completionKey);
+    completeBtn.textContent = isDone ? '✓ Completed' : 'Mark as complete';
+    completeBtn.style.cssText = isDone ? 'background:var(--green-lt);border-color:var(--green-md);color:var(--green);' : '';
   }
-});
-document.getElementById('nav-row').innerHTML =
-  (L.prev
-    ? `<a class="nav-btn" href="${L.prev.href}"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg> ${L.prev.unit}.${L.prev.lesson} ${L.prev.title}</a>`
-    : '<span></span>') +
-  '<div id="complete-slot" style="display:flex;justify-content:center;"></div>' +
-  (L.next
-    ? `<a class="nav-btn next" href="${L.next.href}">${L.next.unit}.${L.next.lesson} ${L.next.title} <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>`
-    : '<span></span>');
-document.getElementById('complete-slot').appendChild(completeBtn);
+  updateCompleteBtn();
+  completeBtn.addEventListener('click', async () => {
+    if (!completed.includes(completionKey)) {
+      const { error } = await db.from('completions').insert({
+        user_id: session.user.id,
+        unit: L.unit,
+        lesson: L.lesson
+      });
+      if (!error) {
+        completed.push(completionKey);
+        updateCompleteBtn();
+      }
+    }
+  });
+  document.getElementById('complete-slot').appendChild(completeBtn);
+})();
 </script>
 </body>
 </html>
