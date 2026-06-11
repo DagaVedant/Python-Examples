@@ -392,6 +392,40 @@ hr {
   font-family: 'DM Mono', monospace;
 }
 
+.practice-ai-row {
+  display: none;
+  padding: .6rem 1.2rem;
+  border-top: 1px solid var(--code-sep);
+  background: var(--code-out);
+  font-size: 13px;
+  line-height: 1.6;
+  font-family: 'DM Sans', sans-serif;
+}
+.practice-ai-row.show { display: block; }
+.practice-ai-row.correct { color: var(--cst); }
+.practice-ai-row.wrong   { color: #f87171; }
+[data-theme="light"] .practice-ai-row         { background: #f0f4f8; border-top-color: #d0d7de; color: var(--text2); }
+[data-theme="light"] .practice-ai-row.correct { color: var(--green); }
+[data-theme="light"] .practice-ai-row.wrong   { color: var(--red); }
+
+.check-spinner {
+  display: inline-block;
+  width: 11px; height: 11px;
+  border: 2px solid rgba(150,150,150,.3);
+  border-top-color: #a6e3a1;
+  border-radius: 50%;
+  animation: spin .7s linear infinite;
+  vertical-align: -2px;
+  margin-right: 7px;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.practice-item.passed .practice-num {
+  background: var(--green-lt);
+  color: var(--green);
+  border-color: var(--green-md);
+}
+
 .practice-output-box {
   background: var(--code-out);
   border-top: 1px solid var(--code-sep);
@@ -789,6 +823,7 @@ hr {
   </div>
 
   <nav class="nav-row" id="nav-row" aria-label="Lesson navigation"></nav>
+  <p style="font-size:12px;color:#9ca3af;">Practice checking is powered by AI. Code you check is sent to an AI service for grading — don't include personal information.</p>
 
 </main>
 
@@ -852,6 +887,7 @@ const unitNum = params.get('unit');
 const lesNum  = params.get('lesson');
 
 const { default: L } = await import(`./Unit ${unitNum}/lesson ${lesNum}/data.js`);
+const practiceTasks = L.practice.map(p => typeof p === 'string' ? { text: p } : p);
 
 const LESSONS_IN_UNIT = L.unitLessons || 5;
 
@@ -902,17 +938,18 @@ document.getElementById('learn-grid').innerHTML = L.learn
   .map((text, i) => `<div class="learn-card">${learnIcons[i] || learnIcons[0]}${text}</div>`)
   .join('');
 
-document.getElementById('practice-list').innerHTML = L.practice
-  .map((text, i) => `
-    <li class="practice-item">
+document.getElementById('practice-list').innerHTML = practiceTasks
+  .map((task, i) => `
+    <li class="practice-item" id="practice-item-${i}">
       <span class="practice-num">${i + 1}</span>
       <div class="practice-content">
-        <span>${text}</span>
+        <span>${task.text}</span>
         <button class="practice-toggle-btn" data-index="${i}">Open editor</button>
         <div class="practice-editor-wrap" id="practice-wrap-${i}">
           <div id="practice-editor-${i}"></div>
           <div class="practice-ide-footer">
             <button class="practice-run-btn run-btn" data-index="${i}">Run</button>
+            <button class="practice-check-btn run-btn" data-index="${i}">Check</button>
             <button class="practice-save-btn" data-index="${i}">Save</button>
             <span class="practice-save-status" id="practice-save-status-${i}"></span>
           </div>
@@ -920,14 +957,15 @@ document.getElementById('practice-list').innerHTML = L.practice
             <div class="output-label">Output</div>
             <div id="practice-output-${i}"></div>
           </div>
+          <div class="practice-ai-row" id="practice-feedback-${i}"></div>
         </div>
       </div>
     </li>`)
   .join('');
 
-L.practice.forEach((text, i) => {
+practiceTasks.forEach((task, i) => {
   const pe = new EditorView({
-    doc: `# ${text}\n`,
+    doc: `# ${task.text}\n`,
     extensions: editorExtensions(),
     parent: document.getElementById(`practice-editor-${i}`),
   });
@@ -951,16 +989,13 @@ document.querySelectorAll('.practice-run-btn').forEach(btn => {
     btn.disabled = true;
     btn.textContent = 'Running...';
     const outEl = document.getElementById(`practice-output-${i}`);
-    try {
-      const py = await getPyodide();
-      let output = '';
-      py.setStdout({ batched: text => { output += text + '\n'; } });
-      py.runPython(practiceEditors[i].state.doc.toString());
+    const { output, error } = await runIsolated(practiceEditors[i].state.doc.toString());
+    if (error) {
+      outEl.innerHTML = `<div class="output-line output-error">${escapeHTML(error)}</div>`;
+    } else {
       outEl.innerHTML = output
         ? output.trimEnd().split('\n').map(l => `<div class="output-line">${escapeHTML(l)}</div>`).join('')
         : '<div class="output-line" style="color:var(--ccm)">No output</div>';
-    } catch (err) {
-      outEl.innerHTML = `<div class="output-line output-error">${escapeHTML(err.message)}</div>`;
     }
     btn.disabled = false;
     btn.textContent = 'Run';
@@ -1074,7 +1109,7 @@ document.getElementById('nav-row').innerHTML =
 
   const { data: savesData } = await db
     .from('practice_saves')
-    .select('task_index, code')
+    .select('task_index, code, passed')
     .eq('unit', L.unit)
     .eq('lesson', L.lesson);
 
@@ -1084,6 +1119,7 @@ document.getElementById('nav-row').innerHTML =
       if (!pe) return;
       pe.dispatch({ changes: { from: 0, to: pe.state.doc.length, insert: row.code } });
       document.getElementById(`practice-save-status-${row.task_index}`).textContent = 'Previously saved';
+      if (row.passed) document.getElementById(`practice-item-${row.task_index}`).classList.add('passed');
     });
   }
 
@@ -1102,6 +1138,111 @@ document.getElementById('nav-row').innerHTML =
       }, { onConflict: 'user_id,unit,lesson,task_index' });
       btn.disabled = false;
       statusEl.textContent = error ? 'Failed to save' : 'Saved';
+    });
+  });
+
+  async function sha256Hex(text) {
+    const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(text));
+    return [...new Uint8Array(buf)].map(b => b.toString(16).padStart(2, '0')).join('');
+  }
+
+  function showVerdict(i, result) {
+    const fb = document.getElementById(`practice-feedback-${i}`);
+    fb.className = 'practice-ai-row show ' + (result.passed ? 'correct' : 'wrong');
+    fb.textContent = (result.passed ? '✓ ' : '✗ ') + result.feedback +
+      (result.hint ? ` Hint: ${result.hint}` : '');
+    if (result.passed) document.getElementById(`practice-item-${i}`).classList.add('passed');
+  }
+
+  document.querySelectorAll('.practice-check-btn').forEach(btn => {
+    btn.addEventListener('click', async () => {
+      const i = +btn.dataset.index;
+      const fb = document.getElementById(`practice-feedback-${i}`);
+
+      if (!localStorage.getItem('ai-disclaimer-seen')) {
+        const ok = confirm('Checking sends your code to an AI service to grade it.\nDon\'t type personal information in the editor. Continue?');
+        if (!ok) return;
+        localStorage.setItem('ai-disclaimer-seen', '1');
+      }
+
+      btn.disabled = true;
+      const code = practiceEditors[i].state.doc.toString();
+
+      const hash = await sha256Hex(code);
+      const cacheKey = `aicheck:${L.unit}:${L.lesson}:${i}:${hash}`;
+      const cached = localStorage.getItem(cacheKey);
+      if (cached) {
+        showVerdict(i, JSON.parse(cached));
+        btn.disabled = false;
+        return;
+      }
+
+      const words = ['thinking…', 'analyzing…', 'understanding…', 'checking…'];
+      let wi = 0;
+      fb.className = 'practice-ai-row show';
+      fb.innerHTML = `<span class="check-spinner"></span><span>${words[0]}</span>`;
+      const ticker = setInterval(() => {
+        wi = (wi + 1) % words.length;
+        const span = fb.querySelector('span:last-child');
+        if (span) span.textContent = words[wi];
+      }, 1200);
+
+      try {
+        await db.from('practice_saves').upsert({
+          user_id: session.user.id, unit: L.unit, lesson: L.lesson, task_index: i, code,
+        }, { onConflict: 'user_id,unit,lesson,task_index' });
+
+        const { output, error: runError } = await runIsolated(code);
+
+        const { data, error } = await db.functions.invoke('grade-practice', {
+          body: {
+            task: practiceTasks[i].text,
+            gradingNote: practiceTasks[i].gradingNote || null,
+            code,
+            output: runError ? `[Error] ${runError}` : output,
+            lessonTopic: L.title,
+            unit: L.unit, lesson: L.lesson, taskIndex: i,
+          },
+        });
+        clearInterval(ticker);
+
+        if (error) {
+          let body = null;
+          try { body = await error.context.json(); } catch {}
+          fb.className = 'practice-ai-row show wrong';
+          if (body?.error === 'rate_limited_minute') {
+            let secs = body.retryAfterSeconds || 30;
+            fb.textContent = `AI feedback is busy — you can retry in ${secs}s`;
+            const countdown = setInterval(() => {
+              secs--;
+              if (secs <= 0) { clearInterval(countdown); fb.className = 'practice-ai-row'; }
+              else fb.textContent = `AI feedback is busy — you can retry in ${secs}s`;
+            }, 1000);
+          } else if (body?.error === 'rate_limited_day' || body?.error === 'quota_global') {
+            const h = Math.floor((body.resetsInMinutes || 0) / 60);
+            const m = (body.resetsInMinutes || 0) % 60;
+            fb.textContent = `Good practice today! The checker is resting — it'll be back in ${h}h ${m}m.`;
+          } else {
+            fb.textContent = 'The checker had a hiccup — try again in a moment.';
+          }
+          return;
+        }
+
+        localStorage.setItem(cacheKey, JSON.stringify(data));
+        showVerdict(i, data);
+
+        if (data.passed) {
+          await db.from('practice_saves').upsert({
+            user_id: session.user.id, unit: L.unit, lesson: L.lesson, task_index: i, code, passed: true,
+          }, { onConflict: 'user_id,unit,lesson,task_index' });
+        }
+      } catch {
+        clearInterval(ticker);
+        fb.className = 'practice-ai-row show wrong';
+        fb.textContent = 'Could not check your code right now — try again in a moment.';
+      } finally {
+        btn.disabled = false;
+      }
     });
   });
 
@@ -1124,21 +1265,38 @@ async function getPyodide() {
   return pyodide;
 }
 
+const INPUT_STUB = `def input(prompt=""):
+    raise RuntimeError("input() isn't supported here yet - put the value in a variable instead!")
+`;
+
+async function runIsolated(code) {
+  const py = await getPyodide();
+  let output = '';
+  py.setStdout({ batched: text => { output += text + '\n'; } });
+  const namespace = py.globals.get('dict')();
+  try {
+    py.runPython(INPUT_STUB, { globals: namespace });
+    py.runPython(code, { globals: namespace });
+    return { output, error: null };
+  } catch (err) {
+    return { output, error: err.message };
+  } finally {
+    namespace.destroy();
+  }
+}
+
 document.getElementById('run-btn').addEventListener('click', async () => {
   const btn = document.getElementById('run-btn');
   btn.disabled = true;
   btn.textContent = 'Running...';
   const outEl = document.getElementById('out-lines');
-  try {
-    const py = await getPyodide();
-    let output = '';
-    py.setStdout({ batched: text => { output += text + '\n'; } });
-    py.runPython(editor.state.doc.toString());
+  const { output, error } = await runIsolated(editor.state.doc.toString());
+  if (error) {
+    outEl.innerHTML = `<div class="output-line output-error">${escapeHTML(error)}</div>`;
+  } else {
     outEl.innerHTML = output
       ? output.trimEnd().split('\n').map(l => `<div class="output-line">${escapeHTML(l)}</div>`).join('')
       : '<div class="output-line" style="color:var(--ccm)">No output</div>';
-  } catch (err) {
-    outEl.innerHTML = `<div class="output-line output-error">${escapeHTML(err.message)}</div>`;
   }
   btn.disabled = false;
   btn.textContent = 'Run';
