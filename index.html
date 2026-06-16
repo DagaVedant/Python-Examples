@@ -143,7 +143,7 @@
     .unit a:last-child { border-bottom: none; }
     .unit a:hover { background: #f7f8fa; }
     body.dark .unit a:hover { background: #222535; }
-
+    .unit a.locked { opacity: .55; }
     .unit a.lesson-done { background: #f0fdf4; }
     body.dark .unit a.lesson-done { background: #0d1f13; }
     .unit a.lesson-done .num { background: #bbf7d0; color: #15803d; border-color: #86efac; }
@@ -232,9 +232,25 @@
         </a>`).join('')}
     </div>`).join('');
 
+  const FREE_LESSONS = ['1-1', '1-2'];
+
   (async () => {
     const { data: { session } } = await db.auth.getSession();
-    if (!session) { window.location.href = 'login.html'; return; }
+
+    if (!session) {
+      document.querySelectorAll('.unit a').forEach(link => {
+        const m = link.getAttribute('href').match(/unit=(\d+)&lesson=(\d+)/);
+        if (m && !FREE_LESSONS.includes(`${m[1]}-${m[2]}`)) {
+          link.classList.add('locked');
+          link.setAttribute('href', 'login.html');
+          const arrow = link.querySelector('svg');
+          if (arrow) arrow.outerHTML =
+            '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>';
+        }
+      });
+      document.getElementById('overall-label').textContent = 'Free preview — sign in to unlock all lessons';
+      return;
+    }
 
     const { data: completionRows } = await db.from('completions').select('unit, lesson');
     const completed = completionRows ? completionRows.map(r => `${r.unit}-${r.lesson}`) : [];

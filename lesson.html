@@ -1078,9 +1078,35 @@ document.getElementById('nav-row').innerHTML =
     ? `<a class="nav-btn next" href="${lessonURL(L.next.unit, L.next.lesson)}">${L.next.unit}.${L.next.lesson} ${L.next.title} <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>`
     : '<span></span>');
 
+const FREE_LESSONS = ['1-1', '1-2'];
+
+function enablePreviewMode() {
+  const signInBtn = document.createElement('a');
+  signInBtn.href = 'login.html';
+  signInBtn.className = 'check-btn';
+  signInBtn.style.textDecoration = 'none';
+  signInBtn.textContent = 'Sign in to save progress';
+  document.getElementById('complete-slot').appendChild(signInBtn);
+
+  document.querySelectorAll('.practice-save-btn, .practice-check-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const i = +btn.dataset.index;
+      const fb = document.getElementById(`practice-feedback-${i}`);
+      fb.className = 'practice-ai-row show';
+      fb.innerHTML = 'Create a free account to save your work and get AI feedback — <a href="login.html">sign in</a>.';
+    });
+  });
+}
+
 (async () => {
+  const isFree = FREE_LESSONS.includes(`${L.unit}-${L.lesson}`);
   const { data: { session } } = await db.auth.getSession();
-  if (!session) { window.location.href = 'login.html'; return; }
+
+  if (!session) {
+    if (!isFree) { window.location.href = 'login.html'; return; }
+    enablePreviewMode();
+    return;
+  }
   const completionKey = `${L.unit}-${L.lesson}`;
   const { data: completionRows } = await db.from('completions').select('unit, lesson');
   const completed = completionRows ? completionRows.map(r => `${r.unit}-${r.lesson}`) : [];
