@@ -1093,7 +1093,7 @@ function enablePreviewMode() {
       const i = +btn.dataset.index;
       const fb = document.getElementById(`practice-feedback-${i}`);
       fb.className = 'practice-ai-row show';
-      fb.innerHTML = 'Create a free account to save your work and get AI feedback — <a href="login.html">sign in</a>.';
+      fb.innerHTML = 'Create a free account to save your work and get AI feedback — <a href="signup.html">sign in</a>.';
     });
   });
 }
@@ -1103,7 +1103,7 @@ function enablePreviewMode() {
   const { data: { session } } = await db.auth.getSession();
 
   if (!session) {
-    if (!isFree) { window.location.href = 'login.html'; return; }
+    if (!isFree) { window.location.href = 'signup.html'; return; }
     enablePreviewMode();
     return;
   }
