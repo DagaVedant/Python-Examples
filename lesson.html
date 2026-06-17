@@ -1082,7 +1082,7 @@ const FREE_LESSONS = ['1-1', '1-2'];
 
 function enablePreviewMode() {
   const signInBtn = document.createElement('a');
-  signInBtn.href = 'login.html';
+  signInBtn.href = 'signup.html';
   signInBtn.className = 'check-btn';
   signInBtn.style.textDecoration = 'none';
   signInBtn.textContent = 'Sign in to save progress';
@@ -1093,7 +1093,7 @@ function enablePreviewMode() {
       const i = +btn.dataset.index;
       const fb = document.getElementById(`practice-feedback-${i}`);
       fb.className = 'practice-ai-row show';
-      fb.innerHTML = 'Create a free account to save your work and get AI feedback — <a href="signup.html">sign in</a>.';
+      fb.innerHTML = 'Create a free account to save your work and get AI feedback — <a href="signup.html">sign up</a>.';
     });
   });
 }
