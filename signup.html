@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Sign Up — Learn Python</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        body { font-family: 'DM Sans', 'sans-serif'; background: #f7f8fa; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; }
+        .card { background: white; border: 1px solid #e2e5ea; border-radius: 12px; padding: 32px; width: 100%; max-width: 380px; }
+        h1 { font-size: 22px; color: #1F3A5F; margin: 0 0 6px; }
+        p { font-size: 14px; color: #6b7280; margin: 0 0 24px; }
+        label { font-size: 13px; font-weight: 500; color: #374151; display: block; margin-bottom: 5px; }
+        input { width: 100%; box-sizing: border-box; border: 1px solid #e2e5ea; border-radius: 8px; padding: 10px 12px; font-size: 14px; font-family: inherit; margin-bottom: 14px; }
+        input:focus { outline: none; border-color: #2563eb; }
+        button { width: 100%; padding: 11px; border-radius: 8px; border: none; font-size: 14px; font-weight: 500; font-family: inherit; cursor: pointer; margin-bottom: 8px; }
+        .primary { background: #1F3A5F; color: white; }
+        .link { font-size: 13px; text-align: center; margin-top: 12px; color: #6b7280; }
+        .link a { color: #2563eb; text-decoration: none; }
+        .error { color: #dc2626; font-size: 13px; margin-top: 8px; display: none; }
+    </style>
+</head>
+<body>
+<div class="card">
+    <h1>Sign Up for Learn Python</h1>
+    <p>Create an account to save your progress across different devices</p>
+
+    <label>Email</label>
+    <input type="email" id="email" placeholder="you@example.com">
+
+    <label>Password</label>
+    <input type="password" id="password" placeholder="*******">
+
+    <label>Confirm Password</label>
+    <input type="password" id="confirm" placeholder="*******">
+
+    <button class="primary" onclick="signUp()">Sign Up</button>
+
+    <div class="link">Already have an account? <a href="login.html">Log In</a></div>
+
+    <div class="error" id="error"></div>
+</div>
+
+<script>
+    const { createClient } = supabase;
+    const db = createClient('https://udzpwekkpedmtudcsyve.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVkenB3ZWtrcGVkbXR1ZGNzeXZlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODEwMzAzMjYsImV4cCI6MjA5NjYwNjMyNn0.xaMqyzNabeeE7bYVbAVwz8HCFIwQrGczF9x1FrXJv-A')
+
+    async function signUp() {
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+        const confirm = document.getElementById('confirm').value;
+
+        if (!email || !password) return showError('Please enter your email and password.');
+        if (password.length < 6) return showError('Password must be at least 6 characters.');
+        if (password !== confirm) return showError('Passwords do not match.');
+
+        const { error } = await db.auth.signUp({ email, password });
+
+        if (error) return showError(error.message);
+
+        showError('Check your email to confirm your account.');
+    }
+
+    function showError(msg) {
+        const el = document.getElementById('error');
+        el.textContent = msg;
+        el.style.display = 'block';
+    }
+
+    db.auth.getSession().then(({ data }) => {
+        if (data.session) window.location.href = 'index.html';
+    });
+</script>
+</body>
+</html>
