@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Log In — Learn Python</title>
+    <title>Sign Up — Learn Python</title>
 
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
@@ -25,8 +25,8 @@
 </head>
 <body>
 <div class="card">
-    <h1>Log In to Learn Python</h1>
-    <p>Log in to save your progress across different devices</p>
+    <h1>Sign Up for Learn Python</h1>
+    <p>Create an account to save your progress across different devices</p>
 
     <label>Email</label>
     <input type="email" id="email" placeholder="you@example.com">
@@ -34,9 +34,12 @@
     <label>Password</label>
     <input type="password" id="password" placeholder="*******">
 
-    <button class="primary" onclick="logIn()">Log In</button>
+    <label>Confirm Password</label>
+    <input type="password" id="confirm" placeholder="*******">
 
-    <div class="link">No account? <a href="signup.html">Sign Up</a></div>
+    <button class="primary" onclick="signUp()">Sign Up</button>
+
+    <div class="link">Already have an account? <a href="login.html">Log In</a></div>
 
     <div class="error" id="error"></div>
 </div>
@@ -45,17 +48,20 @@
     const { createClient } = supabase;
     const db = createClient('https://udzpwekkpedmtudcsyve.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVkenB3ZWtrcGVkbXR1ZGNzeXZlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODEwMzAzMjYsImV4cCI6MjA5NjYwNjMyNn0.xaMqyzNabeeE7bYVbAVwz8HCFIwQrGczF9x1FrXJv-A')
 
-    async function logIn() {
+    async function signUp() {
         const email = document.getElementById('email').value;
         const password = document.getElementById('password').value;
+        const confirm = document.getElementById('confirm').value;
 
         if (!email || !password) return showError('Please enter your email and password.');
+        if (password.length < 6) return showError('Password must be at least 6 characters.');
+        if (password !== confirm) return showError('Passwords do not match.');
 
-        const { error } = await db.auth.signInWithPassword({ email, password });
+        const { error } = await db.auth.signUp({ email, password });
 
         if (error) return showError(error.message);
 
-        window.location.href = 'index.html';
+        showError('Check your email to confirm your account.');
     }
 
     function showError(msg) {
