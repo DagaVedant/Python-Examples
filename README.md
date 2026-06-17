@@ -126,3 +126,5 @@ You dont even need Python installed to follow the lessons in the browser, but if
 Its built by Vedant Daga [https://github.com/DagaVedant](https://github.com/DagaVedant)
 
 Also using different fonts from [Google Fonts](https://fonts.google.com)
+
+I have used AI to help with coding (mainly supabase setup) and other integrations, but most of the design was done by me like Figma design for website and I made all the questions and information on the lessons
