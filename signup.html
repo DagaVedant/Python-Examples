@@ -57,11 +57,17 @@
         if (password.length < 6) return showError('Password must be at least 6 characters.');
         if (password !== confirm) return showError('Passwords do not match.');
 
-        const { error } = await db.auth.signUp({ email, password });
+        const { data, error } = await db.auth.signUp({ email, password });
 
         if (error) return showError(error.message);
 
-        showError('Check your email to confirm your account.');
+        // With email confirmation disabled, signUp returns an active session,
+        // so send the user straight into the course.
+        if (data.session) {
+            window.location.href = 'index.html';
+        } else {
+            showError('Check your email to confirm your account.');
+        }
     }
 
     function showError(msg) {
