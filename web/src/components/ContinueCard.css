@@ -1,0 +1,47 @@
+.continue-slot {
+  max-width: 680px;
+  margin: 0 auto 24px;
+  padding: 0 24px;
+}
+
+.continue-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 16px 20px;
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  border-radius: 12px;
+  color: #1d4ed8;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+}
+
+.continue-card:hover {
+  background: #dbeafe;
+  border-color: #93c5fd;
+  color: #1f3a5f;
+}
+
+body.dark .continue-card {
+  background: #172038;
+  border-color: #1e3a5f;
+  color: #93c5fd;
+}
+
+body.dark .continue-card:hover {
+  background: #1e3a5f;
+  border-color: #2563eb;
+  color: #93b4e0;
+}
+
+.continue-card-text {
+  flex: 1;
+}
+
+.continue-card svg {
+  flex-shrink: 0;
+}
