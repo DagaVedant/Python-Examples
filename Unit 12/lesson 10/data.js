@@ -76,6 +76,8 @@ Then create objects and call methods to tell a tiny story. That is designing wit
     practice: [
         {
             text: `Design Book with title, pages in __init__, and a blurb method. Create one and call blurb.`,
+            hint: `__init__ should save title and pages on self. blurb prints something that uses self.title and/or self.pages.`,
+            starterTip: `self.title = title, self.pages = pages, and blurb: print(self.title, "has", self.pages, "pages").`,
             starter: [
                 "class Book:",
                 "    def __init__(self, title, pages):",
@@ -89,6 +91,8 @@ Then create objects and call methods to tell a tiny story. That is designing wit
         },
         {
             text: `Design Battery with percent in __init__ and use(n) that lowers percent. Demo one use.`,
+            hint: `In use, subtract n from self.percent. After b.use(20) on a Battery at 100, b.percent should be 80.`,
+            starterTip: `self.percent = self.percent - n inside use — the final print(b.percent) checks your work.`,
             starter: [
                 "class Battery:",
                 "    def __init__(self, percent):",

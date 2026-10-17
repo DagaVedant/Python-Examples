@@ -66,6 +66,8 @@ Same class, many objects, one loop — powerful and tidy.`,
     practice: [
         {
             text: `Make a list of two Dog objects and loop to print each name.`,
+            hint: `Inside the for loop, d is each Dog. Print d.name so Rex and Zoey show up one line each.`,
+            starterTip: `Replace print() in the loop with print(d.name).`,
             starter: [
                 "class Dog:",
                 "    def __init__(self, name):",
@@ -78,6 +80,8 @@ Same class, many objects, one loop — powerful and tidy.`,
         },
         {
             text: `Create three Players in a list. Loop and call a greet method you define.`,
+            hint: `Fill greet's print with self.name. team = should be a list of three Player(...) objects with different names.`,
+            starterTip: `team = [Player("Ava"), Player("Leo"), Player("Mia")] and in greet: print("Hi,", self.name).`,
             starter: [
                 "class Player:",
                 "    def __init__(self, name):",

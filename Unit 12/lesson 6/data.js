@@ -70,6 +70,8 @@ When you write <code>dog.bark()</code>, Python sends <code>dog</code> into <code
     practice: [
         {
             text: `In shout, print self.name in all caps message. Call it.`,
+            hint: `self.name is "Sam" on f. You can print a loud message with self.name inside — try .upper() on the name for ALL CAPS.`,
+            starterTip: `print(self.name.upper(), "cheers!") or print("GO", self.name.upper() + "!") inside shout.`,
             starter: [
                 "class Fan:",
                 "    def shout(self):",
@@ -82,6 +84,8 @@ When you write <code>dog.bark()</code>, Python sends <code>dog</code> into <code
         },
         {
             text: `Finish deposit so it adds amount to self.balance. Show before/after.`,
+            hint: `Inside deposit, update self.balance by adding amount to the old balance. After b.deposit(5), print(b.balance) should show 15.`,
+            starterTip: `self.balance = self.balance + amount — same idea as the PiggyBank lesson.`,
             starter: [
                 "class Bank:",
                 "    def deposit(self, amount):",

@@ -56,6 +56,8 @@ export default {
     practice: [
         {
             text: `Define an empty class Cat with pass. Print a ready message.`,
+            hint: `After class Cat:, indent with four spaces and write pass. The class body must not be empty without pass.`,
+            starterTip: `Replace the blank line under class Cat: with pass (indented), then keep print("Cat ready") at the bottom.`,
             starter: [
                 "class Cat:",
                 "    ",
@@ -65,6 +67,8 @@ export default {
         },
         {
             text: `Define empty classes Car and Bike. Print two ready lines.`,
+            hint: `Write class Car: and class Bike:, each with an indented pass. Then two print() calls — one message per class.`,
+            starterTip: `Write class Car: with pass under it, then class Bike: with pass, then print("Car ready") and print("Bike ready").`,
             starter: [
                 "# two classes",
                 "",

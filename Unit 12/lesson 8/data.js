@@ -63,6 +63,8 @@ You can also give starting values that callers do not pass — like <code>self.l
     practice: [
         {
             text: `Monster __init__(name, hp). Also set self.power = 5. Create one and print all three.`,
+            hint: `Store name and hp from the parameters on self, then set self.power = 5 even though callers do not pass power.`,
+            starterTip: `self.name = name, self.hp = hp, and self.power = 5 — the three prints at the bottom should work.`,
             starter: [
                 "class Monster:",
                 "    def __init__(self, name, hp):",
@@ -76,6 +78,8 @@ You can also give starting values that callers do not pass — like <code>self.l
         },
         {
             text: `Account(owner, balance) with __init__. Create and print a sentence with both fields.`,
+            hint: `In __init__, set self.owner and self.balance from the parameters. print() should use a.owner and a.balance.`,
+            starterTip: `self.owner = owner and self.balance = balance, then print(a.owner, "has", a.balance).`,
             starter: [
                 "class Account:",
                 "    def __init__(self, owner, balance):",

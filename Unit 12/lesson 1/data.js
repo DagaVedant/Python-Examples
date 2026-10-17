@@ -49,6 +49,8 @@ Classes group <strong>data</strong> (what it knows) and later <strong>actions</s
     practice: [
         {
             text: `Print two sentences: what a class is, and why it helps.`,
+            hint: `Use two print() lines. First line: a class is like a blueprint. Second line: why that helps (many similar things, less copy-paste).`,
+            starterTip: `Try print("A class is a blueprint") then print("You can make many objects from one class").`,
             starter: [
                 "print()",
                 "print()"
@@ -57,6 +59,8 @@ Classes group <strong>data</strong> (what it knows) and later <strong>actions</s
         },
         {
             text: `Print an example of one class name and two different object ideas.`,
+            hint: `You already have Class: Pet. Fill the two blank prints with two different pet names or ideas — they should not be the same.`,
+            starterTip: `For example: print("Object: Mochi the cat") and print("Object: Buddy the dog").`,
             starter: [
                 "print(\"Class: Pet\")",
                 "print()",

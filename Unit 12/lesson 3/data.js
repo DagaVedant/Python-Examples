@@ -56,6 +56,8 @@ You can make many objects from the same class. Each is a separate thing.`,
     practice: [
         {
             text: `Make two Pet objects and print a message that you made two pets.`,
+            hint: `Finish a = and b = with Pet() — call the class like a function. Then print() a sentence saying you made two pets.`,
+            starterTip: `a = Pet() and b = Pet(), then print("Made two pets") or similar.`,
             starter: [
                 "class Pet:",
                 "    pass",
@@ -67,6 +69,8 @@ You can make many objects from the same class. Each is a separate thing.`,
         },
         {
             text: `Create three Coin objects. Print how many you made (3).`,
+            hint: `Use three variables (or names you like) and assign Coin() to each. Your print should show the number 3.`,
+            starterTip: `c1 = Coin(), c2 = Coin(), c3 = Coin(), then print("Made", 3) or print(3).`,
             starter: [
                 "class Coin:",
                 "    pass",

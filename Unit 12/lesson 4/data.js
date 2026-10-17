@@ -59,6 +59,8 @@ Each object can have different attribute values even if they share a class.`,
     practice: [
         {
             text: `Make a Pet, set name and kind, print both.`,
+            hint: `Set pet.kind to a string in quotes (like "cat" or "hamster"). Use print(pet.name) and print(pet.kind).`,
+            starterTip: `pet.kind = "cat" then print(pet.name) and print(pet.kind).`,
             starter: [
                 "class Pet:",
                 "    pass",
@@ -72,6 +74,8 @@ Each object can have different attribute values even if they share a class.`,
         },
         {
             text: `Make two Players with different levels. Print both levels.`,
+            hint: `Levels are already set on a and b. Print each player's level with print(a.level) and print(b.level).`,
+            starterTip: `Fill the two print() lines with print(a.level) and print(b.level) — you should see 2 then 7.`,
             starter: [
                 "class Player:",
                 "    pass",
