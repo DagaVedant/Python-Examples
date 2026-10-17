@@ -1,6 +1,6 @@
 import { createClient } from "npm:@supabase/supabase-js@2";
 
-const MODEL = "gpt-4o-mini";
+const MODEL = "nvidia/nemotron-3-super-120b-a12b:free";
 const PER_MINUTE_LIMIT = 5;
 const PER_DAY_LIMIT = 1000;
 const GLOBAL_DAY_LIMIT = 1500;
@@ -114,11 +114,13 @@ ${code}
 ${output || "(no output)"}
 </program_output>`;
 
-    const openaiRes = await fetch("https://api.openai.com/v1/chat/completions", {
+    const modelRes = await fetch("https://openrouter.ai/api/v1/chat/completions", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "Authorization": `Bearer ${Deno.env.get("OPENAI_API_KEY")}`,
+        "Authorization": `Bearer ${Deno.env.get("OPENROUTER_API_KEY")}`,
+        "HTTP-Referer": "https://dagavedant.github.io/Python-Examples/",
+        "X-Title": "Learn Python",
       },
       body: JSON.stringify({
         model: MODEL,
@@ -145,18 +147,22 @@ ${output || "(no output)"}
             },
           },
         },
+        provider: { require_parameters: true },
       }),
     });
 
-    if (!openaiRes.ok) {
-      console.error(`OpenAI error ${openaiRes.status}: ${await openaiRes.text()}`);
+    if (modelRes.status === 429) {
+      return json({ error: "rate_limited_minute", retryAfterSeconds: 30 }, 429);
+    }
+    if (!modelRes.ok) {
+      console.error(`OpenRouter error ${modelRes.status}: ${await modelRes.text()}`);
       return json({ error: "model_error" }, 502);
     }
 
-    const openaiData = await openaiRes.json();
-    const text = openaiData.choices?.[0]?.message?.content;
+    const modelData = await modelRes.json();
+    const text = modelData.choices?.[0]?.message?.content;
     if (!text) {
-      console.error(`OpenAI empty response: ${JSON.stringify(openaiData).slice(0, 500)}`);
+      console.error(`OpenRouter empty response: ${JSON.stringify(modelData).slice(0, 500)}`);
       return json({ error: "model_error" }, 502);
     }
     const grade = JSON.parse(text);
