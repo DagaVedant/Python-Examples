@@ -68,6 +68,8 @@ export default {
     practice: [
         {
             text: `Remove <code>"spam"</code> from the list, then print what is left.`,
+            hint: `Use inbox.remove() and pass the exact word "spam" in quotes — same spelling as in the list.`,
+            starterTip: `Add a line like inbox.remove("spam") under the comment, before print(inbox).`,
             starter: [
                 `inbox = ["hello", "spam", "news"]`,
                 `# Remove spam`,
@@ -78,6 +80,8 @@ export default {
         },
         {
             text: `Pop the last item into a variable called <code>last</code>, then print <code>last</code> and the list.`,
+            hint: `nums.pop() with nothing inside grabs the last item and gives it back — save that return value in last.`,
+            starterTip: `On the blank line, try last = nums.pop() so last becomes 30.`,
             starter: [
                 `nums = [10, 20, 30]`,
                 `last = `,

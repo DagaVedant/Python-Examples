@@ -60,6 +60,8 @@ export default {
     practice: [
         {
             text: `Make a list of three favorite movies. Print the first and the last using indexes.`,
+            hint: `The first movie is at index 0. For the last one, use movies[-1] or movies[2].`,
+            starterTip: `Try print(movies[0]) for the first and print(movies[-1]) for the last.`,
             starter: [
                 `movies = ["Up", "Coco", "Moana"]`,
                 `# Print the first movie`,
@@ -71,6 +73,8 @@ export default {
         },
         {
             text: `Print the middle item of this four-item list (index 1 or 2 — pick one and print it).`,
+            hint: `Index 0 is 10, index 1 is 20, index 2 is 30. Pick one of the middle numbers and use nums[that index] inside print.`,
+            starterTip: `Either print(nums[1]) to show 20 or print(nums[2]) to show 30.`,
             starter: [
                 `nums = [10, 20, 30, 40]`,
                 `# Print one middle item`,

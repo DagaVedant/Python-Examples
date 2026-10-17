@@ -63,6 +63,8 @@ export default {
     practice: [
         {
             text: `Loop over the fruit list and print each fruit on its own line.`,
+            hint: `Write for something in fruit: — pick any name for the loop variable, then indent a print line underneath.`,
+            starterTip: `For example: for f in fruit: then print(f) indented four spaces.`,
             starter: [
                 `fruit = ["apple", "banana", "cherry"]`,
                 `# for loop here`,
@@ -72,6 +74,8 @@ export default {
         },
         {
             text: `Print each number in <code>nums</code> with the word <code>n:</code> in front.`,
+            hint: `Inside print(), you can combine text and the variable with a comma, like print("n:", n).`,
+            starterTip: `Fill the empty print with something like print("n:", n) so each number gets a label.`,
             starter: [
                 `nums = [2, 4, 6]`,
                 `for n in nums:`,

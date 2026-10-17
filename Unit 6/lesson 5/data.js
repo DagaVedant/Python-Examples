@@ -60,6 +60,8 @@ export default {
     practice: [
         {
             text: `Start with two snacks. Append one more, then print the list.`,
+            hint: `Call append on the snacks list with one new snack name in quotes. append adds to the end.`,
+            starterTip: `Try snacks.append("cookie") or any third snack, then print(snacks).`,
             starter: [
                 `snacks = ["chips", "apple"]`,
                 `# Append a third snack`,
@@ -70,6 +72,8 @@ export default {
         },
         {
             text: `Insert <code>"start"</code> at index 0 of the list, then print.`,
+            hint: `insert takes two arguments: the index first, then the value. Index 0 is the front of the list.`,
+            starterTip: `Add steps.insert(0, "start") under the comment, then print(steps).`,
             starter: [
                 `steps = ["middle", "end"]`,
                 `# Insert at the front`,

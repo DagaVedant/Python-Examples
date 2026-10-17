@@ -56,6 +56,8 @@ export default {
     practice: [
         {
             text: `Add up all the prices and print the total.`,
+            hint: `Make a for loop that visits each price, and add each one to total inside the loop.`,
+            starterTip: `Try for price in prices: then total = total + price (indented) before the final print.`,
             starter: [
                 `prices = [3, 5, 2, 4]`,
                 `total = 0`,
@@ -67,6 +69,8 @@ export default {
         },
         {
             text: `Find the sum of <code>points</code>. Print only the final total.`,
+            hint: `points has three numbers — loop over points and add each number into total before you print.`,
+            starterTip: `Add for p in points: and total = total + p (indented) between total = 0 and print(total).`,
             starter: [
                 `points = [10, 20, 30]`,
                 `total = 0`,

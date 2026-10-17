@@ -68,6 +68,8 @@ export default {
     practice: [
         {
             text: `Create a list of three school subjects and print it.`,
+            hint: `After the = sign, use square brackets and three subject names as strings, separated by commas.`,
+            starterTip: `Example: subjects = ["math", "art", "pe"] then print(subjects).`,
             starter: [
                 `# Three subjects`,
                 `subjects = `,
@@ -77,6 +79,8 @@ export default {
         },
         {
             text: `Make an empty list called <code>todos</code>, then make a mixed list with a name, an age number, and True or False. Print both.`,
+            hint: `An empty list is just []. For profile, put a string, a number, and True or False inside one set of brackets.`,
+            starterTip: `Try todos = [] and profile = ["Alex", 11, True], then print(todos) and print(profile).`,
             starter: [
                 `todos = `,
                 `profile = `,

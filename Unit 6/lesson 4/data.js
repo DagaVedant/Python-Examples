@@ -61,6 +61,8 @@ export default {
     practice: [
         {
             text: `Change the second color to <code>"purple"</code> and print the list.`,
+            hint: `The second item is index 1 (not 2). Assign a new string to that spot with colors[1] = ...`,
+            starterTip: `Add colors[1] = "purple" between the comment and print(colors).`,
             starter: [
                 `colors = ["red", "blue", "green"]`,
                 `# Change index 1`,
@@ -71,6 +73,8 @@ export default {
         },
         {
             text: `Fix the typo: change <code>"appple"</code> to <code>"apple"</code> using an index assignment, then print.`,
+            hint: `The misspelled word is the first item, so use index 0 on the left side of = to replace it.`,
+            starterTip: `Write fruit[0] = "apple" under the comment, then run print(fruit).`,
             starter: [
                 `fruit = ["appple", "banana", "cherry"]`,
                 `# Fix index 0`,

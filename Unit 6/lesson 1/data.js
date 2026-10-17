@@ -58,6 +58,8 @@ export default {
     practice: [
         {
             text: `Make a list of three pets. Print the whole list, then print how many pets using <code>len()</code>.`,
+            hint: `Put three pet names inside square brackets with commas. Use print(pets) for the list, then len(pets) inside another print for the count.`,
+            starterTip: `Try pets = ["dog", "cat", "fish"], then print(pets) and print("How many:", len(pets)).`,
             starter: [
                 `# Three pet names`,
                 `pets = []`,
@@ -68,6 +70,8 @@ export default {
         },
         {
             text: `Create a list of four colors and print only the length of the list.`,
+            hint: `The colors list is already there. You only need one print — pass len(colors) to print so you see the number 4.`,
+            starterTip: `Fill in the blank print like this: print(len(colors)).`,
             starter: [
                 `colors = ["red", "blue", "green", "yellow"]`,
                 `# Print the length`,

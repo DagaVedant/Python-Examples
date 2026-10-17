@@ -61,6 +61,8 @@ export default {
     practice: [
         {
             text: `Build a new list of each number plus 1. Print the new list.`,
+            hint: `Loop over nums and each time append n + 1 to plus_one — grow the list, do not replace it.`,
+            starterTip: `for n in nums: then plus_one.append(n + 1) indented under the comment.`,
             starter: [
                 `nums = [10, 20, 30]`,
                 `plus_one = []`,
@@ -72,6 +74,8 @@ export default {
         },
         {
             text: `Start empty. Append three color strings, then print the list and its length.`,
+            hint: `Call colors.append("something") three times with three different color names in quotes.`,
+            starterTip: `Three lines like colors.append("red"), colors.append("blue"), colors.append("green") before the prints.`,
             starter: [
                 `colors = []`,
                 ``,

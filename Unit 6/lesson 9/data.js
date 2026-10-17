@@ -62,6 +62,8 @@ export default {
     practice: [
         {
             text: `Sort <code>scores</code> and print the sorted list.`,
+            hint: `Call scores.sort() on its own line — it rearranges the list in place, then print shows the new order.`,
+            starterTip: `Put scores.sort() between the comment and print(scores).`,
             starter: [
                 `scores = [88, 72, 95, 60]`,
                 `# Sort then print`,
@@ -72,6 +74,8 @@ export default {
         },
         {
             text: `Print whether <code>"blue"</code> is in colors, then print how many times <code>"red"</code> appears.`,
+            hint: `First print uses "blue" in colors. Second print uses colors.count("red").`,
+            starterTip: `Try print("blue" in colors) on the first blank line and print(colors.count("red")) on the second.`,
             starter: [
                 `colors = ["red", "blue", "red", "green"]`,
                 `print()`,
