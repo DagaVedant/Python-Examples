@@ -2,153 +2,121 @@ export default {
     format: "v2",
     unit: 10,
     lesson: 3,
-    unitLessons: 3,
+    unitLessons: 8,
     unitTitle: "Errors",
-    title: "Catching Specific Errors",
-    readTime: 30,
-
-    goal: "In this lesson you will learn how to catch only certain errors — like ValueError or ZeroDivisionError — so each problem gets its own clear message.",
+    title: "Common Errors",
+    readTime: 22,
+    goal: "In this lesson you will recognize common errors: NameError, ZeroDivisionError, and TypeError.",
 
     learn: [
-        "Write except ValueError and except ZeroDivisionError",
-        "Give each error type its own friendly message",
-        "Use int() on pretend text safely inside try",
+        "NameError: unknown name",
+        "ZeroDivisionError: divide by zero",
+        "TypeError: wrong types mixed",
     ],
 
-    idea: `A bare <code>except:</code> catches almost everything. Often you want to be more precise.
+    idea: `Three common errors:
 
-<code>except ValueError:</code> runs when a value is the wrong kind of thing for the job — for example <code>int("hello")</code> cannot become a number. <code>except ZeroDivisionError:</code> runs only when you divide by zero.
-
-You can stack several <code>except</code> blocks after one <code>try</code>. Python picks the matching one. That way kids get a message that matches the real problem.`,
+<strong>NameError</strong> — you used a name Python does not know (often a typo).
+<strong>ZeroDivisionError</strong> — you divided by zero.
+<strong>TypeError</strong> — you mixed types that do not go together, like adding a number to text.`,
 
     code: {
-        filename: "specific.py",
+        filename: "common.py",
         lines: [
-            `raw = "pizza"`,
-            `divider = 0`,
-            ``,
-            `try:`,
-            `    number = int(raw)`,
-            `    print(number / divider)`,
-            `except ValueError:`,
-            `    print("That text is not a number.")`,
-            `except ZeroDivisionError:`,
-            `    print("Cannot divide by zero.")`,
-            ``,
-            `print("Check complete.")`,
+            `print("NameError example: print(scor) when score exists")`,
+            `print("ZeroDivisionError example: 10 / 0")`,
+            `print("TypeError example: 5 + \\"pts\\"")`,
+            `print("Fix the cause, then rerun")`,
         ],
         output: [
-            "That text is not a number.",
-            "Check complete.",
+            "NameError example: print(scor) when score exists",
+            "ZeroDivisionError example: 10 / 0",
+            "TypeError example: 5 + \"pts\"",
+            "Fix the cause, then rerun",
         ],
     },
 
-    changeOneLine: `In the editor above, change <code>raw = "pizza"</code> to <code>raw = "20"</code>. Press <strong>Run</strong>. Now int works, but dividing by zero should print the ZeroDivisionError message.`,
+    changeOneLine: `In the editor above, add a fifth print that says <code>"You can fix these!"</code>. Press <strong>Run</strong>.`,
 
     code2: {
-        filename: "two_paths.py",
+        filename: "safe_math.py",
         lines: [
-            `# Path A: bad text → ValueError`,
-            `try:`,
-            `    print(int("nine"))`,
-            `except ValueError:`,
-            `    print("ValueError: not a number")`,
-            ``,
-            `# Path B: divide by zero → ZeroDivisionError`,
-            `try:`,
-            `    print(8 / 0)`,
-            `except ZeroDivisionError:`,
-            `    print("ZeroDivisionError: no dividing by 0")`,
-            ``,
-            `print("Both caught!")`,
+            `cookies = 12`,
+            `friends = 3`,
+            `print(cookies / friends)`,
+            `print("Score: " + str(10))`,
         ],
         output: [
-            "ValueError: not a number",
-            "ZeroDivisionError: no dividing by 0",
-            "Both caught!",
+            "4.0",
+            "Score: 10",
         ],
     },
 
     practice: [
         {
-            text: `Use try with except ValueError. Try int() on the pretend text. If it fails, print a short message and set n to 0. Then print n.`,
+            text: `Fix the ZeroDivisionError by changing friends so the division works. Print the result.`,
             starter: [
-                `text = "abc"`,
-                `# try: n = int(text)`,
-                `# except ValueError: message + n = 0`,
-                ``,
-                `print(n)`,
+                "cookies = 12",
+                "friends = 0",
+                "print(cookies / friends)"
             ].join("\n"),
-            gradingNote: `Pass if except ValueError is used (not only bare except), int() is attempted on the text, and on failure n becomes 0 (or similar) and the program prints without crashing.`,
+            gradingNote: `Pass if division runs with non-zero friends and prints a number.`,
         },
         {
-            text: `Catch ZeroDivisionError specifically. If the division fails, print "No zero divisors!" Otherwise print the result.`,
+            text: `Fix the TypeError by casting the number with str before adding text.`,
             starter: [
-                `x = 15`,
-                `y = 0`,
-                `# try / except ZeroDivisionError`,
-                `print(x / y)`,
+                "print(5 + \" points\")"
             ].join("\n"),
-            gradingNote: `Pass if except ZeroDivisionError is used and a friendly message prints instead of crashing when y is 0.`,
+            gradingNote: `Pass if output mixes 5 and points without TypeError (use str).`,
         },
     ],
 
     quiz: [
         {
-            question: `Which error does <code>int("hello")</code> usually raise?`,
+            question: `Which error is a typo in a variable name?`,
             options: [
-                { text: "ZeroDivisionError", correct: false },
-                { text: "ValueError", correct: true },
-                { text: "NameError", correct: false },
-                { text: "SyntaxError", correct: false },
+                { text: `ZeroDivisionError`, correct: false },
+                { text: `NameError`, correct: true },
+                { text: `HappyError`, correct: false },
+                { text: `FileSmile`, correct: false },
             ],
-            correct: "The text is not a valid number, so int() raises ValueError.",
-            wrong: "Bad text for int() is a ValueError, not dividing by zero.",
+            correct: `Unknown names raise NameError.`,
+            wrong: `Check spelling.`,
         },
         {
-            question: `Why write <code>except ZeroDivisionError:</code> instead of bare <code>except:</code>?`,
+            question: `Which error is 10 / 0?`,
             options: [
-                { text: "It makes Python run faster", correct: false },
-                { text: "It only handles that error and can show a matching message", correct: true },
-                { text: "Bare except is illegal", correct: false },
-                { text: "It turns off all other errors forever", correct: false },
+                { text: `NameError`, correct: false },
+                { text: `ZeroDivisionError`, correct: true },
+                { text: `TypeError`, correct: false },
+                { text: `KeyError only`, correct: false },
             ],
-            correct: "Specific except blocks catch one kind of problem so your message fits.",
-            wrong: "Naming the error type lets you handle just that case clearly.",
+            correct: `Division by zero is ZeroDivisionError.`,
+            wrong: `Do not divide by zero.`,
         },
         {
-            question: `You have <code>except ValueError</code> then <code>except ZeroDivisionError</code>. What if dividing by zero happens?`,
+            question: `Which error is 5 + "pts"?`,
             options: [
-                { text: "The ValueError block always runs", correct: false },
-                { text: "The ZeroDivisionError block runs", correct: true },
-                { text: "Both blocks run every time", correct: false },
-                { text: "Python ignores both", correct: false },
+                { text: `NameError`, correct: false },
+                { text: `TypeError`, correct: true },
+                { text: `ZeroDivisionError`, correct: false },
+                { text: `Syntax success`, correct: false },
             ],
-            correct: "Python picks the except that matches the error that actually happened.",
-            wrong: "Only the matching except block runs for that error.",
+            correct: `Mixing int and str with + causes TypeError.`,
+            wrong: `Cast with str() or use commas in print.`,
         },
     ],
 
     project: {
-        title: "Robust Calculator",
-        desc: "Build a tiny calculator with pretend values. Convert text with int(), then divide. Catch ValueError and ZeroDivisionError with different messages. Print Done at the end.",
+        title: "Error Zoo",
+        desc: "Print a one-line tip for NameError, ZeroDivisionError, and TypeError (three tips total).",
         starter: [
-            `left_text = "12"`,
-            `right_text = "0"`,
-            ``,
-            `# try:`,
-            `#   left = int(left_text)`,
-            `#   right = int(right_text)`,
-            `#   print("Answer:", left / right)`,
-            `# except ValueError:`,
-            `#   ...`,
-            `# except ZeroDivisionError:`,
-            `#   ...`,
-            ``,
-            `print("Done")`,
+            "print(\"NameError tip:\", )",
+            "print()",
+            "print()"
         ].join("\n"),
     },
 
-    prev: { unit: 10, lesson: 2, title: "try / except" },
-    next: { unit: 11, lesson: 1, title: "Using import" },
+    prev: { unit: 10, lesson: 2, title: "Reading Error Messages" },
+    next: { unit: 10, lesson: 4, title: "try" },
 };
