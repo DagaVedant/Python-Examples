@@ -71,6 +71,8 @@ Keep the update on its own line so you can see how the loop will end.`,
     practice: [
         {
             text: `Count up from 1 to 7 with a while loop. Print each number.`,
+            hint: `Fill the empty print() with n, then add 1 to n each pass so the loop reaches 7 and stops.`,
+            starterTip: `Try print(n) in the blank line, then n = n + 1 under the comment — both indented under while.`,
             starter: [
                 `n = 1`,
                 `while n <= 7:`,
@@ -82,6 +84,8 @@ Keep the update on its own line so you can see how the loop will end.`,
         },
         {
             text: `Count down from 6 to 1. Print each number, then print Blast off! after the loop.`,
+            hint: `Inside the while, subtract 1 from n after each print. The last print() after the loop is not indented under while.`,
+            starterTip: `Add n = n - 1 inside the loop. After while ends, fill print() with print("Blast off!").`,
             starter: [
                 `n = 6`,
                 `while n > 0:`,

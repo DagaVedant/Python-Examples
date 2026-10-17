@@ -63,6 +63,8 @@ You do not need a list of numbers written by hand — <code>range</code> builds 
     practice: [
         {
             text: `Use range to print Hi! exactly four times.`,
+            hint: `range(4) runs the loop body four times. Put your message inside print() on the indented line.`,
+            starterTip: `Use print("Hi!") with four spaces before it — that line must sit inside for i in range(4):.`,
             starter: [
                 `for i in range(4):`,
                 `    print()`,
@@ -71,6 +73,8 @@ You do not need a list of numbers written by hand — <code>range</code> builds 
         },
         {
             text: `Print the numbers from range(5) — one number per line.`,
+            hint: `Each trip through the loop, n is the next number: 0, then 1, 2, 3, and 4. Print n.`,
+            starterTip: `Change print() to print(n) — you should get five lines: 0 through 4.`,
             starter: [
                 `for n in range(5):`,
                 `    print()`,

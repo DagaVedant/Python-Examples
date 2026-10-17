@@ -61,6 +61,8 @@ This pattern works for summing a range, adding scores from a list, or counting h
     practice: [
         {
             text: `Sum the numbers from 1 to 10. Print the final total after the loop.`,
+            hint: `Each time through the loop, add n into total with total = total + n on the blank line inside the for block.`,
+            starterTip: `Put total = total + n under the comment, indented inside the loop. When you Run, Total: should be 55.`,
             starter: [
                 `total = 0`,
                 `for n in range(1, 11):`,
@@ -72,6 +74,8 @@ This pattern works for summing a range, adding scores from a list, or counting h
         },
         {
             text: `Add up the points list and print the sum.`,
+            hint: `Same running-total idea: inside the loop, add each p into total before the loop ends.`,
+            starterTip: `On the blank line under for p in points:, write total = total + p. Sum: should print 20.`,
             starter: [
                 `points = [3, 7, 2, 8]`,
                 `total = 0`,

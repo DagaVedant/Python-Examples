@@ -73,6 +73,8 @@ In this course we only write <strong>finite</strong> while loops with counters. 
     practice: [
         {
             text: `Fix the loop so it stops. Print count each time and subtract 1 until count is no longer greater than 0.`,
+            hint: `The while keeps going while count > 0. You must change count inside the loop or it will never end.`,
+            starterTip: `On the blank line under the comment, try count = count - 1. You should print 4, 3, 2, 1, then Safe stop.`,
             starter: [
                 `count = 4`,
                 `while count > 0:`,
@@ -85,6 +87,8 @@ In this course we only write <strong>finite</strong> while loops with counters. 
         },
         {
             text: `Start steps at 0. While steps is less than 5, print steps and add 1. Print Finished after the loop.`,
+            hint: `steps starts at 0. Each pass should print the current steps, then bump steps up by 1 before the while checks again.`,
+            starterTip: `Fill the blank with steps = steps + 1 (inside the while). Output should be 0, 1, 2, 3, 4, then Finished.`,
             starter: [
                 `steps = 0`,
                 `while steps < 5:`,

@@ -66,6 +66,8 @@ A <strong>loop</strong> is Python’s way to say: “run this block more than on
     practice: [
         {
             text: `Finish a cheer that prints Go! three times, then prints Yay!. Use separate print lines (no loop yet).`,
+            hint: `You already have one Go!. Fill the two empty print() lines so Go! shows three times in a row before Yay!.`,
+            starterTip: `Try print("Go!") in both blank lines — then Run and check you see three Go! lines, then Yay!.`,
             starter: [
                 `# Cheer three times`,
                 `print("Go!")`,
@@ -77,6 +79,8 @@ A <strong>loop</strong> is Python’s way to say: “run this block more than on
         },
         {
             text: `Print the word Step four times on four lines. Fill in the blanks.`,
+            hint: `Each empty print() should show the same word as the first line — Step inside quotes.`,
+            starterTip: `Copy the idea from line 1: put print("Step") inside each of the three blank print() calls.`,
             starter: [
                 `print("Step")`,
                 `print()`,

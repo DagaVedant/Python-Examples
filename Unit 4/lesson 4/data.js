@@ -74,6 +74,8 @@ export default {
     practice: [
         {
             text: `Print every multiple of 5 from 5 to 25 using range with a step.`,
+            hint: `The for line is already set up. Print n inside the loop and you will get 5, 10, 15, 20, 25.`,
+            starterTip: `Fill in print(n) on the indented line under for n in range(5, 26, 5):.`,
             starter: [
                 `# 5, 10, 15, 20, 25`,
                 `for n in range(5, 26, 5):`,
@@ -83,6 +85,8 @@ export default {
         },
         {
             text: `Finish the countdown from 5 to 1, then print Go!.`,
+            hint: `Inside the loop, print n for 5 down to 1. After the loop (back at the left edge, no extra indent), print Go!.`,
+            starterTip: `Use print(n) inside the for block, then print("Go!") on the last line — not indented under for.`,
             starter: [
                 `for n in range(5, 0, -1):`,
                 `    print()`,

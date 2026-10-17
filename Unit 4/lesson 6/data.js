@@ -60,6 +60,8 @@ In this course, while loops use a <strong>counter</strong> you update yourself â
     practice: [
         {
             text: `Finish the while loop so it prints 3, 2, 1 and then Stop. Shrink count each time.`,
+            hint: `After each print(count), make count smaller by 1 so the loop can eventually stop.`,
+            starterTip: `Under the comment, try count = count - 1 (indented inside the while). Run and check you get 3, 2, 1 then Stop.`,
             starter: [
                 `count = 3`,
                 `while count > 0:`,
@@ -72,6 +74,8 @@ In this course, while loops use a <strong>counter</strong> you update yourself â
         },
         {
             text: `Start at n = 1. While n is less than 16, print n and double it.`,
+            hint: `Each time through the loop, n should become twice as big â€” then the while checks n < 16 again.`,
+            starterTip: `After print(n), add n = n * 2 inside the while. You should see 1, 2, 4, 8 before it stops.`,
             starter: [
                 `n = 1`,
                 `while n < 16:`,

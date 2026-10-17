@@ -64,6 +64,8 @@ You often start <code>count = 0</code> before the loop, then <code>count = count
     practice: [
         {
             text: `Count how many numbers from 1 to 20 are divisible by 3. Print the count at the end.`,
+            hint: `Start count at 0. Each time n % 3 == 0, add 1 to count — do not print every n, just track how many match.`,
+            starterTip: `Inside the if, try count = count + 1. After the loop, count should be 6 when you print Count:`,
             starter: [
                 `count = 0`,
                 `for n in range(1, 21):`,
@@ -76,6 +78,8 @@ You often start <code>count = 0</code> before the loop, then <code>count = count
         },
         {
             text: `Print only scores that are 80 or higher from the list. Then print how many passed.`,
+            hint: `You already print(score) when score >= 80. Also bump passed by 1 each time you print a passing score.`,
+            starterTip: `Inside the if, after print(score), add passed = passed + 1. Three scores should pass: 85, 92, 88.`,
             starter: [
                 `scores = [70, 85, 92, 60, 88]`,
                 `passed = 0`,
