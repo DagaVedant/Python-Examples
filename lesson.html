@@ -359,6 +359,39 @@ hr {
   color: var(--green);
 }
 
+.signup-nudge {
+  margin: 1.25rem 0 0;
+  padding: 1rem 1.15rem;
+  border: 1px solid var(--blue-md);
+  background: var(--blue-lt);
+  border-radius: var(--r);
+  font-size: 14px;
+  color: var(--blue-tx);
+  line-height: 1.55;
+}
+.signup-nudge p { margin: 0 0 .75rem; }
+.signup-nudge-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+.signup-nudge a.check-btn {
+  text-decoration: none;
+  display: inline-flex;
+}
+.signup-nudge-dismiss {
+  font-size: 13px;
+  font-family: 'DM Sans', sans-serif;
+  color: var(--text2);
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: var(--rsm);
+  padding: .5rem .9rem;
+  cursor: pointer;
+}
+.signup-nudge-dismiss:hover { background: var(--surface); }
+
 .project-head { display: flex; gap: 1rem; align-items: flex-start; }
 .project-editor-wrap {
   display: none;
@@ -829,6 +862,7 @@ hr {
   to   { opacity: 1; transform: translateY(0); }
 }
 </style>
+<link rel="stylesheet" href="css/lesson-mobile.css">
 </head>
 <body>
 
@@ -848,6 +882,9 @@ hr {
         <div class="progress-fill" id="prog-fill"></div>
       </div>
     </div>
+    <button class="theme-btn" id="sound-tog" type="button" aria-label="Mute celebration sound" aria-pressed="true" title="Sound on">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>
+    </button>
     <button class="theme-btn" id="tog" aria-label="Toggle dark mode">
       <svg class="sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
       <svg class="moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
@@ -962,15 +999,25 @@ hr {
   </div>
 
   <nav class="nav-row" id="nav-row" aria-label="Lesson navigation"></nav>
+  <div id="signup-nudge" class="signup-nudge" hidden>
+    <p>Nice work finishing your first lesson! Create a free account if you want to save progress on any device. You can keep going without one.</p>
+    <div class="signup-nudge-actions">
+      <a href="signup.html" class="check-btn">Create free account</a>
+      <button type="button" class="signup-nudge-dismiss" id="signup-nudge-dismiss">Not now</button>
+    </div>
+  </div>
   <p style="font-size:12px;color:#9ca3af;">Practice check is powered by AI, meaning the code is being sent to AI service for grading. DO NOT include personal information</p>
 
 </main>
 
+<script src="js/continue-lesson.js"></script>
 <script type="module">
 
 import { EditorView, basicSetup } from 'https://esm.sh/codemirror@6.0.1';
 import { python } from 'https://esm.sh/@codemirror/lang-python@6.1.6';
 import { oneDark } from 'https://esm.sh/@codemirror/theme-one-dark@6.1.2';
+import { initPracticeHints } from './js/practice-hints.js';
+import { initProjectCheck } from './js/project-check.js';
 
 const practiceEditors = [];
 let editor;
@@ -1028,6 +1075,7 @@ const unitNum = params.get('unit');
 const lesNum  = params.get('lesson');
 
 const { default: L } = await import(`./Unit ${unitNum}/lesson ${lesNum}/data.js`);
+window.recordLastLesson?.(L.unit, L.lesson, L.title);
 const isV2 = L.format === 'v2';
 const practiceTasks = L.practice.map(p => typeof p === 'string' ? { text: p } : p);
 const quizList = Array.isArray(L.quiz) ? L.quiz : [L.quiz];
@@ -1110,6 +1158,8 @@ if (L.project.starter) {
       <div id="project-editor"></div>
       <div class="project-ide-footer">
         <button class="run-btn" id="project-run-btn">Run</button>
+        <button class="run-btn" id="project-done-btn" type="button">I'm done</button>
+        <button class="run-btn" id="project-check-btn" type="button">Check</button>
       </div>
       <div class="practice-output-box">
         <div class="output-label">Output</div>
@@ -1141,6 +1191,12 @@ if (L.project.starter) {
     btn.disabled = false;
     btn.textContent = 'Run';
   });
+  initProjectCheck({
+    L,
+    getCode: () => projectEditor.state.doc.toString(),
+    db,
+    runIsolated,
+  });
 }
 
 const learnIcons = [
@@ -1159,7 +1215,10 @@ document.getElementById('practice-list').innerHTML = practiceTasks
       <span class="practice-num">${i + 1}</span>
       <div class="practice-content">
         <span>${task.text}</span>
-        <button class="practice-toggle-btn" data-index="${i}">Open editor</button>
+        <div class="practice-hint-actions">
+          <button class="practice-toggle-btn" data-index="${i}">Open editor</button>
+          <button type="button" class="practice-hint-btn" data-index="${i}">Hint</button>
+        </div>
         <div class="practice-editor-wrap" id="practice-wrap-${i}">
           <div id="practice-editor-${i}"></div>
           <div class="practice-ide-footer">
@@ -1186,6 +1245,8 @@ practiceTasks.forEach((task, i) => {
   });
   practiceEditors.push(pe);
 });
+
+initPracticeHints(practiceTasks);
 
 document.querySelectorAll('.practice-toggle-btn').forEach(btn => {
   if (btn.id === 'project-toggle') return;
@@ -1317,39 +1378,111 @@ document.getElementById('nav-row').innerHTML =
     ? `<a class="nav-btn next" href="${lessonURL(L.next.unit, L.next.lesson)}">${L.next.unit}.${L.next.lesson} ${L.next.title} <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>`
     : '<span></span>');
 
-const FREE_LESSONS = ['1-1', '1-2'];
+function getGuestCompletions() {
+  try { return JSON.parse(localStorage.getItem('guest-completions') || '[]'); }
+  catch { return []; }
+}
 
-function enablePreviewMode() {
-  const signInBtn = document.createElement('a');
-  signInBtn.href = 'signup.html';
-  signInBtn.className = 'check-btn';
-  signInBtn.style.textDecoration = 'none';
-  signInBtn.textContent = 'Sign in to save progress';
-  document.getElementById('complete-slot').appendChild(signInBtn);
+function setGuestCompletions(list) {
+  localStorage.setItem('guest-completions', JSON.stringify(list));
+}
 
-  document.querySelectorAll('.practice-save-btn, .practice-check-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const i = +btn.dataset.index;
-      const fb = document.getElementById(`practice-feedback-${i}`);
-      fb.className = 'practice-ai-row show';
-      fb.innerHTML = 'Create a free account to save your work and get AI feedback — <a href="signup.html">sign up</a>.';
-    });
-  });
+document.getElementById('signup-nudge-dismiss')?.addEventListener('click', () => {
+  localStorage.setItem('signup-nudge-dismissed', '1');
+  document.getElementById('signup-nudge').hidden = true;
+});
+
+let requirePracticePass = true;
+
+function lessonRequirementsMet() {
+  return quizPassed.every(Boolean) && (!requirePracticePass || practicePassed.every(Boolean));
+}
+
+function maybeShowSignupNudge() {
+  if (localStorage.getItem('signup-nudge-dismissed')) return;
+  if (!(L.unit === 1 && L.lesson === 1)) return;
+  if (!lessonRequirementsMet()) return;
+  const nudge = document.getElementById('signup-nudge');
+  if (nudge) nudge.hidden = false;
 }
 
 (async () => {
-  const isFree = FREE_LESSONS.includes(`${L.unit}-${L.lesson}`);
   const { data: { session } } = await db.auth.getSession();
+  const completionKey = `${L.unit}-${L.lesson}`;
+  const slot = document.getElementById('complete-slot');
 
   if (!session) {
-    if (!isFree) { window.location.href = 'signup.html'; return; }
-    enablePreviewMode();
+    requirePracticePass = false;
+    let completed = getGuestCompletions();
+    let alreadyDone = completed.includes(completionKey);
+
+    function markLessonComplete() {
+      if (alreadyDone) return;
+      alreadyDone = true;
+      completed = getGuestCompletions();
+      if (!completed.includes(completionKey)) {
+        completed.push(completionKey);
+        setGuestCompletions(completed);
+      }
+      updateCompleteUI();
+      maybeShowSignupNudge();
+      window.dispatchEvent(new CustomEvent('lesson-complete'));
+    }
+
+    function updateCompleteUI() {
+      if (isV2) {
+        const status = slot.querySelector('.complete-status') || document.createElement('div');
+        status.className = 'complete-status' + (alreadyDone || lessonRequirementsMet() ? ' done' : '');
+        if (alreadyDone || lessonRequirementsMet()) {
+          status.textContent = '✓ Lesson complete';
+          if (!alreadyDone) markLessonComplete();
+        } else {
+          const qLeft = quizPassed.filter(x => !x).length;
+          status.textContent = `Finish ${qLeft} quiz question${qLeft > 1 ? 's' : ''} to complete`;
+        }
+        if (!status.parentNode) slot.appendChild(status);
+      }
+    }
+
+    onLessonProgress = () => {
+      if (isV2 && lessonRequirementsMet()) markLessonComplete();
+      else updateCompleteUI();
+    };
+    updateCompleteUI();
+    if (alreadyDone && L.unit === 1 && L.lesson === 1) maybeShowSignupNudge();
+
+    document.querySelectorAll('.practice-save-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const i = +btn.dataset.index;
+        const statusEl = document.getElementById(`practice-save-status-${i}`);
+        localStorage.setItem(
+          `guest-save:${L.unit}:${L.lesson}:${i}`,
+          practiceEditors[i].state.doc.toString(),
+        );
+        statusEl.textContent = 'Saved on this device';
+      });
+    });
+
+    practiceEditors.forEach((pe, i) => {
+      const saved = localStorage.getItem(`guest-save:${L.unit}:${L.lesson}:${i}`);
+      if (!saved) return;
+      pe.dispatch({ changes: { from: 0, to: pe.state.doc.length, insert: saved } });
+      document.getElementById(`practice-save-status-${i}`).textContent = 'Previously saved';
+    });
+
+    document.querySelectorAll('.practice-check-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const i = +btn.dataset.index;
+        const fb = document.getElementById(`practice-feedback-${i}`);
+        fb.className = 'practice-ai-row show';
+        fb.innerHTML = 'AI check needs a free account — <a href="signup.html">sign up</a> (optional). You can still Run your code and finish the lesson.';
+      });
+    });
     return;
   }
-  const completionKey = `${L.unit}-${L.lesson}`;
+
   const { data: completionRows } = await db.from('completions').select('unit, lesson');
   const completed = completionRows ? completionRows.map(r => `${r.unit}-${r.lesson}`) : [];
-  const slot = document.getElementById('complete-slot');
   let alreadyDone = completed.includes(completionKey);
 
   async function markLessonComplete() {
@@ -1363,11 +1496,8 @@ function enablePreviewMode() {
       alreadyDone = true;
       completed.push(completionKey);
       updateCompleteUI();
+      window.dispatchEvent(new CustomEvent('lesson-complete'));
     }
-  }
-
-  function lessonRequirementsMet() {
-    return quizPassed.every(Boolean) && practicePassed.every(Boolean);
   }
 
   function updateCompleteUI() {
@@ -1499,7 +1629,7 @@ function enablePreviewMode() {
           user_id: session.user.id, unit: L.unit, lesson: L.lesson, task_index: i, code,
         }, { onConflict: 'user_id,unit,lesson,task_index' });
 
-        const { output, error: runError } = await runIsolated(code);
+        const { output, error: runError } = await runIsolated(code, { allowInput: false });
 
         const { data, error } = await db.functions.invoke('grade-practice', {
           body: {
@@ -1572,10 +1702,6 @@ async function getPyodide() {
   return pyodide;
 }
 
-const INPUT_STUB = `def input(prompt=""):
-    raise RuntimeError("input() isn't supported here yet - put the value in a variable instead!")
-`;
-
 function seedLessonFiles(py) {
   if (!L.fakeFiles) return;
   for (const [name, content] of Object.entries(L.fakeFiles)) {
@@ -1583,14 +1709,24 @@ function seedLessonFiles(py) {
   }
 }
 
-async function runIsolated(code) {
+async function runIsolated(code, { allowInput = true } = {}) {
   const py = await getPyodide();
   seedLessonFiles(py);
   let output = '';
   py.setStdout({ batched: text => { output += text + '\n'; } });
+  if (allowInput) {
+    py.setStdin({
+      stdin: () => {
+        const answer = window.prompt('Type your answer, then press OK:') ?? '';
+        output += answer + '\n';
+        return answer + '\n';
+      },
+    });
+  } else {
+    py.setStdin({ stdin: () => '\n' });
+  }
   const namespace = py.globals.get('dict')();
   try {
-    py.runPython(INPUT_STUB, { globals: namespace });
     py.runPython(code, { globals: namespace });
     return { output, error: null };
   } catch (err) {
@@ -1621,5 +1757,7 @@ bindRun('run-btn', () => editor.state.doc.toString(), 'out-lines');
 if (editor2) bindRun('run2-btn', () => editor2.state.doc.toString(), 'out2-lines');
 
 </script>
+<script type="module" src="js/celebrate.js"></script>
+<script src="js/streaks.js"></script>
 </body>
 </html>
