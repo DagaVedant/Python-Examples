@@ -17,27 +17,33 @@ export default {
 
     idea: `Every value in Python has a <strong>type</strong>. Text is a string (<code>str</code>). Whole numbers are integers (<code>int</code>). Numbers with a decimal point are floats (<code>float</code>).
 
-Digits in quotes like <code>"14"</code> are still text. If you want to do math, convert (cast) with <code>int()</code> or <code>float()</code> first. Adding two strings sticks them together. Adding two numbers does math.`,
+<code>input()</code> always gives back a string — even if someone types <code>14</code>. Digits in quotes like <code>"14"</code> are also text. For math, convert (cast) with <code>int()</code> or <code>float()</code> first. Adding two strings sticks them together. Adding two numbers does math.`,
 
     code: {
         filename: "next_year.py",
         lines: [
-            `# Digits in quotes are still text`,
-            `age_text = "14"`,
+            `# input() always returns text — cast before math`,
+            `age_text = input("How old are you? ")`,
             `age = int(age_text)`,
             `print("Next year you will be", age + 1)`,
             ``,
-            `price = float("2.50")`,
-            `qty = int("3")`,
+            `price = float(input("Price? "))`,
+            `qty = int(input("How many? "))`,
             `print("Total:", price * qty)`,
         ],
         output: [
+            "How old are you? ",
+            "14",
             "Next year you will be 15",
+            "Price? ",
+            "2.50",
+            "How many? ",
+            "3",
             "Total: 7.5",
         ],
     },
 
-    changeOneLine: `In the editor above, change <code>age_text = "14"</code> to <code>age_text = "10"</code>. Press <strong>Run</strong>. The first line should say Next year you will be 11.`,
+    changeOneLine: `Press <strong>Run</strong>. Type an age like <code>10</code>, then a price and quantity. Check that the “next year” line uses your age + 1.`,
 
     code2: {
         filename: "types.py",

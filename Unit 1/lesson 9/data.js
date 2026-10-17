@@ -7,48 +7,53 @@ export default {
     title: "Using Answers",
     readTime: 22,
 
-    goal: "In this lesson you will learn how programs use answers stored in variables to personalise output.",
+    goal: "In this lesson you will learn how to ask a question with input(), store the answer, and use it in your program.",
 
     learn: [
-        "Store an answer in a variable",
-        "Reuse that answer in print()",
-        "Pretend answers when live typing is not available",
+        "Ask a question with input()",
+        "Store the answer in a variable",
+        "Use that answer in print()",
     ],
 
-    idea: `Programs often use an <strong>answer</strong> — something a person chose — later in the program. You store that answer in a variable, then print with it.
+    idea: `<code>input()</code> pauses the program and asks the person to type something. Whatever they type comes back as text (a string). You store it in a variable, then use it later.
 
-On a real computer, a program might ask a question and wait for typing. In this website, we <strong>pretend</strong> the answer by putting it in a variable. The idea is the same: the answer lives in a variable, then you use it.`,
+When you press <strong>Run</strong> here, a box will pop up for your answer. Type something and press OK. The prompt text from <code>input("...")</code> also shows in the output.`,
 
     code: {
-        filename: "hello_answer.py",
+        filename: "hello_input.py",
         lines: [
-            `# Pretend the user answered with this name:`,
-            `name = "Vedant"`,
+            `name = input("What is your name? ")`,
             `print("Hello,", name)`,
             ``,
-            `# Pretend another answer:`,
-            `city = "Princeton"`,
+            `city = input("What city are you from? ")`,
             `print(name, "is from", city)`,
         ],
         output: [
+            "What is your name? ",
+            "Vedant",
             "Hello, Vedant",
+            "What city are you from? ",
+            "Princeton",
             "Vedant is from Princeton",
         ],
     },
 
-    changeOneLine: `In the editor above, change <code>name = "Vedant"</code> to your own name (keep the quotes). Press <strong>Run</strong>. Both lines that use <code>name</code> should update.`,
+    changeOneLine: `Press <strong>Run</strong>. When the box appears, type your own name, then your city. Check that the greeting uses what you typed.`,
 
     code2: {
         filename: "favorites.py",
         lines: [
-            `# Pretend answers from the user`,
-            `colour = "blue"`,
-            `animal = "panda"`,
+            `colour = input("Favourite colour? ")`,
+            `animal = input("Favourite animal? ")`,
             `print("Favourite colour:", colour)`,
             `print("Favourite animal:", animal)`,
             `print(colour, "is great for a", animal)`,
         ],
         output: [
+            "Favourite colour? ",
+            "blue",
+            "Favourite animal? ",
+            "panda",
             "Favourite colour: blue",
             "Favourite animal: panda",
             "blue is great for a panda",
@@ -57,70 +62,69 @@ On a real computer, a program might ask a question and wait for typing. In this 
 
     practice: [
         {
-            text: `Pretend the user answered with a favourite colour. Store it in a variable and print a sentence like <code>Your favourite colour is blue.</code>`,
+            text: `Ask for a favourite colour with input(), then print a sentence like <code>Your favourite colour is blue.</code>`,
             starter: [
-                `# Pretend the user typed a colour`,
-                `colour = "green"`,
+                `colour = input("Favourite colour? ")`,
                 `# Print a full sentence using colour`,
                 `print()`,
             ].join("\n"),
-            gradingNote: `Pass if a colour variable is set to a non-empty string and print uses that variable in a sentence about favourite colour.`,
+            gradingNote: `Pass if input() is used to get a colour (or colour is clearly from input) and print builds a sentence about favourite colour using that variable. Empty answers from grading stdin are OK if the code structure is correct.`,
         },
         {
-            text: `Pretend the user gave a noun and a verb. Store both, then print them in one sentence.`,
+            text: `Ask for a noun and a verb with two input() calls, then print them in one sentence.`,
             starter: [
-                `noun = "dragon"`,
-                `verb = "flies"`,
+                `noun = input("Noun? ")`,
+                `verb = input("Verb? ")`,
                 `# One print that uses both variables`,
                 `print()`,
             ].join("\n"),
-            gradingNote: `Pass if noun and verb variables exist and one print uses both variable names in a sentence.`,
+            gradingNote: `Pass if two input() calls store noun and verb and one print uses both variables in a sentence.`,
         },
     ],
 
     quiz: [
         {
-            question: `Why do we store an answer in a variable?`,
+            question: `What does <code>input()</code> do?`,
             options: [
-                { text: "So we can use the answer later in the program", correct: true },
+                { text: "It pauses and lets the user type an answer", correct: true },
+                { text: "It always prints Hello", correct: false },
+                { text: "It only works with numbers", correct: false },
+                { text: "It deletes variables", correct: false },
+            ],
+            correct: "input() waits for the person to type, then gives that text back.",
+            wrong: "input() is for asking the user to type an answer.",
+        },
+        {
+            question: `What type of value does <code>input()</code> always return?`,
+            options: [
+                { text: "An integer", correct: false },
+                { text: "A decimal number", correct: false },
+                { text: "A string (text)", correct: true },
+                { text: "Whatever type you want", correct: false },
+            ],
+            correct: "input() always returns a string, even if the user typed digits.",
+            wrong: "input() always gives back a string.",
+        },
+        {
+            question: `Why store the result of input() in a variable?`,
+            options: [
+                { text: "So you can use the answer later in the program", correct: true },
                 { text: "So Python runs faster", correct: false },
                 { text: "So comments work", correct: false },
                 { text: "Variables are required for every print", correct: false },
             ],
-            correct: "Storing the answer lets you reuse it in print and other lines.",
-            wrong: "The point of the variable is to keep the answer so later lines can use it.",
-        },
-        {
-            question: `In this website lesson, why do we write <code>name = "Sam"</code> instead of waiting for typing?`,
-            options: [
-                { text: "Variables cannot hold text", correct: false },
-                { text: "We pretend the typed answer, because live typing is not available here yet", correct: true },
-                { text: "print() cannot use variables", correct: false },
-                { text: "Answers must always be numbers", correct: false },
-            ],
-            correct: "We simulate the answer with a variable. The idea matches a real program that waits for typing.",
-            wrong: "Here we pretend the answer because the page cannot pause for typing yet.",
-        },
-        {
-            question: `If colour = "red" and you print("I like", colour), what shows?`,
-            options: [
-                { text: "I like colour", correct: false },
-                { text: "I like red", correct: true },
-                { text: "An error", correct: false },
-                { text: "Only red with no other words", correct: false },
-            ],
-            correct: "print uses the value inside the variable: red.",
-            wrong: "The variable name is not printed as the word colour — its value is.",
+            correct: "Storing the answer lets later lines reuse it.",
+            wrong: "The variable keeps the typed answer for later lines.",
         },
     ],
 
     project: {
         title: "Greeting Card",
-        desc: "Pretend answers for name, age, and favourite animal. Print a personalised greeting that uses all three.",
+        desc: "Ask for name, age, and favourite animal with input(). Print a personalised greeting that uses all three answers.",
         starter: [
-            `name = "Riley"`,
-            `age = "11"`,
-            `animal = "otter"`,
+            `name = input("Name? ")`,
+            `age = input("Age? ")`,
+            `animal = input("Favourite animal? ")`,
             `print("===== GREETING CARD =====")`,
             `# Use all three variables in your message`,
             `print()`,
