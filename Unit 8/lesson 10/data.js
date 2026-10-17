@@ -62,6 +62,8 @@ Combine skills: check with <code>in</code>, read with <code>get</code>, remove w
     practice: [
         {
             text: `Print whether "potion" is in the bag using in.`,
+            hint: `"potion" in bag is True if potion is a key, False if not. Put that expression inside print().`,
+            starterTip: `Try print("potion" in bag) — potion is not in the bag, so you should see False.`,
             starter: [
                 "bag = {\"coins\": 5, \"keys\": 1}",
                 "print()"
@@ -70,6 +72,8 @@ Combine skills: check with <code>in</code>, read with <code>get</code>, remove w
         },
         {
             text: `If "keys" is in bag, pop it and print the removed value. Then print bag.`,
+            hint: `Use if "keys" in bag: then indent inside: pop with bag.pop("keys") and print what you got back.`,
+            starterTip: `Example:\nif "keys" in bag:\n    removed = bag.pop("keys")\n    print("Removed:", removed)`,
             starter: [
                 "bag = {\"coins\": 8, \"keys\": 2}",
                 "# Check, pop, print",

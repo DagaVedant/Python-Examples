@@ -50,6 +50,8 @@ Example: key <code>"name"</code> might hold value <code>"Mochi"</code>. Later yo
     practice: [
         {
             text: `Print a short note that a dictionary stores key–value pairs. Fill in the blank.`,
+            hint: `Use one print() with a sentence inside quotes. Mention that a dictionary has keys and values (or key–value pairs).`,
+            starterTip: `Try print("A dictionary stores key-value pairs") or similar — any clear sentence about keys and values works.`,
             starter: [
                 "# One clear sentence",
                 "print()"
@@ -58,6 +60,8 @@ Example: key <code>"name"</code> might hold value <code>"Mochi"</code>. Later yo
         },
         {
             text: `Create any tiny dictionary with one key and print it.`,
+            hint: `The starter already has info with one key. Fill in print() so it shows the whole dictionary — pass info inside the parentheses.`,
+            starterTip: `Use print(info) so Python prints {'color': 'blue'} (or whatever your one key holds).`,
             starter: [
                 "info = {\"color\": \"blue\"}",
                 "print()"

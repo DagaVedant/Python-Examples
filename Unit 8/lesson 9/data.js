@@ -54,6 +54,8 @@ You can give a default: <code>bag.get("sword", 0)</code> returns <code>0</code> 
     practice: [
         {
             text: `Use .get() to print gems, defaulting to 0 if missing.`,
+            hint: `gems is not in the bag, so bag["gems"] would crash. .get("gems", 0) safely returns 0 when the key is missing.`,
+            starterTip: `Fill print() with: print(bag.get("gems", 0)) — output should be 0.`,
             starter: [
                 "bag = {\"coins\": 10, \"keys\": 2}",
                 "print()"
@@ -62,6 +64,8 @@ You can give a default: <code>bag.get("sword", 0)</code> returns <code>0</code> 
         },
         {
             text: `Print potion count with get default 0. Print keys with get.`,
+            hint: `Potions are missing — use bag.get("potion", 0) or bag.get("potions", 0). Keys exist, so bag.get("keys") works too.`,
+            starterTip: `First line: print("Potions:", bag.get("potion", 0)). Second: print("Keys:", bag.get("keys", 0)).`,
             starter: [
                 "bag = {\"keys\": 3}",
                 "print(\"Potions:\", )",

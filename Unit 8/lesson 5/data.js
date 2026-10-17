@@ -58,6 +58,8 @@ Same syntax as adding! If the key exists, Python replaces the old value.`,
     practice: [
         {
             text: `Update Sam's score from 50 to 80. Print Sam's new score.`,
+            hint: `Sam's key already exists, so assign a new number to board["Sam"]. That replaces 50 with 80.`,
+            starterTip: `Write board["Sam"] = 80 under the comment. The last print should show 80.`,
             starter: [
                 "board = {\"Sam\": 50, \"Riley\": 70}",
                 "# Update Sam",
@@ -68,6 +70,8 @@ Same syntax as adding! If the key exists, Python replaces the old value.`,
         },
         {
             text: `Add 10 coins to the bag using the current value, then print coins.`,
+            hint: `Read the old value with bag["coins"], add 10, and store it back: bag["coins"] = bag["coins"] + 10.`,
+            starterTip: `On the blank line: bag["coins"] = bag["coins"] + 10. print(bag["coins"]) should show 30.`,
             starter: [
                 "bag = {\"coins\": 20}",
                 "# Increase coins by 10",

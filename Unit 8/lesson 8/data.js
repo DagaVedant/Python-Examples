@@ -53,6 +53,8 @@ Each turn unpacks a pair. You already have <code>score</code> — no second look
     practice: [
         {
             text: `Use .items() to print each snack and price like cookie: 2.`,
+            hint: `You already have for name, price in prices.items(): — use both variables inside print() with a colon between them.`,
+            starterTip: `Try print(name + ":", price) or print(name, ":", price) inside the loop for each snack line.`,
             starter: [
                 "prices = {\"cookie\": 2, \"apple\": 1, \"juice\": 3}",
                 "for name, price in prices.items():",
@@ -62,6 +64,8 @@ Each turn unpacks a pair. You already have <code>score</code> — no second look
         },
         {
             text: `Loop with .items() over ages and print Name is age years.`,
+            hint: `name and age are ready each turn — build a sentence with print and the word "years" at the end.`,
+            starterTip: `Example: print(name, "is", age, "years") — Sam should show as 11 years old.`,
             starter: [
                 "ages = {\"Sam\": 11, \"Riley\": 12}",
                 "for name, age in ages.items():",

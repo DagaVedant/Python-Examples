@@ -54,6 +54,8 @@ Inside the loop, look up the value with <code>scores[name]</code>.`,
     practice: [
         {
             text: `Loop over ages and print each name with their age.`,
+            hint: `Inside the loop, name is each key. Look up the age with ages[name] and print both.`,
+            starterTip: `Fill print() like: print(name, ages[name]) — you should get three lines (Sam, Riley, Jordan).`,
             starter: [
                 "ages = {\"Sam\": 11, \"Riley\": 12, \"Jordan\": 10}",
                 "for name in ages:",
@@ -63,6 +65,8 @@ Inside the loop, look up the value with <code>scores[name]</code>.`,
         },
         {
             text: `Loop over prices keys and print each snack name only.`,
+            hint: `for name in prices: gives you each key (cookie, apple, juice). You only need to print the name — not the price.`,
+            starterTip: `Inside print(), put just name: print(name). Run and you should see three snack names.`,
             starter: [
                 "prices = {\"cookie\": 2, \"apple\": 1, \"juice\": 3}",
                 "for name in prices:",

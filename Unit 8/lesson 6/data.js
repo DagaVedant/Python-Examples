@@ -56,6 +56,8 @@ After that, the key is gone.`,
     practice: [
         {
             text: `Pop the "sword" key. Print what was removed, then print the bag.`,
+            hint: `Use bag.pop("sword") on the right side of gone = — pop takes the key out and hands you the value (1).`,
+            starterTip: `Try gone = bag.pop("sword") on the line after the bag = ... line. The print lines below already show gone and bag.`,
             starter: [
                 "bag = {\"coins\": 5, \"sword\": 1, \"keys\": 2}",
                 "gone = ",
@@ -66,6 +68,8 @@ After that, the key is gone.`,
         },
         {
             text: `Remove "milk" from stock with pop and print the updated stock.`,
+            hint: `Call stock.pop("milk") before you print — you can store the result in a variable or just call pop on its own line.`,
+            starterTip: `Add a line like stock.pop("milk") in the blank space, then run. print(stock) should show only eggs.`,
             starter: [
                 "stock = {\"eggs\": 6, \"milk\": 1}",
                 "",

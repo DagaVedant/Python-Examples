@@ -51,6 +51,8 @@ Each pair is <code>key: value</code>. Put commas between pairs. Keys are often s
     practice: [
         {
             text: `Finish the book dictionary with title and pages, then print it.`,
+            hint: `Inside the curly braces, add another pair: a key "pages" with the number 310. Use a colon between key and value, and a comma after Wonder's line.`,
+            starterTip: `Add a line like "pages": 310, before the closing }. print(book) is already there.`,
             starter: [
                 "book = {",
                 "    \"title\": \"Wonder\",",
@@ -62,6 +64,8 @@ Each pair is <code>key: value</code>. Put commas between pairs. Keys are often s
         },
         {
             text: `Create a snack dictionary with name Cookie and cost 2. Print it.`,
+            hint: `After snack = , write curly braces with two pairs: "name" and "cost". Strings get quotes; 2 is a number with no quotes.`,
+            starterTip: `Try snack = {"name": "Cookie", "cost": 2} then print(snack).`,
             starter: [
                 "# snack with name Cookie and cost 2",
                 "snack = ",

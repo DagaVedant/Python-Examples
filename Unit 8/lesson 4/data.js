@@ -59,6 +59,8 @@ Python creates that key and stores the value.`,
     practice: [
         {
             text: `Start with one player. Add Riley with score 70. Print the board.`,
+            hint: `Assign to a new key with square brackets: board["Riley"] = 70. That adds Riley without changing Sam.`,
+            starterTip: `On the blank line, write board["Riley"] = 70, then run — print(board) should show Sam and Riley.`,
             starter: [
                 "board = {\"Sam\": 50}",
                 "# Add Riley: 70",
@@ -69,6 +71,8 @@ Python creates that key and stores the value.`,
         },
         {
             text: `Add a "gems" key set to 3 on the bag, then print bag.`,
+            hint: `Use assignment to a key that is not there yet: bag["gems"] = 3. Do this before print(bag).`,
+            starterTip: `Add bag["gems"] = 3 on the empty line. When you print, you should see coins and gems.`,
             starter: [
                 "bag = {\"coins\": 5}",
                 "",

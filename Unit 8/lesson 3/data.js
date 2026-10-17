@@ -59,6 +59,8 @@ Python finds that key and gives you its value. If you mistype the key, you get a
     practice: [
         {
             text: `Print the book title and pages using key lookups.`,
+            hint: `Use square brackets with the key inside quotes: book["title"] and book["pages"]. One print per value.`,
+            starterTip: `First line: print(book["title"]). Second: print(book["pages"]) — you should see Wonder and 310.`,
             starter: [
                 "book = {\"title\": \"Wonder\", \"pages\": 310}",
                 "print()",
@@ -68,6 +70,8 @@ Python finds that key and gives you its value. If you mistype the key, you get a
         },
         {
             text: `Print a sentence like Cookie costs 2 using snack keys.`,
+            hint: `Look up snack["name"] and snack["cost"] inside one print(). You can mix words in quotes with the looked-up values.`,
+            starterTip: `Try print(snack["name"], "costs", snack["cost"]) — that prints Cookie costs 2.`,
             starter: [
                 "snack = {\"name\": \"Cookie\", \"cost\": 2}",
                 "print()"
