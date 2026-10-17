@@ -1,0 +1,173 @@
+export default {
+    format: "v2",
+    unit: 5,
+    lesson: 8,
+    unitLessons: 8,
+    unitTitle: "Functions",
+    title: "Designing with Functions",
+    readTime: 24,
+
+    goal: "In this lesson you will learn how to break a bigger program into small, well-named functions that each do one job.",
+
+    learn: [
+        "Split a program into focused functions",
+        "Give functions clear, descriptive names",
+        "Combine helpers into one small program",
+    ],
+
+    idea: `Good programs are built from small functions that each do <strong>one clear job</strong>. When something goes wrong, you can find the broken function quickly. When you want to reuse logic, you call the function again.
+
+Name functions for what they do: <code>average</code>, <code>grade</code>, <code>print_report</code>. Then wire them together.`,
+
+    code: {
+        filename: "design.py",
+        lines: [
+            `def average(a, b, c):`,
+            `    return (a + b + c) / 3`,
+            ``,
+            `def grade(score):`,
+            `    if score >= 90:`,
+            `        return "A"`,
+            `    elif score >= 70:`,
+            `        return "B"`,
+            `    else:`,
+            `        return "C"`,
+            ``,
+            `def print_report(name, a, b, c):`,
+            `    avg = average(a, b, c)`,
+            `    letter = grade(avg)`,
+            `    print(name, "avg", avg, "grade", letter)`,
+            ``,
+            `print_report("Ava", 90, 80, 85)`,
+            `print_report("Sam", 70, 75, 65)`,
+        ],
+        output: [
+            "Ava avg 85.0 grade B",
+            "Sam avg 70.0 grade B",
+        ],
+    },
+
+    changeOneLine: `In the editor above, change Ava's scores to <code>95, 95, 95</code>. Press <strong>Run</strong>. Ava's line should show avg 95.0 grade A.`,
+
+    code2: {
+        filename: "rect.py",
+        lines: [
+            `def area(w, h):`,
+            `    return w * h`,
+            ``,
+            `def perimeter(w, h):`,
+            `    return 2 * (w + h)`,
+            ``,
+            `def describe(w, h):`,
+            `    print("Area:", area(w, h))`,
+            `    print("Perimeter:", perimeter(w, h))`,
+            ``,
+            `describe(4, 3)`,
+        ],
+        output: [
+            "Area: 12",
+            "Perimeter: 14",
+        ],
+    },
+
+    practice: [
+        {
+            text: `Finish average and grade. Make print_report call both and print one line for Maya.`,
+            starter: [
+                `def average(a, b, c):`,
+                `    return`,
+                ``,
+                `def grade(score):`,
+                `    if score >= 90:`,
+                `        return "A"`,
+                `    else:`,
+                `        return "B"`,
+                ``,
+                `def print_report(name, a, b, c):`,
+                `    avg = average(a, b, c)`,
+                `    letter = grade(avg)`,
+                `    print()`,
+                ``,
+                `print_report("Maya", 92, 88, 90)`,
+            ].join("\n"),
+            gradingNote: `Pass if average returns the mean, grade returns a letter, print_report uses both, and a report line prints.`,
+        },
+        {
+            text: `Finish area(w, h) and describe(w, h). describe should call area and print the result. Call describe once.`,
+            starter: [
+                `def area(w, h):`,
+                `    return`,
+                ``,
+                `def describe(w, h):`,
+                `    a = area(w, h)`,
+                `    print("Area:", a)`,
+                ``,
+                ``,
+            ].join("\n"),
+            gradingNote: `Pass if area returns w*h, describe calls area and prints, and describe is called at least once.`,
+        },
+    ],
+
+    quiz: [
+        {
+            question: `Why write many small functions instead of one long block?`,
+            options: [
+                { text: "Python runs small functions faster", correct: false },
+                { text: "Small functions are easier to test, reuse, and fix", correct: true },
+                { text: "You need more functions to use return", correct: false },
+                { text: "Python requires at least three functions in every program", correct: false },
+            ],
+            correct: "Small, focused functions are easier to understand, reuse, and fix.",
+            wrong: "The real benefit is readability and reuse — each function does one clear job.",
+        },
+        {
+            question: `What makes a good function name?`,
+            options: [
+                { text: "A random letter like x", correct: false },
+                { text: "A clear name that says what the function does", correct: true },
+                { text: "Names are never allowed", correct: false },
+                { text: "Only numbers as names", correct: false },
+            ],
+            correct: "Names like average or print_report tell readers the job.",
+            wrong: "Pick names that describe the function’s one job.",
+        },
+        {
+            question: `In a well-designed report program, where should the letter-grade rules live?`,
+            options: [
+                { text: "Copied into every print line", correct: false },
+                { text: "Inside one grade helper that others call", correct: true },
+                { text: "Only in comments", correct: false },
+                { text: "Inside range()", correct: false },
+            ],
+            correct: "Keep the grade rules in one function so every caller shares them.",
+            wrong: "One helper for grading keeps the design clean.",
+        },
+    ],
+
+    project: {
+        title: "Student Report Card",
+        desc: "Build a tiny report card with separate functions: average of three scores, a letter grade from that average, and print_report that uses both. Use fixed numbers — no input().",
+        starter: [
+            `def average(a, b, c):`,
+            `    return`,
+            ``,
+            `def grade(score):`,
+            `    if score >= 90:`,
+            `        return "A"`,
+            `    elif score >= 70:`,
+            `        return "B"`,
+            `    else:`,
+            `        return "C"`,
+            ``,
+            `def print_report(name, a, b, c):`,
+            `    avg = average(a, b, c)`,
+            `    letter = grade(avg)`,
+            `    print()`,
+            ``,
+            `print_report("Ava", 90, 80, 85)`,
+        ].join("\n"),
+    },
+
+    prev: { unit: 5, lesson: 7, title: "Functions Calling Functions" },
+    next: { unit: 6, lesson: 1, title: "What is a List" },
+};
