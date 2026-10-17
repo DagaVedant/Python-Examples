@@ -71,7 +71,7 @@ You dont even need Python installed to follow the lessons in the browser, but if
 |---|--------|---------|
 | 3.1 | Comparisons & Booleans | Number Checker |
 | 3.2 | if / else | Odd or Even |
-| 3.3 | elif & Multiple Branches | BMI Calculator |
+| 3.3 | elif & Multiple Branches | Game Score Rank |
 | 3.4 | Combining Conditions (and / or / not) | Theme Park Entry |
 
 ### Unit 4 - Repetition & Loops
