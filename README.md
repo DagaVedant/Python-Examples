@@ -6,7 +6,7 @@ An interactive Python learning course for beginners, all in your browser. No dow
 
 Try it here: [https://dagavedant.github.io/Python-Examples/](https://dagavedant.github.io/Python-Examples/)
 
-The first two lessons are totally free, no account needed. You can read them, run real Python right in the browser, and take the quiz. When your ready to keep going, make a free account to unlock the rest, save your progress across devices, and get AI feedback on your practice code.
+Every lesson is free — no account needed. You can read them, run real Python right in the browser (including input()), and take the quizzes. After your first lesson, you can optionally create a free account to save progress across devices and get AI feedback on practice code.
 
 ## Quick Peak
 
@@ -18,14 +18,14 @@ Theres also a short demo video at `public/video/demo.mp4` if you want to see it 
 
 - 110 short lessons across 12 units (AP CSP style — one idea per lesson), from your first program through dictionaries, files, errors, imports, and classes
 - A built in code editor with line wrapping and AI feedback on your practice code
-- Progress that saves across all your devices once you sign in
+- Optional free account to save progress across devices and unlock AI practice checks
 - A quiz and two practice tasks in every lesson
 
 ## How does it Work
 
 Its a static site (just HTML, CSS, and JS) with a [Supabase](https://supabase.com) backend doing the heavy lifting:
 
-- Accounts and your lesson progress live in Supabase, so your progress follows you everywhere.
+- An optional account stores lesson progress in Supabase so it follows you across devices.
 - Your practice code gets checked by a Supabase function that uses AI. The API key stays on the server, so its never exposed in the browser.
 - Each lesson loads all its content from a `data.js` file inside `Unit X/lesson Y/`. The `lesson.html` page reads the `?unit=` and `?lesson=` from the URL and renders the right lesson automatically.
 
