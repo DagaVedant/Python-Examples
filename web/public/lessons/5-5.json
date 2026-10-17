@@ -1,0 +1,162 @@
+{
+  "format": "v2",
+  "unit": 5,
+  "lesson": 5,
+  "unitLessons": 8,
+  "unitTitle": "Functions",
+  "title": "Return Values",
+  "readTime": 23,
+  "goal": "In this lesson you will learn how to send a result back out of a function with return so the caller can use that value.",
+  "learn": [
+    "Use return to send a value back",
+    "See that return leaves the function right away",
+    "Tell print and return apart"
+  ],
+  "idea": "<code>return</code> sends a value back to whoever called the function. That is different from only printing inside the function, because a returned value can be stored or used in another calculation.\n\nWhen Python hits <code>return</code>, it leaves the function immediately and hands the value back.",
+  "code": {
+    "filename": "add.py",
+    "lines": [
+      "def add(a, b):",
+      "    return a + b",
+      "",
+      "print(add(3, 7))",
+      "print(add(10, 2))",
+      "",
+      "def double(n):",
+      "    return n * 2",
+      "",
+      "print(double(4))",
+      "print(double(9))"
+    ],
+    "output": [
+      "10",
+      "12",
+      "8",
+      "18"
+    ]
+  },
+  "changeOneLine": "In the editor above, change <code>print(double(4))</code> to <code>print(double(5))</code>. Press <strong>Run</strong>. That line of output should say 10.",
+  "code2": {
+    "filename": "grade.py",
+    "lines": [
+      "def grade(score):",
+      "    if score >= 90:",
+      "        return \"A\"",
+      "    elif score >= 70:",
+      "        return \"B\"",
+      "    else:",
+      "        return \"C\"",
+      "",
+      "print(grade(95))",
+      "print(grade(75))",
+      "print(grade(60))"
+    ],
+    "output": [
+      "A",
+      "B",
+      "C"
+    ]
+  },
+  "practice": [
+    {
+      "text": "Finish add(a, b) so it returns the sum. Print the result of calling it.",
+      "hint": "return sends a value back — put the addition of a and b right after return, not a print inside the function.",
+      "starterTip": "Change the lone return to return a + b. print(add(2, 3)) is already there; run it and you should see 5.",
+      "starter": "def add(a, b):\n    return\n\nprint(add(2, 3))",
+      "gradingNote": "Pass if add returns a + b (not only prints inside) and the sum appears in the output."
+    },
+    {
+      "text": "Finish bigger(a, b) so it returns the larger of two numbers. Print two calls.",
+      "hint": "The if branch already returns a when a is bigger. In the else branch, return the other number.",
+      "starterTip": "Fill in return b in the else, then on the blank print() line try print(bigger(4, 9)) so you show two results.",
+      "starter": "def bigger(a, b):\n    if a > b:\n        return a\n    else:\n        return\n\nprint(bigger(8, 3))\nprint()",
+      "gradingNote": "Pass if bigger returns the larger number using return and at least two call results are printed."
+    }
+  ],
+  "quiz": [
+    {
+      "question": "What is the key difference between print and return inside a function?",
+      "options": [
+        {
+          "text": "There is no difference",
+          "correct": false
+        },
+        {
+          "text": "return sends the value back so it can be used; print just displays it",
+          "correct": true
+        },
+        {
+          "text": "print is faster than return",
+          "correct": false
+        },
+        {
+          "text": "return only works with numbers",
+          "correct": false
+        }
+      ],
+      "correct": "return passes the value back to the caller. print only shows it on the screen.",
+      "wrong": "return gives the value back to the rest of your program. print only shows it."
+    },
+    {
+      "question": "What does this print? def add(a, b): return a + b then print(add(2, 3))",
+      "options": [
+        {
+          "text": "2",
+          "correct": false
+        },
+        {
+          "text": "3",
+          "correct": false
+        },
+        {
+          "text": "5",
+          "correct": true
+        },
+        {
+          "text": "Nothing",
+          "correct": false
+        }
+      ],
+      "correct": "add returns 5, and print shows that returned value.",
+      "wrong": "The function returns 2 + 3, which is 5, and print displays it."
+    },
+    {
+      "question": "What happens when Python hits a return line?",
+      "options": [
+        {
+          "text": "It pauses, then keeps running the rest of the function",
+          "correct": false
+        },
+        {
+          "text": "It leaves the function and sends the value back",
+          "correct": true
+        },
+        {
+          "text": "It deletes the function forever",
+          "correct": false
+        },
+        {
+          "text": "It only works inside while loops",
+          "correct": false
+        }
+      ],
+      "correct": "return exits the function immediately with the value.",
+      "wrong": "After return, the rest of that function body does not run."
+    }
+  ],
+  "project": {
+    "title": "Mini Calculator Returns",
+    "desc": "Finish four tiny functions that each take two numbers and return a result: add, subtract, multiply, and divide. Print each answer. Use fixed numbers — no input().",
+    "starter": "def add(a, b):\n    return a + b\n\ndef subtract(a, b):\n    return\n\ndef multiply(a, b):\n    return a * b\n\ndef divide(a, b):\n    return\n\nprint(\"Add:\", add(10, 2))\nprint(\"Subtract:\", subtract(10, 2))\nprint()\nprint()"
+  },
+  "prev": {
+    "unit": 5,
+    "lesson": 4,
+    "title": "Multiple Parameters"
+  },
+  "next": {
+    "unit": 5,
+    "lesson": 6,
+    "title": "Using What You Return"
+  }
+}

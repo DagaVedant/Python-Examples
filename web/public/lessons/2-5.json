@@ -1,0 +1,157 @@
+{
+  "format": "v2",
+  "unit": 2,
+  "lesson": 5,
+  "unitLessons": 10,
+  "unitTitle": "Number Calculations & Data",
+  "title": "Integer Division",
+  "readTime": 22,
+  "goal": "In this lesson you will learn how // divides and keeps only the whole-number part.",
+  "learn": [
+    "Use // for integer division",
+    "See that // drops the decimal part",
+    "Compare / and // on the same numbers"
+  ],
+  "idea": "The operator <code>//</code> is <strong>integer division</strong> (also called floor division). It divides and keeps only the whole part.\n\n<code>7 // 2</code> is <code>3</code> — not 3.5. The leftover fraction is dropped (for positive numbers).\n\nUse <code>/</code> when you want a decimal. Use <code>//</code> when you only want whole pieces.",
+  "code": {
+    "filename": "int_div.py",
+    "lines": [
+      "# Float vs integer division",
+      "print(7 / 2)",
+      "print(7 // 2)",
+      "",
+      "print(20 / 6)",
+      "print(20 // 6)",
+      "",
+      "# Whole teams",
+      "players = 23",
+      "per_team = 5",
+      "teams = players // per_team",
+      "print(\"Full teams:\", teams)"
+    ],
+    "output": [
+      "3.5",
+      "3",
+      "3.3333333333333335",
+      "3",
+      "Full teams: 4"
+    ]
+  },
+  "changeOneLine": "In the editor above, change <code>players = 23</code> to <code>players = 25</code>. Press <strong>Run</strong>. The last line should say <code>Full teams: 5</code>.",
+  "code2": {
+    "filename": "boxes.py",
+    "lines": [
+      "apples = 17",
+      "box_size = 4",
+      "full_boxes = apples // box_size",
+      "print(\"Full boxes:\", full_boxes)",
+      "print(\"Float check:\", apples / box_size)"
+    ],
+    "output": [
+      "Full boxes: 4",
+      "Float check: 4.25"
+    ]
+  },
+  "practice": [
+    {
+      "text": "Use // to find how many full weeks are in 30 days. Print the answer.",
+      "hint": "One week is 7 days. Integer division // drops leftover days — you want whole weeks only.",
+      "starterTip": "Try weeks = days // 7 on the blank line (30 // 7 is 4).",
+      "starter": "days = 30\nweeks = \nprint(\"Full weeks:\", weeks)",
+      "gradingNote": "Pass if weeks is 4 (30 // 7) and printed. Must use //."
+    },
+    {
+      "text": "Print both <code>19 / 5</code> and <code>19 // 5</code> on separate lines so you can compare them.",
+      "hint": "You need two print() lines: one with / (decimal answer) and one with // (whole number only).",
+      "starterTip": "First line print(19 / 5), second line print(19 // 5) — run and compare 3.8 vs 3.",
+      "starter": "print()\nprint()",
+      "gradingNote": "Pass if one print shows 3.8 (or similar float) and one shows 3 using //."
+    }
+  ],
+  "quiz": [
+    {
+      "question": "What is <code>9 // 2</code>?",
+      "options": [
+        {
+          "text": "4.5",
+          "correct": false
+        },
+        {
+          "text": "4",
+          "correct": true
+        },
+        {
+          "text": "5",
+          "correct": false
+        },
+        {
+          "text": "9.2",
+          "correct": false
+        }
+      ],
+      "correct": "// keeps the whole part only: 4.",
+      "wrong": "Integer division drops the .5. 9 // 2 is 4."
+    },
+    {
+      "question": "Which operator drops the decimal part after dividing?",
+      "options": [
+        {
+          "text": "/",
+          "correct": false
+        },
+        {
+          "text": "//",
+          "correct": true
+        },
+        {
+          "text": "*",
+          "correct": false
+        },
+        {
+          "text": "%",
+          "correct": false
+        }
+      ],
+      "correct": "// is integer (floor) division.",
+      "wrong": "/ keeps decimals. // keeps only the whole number."
+    },
+    {
+      "question": "You have 14 muffins and boxes of 5. How many full boxes with //?",
+      "options": [
+        {
+          "text": "2",
+          "correct": true
+        },
+        {
+          "text": "2.8",
+          "correct": false
+        },
+        {
+          "text": "3",
+          "correct": false
+        },
+        {
+          "text": "14",
+          "correct": false
+        }
+      ],
+      "correct": "14 // 5 is 2 full boxes.",
+      "wrong": "14 ÷ 5 = 2 with leftover. // gives 2."
+    }
+  ],
+  "project": {
+    "title": "Bus Seats",
+    "desc": "There are 47 students. Each bus holds 12. Use // to print how many full buses you need seats for (full buses only).",
+    "starter": "students = 47\nseats = 12\nfull_buses = \nprint(\"Full buses:\", full_buses)"
+  },
+  "prev": {
+    "unit": 2,
+    "lesson": 4,
+    "title": "Float Division"
+  },
+  "next": {
+    "unit": 2,
+    "lesson": 6,
+    "title": "Remainder"
+  }
+}

@@ -1,0 +1,168 @@
+{
+  "format": "v2",
+  "unit": 7,
+  "lesson": 6,
+  "unitLessons": 8,
+  "unitTitle": "2D Lists",
+  "title": "Printing a Grid",
+  "readTime": 23,
+  "goal": "In this lesson you will learn how to print a 2D list so it looks like a neat grid on the screen.",
+  "learn": [
+    "Print one row per line",
+    "Join cells with spaces for a clean look",
+    "Nested loops help format the board"
+  ],
+  "idea": "Printing <code>grid</code> all at once shows Python's list brackets. For a game board look, print <strong>one row per line</strong>.\n\n    You can print each row list, or loop through cells and print them with spaces so the grid lines up.",
+  "code": {
+    "filename": "print_grid.py",
+    "lines": [
+      "grid = [",
+      "    [1, 2, 3],",
+      "    [4, 5, 6],",
+      "    [7, 8, 9],",
+      "]",
+      "",
+      "# One row per line",
+      "for row in grid:",
+      "    print(row)",
+      "",
+      "print(\"---\")",
+      "",
+      "# Cells with spaces",
+      "for row in grid:",
+      "    line = \"\"",
+      "    for cell in row:",
+      "        line = line + str(cell) + \" \"",
+      "    print(line)"
+    ],
+    "output": [
+      "[1, 2, 3]",
+      "[4, 5, 6]",
+      "[7, 8, 9]",
+      "---",
+      "1 2 3 ",
+      "4 5 6 ",
+      "7 8 9 "
+    ]
+  },
+  "changeOneLine": "In the editor above, change the separator <code>\" \"</code> to <code>\"-\"</code> in the line builder. Press <strong>Run</strong>. The bottom grid should look like <code>1-2-3-</code> on each row.",
+  "code2": {
+    "filename": "dots.py",
+    "lines": [
+      "board = [",
+      "    [\".\", \"X\", \".\"],",
+      "    [\".\", \"O\", \".\"],",
+      "    [\"X\", \".\", \"O\"],",
+      "]",
+      "for row in board:",
+      "    print(row[0], row[1], row[2])"
+    ],
+    "output": [
+      ". X .",
+      ". O .",
+      "X . O"
+    ]
+  },
+  "practice": [
+    {
+      "text": "Print each row of the grid on its own line.",
+      "hint": "Loop over grid once. Each time through, print one row so you get three lines of output.",
+      "starterTip": "Add for row in grid: and on the next line (indented) print(row).",
+      "starter": "grid = [\n    [1, 2, 3],\n    [4, 5, 6],\n    [7, 8, 9],\n]\n",
+      "gradingNote": "Pass if a for loop prints each row on a separate line."
+    },
+    {
+      "text": "Print the board so each row shows three cells separated by spaces (use print with commas or build a line).",
+      "hint": "You need three printed lines — one per row. Commas in print() put spaces between values on the same line.",
+      "starterTip": "Try for row in board: then print(row[0], row[1], row[2]) so each row looks like X O X.",
+      "starter": "board = [\n    [\"X\", \"O\", \"X\"],\n    [\"O\", \"X\", \"O\"],\n    [\"X\", \"O\", \"X\"],\n]\n",
+      "gradingNote": "Pass if each of the three rows is printed in a readable spaced format."
+    }
+  ],
+  "quiz": [
+    {
+      "question": "Why print one row per line?",
+      "options": [
+        {
+          "text": "So the grid looks like a table on screen",
+          "correct": true
+        },
+        {
+          "text": "Because Python forbids printing whole lists",
+          "correct": false
+        },
+        {
+          "text": "To delete the grid",
+          "correct": false
+        },
+        {
+          "text": "Rows cannot be printed any other way",
+          "correct": false
+        }
+      ],
+      "correct": "Row-by-row printing makes the board easy to read.",
+      "wrong": "A vertical stack of rows looks like a real grid."
+    },
+    {
+      "question": "What does <code>print(row[0], row[1], row[2])</code> do for a 3-cell row?",
+      "options": [
+        {
+          "text": "Prints the three cells with spaces",
+          "correct": true
+        },
+        {
+          "text": "Causes an error always",
+          "correct": false
+        },
+        {
+          "text": "Prints only the first cell",
+          "correct": false
+        },
+        {
+          "text": "Sorts the row first",
+          "correct": false
+        }
+      ],
+      "correct": "print with commas separates values with spaces.",
+      "wrong": "Comma-separated print values appear on one line with spaces."
+    },
+    {
+      "question": "On a 3x3 board, how many lines of row output should you usually see?",
+      "options": [
+        {
+          "text": "1",
+          "correct": false
+        },
+        {
+          "text": "3",
+          "correct": true
+        },
+        {
+          "text": "9",
+          "correct": false
+        },
+        {
+          "text": "0",
+          "correct": false
+        }
+      ],
+      "correct": "Three rows mean three printed lines.",
+      "wrong": "One print per row gives three lines."
+    }
+  ],
+  "project": {
+    "title": "Pretty Tic-Tac-Toe",
+    "desc": "Make a 3x3 board with some X and O marks. Print it neatly — one row per line with spaces between cells.",
+    "starter": "board = [\n    [\"X\", \".\", \"O\"],\n    [\".\", \"X\", \".\"],\n    [\"O\", \".\", \"X\"],\n]\n# pretty print\n"
+  },
+  "prev": {
+    "unit": 7,
+    "lesson": 5,
+    "title": "Nested Loops"
+  },
+  "next": {
+    "unit": 7,
+    "lesson": 7,
+    "title": "Searching a Grid"
+  }
+}

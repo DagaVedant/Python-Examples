@@ -1,0 +1,149 @@
+{
+  "format": "v2",
+  "unit": 1,
+  "lesson": 5,
+  "unitLessons": 10,
+  "unitTitle": "Getting Started with Python",
+  "title": "Strings and Quotes",
+  "readTime": 22,
+  "goal": "In this lesson you will learn that text is a string, and how to choose single or double quotes safely.",
+  "learn": [
+    "Text in quotes is a string",
+    "Use \" \" or ' ' around text",
+    "Pick the outer quotes so inner marks fit"
+  ],
+  "idea": "Text in Python is called a <strong>string</strong>. You write a string inside quotes.\n\nYou can use double quotes <code>\"like this\"</code> or single quotes <code>'like this'</code>. If the text needs an apostrophe (It's), use double quotes on the outside. If the text needs double quotes inside, use single quotes on the outside.",
+  "code": {
+    "filename": "quotes.py",
+    "lines": [
+      "print(\"Hello, team!\")",
+      "print('Ready to play?')",
+      "# Apostrophe inside → double quotes outside",
+      "print(\"It's game day.\")",
+      "# Quote marks inside → single quotes outside",
+      "print('She said \"Nice shot!\"')"
+    ],
+    "output": [
+      "Hello, team!",
+      "Ready to play?",
+      "It's game day.",
+      "She said \"Nice shot!\""
+    ]
+  },
+  "changeOneLine": "In the editor above, change <code>It's game day.</code> to <code>It's practice day.</code>. Press <strong>Run</strong>. Keep the double quotes on the outside.",
+  "code2": {
+    "filename": "signs.py",
+    "lines": [
+      "print(\"Coach's whistle\")",
+      "print('Sign says \"Go!\"')",
+      "print(\"We're ready.\")"
+    ],
+    "output": [
+      "Coach's whistle",
+      "Sign says \"Go!\"",
+      "We're ready."
+    ]
+  },
+  "practice": [
+    {
+      "text": "Print a sentence that includes an apostrophe, like It's fun. Use the starter.",
+      "hint": "Apostrophes look like tiny quotes. Use double quotes on the outside so Python does not stop the string too early.",
+      "starterTip": "Fill the blank print() with something like print(\"It's fun!\") — double quotes outside.",
+      "starter": "# Needs an apostrophe inside the string\nprint()",
+      "gradingNote": "Pass if one print() outputs text containing an apostrophe ('). Outer double quotes are the usual safe choice."
+    },
+    {
+      "text": "Print a sentence that includes a word in double quotes, like \"Goal!\". Use the starter.",
+      "hint": "If the words inside need \"double quotes\", wrap the whole string in single quotes on the outside.",
+      "starterTip": "Try print('She yelled \"Goal!\"') — single quotes outside, double quotes inside the text.",
+      "starter": "# Needs \"double quotes\" inside the string\nprint()",
+      "gradingNote": "Pass if one print() outputs text that includes a double-quote character (\"). Outer single quotes are expected."
+    }
+  ],
+  "quiz": [
+    {
+      "question": "Which line prints It's fun without an error?",
+      "options": [
+        {
+          "text": "print('It's fun')",
+          "correct": false
+        },
+        {
+          "text": "print(\"It's fun\")",
+          "correct": true
+        },
+        {
+          "text": "print(It's fun)",
+          "correct": false
+        },
+        {
+          "text": "print(\"It\"s fun\")",
+          "correct": false
+        }
+      ],
+      "correct": "Double quotes on the outside let the apostrophe sit inside safely.",
+      "wrong": "Use the opposite quote on the outside so Python does not end the string early."
+    },
+    {
+      "question": "What do we call text inside quotes in Python?",
+      "options": [
+        {
+          "text": "A comment",
+          "correct": false
+        },
+        {
+          "text": "A string",
+          "correct": true
+        },
+        {
+          "text": "An integer",
+          "correct": false
+        },
+        {
+          "text": "A float",
+          "correct": false
+        }
+      ],
+      "correct": "Text in quotes is a string.",
+      "wrong": "Strings are text. Comments start with #. Numbers are int or float."
+    },
+    {
+      "question": "Which line can hold the words She said \"Hi!\" safely?",
+      "options": [
+        {
+          "text": "print(\"She said \"Hi!\"\")",
+          "correct": false
+        },
+        {
+          "text": "print('She said \"Hi!\"')",
+          "correct": true
+        },
+        {
+          "text": "print(She said \"Hi!\")",
+          "correct": false
+        },
+        {
+          "text": "print(# She said \"Hi!\")",
+          "correct": false
+        }
+      ],
+      "correct": "Single quotes outside let double quotes live inside.",
+      "wrong": "When the text needs \", wrap the whole string in single quotes."
+    }
+  ],
+  "project": {
+    "title": "Quote Board",
+    "desc": "Print three lines: a normal greeting, a line with an apostrophe, and a line with words in double quotes.",
+    "starter": "print(\"Hello, fans!\")\n# Apostrophe line\nprint()\n# Inner double-quotes line\nprint()"
+  },
+  "prev": {
+    "unit": 1,
+    "lesson": 4,
+    "title": "Many Lines of Output"
+  },
+  "next": {
+    "unit": 1,
+    "lesson": 6,
+    "title": "Fancy print()"
+  }
+}

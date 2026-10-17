@@ -1,0 +1,149 @@
+{
+  "format": "v2",
+  "unit": 4,
+  "lesson": 2,
+  "unitLessons": 10,
+  "unitTitle": "Repetition & Loops",
+  "title": "for Loops",
+  "readTime": 22,
+  "goal": "In this lesson you will learn how a for loop visits each item in a list and runs an indented block once per item.",
+  "learn": [
+    "Write a for loop with for and in",
+    "Indent the lines that should repeat",
+    "Use the loop variable inside the block"
+  ],
+  "idea": "A <strong>for loop</strong> runs a block of code once for each item in a sequence (like a list).\n\nYou write <code>for name in names:</code>. The name between <code>for</code> and <code>in</code> is the <strong>loop variable</strong>. Each time through, it holds the next item.\n\nIndent the lines under the <code>for</code> line. Those indented lines are the block that repeats.",
+  "code": {
+    "filename": "greetings.py",
+    "lines": [
+      "names = [\"Alice\", \"Bob\", \"Charlie\"]",
+      "",
+      "for name in names:",
+      "    print(\"Hello,\", name)",
+      "",
+      "print(\"All greeted\")"
+    ],
+    "output": [
+      "Hello, Alice",
+      "Hello, Bob",
+      "Hello, Charlie",
+      "All greeted"
+    ]
+  },
+  "changeOneLine": "In the editor above, add <code>\"Diana\"</code> to the names list so it has four names. Press <strong>Run</strong>. You should see a fourth Hello line for Diana.",
+  "code2": {
+    "filename": "scores.py",
+    "lines": [
+      "scores = [10, 25, 40]",
+      "for score in scores:",
+      "    print(\"Points:\", score)"
+    ],
+    "output": [
+      "Points: 10",
+      "Points: 25",
+      "Points: 40"
+    ]
+  },
+  "practice": [
+    {
+      "text": "Finish the loop so it prints each fruit on its own line.",
+      "hint": "Inside the loop, print the loop variable fruit — it holds apple, then banana, then cherry.",
+      "starterTip": "Replace print() with print(fruit) (keep the four spaces so it stays inside the for block).",
+      "starter": "fruits = [\"apple\", \"banana\", \"cherry\"]\nfor fruit in fruits:\n    print()",
+      "gradingNote": "Pass if a for loop walks the fruits list and prints each fruit (or a line that includes each fruit)."
+    },
+    {
+      "text": "Loop over the colors list and print Color: then each color.",
+      "hint": "Use the loop variable color in print. You can show a label and the value in one line.",
+      "starterTip": "Try print(\"Color:\", color) on the indented line under for color in colors:.",
+      "starter": "colors = [\"red\", \"blue\", \"green\"]\nfor color in colors:\n    # Print Color: and the color\n    print()",
+      "gradingNote": "Pass if a for loop prints each color, preferably with the word Color."
+    }
+  ],
+  "quiz": [
+    {
+      "question": "How many times does this loop run? for name in [\"A\", \"B\", \"C\"]:",
+      "options": [
+        {
+          "text": "1 time",
+          "correct": false
+        },
+        {
+          "text": "2 times",
+          "correct": false
+        },
+        {
+          "text": "3 times",
+          "correct": true
+        },
+        {
+          "text": "Forever",
+          "correct": false
+        }
+      ],
+      "correct": "There are three items, so the loop body runs three times.",
+      "wrong": "Count the items in the list. The loop runs once per item."
+    },
+    {
+      "question": "What is the loop variable in for color in colors:?",
+      "options": [
+        {
+          "text": "for",
+          "correct": false
+        },
+        {
+          "text": "color",
+          "correct": true
+        },
+        {
+          "text": "colors",
+          "correct": false
+        },
+        {
+          "text": "print",
+          "correct": false
+        }
+      ],
+      "correct": "color is the loop variable. It holds one item each time.",
+      "wrong": "The name between for and in is the loop variable."
+    },
+    {
+      "question": "Why indent the lines under a for loop?",
+      "options": [
+        {
+          "text": "Indentation looks nicer but does nothing",
+          "correct": false
+        },
+        {
+          "text": "Those lines are the block that repeats",
+          "correct": true
+        },
+        {
+          "text": "Indentation makes the loop run faster",
+          "correct": false
+        },
+        {
+          "text": "Only comments need to be indented",
+          "correct": false
+        }
+      ],
+      "correct": "Indented lines belong to the loop and run each time through.",
+      "wrong": "In Python, indentation shows which lines are inside the loop."
+    }
+  ],
+  "project": {
+    "title": "Team Roster",
+    "desc": "Loop through a list of three player names. Print Player: then each name. After the loop, print Roster complete.",
+    "starter": "players = [\"Maya\", \"Sam\", \"Leo\"]\nfor player in players:\n    print()\n\n# After the loop\nprint()"
+  },
+  "prev": {
+    "unit": 4,
+    "lesson": 1,
+    "title": "Why Loops"
+  },
+  "next": {
+    "unit": 4,
+    "lesson": 3,
+    "title": "range() Basics"
+  }
+}

@@ -1,0 +1,155 @@
+{
+  "format": "v2",
+  "unit": 5,
+  "lesson": 3,
+  "unitLessons": 8,
+  "unitTitle": "Functions",
+  "title": "One Parameter",
+  "readTime": 22,
+  "goal": "In this lesson you will learn how to give a function one parameter so the same function can work with different values each time you call it.",
+  "learn": [
+    "Add one parameter in the def line",
+    "Pass one argument when calling",
+    "Use the parameter name inside the function"
+  ],
+  "idea": "A <strong>parameter</strong> is a variable you write inside the parentheses on the <code>def</code> line. An <strong>argument</strong> is the real value you pass in when you call the function.\n\nWith one parameter, you can greet Alice and Bob using the same <code>greet</code> function — only the argument changes.",
+  "code": {
+    "filename": "greet_name.py",
+    "lines": [
+      "def greet(name):",
+      "    print(\"Hello,\", name)",
+      "",
+      "greet(\"Alice\")",
+      "greet(\"Bob\")",
+      "",
+      "def shout(word):",
+      "    print(word, \"!!!\")",
+      "",
+      "shout(\"Wow\")",
+      "shout(\"Cool\")"
+    ],
+    "output": [
+      "Hello, Alice",
+      "Hello, Bob",
+      "Wow !!!",
+      "Cool !!!"
+    ]
+  },
+  "changeOneLine": "In the editor above, change the first call from <code>greet(\"Alice\")</code> to <code>greet(\"Maya\")</code>. Press <strong>Run</strong>. The first line should say Hello, Maya.",
+  "code2": {
+    "filename": "double_print.py",
+    "lines": [
+      "def show_double(n):",
+      "    print(n, \"times 2 is\", n * 2)",
+      "",
+      "show_double(4)",
+      "show_double(10)"
+    ],
+    "output": [
+      "4 times 2 is 8",
+      "10 times 2 is 20"
+    ]
+  },
+  "practice": [
+    {
+      "text": "Finish greet(name) so it prints a hello using the name. Call it with two different names.",
+      "hint": "Use the parameter name inside print — for example print(\"Hello,\", name). Add a second greet(\"...\") call with a different name.",
+      "starterTip": "Try print(\"Hello,\", name) in the function body, then add greet(\"Alex\") on the blank line below greet(\"Sam\").",
+      "starter": "def greet(name):\n    print()\n\ngreet(\"Sam\")\n",
+      "gradingNote": "Pass if greet has a name parameter, prints using that parameter, and is called at least twice with different string arguments."
+    },
+    {
+      "text": "Finish square(n) so it prints n times n. Call it with two different numbers.",
+      "hint": "Multiply n by itself with n * n (or n ** 2) inside print. Call square twice with different numbers like 3 and 5.",
+      "starterTip": "Try print(n, \"squared is\", n * n) inside square, then add square(5) on the blank line below square(3).",
+      "starter": "def square(n):\n    print()\n\nsquare(3)\n",
+      "gradingNote": "Pass if square takes one parameter, prints n*n (or equivalent), and is called at least twice."
+    }
+  ],
+  "quiz": [
+    {
+      "question": "In def greet(name):, what is name?",
+      "options": [
+        {
+          "text": "An argument",
+          "correct": false
+        },
+        {
+          "text": "A parameter",
+          "correct": true
+        },
+        {
+          "text": "A print statement",
+          "correct": false
+        },
+        {
+          "text": "A comment",
+          "correct": false
+        }
+      ],
+      "correct": "name sits in the def line, so it is a parameter.",
+      "wrong": "Names listed inside the parentheses on the def line are parameters."
+    },
+    {
+      "question": "What does greet(\"Ava\") pass into the function?",
+      "options": [
+        {
+          "text": "The argument \"Ava\"",
+          "correct": true
+        },
+        {
+          "text": "Nothing — greet needs no values",
+          "correct": false
+        },
+        {
+          "text": "Only the word greet",
+          "correct": false
+        },
+        {
+          "text": "A blank line",
+          "correct": false
+        }
+      ],
+      "correct": "\"Ava\" is the argument passed into the name parameter.",
+      "wrong": "The value inside the call's parentheses is the argument."
+    },
+    {
+      "question": "Why use a parameter?",
+      "options": [
+        {
+          "text": "So one function can work with different inputs",
+          "correct": true
+        },
+        {
+          "text": "So Python ignores the function",
+          "correct": false
+        },
+        {
+          "text": "Parameters are only for comments",
+          "correct": false
+        },
+        {
+          "text": "So loops stop working",
+          "correct": false
+        }
+      ],
+      "correct": "Parameters let the same function handle many different values.",
+      "wrong": "Different arguments in, same function body — that is the point."
+    }
+  ],
+  "project": {
+    "title": "Name Tag Printer",
+    "desc": "Write a function name_tag(name) that prints Hello, my name is and the name. Call it for three different people.",
+    "starter": "def name_tag(name):\n    print()\n\nname_tag(\"Ava\")\n\n"
+  },
+  "prev": {
+    "unit": 5,
+    "lesson": 2,
+    "title": "Defining and Calling"
+  },
+  "next": {
+    "unit": 5,
+    "lesson": 4,
+    "title": "Multiple Parameters"
+  }
+}
