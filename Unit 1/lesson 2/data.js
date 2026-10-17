@@ -48,6 +48,8 @@ When you press <strong>Run</strong>, Python follows the instruction and the word
     practice: [
         {
             text: `Finish the greeting. Keep the first print. Fill in the second blank so it prints a second message.`,
+            hint: `Keep print("Hello!"). On the blank line, add a second message inside quotes inside print().`,
+            starterTip: `Under the comment, try: print("Nice to meet you!") — then press Run.`,
             starter: [
                 `print("Hello!")`,
                 `# Add your second message`,
@@ -57,6 +59,8 @@ When you press <strong>Run</strong>, Python follows the instruction and the word
         },
         {
             text: `Print your favourite animal in one print() call. Replace the blank.`,
+            hint: `One print() is enough. Put your animal name (or a short sentence) inside quotes.`,
+            starterTip: `Replace the blank with something like: print("panda") or print("I like dogs").`,
             starter: [
                 `# One print with your favourite animal`,
                 `print()`,

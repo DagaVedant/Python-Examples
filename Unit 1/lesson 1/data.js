@@ -55,6 +55,8 @@ Think of it like a recipe: step 1, then step 2, then step 3. You do not skip aro
     practice: [
         {
             text: `Finish a three-step morning routine. Keep the comments. Fill in the blank print lines so the program shows three steps in order.`,
+            hint: `You already have Step 1. For Step 2 and Step 3, put words inside the empty print() calls — and keep the quotes.`,
+            starterTip: `Try something like print("Brush teeth") under Step 2, then another print("...") under Step 3.`,
             starter: [
                 `# Step 1`,
                 `print("Wake up")`,
@@ -69,6 +71,8 @@ Think of it like a recipe: step 1, then step 2, then step 3. You do not skip aro
         },
         {
             text: `Write a tiny program with exactly two instructions that print two different messages. Use the starter.`,
+            hint: `You need two print() lines. Each one should show a different message inside quotes.`,
+            starterTip: `Fill both blank lines, for example: print("Hello") on the first and print("Goodbye") on the second.`,
             starter: [
                 `# Two instructions, top to bottom`,
                 `print()`,
