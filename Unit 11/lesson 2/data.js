@@ -2,141 +2,117 @@ export default {
     format: "v2",
     unit: 11,
     lesson: 2,
-    unitLessons: 3,
+    unitLessons: 8,
     unitTitle: "Imports",
-    title: "from … import",
-    readTime: 30,
-
-    goal: "In this lesson you will learn how to import just the names you need with from … import, so you can call sqrt or choice without writing the module name each time.",
+    title: "import module",
+    readTime: 22,
+    goal: "In this lesson you will learn the import module statement to load a toolbox.",
 
     learn: [
-        "Use from module import name",
-        "Call imported names without a module prefix",
-        "Import more than one name in one line",
+        "Write import math or import random",
+        "Put imports near the top",
+        "Know the module name is ready to use",
     ],
 
-    idea: `Sometimes you only need one tool. Instead of <code>import math</code> and then <code>math.sqrt</code>, you can write:
+    idea: `Load a module with <code>import math</code> or <code>import random</code>. Put imports near the top of the file.
 
-<code>from math import sqrt</code>
-
-Then you call <code>sqrt(16)</code> with no <code>math.</code> in front.
-
-You can pull several names at once: <code>from random import choice, seed</code>. Remember: if you use <code>from random import choice</code>, you still need <code>seed</code> (or <code>import random</code>) if you want a fixed practice seed.`,
+After that line runs, the module name is available. Next lesson you will call tools with a dot.`,
 
     code: {
-        filename: "from_import.py",
+        filename: "import_line.py",
         lines: [
-            `from math import sqrt`,
-            `from random import choice, seed`,
-            ``,
-            `seed(1)`,
-            ``,
-            `print(sqrt(36))`,
-            `print(choice(["red", "blue", "green"]))`,
+            `import math`,
+            `import random`,
+            `print("math is ready")`,
+            `print("random is ready")`,
         ],
         output: [
-            "6.0",
-            "red",
+            "math is ready",
+            "random is ready",
         ],
     },
 
-    changeOneLine: `In the editor above, change <code>sqrt(36)</code> to <code>sqrt(49)</code>. Press <strong>Run</strong>. The first line of output should say <code>7.0</code>.`,
+    changeOneLine: `In the editor above, add a third print that says Modules ready. Press <strong>Run</strong>.`,
 
     code2: {
-        filename: "pick_one.py",
+        filename: "import_math.py",
         lines: [
-            `from random import randint, seed`,
-            ``,
-            `seed(1)`,
-            ``,
-            `print("Lucky:", randint(1, 10))`,
-            `print("Lucky:", randint(1, 10))`,
+            `import math`,
+            `print("pi starts", str(math.pi)[:4])`,
         ],
         output: [
-            "Lucky: 3",
-            "Lucky: 10",
+            "pi starts 3.14",
         ],
     },
 
     practice: [
         {
-            text: `Import <code>sqrt</code> from math. Print the square root of 100.`,
+            text: `Import math. Print a short message that math is ready.`,
             starter: [
-                `from math import sqrt`,
-                ``,
-                `# Print sqrt of 100`,
-                `print()`,
+                "import math",
+                "print()"
             ].join("\n"),
-            gradingNote: `Pass if from math import sqrt is used and the program prints 10.0 via sqrt(100), without requiring math.sqrt.`,
+            gradingNote: `Pass if import math is present and a message prints.`,
         },
         {
-            text: `Import <code>choice</code> and <code>seed</code> from random. Seed with 1, then print a random pet from the list.`,
+            text: `Import both math and random. Print ok.`,
             starter: [
-                `from random import choice, seed`,
-                ``,
-                `seed(1)`,
-                `pets = ["cat", "dog", "fish"]`,
-                `# Print one random pet`,
-                `print()`,
+                "# two imports",
+                "",
+                "",
+                "print(\"ok\")"
             ].join("\n"),
-            gradingNote: `Pass if from random import choice, seed (or equivalent) is used, seed(1) runs, and choice(pets) prints cat.`,
+            gradingNote: `Pass if both modules imported and ok prints.`,
         },
     ],
 
     quiz: [
         {
-            question: `After <code>from math import sqrt</code>, which call is correct?`,
+            question: `Which line imports the math module?`,
             options: [
-                { text: "math.sqrt(9)", correct: false },
-                { text: "sqrt(9)", correct: true },
-                { text: "import.sqrt(9)", correct: false },
-                { text: "from.sqrt(9)", correct: false },
+                { text: `from math`, correct: false },
+                { text: `import math`, correct: true },
+                { text: `math import`, correct: false },
+                { text: `open math`, correct: false },
             ],
-            correct: "from import brings the name in directly, so you call sqrt(9).",
-            wrong: "You imported the name sqrt itself — call sqrt(9), not math.sqrt(9).",
+            correct: `import math loads the toolbox.`,
+            wrong: `Start with import.`,
         },
         {
-            question: `What does <code>from random import choice, seed</code> do?`,
+            question: `Where do imports usually go?`,
             options: [
-                { text: "Imports only choice; seed is ignored", correct: false },
-                { text: "Imports both choice and seed so you can use both names", correct: true },
-                { text: "Imports the whole random module as choice", correct: false },
-                { text: "Deletes choice and seed", correct: false },
+                { text: `Only inside print`, correct: false },
+                { text: `Near the top of the file`, correct: true },
+                { text: `After the program ends`, correct: false },
+                { text: `In comments only`, correct: false },
             ],
-            correct: "A comma lets you import several names from the same module in one line.",
-            wrong: "You can list multiple names after import, separated by commas.",
+            correct: `Top of file is the common style.`,
+            wrong: `Import first, then use.`,
         },
         {
-            question: `Which line imports only <code>pi</code> from math?`,
+            question: `Does import run tools by itself?`,
             options: [
-                { text: "import math.pi", correct: false },
-                { text: "from math import pi", correct: true },
-                { text: "import pi from math", correct: false },
-                { text: "math = pi", correct: false },
+                { text: `Yes, it prints everything`, correct: false },
+                { text: `No — it loads them for later use`, correct: true },
+                { text: `Yes, it rolls dice always`, correct: false },
+                { text: `Yes, it closes files`, correct: false },
             ],
-            correct: "from math import pi pulls just that name into your program.",
-            wrong: "The pattern is from module import name — so from math import pi.",
+            correct: `Import prepares tools; you call them next.`,
+            wrong: `Loading ≠ calling.`,
         },
     ],
 
     project: {
-        title: "Lucky Numbers",
-        desc: "Build a lucky-number picker. Import randint and seed from random. Seed with 1. Print five lucky numbers from 1 to 40.",
+        title: "Load Two Toolboxes",
+        desc: "Import math and random. Print a labeled line for each confirming it loaded (you may print the module or a short note).",
         starter: [
-            `from random import randint, seed`,
-            ``,
-            `seed(1)`,
-            ``,
-            `print("Your lucky numbers:")`,
-            `# Print five numbers from 1 to 40`,
-            `print()`,
-            `print()`,
-            `print()`,
-            `print()`,
-            `print()`,
+            "import math",
+            "import random",
+            "print()",
+            "print()"
         ].join("\n"),
     },
 
-    prev: { unit: 11, lesson: 1, title: "Using import" },
-    next: { unit: 11, lesson: 3, title: "Useful Standard Modules" },
+    prev: { unit: 11, lesson: 1, title: "Why Import" },
+    next: { unit: 11, lesson: 3, title: "module.name" },
 };

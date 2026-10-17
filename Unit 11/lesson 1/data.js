@@ -2,143 +2,115 @@ export default {
     format: "v2",
     unit: 11,
     lesson: 1,
-    unitLessons: 3,
+    unitLessons: 8,
     unitTitle: "Imports",
-    title: "Using import",
-    readTime: 30,
-
-    goal: "In this lesson you will learn how to import a built-in module and call its tools with a dot, like math.sqrt or random.randint.",
+    title: "Why Import",
+    readTime: 20,
+    goal: "In this lesson you will learn why Python lets you import ready-made toolboxes called modules.",
 
     learn: [
-        "Write import to load a module",
-        "Call tools with module.name()",
-        "Use import random with a seed for practice rolls",
+        "Modules are toolboxes of useful code",
+        "Import unlocks tools you did not write",
+        "You still write the rest of the program",
     ],
 
-    idea: `Python comes with ready-made toolboxes called <strong>modules</strong>. You unlock one by writing <code>import</code> at the top, like <code>import math</code> or <code>import random</code>.
+    idea: `Python comes with ready-made toolboxes called <strong>modules</strong>. Instead of inventing square roots or dice from scratch, you <strong>import</strong> a module and use its tools.
 
-After that, use a <strong>dot</strong> to reach a tool: <code>math.sqrt(16)</code> or <code>random.randint(1, 6)</code>.
-
-<code>random</code> picks numbers for games. In lessons we call <code>random.seed(1)</code> first so the “random” numbers stay the same every Run — that makes checking answers fair.`,
+Imports keep programs shorter and let you stand on tools other people (and Python itself) already built.`,
 
     code: {
-        filename: "import_demo.py",
+        filename: "why.py",
         lines: [
-            `import math`,
-            `import random`,
-            ``,
-            `# Same “random” numbers every time in this lesson`,
-            `random.seed(1)`,
-            ``,
-            `print(math.sqrt(16))`,
-            `print("Dice:", random.randint(1, 6))`,
-            `print("Dice:", random.randint(1, 6))`,
+            `print("Modules = toolboxes")`,
+            `print("import unlocks them")`,
+            `print("Then you call the tools you need")`,
         ],
         output: [
-            "4.0",
-            "Dice: 2",
-            "Dice: 5",
+            "Modules = toolboxes",
+            "import unlocks them",
+            "Then you call the tools you need",
         ],
     },
 
-    changeOneLine: `In the editor above, change <code>math.sqrt(16)</code> to <code>math.sqrt(25)</code>. Press <strong>Run</strong>. The first line of output should say <code>5.0</code>.`,
+    changeOneLine: `In the editor above, change the last line to mention <code>math</code> or <code>random</code>. Press <strong>Run</strong>.`,
 
     code2: {
-        filename: "three_rolls.py",
+        filename: "ideas.py",
         lines: [
-            `import random`,
-            ``,
-            `random.seed(1)`,
-            ``,
-            `print("Roll 1:", random.randint(1, 6))`,
-            `print("Roll 2:", random.randint(1, 6))`,
-            `print("Roll 3:", random.randint(1, 6))`,
+            `print("math helps with numbers")`,
+            `print("random helps with chance")`,
         ],
         output: [
-            "Roll 1: 2",
-            "Roll 2: 5",
-            "Roll 3: 1",
+            "math helps with numbers",
+            "random helps with chance",
         ],
     },
 
     practice: [
         {
-            text: `Import math. Print the square root of 81 using <code>math.sqrt</code>.`,
+            text: `Print two reasons imports are useful.`,
             starter: [
-                `import math`,
-                ``,
-                `# Print the square root of 81`,
-                `print()`,
+                "print()",
+                "print()"
             ].join("\n"),
-            gradingNote: `Pass if import math is present and the program prints 9.0 using math.sqrt(81) (or equivalent).`,
+            gradingNote: `Pass if two non-empty prints about modules/tools/imports.`,
         },
         {
-            text: `Import random, set the seed to 1, then print two dice rolls from 1 to 6.`,
+            text: `Print the names of two modules you will learn: math and random.`,
             starter: [
-                `import random`,
-                ``,
-                `random.seed(1)`,
-                `# Print two randint rolls (1 to 6)`,
-                `print()`,
-                `print()`,
+                "print()",
+                "print()"
             ].join("\n"),
-            gradingNote: `Pass if import random and random.seed(1) are used, and two random.randint(1, 6) calls print 2 then 5.`,
+            gradingNote: `Pass if math and random both appear in output.`,
         },
     ],
 
     quiz: [
         {
-            question: `What does <code>import math</code> do?`,
+            question: `What is a module?`,
             options: [
-                { text: "Deletes the math module", correct: false },
-                { text: "Loads the math module so you can use its tools", correct: true },
-                { text: "Prints every math answer", correct: false },
-                { text: "Creates a new empty file", correct: false },
+                { text: `A type of error only`, correct: false },
+                { text: `A toolbox of useful ready-made code`, correct: true },
+                { text: `A kind of loop`, correct: false },
+                { text: `A pet class`, correct: false },
             ],
-            correct: "import loads the module. After that you can call tools like math.sqrt().",
-            wrong: "import unlocks a module’s tools — it does not print answers by itself.",
+            correct: `Modules bundle tools you can import.`,
+            wrong: `Think toolbox.`,
         },
         {
-            question: `After <code>import random</code>, which call rolls a number from 1 to 6?`,
+            question: `Why import?`,
             options: [
-                { text: "random(1, 6)", correct: false },
-                { text: "randint.random(1, 6)", correct: false },
-                { text: "random.randint(1, 6)", correct: true },
-                { text: "import.randint(1, 6)", correct: false },
+                { text: `To delete print`, correct: false },
+                { text: `To use tools without rewriting them`, correct: true },
+                { text: `To cause NameError on purpose`, correct: false },
+                { text: `To close the IDE`, correct: false },
             ],
-            correct: "Use the module name, a dot, then the tool: random.randint(1, 6).",
-            wrong: "The pattern is module.tool — so random.randint(1, 6).",
+            correct: `Reuse beats reinventing.`,
+            wrong: `Imports unlock tools.`,
         },
         {
-            question: `Why do these lessons often call <code>random.seed(1)</code>?`,
+            question: `After you import, who writes the rest of the program?`,
             options: [
-                { text: "So the random numbers stay the same each Run for practice", correct: true },
-                { text: "So Python runs twice as fast", correct: false },
-                { text: "So import is no longer needed", correct: false },
-                { text: "So math.sqrt stops working", correct: false },
+                { text: `Nobody`, correct: false },
+                { text: `You do`, correct: true },
+                { text: `Only the module`, correct: false },
+                { text: `The error message`, correct: false },
             ],
-            correct: "A seed makes the sequence of random numbers repeatable, which helps when checking answers.",
-            wrong: "seed fixes the starting point so “random” output matches every time.",
+            correct: `Modules help; you still design the program.`,
+            wrong: `You call the tools.`,
         },
     ],
 
     project: {
-        title: "Dice Roller",
-        desc: "Finish a tiny dice roller. Keep the seed at 1. Roll two six-sided dice, print each roll, then print their sum.",
+        title: "Import Pitch",
+        desc: "Print a 3-line pitch: what a module is, why import helps, and one module you are excited to try.",
         starter: [
-            `import random`,
-            ``,
-            `random.seed(1)`,
-            ``,
-            `# Roll two dice (1 to 6)`,
-            `d1 = 0`,
-            `d2 = 0`,
-            `print("Die 1:", d1)`,
-            `print("Die 2:", d2)`,
-            `print("Sum:", d1 + d2)`,
+            "print()",
+            "print()",
+            "print()"
         ].join("\n"),
     },
 
-    prev: { unit: 10, lesson: 3, title: "Catching Specific Errors" },
-    next: { unit: 11, lesson: 2, title: "from … import" },
+    prev: { unit: 10, lesson: 8, title: "Error Practice" },
+    next: { unit: 11, lesson: 2, title: "import module" },
 };

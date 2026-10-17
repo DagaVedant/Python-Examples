@@ -2,160 +2,119 @@ export default {
     format: "v2",
     unit: 11,
     lesson: 3,
-    unitLessons: 3,
+    unitLessons: 8,
     unitTitle: "Imports",
-    title: "Useful Standard Modules",
-    readTime: 30,
-
-    goal: "In this lesson you will tour handy tools from math and random so you can mix square roots, rounding, and chance in one small program.",
+    title: "module.name",
+    readTime: 22,
+    goal: "In this lesson you will learn how to call a tool with module.name after importing.",
 
     learn: [
-        "Reuse math tools: sqrt, pi, floor, ceil, pow",
-        "Reuse random tools: randint, choice, seed",
-        "Combine both modules in one mini toolkit",
+        "Use a dot: module.name",
+        "Call functions like math.sqrt()",
+        "Read values like math.pi",
     ],
 
-    idea: `Python’s <strong>standard library</strong> is a set of modules that ship with Python. You do not install them — you just import them.
+    idea: `After <code>import math</code>, reach a tool with a <strong>dot</strong>: <code>math.sqrt(16)</code> or <code>math.pi</code>.
 
-Two favorites for games and school math:
-
-<ul>
-<li><code>math</code> — <code>sqrt</code>, <code>pi</code>, <code>floor</code>, <code>ceil</code>, <code>pow</code></li>
-<li><code>random</code> — <code>randint</code>, <code>choice</code>, and <code>seed</code> for practice</li>
-</ul>
-
-You can mix styles: <code>import math</code> for several math tools, and <code>from random import randint, seed</code> when you only need a few random names.`,
+The pattern is always <code>module.name</code>. The module owns the tool; the dot picks which tool.`,
 
     code: {
-        filename: "toolkit_tour.py",
+        filename: "dot.py",
         lines: [
             `import math`,
-            `import random`,
-            ``,
-            `random.seed(1)`,
-            ``,
-            `print("Pi:", round(math.pi, 2))`,
-            `print("Floor:", math.floor(7.8))`,
-            `print("Ceil:", math.ceil(7.2))`,
-            `print("Power:", math.pow(2, 5))`,
-            `print("Chance:", random.randint(1, 100))`,
-            `print("Pick:", random.choice(["rock", "paper", "scissors"]))`,
+            `print(math.sqrt(16))`,
+            `print(math.sqrt(25))`,
+            `print(math.pi)`,
         ],
         output: [
-            "Pi: 3.14",
-            "Floor: 7",
-            "Ceil: 8",
-            "Power: 32.0",
-            "Chance: 18",
-            "Pick: scissors",
+            "4.0",
+            "5.0",
+            "3.141592653589793",
         ],
     },
 
-    changeOneLine: `In the editor above, change <code>math.pow(2, 5)</code> to <code>math.pow(2, 8)</code>. Press <strong>Run</strong>. The Power line should say <code>256.0</code>.`,
+    changeOneLine: `In the editor above, change <code>math.sqrt(16)</code> to <code>math.sqrt(36)</code>. Press <strong>Run</strong>. First line should be 6.0.`,
 
     code2: {
-        filename: "party_kit.py",
+        filename: "floor_ceil.py",
         lines: [
-            `from math import sqrt`,
-            `from random import choice, seed`,
-            ``,
-            `seed(1)`,
-            ``,
-            `print("Root:", sqrt(81))`,
-            `print("Snack:", choice(["chips", "fruit", "cookie"]))`,
+            `import math`,
+            `print(math.floor(3.7))`,
+            `print(math.ceil(3.2))`,
         ],
         output: [
-            "Root: 9.0",
-            "Snack: chips",
+            "3",
+            "4",
         ],
     },
 
     practice: [
         {
-            text: `Import math. Print pi rounded to 2 decimals, then the floor of 9.9.`,
+            text: `Import math. Print the square root of 81.`,
             starter: [
-                `import math`,
-                ``,
-                `# Print round(math.pi, 2)`,
-                `print()`,
-                `# Print math.floor(9.9)`,
-                `print()`,
+                "import math",
+                "print()"
             ].join("\n"),
-            gradingNote: `Pass if math.pi rounded to 2 decimals prints 3.14 and math.floor(9.9) prints 9.`,
+            gradingNote: `Pass if math.sqrt(81) prints 9.0.`,
         },
         {
-            text: `Import random, seed with 1, print a randint from 1 to 100, then a choice from the colors list.`,
+            text: `Import math. Print floor of 9.8 and ceil of 9.1.`,
             starter: [
-                `import random`,
-                ``,
-                `random.seed(1)`,
-                `colors = ["red", "green", "blue"]`,
-                `# Print randint 1–100, then choice(colors)`,
-                `print()`,
-                `print()`,
+                "import math",
+                "print()",
+                "print()"
             ].join("\n"),
-            gradingNote: `Pass if seed(1) is used, then random.randint(1, 100) prints 18 and random.choice(colors) prints blue (second random call after that seed).`,
+            gradingNote: `Pass if 9 and 10 print via floor/ceil.`,
         },
     ],
 
     quiz: [
         {
-            question: `What is the standard library?`,
+            question: `How do you call sqrt after import math?`,
             options: [
-                { text: "Modules that come with Python that you can import", correct: true },
-                { text: "A bookstore for coding novels", correct: false },
-                { text: "Only games you download from the internet", correct: false },
-                { text: "A list of errors Python prints", correct: false },
+                { text: `sqrt.math(...)`, correct: false },
+                { text: `math.sqrt(...)`, correct: true },
+                { text: `math-sqrt(...)`, correct: false },
+                { text: `import.sqrt`, correct: false },
             ],
-            correct: "The standard library is built in — import math or import random when you need those tools.",
-            wrong: "Standard modules ship with Python. You import them; you do not install them for this course.",
+            correct: `module.name is the pattern.`,
+            wrong: `Dot after the module.`,
         },
         {
-            question: `Which module is best for <code>sqrt</code> and <code>pi</code>?`,
+            question: `What does the dot mean?`,
             options: [
-                { text: "random", correct: false },
-                { text: "math", correct: true },
-                { text: "print", correct: false },
-                { text: "list", correct: false },
+                { text: `Delete the module`, correct: false },
+                { text: `Pick a name inside the module`, correct: true },
+                { text: `End the program`, correct: false },
+                { text: `Start a loop`, correct: false },
             ],
-            correct: "math holds number tools like sqrt and pi.",
-            wrong: "Use the math module for square roots and pi.",
+            correct: `Dot reaches into the toolbox.`,
+            wrong: `module.tool`,
         },
         {
-            question: `You want one random item from a list. Which tool fits?`,
+            question: `Is math.pi a function call?`,
             options: [
-                { text: "math.floor", correct: false },
-                { text: "math.pi", correct: false },
-                { text: "random.choice", correct: true },
-                { text: "math.pow", correct: false },
+                { text: `Yes, it needs () always`, correct: false },
+                { text: `No — it is a value you can print`, correct: true },
+                { text: `Yes, it rolls dice`, correct: false },
+                { text: `It is an error`, correct: false },
             ],
-            correct: "random.choice picks one item from a list or other sequence.",
-            wrong: "choice lives in random — it picks one value from the list you give it.",
+            correct: `Some names are values; functions need ().`,
+            wrong: `pi has no parentheses.`,
         },
     ],
 
     project: {
-        title: "Mini Toolkit",
-        desc: "Finish a mini toolkit that uses both modules. Keep seed at 1. Print a square root, a rounded pi, a dice roll (1–6), and a random team name from a short list.",
+        title: "Dot Practice",
+        desc: "Import math. Print sqrt of 49, floor of 4.2, and pi rounded with round(math.pi, 2).",
         starter: [
-            `import math`,
-            `import random`,
-            ``,
-            `random.seed(1)`,
-            ``,
-            `teams = ["Comets", "Rockets", "Stars"]`,
-            ``,
-            `# Square root of 64`,
-            `print("Root:", )`,
-            `# Pi rounded to 2 decimals`,
-            `print("Pi:", )`,
-            `# Dice 1–6`,
-            `print("Dice:", )`,
-            `# Random team`,
-            `print("Team:", )`,
+            "import math",
+            "print()",
+            "print()",
+            "print()"
         ].join("\n"),
     },
 
-    prev: { unit: 11, lesson: 2, title: "from … import" },
-    next: { unit: 12, lesson: 1, title: "Classes & Objects" },
+    prev: { unit: 11, lesson: 2, title: "import module" },
+    next: { unit: 11, lesson: 4, title: "from import" },
 };

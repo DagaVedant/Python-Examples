@@ -1,0 +1,126 @@
+export default {
+    format: "v2",
+    unit: 11,
+    lesson: 5,
+    unitLessons: 8,
+    unitTitle: "Imports",
+    title: "random",
+    readTime: 22,
+    goal: "In this lesson you will learn random for chance events, using seed(1) so practice rolls stay the same.",
+
+    learn: [
+        "import random",
+        "Call random.seed(1) for practice",
+        "Use random.randint(a, b)",
+    ],
+
+    idea: `The <code>random</code> module picks chance values for games. In lessons we call <code>random.seed(1)</code> first so the “random” numbers stay the same every Run — fair for checking answers.
+
+<code>random.randint(1, 6)</code> rolls a dice from 1 to 6.`,
+
+    code: {
+        filename: "dice.py",
+        lines: [
+            `import random`,
+            `random.seed(1)`,
+            `print("Dice:", random.randint(1, 6))`,
+            `print("Dice:", random.randint(1, 6))`,
+            `print("Dice:", random.randint(1, 6))`,
+        ],
+        output: [
+            "Dice: 2",
+            "Dice: 5",
+            "Dice: 1",
+        ],
+    },
+
+    changeOneLine: `In the editor above, change the third roll's print label to <code>Roll 3:</code>. Press <strong>Run</strong>. Numbers should stay 2, 5, 1 because of the seed.`,
+
+    code2: {
+        filename: "choice_demo.py",
+        lines: [
+            `import random`,
+            `random.seed(1)`,
+            `letters = ["a", "b", "c"]`,
+            `print(random.choice(letters))`,
+            `print(random.choice(letters))`,
+        ],
+        output: [
+            "a",
+            "c",
+        ],
+    },
+
+    practice: [
+        {
+            text: `Import random, seed(1), print two dice rolls 1–6.`,
+            starter: [
+                "import random",
+                "random.seed(1)",
+                "print()",
+                "print()"
+            ].join("\n"),
+            gradingNote: `Pass if seed(1) and two randint(1,6) prints show 2 then 5.`,
+        },
+        {
+            text: `seed(1). Use random.choice on ['a','b','c'] twice and print both.`,
+            starter: [
+                "import random",
+                "random.seed(1)",
+                "print()",
+                "print()"
+            ].join("\n"),
+            gradingNote: `Pass if outputs are a then c with seed(1).`,
+        },
+    ],
+
+    quiz: [
+        {
+            question: `Why call random.seed(1) in lessons?`,
+            options: [
+                { text: `To delete random`, correct: false },
+                { text: `So rolls match every Run for checking`, correct: true },
+                { text: `To import math`, correct: false },
+                { text: `To close files`, correct: false },
+            ],
+            correct: `A fixed seed makes practice predictable.`,
+            wrong: `seed(1) is our lesson habit.`,
+        },
+        {
+            question: `What does random.randint(1, 6) return?`,
+            options: [
+                { text: `Only 1`, correct: false },
+                { text: `An int from 1 to 6 inclusive`, correct: true },
+                { text: `A string always`, correct: false },
+                { text: `A dictionary`, correct: false },
+            ],
+            correct: `Inclusive range on both ends.`,
+            wrong: `Dice friendly.`,
+        },
+        {
+            question: `Does seed change after you set it once?`,
+            options: [
+                { text: `All rolls become identical forever`, correct: false },
+                { text: `Later randint calls advance the sequence`, correct: true },
+                { text: `seed blocks import`, correct: false },
+                { text: `seed prints pi`, correct: false },
+            ],
+            correct: `The sequence is fixed but not one constant forever.`,
+            wrong: `First rolls with seed(1): 2, 5, 1...`,
+        },
+    ],
+
+    project: {
+        title: "Dice Roller",
+        desc: "seed(1). Print five dice rolls labeled Roll 1..Roll 5.",
+        starter: [
+            "import random",
+            "random.seed(1)",
+            "for i in range(1, 6):",
+            "    print()"
+        ].join("\n"),
+    },
+
+    prev: { unit: 11, lesson: 4, title: "from import" },
+    next: { unit: 11, lesson: 6, title: "math Tools" },
+};
