@@ -51,6 +51,8 @@ Errors are not “you failed.” They are clues. Read the name, find the bad lin
     practice: [
         {
             text: `Fix the NameError by printing the real variable name.`,
+            hint: `Python stored the value in points, but print() uses a different spelling. Match the name exactly — same letters, same order.`,
+            starterTip: `Change print(point) to print(points) so it matches the line above.`,
             starter: [
                 "points = 5",
                 "print(point)"
@@ -59,6 +61,8 @@ Errors are not “you failed.” They are clues. Read the name, find the bad lin
         },
         {
             text: `Write a tiny program that runs with no error and prints Ready.`,
+            hint: `The task wants one word in the output: Ready. Put it inside quotes inside print() — empty print() will not pass.`,
+            starterTip: `Replace print() with print("Ready") and press Run. No red error text means success.`,
             starter: [
                 "# No errors please",
                 "print()"

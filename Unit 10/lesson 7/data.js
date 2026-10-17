@@ -57,6 +57,8 @@ export default {
     practice: [
         {
             text: `Catch only ZeroDivisionError around 8/0. Print a specific message.`,
+            hint: `except ZeroDivisionError: is already there — you just need a clear message inside it that mentions dividing by zero.`,
+            starterTip: `Try print("You cannot divide by zero!") inside the except block (indented under except ZeroDivisionError:).`,
             starter: [
                 "try:",
                 "    print(8 / 0)",
@@ -67,6 +69,8 @@ export default {
         },
         {
             text: `Catch ValueError around int("nope") with a clear message.`,
+            hint: `"nope" is not a number, so int() raises ValueError. Your except ValueError: block should explain that the text is not a valid integer.`,
+            starterTip: `Fill the blank print() with something like print("That text is not a number.")`,
             starter: [
                 "try:",
                 "    print(int(\"nope\"))",

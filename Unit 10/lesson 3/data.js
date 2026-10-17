@@ -55,6 +55,8 @@ export default {
     practice: [
         {
             text: `Fix the ZeroDivisionError by changing friends so the division works. Print the result.`,
+            hint: `You cannot divide by zero. Change friends to a number greater than 0 — then cookies / friends will work.`,
+            starterTip: `Try friends = 3 (or 4, or 6). Run again — you should see 4.0 or another number, not a crash.`,
             starter: [
                 "cookies = 12",
                 "friends = 0",
@@ -64,6 +66,8 @@ export default {
         },
         {
             text: `Fix the TypeError by casting the number with str before adding text.`,
+            hint: `You cannot use + to join a number and text. Turn the number into text first with str().`,
+            starterTip: `Try print(str(5) + " points") — str(5) becomes "5", which can join with " points".`,
             starter: [
                 "print(5 + \" points\")"
             ].join("\n"),

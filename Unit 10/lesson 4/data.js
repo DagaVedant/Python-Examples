@@ -54,6 +54,8 @@ Python runs the indented <code>try</code> block first. If something breaks, cont
     practice: [
         {
             text: `Put the division inside try (keep a simple except that prints Oops). friends is 2.`,
+            hint: `Move print(a / b) under try: with four spaces. Add except: below try, indented the same as try, with print("Oops") inside except.`,
+            starterTip: `Structure: try:\n    print(a / b)\nexcept:\n    print("Oops") — delete the old print(a / b) that sits outside try.`,
             starter: [
                 "a = 10",
                 "b = 2",
@@ -64,6 +66,8 @@ Python runs the indented <code>try</code> block first. If something breaks, cont
         },
         {
             text: `Try to int() the text '7'. Print the number inside try.`,
+            hint: `Under try:, convert text to a number with int(text), then print it. Indent both lines with four spaces.`,
+            starterTip: `Inside the blank under try:, add: n = int(text) and print(n) — you should see 7.`,
             starter: [
                 "text = \"7\"",
                 "try:",

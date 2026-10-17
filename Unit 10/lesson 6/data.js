@@ -57,6 +57,8 @@ Also set a safe value so the program can continue. Friendly messages + fallbacks
     practice: [
         {
             text: `Try int("abc"). In except, print a friendly message and set n = 0. Print n.`,
+            hint: `int("abc") will fail — that is expected. In except, tell the user what happened in plain words, then set n = 0 so print(n) works.`,
+            starterTip: `Inside except:, try print("That was not a number — using 0.") then n = 0 on the next indented line.`,
             starter: [
                 "text = \"abc\"",
                 "try:",
@@ -69,6 +71,8 @@ Also set a safe value so the program can continue. Friendly messages + fallbacks
         },
         {
             text: `On divide-by-zero, print a kind tip (not just Error). Then print OK.`,
+            hint: `The empty print() in except should say something helpful to a kid — like asking them to pick a number that is not zero.`,
+            starterTip: `Fill except with print("Cannot divide by zero — try a different number.") — OK should still print after the try/except block.`,
             starter: [
                 "try:",
                 "    print(1 / 0)",

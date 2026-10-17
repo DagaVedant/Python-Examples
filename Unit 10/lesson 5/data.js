@@ -59,6 +59,8 @@ After the pair finishes, the rest of the program can still run.`,
     practice: [
         {
             text: `Wrap the division in try/except. If it fails, print a friendly message. Always print Done at the end.`,
+            hint: `Put print(a / b) inside try:. Add except: with a kind print like "Cannot divide by zero". Keep print("Done") outside try/except so it always runs.`,
+            starterTip: `try:\n    print(a / b)\nexcept:\n    print("Oops — cannot divide by zero!")\nprint("Done")`,
             starter: [
                 "a = 10",
                 "b = 0",
@@ -69,6 +71,8 @@ After the pair finishes, the rest of the program can still run.`,
         },
         {
             text: `Try int("hello"). On failure set number to 0 and print a short message. Then print number.`,
+            hint: `In try:, call int(text) and store it in number. In except:, print something friendly and set number = 0.`,
+            starterTip: `try:\n    number = int(text)\nexcept:\n    print("Not a number — using 0.")\n    number = 0`,
             starter: [
                 "text = \"hello\"",
                 "number = None",
