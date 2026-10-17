@@ -1,0 +1,158 @@
+{
+  "format": "v2",
+  "unit": 9,
+  "lesson": 2,
+  "unitLessons": 8,
+  "unitTitle": "Files",
+  "title": "Opening and Reading",
+  "readTime": 22,
+  "fakeFiles": {
+    "story.txt": "Once upon a time.\nA robot found a map.\nThe end.\n",
+    "note.txt": "Remember: bring snacks!\n",
+    "hello.txt": "Hi from a practice file!\n",
+    "scores.txt": "Ava 90\nLeo 85\nMia 92\n",
+    "tips.txt": "Save often.\nHave fun coding!\n",
+    "starter.txt": "This line was already here.\n",
+    "todo.txt": "1. Feed the cat\n2. Finish homework\n"
+  },
+  "goal": "In this lesson you will learn how to open a practice file and read its whole text with read().",
+  "learn": [
+    "Open a file with open()",
+    "Read everything with read()",
+    "Print the text you loaded"
+  ],
+  "idea": "To read a practice file: <code>f = open(\"story.txt\")</code>, then <code>text = f.read()</code>, then <code>f.close()</code>.\n\n<code>read()</code> gives you the whole file as one string. Later you will learn a safer style with <code>with</code>.",
+  "code": {
+    "filename": "read_open.py",
+    "lines": [
+      "f = open(\"story.txt\")",
+      "text = f.read()",
+      "f.close()",
+      "print(text)"
+    ],
+    "output": [
+      "Once upon a time.",
+      "A robot found a map.",
+      "The end.",
+      ""
+    ]
+  },
+  "changeOneLine": "In the editor above, change <code>open(\"story.txt\")</code> to <code>open(\"hello.txt\")</code>. Press <strong>Run</strong>. Output should be the hello message.",
+  "code2": {
+    "filename": "read_note.py",
+    "lines": [
+      "f = open(\"note.txt\")",
+      "reminder = f.read()",
+      "f.close()",
+      "print(\"From the file:\")",
+      "print(reminder)"
+    ],
+    "output": [
+      "From the file:",
+      "Remember: bring snacks!",
+      ""
+    ]
+  },
+  "practice": [
+    {
+      "text": "Open hello.txt, read it, close it, and print the text.",
+      "hint": "After open, call f.read() and save it in text. Then close the file and print(text) — not an empty print().",
+      "starterTip": "Use text = f.read() on the blank line, then print(text) in the last print().",
+      "starter": "f = open(\"hello.txt\")\ntext = \nf.close()\nprint()",
+      "gradingNote": "Pass if hello.txt is opened, read, closed, and printed."
+    },
+    {
+      "text": "Read story.txt and print only the first 16 characters using a slice.",
+      "hint": "A slice uses square brackets: text[start:end]. The first 16 characters are text[0:16] — or just text[:16].",
+      "starterTip": "Print print(text[:16]) so you see \"Once upon a time.\" without the rest of the story.",
+      "starter": "f = open(\"story.txt\")\ntext = f.read()\nf.close()\n# Print first 16 characters\nprint()",
+      "gradingNote": "Pass if a 16-character slice prints (Once upon a time)."
+    }
+  ],
+  "quiz": [
+    {
+      "question": "What does f.read() return?",
+      "options": [
+        {
+          "text": "A list of numbers",
+          "correct": false
+        },
+        {
+          "text": "The whole file as one string",
+          "correct": true
+        },
+        {
+          "text": "Only the file name",
+          "correct": false
+        },
+        {
+          "text": "Nothing — it only prints",
+          "correct": false
+        }
+      ],
+      "correct": "read() loads the entire file into one string.",
+      "wrong": "f.read() gives you the file's text as a string."
+    },
+    {
+      "question": "After you finish reading with open(), what should you do?",
+      "options": [
+        {
+          "text": "Delete Python",
+          "correct": false
+        },
+        {
+          "text": "Close the file",
+          "correct": true
+        },
+        {
+          "text": "Rename the key",
+          "correct": false
+        },
+        {
+          "text": "Loop forever",
+          "correct": false
+        }
+      ],
+      "correct": "close() finishes using the file cleanly.",
+      "wrong": "Call f.close() when done (or use with later)."
+    },
+    {
+      "question": "Which opens story.txt for reading?",
+      "options": [
+        {
+          "text": "read(\"story.txt\")",
+          "correct": false
+        },
+        {
+          "text": "open(\"story.txt\")",
+          "correct": true
+        },
+        {
+          "text": "file.story",
+          "correct": false
+        },
+        {
+          "text": "print(story.txt)",
+          "correct": false
+        }
+      ],
+      "correct": "open with the file name starts reading.",
+      "wrong": "Use open(\"story.txt\") first."
+    }
+  ],
+  "project": {
+    "title": "Story Reader",
+    "desc": "Read story.txt. Print an intro, the story, and the character count with len.",
+    "starter": "print(\"=== Story Reader ===\")\nf = open(\"story.txt\")\nstory = f.read()\nf.close()\nprint()\nprint(\"Characters:\", )"
+  },
+  "prev": {
+    "unit": 9,
+    "lesson": 1,
+    "title": "What is a File"
+  },
+  "next": {
+    "unit": 9,
+    "lesson": 3,
+    "title": "Reading Lines"
+  }
+}

@@ -1,0 +1,156 @@
+{
+  "format": "v2",
+  "unit": 9,
+  "lesson": 3,
+  "unitLessons": 8,
+  "unitTitle": "Files",
+  "title": "Reading Lines",
+  "readTime": 22,
+  "fakeFiles": {
+    "story.txt": "Once upon a time.\nA robot found a map.\nThe end.\n",
+    "note.txt": "Remember: bring snacks!\n",
+    "hello.txt": "Hi from a practice file!\n",
+    "scores.txt": "Ava 90\nLeo 85\nMia 92\n",
+    "tips.txt": "Save often.\nHave fun coding!\n",
+    "starter.txt": "This line was already here.\n",
+    "todo.txt": "1. Feed the cat\n2. Finish homework\n"
+  },
+  "goal": "In this lesson you will learn how to read a file one line at a time with a for loop.",
+  "learn": [
+    "Loop for line in file",
+    "Print each line",
+    "Use strip() to clean newlines"
+  ],
+  "idea": "You can loop over a file: <code>for line in f:</code>. Each turn gives you one line of text (often with a newline at the end).\n\n<code>line.strip()</code> removes extra spaces and newlines so printing looks tidy.",
+  "code": {
+    "filename": "lines.py",
+    "lines": [
+      "f = open(\"scores.txt\")",
+      "for line in f:",
+      "    print(line.strip())",
+      "f.close()"
+    ],
+    "output": [
+      "Ava 90",
+      "Leo 85",
+      "Mia 92"
+    ]
+  },
+  "changeOneLine": "In the editor above, change <code>print(line.strip())</code> to <code>print(\"Line:\", line.strip())</code>. Press <strong>Run</strong>.",
+  "code2": {
+    "filename": "story_lines.py",
+    "lines": [
+      "f = open(\"story.txt\")",
+      "for line in f:",
+      "    print(\">\", line.strip())",
+      "f.close()"
+    ],
+    "output": [
+      "> Once upon a time.",
+      "> A robot found a map.",
+      "> The end."
+    ]
+  },
+  "practice": [
+    {
+      "text": "Loop over tips.txt and print each line stripped.",
+      "hint": "Inside the for loop, print line.strip() so each tip shows without extra newline junk at the end.",
+      "starterTip": "Replace print() with print(line.strip()) — indented under for line in f:.",
+      "starter": "f = open(\"tips.txt\")\nfor line in f:\n    print()\nf.close()",
+      "gradingNote": "Pass if both tip lines print using a for loop over the file."
+    },
+    {
+      "text": "Count how many lines are in scores.txt and print the count.",
+      "hint": "The loop already adds 1 each time you visit a line. After f.close(), print the count variable.",
+      "starterTip": "Use print(count) at the end — scores.txt has three lines, so you should see 3.",
+      "starter": "count = 0\nf = open(\"scores.txt\")\nfor line in f:\n    count = count + 1\nf.close()\nprint()",
+      "gradingNote": "Pass if count is 3 and printed."
+    }
+  ],
+  "quiz": [
+    {
+      "question": "What does for line in f: give you each turn?",
+      "options": [
+        {
+          "text": "The whole file as one blob only",
+          "correct": false
+        },
+        {
+          "text": "One line of text from the file",
+          "correct": true
+        },
+        {
+          "text": "A random key",
+          "correct": false
+        },
+        {
+          "text": "Nothing useful",
+          "correct": false
+        }
+      ],
+      "correct": "Looping a file visits one line at a time.",
+      "wrong": "Each iteration is the next line."
+    },
+    {
+      "question": "Why use strip() on a line?",
+      "options": [
+        {
+          "text": "To delete the file",
+          "correct": false
+        },
+        {
+          "text": "To remove leftover newlines and spaces",
+          "correct": true
+        },
+        {
+          "text": "To open a second file",
+          "correct": false
+        },
+        {
+          "text": "To cast to int always",
+          "correct": false
+        }
+      ],
+      "correct": "strip() cleans edges of the string.",
+      "wrong": "Lines often end with \\n; strip removes it."
+    },
+    {
+      "question": "When should you close the file after a line loop?",
+      "options": [
+        {
+          "text": "Before you open it",
+          "correct": false
+        },
+        {
+          "text": "After the loop finishes",
+          "correct": true
+        },
+        {
+          "text": "Never ever",
+          "correct": false
+        },
+        {
+          "text": "Only if there is an error",
+          "correct": false
+        }
+      ],
+      "correct": "Close when you are done reading.",
+      "wrong": "f.close() belongs after the loop."
+    }
+  ],
+  "project": {
+    "title": "Line Highlighter",
+    "desc": "Print each scores.txt line with a number prefix like 1) Ava 90.",
+    "starter": "n = 1\nf = open(\"scores.txt\")\nfor line in f:\n    print()\n    n = n + 1\nf.close()"
+  },
+  "prev": {
+    "unit": 9,
+    "lesson": 2,
+    "title": "Opening and Reading"
+  },
+  "next": {
+    "unit": 9,
+    "lesson": 4,
+    "title": "Writing Files"
+  }
+}

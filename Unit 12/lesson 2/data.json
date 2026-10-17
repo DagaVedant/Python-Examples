@@ -1,0 +1,147 @@
+{
+  "format": "v2",
+  "unit": 12,
+  "lesson": 2,
+  "unitLessons": 10,
+  "unitTitle": "Classes",
+  "title": "Your First Class",
+  "readTime": 22,
+  "goal": "In this lesson you will learn how to write a tiny class with class and pass.",
+  "learn": [
+    "Start a class with class Name:",
+    "Use pass for an empty body",
+    "Class names usually start with a capital"
+  ],
+  "idea": "Write a class like this:\n\n<code>class Dog:</code>\n<code>    pass</code>\n\n<code>pass</code> means “empty for now.” Class names usually use CapWords like <code>Dog</code> or <code>Player</code>. Next lessons fill the class with attributes and methods.",
+  "code": {
+    "filename": "first_class.py",
+    "lines": [
+      "class Dog:",
+      "    pass",
+      "",
+      "class Player:",
+      "    pass",
+      "",
+      "print(\"Dog class ready\")",
+      "print(\"Player class ready\")"
+    ],
+    "output": [
+      "Dog class ready",
+      "Player class ready"
+    ]
+  },
+  "changeOneLine": "In the editor above, add <code>print(\"Classes are blueprints\")</code> at the end. Press <strong>Run</strong>.",
+  "code2": {
+    "filename": "pet_class.py",
+    "lines": [
+      "class Pet:",
+      "    pass",
+      "print(\"Pet class defined\")"
+    ],
+    "output": [
+      "Pet class defined"
+    ]
+  },
+  "practice": [
+    {
+      "text": "Define an empty class Cat with pass. Print a ready message.",
+      "hint": "After class Cat:, indent with four spaces and write pass. The class body must not be empty without pass.",
+      "starterTip": "Replace the blank line under class Cat: with pass (indented), then keep print(\"Cat ready\") at the bottom.",
+      "starter": "class Cat:\n    \nprint(\"Cat ready\")",
+      "gradingNote": "Pass if class Cat with pass exists and message prints."
+    },
+    {
+      "text": "Define empty classes Car and Bike. Print two ready lines.",
+      "hint": "Write class Car: and class Bike:, each with an indented pass. Then two print() calls — one message per class.",
+      "starterTip": "Write class Car: with pass under it, then class Bike: with pass, then print(\"Car ready\") and print(\"Bike ready\").",
+      "starter": "# two classes\n\n\nprint()\nprint()",
+      "gradingNote": "Pass if Car and Bike classes exist with pass."
+    }
+  ],
+  "quiz": [
+    {
+      "question": "Which starts a class?",
+      "options": [
+        {
+          "text": "def Dog:",
+          "correct": false
+        },
+        {
+          "text": "class Dog:",
+          "correct": true
+        },
+        {
+          "text": "import Dog",
+          "correct": false
+        },
+        {
+          "text": "Dog = class",
+          "correct": false
+        }
+      ],
+      "correct": "Use the class keyword.",
+      "wrong": "class Name:"
+    },
+    {
+      "question": "What does pass mean here?",
+      "options": [
+        {
+          "text": "Delete the class",
+          "correct": false
+        },
+        {
+          "text": "Empty body for now",
+          "correct": true
+        },
+        {
+          "text": "Run forever",
+          "correct": false
+        },
+        {
+          "text": "Import random",
+          "correct": false
+        }
+      ],
+      "correct": "pass is a placeholder.",
+      "wrong": "Fills the indented block."
+    },
+    {
+      "question": "Usual style for class names?",
+      "options": [
+        {
+          "text": "always lowercase only",
+          "correct": false
+        },
+        {
+          "text": "Capital first letter (Dog)",
+          "correct": true
+        },
+        {
+          "text": "ALL_CAPS with spaces",
+          "correct": false
+        },
+        {
+          "text": "Start with a number",
+          "correct": false
+        }
+      ],
+      "correct": "CapWords is the common style.",
+      "wrong": "Dog, Player, Pet."
+    }
+  ],
+  "project": {
+    "title": "Name Three Classes",
+    "desc": "Define three empty classes (pass) for a tiny game world. Print a ready line for each.",
+    "starter": "class Hero:\n    pass\n# two more\n\n\nprint()\nprint()\nprint()"
+  },
+  "prev": {
+    "unit": 12,
+    "lesson": 1,
+    "title": "Why Classes"
+  },
+  "next": {
+    "unit": 12,
+    "lesson": 3,
+    "title": "Objects"
+  }
+}
