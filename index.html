@@ -36,6 +36,18 @@
     body.dark .nav-brand { color: #93b4e0; }
 
     .nav-right { display: flex; align-items: center; gap: 16px; }
+    .nav-account {
+      font-size: 13px;
+      font-weight: 500;
+      color: #1F3A5F;
+      padding: 6px 12px;
+      border: 1px solid #e2e5ea;
+      border-radius: 8px;
+      background: #f7f8fa;
+    }
+    .nav-account:hover { background: #eef1f5; }
+    body.dark .nav-account { color: #93b4e0; border-color: #2d3148; background: #222535; }
+    body.dark .nav-account:hover { background: #2d3148; }
 
     .nav-progress { text-align: right; }
     .nav-progress-label { font-size: 11px; color: #9ca3af; display: block; margin-bottom: 4px; }
@@ -75,18 +87,171 @@
     body.dark .sun { display: none; }
 
     .hero {
-      max-width: 680px;
+      max-width: 720px;
       margin: 0 auto;
-      padding: 48px 24px 28px;
+      padding: 40px 24px 32px;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 28px;
+    }
+    @media (min-width: 720px) {
+      .hero {
+        grid-template-columns: 1.1fr 0.9fr;
+        align-items: center;
+        gap: 36px;
+        padding: 48px 24px 36px;
+      }
+    }
+    .hero-brand-row {
       display: flex;
       align-items: center;
-      gap: 20px;
+      gap: 12px;
+      margin-bottom: 14px;
     }
-    .hero img { width: 64px; height: 64px; }
-    .hero h1 { font-size: 32px; font-weight: 600; color: #1F3A5F; margin: 0 0 6px; transition: color 0.2s; }
-    body.dark .hero h1 { color: #93b4e0; }
-    .hero p { font-size: 15px; color: #4b5563; line-height: 1.7; margin: 0; transition: color 0.2s; }
-    body.dark .hero p { color: #9da3b4; }
+    .hero-brand-row img { width: 40px; height: 40px; }
+    .hero-brand {
+      font-size: 28px;
+      font-weight: 600;
+      color: #1F3A5F;
+      margin: 0;
+      letter-spacing: -0.02em;
+      transition: color 0.2s;
+    }
+    body.dark .hero-brand { color: #93b4e0; }
+    .hero h1 {
+      font-size: 22px;
+      font-weight: 600;
+      color: #111827;
+      margin: 0 0 10px;
+      line-height: 1.3;
+      transition: color 0.2s;
+    }
+    body.dark .hero h1 { color: #e8eaf0; }
+    .hero-lead {
+      font-size: 15px;
+      color: #4b5563;
+      line-height: 1.65;
+      margin: 0 0 22px;
+      max-width: 36em;
+      transition: color 0.2s;
+    }
+    body.dark .hero-lead { color: #9da3b4; }
+    .hero-ctas {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 12px;
+    }
+    .hero-cta-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 11px 18px;
+      border-radius: 8px;
+      background: #1F3A5F;
+      color: #fff;
+      font-size: 14px;
+      font-weight: 600;
+      transition: background 0.15s;
+    }
+    .hero-cta-primary:hover { background: #162a45; }
+    body.dark .hero-cta-primary { background: #3d5a80; }
+    body.dark .hero-cta-primary:hover { background: #4a6a94; }
+    .hero-cta-secondary {
+      display: inline-flex;
+      align-items: center;
+      font-size: 13px;
+      font-weight: 500;
+      color: #1F3A5F;
+      padding: 8px 4px;
+      transition: color 0.15s;
+    }
+    .hero-cta-secondary:hover { color: #162a45; }
+    body.dark .hero-cta-secondary { color: #93b4e0; }
+    body.dark .hero-cta-secondary:hover { color: #b8cce8; }
+
+    .hero-demo {
+      background: #1a1d27;
+      border: 1px solid #2d3148;
+      border-radius: 10px;
+      overflow: hidden;
+      font-family: ui-monospace, 'Cascadia Code', 'Segoe UI Mono', Menlo, Consolas, monospace;
+      font-size: 13px;
+      line-height: 1.55;
+    }
+    body:not(.dark) .hero-demo {
+      background: #1e2433;
+      border-color: #2a3348;
+    }
+    .hero-demo-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 8px 12px;
+      background: #141722;
+      border-bottom: 1px solid #2d3148;
+    }
+    .hero-demo-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #9da3b4;
+      font-family: 'DM Sans', sans-serif;
+    }
+    .hero-demo-run {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 5px 12px;
+      border-radius: 6px;
+      border: none;
+      cursor: pointer;
+      background: #16a34a;
+      color: #fff;
+      transition: background 0.15s, opacity 0.15s;
+    }
+    .hero-demo-run:hover:not(:disabled) { background: #15803d; }
+    .hero-demo-run:disabled { opacity: 0.65; cursor: default; }
+    .hero-demo-code {
+      margin: 0;
+      padding: 14px 16px;
+      color: #d1d5db;
+      white-space: pre;
+      overflow-x: auto;
+      user-select: none;
+      pointer-events: none;
+    }
+    .hero-demo-code .kw { color: #7dd3fc; }
+    .hero-demo-code .str { color: #86efac; }
+    .hero-demo-out {
+      border-top: 1px solid #2d3148;
+      padding: 10px 16px 12px;
+      min-height: 3.6em;
+      color: #e8eaf0;
+      font-size: 13px;
+      white-space: pre-wrap;
+    }
+    .hero-demo-out::before {
+      content: 'Output';
+      display: block;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #6b7280;
+      margin-bottom: 4px;
+    }
+    .hero-demo-out.is-running::after {
+      content: '▋';
+      margin-left: 1px;
+      animation: hero-caret 0.8s step-end infinite;
+      color: #86efac;
+    }
+    @keyframes hero-caret {
+      50% { opacity: 0; }
+    }
 
     .course {
       max-width: 680px;
@@ -170,6 +335,78 @@
     .unit a svg { color: #d1d5db; transition: color 0.1s; }
     .unit a:hover svg { color: #2563eb; }
 
+    #continue-slot {
+      max-width: 680px;
+      margin: 0 auto 24px;
+      padding: 0 24px;
+    }
+    .continue-card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 16px 20px;
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 12px;
+      color: #1d4ed8;
+      font-size: 15px;
+      font-weight: 600;
+      transition: background 0.15s, border-color 0.15s, color 0.15s;
+    }
+    .continue-card:hover {
+      background: #dbeafe;
+      border-color: #93c5fd;
+      color: #1F3A5F;
+    }
+    body.dark .continue-card {
+      background: #172038;
+      border-color: #1e3a5f;
+      color: #93c5fd;
+    }
+    body.dark .continue-card:hover {
+      background: #1e3a5f;
+      border-color: #2563eb;
+      color: #93b4e0;
+    }
+    .continue-card-text { flex: 1; }
+    .continue-card svg { flex-shrink: 0; }
+
+    #streak-slot:empty,
+    #streak-slot[hidden] { display: none; }
+    .streak-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 12px;
+      font-weight: 500;
+      color: #c2410c;
+      white-space: nowrap;
+      padding: 5px 10px;
+      border-radius: 8px;
+      background: #fff7ed;
+      border: 1px solid #fed7aa;
+    }
+    body.dark .streak-badge {
+      color: #fdba74;
+      background: #1c1410;
+      border-color: #7c2d12;
+    }
+    .streak-flame {
+      width: 9px;
+      height: 9px;
+      flex-shrink: 0;
+      border-radius: 50% 50% 50% 0;
+      background: linear-gradient(135deg, #f97316, #ea580c);
+      transform: rotate(-45deg);
+      box-shadow: 0 0 0 2px rgba(249, 115, 22, 0.2);
+    }
+    body.dark .streak-flame {
+      background: linear-gradient(135deg, #fb923c, #f97316);
+      box-shadow: 0 0 0 2px rgba(249, 115, 22, 0.25);
+    }
+    .streak-text { letter-spacing: 0.01em; }
+
   </style>
 </head>
 <body>
@@ -177,12 +414,14 @@
 <nav>
   <span class="nav-brand">Learn Python</span>
   <div class="nav-right">
+    <div id="streak-slot"></div>
     <div class="nav-progress">
       <span class="nav-progress-label" id="overall-label"></span>
       <div class="nav-progress-track">
         <div class="nav-progress-fill" id="overall-fill"></div>
       </div>
     </div>
+    <a href="signup.html" class="nav-account" id="nav-account">Create account</a>
     <button class="theme-btn" onclick="toggleTheme()" aria-label="Toggle dark mode">
       <svg class="sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
       <svg class="moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
@@ -191,18 +430,42 @@
 </nav>
 
 <div class="hero">
-  <img src="https://s3.dualstack.us-east-2.amazonaws.com/pythondotorg-assets/media/community/logos/python-logo-only.png" alt="Python logo">
-  <div>
-    <h1>Learn Python</h1>
-    <p>An introduction to the basics of Python programming — from your first program through loops, functions, lists, dictionaries, files, and classes.</p>
+  <div class="hero-copy">
+    <div class="hero-brand-row">
+      <img src="https://s3.dualstack.us-east-2.amazonaws.com/pythondotorg-assets/media/community/logos/python-logo-only.png" alt="">
+      <p class="hero-brand">Learn Python</p>
+    </div>
+    <h1>Write your first program today — free</h1>
+    <p class="hero-lead">Start in the browser with Lesson 1. No install. Account optional if you want to save progress.</p>
+    <div class="hero-ctas">
+      <a class="hero-cta-primary" href="lesson.html?unit=1&lesson=1">Start lesson 1</a>
+      <a class="hero-cta-secondary" href="signup.html">Create account (optional)</a>
+    </div>
+  </div>
+  <div class="hero-demo" aria-label="Try a tiny Python example">
+    <div class="hero-demo-bar">
+      <span class="hero-demo-label">Try it</span>
+      <button type="button" class="hero-demo-run" id="hero-demo-run">Run</button>
+    </div>
+    <pre class="hero-demo-code" aria-hidden="true"><span class="kw">print</span>(<span class="str">"Hello!"</span>)
+<span class="kw">print</span>(<span class="str">"You can code."</span>)</pre>
+    <div class="hero-demo-out" id="hero-demo-output" role="status" aria-live="polite"></div>
   </div>
 </div>
 
-<main class="course" id="course"></main>
+<div id="continue-slot"></div>
 
+<main class="course" id="course"></main>
+<div id="certificates-slot"></div>
+
+<script src="js/hero-demo.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="course-info.js"></script>
+<script src="js/continue-lesson.js"></script>
+<script src="js/certificates.js"></script>
+<script src="js/streaks.js"></script>
 <script>
+  renderContinue('continue-slot');
 
   const { createClient } = supabase;
   const db = createClient('https://udzpwekkpedmtudcsyve.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVkenB3ZWtrcGVkbXR1ZGNzeXZlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODEwMzAzMjYsImV4cCI6MjA5NjYwNjMyNn0.xaMqyzNabeeE7bYVbAVwz8HCFIwQrGczF9x1FrXJv-A');
@@ -232,30 +495,8 @@
         </a>`).join('')}
     </div>`).join('');
 
-  const FREE_LESSONS = ['1-1', '1-2'];
-
-  (async () => {
-    const { data: { session } } = await db.auth.getSession();
-
-    if (!session) {
-      document.querySelectorAll('.unit a').forEach(link => {
-        const m = link.getAttribute('href').match(/unit=(\d+)&lesson=(\d+)/);
-        if (m && !FREE_LESSONS.includes(`${m[1]}-${m[2]}`)) {
-          link.classList.add('locked');
-          link.setAttribute('href', 'login.html');
-          const arrow = link.querySelector('svg');
-          if (arrow) arrow.outerHTML =
-            '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>';
-        }
-      });
-      document.getElementById('overall-label').textContent = 'Free preview — sign in to unlock all lessons';
-      return;
-    }
-
-    const { data: completionRows } = await db.from('completions').select('unit, lesson');
-    const completed = completionRows ? completionRows.map(r => `${r.unit}-${r.lesson}`) : [];
+  function applyCompletions(completed) {
     const totalLessons = units.reduce((sum, unit) => sum + unit.lessons.length, 0);
-
     document.getElementById('overall-fill').style.width = `${Math.round(completed.length / totalLessons * 100)}%`;
     document.getElementById('overall-label').textContent = `${completed.length} / ${totalLessons} lessons`;
 
@@ -270,6 +511,28 @@
         }
       });
     });
+    if (typeof refreshCertificates === 'function') refreshCertificates(completed);
+  }
+
+  (async () => {
+    const { data: { session } } = await db.auth.getSession();
+    const accountLink = document.getElementById('nav-account');
+
+    if (!session) {
+      accountLink.href = 'signup.html';
+      accountLink.textContent = 'Create account';
+      document.getElementById('overall-label').textContent = 'All lessons free — account optional to save progress';
+      let guest = [];
+      try { guest = JSON.parse(localStorage.getItem('guest-completions') || '[]'); } catch {}
+      if (guest.length) applyCompletions(guest);
+      return;
+    }
+
+    accountLink.href = 'login.html';
+    accountLink.textContent = 'Account';
+    const { data: completionRows } = await db.from('completions').select('unit, lesson');
+    const completed = completionRows ? completionRows.map(r => `${r.unit}-${r.lesson}`) : [];
+    applyCompletions(completed);
   })();
 
 </script>
