@@ -67,6 +67,8 @@ export default {
     practice: [
         {
             text: `Print the middle row of the grid (index 1).`,
+            hint: `One index on grid gives you a whole row. The middle row is index 1 — the second row, with 4, 5, and 6.`,
+            starterTip: `Put grid[1] inside print(), like print(grid[1]).`,
             starter: [
                 `grid = [`,
                 `    [1, 2, 3],`,
@@ -80,6 +82,8 @@ export default {
         },
         {
             text: `Loop over the last row and print each value.`,
+            hint: `In a 3-row grid, the last row is index 2. Use for ... in grid[2]: and print each value inside the loop.`,
+            starterTip: `Try for value in grid[2]: on the comment line, then indent print(value) under it.`,
             starter: [
                 `grid = [`,
                 `    [1, 2, 3],`,

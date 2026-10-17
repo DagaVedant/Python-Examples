@@ -73,6 +73,8 @@ export default {
     practice: [
         {
             text: `Change the top-left cell to <code>100</code> and print the grid.`,
+            hint: `Top-left is row 0, column 0. Assign with grid[0][0] = 100 on a line before you print the whole grid.`,
+            starterTip: `Add grid[0][0] = 100 on the blank line above print(grid).`,
             starter: [
                 `grid = [`,
                 `    [1, 2, 3],`,
@@ -86,6 +88,8 @@ export default {
         },
         {
             text: `On a blank 3x3 board of dots, place <code>"X"</code> in the center. Print the middle row.`,
+            hint: `The center is board[1][1]. Set it to "X" with quotes before you print the middle row at index 1.`,
+            starterTip: `Add board[1][1] = "X" on the blank line. When you print(board[1]), the middle should show an X.`,
             starter: [
                 `board = [`,
                 `    [".", ".", "."],`,

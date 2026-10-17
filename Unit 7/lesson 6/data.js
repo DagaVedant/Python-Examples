@@ -75,6 +75,8 @@ export default {
     practice: [
         {
             text: `Print each row of the grid on its own line.`,
+            hint: `Loop over grid once. Each time through, print one row so you get three lines of output.`,
+            starterTip: `Add for row in grid: and on the next line (indented) print(row).`,
             starter: [
                 `grid = [`,
                 `    [1, 2, 3],`,
@@ -87,6 +89,8 @@ export default {
         },
         {
             text: `Print the board so each row shows three cells separated by spaces (use print with commas or build a line).`,
+            hint: `You need three printed lines — one per row. Commas in print() put spaces between values on the same line.`,
+            starterTip: `Try for row in board: then print(row[0], row[1], row[2]) so each row looks like X O X.`,
             starter: [
                 `board = [`,
                 `    ["X", "O", "X"],`,

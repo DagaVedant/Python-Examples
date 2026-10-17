@@ -69,6 +69,8 @@ export default {
     practice: [
         {
             text: `Search for <code>8</code> in the grid. Print whether it was found.`,
+            hint: `Visit every cell with nested loops. When a cell equals 8, set found = True.`,
+            starterTip: `Add for row in grid: and for cell in row:, then if cell == 8: found = True before print(found).`,
             starter: [
                 `grid = [`,
                 `    [1, 2, 3],`,
@@ -84,6 +86,8 @@ export default {
         },
         {
             text: `Search the board for <code>"O"</code>. Print <code>Found O</code> or <code>No O</code> based on a found flag.`,
+            hint: `Search like before, but compare each cell to the string "O". After the loops, use if found to pick your message.`,
+            starterTip: `Set found = True when cell == "O". Then if found: print("Found O") else: print("No O").`,
             starter: [
                 `board = [`,
                 `    ["X", ".", "X"],`,

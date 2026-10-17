@@ -72,6 +72,8 @@ export default {
     practice: [
         {
             text: `Print the center cell of the 3x3 grid.`,
+            hint: `One cell needs two indexes: row first, then column. The center is the middle row and middle column — both index 1.`,
+            starterTip: `Use print(grid[1][1]) — that should show 5.`,
             starter: [
                 `grid = [`,
                 `    [1, 2, 3],`,
@@ -84,6 +86,8 @@ export default {
         },
         {
             text: `Print every value in column 2 (the right column) using a loop.`,
+            hint: `Each time through the loop, row is one full row list. The right column is always at index 2 in every row.`,
+            starterTip: `Inside the loop, use print(row[2]) so you get 3, then 6, then 9.`,
             starter: [
                 `grid = [`,
                 `    [1, 2, 3],`,

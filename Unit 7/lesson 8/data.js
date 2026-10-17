@@ -84,6 +84,8 @@ export default {
     practice: [
         {
             text: `Build a 3x3 grid of zeros. Set the center to 1. Print each row, then print the sum of all cells.`,
+            hint: `The center is row 1, column 1 — use grid[1][1] = 1. Print rows with a loop, then add every cell into total.`,
+            starterTip: `After grid[1][1] = 1, print with for row in grid: print(row[0], row[1], row[2]). Use nested loops to add each cell to total and print it.`,
             starter: [
                 `grid = [`,
                 `    [0, 0, 0],`,
@@ -97,6 +99,8 @@ export default {
         },
         {
             text: `On a 3x3 board of dots, place two X marks. Print the board, then search and print whether X was found.`,
+            hint: `Pick two spots like board[0][0] = "X" and board[2][2] = "X". Print rows, then search with found and nested loops.`,
+            starterTip: `Set two cells to "X", print each row with commas, then if cell == "X": found = True and print something like print("Has X:", found).`,
             starter: [
                 `board = [`,
                 `    [".", ".", "."],`,

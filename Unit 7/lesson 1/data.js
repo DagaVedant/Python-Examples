@@ -68,6 +68,8 @@ export default {
     practice: [
         {
             text: `Create a 3x3 number grid (1–9) and print it.`,
+            hint: `The outer list holds three inner lists — one per row. Fill each row with three numbers so the grid goes 1 through 9.`,
+            starterTip: `Try three rows like [1, 2, 3], [4, 5, 6], and [7, 8, 9] inside grid = [ ... ], then run print(grid).`,
             starter: [
                 `grid = [`,
                 `    `,
@@ -80,6 +82,8 @@ export default {
         },
         {
             text: `Make a 3x3 grid of emoji-free letters (like A–I or all "A"). Print how many rows with len.`,
+            hint: `letters is already a 3x3 grid. You need one print() that asks Python how many rows are in the list — use len().`,
+            starterTip: `Fill the blank print with len(letters) so the output shows 3.`,
             starter: [
                 `letters = [`,
                 `    ["A", "B", "C"],`,

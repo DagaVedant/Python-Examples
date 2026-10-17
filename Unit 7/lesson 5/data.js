@@ -75,6 +75,8 @@ export default {
     practice: [
         {
             text: `Use nested loops to print every number in the grid.`,
+            hint: `The outer loop picks each row. The inner loop visits every cell in that row and prints it.`,
+            starterTip: `Try: for row in grid: then inside it, for cell in row: and print(cell).`,
             starter: [
                 `grid = [`,
                 `    [1, 2, 3],`,
@@ -88,6 +90,8 @@ export default {
         },
         {
             text: `Visit every cell and print only the ones that are greater than 5.`,
+            hint: `Keep your nested loops, but only print when the cell is bigger than 5 — use if cell > 5:`,
+            starterTip: `Inside for cell in row:, add if cell > 5: then print(cell) indented under the if.`,
             starter: [
                 `grid = [`,
                 `    [1, 2, 3],`,
