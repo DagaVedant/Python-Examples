@@ -65,6 +65,8 @@ Division with <code>/</code> often gives a decimal answer, even when it divides 
     practice: [
         {
             text: `There are 7 rows of chairs with 9 chairs in each row. Finish the code so it prints the total chairs.`,
+            hint: `Total chairs means rows times per row. Use the * operator with the two variables already set up.`,
+            starterTip: `Try total = rows * per_row on the blank line before the print.`,
             starter: [
                 `rows = 7`,
                 `per_row = 9`,
@@ -76,6 +78,8 @@ Division with <code>/</code> often gives a decimal answer, even when it divides 
         },
         {
             text: `Divide 48 by 6 and print the result labeled like <code>Groups: 8.0</code>.`,
+            hint: `Put "Groups:" in quotes, then a comma, then 48 / 6 so Python divides and shows a decimal.`,
+            starterTip: `Try print("Groups:", 48 / 6) in the empty print() line.`,
             starter: [
                 `# Print Groups: then 48 / 6`,
                 `print()`,

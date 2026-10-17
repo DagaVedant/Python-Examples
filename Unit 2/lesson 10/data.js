@@ -68,6 +68,8 @@ These tools clean up messy numbers when you need whole counts or the biggest/sma
     practice: [
         {
             text: `Print the absolute value of -42 using abs().`,
+            hint: `abs() drops the minus sign and keeps the distance from zero. Put -42 inside abs().`,
+            starterTip: `Fill the print line with abs(-42) — the output should be 42, not -42.`,
             starter: [
                 `print()`,
             ].join("\n"),
@@ -75,6 +77,8 @@ These tools clean up messy numbers when you need whole counts or the biggest/sma
         },
         {
             text: `Import math. Print math.ceil(7.2) and math.floor(7.2) on two lines.`,
+            hint: `ceil rounds up to the next whole number; floor rounds down. Same number, two different answers.`,
+            starterTip: `First print(math.ceil(7.2)) for 8, then print(math.floor(7.2)) for 7 on the next line.`,
             starter: [
                 `import math`,
                 `print()`,

@@ -66,6 +66,8 @@ You must import before you use it.`,
     practice: [
         {
             text: `Import math and print the square root of 81.`,
+            hint: `Put import math at the top, then call math.sqrt with 81 inside print().`,
+            starterTip: `Your file can be just two lines: import math, then print(math.sqrt(81)).`,
             starter: [
                 `# Import then print sqrt of 81`,
                 ``,
@@ -74,6 +76,8 @@ You must import before you use it.`,
         },
         {
             text: `Use math.pi and radius 5 to print a circle's circumference: 2 * pi * r.`,
+            hint: `Circumference means go around the circle once: 2 times pi times the radius. Use math.pi, not 3.14 in quotes.`,
+            starterTip: `Try circ = 2 * math.pi * r — with r already 5, that should print about 31.4.`,
             starter: [
                 `import math`,
                 `r = 5`,

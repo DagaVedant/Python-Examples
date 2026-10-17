@@ -65,6 +65,8 @@ You can print the answer right away, or save it in a variable and use it later.`
     practice: [
         {
             text: `A game starts with 30 stars. You earn 12 more, then lose 7. Finish the code so it prints the final number of stars.`,
+            hint: `After earning 12, stars is 42. On the blank line, subtract 7 from stars and store the answer back in stars.`,
+            starterTip: `Try stars = stars - 7 on the line after the comment about losing 7.`,
             starter: [
                 `stars = 30`,
                 `# Earn 12`,
@@ -77,6 +79,8 @@ You can print the answer right away, or save it in a variable and use it later.`
         },
         {
             text: `Print the sum of 18 and 27 on one line, labeled like <code>Sum: 45</code>.`,
+            hint: `Use one print() with a label in quotes, a comma, then 18 + 27 so Python adds the numbers.`,
+            starterTip: `Try print("Sum:", 18 + 27) inside the empty print().`,
             starter: [
                 `# Print Sum: then the answer`,
                 `print()`,

@@ -65,6 +65,8 @@ Together, <code>//</code> gives full groups and <code>%</code> gives leftovers.`
     practice: [
         {
             text: `There are 29 beads. Bracelets need 8 beads each. Print how many beads are left over using %.`,
+            hint: `% tells you what is left after making whole bracelets. Use beads and needed in one expression.`,
+            starterTip: `Try left = beads % needed — that is 29 divided by 8, but only the leftover part.`,
             starter: [
                 `beads = 29`,
                 `needed = 8`,
@@ -75,6 +77,8 @@ Together, <code>//</code> gives full groups and <code>%</code> gives leftovers.`
         },
         {
             text: `Print both <code>25 // 4</code> and <code>25 % 4</code> with labels like <code>Full: 6</code> and <code>Left: 1</code>.`,
+            hint: `Use two print() lines. // gives full groups; % gives what is left over after those groups.`,
+            starterTip: `For example: print("Full:", 25 // 4) on one line and print("Left:", 25 % 4) on the next.`,
             starter: [
                 `print()`,
                 `print()`,

@@ -67,6 +67,8 @@ Put parentheses <code>()</code> around the part you want done first. <code>(3 + 
     practice: [
         {
             text: `Write an expression that adds 8 and 2 first, then multiplies by 5. Print the result (should be 50).`,
+            hint: `Without parentheses, Python would multiply first. Wrap 8 + 2 in () so that sum happens before the * 5.`,
+            starterTip: `Try print((8 + 2) * 5) inside the empty print().`,
             starter: [
                 `# Use parentheses so add happens first`,
                 `print()`,
@@ -75,6 +77,8 @@ Put parentheses <code>()</code> around the part you want done first. <code>(3 + 
         },
         {
             text: `Without changing the numbers, add parentheses so this prints 4.0 instead of 8.0.`,
+            hint: `Right now 12 / 2 runs before 20 - 6. Group the subtraction so 20 - 12 happens first, then divide by 2.`,
+            starterTip: `Change the line to print((20 - 12) / 2) — parentheses around 20 - 12 only.`,
             starter: [
                 `# Should print 4.0`,
                 `print(20 - 12 / 2)`,

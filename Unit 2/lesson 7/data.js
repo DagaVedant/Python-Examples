@@ -64,6 +64,8 @@ export default {
     practice: [
         {
             text: `Convert the strings <code>"10"</code> and <code>"7"</code> to ints, subtract, and print the difference.`,
+            hint: `x and y are strings right now. Wrap each one in int() before you subtract.`,
+            starterTip: `Try diff = int(x) - int(y). That turns "10" and "7" into numbers, then 10 minus 7.`,
             starter: [
                 `x = "10"`,
                 `y = "7"`,
@@ -74,6 +76,8 @@ export default {
         },
         {
             text: `Turn <code>"3.25"</code> into a float, multiply by 2, and print the result.`,
+            hint: `The variable text is still a string. Use float() because 3.25 has a decimal point.`,
+            starterTip: `Set value = float(text), then the next line value * 2 should show 6.5 when you run it.`,
             starter: [
                 `text = "3.25"`,
                 `value = `,

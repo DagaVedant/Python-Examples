@@ -66,6 +66,8 @@ Think: first find the subtotal, then tax or discount, then the final total.`,
     practice: [
         {
             text: `Tickets cost 9 each. Buy 4. Then add a snack of 6. Use step variables and print the final cost.`,
+            hint: `First find the ticket total in tickets, then add snack in final. Do not skip the middle variable.`,
+            starterTip: `Try tickets = price * count (9 times 4), then final = tickets + snack so final is 42.`,
             starter: [
                 `price = 9`,
                 `count = 4`,
@@ -78,6 +80,8 @@ Think: first find the subtotal, then tax or discount, then the final total.`,
         },
         {
             text: `Start with 100 points. Multiply by 2 for a bonus round, then subtract 25 for a miss. Print the end score.`,
+            hint: `Update points twice: first double it for the bonus, then take away 25 for the miss.`,
+            starterTip: `Under Bonus round try points = points * 2. Under Miss try points = points - 25.`,
             starter: [
                 `points = 100`,
                 `# Bonus round`,
