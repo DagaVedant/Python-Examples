@@ -1,0 +1,141 @@
+export default {
+    format: "v2",
+    unit: 9,
+    lesson: 6,
+    unitLessons: 8,
+    unitTitle: "Files",
+    title: "with open",
+    readTime: 22,
+    fakeFiles: {
+        "story.txt": "Once upon a time.\nA robot found a map.\nThe end.\n",
+        "note.txt": "Remember: bring snacks!\n",
+        "hello.txt": "Hi from a practice file!\n",
+        "scores.txt": "Ava 90\nLeo 85\nMia 92\n",
+        "tips.txt": "Save often.\nHave fun coding!\n",
+        "starter.txt": "This line was already here.\n",
+        "todo.txt": "1. Feed the cat\n2. Finish homework\n",
+    },
+    goal: "In this lesson you will learn how with open opens a file and closes it safely when the block ends.",
+
+    learn: [
+        "Write with open(...) as f:",
+        "Do your work inside the indented block",
+        "Skip manual close — with handles it",
+    ],
+
+    idea: `The safe style is <code>with open("story.txt") as f:</code>. Inside the indented block, use <code>f.read()</code> or <code>f.write(...)</code>.
+
+When the block ends, Python closes the file for you. Less chance of forgetting <code>close()</code>!`,
+
+    code: {
+        filename: "with_read.py",
+        lines: [
+            `with open("story.txt") as f:`,
+            `    text = f.read()`,
+            `print(text)`,
+            ``,
+            `with open("hello.txt") as f:`,
+            `    msg = f.read()`,
+            `print("Message:", msg.strip())`,
+        ],
+        output: [
+            "Once upon a time.",
+            "A robot found a map.",
+            "The end.",
+            "",
+            "Message: Hi from a practice file!",
+        ],
+    },
+
+    changeOneLine: `In the editor above, change the first open to <code>note.txt</code>. Press <strong>Run</strong>. The first print should show the snack reminder.`,
+
+    code2: {
+        filename: "with_write.py",
+        lines: [
+            `with open("hi.txt", "w") as f:`,
+            `    f.write("Hi with with!\\n")`,
+            `with open("hi.txt") as f:`,
+            `    print(f.read())`,
+        ],
+        output: [
+            "Hi with with!",
+            "",
+        ],
+    },
+
+    practice: [
+        {
+            text: `Use with open to read hello.txt and print it.`,
+            starter: [
+                "with open(\"hello.txt\") as f:",
+                "    text = ",
+                "print()"
+            ].join("\n"),
+            gradingNote: `Pass if with open reads hello.txt and prints contents.`,
+        },
+        {
+            text: `Use with open in "w" mode to write bye.txt, then with open to read and print it.`,
+            starter: [
+                "with open(\"bye.txt\", \"w\") as f:",
+                "    f.write()",
+                "",
+                "with open(\"bye.txt\") as f:",
+                "    print(f.read())"
+            ].join("\n"),
+            gradingNote: `Pass if bye.txt is written and read back with with open.`,
+        },
+    ],
+
+    quiz: [
+        {
+            question: `Why use with open(...)`,
+            options: [
+                { text: `It makes the file bigger`, correct: false },
+                { text: `It opens and closes the file safely`, correct: true },
+                { text: `It installs Python`, correct: false },
+                { text: `It deletes the file`, correct: false },
+            ],
+            correct: `with closes the file automatically at the end of the block.`,
+            wrong: `with open(...) is the safe pattern.`,
+        },
+        {
+            question: `Where do you put f.read() when using with?`,
+            options: [
+                { text: `Before with`, correct: false },
+                { text: `Inside the indented with block`, correct: true },
+                { text: `Only after you quit Python`, correct: false },
+                { text: `In a comment`, correct: false },
+            ],
+            correct: `The file variable f is ready inside the block.`,
+            wrong: `Indent under with.`,
+        },
+        {
+            question: `Do you need f.close() with with open?`,
+            options: [
+                { text: `Yes, always twice`, correct: false },
+                { text: `Usually no — with closes for you`, correct: true },
+                { text: `Yes, or the computer melts`, correct: false },
+                { text: `Only for append`, correct: false },
+            ],
+            correct: `with handles closing.`,
+            wrong: `That is a big reason to use with.`,
+        },
+    ],
+
+    project: {
+        title: "With Style Reader",
+        desc: "Using only with open, read story.txt and note.txt. Print both with short labels.",
+        starter: [
+            "with open(\"story.txt\") as f:",
+            "    story = f.read()",
+            "print(\"STORY:\")",
+            "print(story)",
+            "",
+            "# Read and print note.txt with a label",
+            ""
+        ].join("\n"),
+    },
+
+    prev: { unit: 9, lesson: 5, title: "Append Mode" },
+    next: { unit: 9, lesson: 7, title: "Processing File Text" },
+};
