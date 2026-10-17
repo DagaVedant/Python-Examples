@@ -1,0 +1,150 @@
+export default {
+    format: "v2",
+    unit: 4,
+    lesson: 8,
+    unitLessons: 10,
+    unitTitle: "Repetition & Loops",
+    title: "Loops That Stop Safely",
+    readTime: 23,
+
+    goal: "In this lesson you will learn how to keep while loops finite by always updating the counter so the condition can become False.",
+
+    learn: [
+        "Spot a loop that would never stop",
+        "Always change the value the condition checks",
+        "Prefer a clear counter update every pass",
+    ],
+
+    idea: `A while loop that never changes its condition runs <strong>forever</strong> — and can freeze your program.
+
+Safe rule: whatever the condition looks at (like <code>count</code>), something inside the loop must change it. Shrinking, growing, or stepping a counter is the usual fix.
+
+In this course we only write <strong>finite</strong> while loops with counters. No <code>input()</code>, and no loops that wait forever.`,
+
+    code: {
+        filename: "safe_stop.py",
+        lines: [
+            `# SAFE: count changes every time`,
+            `count = 3`,
+            `while count > 0:`,
+            `    print("Tick", count)`,
+            `    count = count - 1`,
+            `print("Stopped safely")`,
+            ``,
+            `# Another safe pattern: grow past the limit`,
+            `n = 1`,
+            `while n < 10:`,
+            `    print(n)`,
+            `    n = n + 3`,
+        ],
+        output: [
+            "Tick 3",
+            "Tick 2",
+            "Tick 1",
+            "Stopped safely",
+            "1",
+            "4",
+            "7",
+        ],
+    },
+
+    changeOneLine: `In the editor above, change the first <code>count = 3</code> to <code>count = 2</code>. Press <strong>Run</strong>. You should see Tick 2, Tick 1, then Stopped safely.`,
+
+    code2: {
+        filename: "broken_vs_fixed.py",
+        lines: [
+            `# This would be unsafe if we forgot to update:`,
+            `# while x > 0: print(x)   # x never changes!`,
+            ``,
+            `# Fixed version`,
+            `x = 4`,
+            `while x > 0:`,
+            `    print(x)`,
+            `    x = x - 1`,
+        ],
+        output: [
+            "4",
+            "3",
+            "2",
+            "1",
+        ],
+    },
+
+    practice: [
+        {
+            text: `Fix the loop so it stops. Print count each time and subtract 1 until count is no longer greater than 0.`,
+            starter: [
+                `count = 4`,
+                `while count > 0:`,
+                `    print(count)`,
+                `    # Update count so the loop can end`,
+                `    `,
+                `print("Safe stop")`,
+            ].join("\n"),
+            gradingNote: `Pass if while prints 4..1, count decreases each pass, then Safe stop. Infinite loops fail.`,
+        },
+        {
+            text: `Start steps at 0. While steps is less than 5, print steps and add 1. Print Finished after the loop.`,
+            starter: [
+                `steps = 0`,
+                `while steps < 5:`,
+                `    print(steps)`,
+                `    `,
+                `print("Finished")`,
+            ].join("\n"),
+            gradingNote: `Pass if 0..4 print, steps increases, and Finished prints after — finite while only.`,
+        },
+    ],
+
+    quiz: [
+        {
+            question: `What is wrong with: x = 5 then while x > 0: print(x) with no other lines?`,
+            options: [
+                { text: "Nothing — it prints 5 once and stops", correct: false },
+                { text: "It runs forever because x never changes", correct: true },
+                { text: "It causes a SyntaxError", correct: false },
+                { text: "It prints nothing because 5 > 0 is False", correct: false },
+            ],
+            correct: "x never changes, so x > 0 stays True forever.",
+            wrong: "If the condition never becomes False, the while loop never stops.",
+        },
+        {
+            question: `What is one safe habit for while loops in this course?`,
+            options: [
+                { text: "Never update any variables", correct: false },
+                { text: "Always update a counter so the loop can end", correct: true },
+                { text: "Use input() to wait forever", correct: false },
+                { text: "Remove the condition entirely", correct: false },
+            ],
+            correct: "A changing counter keeps the loop finite.",
+            wrong: "Update the value your condition checks on every pass.",
+        },
+        {
+            question: `Why are infinite loops a problem?`,
+            options: [
+                { text: "They make programs faster", correct: false },
+                { text: "They can freeze the program so later code never runs", correct: true },
+                { text: "Python bans the word while", correct: false },
+                { text: "They only happen with for loops", correct: false },
+            ],
+            correct: "A loop that never ends blocks the rest of your program.",
+            wrong: "If while never stops, lines after the loop never get to run.",
+        },
+    ],
+
+    project: {
+        title: "Safe Timer",
+        desc: "Start seconds at 5. While seconds > 0, print the seconds left, then subtract 1. After the loop, print Time is up! Make sure the counter always updates.",
+        starter: [
+            `seconds = 5`,
+            `while seconds > 0:`,
+            `    print("Seconds left:", seconds)`,
+            `    # Subtract 1 — required for a safe stop`,
+            `    `,
+            `print("Time is up!")`,
+        ].join("\n"),
+    },
+
+    prev: { unit: 4, lesson: 7, title: "while Counters" },
+    next: { unit: 4, lesson: 9, title: "if Inside Loops" },
+};

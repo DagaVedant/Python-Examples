@@ -1,0 +1,139 @@
+export default {
+    format: "v2",
+    unit: 4,
+    lesson: 5,
+    unitLessons: 10,
+    unitTitle: "Repetition & Loops",
+    title: "Looping and Totals",
+    readTime: 23,
+
+    goal: "In this lesson you will learn how to keep a running total inside a loop by adding to a variable each time through.",
+
+    learn: [
+        "Start a total at 0 before the loop",
+        "Add to the total inside the loop",
+        "Print the total after the loop finishes",
+    ],
+
+    idea: `A <strong>running total</strong> (or accumulator) is a variable that grows as the loop runs.
+
+Start with <code>total = 0</code> before the loop. Inside the loop, add the next number: <code>total = total + n</code>. After the loop, print <code>total</code> to see the sum.
+
+This pattern works for summing a range, adding scores from a list, or counting how many times something happened.`,
+
+    code: {
+        filename: "sum_range.py",
+        lines: [
+            `# Sum of 1 + 2 + 3 + 4 + 5`,
+            `total = 0`,
+            `for n in range(1, 6):`,
+            `    total = total + n`,
+            `    print("Added", n, "-> total", total)`,
+            ``,
+            `print("Final total:", total)`,
+        ],
+        output: [
+            "Added 1 -> total 1",
+            "Added 2 -> total 3",
+            "Added 3 -> total 6",
+            "Added 4 -> total 10",
+            "Added 5 -> total 15",
+            "Final total: 15",
+        ],
+    },
+
+    changeOneLine: `In the editor above, change <code>range(1, 6)</code> to <code>range(1, 4)</code>. Press <strong>Run</strong>. The final total should be 6 (1+2+3).`,
+
+    code2: {
+        filename: "sum_list.py",
+        lines: [
+            `scores = [10, 20, 5]`,
+            `total = 0`,
+            `for score in scores:`,
+            `    total = total + score`,
+            `print("Score total:", total)`,
+        ],
+        output: [
+            "Score total: 35",
+        ],
+    },
+
+    practice: [
+        {
+            text: `Sum the numbers from 1 to 10. Print the final total after the loop.`,
+            starter: [
+                `total = 0`,
+                `for n in range(1, 11):`,
+                `    # Add n to total`,
+                `    `,
+                `print("Total:", total)`,
+            ].join("\n"),
+            gradingNote: `Pass if total becomes 55 using a loop that adds each n, then prints the total.`,
+        },
+        {
+            text: `Add up the points list and print the sum.`,
+            starter: [
+                `points = [3, 7, 2, 8]`,
+                `total = 0`,
+                `for p in points:`,
+                `    `,
+                `print("Sum:", total)`,
+            ].join("\n"),
+            gradingNote: `Pass if total is 20 after looping over points and adding each value.`,
+        },
+    ],
+
+    quiz: [
+        {
+            question: `Why set total = 0 before the loop?`,
+            options: [
+                { text: "Python requires every variable to be 0", correct: false },
+                { text: "So you have a clear starting sum to add onto", correct: true },
+                { text: "So the loop runs forever", correct: false },
+                { text: "So range() works", correct: false },
+            ],
+            correct: "Starting at 0 gives you a blank slate to accumulate into.",
+            wrong: "You need a starting value before you begin adding.",
+        },
+        {
+            question: `What does total = total + n do inside a loop?`,
+            options: [
+                { text: "It resets total to zero", correct: false },
+                { text: "It adds the current n into the running total", correct: true },
+                { text: "It prints n only", correct: false },
+                { text: "It ends the loop", correct: false },
+            ],
+            correct: "Each pass adds the current value into total.",
+            wrong: "That line updates total by adding this trip’s number.",
+        },
+        {
+            question: `When should you usually print the final total?`,
+            options: [
+                { text: "Before the loop starts", correct: false },
+                { text: "After the loop finishes", correct: true },
+                { text: "Only inside an if with no loop", correct: false },
+                { text: "Never — totals cannot print", correct: false },
+            ],
+            correct: "After the loop, total has every value added in.",
+            wrong: "Print after the loop so you see the completed sum.",
+        },
+    ],
+
+    project: {
+        title: "Piggy Bank",
+        desc: "Coins are [5, 10, 25, 10]. Loop to add them into total. Print each coin as you add it, then print the final total.",
+        starter: [
+            `coins = [5, 10, 25, 10]`,
+            `total = 0`,
+            `for coin in coins:`,
+            `    total = total + coin`,
+            `    print("Added coin:", coin)`,
+            ``,
+            `# Print final total`,
+            `print()`,
+        ].join("\n"),
+    },
+
+    prev: { unit: 4, lesson: 4, title: "range() Start and Step" },
+    next: { unit: 4, lesson: 6, title: "while Loops" },
+};
