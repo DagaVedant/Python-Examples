@@ -56,6 +56,8 @@ You can use double quotes <code>"like this"</code> or single quotes <code>'like 
     practice: [
         {
             text: `Print a sentence that includes an apostrophe, like It's fun. Use the starter.`,
+            hint: `Apostrophes look like tiny quotes. Use double quotes on the outside so Python does not stop the string too early.`,
+            starterTip: `Fill the blank print() with something like print("It's fun!") — double quotes outside.`,
             starter: [
                 `# Needs an apostrophe inside the string`,
                 `print()`,
@@ -64,6 +66,8 @@ You can use double quotes <code>"like this"</code> or single quotes <code>'like 
         },
         {
             text: `Print a sentence that includes a word in double quotes, like "Goal!". Use the starter.`,
+            hint: `If the words inside need "double quotes", wrap the whole string in single quotes on the outside.`,
+            starterTip: `Try print('She yelled "Goal!"') — single quotes outside, double quotes inside the text.`,
             starter: [
                 `# Needs "double quotes" inside the string`,
                 `print()`,

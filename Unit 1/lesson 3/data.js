@@ -52,6 +52,8 @@ Python skips that part. It does not print the comment and does not treat it as a
     practice: [
         {
             text: `Add a helpful # comment above each print so someone knows what that line shows. Keep both prints.`,
+            hint: `A comment is its own line starting with #. Python skips it — only print() shows text on the screen.`,
+            starterTip: `Add a line like # Name above print("Maya"), and # Hobby above print("soccer").`,
             starter: [
                 `print("Maya")`,
                 `print("soccer")`,
@@ -60,6 +62,8 @@ Python skips that part. It does not print the comment and does not treat it as a
         },
         {
             text: `Keep the comment. Finish the blank print so the program still has a note plus one message.`,
+            hint: `Leave the # line alone — it is already a comment. Fill in print() with a colour name inside quotes.`,
+            starterTip: `Keep # My favourite colour, then try print("blue") on the blank line below it.`,
             starter: [
                 `# My favourite colour`,
                 `print()`,

@@ -57,6 +57,8 @@ The next time you print that variable, you see the new value — not the old one
     practice: [
         {
             text: `Start a variable at 0, print it, update it to 10, and print it again. Finish the blanks.`,
+            hint: `After the first print(score), assign a new number to score with =. Then fill the empty print() so it shows score again.`,
+            starterTip: `Under the update comment, add score = 10. In the blank print(), write print(score) so you see 0 then 10.`,
             starter: [
                 `score = 0`,
                 `print(score)`,
@@ -69,6 +71,8 @@ The next time you print that variable, you see the new value — not the old one
         },
         {
             text: `Store a name, print it, change the name to a different friend, and print again.`,
+            hint: `Use friend = again with a new name in quotes. The second print(friend) will show the new name, not Sam.`,
+            starterTip: `Under the change comment, add something like friend = "Alex" (any name in quotes). The last print(friend) stays as is.`,
             starter: [
                 `friend = "Sam"`,
                 `print(friend)`,

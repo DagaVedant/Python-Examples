@@ -56,6 +56,8 @@ Python still runs top to bottom, so the first <code>print()</code> appears first
     practice: [
         {
             text: `Finish the school schedule so it prints three class names on three lines. Fill in the blanks.`,
+            hint: `You already have Math on the first line. Each empty print() needs a different subject name in quotes.`,
+            starterTip: `Fill the two blank print() lines, for example print("Science") and print("Art").`,
             starter: [
                 `print("Math")`,
                 `print()`,
@@ -65,6 +67,8 @@ Python still runs top to bottom, so the first <code>print()</code> appears first
         },
         {
             text: `Make a four-line shopping list. Keep the title. Fill in the three blank item lines.`,
+            hint: `Keep print("Shopping list") as line one. The three blank print() lines each need one item in quotes.`,
+            starterTip: `Try print("Apples"), print("Milk"), and print("Bread") on the three blank lines.`,
             starter: [
                 `print("Shopping list")`,
                 `print()`,

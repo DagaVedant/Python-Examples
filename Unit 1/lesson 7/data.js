@@ -50,6 +50,8 @@ Text still needs quotes when you store it. Numbers do not need quotes.`,
     practice: [
         {
             text: `Store your name and age in variables. Use ONE print to show them in a sentence. Fill in the blank.`,
+            hint: `Do not retype "Sam" or 11 inside print — use the variable names name and age so Python shows what is stored.`,
+            starterTip: `Try: print(name, "is", age, "years old") — commas add spaces between the words and numbers.`,
             starter: [
                 `name = "Sam"`,
                 `age = 11`,
@@ -60,6 +62,8 @@ Text still needs quotes when you store it. Numbers do not need quotes.`,
         },
         {
             text: `Create a variable for a favourite colour and print a sentence that uses it.`,
+            hint: `The colour variable is already set. Your print should include the word colour (the variable name), not only the word blue in quotes.`,
+            starterTip: `Example: print("My favourite colour is", colour) — you can change the sentence, but keep colour in the print.`,
             starter: [
                 `# Store a colour`,
                 `colour = "blue"`,

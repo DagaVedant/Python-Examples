@@ -56,6 +56,8 @@ An empty <code>print()</code> with nothing inside the parentheses prints a blank
     practice: [
         {
             text: `Finish the mini scoreboard. Each player should print on one line like <code>Alice: 42 points</code>. Fill in the blank print.`,
+            hint: `Copy the Alice line’s pattern: a name in quotes, a number, and the word points — all inside one print() with commas between them.`,
+            starterTip: `Fill the blank print like: print("Bob:", 30, "points") — change the name and number to your second player.`,
             starter: [
                 `print("Alice:", 42, "points")`,
                 `# Player 2 — finish this line`,
@@ -65,6 +67,8 @@ An empty <code>print()</code> with nothing inside the parentheses prints a blank
         },
         {
             text: `Print a title, then a blank line, then a message. Use one empty print() for the blank line.`,
+            hint: `You already have the title and the empty print() for spacing. Only the last print() needs text inside quotes.`,
+            starterTip: `Leave print("NEWS") and print() as they are. Fill the bottom blank with something like print("Breaking story here").`,
             starter: [
                 `print("NEWS")`,
                 `# Blank line`,

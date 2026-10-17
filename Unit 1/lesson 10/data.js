@@ -64,6 +64,8 @@ export default {
     practice: [
         {
             text: `Two number answers are stored as text. Cast both to int and print their sum (math, not stuck-together text).`,
+            hint: `"6" and "7" are strings. Wrap each in int() before you add, or Python will join them into "67".`,
+            starterTip: `Try: print(int(n1) + int(n2)) — you should see 13, not 67.`,
             starter: [
                 `n1 = "6"`,
                 `n2 = "7"`,
@@ -74,6 +76,8 @@ export default {
         },
         {
             text: `A price and a quantity are stored as text. Cast them, multiply, and print the total.`,
+            hint: `Use float() for price (it has a decimal) and int() for qty. Multiply the numbers, then store or print that result.`,
+            starterTip: `Replace total = 0 with total = float(price) * int(qty) — print(total) should show 13.0 for 3.25 times 4.`,
             starter: [
                 `price = "3.25"`,
                 `qty = "4"`,
