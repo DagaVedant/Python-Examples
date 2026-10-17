@@ -1,0 +1,121 @@
+export default {
+    format: "v2",
+    unit: 1,
+    lesson: 7,
+    unitLessons: 10,
+    unitTitle: "Getting Started with Python",
+    title: "Variables",
+    readTime: 22,
+
+    goal: "In this lesson you will learn what a variable is and how to store a value so you can reuse it.",
+
+    learn: [
+        "A variable is a named box for a value",
+        "Use = to store a value",
+        "Print the variable name to show its value",
+    ],
+
+    idea: `A <strong>variable</strong> is a named box that holds a value. You put something in the box with <code>=</code>, then use the name later instead of typing the value again.
+
+Text still needs quotes when you store it. Numbers do not need quotes.`,
+
+    code: {
+        filename: "name_tag.py",
+        lines: [
+            `name = "Ava"`,
+            `age = 11`,
+            `print("Hi,", name)`,
+            `print(name, "is", age)`,
+        ],
+        output: [
+            "Hi, Ava",
+            "Ava is 11",
+        ],
+    },
+
+    changeOneLine: `In the editor above, change <code>name = "Ava"</code> to your own name (keep the quotes). Press <strong>Run</strong>. Both lines that use <code>name</code> should update.`,
+
+    code2: {
+        filename: "team.py",
+        lines: [
+            `player = "Messi"`,
+            `goals = 2`,
+            `print(player, "scored", goals, "goals")`,
+        ],
+        output: [
+            "Messi scored 2 goals",
+        ],
+    },
+
+    practice: [
+        {
+            text: `Store your name and age in variables. Use ONE print to show them in a sentence. Fill in the blank.`,
+            starter: [
+                `name = "Sam"`,
+                `age = 11`,
+                `# One print that uses both variables`,
+                `print()`,
+            ].join("\n"),
+            gradingNote: `Pass if name and age are assigned to variables and a single print uses both variable names (not only hardcoded text for both).`,
+        },
+        {
+            text: `Create a variable for a favourite colour and print a sentence that uses it.`,
+            starter: [
+                `# Store a colour`,
+                `colour = "blue"`,
+                `print()`,
+            ].join("\n"),
+            gradingNote: `Pass if a colour (or color) variable holds a non-empty string and print uses that variable name.`,
+        },
+    ],
+
+    quiz: [
+        {
+            question: `Which line correctly stores the text Maya in a variable called name?`,
+            options: [
+                { text: `name = Maya`, correct: false },
+                { text: `name = "Maya"`, correct: true },
+                { text: `"Maya" = name`, correct: false },
+                { text: `print(name = "Maya")`, correct: false },
+            ],
+            correct: "Text needs quotes, and the variable name goes on the left of =.",
+            wrong: "Put the variable name on the left, and put quotes around text values.",
+        },
+        {
+            question: `What is a variable?`,
+            options: [
+                { text: "A comment that starts with #", correct: false },
+                { text: "A named box that holds a value", correct: true },
+                { text: "Only a print() message", correct: false },
+                { text: "A blank line in the output", correct: false },
+            ],
+            correct: "A variable stores a value under a name you choose.",
+            wrong: "Think of a labeled box — the name lets you reuse the value.",
+        },
+        {
+            question: `Why use a variable instead of typing the same value many times?`,
+            options: [
+                { text: "Python requires every value to be in a variable", correct: false },
+                { text: "So you can reuse the value by its name", correct: true },
+                { text: "Variables make print() run faster", correct: false },
+                { text: "Comments only work with variables", correct: false },
+            ],
+            correct: "Variables let you reuse a value without rewriting it everywhere.",
+            wrong: "The main reason is reuse — not speed or a Python rule.",
+        },
+    ],
+
+    project: {
+        title: "Player Card",
+        desc: "Store a player name and a score in variables. Print two lines that use those variables.",
+        starter: [
+            `player = "Alex"`,
+            `score = 7`,
+            `print()`,
+            `print()`,
+        ].join("\n"),
+    },
+
+    prev: { unit: 1, lesson: 6, title: "Fancy print()" },
+    next: { unit: 1, lesson: 8, title: "Changing Variables" },
+};
