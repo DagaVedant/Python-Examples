@@ -1,23 +1,24 @@
 export default {
+    format: "v2",
     unit: 6,
     lesson: 2,
     unitLessons: 4,
     unitTitle: "Lists",
     title: "Adding & Removing Items",
-    readTime: 5,
+    readTime: 30,
 
-    goal: "In this lesson you will learn how to change a list after you create it by adding new items, removing existing ones, and checking how many items it holds.",
+    goal: "In this lesson you will learn how to change a list after you create it by adding items, removing items, and checking how long it is.",
 
     learn: [
         "Add items with .append()",
         "Remove items with .pop() and .remove()",
-        "Check the length with len()",
+        "Check length with len()",
     ],
 
-    idea: "Lists are mutable, which means you can change them after you create them. append() adds a new item to the end. pop() removes the last item (or the item at a given index). remove() searches for a value and removes the first match. len() tells you how many items are in the list.",
+    idea: `Lists can change after you make them. <code>append()</code> adds a new item at the end. <code>pop()</code> removes the last item (or an item at an index) and gives it back to you. <code>remove()</code> finds a value and deletes the first match. <code>len()</code> tells you how many items are in the list.`,
 
     code: {
-        filename: "Unit_6_Lesson_2.py",
+        filename: "tasks.py",
         lines: [
             `tasks = ["buy milk", "do homework"]`,
             ``,
@@ -46,28 +47,100 @@ export default {
         ],
     },
 
+    changeOneLine: `In the editor above, change <code>tasks.append("call mum")</code> to <code>tasks.append("walk dog")</code>. Press <strong>Run</strong>. The first printed list should end with <code>walk dog</code>.`,
+
+    code2: {
+        filename: "party.py",
+        lines: [
+            `guests = ["Ava", "Leo"]`,
+            `guests.append("Mia")`,
+            `print(guests)`,
+            `guests.pop()`,
+            `print(guests)`,
+            `print("Count:", len(guests))`,
+        ],
+        output: [
+            "['Ava', 'Leo', 'Mia']",
+            "['Ava', 'Leo']",
+            "Count: 2",
+        ],
+    },
+
     practice: [
-        `Build a shopping list program. Start with an empty list and use a loop to let the user add items one at a time until they type <code>done</code>. Print the final list.`,
-        `Start with a list of 5 names. Remove the first and last items using pop() and print what remains.`,
+        {
+            text: `Start with a shopping list of two items. Append one more item, then print the list and its length. Fill in the blanks.`,
+            starter: [
+                `shop = ["bread", "eggs"]`,
+                `# Append one more item`,
+                ``,
+                `print(shop)`,
+                `# Print how many items`,
+                `print()`,
+            ].join("\n"),
+            gradingNote: `Pass if append adds a third item and output shows a 3-item list plus length 3 (via len).`,
+        },
+        {
+            text: `Start with five names. Use pop() to remove the last name, then print what remains. Finish the blanks.`,
+            starter: [
+                `names = ["Alex", "Sam", "Jordan", "Riley", "Casey"]`,
+                `# Pop the last name`,
+                ``,
+                `print(names)`,
+            ].join("\n"),
+            gradingNote: `Pass if pop() removes the last item so the printed list has the first four names only.`,
+        },
     ],
 
-    quiz: {
-        question: `What does <code>my_list.pop()</code> do?`,
-        options: [
-            {text: "Removes the first item from the list", correct: false},
-            {text: "Removes and returns the last item from the list", correct: true},
-            {text: "Deletes the entire list", correct: false},
-            {text: "Adds a new item to the end of the list", correct: false},
-        ],
-        correct: "Correct! pop() removes the last item and returns it so you can store or print it.",
-        wrong: "Not quite. pop() removes and returns the last item unless you pass an index.",
-    },
+    quiz: [
+        {
+            question: `What does <code>my_list.pop()</code> do?`,
+            options: [
+                { text: "Removes the first item from the list", correct: false },
+                { text: "Removes and returns the last item", correct: true },
+                { text: "Deletes the entire list", correct: false },
+                { text: "Adds a new item to the end", correct: false },
+            ],
+            correct: "pop() removes the last item and returns it so you can store or print it.",
+            wrong: "pop() removes and returns the last item (unless you pass an index).",
+        },
+        {
+            question: `What does <code>len(tasks)</code> return?`,
+            options: [
+                { text: "The last item in tasks", correct: false },
+                { text: "How many items are in tasks", correct: true },
+                { text: "Always 0", correct: false },
+                { text: "The first item in tasks", correct: false },
+            ],
+            correct: "len() counts how many items are in the list.",
+            wrong: "len() is the length (count of items), not an item from the list.",
+        },
+        {
+            question: `Which method adds an item to the end of a list?`,
+            options: [
+                { text: "remove()", correct: false },
+                { text: "pop()", correct: false },
+                { text: "append()", correct: true },
+                { text: "len()", correct: false },
+            ],
+            correct: "append() adds one item at the end of the list.",
+            wrong: "Use append() to add; remove and pop take items away.",
+        },
+    ],
 
     project: {
-        title: "To-Do List App",
-        desc: "Build a simple to-do list. Show a menu: add task, remove task, view tasks, and quit. Use a while loop to keep the menu running. Use append() and remove() to manage the list.",
+        title: "To-Do List",
+        desc: "Finish a tiny to-do list. Start with two tasks, append one more, remove one by value, then print the list and how many tasks are left. No menu or input needed.",
+        starter: [
+            `todo = ["pack bag", "feed cat"]`,
+            `# Append a new task`,
+            ``,
+            `# Remove "feed cat"`,
+            ``,
+            `print("Tasks:", todo)`,
+            `print("Left:", )`,
+        ].join("\n"),
     },
 
-    prev: {unit: 6, lesson: 1, title: "Creating & Indexing Lists"},
-    next: {unit: 6, lesson: 3, title: "Looping Through Lists"},
+    prev: { unit: 6, lesson: 1, title: "Creating & Indexing Lists" },
+    next: { unit: 6, lesson: 3, title: "Looping Through Lists" },
 };
