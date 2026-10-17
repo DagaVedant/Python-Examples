@@ -66,6 +66,8 @@ When the block ends, Python closes the file for you. Less chance of forgetting <
     practice: [
         {
             text: `Use with open to read hello.txt and print it.`,
+            hint: `Inside the with block, read into text with f.read(). The print goes outside the block — but still uses that variable.`,
+            starterTip: `Fill text = f.read() (indented), then print(text) on the last line.`,
             starter: [
                 "with open(\"hello.txt\") as f:",
                 "    text = ",
@@ -75,6 +77,8 @@ When the block ends, Python closes the file for you. Less chance of forgetting <
         },
         {
             text: `Use with open in "w" mode to write bye.txt, then with open to read and print it.`,
+            hint: `In the first with block, f.write() needs a string with \\n. The second with block already prints f.read() for you.`,
+            starterTip: `Try f.write("Goodbye!\\n") inside the "w" block — then run and you should see Goodbye! printed from the read block.`,
             starter: [
                 "with open(\"bye.txt\", \"w\") as f:",
                 "    f.write()",

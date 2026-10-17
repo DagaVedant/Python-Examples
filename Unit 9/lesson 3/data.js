@@ -62,6 +62,8 @@ export default {
     practice: [
         {
             text: `Loop over tips.txt and print each line stripped.`,
+            hint: `Inside the for loop, print line.strip() so each tip shows without extra newline junk at the end.`,
+            starterTip: `Replace print() with print(line.strip()) — indented under for line in f:.`,
             starter: [
                 "f = open(\"tips.txt\")",
                 "for line in f:",
@@ -72,6 +74,8 @@ export default {
         },
         {
             text: `Count how many lines are in scores.txt and print the count.`,
+            hint: `The loop already adds 1 each time you visit a line. After f.close(), print the count variable.`,
+            starterTip: `Use print(count) at the end — scores.txt has three lines, so you should see 3.`,
             starter: [
                 "count = 0",
                 "f = open(\"scores.txt\")",

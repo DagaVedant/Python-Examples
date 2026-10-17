@@ -77,6 +77,8 @@ Use <code>with open</code> for reading and writing. Keep everything in the pract
     practice: [
         {
             text: `Read hello.txt and write the same text into hello_copy.txt using with open. Print the copy.`,
+            hint: `You already have text from hello.txt. Open hello_copy.txt with "w" in a with block and f.write(text) to save a copy.`,
+            starterTip: `Add: with open("hello_copy.txt", "w") as f: then f.write(text) — the last block prints the copy for you.`,
             starter: [
                 "with open(\"hello.txt\") as f:",
                 "    text = f.read()",
@@ -89,6 +91,8 @@ Use <code>with open</code> for reading and writing. Keep everything in the pract
         },
         {
             text: `Write report2.txt with one line stating how many lines are in story.txt, then print report2.txt.`,
+            hint: `After the loop, count holds how many lines story.txt has. Write one line to report2.txt that mentions that number (story has 3 lines).`,
+            starterTip: `Try: with open("report2.txt", "w") as f: f.write("Lines in story: " + str(count) + "\\n"), then open report2.txt and print(f.read()).`,
             starter: [
                 "count = 0",
                 "with open(\"story.txt\") as f:",

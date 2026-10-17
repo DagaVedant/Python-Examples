@@ -64,6 +64,8 @@ export default {
     practice: [
         {
             text: `Open hello.txt, read it, close it, and print the text.`,
+            hint: `After open, call f.read() and save it in text. Then close the file and print(text) — not an empty print().`,
+            starterTip: `Use text = f.read() on the blank line, then print(text) in the last print().`,
             starter: [
                 "f = open(\"hello.txt\")",
                 "text = ",
@@ -74,6 +76,8 @@ export default {
         },
         {
             text: `Read story.txt and print only the first 16 characters using a slice.`,
+            hint: `A slice uses square brackets: text[start:end]. The first 16 characters are text[0:16] — or just text[:16].`,
+            starterTip: `Print print(text[:16]) so you see "Once upon a time." without the rest of the story.`,
             starter: [
                 "f = open(\"story.txt\")",
                 "text = f.read()",

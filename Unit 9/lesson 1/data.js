@@ -60,6 +60,8 @@ In these lessons, files live in a <strong>practice folder on this page</strong>.
     practice: [
         {
             text: `Print two sentences: what a file stores, and where practice files live.`,
+            hint: `Use two print() lines. One should say that a file stores text (or information). The other should say practice files live on this page — not on your real computer.`,
+            starterTip: `Try print("A file stores text you can read later") and print("Practice files live in a fake folder on this page").`,
             starter: [
                 "print()",
                 "print()"
@@ -68,6 +70,8 @@ In these lessons, files live in a <strong>practice folder on this page</strong>.
         },
         {
             text: `Print three practice file names from this lesson.`,
+            hint: `Each name should be a string in quotes and end with .txt. story.txt is already in the starter — fill in two more from this lesson, like note.txt or hello.txt.`,
+            starterTip: `Add print("note.txt") and print("hello.txt") on the blank lines (or any two other .txt names from the lesson).`,
             starter: [
                 "print(\"story.txt\")",
                 "print()",

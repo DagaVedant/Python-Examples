@@ -71,6 +71,8 @@ export default {
     practice: [
         {
             text: `Create memo.txt with "Hello\\n" using "w", then append "Again\\n", then print the file.`,
+            hint: `After the first close(), open memo.txt again with mode "a" (append), write "Again\\n", close, then read and print like the starter shows.`,
+            starterTip: `Add: f = open("memo.txt", "a"), then f.write("Again\\n"), then f.close() in the "# Append Again" section.`,
             starter: [
                 "f = open(\"memo.txt\", \"w\")",
                 "f.write(\"Hello\\n\")",
@@ -85,6 +87,8 @@ export default {
         },
         {
             text: `Append one new tip line to tips.txt, then print the whole tips file.`,
+            hint: `You already opened tips.txt in append mode. f.write() adds at the end — include \\n so your tip is on its own line.`,
+            starterTip: `Try f.write("Take breaks when coding.\\n") or any short tip you like, then run and check all tips print.`,
             starter: [
                 "f = open(\"tips.txt\", \"a\")",
                 "f.write()",

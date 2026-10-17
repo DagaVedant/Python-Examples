@@ -64,6 +64,8 @@ Example: <code>"Ava 90".split()</code> becomes <code>["Ava", "90"]</code>. Then 
     practice: [
         {
             text: `Loop scores.txt. Print only the names (first part of each line).`,
+            hint: `After split(), the name is the first piece — index 0. Print parts[0], not the whole line or the score.`,
+            starterTip: `Use print(parts[0]) inside the loop. You should see Ava, then Leo, then Mia.`,
             starter: [
                 "with open(\"scores.txt\") as f:",
                 "    for line in f:",
@@ -74,6 +76,8 @@ Example: <code>"Ava 90".split()</code> becomes <code>["Ava", "90"]</code>. Then 
         },
         {
             text: `Add all scores from scores.txt and print the total.`,
+            hint: `The score is the second piece: parts[1]. Turn it into a number with int() before adding to total.`,
+            starterTip: `Add total = total + int(parts[1]) where the comment says "# add score". Total should be 267.`,
             starter: [
                 "total = 0",
                 "with open(\"scores.txt\") as f:",
