@@ -1,12 +1,13 @@
 export default {
+    format: "v2",
     unit: 4,
     lesson: 1,
     unitLessons: 4,
     unitTitle: "Repetition & Loops",
     title: "for Loops",
-    readTime: 5,
+    readTime: 30,
 
-    goal: "In this lesson you will learn how to repeat a block of code a fixed number of times using a for loop, so you never have to copy and paste the same lines.",
+    goal: "In this lesson you will learn how to repeat a block of code with a for loop, so you do not have to copy and paste the same lines.",
 
     learn: [
         "Write a for loop",
@@ -14,58 +15,118 @@ export default {
         "Repeat code a fixed number of times",
     ],
 
-    idea: "A for loop runs a block of code once for each item in a sequence. Each time through the loop, the loop variable holds the current item. This lets you repeat the same action over and over.",
+    idea: `A <strong>for loop</strong> runs a block of code once for each item in a sequence. Each time through, the <strong>loop variable</strong> holds the current item.
+
+You write <code>for name in names:</code>, then indent the lines that should repeat. Python visits every item and runs those lines again.`,
 
     code: {
-        filename: "Unit_4_Lesson_1.py",
+        filename: "greetings.py",
         lines: [
-            `# Print numbers 1 to 5`,
-            `for i in range(1, 6):`,
-            `    print(i)`,
-            ``,
             `# Loop over a list of names`,
             `names = ["Alice", "Bob", "Charlie"]`,
             ``,
             `for name in names:`,
             `    print("Hello,", name)`,
             ``,
-            `# Running total`,
-            `total = 0`,
-            `for num in range(1, 11):`,
-            `    total = total + num`,
-            `print("Sum 1-10:", total)`,
+            `# Repeat with range (more next lesson)`,
+            `for i in range(1, 4):`,
+            `    print("Lap", i)`,
         ],
         output: [
-            "1", "2", "3", "4", "5",
             "Hello, Alice",
             "Hello, Bob",
             "Hello, Charlie",
-            "Sum 1-10: 55",
+            "Lap 1",
+            "Lap 2",
+            "Lap 3",
+        ],
+    },
+
+    changeOneLine: `In the editor above, add <code>"Diana"</code> to the names list so it has four names. Press <strong>Run</strong>. You should see a fourth Hello line for Diana.`,
+
+    code2: {
+        filename: "score_board.py",
+        lines: [
+            `scores = [10, 25, 40]`,
+            `for score in scores:`,
+            `    print("Points:", score)`,
+        ],
+        output: [
+            "Points: 10",
+            "Points: 25",
+            "Points: 40",
         ],
     },
 
     practice: [
-        `Write a for loop that prints the 6 times table from 6 * 1 up to 6 * 10.`,
-        `Use a for loop to print every number from 2 to 20.`,
+        {
+            text: `Finish the loop so it prints each fruit on its own line.`,
+            starter: [
+                `fruits = ["apple", "banana", "cherry"]`,
+                `# Print each fruit`,
+                `for fruit in fruits:`,
+                `    print()`,
+            ].join("\n"),
+            gradingNote: `Pass if a for loop walks the fruits list and prints each fruit (or a line that includes each fruit).`,
+        },
+        {
+            text: `Use a for loop with range to print Lap 1, Lap 2, and Lap 3. Fill in the blanks.`,
+            starter: [
+                `# Print Lap 1 through Lap 3`,
+                `for i in range(1, 4):`,
+                `    print()`,
+            ].join("\n"),
+            gradingNote: `Pass if output includes Lap 1, Lap 2, and Lap 3 (for + range is expected).`,
+        },
     ],
 
-    quiz: {
-        question: `How many times does the loop run? <code>for i in range(3, 8):</code>`,
-        options: [
-            {text: "8 times", correct: false},
-            {text: "5 times, from 3 up to but not including 8", correct: true},
-            {text: "3 times", correct: false},
-            {text: "6 times, including both 3 and 8", correct: false},
-        ],
-        correct: "Correct! range(3, 8) generates 3, 4, 5, 6, 7, which is 5 values.",
-        wrong: "Not quite. range(start, stop) goes from start up to but not including stop.",
-    },
+    quiz: [
+        {
+            question: `How many times does this loop run? <code>for name in ["A", "B", "C"]:</code>`,
+            options: [
+                { text: "1 time", correct: false },
+                { text: "2 times", correct: false },
+                { text: "3 times", correct: true },
+                { text: "Forever", correct: false },
+            ],
+            correct: "There are three items in the list, so the loop body runs three times.",
+            wrong: "Count the items in the list. The loop runs once per item.",
+        },
+        {
+            question: `What is the loop variable in <code>for color in colors:</code>?`,
+            options: [
+                { text: "for", correct: false },
+                { text: "color", correct: true },
+                { text: "colors", correct: false },
+                { text: "print", correct: false },
+            ],
+            correct: "color is the loop variable. It holds one item from colors each time.",
+            wrong: "The name between for and in is the loop variable.",
+        },
+        {
+            question: `Why indent the lines under a for loop?`,
+            options: [
+                { text: "Indentation looks nicer but does nothing", correct: false },
+                { text: "Those lines are the block that repeats", correct: true },
+                { text: "Indentation makes the loop run faster", correct: false },
+                { text: "Only comments need to be indented", correct: false },
+            ],
+            correct: "Indented lines belong to the loop and run each time through.",
+            wrong: "In Python, indentation shows which lines are inside the loop.",
+        },
+    ],
 
     project: {
         title: "Times Table Printer",
-        desc: "Ask the user which times table they want (e.g. 7). Use a for loop to print every result from 1 to 12, formatted like: 7 x 1 = 7.",
+        desc: "Finish the times table. Use a for loop to print n x 1 through n x 12, like 7 x 1 = 7.",
+        starter: [
+            `n = 7`,
+            `# Print n x 1 = ... up through n x 12`,
+            `for i in range(1, 13):`,
+            `    print()`,
+        ].join("\n"),
     },
 
-    prev: {unit: 3, lesson: 4, title: "Combining Conditions"},
-    next: {unit: 4, lesson: 2, title: "range() in Depth"},
+    prev: { unit: 3, lesson: 4, title: "Combining Conditions" },
+    next: { unit: 4, lesson: 2, title: "range() in Depth" },
 };
