@@ -63,6 +63,8 @@ Use it when two things must be true at once — like having a ticket <em>and</em
     practice: [
         {
             text: `Set score to 80 and lives to 2. If score >= 70 and lives > 0, print Level clear.`,
+            hint: `Both sides of <code>and</code> must be True. Your score and lives already pass — write one <code>if</code> that checks both in the same line.`,
+            starterTip: `Try <code>if score >= 70 and lives > 0:</code> on its own line, then indented underneath: <code>print("Level clear")</code>.`,
             starter: [
                 `score = 80`,
                 `lives = 2`,
@@ -72,6 +74,8 @@ Use it when two things must be true at once — like having a ticket <em>and</em
         },
         {
             text: `Print the value of <code>(5 > 2) and (5 < 10)</code>.`,
+            hint: `Each part in parentheses is True or False. Put the whole <code>and</code> expression inside <code>print()</code> so Python shows the final answer.`,
+            starterTip: `Try <code>print((5 > 2) and (5 < 10))</code> — both comparisons are True, so you should see True.`,
             starter: [
                 `print()`,
             ].join("\n"),

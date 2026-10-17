@@ -58,6 +58,8 @@ Exactly one of the two blocks runs — never both, never neither (for a simple i
     practice: [
         {
             text: `If <code>age</code> is at least 12, print <code>Teen ticket</code>. Else print <code>Kid ticket</code>. Set age to 10.`,
+            hint: `Use <code>if age >= 12:</code> for the first message, then <code>else:</code> at the same indent as if for the backup. Indent each print under its line.`,
+            starterTip: `With age 10, the if fails — so the else block should print <code>Kid ticket</code>.`,
             starter: [
                 `age = 10`,
                 `# if / else`,
@@ -66,6 +68,8 @@ Exactly one of the two blocks runs — never both, never neither (for a simple i
         },
         {
             text: `Set <code>found = True</code>. If found, print <code>Key found</code>, else print <code>Keep looking</code>.`,
+            hint: `A bool variable can go straight in the if: <code>if found:</code> means “if found is True.” Pair it with else: for the other message.`,
+            starterTip: `After <code>found = True</code>, write if/else with indented prints — you should see Key found because found is True.`,
             starter: [
                 `found = True`,
             ].join("\n"),

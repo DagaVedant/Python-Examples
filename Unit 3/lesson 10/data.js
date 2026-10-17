@@ -65,6 +65,8 @@ Write conditions so a human can read them. When unsure, add parentheses.`,
     practice: [
         {
             text: `Set has_key True, door_locked True, alarm_off True. If has_key and door_locked and alarm_off, print Safe to open.`,
+            hint: `All three variables are True, so chain them with <code>and</code> in one <code>if</code> line. Every part must be True for the message to print.`,
+            starterTip: `Try <code>if has_key and door_locked and alarm_off:</code> then indented below: <code>print("Safe to open")</code>.`,
             starter: [
                 `has_key = True`,
                 `door_locked = True`,
@@ -75,6 +77,8 @@ Write conditions so a human can read them. When unsure, add parentheses.`,
         },
         {
             text: `Use parentheses: allow entry if (age >= 12 or with_adult) and not closed. Set age=10, with_adult=True, closed=False.`,
+            hint: `Parentheses group the <code>or</code> first: age 10 fails alone but <code>with_adult</code> saves it. Then <code>and not closed</code> must also be True.`,
+            starterTip: `Try <code>if (age >= 12 or with_adult) and not closed:</code> then print something like <code>print("Come in")</code> indented underneath.`,
             starter: [
                 `age = 10`,
                 `with_adult = True`,

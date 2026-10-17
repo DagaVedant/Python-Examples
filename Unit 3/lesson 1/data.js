@@ -63,6 +63,8 @@ Programs use booleans to remember answers like "door is open" or "score is high 
     practice: [
         {
             text: `Create a variable <code>ready</code> set to True and print it with the label <code>Ready:</code>.`,
+            hint: `Booleans use a capital T: write <code>True</code> with no quotes. Then use print() to show the label and the variable.`,
+            starterTip: `Try <code>ready = True</code> on the first line, then something like <code>print("Ready:", ready)</code>.`,
             starter: [
                 `ready = `,
                 `print()`,
@@ -71,6 +73,8 @@ Programs use booleans to remember answers like "door is open" or "score is high 
         },
         {
             text: `Set <code>raining</code> to False and <code>umbrella</code> to True. Print both values.`,
+            hint: `Fill in each variable with <code>False</code> or <code>True</code> — no quotes around them. The print lines are already set up for you.`,
+            starterTip: `Use <code>raining = False</code> and <code>umbrella = True</code>, then run to see both labels print.`,
             starter: [
                 `raining = `,
                 `umbrella = `,

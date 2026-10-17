@@ -62,6 +62,8 @@ Put <code>not</code> in front of a condition or a bool variable.`,
     practice: [
         {
             text: `Set <code>paused = False</code>. If not paused, print <code>Running</code>.`,
+            hint: `<code>paused</code> is False, so <code>not paused</code> is True. Write <code>if not paused:</code> and put your message in that block.`,
+            starterTip: `Try <code>if not paused:</code> on one line, then indented underneath: <code>print("Running")</code>.`,
             starter: [
                 `paused = False`,
                 `# if not paused`,
@@ -70,6 +72,8 @@ Put <code>not</code> in front of a condition or a bool variable.`,
         },
         {
             text: `Print <code>not (3 == 3)</code> and explain in a comment that it is False.`,
+            hint: `<code>3 == 3</code> is True, and <code>not</code> flips it to False. Your comment can say that flip happens — then print the expression.`,
+            starterTip: `Keep or add a comment like the starter, then try <code>print(not (3 == 3))</code>. The output should be False.`,
             starter: [
                 `# 3 == 3 is True, so not flips it`,
                 `print()`,

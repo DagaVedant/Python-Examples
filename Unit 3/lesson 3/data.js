@@ -59,6 +59,8 @@ Only one path runs for that if — when the condition is true.`,
     practice: [
         {
             text: `If <code>temp</code> is greater than 30, print <code>Hot day</code>. Set temp to 35.`,
+            hint: `Write <code>if temp > 30:</code> with a colon, then indent the next line with 4 spaces. Only that indented line runs when the condition is True.`,
+            starterTip: `After the comment, add <code>if temp > 30:</code> and on the next line (indented) <code>print("Hot day")</code>.`,
             starter: [
                 `temp = 35`,
                 `# Add an if block`,
@@ -67,6 +69,8 @@ Only one path runs for that if — when the condition is true.`,
         },
         {
             text: `Set <code>lives = 0</code>. If lives equal 0, print <code>Game over</code>. Also print <code>Done</code> after the if.`,
+            hint: `Use <code>==</code> to check if lives equals 0. Put the if block between lives and the Done print — Done should not be indented under the if.`,
+            starterTip: `Add <code>if lives == 0:</code> with an indented <code>print("Game over")</code> above <code>print("Done")</code> so Done always runs.`,
             starter: [
                 `lives = 0`,
                 ``,

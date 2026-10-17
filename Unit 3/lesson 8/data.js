@@ -63,6 +63,8 @@ Use it when either option is enough — like a coupon <em>or</em> a member pass.
     practice: [
         {
             text: `Set raining and snowing. Make raining True and snowing False. If either is True, print Stay inside.`,
+            hint: `<code>or</code> is True when at least one side is True. Raining is already True, so you only need one <code>if</code> that checks both weather flags.`,
+            starterTip: `Try <code>if raining or snowing:</code> then indented below: <code>print("Stay inside")</code>.`,
             starter: [
                 `raining = True`,
                 `snowing = False`,
@@ -72,6 +74,8 @@ Use it when either option is enough — like a coupon <em>or</em> a member pass.
         },
         {
             text: `Print the value of <code>(3 == 4) or (3 < 5)</code>.`,
+            hint: `One side of <code>or</code> can be False as long as the other is True. Wrap the whole expression in <code>print()</code>.`,
+            starterTip: `Try <code>print((3 == 4) or (3 < 5))</code> — the first part is False but the second is True, so the result is True.`,
             starter: [
                 `print()`,
             ].join("\n"),

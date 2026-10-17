@@ -61,6 +61,8 @@ Order matters: put the most specific checks first when needed.`,
     practice: [
         {
             text: `Set <code>temp = 15</code>. If temp >= 25 print Hot, elif temp >= 10 print Mild, else print Cold.`,
+            hint: `Build a chain: if, then elif, then else — all at the same indent. Python picks the first condition that is True.`,
+            starterTip: `15 is not hot enough for the first check, but it is >= 10 — so the elif branch should print Mild.`,
             starter: [
                 `temp = 15`,
                 `# if / elif / else`,
@@ -69,6 +71,8 @@ Order matters: put the most specific checks first when needed.`,
         },
         {
             text: `Set <code>size = "M"</code>. If size is S print Small, elif M print Medium, else print Other.`,
+            hint: `Compare size to strings with <code>==</code>, like <code>size == "S"</code>. Each branch needs a colon and an indented print.`,
+            starterTip: `Try <code>elif size == "M":</code> with <code>print("Medium")</code> indented under it — size is already "M".`,
             starter: [
                 `size = "M"`,
             ].join("\n"),

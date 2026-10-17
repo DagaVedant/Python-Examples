@@ -67,6 +67,8 @@ Clear labels in each branch make the program easy to follow.`,
     practice: [
         {
             text: `Build a day picker. Set <code>day = 6</code>. If 1 print Mon, elif 2 Tue, elif 3 Wed, elif 4 Thu, elif 5 Fri, elif 6 Sat, elif 7 Sun, else Invalid.`,
+            hint: `Use <code>if day == 1:</code> for Monday, then stack <code>elif</code> lines for each other number. Python runs only the first match — with <code>day = 6</code>, you want the Sat branch.`,
+            starterTip: `Try <code>if day == 1:</code> with <code>print("Mon")</code> indented under it, then <code>elif day == 2:</code> with <code>print("Tue")</code>, and keep going through day 7. Finish with <code>else:</code> and <code>print("Invalid")</code>.`,
             starter: [
                 `day = 6`,
                 `# many branches`,
@@ -75,6 +77,8 @@ Clear labels in each branch make the program easy to follow.`,
         },
         {
             text: `Set <code>hp = 12</code>. If hp > 50 print Fine, elif hp > 20 print Wounded, elif hp > 0 print Critical, else print Down.`,
+            hint: `Check from the highest hp band down. Put <code>hp > 50</code> first, then smaller thresholds — so 12 skips Fine and Wounded and lands on Critical.`,
+            starterTip: `Try <code>if hp > 50:</code> with <code>print("Fine")</code>, then <code>elif hp > 20:</code> with <code>print("Wounded")</code>, then <code>elif hp > 0:</code> with <code>print("Critical")</code>, and <code>else:</code> with <code>print("Down")</code>.`,
             starter: [
                 `hp = 12`,
             ].join("\n"),
