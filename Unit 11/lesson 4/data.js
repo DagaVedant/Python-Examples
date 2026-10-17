@@ -50,6 +50,8 @@ Useful for a few favorites. If you need many tools, plain <code>import math</cod
     practice: [
         {
             text: `from math import sqrt. Print sqrt(64).`,
+            hint: `You already imported sqrt, so call it without math. in front. Put sqrt(64) inside print().`,
+            starterTip: `Try print(sqrt(64)) — the answer should be 8.0.`,
             starter: [
                 "from math import sqrt",
                 "print()"
@@ -58,6 +60,8 @@ Useful for a few favorites. If you need many tools, plain <code>import math</cod
         },
         {
             text: `from random import seed, randint. seed(1), print one roll 1–6.`,
+            hint: `seed(1) is already there. Fill print() with randint(1, 6) — that picks a dice roll from 1 to 6.`,
+            starterTip: `Try print(randint(1, 6)). With seed(1), you should see 2.`,
             starter: [
                 "from random import seed, randint",
                 "seed(1)",

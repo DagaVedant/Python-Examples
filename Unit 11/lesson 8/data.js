@@ -61,6 +61,8 @@ Always <code>random.seed(1)</code> in lesson demos. Print a short menu of result
     practice: [
         {
             text: `Build a 3-line toolkit printout: sqrt(16), a seeded dice roll, and math.pi rounded to 2 decimals.`,
+            hint: `Line 1: print(sqrt(16)). Line 2: print(random.randint(1, 6)) after seed(1). Line 3: print(round(math.pi, 2)).`,
+            starterTip: `Expect 4.0, then dice 2, then 3.14 when you Run with the starter imports and seed(1).`,
             starter: [
                 "import math",
                 "import random",
@@ -74,6 +76,8 @@ Always <code>random.seed(1)</code> in lesson demos. Print a short menu of result
         },
         {
             text: `from math import floor. import random; seed(1); print floor of a random.randint(5,15)/2.`,
+            hint: `Inside print(), use floor(...) around random.randint(5, 15) / 2. floor rounds down to a whole number.`,
+            starterTip: `Try print(floor(random.randint(5, 15) / 2)). seed(1) keeps the roll predictable for checking.`,
             starter: [
                 "from math import floor",
                 "import random",

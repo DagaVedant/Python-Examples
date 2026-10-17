@@ -57,6 +57,8 @@ Keep imports at the top. Keep <code>random.seed(1)</code> before rolls.`,
     practice: [
         {
             text: `Import math and random. seed(1). Roll randint(1,6), print sqrt of that roll (may be float).`,
+            hint: `Set n = random.randint(1, 6) after seed(1). Then print math.sqrt(n) — sqrt of the roll.`,
+            starterTip: `n = random.randint(1, 6) then print(math.sqrt(n)). With seed(1), n is 2 and sqrt is about 1.41.`,
             starter: [
                 "import math",
                 "import random",
@@ -68,6 +70,8 @@ Keep imports at the top. Keep <code>random.seed(1)</code> before rolls.`,
         },
         {
             text: `seed(1). Pick r with randint(1,5). Print round(math.pi*r*r, 2).`,
+            hint: `r is already set with randint. Fill print() with round(math.pi * r * r, 2) — circle area formula.`,
+            starterTip: `Try print(round(math.pi * r * r, 2)). With seed(1), r is 2 and area is about 12.57.`,
             starter: [
                 "import math",
                 "import random",

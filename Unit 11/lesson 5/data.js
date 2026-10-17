@@ -54,6 +54,8 @@ export default {
     practice: [
         {
             text: `Import random, seed(1), print two dice rolls 1–6.`,
+            hint: `Fill both empty print() lines with random.randint(1, 6). Keep random.seed(1) so your rolls match the lesson.`,
+            starterTip: `Try print(random.randint(1, 6)) twice. With seed(1), expect 2 then 5.`,
             starter: [
                 "import random",
                 "random.seed(1)",
@@ -64,6 +66,8 @@ export default {
         },
         {
             text: `seed(1). Use random.choice on ['a','b','c'] twice and print both.`,
+            hint: `Make a list like letters = ["a", "b", "c"], then print random.choice(letters) on each blank line.`,
+            starterTip: `Example: print(random.choice(["a", "b", "c"])) twice. With seed(1), output should be a then c.`,
             starter: [
                 "import random",
                 "random.seed(1)",

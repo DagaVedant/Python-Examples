@@ -48,6 +48,8 @@ After that line runs, the module name is available. Next lesson you will call to
     practice: [
         {
             text: `Import math. Print a short message that math is ready.`,
+            hint: `Keep import math on top. On the next line, print() a short sentence that mentions math is ready.`,
+            starterTip: `Try: print("math is ready") right under import math.`,
             starter: [
                 "import math",
                 "print()"
@@ -56,6 +58,8 @@ After that line runs, the module name is available. Next lesson you will call to
         },
         {
             text: `Import both math and random. Print ok.`,
+            hint: `Fill the two blank lines under the comment with import math and import random — one per line.`,
+            starterTip: `Line 2: import math. Line 3: import random. The print("ok") at the bottom can stay as-is.`,
             starter: [
                 "# two imports",
                 "",

@@ -53,6 +53,8 @@ These tools shine in games, geometry, and score displays.`,
     practice: [
         {
             text: `Import math. Print ceil(2.1) and floor(2.9).`,
+            hint: `First print math.ceil(2.1) — rounds up to 3. Second print math.floor(2.9) — rounds down to 2.`,
+            starterTip: `Try print(math.ceil(2.1)) then print(math.floor(2.9)).`,
             starter: [
                 "import math",
                 "print()",
@@ -62,6 +64,8 @@ These tools shine in games, geometry, and score displays.`,
         },
         {
             text: `Print a circle area for r=3 using math.pi, rounded to 2 decimals.`,
+            hint: `Finish area = math.pi * r * r (r is already 3). In print(), use round(area, 2) so you get two decimal places.`,
+            starterTip: `area = math.pi * r * r then print(round(area, 2)) — about 28.27.`,
             starter: [
                 "import math",
                 "r = 3",

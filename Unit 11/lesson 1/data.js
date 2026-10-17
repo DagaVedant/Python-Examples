@@ -49,6 +49,8 @@ Imports keep programs shorter and let you stand on tools other people (and Pytho
     practice: [
         {
             text: `Print two reasons imports are useful.`,
+            hint: `You need two print() lines. Each one should say something helpful about imports — like saving time or using ready-made tools.`,
+            starterTip: `Try print("Imports give you tools you did not write") and print("They keep programs shorter").`,
             starter: [
                 "print()",
                 "print()"
@@ -57,6 +59,8 @@ Imports keep programs shorter and let you stand on tools other people (and Pytho
         },
         {
             text: `Print the names of two modules you will learn: math and random.`,
+            hint: `Two print() calls — one should show math, the other should show random. Put each name inside quotes.`,
+            starterTip: `For example: print("math") on the first line and print("random") on the second.`,
             starter: [
                 "print()",
                 "print()"

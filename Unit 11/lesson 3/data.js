@@ -51,6 +51,8 @@ The pattern is always <code>module.name</code>. The module owns the tool; the do
     practice: [
         {
             text: `Import math. Print the square root of 81.`,
+            hint: `After import math, use the dot pattern: math.sqrt(...) inside print(). The number inside sqrt should be 81.`,
+            starterTip: `Try print(math.sqrt(81)) — you should see 9.0 when you Run.`,
             starter: [
                 "import math",
                 "print()"
@@ -59,6 +61,8 @@ The pattern is always <code>module.name</code>. The module owns the tool; the do
         },
         {
             text: `Import math. Print floor of 9.8 and ceil of 9.1.`,
+            hint: `Use math.floor(9.8) on one print line and math.ceil(9.1) on the other. floor rounds down; ceil rounds up.`,
+            starterTip: `First print: print(math.floor(9.8)) → 9. Second: print(math.ceil(9.1)) → 10.`,
             starter: [
                 "import math",
                 "print()",
