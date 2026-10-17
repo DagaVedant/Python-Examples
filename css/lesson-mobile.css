@@ -1,0 +1,235 @@
+/* === mobile polish === */
+/* lesson.html phone/tablet layout — keep separate to avoid editor conflicts */
+
+/* Tablet (≤768px) */
+@media (max-width: 768px) {
+  .bar {
+    padding: .65rem 1rem;
+    gap: 8px;
+  }
+
+  .page {
+    padding: 1.75rem 1rem;
+  }
+
+  h1 {
+    font-size: 26px;
+  }
+
+  .progress-track {
+    width: 100px;
+  }
+
+  /* CodeMirror: readable but compact; allow horizontal scroll */
+  .code-body .cm-editor,
+  .practice-editor-wrap .cm-editor,
+  .project-editor-wrap .cm-editor {
+    font-size: 12.5px;
+    min-height: 140px;
+  }
+
+  .code-body .cm-scroller,
+  .practice-editor-wrap .cm-scroller,
+  .project-editor-wrap .cm-scroller {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .practice-ide-footer,
+  .project-ide-footer {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .practice-ide-footer .run-btn,
+  .practice-ide-footer .practice-save-btn,
+  .project-ide-footer .run-btn {
+    min-height: 44px;
+    padding: .55rem 1rem;
+    font-size: 14px;
+  }
+
+  .practice-toggle-btn {
+    min-height: 44px;
+    padding: .55rem 1rem;
+    font-size: 13px;
+  }
+
+  .quiz-footer .check-btn,
+  .quiz-footer .reset-btn {
+    min-height: 44px;
+    padding: .55rem 1.1rem;
+  }
+
+  .option {
+    min-height: 44px;
+    padding: .75rem .9rem;
+  }
+
+  .nav-row {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .nav-btn {
+    min-height: 44px;
+    justify-content: center;
+  }
+
+  /* Avoid iOS zoom on focus */
+  input,
+  textarea,
+  select {
+    font-size: 16px;
+  }
+}
+
+/* Phone (≤480px) — ≈375px viewport */
+@media (max-width: 480px) {
+  .bar {
+    padding: .55rem .75rem;
+    flex-wrap: nowrap;
+    gap: 6px;
+  }
+
+  .crumb {
+    font-size: 12px;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    flex: 1;
+  }
+
+  .bar-right {
+    flex-shrink: 0;
+    gap: 6px;
+  }
+
+  .progress-label {
+    display: none;
+  }
+
+  .progress-track {
+    width: 56px;
+  }
+
+  .theme-btn {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+  }
+
+  .page {
+    padding: 1.25rem .85rem;
+  }
+
+  h1 {
+    font-size: 22px;
+  }
+
+  .code-header {
+    padding: .5rem .75rem;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+
+  .code-body .cm-editor,
+  .practice-editor-wrap .cm-editor,
+  .project-editor-wrap .cm-editor {
+    font-size: 12px;
+    min-height: 120px;
+  }
+
+  .code-body .cm-scroller,
+  .practice-editor-wrap .cm-scroller,
+  .project-editor-wrap .cm-scroller {
+    padding: .4rem 0;
+    line-height: 1.7;
+  }
+
+  .practice-ide-footer,
+  .project-ide-footer {
+    flex-direction: column;
+    align-items: stretch;
+    padding: .55rem .65rem;
+  }
+
+  .practice-ide-footer .run-btn,
+  .practice-ide-footer .practice-save-btn,
+  .practice-ide-footer .practice-run-btn,
+  .practice-ide-footer .practice-check-btn,
+  .project-ide-footer .run-btn {
+    width: 100%;
+    min-height: 44px;
+    justify-content: center;
+  }
+
+  .practice-save-status {
+    width: 100%;
+    text-align: left;
+  }
+
+  .quiz-header,
+  .quiz-question,
+  .quiz-options,
+  .quiz-footer {
+    padding-left: .85rem;
+    padding-right: .85rem;
+  }
+
+  .quiz-footer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .quiz-footer .check-btn,
+  .quiz-footer .reset-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .feedback {
+    width: 100%;
+  }
+
+  .nav-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .nav-btn {
+    width: 100%;
+  }
+
+  .signup-nudge-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .signup-nudge-actions .check-btn,
+  .signup-nudge-actions .signup-nudge-dismiss {
+    width: 100%;
+    min-height: 44px;
+    justify-content: center;
+  }
+}
+
+/* Very small phones (≤375px) */
+@media (max-width: 375px) {
+  .progress-track {
+    width: 44px;
+  }
+
+  .crumb #bc-unit {
+    max-width: 4.5em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: inline-block;
+    vertical-align: bottom;
+  }
+
+  .bar .progress {
+    gap: 0;
+  }
+}
