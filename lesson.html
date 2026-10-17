@@ -275,6 +275,46 @@ hr {
   margin-bottom: 1.75rem;
 }
 
+.fake-files {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  padding: .75rem 1rem;
+  margin-bottom: 1.75rem;
+  font-size: 13px;
+}
+.fake-files-note {
+  color: var(--text3);
+  font-size: 12px;
+  margin-bottom: .65rem;
+  line-height: 1.5;
+}
+.fake-file {
+  border: 1px solid var(--border);
+  border-radius: var(--rsm);
+  margin-bottom: 8px;
+  overflow: hidden;
+}
+.fake-file:last-child { margin-bottom: 0; }
+.fake-file-name {
+  font-family: 'DM Mono', monospace;
+  font-size: 12px;
+  padding: .4rem .7rem;
+  background: var(--surface2);
+  color: var(--navy);
+  border-bottom: 1px solid var(--border);
+}
+.fake-file-body {
+  font-family: 'DM Mono', monospace;
+  font-size: 12px;
+  padding: .55rem .7rem;
+  white-space: pre-wrap;
+  color: var(--text2);
+  line-height: 1.55;
+  max-height: 140px;
+  overflow: auto;
+}
+
 .try-step {
   border: 1px solid var(--blue-md);
   background: var(--blue-lt);
@@ -836,6 +876,11 @@ hr {
   <p class="section-label">The idea</p>
   <p class="idea fade" id="idea"></p>
 
+  <div id="fake-files-block" hidden>
+    <p class="section-label">Files in this lesson</p>
+    <div class="fake-files" id="fake-files"></div>
+  </div>
+
   <p class="section-label">Example</p>
   <div class="code-wrap">
     <div class="code-header">
@@ -1017,6 +1062,18 @@ document.getElementById('meta').innerHTML = `
 
 document.getElementById('goal').textContent     = L.goal;
 document.getElementById('idea').innerHTML       = L.idea;
+
+if (L.fakeFiles && Object.keys(L.fakeFiles).length) {
+  document.getElementById('fake-files-block').hidden = false;
+  document.getElementById('fake-files').innerHTML =
+    `<p class="fake-files-note">These files live in a practice folder on this page — not on your computer. Your code can open them by name.</p>` +
+    Object.entries(L.fakeFiles).map(([name, body]) => `
+      <div class="fake-file">
+        <div class="fake-file-name">${escapeHTML(name)}</div>
+        <div class="fake-file-body">${escapeHTML(body)}</div>
+      </div>`).join('');
+}
+
 document.getElementById('code-fn').textContent  = L.code.filename;
 
 editor = new EditorView({
@@ -1519,8 +1576,16 @@ const INPUT_STUB = `def input(prompt=""):
     raise RuntimeError("input() isn't supported here yet - put the value in a variable instead!")
 `;
 
+function seedLessonFiles(py) {
+  if (!L.fakeFiles) return;
+  for (const [name, content] of Object.entries(L.fakeFiles)) {
+    py.FS.writeFile(name, content);
+  }
+}
+
 async function runIsolated(code) {
   const py = await getPyodide();
+  seedLessonFiles(py);
   let output = '';
   py.setStdout({ batched: text => { output += text + '\n'; } });
   const namespace = py.globals.get('dict')();

@@ -16,7 +16,7 @@ Theres also a short demo video at `public/video/demo.mp4` if you want to see it 
 
 ## What You Get
 
-- 27 lessons across 7 units, from your very first program all the way to 2D lists
+- 45 lessons across 12 units, from your very first program through dictionaries, files, errors, imports, and classes
 - A built in code editor with line wrapping and AI feedback on your practice code
 - Progress that saves across all your devices once you sign in
 - A quiz and two practice tasks in every lesson
@@ -113,13 +113,60 @@ You dont even need Python installed to follow the lessons in the browser, but if
 | 7.2 | Accessing Rows & Columns | Seating Plan Editor |
 | 7.3 | Looping Over a Grid | Tic-Tac-Toe Game |
 
+### Unit 8 - Dictionaries
+> Store and look up values by name
+
+| # | Lesson | Project |
+|---|--------|---------|
+| 8.1 | Creating & Looking Up | Pet Profile |
+| 8.2 | Adding & Updating | High Score Board |
+| 8.3 | Looping over Dictionaries | Class Roster |
+| 8.4 | Dictionary Methods | Inventory Checker |
+
+### Unit 9 - Files
+> Read and write text files in a practice folder on the page
+
+| # | Lesson | Project |
+|---|--------|---------|
+| 9.1 | Reading Files | Story Reader |
+| 9.2 | Writing Files | Diary Entry |
+| 9.3 | Working with File Contents | Score File Helper |
+
+### Unit 10 - Errors
+> Handle mistakes without crashing the whole program
+
+| # | Lesson | Project |
+|---|--------|---------|
+| 10.1 | When Code Breaks | Error Detective |
+| 10.2 | try / except | Safe Divider |
+| 10.3 | Catching Specific Errors | Robust Calculator |
+
+### Unit 11 - Imports
+> Borrow tools from Python's built-in modules
+
+| # | Lesson | Project |
+|---|--------|---------|
+| 11.1 | Using import | Dice Roller |
+| 11.2 | from … import | Lucky Numbers |
+| 11.3 | Useful Standard Modules | Mini Toolkit |
+
+### Unit 12 - Classes
+> Bundle data and actions into reusable objects
+
+| # | Lesson | Project |
+|---|--------|---------|
+| 12.1 | Classes & Objects | Pet Class |
+| 12.2 | Methods | Bank Account |
+| 12.3 | __init__ | Player Card |
+| 12.4 | Designing with Classes | Tiny Shop |
+
 ## Totals
 
-- 7 units
-- 27 lessons
-- 27 projects (one per lesson)
-- 27 quizzes (one per lesson)
-- 54 practice tasks (two per lesson)
+- 12 units
+- 45 lessons
+- 45 projects (one per lesson)
+- 45 quizzes (one per lesson)
+- 90 practice tasks (two per lesson)
 
 ## Credits
 

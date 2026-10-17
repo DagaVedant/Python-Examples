@@ -48,5 +48,37 @@ const units = [
     { number: 2, title: "Accessing Rows & Columns" },
     { number: 3, title: "Nested Loops" },
   ]},
-  
+
+  { number: 8, title: "Dictionaries", lessons: [
+    { number: 1, title: "Creating & Looking Up" },
+    { number: 2, title: "Adding & Updating" },
+    { number: 3, title: "Looping over Dictionaries" },
+    { number: 4, title: "Dictionary Methods" },
+  ]},
+
+  { number: 9, title: "Files", lessons: [
+    { number: 1, title: "Reading Files" },
+    { number: 2, title: "Writing Files" },
+    { number: 3, title: "Working with File Contents" },
+  ]},
+
+  { number: 10, title: "Errors", lessons: [
+    { number: 1, title: "When Code Breaks" },
+    { number: 2, title: "try / except" },
+    { number: 3, title: "Catching Specific Errors" },
+  ]},
+
+  { number: 11, title: "Imports", lessons: [
+    { number: 1, title: "Using import" },
+    { number: 2, title: "from … import" },
+    { number: 3, title: "Useful Standard Modules" },
+  ]},
+
+  { number: 12, title: "Classes", lessons: [
+    { number: 1, title: "Classes & Objects" },
+    { number: 2, title: "Methods" },
+    { number: 3, title: "__init__" },
+    { number: 4, title: "Designing with Classes" },
+  ]},
+
 ];

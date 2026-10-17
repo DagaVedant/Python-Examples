@@ -175,5 +175,5 @@ Together they reach every cell — like reading a table left to right, then down
     },
 
     prev: { unit: 7, lesson: 2, title: "Accessing Rows & Columns" },
-    next: null,
+    next: { unit: 8, lesson: 1, title: "Creating & Looking Up" },
 };
