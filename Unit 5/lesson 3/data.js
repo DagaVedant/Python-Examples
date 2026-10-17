@@ -62,6 +62,8 @@ With one parameter, you can greet Alice and Bob using the same <code>greet</code
     practice: [
         {
             text: `Finish greet(name) so it prints a hello using the name. Call it with two different names.`,
+            hint: `Use the parameter name inside print — for example print("Hello,", name). Add a second greet("...") call with a different name.`,
+            starterTip: `Try print("Hello,", name) in the function body, then add greet("Alex") on the blank line below greet("Sam").`,
             starter: [
                 `def greet(name):`,
                 `    print()`,
@@ -73,6 +75,8 @@ With one parameter, you can greet Alice and Bob using the same <code>greet</code
         },
         {
             text: `Finish square(n) so it prints n times n. Call it with two different numbers.`,
+            hint: `Multiply n by itself with n * n (or n ** 2) inside print. Call square twice with different numbers like 3 and 5.`,
+            starterTip: `Try print(n, "squared is", n * n) inside square, then add square(5) on the blank line below square(3).`,
             starter: [
                 `def square(n):`,
                 `    print()`,

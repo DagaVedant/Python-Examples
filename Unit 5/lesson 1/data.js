@@ -69,6 +69,8 @@ A <strong>function</strong> gives that chunk a name. You write it once, then run
     practice: [
         {
             text: `Print a two-line cheer twice (four prints total), with a blank line between the two cheers. No function yet — just notice the repetition.`,
+            hint: `You need four print lines for the cheers, plus one empty print() in the middle for a blank line. Copy the same two cheer lines twice.`,
+            starterTip: `Fill the three blank print() calls: print("Go!"), print("Win!"), then after print() repeat print("Go!") and print("Win!").`,
             starter: [
                 `print("Go!")`,
                 `print("Win!")`,
@@ -80,6 +82,8 @@ A <strong>function</strong> gives that chunk a name. You write it once, then run
         },
         {
             text: `Print the same three-star banner twice using separate print lines.`,
+            hint: `Each banner is three lines: stars, middle line, stars. You already have one full banner — fill in the second banner the same way.`,
+            starterTip: `For the first banner middle line try print("Hi"). For the second banner use print("***"), print("Hi"), print("***") again.`,
             starter: [
                 `print("***")`,
                 `print()`,

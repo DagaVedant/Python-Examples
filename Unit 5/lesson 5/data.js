@@ -69,6 +69,8 @@ When Python hits <code>return</code>, it leaves the function immediately and han
     practice: [
         {
             text: `Finish add(a, b) so it returns the sum. Print the result of calling it.`,
+            hint: `return sends a value back — put the addition of a and b right after return, not a print inside the function.`,
+            starterTip: `Change the lone return to return a + b. print(add(2, 3)) is already there; run it and you should see 5.`,
             starter: [
                 `def add(a, b):`,
                 `    return`,
@@ -79,6 +81,8 @@ When Python hits <code>return</code>, it leaves the function immediately and han
         },
         {
             text: `Finish bigger(a, b) so it returns the larger of two numbers. Print two calls.`,
+            hint: `The if branch already returns a when a is bigger. In the else branch, return the other number.`,
+            starterTip: `Fill in return b in the else, then on the blank print() line try print(bigger(4, 9)) so you show two results.`,
             starter: [
                 `def bigger(a, b):`,
                 `    if a > b:`,

@@ -60,6 +60,8 @@ You can also use a call inside another expression, like <code>print(add(4, 6) * 
     practice: [
         {
             text: `Finish add(a, b) so it returns the sum. Store the result of add(2, 3) and print it.`,
+            hint: `Finish return with a + b, then print whatever is stored in result — that variable catches the returned value.`,
+            starterTip: `Use return a + b in add, and replace the empty print() with print(result).`,
             starter: [
                 `def add(a, b):`,
                 `    return`,
@@ -71,6 +73,8 @@ You can also use a call inside another expression, like <code>print(add(4, 6) * 
         },
         {
             text: `Finish double(n) so it returns n * 2. Store double(8) in answer, then print answer and answer + 1.`,
+            hint: `double should return n times 2. The second print line should use answer in a little math.`,
+            starterTip: `Try return n * 2 in double, and print(answer + 1) on the last blank print() — first line should show 16.`,
             starter: [
                 `def double(n):`,
                 `    return`,

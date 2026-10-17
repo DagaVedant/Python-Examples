@@ -69,6 +69,8 @@ Example: <code>grade</code> picks a letter. <code>print_report</code> calls <cod
     practice: [
         {
             text: `Finish grade(score) and print_report(name, score). The report function should call grade and print one line.`,
+            hint: `print_report already calls grade and saves the letter. Fill in print() with name, score, and letter in one message.`,
+            starterTip: `Try print(name, "scored", score, "- Grade:", letter) inside print_report — like the lesson example.`,
             starter: [
                 `def grade(score):`,
                 `    if score >= 90:`,
@@ -86,6 +88,8 @@ Example: <code>grade</code> picks a letter. <code>print_report</code> calls <cod
         },
         {
             text: `Finish double(n) so it returns n * 2, and show(n) so it prints the doubled value by calling double. Call show once.`,
+            hint: `show already uses double(n) — finish double's return, then add one line at the bottom that calls show with a number.`,
+            starterTip: `Use return n * 2 in double, then add show(6) (or any number) on a blank line at the end.`,
             starter: [
                 `def double(n):`,
                 `    return`,

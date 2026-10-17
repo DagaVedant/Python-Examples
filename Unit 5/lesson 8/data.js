@@ -73,6 +73,8 @@ Name functions for what they do: <code>average</code>, <code>grade</code>, <code
     practice: [
         {
             text: `Finish average and grade. Make print_report call both and print one line for Maya.`,
+            hint: `average should add the three scores and divide by 3. print_report already has avg and letter — put them in print().`,
+            starterTip: `Try return (a + b + c) / 3 in average, and print(name, "avg", avg, "grade", letter) in print_report.`,
             starter: [
                 `def average(a, b, c):`,
                 `    return`,
@@ -94,6 +96,8 @@ Name functions for what they do: <code>average</code>, <code>grade</code>, <code
         },
         {
             text: `Finish area(w, h) and describe(w, h). describe should call area and print the result. Call describe once.`,
+            hint: `area returns width times height. describe is ready — you need the return in area and one call to describe at the bottom.`,
+            starterTip: `Use return w * h in area, then add describe(4, 3) on a blank line at the end.`,
             starter: [
                 `def area(w, h):`,
                 `    return`,

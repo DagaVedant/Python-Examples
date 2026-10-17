@@ -62,6 +62,8 @@ When you call the function, pass the same number of arguments in the <strong>sam
     practice: [
         {
             text: `Finish area(width, height) so it prints the product. Call it with two different pairs of numbers.`,
+            hint: `Area for a rectangle is width times height. Use width * height inside print, and call area twice with two number pairs.`,
+            starterTip: `Try print("Area:", width * height) in the function, then add area(3, 3) on the blank line below area(4, 5).`,
             starter: [
                 `def area(width, height):`,
                 `    print()`,
@@ -73,6 +75,8 @@ When you call the function, pass the same number of arguments in the <strong>sam
         },
         {
             text: `Finish intro(name, age) so it prints a line using both values. Call it twice.`,
+            hint: `One print can use both parameters — name and age — with commas between the pieces of text. Call intro again with a different name and age.`,
+            starterTip: `Try print(name, "is", age, "years old") inside intro, then add intro("Maya", 12) on the blank line below intro("Sam", 11).`,
             starter: [
                 `def intro(name, age):`,
                 `    print()`,
