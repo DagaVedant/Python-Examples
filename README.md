@@ -16,7 +16,7 @@ Theres also a short demo video at `public/video/demo.mp4` if you want to see it 
 
 ## What You Get
 
-- 45 lessons across 12 units, from your very first program through dictionaries, files, errors, imports, and classes
+- 110 short lessons across 12 units (AP CSP style — one idea per lesson), from your first program through dictionaries, files, errors, imports, and classes
 - A built in code editor with line wrapping and AI feedback on your practice code
 - Progress that saves across all your devices once you sign in
 - A quiz and two practice tasks in every lesson
@@ -43,130 +43,51 @@ You dont even need Python installed to follow the lessons in the browser, but if
 
 ## The Course
 
-### Unit 1 - Getting Started with Python
-> Creating your first Python program and learning the basic blocks of every program
+Each unit is split into short lessons — one idea at a time — like an AP CSP unit plan.
 
-| # | Lesson | Project |
-|---|--------|---------|
-| 1.1 | Your First Program | About Me Card |
-| 1.2 | Output & Formatting | Receipt Printer |
-| 1.3 | Variables | Scoreboard |
-| 1.4 | Input | Greeting Card |
-| 1.5 | Data Types & Casting | Tip Calculator |
+### Unit 1 - Getting Started with Python (10)
+What is a Program · print() Basics · Comments · Many Lines of Output · Strings and Quotes · Fancy print() · Variables · Changing Variables · Using Answers · Data Types & Casting
 
-### Unit 2 - Number Calculations & Data
-> Learn how to do math in Python and make programs that calculate real values
+### Unit 2 - Number Calculations & Data (10)
+Plus and Minus · Multiply and Divide · Order of Operations · Float Division · Integer Division · Remainder · Text into Numbers · Multi-step Math · The math Module · Useful math Tools
 
-| # | Lesson | Project |
-|---|--------|---------|
-| 2.1 | Arithmetic Operators | Area Calculator |
-| 2.2 | Integer vs Float Division | Bill Splitter |
-| 2.3 | Numbers from Input | Shopping Calculator |
-| 2.4 | Math Library Basics | Triangle Solver |
+### Unit 3 - Making Decisions (10)
+True and False · Comparing Values · if · else · elif · Many Branches · and · or · not · Complex Conditions
 
-### Unit 3 - Making Decisions
-> Make programs that choose between different paths
+### Unit 4 - Repetition & Loops (10)
+Why Loops · for Loops · range() Basics · range() Start and Step · Looping and Totals · while Loops · while Counters · Loops That Stop Safely · if Inside Loops · Filter with Loops
 
-| # | Lesson | Project |
-|---|--------|---------|
-| 3.1 | Comparisons & Booleans | Number Checker |
-| 3.2 | if / else | Odd or Even |
-| 3.3 | elif & Multiple Branches | Game Score Rank |
-| 3.4 | Combining Conditions (and / or / not) | Theme Park Entry |
+### Unit 5 - Functions (8)
+Why Functions · Defining and Calling · One Parameter · Multiple Parameters · Return Values · Using What You Return · Functions Calling Functions · Designing with Functions
 
-### Unit 4 - Repetition & Loops
-> Learn to repeat code blocks automatically, instead of copying the code over and over again
+### Unit 6 - Lists (10)
+What is a List · Creating Lists · Indexes · Changing Items · append and insert · remove and pop · for over Lists · Totals from Lists · List Methods · Building Lists
 
-| # | Lesson | Project |
-|---|--------|---------|
-| 4.1 | for Loops | Times Table Printer |
-| 4.2 | range() in Depth | FizzBuzz |
-| 4.3 | while Loops | Number Guessing Game |
-| 4.4 | Loops & Decisions | Word Filter |
+### Unit 7 - 2D Lists (8)
+Lists Inside Lists · Reading Rows · Cells and Columns · Changing a Cell · Nested Loops · Printing a Grid · Searching a Grid · Grid Mini Project
 
-### Unit 5 - Functions
-> Organise code into reusable code blocks
+### Unit 8 - Dictionaries (10)
+What is a Dictionary · Creating Dictionaries · Looking Up Keys · Adding Keys · Updating Values · Removing Keys · Looping Keys · Looping Items · Safe Lookup with get · Dictionary Methods
 
-| # | Lesson | Project |
-|---|--------|---------|
-| 5.1 | Defining & Calling Functions | Recipe Card |
-| 5.2 | Arguments & Parameters | Personalised Greeting Card |
-| 5.3 | Return Values | Mini Calculator |
-| 5.4 | Designing with Functions | Student Report Card |
+### Unit 9 - Files (8)
+What is a File · Opening and Reading · Reading Lines · Writing Files · Append Mode · with open · Processing File Text · File Mini Project
 
-### Unit 6 - Lists
-> Store many different data values together
+### Unit 10 - Errors (8)
+What is an Error · Reading Error Messages · Common Errors · try · except · Friendly Messages · Specific except · Error Practice
 
-| # | Lesson | Project |
-|---|--------|---------|
-| 6.1 | Creating & Indexing Lists | Top 5 List |
-| 6.2 | Adding & Removing Items | To-Do List App |
-| 6.3 | Looping Through Lists | Class Gradebook |
-| 6.4 | Useful List Methods | Leaderboard |
+### Unit 11 - Imports (8)
+Why Import · import module · module.name · from import · random · math Tools · Combining Modules · Mini Toolkit
 
-### Unit 7 - 2D Lists
-> Work with grids and tables
-
-| # | Lesson | Project |
-|---|--------|---------|
-| 7.1 | Lists Inside Lists | Noughts & Crosses Board |
-| 7.2 | Accessing Rows & Columns | Seating Plan Editor |
-| 7.3 | Looping Over a Grid | Tic-Tac-Toe Game |
-
-### Unit 8 - Dictionaries
-> Store and look up values by name
-
-| # | Lesson | Project |
-|---|--------|---------|
-| 8.1 | Creating & Looking Up | Pet Profile |
-| 8.2 | Adding & Updating | High Score Board |
-| 8.3 | Looping over Dictionaries | Class Roster |
-| 8.4 | Dictionary Methods | Inventory Checker |
-
-### Unit 9 - Files
-> Read and write text files in a practice folder on the page
-
-| # | Lesson | Project |
-|---|--------|---------|
-| 9.1 | Reading Files | Story Reader |
-| 9.2 | Writing Files | Diary Entry |
-| 9.3 | Working with File Contents | Score File Helper |
-
-### Unit 10 - Errors
-> Handle mistakes without crashing the whole program
-
-| # | Lesson | Project |
-|---|--------|---------|
-| 10.1 | When Code Breaks | Error Detective |
-| 10.2 | try / except | Safe Divider |
-| 10.3 | Catching Specific Errors | Robust Calculator |
-
-### Unit 11 - Imports
-> Borrow tools from Python's built-in modules
-
-| # | Lesson | Project |
-|---|--------|---------|
-| 11.1 | Using import | Dice Roller |
-| 11.2 | from … import | Lucky Numbers |
-| 11.3 | Useful Standard Modules | Mini Toolkit |
-
-### Unit 12 - Classes
-> Bundle data and actions into reusable objects
-
-| # | Lesson | Project |
-|---|--------|---------|
-| 12.1 | Classes & Objects | Pet Class |
-| 12.2 | Methods | Bank Account |
-| 12.3 | __init__ | Player Card |
-| 12.4 | Designing with Classes | Tiny Shop |
+### Unit 12 - Classes (10)
+Why Classes · Your First Class · Objects · Attributes · Methods · self · __init__ · More __init__ · Objects Together · Designing with Classes
 
 ## Totals
 
 - 12 units
-- 45 lessons
-- 45 projects (one per lesson)
-- 45 quizzes (one per lesson)
-- 90 practice tasks (two per lesson)
+- 110 lessons
+- 110 projects (one per lesson)
+- 110 quizzes (one per lesson)
+- 220 practice tasks (two per lesson)
 
 ## Credits
 
