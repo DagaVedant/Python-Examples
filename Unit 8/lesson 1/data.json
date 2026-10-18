@@ -6,13 +6,13 @@
   "unitTitle": "Dictionaries",
   "title": "What is a Dictionary",
   "readTime": 20,
-  "goal": "In this lesson you will learn that a dictionary stores labeled facts as key-value pairs.",
+  "goal": "This lesson covers how a dictionary stores labeled facts as key and value pairs.",
   "learn": [
     "A dictionary holds labeled data",
     "Each fact has a key and a value",
-    "Keys are labels; values are the stored data"
+    "Keys are the labels and values are the stored data"
   ],
-  "idea": "A <strong>dictionary</strong> is like a tiny labeled box. Each fact has a <strong>key</strong> (the label) and a <strong>value</strong> (what you store).\n\nExample: key <code>\"name\"</code> might hold value <code>\"Mochi\"</code>. Later you ask for the key and get the value back. Dictionaries use curly braces <code>{ }</code>.",
+  "idea": "A <strong>dictionary</strong> is like a tiny labeled box. Each fact has a <strong>key</strong>, which is the label, and a <strong>value</strong>, which is what you store.\n\nFor example, the key <code>\"name\"</code> might hold the value <code>\"Mochi\"</code>. Later you ask for the key and get the value back. Dictionaries use curly braces <code>{ }</code>.",
   "code": {
     "filename": "idea.py",
     "lines": [
@@ -28,7 +28,7 @@
       "Values hold the data"
     ]
   },
-  "changeOneLine": "In the editor above, change <code>\"Mochi\"</code> to <code>\"Luna\"</code>. Press <strong>Run</strong>. The printed dictionary should show Luna.",
+  "changeOneLine": "In the editor above, change <code>\"Mochi\"</code> to <code>\"Luna\"</code> and press <strong>Run</strong>. The printed dictionary should show Luna.",
   "code2": {
     "filename": "labels.py",
     "lines": [
@@ -42,14 +42,14 @@
   "practice": [
     {
       "text": "Print a short note that a dictionary stores key-value pairs. Fill in the blank.",
-      "hint": "Use one print() with a sentence inside quotes. Mention that a dictionary has keys and values (or key-value pairs).",
+      "hint": "Use one print() with a sentence inside quotes. Mention that a dictionary has keys and values (or key and value pairs).",
       "starterTip": "Try print(\"A dictionary stores key-value pairs\") or similar, any clear sentence about keys and values works.",
       "starter": "# One clear sentence\nprint()",
       "gradingNote": "Pass if one non-empty print mentions keys, values, or dictionary."
     },
     {
       "text": "Create any tiny dictionary with one key and print it.",
-      "hint": "The starter already has info with one key. Fill in print() so it shows the whole dictionary. Pass info inside the parentheses.",
+      "hint": "The starter already has info with one key. Fill in print() so it shows the whole dictionary by passing info inside the parentheses.",
       "starterTip": "Use print(info) so Python prints {'color': 'blue'} (or whatever your one key holds).",
       "starter": "info = {\"color\": \"blue\"}\nprint()",
       "gradingNote": "Pass if the dictionary is printed (shows color/blue)."
@@ -76,7 +76,7 @@
           "correct": false
         }
       ],
-      "correct": "Dictionaries store labeled data: each key maps to a value.",
+      "correct": "Right, dictionaries store labeled data where each key maps to a value.",
       "wrong": "Think of labels (keys) stuck on boxes (values)."
     },
     {
@@ -99,7 +99,7 @@
           "correct": false
         }
       ],
-      "correct": "The key is the label on the left: \"age\".",
+      "correct": "Yes, the key is the label on the left, which is \"age\".",
       "wrong": "Keys are labels. Here the key is age and the value is 10."
     },
     {
@@ -122,13 +122,13 @@
           "correct": false
         }
       ],
-      "correct": "Dictionaries use curly braces.",
-      "wrong": "Lists use [ ]. Dictionaries use { }."
+      "correct": "Right, dictionaries use curly braces.",
+      "wrong": "Lists use [ ] and dictionaries use { }."
     }
   ],
   "project": {
     "title": "Label the Facts",
-    "desc": "Make a dictionary with two labeled facts. Print the whole dictionary.",
+    "desc": "Make a dictionary with two labeled facts and print the whole dictionary.",
     "starter": "me = {\n    \"name\": \"___\",\n    \"hobby\": \"___\",\n}\nprint(me)"
   },
   "prev": {

@@ -6,13 +6,13 @@
   "unitTitle": "Making Decisions",
   "title": "True and False",
   "readTime": 20,
-  "goal": "In this lesson you will learn about booleans: the values True and False.",
+  "goal": "This lesson covers booleans, which are the values True and False.",
   "learn": [
-    "Know True and False are bool values",
+    "Know that True and False are bool values",
     "Store a boolean in a variable",
     "Print True and False"
   ],
-  "idea": "A <strong>boolean</strong> (bool) is a value that is only <code>True</code> or <code>False</code>. Like a yes/no switch.\n\nIn Python, spell them with a capital T and F: <code>True</code>, <code>False</code>.\n\nPrograms use booleans to remember answers like \"door is open\" or \"score is high enough.\"",
+  "idea": "A <strong>boolean</strong> (bool) is a value that can only be <code>True</code> or <code>False</code>, basically a yes or no switch. In Python you spell them with a capital first letter, so <code>True</code> and <code>False</code>.\n\nPrograms use booleans to remember answers like \"is the door open\" or \"is the score high enough\", and later you will use them to decide what the program does next.",
   "code": {
     "filename": "bools.py",
     "lines": [
@@ -35,7 +35,7 @@
       "<class 'bool'>"
     ]
   },
-  "changeOneLine": "In the editor above, change <code>lights_on = True</code> to <code>lights_on = False</code>. Press <strong>Run</strong>. The lights line should say <code>False</code>.",
+  "changeOneLine": "In the editor above, change <code>lights_on = True</code> to <code>lights_on = False</code> and press <strong>Run</strong>. The lights line should say <code>False</code>.",
   "code2": {
     "filename": "flags.py",
     "lines": [
@@ -52,14 +52,14 @@
   "practice": [
     {
       "text": "Create a variable <code>ready</code> set to True and print it with the label <code>Ready:</code>.",
-      "hint": "Booleans use a capital T: write <code>True</code> with no quotes. Then use print() to show the label and the variable.",
+      "hint": "Booleans use a capital T, so write True with no quotes. Then use print() to show the label and the variable.",
       "starterTip": "Try <code>ready = True</code> on the first line, then something like <code>print(\"Ready:\", ready)</code>.",
       "starter": "ready = \nprint()",
       "gradingNote": "Pass if ready is True and printed with a Ready label."
     },
     {
       "text": "Set <code>raining</code> to False and <code>umbrella</code> to True. Print both values.",
-      "hint": "Fill in each variable with <code>False</code> or <code>True</code>. No quotes around them. The print lines are already set up for you.",
+      "hint": "Fill in each variable with False or True and no quotes around them. The print lines are already set up for you.",
       "starterTip": "Use <code>raining = False</code> and <code>umbrella = True</code>, then run to see both labels print.",
       "starter": "raining = \numbrella = \nprint(\"Raining:\", raining)\nprint(\"Umbrella:\", umbrella)",
       "gradingNote": "Pass if raining is False and umbrella is True, both printed."
@@ -86,8 +86,8 @@
           "correct": false
         }
       ],
-      "correct": "Booleans are True and False (capital letters).",
-      "wrong": "Python uses True and False with capital first letters."
+      "correct": "Right, the two boolean values are True and False.",
+      "wrong": "Python uses True and False with a capital first letter."
     },
     {
       "question": "What type is <code>True</code>?",
@@ -109,7 +109,7 @@
           "correct": false
         }
       ],
-      "correct": "True and False are type bool.",
+      "correct": "Yes, True and False are type bool.",
       "wrong": "type(True) is bool."
     },
     {
@@ -132,13 +132,13 @@
           "correct": false
         }
       ],
-      "correct": "Capital T, rest lowercase: True.",
+      "correct": "Right, it has to be True with a capital T.",
       "wrong": "It must be True. Not true, TRUE, or a string."
     }
   ],
   "project": {
     "title": "Quest Checklist",
-    "desc": "Make three bool flags: has_map (True), has_torch (False), boss_defeated (False). Print each with a clear label.",
+    "desc": "Make three bool flags: has_map (True), has_torch (False), and boss_defeated (False). Print each one with a clear label.",
     "starter": "has_map = \nhas_torch = \nboss_defeated = \nprint(\"Map:\", has_map)\nprint(\"Torch:\", has_torch)\nprint(\"Boss defeated:\", boss_defeated)"
   },
   "prev": {

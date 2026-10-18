@@ -6,13 +6,13 @@
   "unitTitle": "Dictionaries",
   "title": "Safe Lookup with get",
   "readTime": 22,
-  "goal": "In this lesson you will learn how .get() looks up a key safely without crashing when it is missing.",
+  "goal": "This lesson covers how .get() looks up a key safely, without crashing when it is missing.",
   "learn": [
     "Use .get(key) for a safe lookup",
     "See None when a key is missing",
     "Pass a default like .get(key, 0)"
   ],
-  "idea": "<code>bag[\"sword\"]</code> crashes if sword is missing. <code>bag.get(\"sword\")</code> returns <code>None</code> instead.\n\nYou can give a default: <code>bag.get(\"sword\", 0)</code> returns <code>0</code> when the key is not there.",
+  "idea": "<code>bag[\"sword\"]</code> crashes if sword is missing, but <code>bag.get(\"sword\")</code> returns <code>None</code> instead.\n\nYou can also give it a default. <code>bag.get(\"sword\", 0)</code> returns <code>0</code> when the key is not there, which is really useful for things like counting items.",
   "code": {
     "filename": "safe_get.py",
     "lines": [
@@ -30,7 +30,7 @@
       "10"
     ]
   },
-  "changeOneLine": "In the editor above, change the default from <code>0</code> to <code>5</code> in <code>bag.get(\"sword\", 0)</code>. Press <strong>Run</strong>. That print should show 5.",
+  "changeOneLine": "In the editor above, change the default from <code>0</code> to <code>5</code> in <code>bag.get(\"sword\", 0)</code> and press <strong>Run</strong>. That print should show 5.",
   "code2": {
     "filename": "stock_get.py",
     "lines": [
@@ -53,7 +53,7 @@
     },
     {
       "text": "Print potion count with get default 0. Print keys with get.",
-      "hint": "Potions are missing. Use bag.get(\"potion\", 0) or bag.get(\"potions\", 0). Keys exist, so bag.get(\"keys\") works too.",
+      "hint": "Potions are missing, so use bag.get(\"potion\", 0) or bag.get(\"potions\", 0). Keys exist, so bag.get(\"keys\") works too.",
       "starterTip": "First line: print(\"Potions:\", bag.get(\"potion\", 0)). Second: print(\"Keys:\", bag.get(\"keys\", 0)).",
       "starter": "bag = {\"keys\": 3}\nprint(\"Potions:\", )\nprint(\"Keys:\", )",
       "gradingNote": "Pass if potions print 0 via get default and keys print 3 via get."
@@ -80,8 +80,8 @@
           "correct": false
         }
       ],
-      "correct": "get returns None when the key is missing (no default).",
-      "wrong": "Without a default, missing keys yield None."
+      "correct": "Right, get returns None when the key is missing and there is no default.",
+      "wrong": "Without a default, missing keys give you None."
     },
     {
       "question": "What does bag.get(\"sword\", 0) return if missing?",
@@ -103,8 +103,8 @@
           "correct": false
         }
       ],
-      "correct": "The second argument is the default.",
-      "wrong": "Defaults replace None when the key is absent."
+      "correct": "Yes, the second argument is the default.",
+      "wrong": "A default replaces None when the key is absent."
     },
     {
       "question": "Why prefer get over [ ] for optional keys?",
@@ -126,13 +126,13 @@
           "correct": false
         }
       ],
-      "correct": "get is safe when a key might not exist.",
-      "wrong": "Safe lookup is the point of get."
+      "correct": "Right, get is safe when a key might not exist.",
+      "wrong": "Safe lookup is the whole point of get."
     }
   ],
   "project": {
     "title": "Inventory Check",
-    "desc": "Check coins, keys, and gems with .get and default 0. Print three lines.",
+    "desc": "Check coins, keys, and gems with .get and a default of 0. Print three lines.",
     "starter": "bag = {\"coins\": 12, \"keys\": 1}\nprint(\"Coins:\", bag.get(\"coins\", 0))\nprint(\"Keys:\", )\nprint(\"Gems:\", )"
   },
   "prev": {

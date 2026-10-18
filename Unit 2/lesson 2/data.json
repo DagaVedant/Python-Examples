@@ -6,13 +6,13 @@
   "unitTitle": "Number Calculations & Data",
   "title": "Multiply and Divide",
   "readTime": 20,
-  "goal": "In this lesson you will learn how Python multiplies with * and divides with /.",
+  "goal": "This lesson covers how Python multiplies with * and divides with /.",
   "learn": [
     "Multiply numbers with *",
     "Divide numbers with /",
     "Save a product or quotient in a variable"
   ],
-  "idea": "In Python, multiplication uses a star <code>*</code> (not ×). Division uses a slash <code>/</code>.\n\n<code>4 * 3</code> means 4 times 3. <code>12 / 3</code> means 12 divided by 3.\n\nDivision with <code>/</code> often gives a decimal answer, even when it divides evenly.",
+  "idea": "In Python, multiplication uses a star <code>*</code> and not the x sign. Division uses a slash <code>/</code>. So <code>4 * 3</code> means 4 times 3, and <code>12 / 3</code> means 12 divided by 3.\n\nAlso, division with <code>/</code> gives a decimal answer even when it divides evenly, so 12 / 3 shows 4.0 and not 4. The next few lessons explain why.",
   "code": {
     "filename": "times_divide.py",
     "lines": [
@@ -38,7 +38,7 @@
       "Stickers: 40"
     ]
   },
-  "changeOneLine": "In the editor above, change <code>each = 8</code> to <code>each = 10</code>. Press <strong>Run</strong>. The last line should say <code>Stickers: 50</code>.",
+  "changeOneLine": "In the editor above, change <code>each = 8</code> to <code>each = 10</code> and press <strong>Run</strong>. The last line should say <code>Stickers: 50</code>.",
   "code2": {
     "filename": "sharing.py",
     "lines": [
@@ -54,14 +54,14 @@
   "practice": [
     {
       "text": "There are 7 rows of chairs with 9 chairs in each row. Finish the code so it prints the total chairs.",
-      "hint": "Total chairs means rows times per row. Use the * operator with the two variables already set up.",
+      "hint": "Total chairs means rows times chairs per row. Use * with the two variables that are already set up.",
       "starterTip": "Try total = rows * per_row on the blank line before the print.",
       "starter": "rows = 7\nper_row = 9\n# Multiply to get total\ntotal = \nprint(\"Chairs:\", total)",
       "gradingNote": "Pass if total is 63 (7*9) and printed. Must use *."
     },
     {
       "text": "Divide 48 by 6 and print the result labeled like <code>Groups: 8.0</code>.",
-      "hint": "Put \"Groups:\" in quotes, then a comma, then 48 / 6 so Python divides and shows a decimal.",
+      "hint": "Put \"Groups:\" in quotes, then a comma, then 48 / 6 so Python divides and shows the decimal.",
       "starterTip": "Try print(\"Groups:\", 48 / 6) in the empty print() line.",
       "starter": "# Print Groups: then 48 / 6\nprint()",
       "gradingNote": "Pass if output shows Groups: and 8.0 (or 8). Must use /."
@@ -88,8 +88,8 @@
           "correct": false
         }
       ],
-      "correct": "Python uses * for multiply.",
-      "wrong": "Write * between numbers, like 3 * 4."
+      "correct": "Right, Python uses * to multiply.",
+      "wrong": "Write * between the numbers, like 3 * 4."
     },
     {
       "question": "What does <code>print(8 / 2)</code> show?",
@@ -111,7 +111,7 @@
           "correct": false
         }
       ],
-      "correct": "Division with / returns a float, so you see 4.0.",
+      "correct": "Yes, division with / gives a float, so you see 4.0.",
       "wrong": "Even when it divides evenly, / gives a decimal like 4.0."
     },
     {
@@ -134,13 +134,13 @@
           "correct": false
         }
       ],
-      "correct": "5 times 3 is 15.",
-      "wrong": "* multiplies: 5 × 3 = 15."
+      "correct": "Right, * multiplies, so 5 * 3 is 15.",
+      "wrong": "The * operator multiplies, so 5 * 3 equals 15."
     }
   ],
   "project": {
     "title": "Cookie Packs",
-    "desc": "You have 6 packs of cookies. Each pack has 12 cookies. Multiply to find the total, then divide by 4 friends. Print how many each friend gets.",
+    "desc": "You have 6 packs of cookies and each pack has 12 cookies. Multiply to find the total, then divide it between 4 friends and print how many each friend gets.",
     "starter": "packs = 6\nper_pack = 12\ntotal = \nfriends = 4\neach = \nprint(\"Each friend:\", each)"
   },
   "prev": {

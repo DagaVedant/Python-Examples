@@ -6,13 +6,13 @@
   "unitTitle": "Lists",
   "title": "Totals from Lists",
   "readTime": 24,
-  "goal": "In this lesson you will learn how to add up numbers in a list with a running total inside a for loop.",
+  "goal": "By the end of this lesson you will know how to add up the numbers in a list with a running total inside a for loop.",
   "learn": [
     "Start a total at 0",
     "Add each list number to the total",
     "Print the final sum after the loop"
   ],
-  "idea": "To add everything in a number list, keep a <strong>running total</strong>. Start at <code>0</code>. Each loop, add the current number: <code>total = total + score</code>.\n\n    When the loop ends, <code>total</code> holds the sum of every item.",
+  "idea": "To add up everything in a list of numbers, keep a <strong>running total</strong>. Start it at <code>0</code>, and on each pass of the loop add the current number with <code>total = total + score</code>.\n\nWhen the loop ends, <code>total</code> holds the sum of every item.",
   "code": {
     "filename": "sum_scores.py",
     "lines": [
@@ -30,7 +30,7 @@
       "Count: 4"
     ]
   },
-  "changeOneLine": "In the editor above, change the last score from <code>65</code> to <code>70</code>. Press <strong>Run</strong>. The total should become <code>321</code>.",
+  "changeOneLine": "In the editor above, change the last score from <code>65</code> to <code>70</code> and press <strong>Run</strong>. The total should become <code>321</code>.",
   "code2": {
     "filename": "coins.py",
     "lines": [
@@ -81,7 +81,7 @@
           "correct": false
         }
       ],
-      "correct": "Zero is the empty sum before you add any numbers.",
+      "correct": "Right, zero is the empty sum before you add any numbers.",
       "wrong": "You need a starting value before you add each item."
     },
     {
@@ -104,8 +104,8 @@
           "correct": false
         }
       ],
-      "correct": "It grows the total by the current score.",
-      "wrong": "This is the classic running-total pattern."
+      "correct": "Yes, it grows the total by the current score.",
+      "wrong": "This is the classic running total pattern."
     },
     {
       "question": "When should you print the final total?",
@@ -127,13 +127,13 @@
           "correct": false
         }
       ],
-      "correct": "After the loop, total includes every item.",
-      "wrong": "Print after all numbers have been added."
+      "correct": "Right, after the loop total includes every item.",
+      "wrong": "Print after all the numbers have been added."
     }
   ],
   "project": {
     "title": "Weekly Points",
-    "desc": "Add up five daily point values. Print the total and how many days (use len).",
+    "desc": "Add up five daily point values. Print the total and how many days there are (use len).",
     "starter": "daily = [8, 10, 7, 9, 6]\ntotal = 0\n# loop and add\n\nprint(\"Total:\", total)\nprint(\"Days:\", )"
   },
   "prev": {

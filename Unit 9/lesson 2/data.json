@@ -15,13 +15,13 @@
     "starter.txt": "This line was already here.\n",
     "todo.txt": "1. Feed the cat\n2. Finish homework\n"
   },
-  "goal": "In this lesson you will learn how to open a practice file and read its whole text with read().",
+  "goal": "By the end of this lesson you will know how to open a practice file and read all of its text with read().",
   "learn": [
     "Open a file with open()",
     "Read everything with read()",
     "Print the text you loaded"
   ],
-  "idea": "To read a practice file: <code>f = open(\"story.txt\")</code>, then <code>text = f.read()</code>, then <code>f.close()</code>.\n\n<code>read()</code> gives you the whole file as one string. Later you will learn a safer style with <code>with</code>.",
+  "idea": "To read a practice file you write <code>f = open(\"story.txt\")</code>, then <code>text = f.read()</code>, and then <code>f.close()</code>.\n\n<code>read()</code> gives you the whole file as one string. Later you will learn a safer style that uses <code>with</code>.",
   "code": {
     "filename": "read_open.py",
     "lines": [
@@ -37,7 +37,7 @@
       ""
     ]
   },
-  "changeOneLine": "In the editor above, change <code>open(\"story.txt\")</code> to <code>open(\"hello.txt\")</code>. Press <strong>Run</strong>. Output should be the hello message.",
+  "changeOneLine": "In the editor above, change <code>open(\"story.txt\")</code> to <code>open(\"hello.txt\")</code> and press <strong>Run</strong>. The output should be the hello message.",
   "code2": {
     "filename": "read_note.py",
     "lines": [
@@ -56,14 +56,14 @@
   "practice": [
     {
       "text": "Open hello.txt, read it, close it, and print the text.",
-      "hint": "After open, call f.read() and save it in text. Then close the file and print(text). Not an empty print().",
+      "hint": "After open, call f.read() and save the result in text. Then close the file and print(text), and do not leave print() empty.",
       "starterTip": "Use text = f.read() on the blank line, then print(text) in the last print().",
       "starter": "f = open(\"hello.txt\")\ntext = \nf.close()\nprint()",
       "gradingNote": "Pass if hello.txt is opened, read, closed, and printed."
     },
     {
       "text": "Read story.txt and print only the first 16 characters using a slice.",
-      "hint": "A slice uses square brackets: text[start:end]. The first 16 characters are text[0:16]. Or just text[:16].",
+      "hint": "A slice uses square brackets, like text[start:end]. The first 16 characters are text[0:16], or just text[:16].",
       "starterTip": "Print print(text[:16]) so you see \"Once upon a time.\" without the rest of the story.",
       "starter": "f = open(\"story.txt\")\ntext = f.read()\nf.close()\n# Print first 16 characters\nprint()",
       "gradingNote": "Pass if a 16-character slice prints (Once upon a time)."
@@ -90,7 +90,7 @@
           "correct": false
         }
       ],
-      "correct": "read() loads the entire file into one string.",
+      "correct": "Right, read() loads the entire file into one string.",
       "wrong": "f.read() gives you the file's text as a string."
     },
     {
@@ -113,8 +113,8 @@
           "correct": false
         }
       ],
-      "correct": "close() finishes using the file cleanly.",
-      "wrong": "Call f.close() when done (or use with later)."
+      "correct": "Yes, close() finishes with the file cleanly.",
+      "wrong": "Call f.close() when you are done, or use with later."
     },
     {
       "question": "Which opens story.txt for reading?",
@@ -136,13 +136,13 @@
           "correct": false
         }
       ],
-      "correct": "open with the file name starts reading.",
-      "wrong": "Use open(\"story.txt\") first."
+      "correct": "Right, you open the file by its name.",
+      "wrong": "Start with open(\"story.txt\")."
     }
   ],
   "project": {
     "title": "Story Reader",
-    "desc": "Read story.txt. Print an intro, the story, and the character count with len.",
+    "desc": "Read story.txt. Print an intro, the story, and the character count using len.",
     "starter": "print(\"=== Story Reader ===\")\nf = open(\"story.txt\")\nstory = f.read()\nf.close()\nprint()\nprint(\"Characters:\", )"
   },
   "prev": {

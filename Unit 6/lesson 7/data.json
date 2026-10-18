@@ -6,13 +6,13 @@
   "unitTitle": "Lists",
   "title": "for over Lists",
   "readTime": 22,
-  "goal": "In this lesson you will learn how to visit every item in a list with a for loop.",
+  "goal": "This lesson covers how to visit every item in a list with a for loop.",
   "learn": [
     "for item in list visits each value",
     "The loop variable holds the current item",
     "You can print or use each item"
   ],
-  "idea": "A <code>for</code> loop can walk through a list one item at a time:\n\n    <code>for name in team:</code>\n\n    Each time, <code>name</code> holds the current value. This is how you print every item without writing a separate line for each one.",
+  "idea": "A <code>for</code> loop can walk through a list one item at a time, like <code>for name in team:</code>.\n\nEach time through the loop, <code>name</code> holds the current value. This is how you print every item without writing a separate line for each one.",
   "code": {
     "filename": "visit.py",
     "lines": [
@@ -34,7 +34,7 @@
       "Score: 75"
     ]
   },
-  "changeOneLine": "In the editor above, change <code>\"Hello,\"</code> to <code>\"Hi,\"</code>. Press <strong>Run</strong>. Each greeting should start with <code>Hi,</code>.",
+  "changeOneLine": "In the editor above, change <code>\"Hello,\"</code> to <code>\"Hi,\"</code> and press <strong>Run</strong>. Each greeting should start with <code>Hi,</code>.",
   "code2": {
     "filename": "levels.py",
     "lines": [
@@ -52,7 +52,7 @@
   "practice": [
     {
       "text": "Loop over the fruit list and print each fruit on its own line.",
-      "hint": "Write for something in fruit:. Pick any name for the loop variable, then indent a print line underneath.",
+      "hint": "Write for something in fruit: and pick any name for the loop variable. Then indent a print line underneath it.",
       "starterTip": "For example: for f in fruit: then print(f) indented four spaces.",
       "starter": "fruit = [\"apple\", \"banana\", \"cherry\"]\n# for loop here\n",
       "gradingNote": "Pass if a for loop prints each item in fruit."
@@ -86,8 +86,8 @@
           "correct": false
         }
       ],
-      "correct": "The loop variable gets each list value in order.",
-      "wrong": "for walks through every item from start to end."
+      "correct": "Right, the loop variable gets each list value in order.",
+      "wrong": "for walks through every item from the start to the end."
     },
     {
       "question": "How many times does the loop body run for a 5-item list?",
@@ -109,7 +109,7 @@
           "correct": false
         }
       ],
-      "correct": "Once per item. Five items means five passes.",
+      "correct": "Yes, the body runs once per item, so five items means five passes.",
       "wrong": "The body runs once for each item in the list."
     },
     {
@@ -132,8 +132,8 @@
           "correct": false
         }
       ],
-      "correct": "name is the loop variable holding the current value.",
-      "wrong": "Each pass, name is one item from team."
+      "correct": "Right, name is the loop variable and holds the current value.",
+      "wrong": "On each pass, name is one item from team."
     }
   ],
   "project": {

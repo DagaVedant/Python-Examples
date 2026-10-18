@@ -6,13 +6,13 @@
   "unitTitle": "Number Calculations & Data",
   "title": "Useful math Tools",
   "readTime": 24,
-  "goal": "In this lesson you will learn handy tools: abs, round, min, max, and math.ceil / math.floor.",
+  "goal": "This lesson covers a few handy tools: abs, round, min, max, and math.ceil / math.floor.",
   "learn": [
     "Use abs, round, min, and max",
     "Round up with math.ceil",
     "Round down with math.floor"
   ],
-  "idea": "Python has built-in helpers that do not need import: <code>abs()</code> (absolute value), <code>round()</code>, <code>min()</code>, and <code>max()</code>.\n\nFrom the math module: <code>math.ceil(x)</code> rounds up to the next whole number. <code>math.floor(x)</code> rounds down.\n\nThese tools clean up messy numbers when you need whole counts or the biggest/smallest value.",
+  "idea": "Python has built in helpers that do not need an import: <code>abs()</code> for absolute value, <code>round()</code>, <code>min()</code>, and <code>max()</code>.\n\nFrom the math module you also get <code>math.ceil(x)</code>, which rounds up to the next whole number, and <code>math.floor(x)</code>, which rounds down. These clean up messy numbers when you need whole counts or the biggest and smallest value.",
   "code": {
     "filename": "tools.py",
     "lines": [
@@ -35,7 +35,7 @@
       "4"
     ]
   },
-  "changeOneLine": "In the editor above, change <code>round(3.7)</code> to <code>round(3.2)</code>. Press <strong>Run</strong>. That line should print <code>3</code>.",
+  "changeOneLine": "In the editor above, change <code>round(3.7)</code> to <code>round(3.2)</code> and press <strong>Run</strong>. That line should print <code>3</code>.",
   "code2": {
     "filename": "scores_tools.py",
     "lines": [
@@ -57,14 +57,14 @@
   "practice": [
     {
       "text": "Print the absolute value of -42 using abs().",
-      "hint": "abs() drops the minus sign and keeps the distance from zero. Put -42 inside abs().",
+      "hint": "abs() drops the minus sign and gives you the distance from zero. Put -42 inside abs().",
       "starterTip": "Fill the print line with abs(-42). The output should be 42, not -42.",
       "starter": "print()",
       "gradingNote": "Pass if abs(-42) is used and output is 42."
     },
     {
       "text": "Import math. Print math.ceil(7.2) and math.floor(7.2) on two lines.",
-      "hint": "ceil rounds up to the next whole number; floor rounds down. Same number, two different answers.",
+      "hint": "ceil rounds up to the next whole number and floor rounds down. It is the same number with two different answers.",
       "starterTip": "First print(math.ceil(7.2)) for 8, then print(math.floor(7.2)) for 7 on the next line.",
       "starter": "import math\nprint()\nprint()",
       "gradingNote": "Pass if outputs are 8 and 7 using ceil and floor."
@@ -91,8 +91,8 @@
           "correct": false
         }
       ],
-      "correct": "abs removes the minus sign: distance from zero.",
-      "wrong": "Absolute value of -5 is 5."
+      "correct": "Right, abs removes the minus sign, so abs(-5) is 5.",
+      "wrong": "The absolute value of -5 is 5."
     },
     {
       "question": "What does <code>math.ceil(2.1)</code> return?",
@@ -114,8 +114,8 @@
           "correct": false
         }
       ],
-      "correct": "ceil rounds up to the next whole number.",
-      "wrong": "Ceil goes up: 2.1 becomes 3."
+      "correct": "Yes, ceil always rounds up, so 2.1 becomes 3.",
+      "wrong": "ceil goes up, so 2.1 becomes 3."
     },
     {
       "question": "What does <code>max(3, 10, 7)</code> return?",
@@ -137,13 +137,13 @@
           "correct": false
         }
       ],
-      "correct": "max picks the largest value: 10.",
-      "wrong": "max means the biggest number in the group."
+      "correct": "Right, max picks the largest value, which is 10.",
+      "wrong": "max gives you the biggest number in the group."
     }
   ],
   "project": {
     "title": "Box Round-Up",
-    "desc": "You need to ship 17.3 kg of books. Boxes hold whole kilograms only. Use math.ceil to find how many kg of box space to reserve, and print it. Also print the lightest and heaviest of 4, 11, and 9 with min and max.",
+    "desc": "You need to ship 17.3 kg of books and boxes only come in whole kilograms. Use math.ceil to work out how many kg of box space to reserve and print it. Also print the lightest and heaviest of 4, 11, and 9 with min and max.",
     "starter": "import math\nweight = 17.3\nboxes = \nprint(\"Reserve kg:\", boxes)\nprint(\"Lightest:\", )\nprint(\"Heaviest:\", )"
   },
   "prev": {

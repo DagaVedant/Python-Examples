@@ -6,13 +6,13 @@
   "unitTitle": "Classes",
   "title": "Your First Class",
   "readTime": 22,
-  "goal": "In this lesson you will learn how to write a tiny class with class and pass.",
+  "goal": "By the end of this lesson you will know how to write a tiny class using class and pass.",
   "learn": [
     "Start a class with class Name:",
     "Use pass for an empty body",
-    "Class names usually start with a capital"
+    "Class names usually start with a capital letter"
   ],
-  "idea": "Write a class like this:\n\n<code>class Dog:</code>\n<code>    pass</code>\n\n<code>pass</code> means “empty for now.” Class names usually use CapWords like <code>Dog</code> or <code>Player</code>. Next lessons fill the class with attributes and methods.",
+  "idea": "You write a class like this:\n\n<code>class Dog:</code>\n<code>    pass</code>\n\n<code>pass</code> means empty for now. Class names usually use CapWords like <code>Dog</code> or <code>Player</code>. The next lessons fill the class with attributes and methods.",
   "code": {
     "filename": "first_class.py",
     "lines": [
@@ -30,7 +30,7 @@
       "Player class ready"
     ]
   },
-  "changeOneLine": "In the editor above, add <code>print(\"Classes are blueprints\")</code> at the end. Press <strong>Run</strong>.",
+  "changeOneLine": "In the editor above, add <code>print(\"Classes are blueprints\")</code> at the end and press <strong>Run</strong>.",
   "code2": {
     "filename": "pet_class.py",
     "lines": [
@@ -45,14 +45,14 @@
   "practice": [
     {
       "text": "Define an empty class Cat with pass. Print a ready message.",
-      "hint": "After class Cat:, indent with four spaces and write pass. The class body must not be empty without pass.",
+      "hint": "After class Cat:, indent four spaces and write pass. The class body cannot be empty without pass.",
       "starterTip": "Replace the blank line under class Cat: with pass (indented), then keep print(\"Cat ready\") at the bottom.",
       "starter": "class Cat:\n    \nprint(\"Cat ready\")",
       "gradingNote": "Pass if class Cat with pass exists and message prints."
     },
     {
       "text": "Define empty classes Car and Bike. Print two ready lines.",
-      "hint": "Write class Car: and class Bike:, each with an indented pass. Then two print() calls. One message per class.",
+      "hint": "Write class Car: and class Bike:, each with an indented pass. Then two print() calls, one message per class.",
       "starterTip": "Write class Car: with pass under it, then class Bike: with pass, then print(\"Car ready\") and print(\"Bike ready\").",
       "starter": "# two classes\n\n\nprint()\nprint()",
       "gradingNote": "Pass if Car and Bike classes exist with pass."
@@ -79,8 +79,8 @@
           "correct": false
         }
       ],
-      "correct": "Use the class keyword.",
-      "wrong": "class Name:"
+      "correct": "Right, you use the class keyword.",
+      "wrong": "It goes class Name:"
     },
     {
       "question": "What does pass mean here?",
@@ -102,8 +102,8 @@
           "correct": false
         }
       ],
-      "correct": "pass is a placeholder.",
-      "wrong": "Fills the indented block."
+      "correct": "Yes, pass is a placeholder that fills the indented block.",
+      "wrong": "It just means empty for now."
     },
     {
       "question": "Usual style for class names?",
@@ -125,13 +125,13 @@
           "correct": false
         }
       ],
-      "correct": "CapWords is the common style.",
-      "wrong": "Dog, Player, Pet."
+      "correct": "Right, CapWords is the usual style.",
+      "wrong": "Think Dog, Player, and Pet."
     }
   ],
   "project": {
     "title": "Name Three Classes",
-    "desc": "Define three empty classes (pass) for a tiny game world. Print a ready line for each.",
+    "desc": "Define three empty classes (using pass) for a tiny game world. Print a ready line for each.",
     "starter": "class Hero:\n    pass\n# two more\n\n\nprint()\nprint()\nprint()"
   },
   "prev": {

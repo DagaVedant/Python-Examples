@@ -6,13 +6,13 @@
   "unitTitle": "Lists",
   "title": "remove and pop",
   "readTime": 23,
-  "goal": "In this lesson you will learn how to take items out of a list with remove (by value) and pop (by index).",
+  "goal": "By the end of this lesson you will know how to take items out of a list with remove (by value) and pop (by index).",
   "learn": [
     "remove() deletes the first matching value",
     "pop() removes an item by index",
     "pop() can give you the removed item back"
   ],
-  "idea": "<code>remove(value)</code> finds the first matching value and deletes it.\n\n    <code>pop()</code> removes the <strong>last</strong> item by default. <code>pop(index)</code> removes the item at that index. Both return the removed value so you can save it.",
+  "idea": "<code>remove(value)</code> finds the first matching value and deletes it.\n\n<code>pop()</code> removes the <strong>last</strong> item by default, and <code>pop(index)</code> removes the item at that index. Both give back the removed value, so you can save it in a variable if you want it.",
   "code": {
     "filename": "take_away.py",
     "lines": [
@@ -42,7 +42,7 @@
       "Left: ['dog']"
     ]
   },
-  "changeOneLine": "In the editor above, change <code>tasks.remove(\"homework\")</code> to <code>tasks.remove(\"dog\")</code>. Press <strong>Run</strong>. The second printed list should no longer include <code>dog</code>.",
+  "changeOneLine": "In the editor above, change <code>tasks.remove(\"homework\")</code> to <code>tasks.remove(\"dog\")</code> and press <strong>Run</strong>. The second printed list should no longer include <code>dog</code>.",
   "code2": {
     "filename": "stack.py",
     "lines": [
@@ -59,14 +59,14 @@
   "practice": [
     {
       "text": "Remove <code>\"spam\"</code> from the list, then print what is left.",
-      "hint": "Use inbox.remove() and pass the exact word \"spam\" in quotes. Same spelling as in the list.",
+      "hint": "Use inbox.remove() and pass the exact word \"spam\" in quotes, with the same spelling as in the list.",
       "starterTip": "Add a line like inbox.remove(\"spam\") under the comment, before print(inbox).",
       "starter": "inbox = [\"hello\", \"spam\", \"news\"]\n# Remove spam\n\nprint(inbox)",
       "gradingNote": "Pass if remove(\"spam\") is used and inbox no longer contains spam."
     },
     {
       "text": "Pop the last item into a variable called <code>last</code>, then print <code>last</code> and the list.",
-      "hint": "nums.pop() with nothing inside grabs the last item and gives it back. Save that return value in last.",
+      "hint": "nums.pop() with nothing inside grabs the last item and gives it back. Save that returned value in last.",
       "starterTip": "On the blank line, try last = nums.pop() so last becomes 30.",
       "starter": "nums = [10, 20, 30]\nlast = \nprint(last)\nprint(nums)",
       "gradingNote": "Pass if last = nums.pop() (or pop of last index) and both last and nums are printed; last should be 30."
@@ -93,7 +93,7 @@
           "correct": false
         }
       ],
-      "correct": "remove looks for a matching value, not an index.",
+      "correct": "Right, remove looks for a matching value and not an index.",
       "wrong": "You pass the value you want deleted."
     },
     {
@@ -116,7 +116,7 @@
           "correct": false
         }
       ],
-      "correct": "Bare pop() takes from the end.",
+      "correct": "Yes, a bare pop() takes from the end.",
       "wrong": "pop() defaults to the last index."
     },
     {
@@ -139,13 +139,13 @@
           "correct": false
         }
       ],
-      "correct": "pop gives back the item it removed.",
+      "correct": "Right, pop gives back the item it removed.",
       "wrong": "You can store the popped value in a variable."
     }
   ],
   "project": {
     "title": "Checkout Cart",
-    "desc": "Start with four cart items. Remove one by value, pop one from the end, then print what is left.",
+    "desc": "Start with four cart items. Remove one by value, pop one from the end, and then print what is left.",
     "starter": "cart = [\"bread\", \"milk\", \"candy\", \"eggs\"]\n# remove one item by value\n\n# pop one from the end\n\nprint(cart)"
   },
   "prev": {

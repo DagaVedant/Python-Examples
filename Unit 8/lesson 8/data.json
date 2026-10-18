@@ -6,13 +6,13 @@
   "unitTitle": "Dictionaries",
   "title": "Looping Items",
   "readTime": 22,
-  "goal": "In this lesson you will learn how .items() gives you each key and value together in a loop.",
+  "goal": "By the end of this lesson you will know how .items() gives you each key and value together in a loop.",
   "learn": [
     "Use .items() in a for loop",
-    "Unpack key and value each turn",
+    "Unpack the key and value each turn",
     "Print pairs without a second lookup"
   ],
-  "idea": "Want both key and value at once? Use <code>.items()</code>:\n\n<code>for name, score in scores.items():</code>\n\nEach turn unpacks a pair. You already have <code>score</code>. No second lookup needed.",
+  "idea": "If you want both the key and the value at once, use <code>.items()</code>, like <code>for name, score in scores.items():</code>.\n\nEach turn of the loop unpacks one pair, so you already have <code>score</code> and do not need a second lookup.",
   "code": {
     "filename": "items.py",
     "lines": [
@@ -27,7 +27,7 @@
       "Mia scored 92"
     ]
   },
-  "changeOneLine": "In the editor above, change the print to <code>print(name + \":\", score)</code>. Press <strong>Run</strong>. Lines should look like <code>Ava: 90</code>.",
+  "changeOneLine": "In the editor above, change the print to <code>print(name + \":\", score)</code> and press <strong>Run</strong>. The lines should look like <code>Ava: 90</code>.",
   "code2": {
     "filename": "pets_items.py",
     "lines": [
@@ -43,14 +43,14 @@
   "practice": [
     {
       "text": "Use .items() to print each snack and price like cookie: 2.",
-      "hint": "You already have for name, price in prices.items():. Use both variables inside print() with a colon between them.",
+      "hint": "You already have for name, price in prices.items(): so use both variables inside print() with a colon between them.",
       "starterTip": "Try print(name + \":\", price) or print(name, \":\", price) inside the loop for each snack line.",
       "starter": "prices = {\"cookie\": 2, \"apple\": 1, \"juice\": 3}\nfor name, price in prices.items():\n    print()",
       "gradingNote": "Pass if .items() loop prints each snack name and price."
     },
     {
       "text": "Loop with .items() over ages and print Name is age years.",
-      "hint": "name and age are ready each turn. Build a sentence with print and the word \"years\" at the end.",
+      "hint": "name and age are ready each turn. Build a sentence with print() and put the word \"years\" at the end.",
       "starterTip": "Example: print(name, \"is\", age, \"years\"). Sam should show as 11 years old.",
       "starter": "ages = {\"Sam\": 11, \"Riley\": 12}\nfor name, age in ages.items():\n    print()",
       "gradingNote": "Pass if both people print with their ages using the loop variables."
@@ -77,7 +77,7 @@
           "correct": false
         }
       ],
-      "correct": "items() yields each key with its value.",
+      "correct": "Right, items() gives you each key with its value.",
       "wrong": "for k, v in d.items() unpacks both."
     },
     {
@@ -100,8 +100,8 @@
           "correct": false
         }
       ],
-      "correct": "The second variable is the value.",
-      "wrong": "name is the key; score is the value."
+      "correct": "Yes, the second variable is the value.",
+      "wrong": "name is the key and score is the value."
     },
     {
       "question": "Do you need scores[name] inside an .items() loop?",
@@ -123,8 +123,8 @@
           "correct": false
         }
       ],
-      "correct": "The value is already unpacked.",
-      "wrong": "items() hands you both pieces."
+      "correct": "Right, the value is already unpacked for you.",
+      "wrong": "items() hands you both pieces at once."
     }
   ],
   "project": {

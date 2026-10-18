@@ -6,13 +6,13 @@
   "unitTitle": "Lists",
   "title": "Indexes",
   "readTime": 22,
-  "goal": "In this lesson you will learn how to pick one item from a list using its index number, starting from 0.",
+  "goal": "This lesson covers how to pick one item from a list using its index number, which starts from 0.",
   "learn": [
     "Each item has an index position",
     "Indexing starts at 0",
     "Use -1 to get the last item"
   ],
-  "idea": "Every item in a list has an <strong>index</strong>. Its position. Python counts from <code>0</code>, so the first item is <code>list[0]</code>, the second is <code>list[1]</code>, and so on.\n\n    <code>-1</code> means the last item. That is handy when you do not want to count the length yourself.",
+  "idea": "Every item in a list has an <strong>index</strong>, which is its position. Python counts from <code>0</code>, so the first item is <code>list[0]</code>, the second is <code>list[1]</code>, and so on.\n\nAlso <code>-1</code> means the last item, which is handy because you do not have to count the length yourself.",
   "code": {
     "filename": "snacks.py",
     "lines": [
@@ -33,7 +33,7 @@
       "cookie"
     ]
   },
-  "changeOneLine": "In the editor above, change the first print from <code>snacks[0]</code> to <code>snacks[2]</code>. Press <strong>Run</strong>. The first line of output should say <code>cookie</code>.",
+  "changeOneLine": "In the editor above, change the first print from <code>snacks[0]</code> to <code>snacks[2]</code> and press <strong>Run</strong>. The first line of the output should say <code>cookie</code>.",
   "code2": {
     "filename": "games.py",
     "lines": [
@@ -58,7 +58,7 @@
     },
     {
       "text": "Print the middle item of this four-item list (index 1 or 2. Pick one and print it).",
-      "hint": "Index 0 is 10, index 1 is 20, index 2 is 30. Pick one of the middle numbers and use nums[that index] inside print.",
+      "hint": "Index 0 is 10, index 1 is 20, and index 2 is 30. Pick one of the middle numbers and use nums[that index] inside print().",
       "starterTip": "Either print(nums[1]) to show 20 or print(nums[2]) to show 30.",
       "starter": "nums = [10, 20, 30, 40]\n# Print one middle item\nprint()",
       "gradingNote": "Pass if the program prints 20 or 30 using a list index."
@@ -85,7 +85,7 @@
           "correct": false
         }
       ],
-      "correct": "With 4 items the indexes are 0, 1, 2, 3. So the last is at index 3.",
+      "correct": "Right, four items use indexes 0, 1, 2, 3, so the last one is at index 3.",
       "wrong": "Indexes start at 0, so four items use indexes 0 through 3."
     },
     {
@@ -108,7 +108,7 @@
           "correct": false
         }
       ],
-      "correct": "Negative indexes count from the end, so -1 is the last item.",
+      "correct": "Yes, negative indexes count from the end, so -1 is the last item.",
       "wrong": "-1 means the last item in the list, not the first."
     },
     {
@@ -131,8 +131,8 @@
           "correct": false
         }
       ],
-      "correct": "Index 0 is a, index 1 is b, index 2 is c.",
-      "wrong": "Remember: the first item is index 0, so index 1 is the second item."
+      "correct": "Right, index 0 is a, index 1 is b, and index 2 is c.",
+      "wrong": "Remember that the first item is index 0, so index 1 is the second item."
     }
   ],
   "project": {

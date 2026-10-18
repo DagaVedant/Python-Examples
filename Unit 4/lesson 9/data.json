@@ -6,13 +6,13 @@
   "unitTitle": "Repetition & Loops",
   "title": "if Inside Loops",
   "readTime": 23,
-  "goal": "In this lesson you will learn how to put an if statement inside a loop so each value can be checked and handled differently.",
+  "goal": "By the end of this lesson you will know how to put an if statement inside a loop so each value can be checked and handled differently.",
   "learn": [
     "Put if inside a for or while loop",
     "Test the current loop value each pass",
-    "Indent if under the loop, and its body under if"
+    "Indent the if under the loop, and its body under the if"
   ],
-  "idea": "Loops and decisions work great together. On every trip through the loop, you can ask a question about the current value.\n\nWrite the loop first, then indent an <code>if</code> inside it. The <code>if</code> body needs another level of indentation. That way only matching values get the special print or action.",
+  "idea": "Loops and decisions work really well together. On every trip through the loop you can ask a question about the current value.\n\nWrite the loop first, then indent an <code>if</code> inside it. The body of the <code>if</code> needs one more level of indentation, so only the matching values get the special print or action.",
   "code": {
     "filename": "even_check.py",
     "lines": [
@@ -32,7 +32,7 @@
       "7 is odd"
     ]
   },
-  "changeOneLine": "In the editor above, change <code>range(1, 8)</code> to <code>range(1, 5)</code>. Press <strong>Run</strong>. You should only see lines for 1 through 4.",
+  "changeOneLine": "In the editor above, change <code>range(1, 8)</code> to <code>range(1, 5)</code> and press <strong>Run</strong>. You should only see lines for 1 through 4.",
   "code2": {
     "filename": "pass_fail.py",
     "lines": [
@@ -60,7 +60,7 @@
     },
     {
       "text": "Loop through temps. Print Hot if a temp is greater than 80, else print OK.",
-      "hint": "Use the variable t from the loop. The if branch is for temps above 80; the else branch covers the rest.",
+      "hint": "Use the variable t from the loop. The if branch is for temps above 80 and the else branch covers the rest.",
       "starterTip": "Try print(\"Hot\") when t > 80 and print(\"OK\") in the else. Use quotes around the words you print.",
       "starter": "temps = [72, 85, 68, 91]\nfor t in temps:\n    if t > 80:\n        print()\n    else:\n        print()",
       "gradingNote": "Pass if temps over 80 print Hot (or similar) and others print OK (or similar)."
@@ -87,8 +87,8 @@
           "correct": false
         }
       ],
-      "correct": "Each pass can test the current value and decide what to do.",
-      "wrong": "if inside a loop lets you decide what to do for each item."
+      "correct": "Right, each pass can test the current value and decide what to do.",
+      "wrong": "An if inside a loop lets you decide what to do for each item."
     },
     {
       "question": "In for n in range(1, 5): then if n % 2 == 0:, when does the if run?",
@@ -110,8 +110,8 @@
           "correct": false
         }
       ],
-      "correct": "Each time the loop runs, the if checks that pass’s n.",
-      "wrong": "The if is inside the loop body, so it runs every pass."
+      "correct": "Yes, the if is inside the loop body, so it runs on every pass.",
+      "wrong": "Each time the loop runs, the if checks that pass's n."
     },
     {
       "question": "How should indentation look for if inside a loop?",
@@ -133,7 +133,7 @@
           "correct": false
         }
       ],
-      "correct": "Loop body is indented; if body is indented one more level.",
+      "correct": "Right, the loop body is indented and the if body is indented one more level.",
       "wrong": "Python uses indentation to show loop and if blocks."
     }
   ],

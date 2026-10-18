@@ -6,13 +6,13 @@
   "unitTitle": "Classes",
   "title": "More __init__",
   "readTime": 22,
-  "goal": "In this lesson you will practice richer __init__ setups with more attributes and defaults you set yourself.",
+  "goal": "This lesson covers richer __init__ setups with more attributes, and starting values you set yourself.",
   "learn": [
     "Store several attributes in __init__",
     "Set starting values like lives or balance",
-    "Create ready-to-use objects in one line"
+    "Create ready to use objects in one line"
   ],
-  "idea": "<code>__init__</code> can set many fields at once: name, level, lives, score…\n\nYou can also give starting values that callers do not pass. Like <code>self.lives = 3</code> always. One construction line, fully ready object.",
+  "idea": "<code>__init__</code> can set lots of fields at once, like name, level, lives, and score.\n\nYou can also give starting values that the caller does not pass in, like <code>self.lives = 3</code> every time. That is one construction line and a fully ready object.",
   "code": {
     "filename": "rich_init.py",
     "lines": [
@@ -36,7 +36,7 @@
       "Sam Lv 2 Lives 3 Score 10"
     ]
   },
-  "changeOneLine": "In the editor above, change starting lives to <code>5</code>. Press <strong>Run</strong>. Status should show Lives 5.",
+  "changeOneLine": "In the editor above, change the starting lives to <code>5</code> and press <strong>Run</strong>. The status should show Lives 5.",
   "code2": {
     "filename": "account.py",
     "lines": [
@@ -55,14 +55,14 @@
   "practice": [
     {
       "text": "Monster __init__(name, hp). Also set self.power = 5. Create one and print all three.",
-      "hint": "Store name and hp from the parameters on self, then set self.power = 5 even though callers do not pass power.",
+      "hint": "Store name and hp from the parameters on self, and then set self.power = 5 even though callers do not pass power.",
       "starterTip": "self.name = name, self.hp = hp, and self.power = 5. The three prints at the bottom should work.",
       "starter": "class Monster:\n    def __init__(self, name, hp):\n        \nm = Monster(\"Slime\", 8)\nprint(m.name)\nprint(m.hp)\nprint(m.power)",
       "gradingNote": "Pass if power defaults to 5 and name/hp stored."
     },
     {
       "text": "Account(owner, balance) with __init__. Create and print a sentence with both fields.",
-      "hint": "In __init__, set self.owner and self.balance from the parameters. print() should use a.owner and a.balance.",
+      "hint": "In __init__, set self.owner and self.balance from the parameters. Then print() should use a.owner and a.balance.",
       "starterTip": "self.owner = owner and self.balance = balance, then print(a.owner, \"has\", a.balance).",
       "starter": "class Account:\n    def __init__(self, owner, balance):\n        \na = Account(\"Leo\", 15)\nprint()",
       "gradingNote": "Pass if sentence uses owner and balance attributes."
@@ -89,8 +89,8 @@
           "correct": false
         }
       ],
-      "correct": "self.lives = 3 is fine.",
-      "wrong": "Defaults inside init."
+      "correct": "Right, something like self.lives = 3 is fine.",
+      "wrong": "Put the defaults inside init."
     },
     {
       "question": "After p = Player('Sam', 2), is p.score ready if init set it?",
@@ -112,8 +112,8 @@
           "correct": false
         }
       ],
-      "correct": "Init runs during construction.",
-      "wrong": "Ready immediately."
+      "correct": "Yes, init runs while the object is being built.",
+      "wrong": "It is ready immediately."
     },
     {
       "question": "Why put setup in __init__?",
@@ -135,13 +135,13 @@
           "correct": false
         }
       ],
-      "correct": "Consistent starting state.",
-      "wrong": "One line create."
+      "correct": "Right, every new object starts complete.",
+      "wrong": "It is a consistent starting state."
     }
   ],
   "project": {
     "title": "Hero Sheet",
-    "desc": "Hero __init__(name, strength) also sets self.hp = 10 and self.gold = 0. Print a 3-line sheet for one hero.",
+    "desc": "Make a Hero with __init__(name, strength) that also sets self.hp = 10 and self.gold = 0. Print a three line sheet for one hero.",
     "starter": "class Hero:\n    def __init__(self, name, strength):\n        \nh = Hero(\"Kai\", 4)\nprint()\nprint()\nprint()"
   },
   "prev": {

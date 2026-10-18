@@ -6,13 +6,13 @@
   "unitTitle": "Making Decisions",
   "title": "Many Branches",
   "readTime": 24,
-  "goal": "In this lesson you will practice longer if / elif / else chains that pick one outcome from many choices.",
+  "goal": "In this lesson you will practice longer if, elif, and else chains that pick one outcome out of many choices.",
   "learn": [
-    "Build a multi-branch menu",
-    "Keep conditions ordered carefully",
-    "Use else as the catch-all"
+    "Build a multi branch menu",
+    "Keep conditions in a careful order",
+    "Use else as the catch all"
   ],
-  "idea": "When there are many options, stack several <code>elif</code> lines. Python still runs only one branch. The first True one.\n\nThink of a menu or a ranking chart: check top ranks first, then next, then a final else for everything else.\n\nClear labels in each branch make the program easy to follow.",
+  "idea": "When there are many options, you can stack several <code>elif</code> lines. Python still only runs one branch, and it is the first one that is True.\n\nThink of a menu or a ranking chart. You check the top ranks first, then the next, and finish with a final else for everything that did not match. Clear messages in each branch also make the program easier to follow.",
   "code": {
     "filename": "menu.py",
     "lines": [
@@ -33,7 +33,7 @@
       "Settings"
     ]
   },
-  "changeOneLine": "In the editor above, change <code>choice = 3</code> to <code>choice = 9</code>. Press <strong>Run</strong>. You should see <code>Unknown choice</code>.",
+  "changeOneLine": "In the editor above, change <code>choice = 3</code> to <code>choice = 9</code> and press <strong>Run</strong>. You should see <code>Unknown choice</code>.",
   "code2": {
     "filename": "ranks.py",
     "lines": [
@@ -56,14 +56,14 @@
   "practice": [
     {
       "text": "Build a day picker. Set <code>day = 6</code>. If 1 print Mon, elif 2 Tue, elif 3 Wed, elif 4 Thu, elif 5 Fri, elif 6 Sat, elif 7 Sun, else Invalid.",
-      "hint": "Use <code>if day == 1:</code> for Monday, then stack <code>elif</code> lines for each other number. Python runs only the first match. With <code>day = 6</code>, you want the Sat branch.",
+      "hint": "Use if day == 1: for Monday and stack an elif for each other number. Python runs only the first match, so with day = 6 you want the Sat branch.",
       "starterTip": "Try <code>if day == 1:</code> with <code>print(\"Mon\")</code> indented under it, then <code>elif day == 2:</code> with <code>print(\"Tue\")</code>, and keep going through day 7. Finish with <code>else:</code> and <code>print(\"Invalid\")</code>.",
       "starter": "day = 6\n# many branches",
       "gradingNote": "Pass if Sat prints for day 6 with a multi-elif chain."
     },
     {
       "text": "Set <code>hp = 12</code>. If hp > 50 print Fine, elif hp > 20 print Wounded, elif hp > 0 print Critical, else print Down.",
-      "hint": "Check from the highest hp band down. Put <code>hp > 50</code> first, then smaller thresholds. So 12 skips Fine and Wounded and lands on Critical.",
+      "hint": "Check from the highest hp band down. Put hp > 50 first and then the smaller limits, so 12 skips Fine and Wounded and lands on Critical.",
       "starterTip": "Try <code>if hp > 50:</code> with <code>print(\"Fine\")</code>, then <code>elif hp > 20:</code> with <code>print(\"Wounded\")</code>, then <code>elif hp > 0:</code> with <code>print(\"Critical\")</code>, and <code>else:</code> with <code>print(\"Down\")</code>.",
       "starter": "hp = 12",
       "gradingNote": "Pass if Critical prints; order of thresholds matters."
@@ -90,8 +90,8 @@
           "correct": false
         }
       ],
-      "correct": "Only the first matching branch runs.",
-      "wrong": "One True branch (or else). Then stop."
+      "correct": "Right, exactly one branch runs.",
+      "wrong": "Only one True branch runs (or the else), and then Python stops."
     },
     {
       "question": "What is else for in a menu chain?",
@@ -113,8 +113,8 @@
           "correct": false
         }
       ],
-      "correct": "else handles unexpected values.",
-      "wrong": "When no if/elif matched, else runs."
+      "correct": "Yes, else handles anything the other checks did not match.",
+      "wrong": "When no if or elif matched, the else runs."
     },
     {
       "question": "Why put higher thresholds first (like >= 90 before >= 80)?",
@@ -136,13 +136,13 @@
           "correct": false
         }
       ],
-      "correct": "First match wins, so order affects results.",
-      "wrong": "A score of 95 would match >= 80 if that came first."
+      "correct": "Right, the first match wins, so a high score has to be checked first.",
+      "wrong": "A score of 95 would match >= 80 if that check came first."
     }
   ],
   "project": {
     "title": "Arcade Cabinet",
-    "desc": "Set button to \"B\". If A print Jump, elif B print Dash, elif X print Attack, elif Y print Shield, else print Nothing.",
+    "desc": "Set button to \"B\". If A print Jump, elif B print Dash, elif X print Attack, elif Y print Shield, and else print Nothing.",
     "starter": "button = \"B\"\n# many branches"
   },
   "prev": {

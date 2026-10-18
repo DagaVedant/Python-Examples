@@ -6,13 +6,13 @@
   "unitTitle": "2D Lists",
   "title": "Nested Loops",
   "readTime": 24,
-  "goal": "In this lesson you will learn how to visit every cell in a 2D list with a loop inside another loop.",
+  "goal": "This lesson covers how to visit every cell in a 2D list with a loop inside another loop.",
   "learn": [
-    "Outer loop picks each row",
-    "Inner loop visits each item in that row",
+    "The outer loop picks each row",
+    "The inner loop visits each item in that row",
     "Together they reach every cell"
   ],
-  "idea": "To visit every cell you need <strong>nested loops</strong>: an outer loop picks each row, and an inner loop goes through every item in that row.\n\n    Together they reach every cell. Left to right, then down to the next row. Like reading a tiny table.",
+  "idea": "To visit every cell you need <strong>nested loops</strong>. The outer loop picks each row, and the inner loop goes through every item in that row.\n\nTogether they reach every cell, going left to right and then down to the next row, a bit like reading a tiny table.",
   "code": {
     "filename": "nested.py",
     "lines": [
@@ -38,7 +38,7 @@
       "9"
     ]
   },
-  "changeOneLine": "In the editor above, change <code>print(cell)</code> to <code>print(\"cell:\", cell)</code>. Press <strong>Run</strong>. Each line should start with <code>cell:</code>.",
+  "changeOneLine": "In the editor above, change <code>print(cell)</code> to <code>print(\"cell:\", cell)</code> and press <strong>Run</strong>. Each line should start with <code>cell:</code>.",
   "code2": {
     "filename": "labels.py",
     "lines": [
@@ -100,7 +100,7 @@
           "correct": false
         }
       ],
-      "correct": "Outer loop walks through the rows.",
+      "correct": "Right, the outer loop walks through the rows.",
       "wrong": "for row in grid picks each inner list."
     },
     {
@@ -123,7 +123,7 @@
           "correct": false
         }
       ],
-      "correct": "Inner loop walks left to right across one row.",
+      "correct": "Yes, the inner loop walks left to right across one row.",
       "wrong": "for cell in row visits every value in that row."
     },
     {
@@ -146,8 +146,8 @@
           "correct": false
         }
       ],
-      "correct": "3 rows × 3 cells = 9 visits.",
-      "wrong": "Every cell is visited once. Nine times total."
+      "correct": "Right, 3 rows with 3 cells each means 9 visits.",
+      "wrong": "Every cell is visited once, so that is nine times in total."
     }
   ],
   "project": {

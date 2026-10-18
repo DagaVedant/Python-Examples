@@ -6,13 +6,13 @@
   "unitTitle": "Number Calculations & Data",
   "title": "Plus and Minus",
   "readTime": 20,
-  "goal": "In this lesson you will learn how Python adds and subtracts numbers with + and -.",
+  "goal": "By the end of this lesson you will know how Python adds and subtracts numbers with + and -.",
   "learn": [
     "Add numbers with +",
     "Subtract numbers with -",
     "Store a sum or difference in a variable"
   ],
-  "idea": "Python can add and subtract just like a calculator.\n\nUse <code>+</code> to add two numbers. Use <code>-</code> to subtract.\n\nYou can print the answer right away, or save it in a variable and use it later.",
+  "idea": "Python can add and subtract just like a calculator. Use <code>+</code> to add two numbers and <code>-</code> to subtract.\n\nYou can print the answer straight away, or save it in a variable and use it later, which is what you will do most of the time.",
   "code": {
     "filename": "plus_minus.py",
     "lines": [
@@ -37,7 +37,7 @@
       "Coins left: 21"
     ]
   },
-  "changeOneLine": "In the editor above, change <code>15 + 10</code> to <code>15 + 20</code>. Press <strong>Run</strong>. The last line should say <code>Coins left: 31</code>.",
+  "changeOneLine": "In the editor above, change <code>15 + 10</code> to <code>15 + 20</code> and press <strong>Run</strong>. The last line should say <code>Coins left: 31</code>.",
   "code2": {
     "filename": "score.py",
     "lines": [
@@ -61,7 +61,7 @@
     },
     {
       "text": "Print the sum of 18 and 27 on one line, labeled like <code>Sum: 45</code>.",
-      "hint": "Use one print() with a label in quotes, a comma, then 18 + 27 so Python adds the numbers.",
+      "hint": "Use one print() with a label in quotes, a comma, and then 18 + 27 so Python does the adding for you.",
       "starterTip": "Try print(\"Sum:\", 18 + 27) inside the empty print().",
       "starter": "# Print Sum: then the answer\nprint()",
       "gradingNote": "Pass if output includes Sum: and 45 (18+27). print(\"Sum:\", 18 + 27) is fine."
@@ -88,7 +88,7 @@
           "correct": false
         }
       ],
-      "correct": "Plus adds the numbers, so 9 + 4 is 13.",
+      "correct": "Right, plus adds the numbers, so 9 + 4 is 13.",
       "wrong": "With numbers (no quotes), + does math. 9 + 4 equals 13."
     },
     {
@@ -111,8 +111,8 @@
           "correct": false
         }
       ],
-      "correct": "Minus subtracts: 10 − 3 = 7.",
-      "wrong": "The - operator subtracts the second number from the first."
+      "correct": "Yes, minus subtracts, so 10 - 3 is 7.",
+      "wrong": "The - operator takes the second number away from the first."
     },
     {
       "question": "After <code>n = 5 + 2</code>, what is in <code>n</code>?",
@@ -134,13 +134,13 @@
           "correct": false
         }
       ],
-      "correct": "Python works out 5 + 2 first, then stores 7 in n.",
-      "wrong": "The expression is calculated before it is stored. n holds 7."
+      "correct": "Right, Python works out 5 + 2 first and then stores 7 in n.",
+      "wrong": "The expression is calculated before it is stored, so n holds 7."
     }
   ],
   "project": {
     "title": "Piggy Bank",
-    "desc": "Start with 50 coins. Add a gift of 20. Subtract a purchase of 15. Print how many coins are left.",
+    "desc": "Start with 50 coins, add a gift of 20, and subtract a purchase of 15. Print how many coins are left.",
     "starter": "bank = 50\n# Add gift of 20\nbank = \n# Subtract purchase of 15\nbank = \nprint(\"Coins left:\", bank)"
   },
   "prev": {

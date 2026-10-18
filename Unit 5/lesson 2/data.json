@@ -6,13 +6,13 @@
   "unitTitle": "Functions",
   "title": "Defining and Calling",
   "readTime": 22,
-  "goal": "In this lesson you will learn how to define a function with def and run it by calling its name with parentheses.",
+  "goal": "By the end of this lesson you will know how to define a function with def and run it by calling its name with parentheses.",
   "learn": [
     "Define a function with def",
     "Call a function by name with ()",
-    "Remember: defining does not run the body yet"
+    "Remember that defining does not run the body yet"
   ],
-  "idea": "A <strong>function</strong> is a named block of code. You write it once with <code>def</code>, then run it by calling its name followed by <code>()</code>.\n\nDefining a function does <em>not</em> run it. The code inside only runs when you call the function. Everything inside the function must be indented under the <code>def</code> line.",
+  "idea": "A <strong>function</strong> is a named block of code. You write it once with <code>def</code> and then run it by calling its name followed by <code>()</code>.\n\nDefining a function does <em>not</em> run it, which catches a lot of people out. The code inside only runs when you call the function. Also, everything inside the function has to be indented under the <code>def</code> line.",
   "code": {
     "filename": "greet.py",
     "lines": [
@@ -42,7 +42,7 @@
       "*****"
     ]
   },
-  "changeOneLine": "In the editor above, change the text inside <code>print_stars</code> from <code>\"*****\"</code> to <code>\"#####\"</code>. Press <strong>Run</strong>. Both star lines should now show five hash marks.",
+  "changeOneLine": "In the editor above, change the text inside <code>print_stars</code> from <code>\"*****\"</code> to <code>\"#####\"</code> and press <strong>Run</strong>. Both star lines should now show five hash marks.",
   "code2": {
     "filename": "cheer.py",
     "lines": [
@@ -63,7 +63,7 @@
   "practice": [
     {
       "text": "Finish say_hi() so it prints a short hello. Then call it twice.",
-      "hint": "Put a print() with a greeting inside say_hi. Keep it indented. Defining the function does not run it; you must call say_hi() twice below.",
+      "hint": "Put a print() with a greeting inside say_hi and keep it indented. Defining the function does not run it, so you have to call say_hi() twice below.",
       "starterTip": "Try print(\"Hi there!\") inside the function, then add say_hi() on each blank line under the comment.",
       "starter": "def say_hi():\n    print()\n\n# Call say_hi twice\n\n",
       "gradingNote": "Pass if say_hi is defined with def, prints something inside, and is called at least twice."
@@ -97,7 +97,7 @@
           "correct": false
         }
       ],
-      "correct": "Defining a function just saves it. The body runs only when you call it.",
+      "correct": "Right, defining a function just saves it, and the body only runs when you call it.",
       "wrong": "def stores the function. The code inside only runs when you call it."
     },
     {
@@ -120,7 +120,7 @@
           "correct": false
         }
       ],
-      "correct": "Python uses def followed by the name and parentheses.",
+      "correct": "Yes, Python uses def, then the name, then parentheses and a colon.",
       "wrong": "Use def, then the function name, then () and a colon."
     },
     {
@@ -143,7 +143,7 @@
           "correct": false
         }
       ],
-      "correct": "The body of a function must be indented under the def line.",
+      "correct": "Right, the body of a function has to be indented under the def line.",
       "wrong": "Python uses indentation to show which lines belong inside the function."
     }
   ],

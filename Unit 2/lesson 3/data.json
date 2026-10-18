@@ -6,13 +6,13 @@
   "unitTitle": "Number Calculations & Data",
   "title": "Order of Operations",
   "readTime": 22,
-  "goal": "In this lesson you will learn that Python multiplies and divides before it adds and subtracts, and how parentheses change the order.",
+  "goal": "By the end of this lesson you will know that Python multiplies and divides before it adds and subtracts, and how parentheses change that.",
   "learn": [
-    "Know * and / happen before + and -",
+    "Know that * and / happen before + and -",
     "Use parentheses () to force an order",
     "Compare expressions with and without ()"
   ],
-  "idea": "Python follows the same order as math class: multiply and divide first, then add and subtract.\n\nSo <code>3 + 4 * 2</code> is 3 + 8, which is 11. Not 14.\n\nPut parentheses <code>()</code> around the part you want done first. <code>(3 + 4) * 2</code> adds first, then multiplies.",
+  "idea": "Python follows the same order as math class. It multiplies and divides first, then adds and subtracts. So <code>3 + 4 * 2</code> is 3 + 8, which is 11, and not 14.\n\nIf you want a different order, put parentheses <code>()</code> around the part that should happen first. <code>(3 + 4) * 2</code> adds first and then multiplies, so you get 14.",
   "code": {
     "filename": "order.py",
     "lines": [
@@ -37,7 +37,7 @@
       "Score: 80"
     ]
   },
-  "changeOneLine": "In the editor above, change <code>(5 + 3) * 10</code> to <code>5 + 3 * 10</code>. Press <strong>Run</strong>. The last line should say <code>Score: 35</code>.",
+  "changeOneLine": "In the editor above, change <code>(5 + 3) * 10</code> to <code>5 + 3 * 10</code> and press <strong>Run</strong>. The last line should say <code>Score: 35</code>.",
   "code2": {
     "filename": "parens.py",
     "lines": [
@@ -56,14 +56,14 @@
   "practice": [
     {
       "text": "Write an expression that adds 8 and 2 first, then multiplies by 5. Print the result (should be 50).",
-      "hint": "Without parentheses, Python would multiply first. Wrap 8 + 2 in () so that sum happens before the * 5.",
+      "hint": "Without parentheses Python would multiply first. Wrap 8 + 2 in () so the sum happens before the * 5.",
       "starterTip": "Try print((8 + 2) * 5) inside the empty print().",
       "starter": "# Use parentheses so add happens first\nprint()",
       "gradingNote": "Pass if output is 50 and code uses (8 + 2) * 5 or similar with parentheses around the add."
     },
     {
       "text": "Without changing the numbers, add parentheses so this prints 4.0 instead of 8.0.",
-      "hint": "Right now 12 / 2 runs before 20 - 6. Group the subtraction so 20 - 12 happens first, then divide by 2.",
+      "hint": "Right now 12 / 2 runs before the subtraction. Group the subtraction, so 20 - 12 happens first and then you divide by 2.",
       "starterTip": "Change the line to print((20 - 12) / 2). Parentheses around 20 - 12 only.",
       "starter": "# Should print 4.0\nprint(20 - 12 / 2)",
       "gradingNote": "Pass if expression uses (20 - 12) / 2 and output is 4.0."
@@ -90,8 +90,8 @@
           "correct": false
         }
       ],
-      "correct": "Multiply first: 4 * 2 = 8, then 3 + 8 = 11.",
-      "wrong": "* happens before +. So it is 3 + 8, not (3 + 4) * 2."
+      "correct": "Right, multiply first: 4 * 2 is 8, then 3 + 8 is 11.",
+      "wrong": "* happens before +, so it is 3 + 8 and not (3 + 4) * 2."
     },
     {
       "question": "What do parentheses do?",
@@ -113,8 +113,8 @@
           "correct": false
         }
       ],
-      "correct": "Whatever is inside () is calculated first.",
-      "wrong": "Parentheses change order: the inside runs before the outside."
+      "correct": "Yes, whatever is inside the parentheses is worked out first.",
+      "wrong": "Parentheses change the order, so the inside runs before the outside."
     },
     {
       "question": "What is <code>(10 - 2) / 2</code>?",
@@ -136,13 +136,13 @@
           "correct": false
         }
       ],
-      "correct": "Subtract first: 10 − 2 = 8, then 8 / 2 = 4.0.",
-      "wrong": "Parentheses mean subtract first, then divide."
+      "correct": "Right, subtract first to get 8, then 8 / 2 is 4.0.",
+      "wrong": "The parentheses mean the subtraction goes first, and then you divide."
     }
   ],
   "project": {
     "title": "Level Score",
-    "desc": "A level score is (wins + bonus) times points. Set wins to 4, bonus to 1, points to 100. Use parentheses and print the score.",
+    "desc": "A level score is (wins + bonus) times points. Set wins to 4, bonus to 1, and points to 100, then use parentheses and print the score.",
     "starter": "wins = 4\nbonus = 1\npoints = 100\n# Score = (wins + bonus) * points\nscore = \nprint(\"Level score:\", score)"
   },
   "prev": {

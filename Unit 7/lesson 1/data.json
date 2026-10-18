@@ -6,13 +6,13 @@
   "unitTitle": "2D Lists",
   "title": "Lists Inside Lists",
   "readTime": 22,
-  "goal": "In this lesson you will learn what a 2D list is, a list where each item is another list, and picture it as a small grid.",
+  "goal": "This lesson covers what a 2D list is, which is a list where each item is another list, and how to picture it as a small grid.",
   "learn": [
     "A 2D list is a list of lists",
     "Think of each inner list as a row",
     "Small grids like 3x3 are easy to read"
   ],
-  "idea": "A <strong>2D list</strong> is a list where every item is itself another list. Picture a table: the outer list holds the <strong>rows</strong>, and each inner list holds the values in that row.\n\n    We will keep grids small. Usually <strong>3 rows by 3 columns</strong>. So you can see the whole board at once.",
+  "idea": "A <strong>2D list</strong> is a list where every item is itself another list. Picture a table, where the outer list holds the <strong>rows</strong> and each inner list holds the values in that row.\n\nWe will keep the grids small, usually <strong>3 rows by 3 columns</strong>, so you can see the whole board at once and check your work by hand.",
   "code": {
     "filename": "grid.py",
     "lines": [
@@ -39,7 +39,7 @@
       "['Ava', 'Ben', 'Cara']"
     ]
   },
-  "changeOneLine": "In the editor above, change the first row of numbers from <code>[1, 2, 3]</code> to <code>[9, 8, 7]</code>. Press <strong>Run</strong>. The printed grid should start with those values.",
+  "changeOneLine": "In the editor above, change the first row of numbers from <code>[1, 2, 3]</code> to <code>[9, 8, 7]</code> and press <strong>Run</strong>. The printed grid should start with those values.",
   "code2": {
     "filename": "board.py",
     "lines": [
@@ -59,14 +59,14 @@
   "practice": [
     {
       "text": "Create a 3x3 number grid (1 to 9) and print it.",
-      "hint": "The outer list holds three inner lists. One per row. Fill each row with three numbers so the grid goes 1 through 9.",
+      "hint": "The outer list holds three inner lists, one for each row. Fill each row with three numbers so the grid goes from 1 through 9.",
       "starterTip": "Try three rows like [1, 2, 3], [4, 5, 6], and [7, 8, 9] inside grid = [ ... ], then run print(grid).",
       "starter": "grid = [\n    \n    \n    \n]\nprint(grid)",
       "gradingNote": "Pass if grid is a list of three 3-item lists and is printed."
     },
     {
       "text": "Make a 3x3 grid of emoji-free letters (like A-I or all \"A\"). Print how many rows with len.",
-      "hint": "letters is already a 3x3 grid. You need one print() that asks Python how many rows are in the list. Use len().",
+      "hint": "letters is already a 3x3 grid. You need one print() that asks Python how many rows are in the list, so use len().",
       "starterTip": "Fill the blank print with len(letters) so the output shows 3.",
       "starter": "letters = [\n    [\"A\", \"B\", \"C\"],\n    [\"D\", \"E\", \"F\"],\n    [\"G\", \"H\", \"I\"],\n]\nprint()",
       "gradingNote": "Pass if len(letters) is printed and equals 3."
@@ -93,8 +93,8 @@
           "correct": false
         }
       ],
-      "correct": "2D lists are lists of lists. Like rows in a table.",
-      "wrong": "Each outer item is itself a list (a row)."
+      "correct": "Right, a 2D list is a list of lists, like the rows in a table.",
+      "wrong": "Each item of the outer list is itself a list, which is a row."
     },
     {
       "question": "In a grid, what does each inner list usually represent?",
@@ -116,8 +116,8 @@
           "correct": false
         }
       ],
-      "correct": "Each inner list is one row.",
-      "wrong": "Think rows across, stacked top to bottom."
+      "correct": "Yes, each inner list is one row of values.",
+      "wrong": "Think of rows going across and stacked from top to bottom."
     },
     {
       "question": "Why keep grids small (like 3x3) while learning?",
@@ -139,7 +139,7 @@
           "correct": false
         }
       ],
-      "correct": "Small boards are easier to read and debug.",
+      "correct": "Right, small boards are easier to read and debug.",
       "wrong": "We use 3x3 so every cell stays easy to track."
     }
   ],

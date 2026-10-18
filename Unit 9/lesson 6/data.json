@@ -15,13 +15,13 @@
     "starter.txt": "This line was already here.\n",
     "todo.txt": "1. Feed the cat\n2. Finish homework\n"
   },
-  "goal": "In this lesson you will learn how with open opens a file and closes it safely when the block ends.",
+  "goal": "By the end of this lesson you will know how with open opens a file and closes it for you when the block ends.",
   "learn": [
     "Write with open(...) as f:",
     "Do your work inside the indented block",
-    "Skip manual close. With handles it"
+    "Skip the manual close, because with handles it"
   ],
-  "idea": "The safe style is <code>with open(\"story.txt\") as f:</code>. Inside the indented block, use <code>f.read()</code> or <code>f.write(...)</code>.\n\nWhen the block ends, Python closes the file for you. Less chance of forgetting <code>close()</code>!",
+  "idea": "The safe style is <code>with open(\"story.txt\") as f:</code>. Inside the indented block you use <code>f.read()</code> or <code>f.write(...)</code>.\n\nWhen the block ends Python closes the file for you, so there is less chance of forgetting <code>close()</code>.",
   "code": {
     "filename": "with_read.py",
     "lines": [
@@ -41,7 +41,7 @@
       "Message: Hi from a practice file!"
     ]
   },
-  "changeOneLine": "In the editor above, change the first open to <code>note.txt</code>. Press <strong>Run</strong>. The first print should show the snack reminder.",
+  "changeOneLine": "In the editor above, change the first open to <code>note.txt</code> and press <strong>Run</strong>. The first print should show the snack reminder.",
   "code2": {
     "filename": "with_write.py",
     "lines": [
@@ -58,14 +58,14 @@
   "practice": [
     {
       "text": "Use with open to read hello.txt and print it.",
-      "hint": "Inside the with block, read into text with f.read(). The print goes outside the block. But still uses that variable.",
+      "hint": "Inside the with block, read into text with f.read(). The print goes outside the block but still uses that variable.",
       "starterTip": "Fill text = f.read() (indented), then print(text) on the last line.",
       "starter": "with open(\"hello.txt\") as f:\n    text = \nprint()",
       "gradingNote": "Pass if with open reads hello.txt and prints contents."
     },
     {
       "text": "Use with open in \"w\" mode to write bye.txt, then with open to read and print it.",
-      "hint": "In the first with block, f.write() needs a string with \\n. The second with block already prints f.read() for you.",
+      "hint": "In the first with block, f.write() needs a string with \\n on the end. The second with block already prints f.read() for you.",
       "starterTip": "Try f.write(\"Goodbye!\\n\") inside the \"w\" block. Then run and you should see Goodbye! printed from the read block.",
       "starter": "with open(\"bye.txt\", \"w\") as f:\n    f.write()\n\nwith open(\"bye.txt\") as f:\n    print(f.read())",
       "gradingNote": "Pass if bye.txt is written and read back with with open."
@@ -92,7 +92,7 @@
           "correct": false
         }
       ],
-      "correct": "with closes the file automatically at the end of the block.",
+      "correct": "Right, with closes the file automatically at the end of the block.",
       "wrong": "with open(...) is the safe pattern."
     },
     {
@@ -115,8 +115,8 @@
           "correct": false
         }
       ],
-      "correct": "The file variable f is ready inside the block.",
-      "wrong": "Indent under with."
+      "correct": "Yes, the file variable f is ready inside the indented block.",
+      "wrong": "Indent your code under the with line."
     },
     {
       "question": "Do you need f.close() with with open?",
@@ -138,13 +138,13 @@
           "correct": false
         }
       ],
-      "correct": "with handles closing.",
-      "wrong": "That is a big reason to use with."
+      "correct": "Right, with does the closing for you.",
+      "wrong": "That is one of the big reasons to use with."
     }
   ],
   "project": {
     "title": "With Style Reader",
-    "desc": "Using only with open, read story.txt and note.txt. Print both with short labels.",
+    "desc": "Use only with open to read story.txt and note.txt. Print both with short labels.",
     "starter": "with open(\"story.txt\") as f:\n    story = f.read()\nprint(\"STORY:\")\nprint(story)\n\n# Read and print note.txt with a label\n"
   },
   "prev": {

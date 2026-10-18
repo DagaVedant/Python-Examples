@@ -6,13 +6,13 @@
   "unitTitle": "Number Calculations & Data",
   "title": "Float Division",
   "readTime": 20,
-  "goal": "In this lesson you will learn that the / operator always does float division and often returns a decimal.",
+  "goal": "This lesson covers float division, and why / always gives back a decimal.",
   "learn": [
     "Use / for float division",
     "See that / can return decimals like 2.5",
     "Know that even 8 / 2 gives 4.0"
   ],
-  "idea": "The slash <code>/</code> is called <strong>float division</strong>. It divides and keeps decimal parts.\n\n<code>5 / 2</code> is <code>2.5</code>. <code>8 / 2</code> is <code>4.0</code>. Still a float, even though there is no leftover.\n\nA float is a number that can have a decimal point.",
+  "idea": "The slash <code>/</code> is called <strong>float division</strong>. It divides and keeps the decimal part, so <code>5 / 2</code> is <code>2.5</code>.\n\nIt always gives a float, even when nothing is left over. <code>8 / 2</code> is <code>4.0</code> and not 4. A float is basically a number that can have a decimal point.",
   "code": {
     "filename": "float_div.py",
     "lines": [
@@ -37,7 +37,7 @@
       "Slices each: 2.6666666666666665"
     ]
   },
-  "changeOneLine": "In the editor above, change <code>pizza = 3</code> to <code>pizza = 4</code>. Press <strong>Run</strong>. The last line should say <code>Slices each: 2.0</code>.",
+  "changeOneLine": "In the editor above, change <code>pizza = 3</code> to <code>pizza = 4</code> and press <strong>Run</strong>. The last line should say <code>Slices each: 2.0</code>.",
   "code2": {
     "filename": "half.py",
     "lines": [
@@ -54,14 +54,14 @@
   "practice": [
     {
       "text": "Divide 17 by 2 and print the result. It should show a decimal.",
-      "hint": "Use the / operator inside print() so Python does float division. You should see 8.5, not a whole number.",
+      "hint": "Use the / operator inside print() so Python does float division. You should see 8.5 and not a whole number.",
       "starterTip": "Try print(17 / 2) on the blank line.",
       "starter": "# Print 17 / 2\nprint()",
       "gradingNote": "Pass if output is 8.5 using /."
     },
     {
       "text": "A ribbon is 25 cm long. Split it into 4 equal pieces. Print how long each piece is.",
-      "hint": "Equal pieces means divide the ribbon length by how many pieces. Use / so the answer can be a decimal.",
+      "hint": "Equal pieces means dividing the ribbon length by the number of pieces. Use / so the answer can be a decimal.",
       "starterTip": "Try each = ribbon / pieces on the blank line. That gives 6.25.",
       "starter": "ribbon = 25\npieces = 4\neach = \nprint(\"Each piece:\", each)",
       "gradingNote": "Pass if each is 6.25 (25/4) and printed."
@@ -88,7 +88,7 @@
           "correct": false
         }
       ],
-      "correct": "/ keeps the decimal part: 7 ÷ 2 = 3.5.",
+      "correct": "Right, / keeps the decimal part, so 7 / 2 is 3.5.",
       "wrong": "Float division does not drop the leftover. 7 / 2 is 3.5."
     },
     {
@@ -111,7 +111,7 @@
           "correct": false
         }
       ],
-      "correct": "/ returns a float (decimal number).",
+      "correct": "Yes, / gives back a float, which is a decimal number.",
       "wrong": "Even 4 / 2 gives 2.0, which is a float."
     },
     {
@@ -134,8 +134,8 @@
           "correct": false
         }
       ],
-      "correct": "Even when exact, / shows 2.0.",
-      "wrong": "Float division keeps the .0 when the answer is whole."
+      "correct": "Right, even an exact answer shows as 2.0.",
+      "wrong": "Float division keeps the .0 when the answer is a whole number."
     }
   ],
   "project": {

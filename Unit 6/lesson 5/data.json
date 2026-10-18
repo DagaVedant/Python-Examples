@@ -6,13 +6,13 @@
   "unitTitle": "Lists",
   "title": "append and insert",
   "readTime": 23,
-  "goal": "In this lesson you will learn how to grow a list by adding items at the end with append or at a chosen spot with insert.",
+  "goal": "This lesson covers how to grow a list by adding items at the end with append, or at a chosen spot with insert.",
   "learn": [
     "append() adds an item at the end",
     "insert() adds an item at an index",
     "The list gets longer after each add"
   ],
-  "idea": "<code>append(value)</code> sticks a new item on the <strong>end</strong> of the list.\n\n    <code>insert(index, value)</code> slides a new item in at that index and shifts the later items to the right.",
+  "idea": "<code>append(value)</code> sticks a new item on the <strong>end</strong> of the list.\n\n<code>insert(index, value)</code> slides a new item in at that index and shifts the later items to the right. Firstly you give it the index, and after that the value, and mixing those two up is an easy mistake to make.",
   "code": {
     "filename": "add_items.py",
     "lines": [
@@ -35,7 +35,7 @@
       "Length: 4"
     ]
   },
-  "changeOneLine": "In the editor above, change <code>tasks.append(\"walk dog\")</code> to <code>tasks.append(\"call mum\")</code>. Press <strong>Run</strong>. The second printed list should end with <code>call mum</code>.",
+  "changeOneLine": "In the editor above, change <code>tasks.append(\"walk dog\")</code> to <code>tasks.append(\"call mum\")</code> and press <strong>Run</strong>. The second printed list should end with <code>call mum</code>.",
   "code2": {
     "filename": "party.py",
     "lines": [
@@ -58,7 +58,7 @@
     },
     {
       "text": "Insert <code>\"start\"</code> at index 0 of the list, then print.",
-      "hint": "insert takes two arguments: the index first, then the value. Index 0 is the front of the list.",
+      "hint": "insert takes two arguments, the index first and then the value. Index 0 is the front of the list.",
       "starterTip": "Add steps.insert(0, \"start\") under the comment, then print(steps).",
       "starter": "steps = [\"middle\", \"end\"]\n# Insert at the front\n\nprint(steps)",
       "gradingNote": "Pass if insert(0, \"start\") is used and the list begins with start."
@@ -85,7 +85,7 @@
           "correct": false
         }
       ],
-      "correct": "append always adds to the end.",
+      "correct": "Right, append always adds to the end.",
       "wrong": "append puts the new item after the last existing item."
     },
     {
@@ -108,8 +108,8 @@
           "correct": false
         }
       ],
-      "correct": "insert(1, 2) places 2 between 1 and 3.",
-      "wrong": "The second argument is the value; the first is the index."
+      "correct": "Yes, insert(1, 2) places 2 between 1 and 3.",
+      "wrong": "The first argument is the index and the second is the value."
     },
     {
       "question": "How does the list length change after one append?",
@@ -131,13 +131,13 @@
           "correct": false
         }
       ],
-      "correct": "Each append adds one item, so len goes up by 1.",
+      "correct": "Right, each append adds one item, so len goes up by 1.",
       "wrong": "Adding an item increases the length by one."
     }
   ],
   "project": {
     "title": "Growing Todo List",
-    "desc": "Start with one task. Append two more, then insert a high-priority task at the front. Print the final list.",
+    "desc": "Start with one task. Append two more, then insert a high priority task at the front. Print the final list.",
     "starter": "todos = [\"read\"]\n# Append two tasks\n\n\n# Insert one at index 0\n\nprint(todos)"
   },
   "prev": {

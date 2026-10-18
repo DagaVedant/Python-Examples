@@ -6,13 +6,13 @@
   "unitTitle": "Making Decisions",
   "title": "Comparing Values",
   "readTime": 22,
-  "goal": "In this lesson you will learn comparison operators that return True or False.",
+  "goal": "By the end of this lesson you will know the comparison operators that give back True or False.",
   "learn": [
     "Compare with == != < > <= >=",
     "See that comparisons make bools",
     "Compare numbers and strings"
   ],
-  "idea": "A <strong>comparison</strong> asks a yes/no question about two values. The answer is always <code>True</code> or <code>False</code>.\n\n<code>==</code> means equal. <code>!=</code> means not equal. <code>&lt;</code> less than, <code>&gt;</code> greater than, <code>&lt;=</code> less or equal, <code>&gt;=</code> greater or equal.\n\nRemember: <code>=</code> assigns. <code>==</code> compares.",
+  "idea": "A <strong>comparison</strong> asks a yes or no question about two values, and the answer is always <code>True</code> or <code>False</code>.\n\n<code>==</code> means equal, <code>!=</code> means not equal, <code>&lt;</code> is less than, <code>&gt;</code> is greater than, <code>&lt;=</code> is less than or equal, and <code>&gt;=</code> is greater than or equal. Also remember that a single <code>=</code> assigns a value while <code>==</code> compares two values, and mixing them up is a very common mistake.",
   "code": {
     "filename": "compare.py",
     "lines": [
@@ -38,7 +38,7 @@
       "False"
     ]
   },
-  "changeOneLine": "In the editor above, change <code>score = 80</code> to <code>score = 40</code>. Press <strong>Run</strong>. <code>score > 50</code> should become <code>False</code>.",
+  "changeOneLine": "In the editor above, change <code>score = 80</code> to <code>score = 40</code> and press <strong>Run</strong>. The line for <code>score > 50</code> should turn into <code>False</code>.",
   "code2": {
     "filename": "goals.py",
     "lines": [
@@ -55,14 +55,14 @@
   "practice": [
     {
       "text": "Set <code>age = 11</code>. Print whether age is greater than or equal to 10.",
-      "hint": "Put a comparison inside print(). The operator <code>&gt;=</code> means “greater than or equal to.” The answer will be True or False.",
+      "hint": "Put a comparison inside print(). The operator >= means greater than or equal to, and the answer will be True or False.",
       "starterTip": "Try <code>print(age >= 10)</code> on the second line. With age 11, you should see True.",
       "starter": "age = 11\nprint()",
       "gradingNote": "Pass if age >= 10 is printed (True)."
     },
     {
       "text": "Compare the strings <code>\"blue\"</code> and <code>\"Blue\"</code> with == and print the result.",
-      "hint": "Use <code>==</code> inside print() to ask “are these equal?” Python cares about capital letters in strings.",
+      "hint": "Use == inside print() to ask whether the two are equal. Python cares about capital letters in strings.",
       "starterTip": "Try <code>print(\"blue\" == \"Blue\")</code>. Lowercase b and uppercase B are different, so expect False.",
       "starter": "print()",
       "gradingNote": "Pass if output is False showing case-sensitive string compare."
@@ -89,8 +89,8 @@
           "correct": false
         }
       ],
-      "correct": "== compares for equality.",
-      "wrong": "Single = assigns. Double == asks \"are these equal?\""
+      "correct": "Right, == checks if two values are equal.",
+      "wrong": "A single = assigns. A double == asks whether they are equal."
     },
     {
       "question": "What does <code>print(5 > 3)</code> show?",
@@ -112,7 +112,7 @@
           "correct": false
         }
       ],
-      "correct": "5 is greater than 3, so True.",
+      "correct": "Yes, 5 is greater than 3, so it prints True.",
       "wrong": "Comparisons print True or False, not the numbers."
     },
     {
@@ -135,13 +135,13 @@
           "correct": false
         }
       ],
-      "correct": "They are equal, so \"not equal\" is False.",
-      "wrong": "!= means not equal. 10 is equal to 10, so False."
+      "correct": "Right, they are equal, so \"not equal\" is False.",
+      "wrong": "!= means not equal. 10 is equal to 10, so the answer is False."
     }
   ],
   "project": {
     "title": "High Score Check",
-    "desc": "Your score is 250. The high score is 300. Print three bools: equal to high, greater than high, and less than high.",
+    "desc": "Your score is 250 and the high score is 300. Print three bools: equal to the high score, greater than it, and less than it.",
     "starter": "score = 250\nhigh = 300\nprint(\"Equal?\", )\nprint(\"Greater?\", )\nprint(\"Less?\", )"
   },
   "prev": {

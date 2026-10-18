@@ -12,7 +12,7 @@
     "Pass values when creating an object",
     "Store them with self"
   ],
-  "idea": "Setting attributes one by one after creation works, but gets messy. <code>__init__</code> (say “dunder init”) runs automatically when you make an object.\n\n<code>Dog(\"Buddy\", 3)</code> passes values into <code>__init__</code>. Save them with <code>self.name = name</code>.",
+  "idea": "Setting attributes one by one after you create an object works, but it gets messy. <code>__init__</code> (say \"dunder init\") runs automatically when you make an object.\n\n<code>Dog(\"Buddy\", 3)</code> passes values into <code>__init__</code>, and you save them with <code>self.name = name</code>.",
   "code": {
     "filename": "init_dog.py",
     "lines": [
@@ -34,7 +34,7 @@
       "Luna is 1"
     ]
   },
-  "changeOneLine": "In the editor above, change <code>Dog(\"Luna\", 1)</code> to <code>Dog(\"Luna\", 4)</code>. Press <strong>Run</strong>. Second line should say Luna is 4.",
+  "changeOneLine": "In the editor above, change <code>Dog(\"Luna\", 1)</code> to <code>Dog(\"Luna\", 4)</code> and press <strong>Run</strong>. The second line should say Luna is 4.",
   "code2": {
     "filename": "player_init.py",
     "lines": [
@@ -63,7 +63,7 @@
     },
     {
       "text": "Make Book(title, pages) with __init__. Create one and print title.",
-      "hint": "In __init__, assign both parameters to self. Self.title = title and self.pages = pages.",
+      "hint": "In __init__, assign both parameters to self, with self.title = title and self.pages = pages.",
       "starterTip": "self.title = title and self.pages = pages inside __init__; print(b.title) should show Wonder.",
       "starter": "class Book:\n    def __init__(self, title, pages):\n        \nb = Book(\"Wonder\", 310)\nprint(b.title)",
       "gradingNote": "Pass if __init__ stores title/pages and Wonder prints."
@@ -90,8 +90,8 @@
           "correct": false
         }
       ],
-      "correct": "Dog(...) triggers __init__.",
-      "wrong": "Constructor idea."
+      "correct": "Right, Dog(...) triggers __init__.",
+      "wrong": "It is the constructor idea."
     },
     {
       "question": "In Dog(\"Buddy\", 3), where do Buddy and 3 go?",
@@ -113,8 +113,8 @@
           "correct": false
         }
       ],
-      "correct": "They become name and age parameters.",
-      "wrong": "Then stored on self."
+      "correct": "Yes, they become the name and age parameters after self.",
+      "wrong": "Then they get stored on self."
     },
     {
       "question": "Why use __init__?",
@@ -136,13 +136,13 @@
           "correct": false
         }
       ],
-      "correct": "Objects start ready to use.",
-      "wrong": "Less manual setup."
+      "correct": "Right, the object starts out ready to use.",
+      "wrong": "There is less manual setup."
     }
   ],
   "project": {
     "title": "Player Card",
-    "desc": "Player with __init__(name, level) and a card method. Make two players and print both cards.",
+    "desc": "Make a Player with __init__(name, level) and a card method. Make two players and print both cards.",
     "starter": "class Player:\n    def __init__(self, name, level):\n        \n    def card(self):\n        print()\na = Player(\"Ava\", 3)\nb = Player(\"Leo\", 5)\na.card()\nb.card()"
   },
   "prev": {

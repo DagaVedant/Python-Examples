@@ -6,13 +6,13 @@
   "unitTitle": "Classes",
   "title": "Attributes",
   "readTime": 22,
-  "goal": "In this lesson you will learn how attributes store data on each object with a dot.",
+  "goal": "In this lesson you will learn how attributes store data on each object, using a dot.",
   "learn": [
     "Set attributes with object.name = value",
     "Read attributes with object.name",
     "Each object keeps its own values"
   ],
-  "idea": "An <strong>attribute</strong> is a piece of data stuck on an object. Set it with a dot: <code>dog.name = \"Buddy\"</code>. Read it the same way: <code>print(dog.name)</code>.\n\nEach object can have different attribute values even if they share a class.",
+  "idea": "An <strong>attribute</strong> is a piece of data stuck on an object. You set it with a dot, like <code>dog.name = \"Buddy\"</code>, and you read it the same way with <code>print(dog.name)</code>.\n\nEach object can have different attribute values even when they share a class.",
   "code": {
     "filename": "attrs.py",
     "lines": [
@@ -33,7 +33,7 @@
       "Luna is 1"
     ]
   },
-  "changeOneLine": "In the editor above, change <code>dog1.age = 3</code> to <code>dog1.age = 5</code>. Press <strong>Run</strong>. First line should say Buddy is 5.",
+  "changeOneLine": "In the editor above, change <code>dog1.age = 3</code> to <code>dog1.age = 5</code> and press <strong>Run</strong>. The first line should say Buddy is 5.",
   "code2": {
     "filename": "player_attrs.py",
     "lines": [
@@ -51,14 +51,14 @@
   "practice": [
     {
       "text": "Make a Pet, set name and kind, print both.",
-      "hint": "Set pet.kind to a string in quotes (like \"cat\" or \"hamster\"). Use print(pet.name) and print(pet.kind).",
+      "hint": "Set pet.kind to a string in quotes, like \"cat\" or \"hamster\". Then use print(pet.name) and print(pet.kind).",
       "starterTip": "pet.kind = \"cat\" then print(pet.name) and print(pet.kind).",
       "starter": "class Pet:\n    pass\npet = Pet()\npet.name = \"Mochi\"\npet.kind = \nprint()\nprint()",
       "gradingNote": "Pass if name and kind attributes print."
     },
     {
       "text": "Make two Players with different levels. Print both levels.",
-      "hint": "Levels are already set on a and b. Print each player's level with print(a.level) and print(b.level).",
+      "hint": "The levels are already set on a and b. Print each player's level with print(a.level) and print(b.level).",
       "starterTip": "Fill the two print() lines with print(a.level) and print(b.level). You should see 2 then 7.",
       "starter": "class Player:\n    pass\na = Player()\nb = Player()\na.level = 2\nb.level = 7\nprint()\nprint()",
       "gradingNote": "Pass if 2 and 7 print from attributes."
@@ -85,8 +85,8 @@
           "correct": false
         }
       ],
-      "correct": "Use a dot and assign.",
-      "wrong": "object.attr = value"
+      "correct": "Right, you use a dot and then assign.",
+      "wrong": "It goes object.attr = value."
     },
     {
       "question": "Do dog1.age and dog2.age have to match?",
@@ -108,8 +108,8 @@
           "correct": false
         }
       ],
-      "correct": "Attributes are per object.",
-      "wrong": "Independent data."
+      "correct": "Yes, attributes belong to each object separately.",
+      "wrong": "The data is independent."
     },
     {
       "question": "How do you read an attribute?",
@@ -131,13 +131,13 @@
           "correct": false
         }
       ],
-      "correct": "Same dot syntax to read.",
-      "wrong": "dog.name"
+      "correct": "Right, you read it with the same dot syntax.",
+      "wrong": "It is just dog.name."
     }
   ],
   "project": {
     "title": "Pet Stickers",
-    "desc": "Create two pets. Give each a name and age. Print a one-line bio for each.",
+    "desc": "Create two pets and give each a name and age. Print a one line bio for each.",
     "starter": "class Pet:\n    pass\na = Pet()\nb = Pet()\n# set attributes\n\n\nprint()\nprint()"
   },
   "prev": {

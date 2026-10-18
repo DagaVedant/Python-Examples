@@ -6,13 +6,13 @@
   "unitTitle": "Imports",
   "title": "import module",
   "readTime": 22,
-  "goal": "In this lesson you will learn the import module statement to load a toolbox.",
+  "goal": "In this lesson you will learn the import statement, which loads a toolbox for your program to use.",
   "learn": [
     "Write import math or import random",
     "Put imports near the top",
-    "Know the module name is ready to use"
+    "Know that the module name is ready to use afterwards"
   ],
-  "idea": "Load a module with <code>import math</code> or <code>import random</code>. Put imports near the top of the file.\n\nAfter that line runs, the module name is available. Next lesson you will call tools with a dot.",
+  "idea": "You load a module with <code>import math</code> or <code>import random</code>, and you put imports near the top of the file.\n\nAfter that line runs, the module name is available. In the next lesson you will call its tools with a dot.",
   "code": {
     "filename": "import_line.py",
     "lines": [
@@ -26,7 +26,7 @@
       "random is ready"
     ]
   },
-  "changeOneLine": "In the editor above, add a third print that says Modules ready. Press <strong>Run</strong>.",
+  "changeOneLine": "In the editor above, add a third print that says Modules ready and press <strong>Run</strong>.",
   "code2": {
     "filename": "import_math.py",
     "lines": [
@@ -40,14 +40,14 @@
   "practice": [
     {
       "text": "Import math. Print a short message that math is ready.",
-      "hint": "Keep import math on top. On the next line, print() a short sentence that mentions math is ready.",
+      "hint": "Keep import math on top. On the next line, print() a short sentence that says math is ready.",
       "starterTip": "Try: print(\"math is ready\") right under import math.",
       "starter": "import math\nprint()",
       "gradingNote": "Pass if import math is present and a message prints."
     },
     {
       "text": "Import both math and random. Print ok.",
-      "hint": "Fill the two blank lines under the comment with import math and import random. One per line.",
+      "hint": "Fill the two blank lines under the comment with import math and import random, one on each line.",
       "starterTip": "Line 2: import math. Line 3: import random. The print(\"ok\") at the bottom can stay as-is.",
       "starter": "# two imports\n\n\nprint(\"ok\")",
       "gradingNote": "Pass if both modules imported and ok prints."
@@ -74,8 +74,8 @@
           "correct": false
         }
       ],
-      "correct": "import math loads the toolbox.",
-      "wrong": "Start with import."
+      "correct": "Right, import math loads that toolbox.",
+      "wrong": "Start with the word import."
     },
     {
       "question": "Where do imports usually go?",
@@ -97,8 +97,8 @@
           "correct": false
         }
       ],
-      "correct": "Top of file is the common style.",
-      "wrong": "Import first, then use."
+      "correct": "Yes, the top of the file is the usual spot.",
+      "wrong": "Import first and then use."
     },
     {
       "question": "Does import run tools by itself?",
@@ -120,13 +120,13 @@
           "correct": false
         }
       ],
-      "correct": "Import prepares tools; you call them next.",
-      "wrong": "Loading ≠ calling."
+      "correct": "Right, import only loads the tools for later.",
+      "wrong": "Loading is not the same as calling."
     }
   ],
   "project": {
     "title": "Load Two Toolboxes",
-    "desc": "Import math and random. Print a labeled line for each confirming it loaded (you may print the module or a short note).",
+    "desc": "Import math and random. Print a labeled line for each saying it loaded. A short note is fine.",
     "starter": "import math\nimport random\nprint()\nprint()"
   },
   "prev": {

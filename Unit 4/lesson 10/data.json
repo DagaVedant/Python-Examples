@@ -6,13 +6,13 @@
   "unitTitle": "Repetition & Loops",
   "title": "Filter with Loops",
   "readTime": 24,
-  "goal": "In this lesson you will learn how to filter values with a loop: print or count only the items that match a rule.",
+  "goal": "This lesson covers how to filter values with a loop, so you print or count only the items that match a rule.",
   "learn": [
     "Print only values that match a condition",
     "Count matches with a counter variable",
-    "Skip non-matching values by doing nothing in else"
+    "Skip non matching values by doing nothing in else"
   ],
-  "idea": "<strong>Filtering</strong> means keeping only the values you care about. Inside a loop, use <code>if</code> to test each item. If it matches, print it or add 1 to a counter. If it does not match, skip it.\n\nYou often start <code>count = 0</code> before the loop, then <code>count = count + 1</code> only for matches. After the loop, print how many passed the filter.",
+  "idea": "<strong>Filtering</strong> means keeping only the values you care about. Inside a loop, use <code>if</code> to test each item. If it matches, print it or add 1 to a counter, and if it does not match, just skip it.\n\nYou usually start <code>count = 0</code> before the loop and then do <code>count = count + 1</code> only for matches. After the loop, print how many passed the filter.",
   "code": {
     "filename": "filter_count.py",
     "lines": [
@@ -34,7 +34,7 @@
       "Even numbers: 5"
     ]
   },
-  "changeOneLine": "In the editor above, change the condition from <code>n % 2 == 0</code> to <code>n % 2 == 1</code>. Press <strong>Run</strong>. You should keep the odd numbers instead (1, 3, 5, 7, 9) and count 5.",
+  "changeOneLine": "In the editor above, change the condition from <code>n % 2 == 0</code> to <code>n % 2 == 1</code> and press <strong>Run</strong>. You should now keep the odd numbers (1, 3, 5, 7, 9) and count 5.",
   "code2": {
     "filename": "long_words.py",
     "lines": [
@@ -62,7 +62,7 @@
     },
     {
       "text": "Print only scores that are 80 or higher from the list. Then print how many passed.",
-      "hint": "You already print(score) when score >= 80. Also bump passed by 1 each time you print a passing score.",
+      "hint": "You already print(score) when score >= 80. Also add 1 to passed each time you print a passing score.",
       "starterTip": "Inside the if, after print(score), add passed = passed + 1. Three scores should pass: 85, 92, 88.",
       "starter": "scores = [70, 85, 92, 60, 88]\npassed = 0\nfor score in scores:\n    if score >= 80:\n        print(score)\n        \nprint(\"Passed:\", passed)",
       "gradingNote": "Pass if 85, 92, 88 print and passed is 3."
@@ -89,8 +89,8 @@
           "correct": false
         }
       ],
-      "correct": "You test each value and only keep or count the matches.",
-      "wrong": "Filter = check each item, act only when the condition is True."
+      "correct": "Right, you test each value and only keep or count the matches.",
+      "wrong": "Filtering means checking each item and acting only when the condition is True."
     },
     {
       "question": "Where should the match counter usually start?",
@@ -112,8 +112,8 @@
           "correct": false
         }
       ],
-      "correct": "Start at 0, then add 1 for each match.",
-      "wrong": "Initialize the counter to 0 before you begin counting."
+      "correct": "Yes, start at 0 and add 1 for each match.",
+      "wrong": "Set the counter to 0 before you begin counting."
     },
     {
       "question": "If a value does not match the filter, what often happens?",
@@ -135,13 +135,13 @@
           "correct": false
         }
       ],
-      "correct": "Non-matches are ignored; the loop moves to the next item.",
+      "correct": "Right, non matches are ignored and the loop moves to the next item.",
       "wrong": "No match usually means do nothing and go to the next value."
     }
   ],
   "project": {
     "title": "Word Filter",
-    "desc": "Loop through the word list. Print only words longer than 4 letters. Count how many passed. Print Passed: and that count at the end.",
+    "desc": "Loop through the word list and print only words longer than 4 letters. Count how many passed, and print Passed: and that count at the end.",
     "starter": "words = [\"sun\", \"planet\", \"code\", \"galaxy\", \"hi\", \"python\", \"star\", \"orbit\"]\npassed = 0\n\nfor word in words:\n    if len(word) > 4:\n        print(word)\n        # Add 1 to passed\n        \n\nprint(\"Passed:\", passed)"
   },
   "prev": {

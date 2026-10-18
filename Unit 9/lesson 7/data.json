@@ -15,13 +15,13 @@
     "starter.txt": "This line was already here.\n",
     "todo.txt": "1. Feed the cat\n2. Finish homework\n"
   },
-  "goal": "In this lesson you will learn how to split file lines into pieces and work with the parts.",
+  "goal": "This lesson covers how to split a line from a file into pieces and work with each part.",
   "learn": [
     "Read lines from a file",
-    "split() a line into parts",
+    "Use split() to break a line into parts",
     "Use the parts in prints or totals"
   ],
-  "idea": "File text is still a string. After you read a line, tools like <code>split()</code> break it into pieces.\n\nExample: <code>\"Ava 90\".split()</code> becomes <code>[\"Ava\", \"90\"]</code>. Then you can print the name or turn the score into a number with <code>int(...)</code>.",
+  "idea": "File text is still just a string. After you read a line, tools like <code>split()</code> can break it into pieces.\n\nFor example, <code>\"Ava 90\".split()</code> becomes <code>[\"Ava\", \"90\"]</code>. Then you can print the name, or turn the score into a number with <code>int(...)</code>.",
   "code": {
     "filename": "process.py",
     "lines": [
@@ -38,7 +38,7 @@
       "Mia scored 92"
     ]
   },
-  "changeOneLine": "In the editor above, change the print to show <code>print(name + \":\", score)</code>. Press <strong>Run</strong>.",
+  "changeOneLine": "In the editor above, change the print to <code>print(name + \":\", score)</code> and press <strong>Run</strong>.",
   "code2": {
     "filename": "total.py",
     "lines": [
@@ -56,14 +56,14 @@
   "practice": [
     {
       "text": "Loop scores.txt. Print only the names (first part of each line).",
-      "hint": "After split(), the name is the first piece. Index 0. Print parts[0], not the whole line or the score.",
+      "hint": "After split(), the name is the first piece at index 0. Print parts[0], not the whole line or the score.",
       "starterTip": "Use print(parts[0]) inside the loop. You should see Ava, then Leo, then Mia.",
       "starter": "with open(\"scores.txt\") as f:\n    for line in f:\n        parts = line.split()\n        print()",
       "gradingNote": "Pass if Ava, Leo, Mia each print from split parts."
     },
     {
       "text": "Add all scores from scores.txt and print the total.",
-      "hint": "The score is the second piece: parts[1]. Turn it into a number with int() before adding to total.",
+      "hint": "The score is the second piece, parts[1]. Turn it into a number with int() before you add it to total.",
       "starterTip": "Add total = total + int(parts[1]) where the comment says \"# add score\". Total should be 267.",
       "starter": "total = 0\nwith open(\"scores.txt\") as f:\n    for line in f:\n        parts = line.split()\n        # add score\n\nprint(\"Total:\", total)",
       "gradingNote": "Pass if total is 267 from the three scores."
@@ -90,8 +90,8 @@
           "correct": false
         }
       ],
-      "correct": "split() breaks on spaces into a list of pieces.",
-      "wrong": "You get name and score as separate strings."
+      "correct": "Right, split breaks the line on spaces into a list of pieces.",
+      "wrong": "You get the name and the score as two separate strings."
     },
     {
       "question": "How do you turn the score text into a number?",
@@ -113,8 +113,8 @@
           "correct": false
         }
       ],
-      "correct": "int() casts the digit string to a number.",
-      "wrong": "Cast before you add scores."
+      "correct": "Yes, int() turns the digit string into a real number.",
+      "wrong": "Convert before you add the scores."
     },
     {
       "question": "Why process file text?",
@@ -136,13 +136,13 @@
           "correct": false
         }
       ],
-      "correct": "Files store text; your code shapes it.",
-      "wrong": "split and int are common next steps."
+      "correct": "Right, files hold text and your code shapes it into something useful.",
+      "wrong": "split and int are the common next steps."
     }
   ],
   "project": {
     "title": "Score Report",
-    "desc": "Read scores.txt. Print each name and score. Then print the average (total / count).",
+    "desc": "Read scores.txt. Print each name and score, and then print the average (total divided by count).",
     "starter": "total = 0\ncount = 0\nwith open(\"scores.txt\") as f:\n    for line in f:\n        parts = line.split()\n        name = parts[0]\n        score = int(parts[1])\n        print()\n        total = total + score\n        count = count + 1\nprint(\"Average:\", )"
   },
   "prev": {

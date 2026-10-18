@@ -6,13 +6,13 @@
   "unitTitle": "Classes",
   "title": "self",
   "readTime": 22,
-  "goal": "In this lesson you will learn that self means this object inside a method.",
+  "goal": "By the end of this lesson you will know that self means this object inside a method.",
   "learn": [
-    "self is the object calling the method",
+    "self is the object that called the method",
     "Use self.attr to read or change data",
     "You do not pass self yourself when calling"
   ],
-  "idea": "Inside a method, <code>self</code> means <strong>this object</strong>. The one before the dot.\n\nWhen you write <code>dog.bark()</code>, Python sends <code>dog</code> into <code>self</code> automatically. Use <code>self.name</code> to reach that object's attributes. You do not type <code>self</code> in the call.",
+  "idea": "Inside a method, <code>self</code> means <strong>this object</strong>, the one before the dot.\n\nWhen you write <code>dog.bark()</code>, Python sends <code>dog</code> into <code>self</code> automatically. Use <code>self.name</code> to reach that object's attributes. You do not type <code>self</code> in the call.",
   "code": {
     "filename": "self_demo.py",
     "lines": [
@@ -35,7 +35,7 @@
       "Buddy is now 4"
     ]
   },
-  "changeOneLine": "In the editor above, change starting age to <code>5</code>. Press <strong>Run</strong>. Birthday line should say is now 6.",
+  "changeOneLine": "In the editor above, change the starting age to <code>5</code> and press <strong>Run</strong>. The birthday line should say is now 6.",
   "code2": {
     "filename": "piggy.py",
     "lines": [
@@ -62,7 +62,7 @@
   "practice": [
     {
       "text": "In shout, print self.name in all caps message. Call it.",
-      "hint": "self.name is \"Sam\" on f. You can print a loud message with self.name inside. Try .upper() on the name for ALL CAPS.",
+      "hint": "self.name is \"Sam\" on f. You can print a loud message with self.name inside. Try .upper() on the name for all caps.",
       "starterTip": "print(self.name.upper(), \"cheers!\") or print(\"GO\", self.name.upper() + \"!\") inside shout.",
       "starter": "class Fan:\n    def shout(self):\n        print()\nf = Fan()\nf.name = \"Sam\"\nf.shout()",
       "gradingNote": "Pass if shout uses self.name in the print."
@@ -96,8 +96,8 @@
           "correct": false
         }
       ],
-      "correct": "self is this object.",
-      "wrong": "dog.bark() -> self is dog."
+      "correct": "Right, self is this object.",
+      "wrong": "With dog.bark(), self is dog."
     },
     {
       "question": "Do you pass self when calling dog.bark()?",
@@ -119,8 +119,8 @@
           "correct": false
         }
       ],
-      "correct": "Calls omit self.",
-      "wrong": "Just dog.bark()."
+      "correct": "Yes, Python fills self in for you.",
+      "wrong": "You just write dog.bark()."
     },
     {
       "question": "How do you change an attribute inside a method?",
@@ -142,13 +142,13 @@
           "correct": false
         }
       ],
-      "correct": "self.age = self.age + 1",
-      "wrong": "Use self."
+      "correct": "Right, you assign to self.attr.",
+      "wrong": "It looks like self.age = self.age + 1."
     }
   ],
   "project": {
     "title": "Self Care Bank",
-    "desc": "PiggyBank with show and deposit using self. Start at 0, deposit 4, deposit 6, show.",
+    "desc": "Make a PiggyBank with show and deposit methods that use self. Start at 0, deposit 4, deposit 6, and then show.",
     "starter": "class PiggyBank:\n    def show(self):\n        print()\n    def deposit(self, amount):\n        \nbank = PiggyBank()\nbank.balance = 0\nbank.deposit(4)\nbank.deposit(6)\nbank.show()"
   },
   "prev": {

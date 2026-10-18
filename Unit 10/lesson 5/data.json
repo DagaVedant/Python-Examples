@@ -6,13 +6,13 @@
   "unitTitle": "Errors",
   "title": "except",
   "readTime": 22,
-  "goal": "In this lesson you will learn how except catches an error from try so the program can continue.",
+  "goal": "By the end of this lesson you will know how except catches an error from try so the program can keep going.",
   "learn": [
     "Pair except with try",
-    "Run except when try fails",
-    "Continue after the pair"
+    "except runs when try fails",
+    "The program continues after the pair"
   ],
-  "idea": "After <code>try</code>, write <code>except:</code>. If the <code>try</code> block errors, Python jumps to <code>except</code> and runs that code instead of crashing.\n\nAfter the pair finishes, the rest of the program can still run.",
+  "idea": "After <code>try</code> you write <code>except:</code>. If the <code>try</code> block hits an error, Python jumps to <code>except</code> and runs that code instead of crashing.\n\nWhen the pair finishes, the rest of the program can still run.",
   "code": {
     "filename": "safe_divide.py",
     "lines": [
@@ -30,7 +30,7 @@
       "Game continues..."
     ]
   },
-  "changeOneLine": "In the editor above, change <code>friends = 0</code> to <code>friends = 3</code>. Press <strong>Run</strong>. The try path should succeed.",
+  "changeOneLine": "In the editor above, change <code>friends = 0</code> to <code>friends = 3</code> and press <strong>Run</strong>. The try path should succeed.",
   "code2": {
     "filename": "score_check.py",
     "lines": [
@@ -51,7 +51,7 @@
   "practice": [
     {
       "text": "Wrap the division in try/except. If it fails, print a friendly message. Always print Done at the end.",
-      "hint": "Put print(a / b) inside try:. Add except: with a kind print like \"Cannot divide by zero\". Keep print(\"Done\") outside try/except so it always runs.",
+      "hint": "Put print(a / b) inside try:. Add except: with a kind message like \"Cannot divide by zero\". Keep print(\"Done\") outside so it always runs.",
       "starterTip": "try:\n    print(a / b)\nexcept:\n    print(\"Oops. Cannot divide by zero!\")\nprint(\"Done\")",
       "starter": "a = 10\nb = 0\nprint(a / b)\nprint(\"Done\")",
       "gradingNote": "Pass if except catches the error, friendly message prints, and Done still prints."
@@ -85,7 +85,7 @@
           "correct": false
         }
       ],
-      "correct": "except handles the failure path.",
+      "correct": "Right, except handles the failure path.",
       "wrong": "Errors jump to except."
     },
     {
@@ -108,8 +108,8 @@
           "correct": false
         }
       ],
-      "correct": "Catching lets the program continue.",
-      "wrong": "That is why try/except helps."
+      "correct": "Yes, catching the error lets the program carry on.",
+      "wrong": "That is why try and except help."
     },
     {
       "question": "What if you omit except after try?",
@@ -131,13 +131,13 @@
           "correct": false
         }
       ],
-      "correct": "try needs a matching except (or finally).",
-      "wrong": "Pair them."
+      "correct": "Right, a try needs a matching except (or finally).",
+      "wrong": "Always pair them."
     }
   ],
   "project": {
     "title": "Safe Divider",
-    "desc": "Ask no input. Set a and b in code. try divide; except print a message; then print Finished.",
+    "desc": "Set a and b in your code, with no input. Try the division, print a message in except, and then print Finished.",
     "starter": "a = 20\nb = 0\ntry:\n    print(a / b)\nexcept:\n    print()\nprint(\"Finished\")"
   },
   "prev": {

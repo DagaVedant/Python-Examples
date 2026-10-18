@@ -6,13 +6,13 @@
   "unitTitle": "Dictionaries",
   "title": "Looping Keys",
   "readTime": 22,
-  "goal": "In this lesson you will learn how a for loop visits each key in a dictionary.",
+  "goal": "This lesson covers how a for loop visits each key in a dictionary.",
   "learn": [
     "Loop with for key in dict",
     "Look up each value inside the loop",
-    "Print every pair using keys"
+    "Print every pair using the keys"
   ],
-  "idea": "A <code>for</code> loop over a dictionary visits each <strong>key</strong>:\n\n<code>for name in scores:</code>\n\nInside the loop, look up the value with <code>scores[name]</code>.",
+  "idea": "A <code>for</code> loop over a dictionary visits each <strong>key</strong>, like <code>for name in scores:</code>.\n\nInside the loop you look up the value with <code>scores[name]</code>, so you get both the label and the data.",
   "code": {
     "filename": "keys_loop.py",
     "lines": [
@@ -27,7 +27,7 @@
       "Mia -> 92"
     ]
   },
-  "changeOneLine": "In the editor above, change Mia's score from <code>92</code> to <code>100</code>. Press <strong>Run</strong>. Mia's line should show 100.",
+  "changeOneLine": "In the editor above, change Mia's score from <code>92</code> to <code>100</code> and press <strong>Run</strong>. Mia's line should show 100.",
   "code2": {
     "filename": "pets.py",
     "lines": [
@@ -51,7 +51,7 @@
     },
     {
       "text": "Loop over prices keys and print each snack name only.",
-      "hint": "for name in prices: gives you each key (cookie, apple, juice). You only need to print the name. Not the price.",
+      "hint": "for name in prices: gives you each key (cookie, apple, juice). You only need to print the name and not the price.",
       "starterTip": "Inside print(), put just name: print(name). Run and you should see three snack names.",
       "starter": "prices = {\"cookie\": 2, \"apple\": 1, \"juice\": 3}\nfor name in prices:\n    print()",
       "gradingNote": "Pass if three snack names print from the loop variable."
@@ -78,8 +78,8 @@
           "correct": false
         }
       ],
-      "correct": "A plain for loop over a dict visits keys.",
-      "wrong": "You get each key; look up values with scores[key]."
+      "correct": "Right, a plain for loop over a dictionary visits the keys.",
+      "wrong": "You get each key, and you look up the values with scores[key]."
     },
     {
       "question": "Inside for name in scores:, how do you get the score?",
@@ -101,7 +101,7 @@
           "correct": false
         }
       ],
-      "correct": "Use the key to look up the value.",
+      "correct": "Yes, you use the key to look up the value.",
       "wrong": "scores[name] fetches the value for that key."
     },
     {
@@ -124,13 +124,13 @@
           "correct": false
         }
       ],
-      "correct": "One turn per key.",
-      "wrong": "Three keys means three iterations."
+      "correct": "Right, you get one turn per key.",
+      "wrong": "Three keys means three passes."
     }
   ],
   "project": {
     "title": "Roster Printer",
-    "desc": "Loop over a roster. Print each student name and score.",
+    "desc": "Loop over a roster and print each student name and score.",
     "starter": "roster = {\"Ava\": 95, \"Leo\": 88, \"Mia\": 91, \"Sam\": 84}\nfor name in roster:\n    print()"
   },
   "prev": {

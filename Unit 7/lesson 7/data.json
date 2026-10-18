@@ -6,13 +6,13 @@
   "unitTitle": "2D Lists",
   "title": "Searching a Grid",
   "readTime": 24,
-  "goal": "In this lesson you will learn how to search a 2D list for a value and report whether it was found.",
+  "goal": "This lesson covers how to search a 2D list for a value and report whether it was found.",
   "learn": [
     "Scan every cell with nested loops",
     "Compare each cell to the target",
     "Use a flag variable like found"
   ],
-  "idea": "To <strong>search</strong> a grid, visit every cell. If a cell matches what you want, remember that you found it.\n\n    A common pattern: start with <code>found = False</code>, set it to <code>True</code> when you see a match, then print the result after the loops.",
+  "idea": "To <strong>search</strong> a grid, you visit every cell, and if a cell matches what you are looking for you remember that you found it.\n\nA common pattern is to start with <code>found = False</code>, set it to <code>True</code> when you see a match, and then print the result after the loops finish.",
   "code": {
     "filename": "search.py",
     "lines": [
@@ -37,7 +37,7 @@
       "Found: True"
     ]
   },
-  "changeOneLine": "In the editor above, change <code>target = 5</code> to <code>target = 10</code>. Press <strong>Run</strong>. The output should say <code>Found: False</code>.",
+  "changeOneLine": "In the editor above, change <code>target = 5</code> to <code>target = 10</code> and press <strong>Run</strong>. The output should say <code>Found: False</code>.",
   "code2": {
     "filename": "find_x.py",
     "lines": [
@@ -94,8 +94,8 @@
           "correct": false
         }
       ],
-      "correct": "You must visit each cell to look for a match.",
-      "wrong": "Outer and inner loops cover the whole board."
+      "correct": "Right, you have to visit each cell to look for a match.",
+      "wrong": "The outer and inner loops cover the whole board."
     },
     {
       "question": "What is a good starting value for found?",
@@ -117,8 +117,8 @@
           "correct": false
         }
       ],
-      "correct": "Start False, then flip to True when you find a match.",
-      "wrong": "Assume not found until a cell proves otherwise."
+      "correct": "Yes, start with False and flip it to True when you find a match.",
+      "wrong": "Assume it is not found until a cell proves otherwise."
     },
     {
       "question": "If the target is missing, what should found be at the end?",
@@ -140,7 +140,7 @@
           "correct": false
         }
       ],
-      "correct": "No match means found stays False.",
+      "correct": "Right, with no match found stays False.",
       "wrong": "Only a matching cell sets found to True."
     }
   ],

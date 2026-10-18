@@ -6,13 +6,13 @@
   "unitTitle": "Repetition & Loops",
   "title": "Looping and Totals",
   "readTime": 23,
-  "goal": "In this lesson you will learn how to keep a running total inside a loop by adding to a variable each time through.",
+  "goal": "This lesson covers how to keep a running total inside a loop by adding to a variable each time through.",
   "learn": [
     "Start a total at 0 before the loop",
     "Add to the total inside the loop",
     "Print the total after the loop finishes"
   ],
-  "idea": "A <strong>running total</strong> (or accumulator) is a variable that grows as the loop runs.\n\nStart with <code>total = 0</code> before the loop. Inside the loop, add the next number: <code>total = total + n</code>. After the loop, print <code>total</code> to see the sum.\n\nThis pattern works for summing a range, adding scores from a list, or counting how many times something happened.",
+  "idea": "A <strong>running total</strong>, also called an accumulator, is a variable that grows while the loop runs.\n\nFirstly, set <code>total = 0</code> before the loop. Inside the loop, add the next number with <code>total = total + n</code>. After the loop, print <code>total</code> to see the sum. This pattern works for adding up a range, adding scores from a list, or counting how many times something happened.",
   "code": {
     "filename": "sum_range.py",
     "lines": [
@@ -33,7 +33,7 @@
       "Final total: 15"
     ]
   },
-  "changeOneLine": "In the editor above, change <code>range(1, 6)</code> to <code>range(1, 4)</code>. Press <strong>Run</strong>. The final total should be 6 (1+2+3).",
+  "changeOneLine": "In the editor above, change <code>range(1, 6)</code> to <code>range(1, 4)</code> and press <strong>Run</strong>. The final total should be 6, which is 1 + 2 + 3.",
   "code2": {
     "filename": "sum_list.py",
     "lines": [
@@ -57,7 +57,7 @@
     },
     {
       "text": "Add up the points list and print the sum.",
-      "hint": "Same running-total idea: inside the loop, add each p into total before the loop ends.",
+      "hint": "It is the same running total idea. Inside the loop, add each p into total before the loop ends.",
       "starterTip": "On the blank line under for p in points:, write total = total + p. Sum: should print 20.",
       "starter": "points = [3, 7, 2, 8]\ntotal = 0\nfor p in points:\n    \nprint(\"Sum:\", total)",
       "gradingNote": "Pass if total is 20 after looping over points and adding each value."
@@ -84,7 +84,7 @@
           "correct": false
         }
       ],
-      "correct": "Starting at 0 gives you a blank slate to accumulate into.",
+      "correct": "Right, starting at 0 gives you a clean place to add onto.",
       "wrong": "You need a starting value before you begin adding."
     },
     {
@@ -107,8 +107,8 @@
           "correct": false
         }
       ],
-      "correct": "Each pass adds the current value into total.",
-      "wrong": "That line updates total by adding this trip’s number."
+      "correct": "Yes, each pass adds the current value into total.",
+      "wrong": "That line updates total by adding this trip's number."
     },
     {
       "question": "When should you usually print the final total?",
@@ -130,13 +130,13 @@
           "correct": false
         }
       ],
-      "correct": "After the loop, total has every value added in.",
-      "wrong": "Print after the loop so you see the completed sum."
+      "correct": "Right, after the loop total has every value added in.",
+      "wrong": "Print after the loop so you see the finished sum."
     }
   ],
   "project": {
     "title": "Piggy Bank",
-    "desc": "Coins are [5, 10, 25, 10]. Loop to add them into total. Print each coin as you add it, then print the final total.",
+    "desc": "Coins are [5, 10, 25, 10]. Loop to add them into total, print each coin as you add it, and then print the final total.",
     "starter": "coins = [5, 10, 25, 10]\ntotal = 0\nfor coin in coins:\n    total = total + coin\n    print(\"Added coin:\", coin)\n\n# Print final total\nprint()"
   },
   "prev": {

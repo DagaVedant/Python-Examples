@@ -6,13 +6,13 @@
   "unitTitle": "2D Lists",
   "title": "Changing a Cell",
   "readTime": 22,
-  "goal": "In this lesson you will learn how to update one cell in a 2D list by assigning to grid[row][col].",
+  "goal": "By the end of this lesson you will know how to update one cell in a 2D list by assigning to grid[row][col].",
   "learn": [
     "Assign with grid[row][col] = value",
     "Only that cell changes",
     "Print the grid to confirm"
   ],
-  "idea": "To change one cell, put two indexes on the left of <code>=</code>:\n\n    <code>grid[1][1] = 0</code>\n\n    That updates only that spot. Like placing a piece on a board. Other cells stay the same.",
+  "idea": "To change one cell, put two indexes on the left side of the <code>=</code>, like <code>grid[1][1] = 0</code>.\n\nThat updates only that spot, a bit like placing a piece on a board. All the other cells stay the same.",
   "code": {
     "filename": "update_cell.py",
     "lines": [
@@ -43,7 +43,7 @@
       "[['X', '.', '.'], ['.', 'O', '.'], ['.', '.', '.']]"
     ]
   },
-  "changeOneLine": "In the editor above, change <code>grid[1][1] = 0</code> to <code>grid[1][1] = 99</code>. Press <strong>Run</strong>. The center of the number grid should become <code>99</code>.",
+  "changeOneLine": "In the editor above, change <code>grid[1][1] = 0</code> to <code>grid[1][1] = 99</code> and press <strong>Run</strong>. The center of the number grid should become <code>99</code>.",
   "code2": {
     "filename": "tic.py",
     "lines": [
@@ -62,7 +62,7 @@
   "practice": [
     {
       "text": "Change the top-left cell to <code>100</code> and print the grid.",
-      "hint": "Top-left is row 0, column 0. Assign with grid[0][0] = 100 on a line before you print the whole grid.",
+      "hint": "Top left is row 0, column 0. Assign with grid[0][0] = 100 on a line before you print the whole grid.",
       "starterTip": "Add grid[0][0] = 100 on the blank line above print(grid).",
       "starter": "grid = [\n    [1, 2, 3],\n    [4, 5, 6],\n    [7, 8, 9],\n]\n\nprint(grid)",
       "gradingNote": "Pass if grid[0][0] is set to 100 and the grid is printed."
@@ -96,8 +96,8 @@
           "correct": false
         }
       ],
-      "correct": "Assignment updates that one cell.",
-      "wrong": "Row 0, column 2 is the top-right cell on a 3x3."
+      "correct": "Right, the assignment updates that one cell.",
+      "wrong": "Row 0, column 2 is the top right cell on a 3x3."
     },
     {
       "question": "After changing one cell, do other cells change?",
@@ -119,8 +119,8 @@
           "correct": false
         }
       ],
-      "correct": "Only the assigned cell is replaced.",
-      "wrong": "Other positions keep their old values."
+      "correct": "Yes, only the assigned cell is replaced.",
+      "wrong": "The other positions keep their old values."
     },
     {
       "question": "Which line places O in the bottom-left of a 3x3 board?",
@@ -142,13 +142,13 @@
           "correct": false
         }
       ],
-      "correct": "Bottom row is index 2; left column is index 0.",
-      "wrong": "Last row is 2; first column is 0."
+      "correct": "Right, the bottom row is index 2 and the left column is index 0.",
+      "wrong": "The last row is 2 and the first column is 0."
     }
   ],
   "project": {
     "title": "Place Three Marks",
-    "desc": "Start with a 3x3 board of dots. Place X in three different cells, then print the whole board.",
+    "desc": "Start with a 3x3 board of dots. Place X in three different cells and then print the whole board.",
     "starter": "board = [\n    [\".\", \".\", \".\"],\n    [\".\", \".\", \".\"],\n    [\".\", \".\", \".\"],\n]\n# place three X marks\n\n\n\nprint(board)"
   },
   "prev": {

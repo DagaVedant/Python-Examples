@@ -6,13 +6,13 @@
   "unitTitle": "Classes",
   "title": "Methods",
   "readTime": 22,
-  "goal": "In this lesson you will learn how methods are functions inside a class that you call with a dot.",
+  "goal": "This lesson covers how methods are functions inside a class that you call with a dot.",
   "learn": [
     "Write a method with def inside the class",
     "Call methods with object.method()",
     "Methods can print or change data"
   ],
-  "idea": "A <strong>method</strong> is a function that lives inside a class. You call it with a dot: <code>dog.bark()</code>.\n\nFor now, include <code>self</code> as the first parameter (next lesson explains why). Methods let objects <em>do</em> things, not only store data.",
+  "idea": "A <strong>method</strong> is a function that lives inside a class, and you call it with a dot, like <code>dog.bark()</code>.\n\nFor now include <code>self</code> as the first parameter, and the next lesson explains why. Methods let objects <em>do</em> things and not only store data.",
   "code": {
     "filename": "bark.py",
     "lines": [
@@ -28,7 +28,7 @@
       "Buddy says woof!"
     ]
   },
-  "changeOneLine": "In the editor above, change the name to <code>\"Luna\"</code>. Press <strong>Run</strong>. Output should say Luna says woof!",
+  "changeOneLine": "In the editor above, change the name to <code>\"Luna\"</code> and press <strong>Run</strong>. The output should say Luna says woof!",
   "code2": {
     "filename": "greet.py",
     "lines": [
@@ -47,14 +47,14 @@
   "practice": [
     {
       "text": "Finish greet so it prints a hello using self.name. Call it once.",
-      "hint": "Inside greet, use print with self.name. The Player's name is set on p before you call p.greet().",
+      "hint": "Inside greet, use print with self.name. The player's name is set on p before you call p.greet().",
       "starterTip": "In the blank under greet, try: print(\"Hello,\", self.name). Then run; Ava's name should appear.",
       "starter": "class Player:\n    def greet(self):\n        # Print hello using self.name\n        \np = Player()\np.name = \"Ava\"\np.greet()",
       "gradingNote": "Pass if greet uses self.name and prints a hello for Ava."
     },
     {
       "text": "Add a method spin that prints Weee! Call it on a Toy object.",
-      "hint": "The spin method body needs one indented print line. t.spin() at the bottom calls it.",
+      "hint": "The spin method body needs one indented print line. The t.spin() at the bottom calls it.",
       "starterTip": "Inside spin, add: print(\"Weee!\"). Indented under def spin(self):.",
       "starter": "class Toy:\n    def spin(self):\n        \nt = Toy()\nt.spin()",
       "gradingNote": "Pass if spin method prints Weee! when called."
@@ -81,8 +81,8 @@
           "correct": false
         }
       ],
-      "correct": "Methods are class functions.",
-      "wrong": "def inside class."
+      "correct": "Right, methods are functions that live in a class.",
+      "wrong": "It is a def inside the class."
     },
     {
       "question": "How do you call bark on dog?",
@@ -104,11 +104,11 @@
           "correct": false
         }
       ],
-      "correct": "object.method()",
-      "wrong": "Dot + parentheses."
+      "correct": "Yes, it is object.method().",
+      "wrong": "Use a dot and then parentheses."
     },
     {
-      "question": "First parameter of a method is usually…",
+      "question": "First parameter of a method is usually...",
       "options": [
         {
           "text": "cls only forever",
@@ -127,13 +127,13 @@
           "correct": false
         }
       ],
-      "correct": "self means this object. Next lesson!",
-      "wrong": "def bark(self):"
+      "correct": "Right, that first parameter is usually self.",
+      "wrong": "The next lesson explains it."
     }
   ],
   "project": {
     "title": "Action Pet",
-    "desc": "Make a Pet with methods speak and nap. Set a name. Call both methods.",
+    "desc": "Make a Pet with two methods, speak and nap. Set a name and call both methods.",
     "starter": "class Pet:\n    def speak(self):\n        print()\n    def nap(self):\n        print()\np = Pet()\np.name = \"Mochi\"\np.speak()\np.nap()"
   },
   "prev": {

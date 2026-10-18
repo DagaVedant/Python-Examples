@@ -6,13 +6,13 @@
   "unitTitle": "Classes",
   "title": "Why Classes",
   "readTime": 20,
-  "goal": "In this lesson you will learn why classes help you model real things with their own data and actions.",
+  "goal": "This lesson covers why classes help you model real things that have their own data and actions.",
   "learn": [
-    "Classes model real-world things",
+    "Classes model real world things",
     "One blueprint can make many things",
-    "Classes group data and actions"
+    "Classes group data and actions together"
   ],
-  "idea": "A <strong>class</strong> is a blueprint for a kind of thing. Pets, players, accounts. Why bother? So you can make many similar things without copy-pasting the same variables over and over.\n\nClasses group <strong>data</strong> (what it knows) and later <strong>actions</strong> (what it can do).",
+  "idea": "A <strong>class</strong> is a blueprint for a kind of thing, like pets, players, or accounts. Why bother? Because you can make many similar things without copying and pasting the same variables again and again.\n\nClasses group <strong>data</strong>, which is what a thing knows, with <strong>actions</strong>, which is what it can do. You will meet the actions later.",
   "code": {
     "filename": "why_classes.py",
     "lines": [
@@ -26,7 +26,7 @@
       "Each object can have its own data"
     ]
   },
-  "changeOneLine": "In the editor above, change the last line to mention <code>name</code> or <code>age</code>. Press <strong>Run</strong>.",
+  "changeOneLine": "In the editor above, change the last line to mention <code>name</code> or <code>age</code> and press <strong>Run</strong>.",
   "code2": {
     "filename": "idea2.py",
     "lines": [
@@ -41,14 +41,14 @@
   "practice": [
     {
       "text": "Print two sentences: what a class is, and why it helps.",
-      "hint": "Use two print() lines. First line: a class is like a blueprint. Second line: why that helps (many similar things, less copy-paste).",
+      "hint": "Use two print() lines. The first says a class is like a blueprint. The second says why that helps, with many similar things and less copy and paste.",
       "starterTip": "Try print(\"A class is a blueprint\") then print(\"You can make many objects from one class\").",
       "starter": "print()\nprint()",
       "gradingNote": "Pass if two non-empty prints about blueprint/objects/classes."
     },
     {
       "text": "Print an example of one class name and two different object ideas.",
-      "hint": "You already have Class: Pet. Fill the two blank prints with two different pet names or ideas. They should not be the same.",
+      "hint": "You already have Class: Pet. Fill the two blank prints with two different pet names or ideas, and make sure they are not the same.",
       "starterTip": "For example: print(\"Object: Mochi the cat\") and print(\"Object: Buddy the dog\").",
       "starter": "print(\"Class: Pet\")\nprint()\nprint()",
       "gradingNote": "Pass if two different pet/object ideas print."
@@ -75,8 +75,8 @@
           "correct": false
         }
       ],
-      "correct": "Classes describe a kind of thing.",
-      "wrong": "Blueprint metaphor."
+      "correct": "Right, a class describes a kind of thing.",
+      "wrong": "Think of the blueprint idea."
     },
     {
       "question": "Why use classes?",
@@ -98,8 +98,8 @@
           "correct": false
         }
       ],
-      "correct": "One blueprint, many instances.",
-      "wrong": "Less copy-paste."
+      "correct": "Yes, one blueprint can make many things.",
+      "wrong": "That means less copy and paste."
     },
     {
       "question": "Do all objects from a class share the exact same data?",
@@ -121,13 +121,13 @@
           "correct": false
         }
       ],
-      "correct": "Each object has its own attributes later.",
-      "wrong": "Buddy ≠ Luna."
+      "correct": "Right, each object can store its own values.",
+      "wrong": "Buddy and Luna are different pets."
     }
   ],
   "project": {
     "title": "Blueprint Pitch",
-    "desc": "Print a 3-line pitch for classes: blueprint, many objects, own data.",
+    "desc": "Print a three line pitch for classes: blueprint, many objects, and their own data.",
     "starter": "print()\nprint()\nprint()"
   },
   "prev": {

@@ -6,13 +6,13 @@
   "unitTitle": "Making Decisions",
   "title": "and",
   "readTime": 22,
-  "goal": "In this lesson you will learn how and requires both sides to be True.",
+  "goal": "By the end of this lesson you will know how and needs both sides to be True.",
   "learn": [
     "Combine conditions with and",
-    "Know both must be True",
+    "Know that both sides must be True",
     "Use and inside an if"
   ],
-  "idea": "The keyword <code>and</code> joins two conditions. The whole expression is <code>True</code> only if <strong>both</strong> sides are True.\n\n<code>True and True</code> → True. If either side is False, the result is False.\n\nUse it when two things must be true at once. Like having a ticket <em>and</em> being old enough.",
+  "idea": "The keyword <code>and</code> joins two conditions. The whole thing is <code>True</code> only if <strong>both</strong> sides are True, so <code>True and True</code> is True and anything with a False in it is False.\n\nUse it when two things have to be true at once, like having a ticket <em>and</em> being old enough.",
   "code": {
     "filename": "and_demo.py",
     "lines": [
@@ -34,7 +34,7 @@
       "You may enter"
     ]
   },
-  "changeOneLine": "In the editor above, change <code>has_pass = True</code> to <code>has_pass = False</code>. Press <strong>Run</strong>. You should see <code>Cannot enter</code>.",
+  "changeOneLine": "In the editor above, change <code>has_pass = True</code> to <code>has_pass = False</code> and press <strong>Run</strong>. You should see <code>Cannot enter</code>.",
   "code2": {
     "filename": "quest.py",
     "lines": [
@@ -52,14 +52,14 @@
   "practice": [
     {
       "text": "Set score to 80 and lives to 2. If score >= 70 and lives > 0, print Level clear.",
-      "hint": "Both sides of <code>and</code> must be True. Your score and lives already pass. Write one <code>if</code> that checks both in the same line.",
+      "hint": "Both sides of and must be True. Your score and lives already pass, so write one if that checks both on the same line.",
       "starterTip": "Try <code>if score >= 70 and lives > 0:</code> on its own line, then indented underneath: <code>print(\"Level clear\")</code>.",
       "starter": "score = 80\nlives = 2\n# if with and",
       "gradingNote": "Pass if and connects both conditions and Level clear prints."
     },
     {
       "text": "Print the value of <code>(5 > 2) and (5 < 10)</code>.",
-      "hint": "Each part in parentheses is True or False. Put the whole <code>and</code> expression inside <code>print()</code> so Python shows the final answer.",
+      "hint": "Each part in parentheses is True or False. Put the whole and expression inside print() so Python shows the final answer.",
       "starterTip": "Try <code>print((5 > 2) and (5 < 10))</code>. Both comparisons are True, so you should see True.",
       "starter": "print()",
       "gradingNote": "Pass if output is True using and."
@@ -86,8 +86,8 @@
           "correct": false
         }
       ],
-      "correct": "and needs both sides True.",
-      "wrong": "If one side is False, and is False."
+      "correct": "Right, and needs both sides to be True.",
+      "wrong": "If one side is False, the whole and is False."
     },
     {
       "question": "What is <code>True and False</code>?",
@@ -109,8 +109,8 @@
           "correct": false
         }
       ],
-      "correct": "One False makes the and False.",
-      "wrong": "Both must be True for and to be True."
+      "correct": "Yes, one False makes the whole and False.",
+      "wrong": "Both sides must be True for and to be True."
     },
     {
       "question": "Which if needs both a key and a torch?",
@@ -132,13 +132,13 @@
           "correct": false
         }
       ],
-      "correct": "and means both items are required.",
-      "wrong": "Use and when both conditions must hold."
+      "correct": "Right, and means both items are required.",
+      "wrong": "Use and when both conditions have to hold."
     }
   ],
   "project": {
     "title": "Ride Rules",
-    "desc": "height is 130 and with_adult is True. If height >= 120 and with_adult, print Ride allowed. Else print Not allowed.",
+    "desc": "height is 130 and with_adult is True. If height >= 120 and with_adult, print Ride allowed, and else print Not allowed.",
     "starter": "height = 130\nwith_adult = True\n# if / else with and"
   },
   "prev": {

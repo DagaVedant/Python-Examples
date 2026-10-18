@@ -6,13 +6,13 @@
   "unitTitle": "Number Calculations & Data",
   "title": "Text into Numbers",
   "readTime": 22,
-  "goal": "In this lesson you will learn how to turn digit strings into ints and floats so you can do math.",
+  "goal": "By the end of this lesson you will know how to turn text that looks like a number into a real int or float so you can do math with it.",
   "learn": [
-    "Know digit text is still a string",
+    "Know that digit text is still a string",
     "Convert with int() and float()",
     "Do math only after converting"
   ],
-  "idea": "Text that looks like a number is still a string if it is in quotes. <code>\"7\"</code> is text. <code>7</code> is a number.\n\n<code>\"3\" + \"4\"</code> sticks together into <code>\"34\"</code>. To add as math, convert first:\n\n<code>int(\"3\")</code> makes the integer 3. <code>float(\"2.5\")</code> makes the float 2.5.",
+  "idea": "Text that looks like a number is still a string if it is in quotes. <code>\"7\"</code> is text and <code>7</code> is a number.\n\n<code>\"3\" + \"4\"</code> sticks together into <code>\"34\"</code>. If you want actual math, convert first. <code>int(\"3\")</code> makes the integer 3, and <code>float(\"2.5\")</code> makes the float 2.5.",
   "code": {
     "filename": "cast_nums.py",
     "lines": [
@@ -35,7 +35,7 @@
       "Total: 10.0"
     ]
   },
-  "changeOneLine": "In the editor above, change <code>b = \"4\"</code> to <code>b = \"5\"</code>. Press <strong>Run</strong>. Math add should show <code>8</code> and stuck together should show <code>35</code>.",
+  "changeOneLine": "In the editor above, change <code>b = \"4\"</code> to <code>b = \"5\"</code> and press <strong>Run</strong>. Math add should show <code>8</code> and stuck together should show <code>35</code>.",
   "code2": {
     "filename": "scores.py",
     "lines": [
@@ -87,8 +87,8 @@
           "correct": false
         }
       ],
-      "correct": "Strings stick together: \"25\".",
-      "wrong": "With quotes, + joins text. You need int() for math."
+      "correct": "Right, with quotes + joins the text into \"25\".",
+      "wrong": "With quotes, + sticks text together. You need int() for math."
     },
     {
       "question": "What does <code>int(\"8\")</code> return?",
@@ -110,7 +110,7 @@
           "correct": false
         }
       ],
-      "correct": "int() turns digit text into an integer.",
+      "correct": "Yes, int() turns digit text into a whole number.",
       "wrong": "int(\"8\") makes the whole number 8."
     },
     {
@@ -133,13 +133,13 @@
           "correct": false
         }
       ],
-      "correct": "Decimals need float(), not int().",
-      "wrong": "int() only works on whole-number text. Use float() for decimals."
+      "correct": "Right, decimals need float().",
+      "wrong": "int() only works on whole number text. Use float() for decimals."
     }
   ],
   "project": {
     "title": "High Score Board",
-    "desc": "Three scores are stored as text: \"450\", \"380\", \"410\". Convert each with int(), add them, and print the total.",
+    "desc": "Three scores are stored as text: \"450\", \"380\", and \"410\". Convert each one with int(), add them up, and print the total.",
     "starter": "s1 = \"450\"\ns2 = \"380\"\ns3 = \"410\"\ntotal = \nprint(\"Combined:\", total)"
   },
   "prev": {

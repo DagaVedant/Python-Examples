@@ -6,13 +6,13 @@
   "unitTitle": "Lists",
   "title": "Building Lists",
   "readTime": 25,
-  "goal": "In this lesson you will put list skills together: start empty, append in a loop, then use the finished list.",
+  "goal": "In this lesson you will put your list skills together by starting with an empty list, appending in a loop, and then using the finished list.",
   "learn": [
     "Start with an empty list",
     "Append items one by one",
     "Use the finished list afterward"
   ],
-  "idea": "Sometimes you do not know every item when you write the program. Start with <code>[]</code>, then <code>append</code> values as you go. Often inside a loop.\n\n    When building is done, you can print, total, or search the list you made.",
+  "idea": "Sometimes you do not know every item when you write the program. In that case start with <code>[]</code> and <code>append</code> values as you go, which is often done inside a loop.\n\nWhen the building is done, you can print, total, or search the list you made, just like any other list.",
   "code": {
     "filename": "build.py",
     "lines": [
@@ -35,7 +35,7 @@
       "[1, 4, 9, 16]"
     ]
   },
-  "changeOneLine": "In the editor above, change the squares loop to go through <code>[1, 2, 3, 4, 5]</code>. Press <strong>Run</strong>. The second list should end with <code>25</code>.",
+  "changeOneLine": "In the editor above, change the squares loop to go through <code>[1, 2, 3, 4, 5]</code> and press <strong>Run</strong>. The second list should end with <code>25</code>.",
   "code2": {
     "filename": "doubles.py",
     "lines": [
@@ -86,7 +86,7 @@
           "correct": false
         }
       ],
-      "correct": "An empty list is a clean starting point to fill.",
+      "correct": "Right, an empty list is a clean starting point to fill up.",
       "wrong": "You grow [] by appending one item at a time."
     },
     {
@@ -109,7 +109,7 @@
           "correct": false
         }
       ],
-      "correct": "append always adds to the end.",
+      "correct": "Yes, append always adds to the end.",
       "wrong": "New items land after the last existing item."
     },
     {
@@ -132,8 +132,8 @@
           "correct": false
         }
       ],
-      "correct": "A built list works like any other list.",
-      "wrong": "Once built, use the same list skills you already know."
+      "correct": "Right, a built list works like any other list.",
+      "wrong": "Once it is built, you can use all the list skills you already know."
     }
   ],
   "project": {

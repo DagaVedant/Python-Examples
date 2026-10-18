@@ -6,13 +6,13 @@
   "unitTitle": "Making Decisions",
   "title": "elif",
   "readTime": 23,
-  "goal": "In this lesson you will learn elif, another check that runs only if earlier if/elif checks were False.",
+  "goal": "This lesson covers elif, which is another check that only runs if the earlier checks were False.",
   "learn": [
     "Add elif between if and else",
     "Check conditions in order",
     "Stop at the first True branch"
   ],
-  "idea": "<code>elif</code> means \"else if.\" It asks a new question only when the previous <code>if</code> (and earlier elifs) were <code>False</code>.\n\nPython checks from top to bottom and runs the first True branch, then skips the rest.\n\nOrder matters: put the most specific checks first when needed.",
+  "idea": "<code>elif</code> means \"else if\". It asks a new question only when the previous <code>if</code> and any earlier <code>elif</code> lines were <code>False</code>.\n\nPython checks from the top to the bottom, runs the first branch that is True, and skips the rest. That means order matters, so put your most specific checks first when you need to.",
   "code": {
     "filename": "elif_demo.py",
     "lines": [
@@ -31,7 +31,7 @@
       "B"
     ]
   },
-  "changeOneLine": "In the editor above, change <code>score = 85</code> to <code>score = 95</code>. Press <strong>Run</strong>. Output should be <code>A</code>.",
+  "changeOneLine": "In the editor above, change <code>score = 85</code> to <code>score = 95</code> and press <strong>Run</strong>. The output should be <code>A</code>.",
   "code2": {
     "filename": "traffic.py",
     "lines": [
@@ -50,14 +50,14 @@
   "practice": [
     {
       "text": "Set <code>temp = 15</code>. If temp >= 25 print Hot, elif temp >= 10 print Mild, else print Cold.",
-      "hint": "Build a chain: if, then elif, then else, all at the same indent. Python picks the first condition that is True.",
+      "hint": "Build a chain with if, then elif, then else, all at the same indent. Python picks the first condition that is True.",
       "starterTip": "15 is not hot enough for the first check, but it is >= 10. So the elif branch should print Mild.",
       "starter": "temp = 15\n# if / elif / else",
       "gradingNote": "Pass if Mild is printed for temp 15 using elif."
     },
     {
       "text": "Set <code>size = \"M\"</code>. If size is S print Small, elif M print Medium, else print Other.",
-      "hint": "Compare size to strings with <code>==</code>, like <code>size == \"S\"</code>. Each branch needs a colon and an indented print.",
+      "hint": "Compare size to strings with ==, like size == \"S\". Each branch needs a colon and an indented print.",
       "starterTip": "Try <code>elif size == \"M\":</code> with <code>print(\"Medium\")</code> indented under it. Size is already \"M\".",
       "starter": "size = \"M\"",
       "gradingNote": "Pass if Medium prints via elif size == \"M\"."
@@ -84,8 +84,8 @@
           "correct": false
         }
       ],
-      "correct": "elif is short for else if.",
-      "wrong": "elif = else if: another condition after a failed if."
+      "correct": "Right, elif is short for else if.",
+      "wrong": "elif is else if, which is another condition after a failed if."
     },
     {
       "question": "If the first if is True, do later elifs run?",
@@ -107,8 +107,8 @@
           "correct": false
         }
       ],
-      "correct": "First True wins; the rest are skipped.",
-      "wrong": "Chain stops when one branch matches."
+      "correct": "Yes, Python stops at the first True branch.",
+      "wrong": "The chain stops as soon as one branch matches."
     },
     {
       "question": "Where does elif go?",
@@ -130,13 +130,13 @@
           "correct": false
         }
       ],
-      "correct": "Pattern: if → elif → elif → else.",
-      "wrong": "elif sits between if and the final else."
+      "correct": "Right, elif goes after the if and before the else.",
+      "wrong": "elif sits between the if and the final else."
     }
   ],
   "project": {
     "title": "Potion Strength",
-    "desc": "Set power to 40. If power >= 70 print Strong, elif power >= 40 print Medium, else print Weak.",
+    "desc": "Set power to 40. If power >= 70 print Strong, elif power >= 40 print Medium, and else print Weak.",
     "starter": "power = 40\n# if / elif / else"
   },
   "prev": {

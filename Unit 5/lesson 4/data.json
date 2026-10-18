@@ -6,13 +6,13 @@
   "unitTitle": "Functions",
   "title": "Multiple Parameters",
   "readTime": 22,
-  "goal": "In this lesson you will learn how to define and call functions with more than one parameter so you can pass several values at once.",
+  "goal": "By the end of this lesson you will know how to define and call functions with more than one parameter so you can pass several values at once.",
   "learn": [
     "List two or more parameters in def",
     "Pass matching arguments in the same order",
     "Use each parameter inside the function"
   ],
-  "idea": "Functions can take <strong>more than one parameter</strong>. Separate them with commas on the <code>def</code> line: <code>def describe_pet(name, animal):</code>.\n\nWhen you call the function, pass the same number of arguments in the <strong>same order</strong>. The first argument goes to the first parameter, the second to the second, and so on.",
+  "idea": "Functions can take <strong>more than one parameter</strong>. Separate them with commas on the <code>def</code> line, like <code>def describe_pet(name, animal):</code>.\n\nWhen you call the function, pass the same number of arguments in the <strong>same order</strong>. The first argument goes to the first parameter, the second goes to the second, and so on.",
   "code": {
     "filename": "two_params.py",
     "lines": [
@@ -35,7 +35,7 @@
       "10 + 2 = 12"
     ]
   },
-  "changeOneLine": "In the editor above, change <code>describe_pet(\"Rex\", \"dog\")</code> to <code>describe_pet(\"Nemo\", \"fish\")</code>. Press <strong>Run</strong>. The first line should say Nemo is a fish.",
+  "changeOneLine": "In the editor above, change <code>describe_pet(\"Rex\", \"dog\")</code> to <code>describe_pet(\"Nemo\", \"fish\")</code> and press <strong>Run</strong>. The first line should say Nemo is a fish.",
   "code2": {
     "filename": "area.py",
     "lines": [
@@ -53,14 +53,14 @@
   "practice": [
     {
       "text": "Finish area(width, height) so it prints the product. Call it with two different pairs of numbers.",
-      "hint": "Area for a rectangle is width times height. Use width * height inside print, and call area twice with two number pairs.",
+      "hint": "The area of a rectangle is width times height. Use width * height inside print() and call area twice with two pairs of numbers.",
       "starterTip": "Try print(\"Area:\", width * height) in the function, then add area(3, 3) on the blank line below area(4, 5).",
       "starter": "def area(width, height):\n    print()\n\narea(4, 5)\n",
       "gradingNote": "Pass if area takes width and height, prints their product, and is called at least twice."
     },
     {
       "text": "Finish intro(name, age) so it prints a line using both values. Call it twice.",
-      "hint": "One print can use both parameters. Name and age. With commas between the pieces of text. Call intro again with a different name and age.",
+      "hint": "One print() can use both parameters, with commas between the pieces. Call intro again with a different name and age.",
       "starterTip": "Try print(name, \"is\", age, \"years old\") inside intro, then add intro(\"Maya\", 12) on the blank line below intro(\"Sam\", 11).",
       "starter": "def intro(name, age):\n    print()\n\nintro(\"Sam\", 11)\n",
       "gradingNote": "Pass if intro has two parameters, uses both in a print, and is called at least twice."
@@ -87,7 +87,7 @@
           "correct": false
         }
       ],
-      "correct": "Order matches: first argument to name, second to animal.",
+      "correct": "Right, the arguments match up in order, so the second one goes to animal.",
       "wrong": "Arguments line up left to right with the parameters."
     },
     {
@@ -110,8 +110,8 @@
           "correct": false
         }
       ],
-      "correct": "List parameters inside the parentheses, separated by commas.",
-      "wrong": "Use commas between parameter names."
+      "correct": "Yes, list the parameters inside the parentheses separated by commas.",
+      "wrong": "Use commas between the parameter names."
     },
     {
       "question": "What happens if you call a two-parameter function with only one argument?",
@@ -133,8 +133,8 @@
           "correct": false
         }
       ],
-      "correct": "The number of arguments should match the number of parameters.",
-      "wrong": "Pass one argument per parameter, in order."
+      "correct": "Right, the number of arguments should match the number of parameters.",
+      "wrong": "Pass one argument for each parameter, in order."
     }
   ],
   "project": {

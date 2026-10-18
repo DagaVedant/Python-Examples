@@ -6,13 +6,13 @@
   "unitTitle": "Making Decisions",
   "title": "not",
   "readTime": 22,
-  "goal": "In this lesson you will learn how not flips True to False and False to True.",
+  "goal": "By the end of this lesson you will know how not flips True to False and False to True.",
   "learn": [
     "Flip a bool with not",
     "Use not in an if condition",
-    "Read not as \"the opposite\""
+    "Read not as the opposite"
   ],
-  "idea": "<code>not</code> reverses a boolean. <code>not True</code> is <code>False</code>. <code>not False</code> is <code>True</code>.\n\nIt is useful when you care about the opposite of a flag: <code>if not game_over:</code> means \"keep going while the game is not over.\"\n\nPut <code>not</code> in front of a condition or a bool variable.",
+  "idea": "<code>not</code> reverses a boolean, so <code>not True</code> is <code>False</code> and <code>not False</code> is <code>True</code>.\n\nIt is useful when you care about the opposite of a flag. For example <code>if not game_over:</code> basically means keep going while the game is not over. Put <code>not</code> in front of a condition or a bool variable.",
   "code": {
     "filename": "not_demo.py",
     "lines": [
@@ -34,7 +34,7 @@
       "True"
     ]
   },
-  "changeOneLine": "In the editor above, change <code>game_over = False</code> to <code>game_over = True</code>. Press <strong>Run</strong>. You should see <code>Thanks for playing</code>.",
+  "changeOneLine": "In the editor above, change <code>game_over = False</code> to <code>game_over = True</code> and press <strong>Run</strong>. You should see <code>Thanks for playing</code>.",
   "code2": {
     "filename": "alarm.py",
     "lines": [
@@ -51,14 +51,14 @@
   "practice": [
     {
       "text": "Set <code>paused = False</code>. If not paused, print <code>Running</code>.",
-      "hint": "<code>paused</code> is False, so <code>not paused</code> is True. Write <code>if not paused:</code> and put your message in that block.",
+      "hint": "paused is False, so not paused is True. Write if not paused: and put your message in that block.",
       "starterTip": "Try <code>if not paused:</code> on one line, then indented underneath: <code>print(\"Running\")</code>.",
       "starter": "paused = False\n# if not paused",
       "gradingNote": "Pass if if not paused prints Running."
     },
     {
       "text": "Print <code>not (3 == 3)</code> and explain in a comment that it is False.",
-      "hint": "<code>3 == 3</code> is True, and <code>not</code> flips it to False. Your comment can say that flip happens. Then print the expression.",
+      "hint": "3 == 3 is True and not flips it to False. Your comment can say that, then print the expression.",
       "starterTip": "Keep or add a comment like the starter, then try <code>print(not (3 == 3))</code>. The output should be False.",
       "starter": "# 3 == 3 is True, so not flips it\nprint()",
       "gradingNote": "Pass if output is False using not."
@@ -85,7 +85,7 @@
           "correct": false
         }
       ],
-      "correct": "not flips False into True.",
+      "correct": "Right, not flips False into True.",
       "wrong": "not reverses the boolean."
     },
     {
@@ -108,8 +108,8 @@
           "correct": false
         }
       ],
-      "correct": "not ready is True only when ready is False.",
-      "wrong": "You enter the block when ready is False."
+      "correct": "Yes, you enter the block when ready is False.",
+      "wrong": "not ready is only True when ready is False."
     },
     {
       "question": "What is <code>not (2 < 1)</code>?",
@@ -131,13 +131,13 @@
           "correct": false
         }
       ],
-      "correct": "2 < 1 is False; not False is True.",
+      "correct": "Right, 2 < 1 is False and not False is True.",
       "wrong": "Flip the False comparison to True."
     }
   ],
   "project": {
     "title": "Mute Button",
-    "desc": "Set muted to True. If not muted, print Sound on. Else print Sound off.",
+    "desc": "Set muted to True. If not muted print Sound on, and else print Sound off.",
     "starter": "muted = True\n# if not muted / else"
   },
   "prev": {

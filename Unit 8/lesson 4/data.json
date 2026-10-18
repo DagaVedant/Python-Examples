@@ -6,13 +6,13 @@
   "unitTitle": "Dictionaries",
   "title": "Adding Keys",
   "readTime": 22,
-  "goal": "In this lesson you will learn how to add a brand-new key to a dictionary.",
+  "goal": "By the end of this lesson you will know how to add a brand new key to a dictionary.",
   "learn": [
     "Add a key with dict[\"new\"] = value",
     "See the dictionary grow",
     "Add more than one new key"
   ],
-  "idea": "Dictionaries can grow. To <strong>add</strong> a new fact, assign to a key that is not there yet:\n\n<code>scores[\"Mia\"] = 85</code>\n\nPython creates that key and stores the value.",
+  "idea": "Dictionaries can grow. To <strong>add</strong> a new fact, assign to a key that is not there yet, like <code>scores[\"Mia\"] = 85</code>.\n\nPython creates that key and stores the value for you.",
   "code": {
     "filename": "add.py",
     "lines": [
@@ -32,7 +32,7 @@
       "{'Ava': 80, 'Leo': 90, 'Mia': 85, 'Sam': 88}"
     ]
   },
-  "changeOneLine": "In the editor above, change Mia's score to <code>99</code>. Press <strong>Run</strong>. Mia should show 99 in the second print.",
+  "changeOneLine": "In the editor above, change Mia's score to <code>99</code> and press <strong>Run</strong>. Mia should show 99 in the second print.",
   "code2": {
     "filename": "bag.py",
     "lines": [
@@ -49,14 +49,14 @@
   "practice": [
     {
       "text": "Start with one player. Add Riley with score 70. Print the board.",
-      "hint": "Assign to a new key with square brackets: board[\"Riley\"] = 70. That adds Riley without changing Sam.",
+      "hint": "Assign to a new key with square brackets, like board[\"Riley\"] = 70. That adds Riley without changing Sam.",
       "starterTip": "On the blank line, write board[\"Riley\"] = 70, then run. Print(board) should show Sam and Riley.",
       "starter": "board = {\"Sam\": 50}\n# Add Riley: 70\n\nprint(board)",
       "gradingNote": "Pass if Riley: 70 is added and board is printed with both players."
     },
     {
       "text": "Add a \"gems\" key set to 3 on the bag, then print bag.",
-      "hint": "Use assignment to a key that is not there yet: bag[\"gems\"] = 3. Do this before print(bag).",
+      "hint": "Assign to a key that is not there yet, like bag[\"gems\"] = 3, and do it before print(bag).",
       "starterTip": "Add bag[\"gems\"] = 3 on the empty line. When you print, you should see coins and gems.",
       "starter": "bag = {\"coins\": 5}\n\nprint(bag)",
       "gradingNote": "Pass if gems key is added with value 3 and bag is printed."
@@ -83,8 +83,8 @@
           "correct": false
         }
       ],
-      "correct": "Assign to a new key with square brackets.",
-      "wrong": "Use scores[\"Mia\"] = 85 to add."
+      "correct": "Right, you assign to a new key with square brackets.",
+      "wrong": "Use scores[\"Mia\"] = 85 to add a key."
     },
     {
       "question": "If the key is new, what does assignment do?",
@@ -106,7 +106,7 @@
           "correct": false
         }
       ],
-      "correct": "A new key is created and stored.",
+      "correct": "Yes, a new key gets created and stored.",
       "wrong": "New keys get added when you assign to them."
     },
     {
@@ -129,13 +129,13 @@
           "correct": false
         }
       ],
-      "correct": "Once added, you look it up like any other key.",
-      "wrong": "New keys work the same for lookup."
+      "correct": "Right, once a key is added you look it up like any other key.",
+      "wrong": "New keys work the same way for lookup."
     }
   ],
   "project": {
     "title": "Growing Scoreboard",
-    "desc": "Start with two players. Add a third. Print before and after.",
+    "desc": "Start with two players and add a third. Print the dictionary before and after.",
     "starter": "board = {\"Ava\": 10, \"Leo\": 12}\nprint(\"Before:\", board)\n# Add Mia with a score\n\nprint(\"After:\", board)"
   },
   "prev": {

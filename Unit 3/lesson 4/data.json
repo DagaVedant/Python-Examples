@@ -6,13 +6,13 @@
   "unitTitle": "Making Decisions",
   "title": "else",
   "readTime": 22,
-  "goal": "In this lesson you will learn how else runs when the if condition is False.",
+  "goal": "By the end of this lesson you will know how else runs when the if condition is False.",
   "learn": [
     "Pair else with if",
     "Run one path or the other",
-    "Know else has no condition"
+    "Know that else has no condition"
   ],
-  "idea": "<code>else</code> is the backup plan. It runs only when the <code>if</code> condition is <code>False</code>.\n\nWrite <code>else:</code> at the same indent as <code>if</code>, then indent the else block.\n\nExactly one of the two blocks runs. Never both, never neither (for a simple if/else).",
+  "idea": "<code>else</code> is the backup plan. It only runs when the <code>if</code> condition is <code>False</code>.\n\nWrite <code>else:</code> at the same indent as the <code>if</code> and then indent the else block. For a simple if and else, exactly one of the two blocks runs. Never both and never neither.",
   "code": {
     "filename": "else_demo.py",
     "lines": [
@@ -30,7 +30,7 @@
       "See you next time"
     ]
   },
-  "changeOneLine": "In the editor above, change <code>score = 55</code> to <code>score = 85</code>. Press <strong>Run</strong>. You should see <code>You passed!</code> instead.",
+  "changeOneLine": "In the editor above, change <code>score = 55</code> to <code>score = 85</code> and press <strong>Run</strong>. You should see <code>You passed!</code> instead.",
   "code2": {
     "filename": "coin.py",
     "lines": [
@@ -47,14 +47,14 @@
   "practice": [
     {
       "text": "If <code>age</code> is at least 12, print <code>Teen ticket</code>. Else print <code>Kid ticket</code>. Set age to 10.",
-      "hint": "Use <code>if age >= 12:</code> for the first message, then <code>else:</code> at the same indent as if for the backup. Indent each print under its line.",
+      "hint": "Use if age >= 12: for the first message, then else: at the same indent as the if for the backup. Indent each print under its line.",
       "starterTip": "With age 10, the if fails. So the else block should print <code>Kid ticket</code>.",
       "starter": "age = 10\n# if / else",
       "gradingNote": "Pass if else path prints Kid ticket for age 10."
     },
     {
       "text": "Set <code>found = True</code>. If found, print <code>Key found</code>, else print <code>Keep looking</code>.",
-      "hint": "A bool variable can go straight in the if: <code>if found:</code> means “if found is True.” Pair it with else: for the other message.",
+      "hint": "A bool variable can go straight into the if, so if found: means if found is True. Pair it with else: for the other message.",
       "starterTip": "After <code>found = True</code>, write if/else with indented prints. You should see Key found because found is True.",
       "starter": "found = True",
       "gradingNote": "Pass if if/else prints Key found when found is True."
@@ -81,8 +81,8 @@
           "correct": false
         }
       ],
-      "correct": "else is the False path.",
-      "wrong": "else runs only if the if condition failed."
+      "correct": "Right, else is the path for when the if is False.",
+      "wrong": "else only runs if the if condition failed."
     },
     {
       "question": "Does else need its own condition?",
@@ -104,8 +104,8 @@
           "correct": false
         }
       ],
-      "correct": "Write else: with no comparison.",
-      "wrong": "else has no condition; if already asked the question."
+      "correct": "Yes, else means otherwise, so it has no condition.",
+      "wrong": "else has no condition because the if already asked the question."
     },
     {
       "question": "Can if and else both print in one run of a simple if/else?",
@@ -127,13 +127,13 @@
           "correct": false
         }
       ],
-      "correct": "Exactly one of the two blocks runs.",
-      "wrong": "They are alternatives: one path only."
+      "correct": "Right, only one of the two blocks runs.",
+      "wrong": "They are alternatives, so only one path runs."
     }
   ],
   "project": {
     "title": "Password Gate",
-    "desc": "Set password_ok to False. If it is True, print Access granted. Else print Access denied.",
+    "desc": "Set password_ok to False. If it is True print Access granted, and else print Access denied.",
     "starter": "password_ok = False\n# if / else"
   },
   "prev": {

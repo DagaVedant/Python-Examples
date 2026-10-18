@@ -8,11 +8,11 @@
   "readTime": 22,
   "goal": "In this lesson you will practice while loops that count up or down with a clear counter pattern.",
   "learn": [
-    "Count up with += 1 style updates",
+    "Count up by adding 1 each pass",
     "Count down until a stop value",
     "Print the counter each time through"
   ],
-  "idea": "A <strong>counter</strong> is an integer you change by a fixed amount each pass. Usually +1 or -1.\n\nCount up: start at 1, while the counter is less than or equal to a limit, print it, then add 1. Count down: start high, while greater than 0, print, then subtract 1.\n\nKeep the update on its own line so you can see how the loop will end.",
+  "idea": "A <strong>counter</strong> is an integer that you change by a fixed amount on each pass, usually +1 or -1.\n\nTo count up, start at 1, loop while the counter is less than or equal to a limit, print it, then add 1. To count down, start high, loop while it is greater than 0, print it, then subtract 1. Keep the update on its own line so you can see how the loop will end.",
   "code": {
     "filename": "count_up_down.py",
     "lines": [
@@ -40,7 +40,7 @@
       "Down: 1"
     ]
   },
-  "changeOneLine": "In the editor above, change the first loop’s start from <code>n = 1</code> to <code>n = 3</code>. Press <strong>Run</strong>. The Up lines should show 3, 4, 5.",
+  "changeOneLine": "In the editor above, change the start of the first loop from <code>n = 1</code> to <code>n = 3</code> and press <strong>Run</strong>. The Up lines should show 3, 4, 5.",
   "code2": {
     "filename": "by_twos.py",
     "lines": [
@@ -67,7 +67,7 @@
     },
     {
       "text": "Count down from 6 to 1. Print each number, then print Blast off! after the loop.",
-      "hint": "Inside the while, subtract 1 from n after each print. The last print() after the loop is not indented under while.",
+      "hint": "Inside the while, subtract 1 from n after each print. The last print() after the loop is not indented under the while.",
       "starterTip": "Add n = n - 1 inside the loop. After while ends, fill print() with print(\"Blast off!\").",
       "starter": "n = 6\nwhile n > 0:\n    print(n)\n    \nprint()",
       "gradingNote": "Pass if 6 through 1 print, n decreases, then Blast off! (or similar) after the loop."
@@ -94,7 +94,7 @@
           "correct": false
         }
       ],
-      "correct": "Adding 1 advances the counter toward the stop condition.",
+      "correct": "Right, adding 1 moves the counter toward the stop condition.",
       "wrong": "n = n + 1 increases the counter by one each pass."
     },
     {
@@ -117,8 +117,8 @@
           "correct": false
         }
       ],
-      "correct": "The loop runs while n is 1, 2, and 3, then stops.",
-      "wrong": "Trace it: print, add 1, check again. Stop when n becomes 4."
+      "correct": "Yes, the loop runs while n is 1, 2, and 3, and then stops.",
+      "wrong": "Trace it: print, add 1, check again. It stops when n becomes 4."
     },
     {
       "question": "Why is a fixed +/- update a good counter pattern?",
@@ -140,13 +140,13 @@
           "correct": false
         }
       ],
-      "correct": "A steady step makes the stopping point clear and finite.",
+      "correct": "Right, a steady step makes the stopping point easy to predict.",
       "wrong": "Predictable updates keep while loops finite and safe."
     }
   ],
   "project": {
     "title": "Warm-Up Reps",
-    "desc": "Count reps from 1 to 10 with a while loop. Print Rep: and the number each time. After the loop, print Warm-up done!",
+    "desc": "Count reps from 1 to 10 with a while loop and print Rep: and the number each time. After the loop, print Warm-up done!",
     "starter": "rep = 1\nwhile rep <= 10:\n    print()\n    # Add 1 to rep\n    \nprint()"
   },
   "prev": {

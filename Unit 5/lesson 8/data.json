@@ -6,13 +6,13 @@
   "unitTitle": "Functions",
   "title": "Designing with Functions",
   "readTime": 24,
-  "goal": "In this lesson you will learn how to break a bigger program into small, well-named functions that each do one job.",
+  "goal": "By the end of this lesson you will know how to break a bigger program into small, well named functions that each do one job.",
   "learn": [
     "Split a program into focused functions",
     "Give functions clear, descriptive names",
     "Combine helpers into one small program"
   ],
-  "idea": "Good programs are built from small functions that each do <strong>one clear job</strong>. When something goes wrong, you can find the broken function quickly. When you want to reuse logic, you call the function again.\n\nName functions for what they do: <code>average</code>, <code>grade</code>, <code>print_report</code>. Then wire them together.",
+  "idea": "Good programs are built from small functions that each do <strong>one clear job</strong>. When something goes wrong, you can find the broken function quickly, and when you want to reuse some logic you just call the function again.\n\nName your functions for what they do, like <code>average</code>, <code>grade</code>, or <code>print_report</code>, and then wire them together.",
   "code": {
     "filename": "design.py",
     "lines": [
@@ -40,7 +40,7 @@
       "Sam avg 70.0 grade B"
     ]
   },
-  "changeOneLine": "In the editor above, change Ava's scores to <code>95, 95, 95</code>. Press <strong>Run</strong>. Ava's line should show avg 95.0 grade A.",
+  "changeOneLine": "In the editor above, change Ava's scores to <code>95, 95, 95</code> and press <strong>Run</strong>. Ava's line should show avg 95.0 grade A.",
   "code2": {
     "filename": "rect.py",
     "lines": [
@@ -64,14 +64,14 @@
   "practice": [
     {
       "text": "Finish average and grade. Make print_report call both and print one line for Maya.",
-      "hint": "average should add the three scores and divide by 3. print_report already has avg and letter. Put them in print().",
+      "hint": "average should add the three scores and divide by 3. print_report already has avg and letter, so put them in print().",
       "starterTip": "Try return (a + b + c) / 3 in average, and print(name, \"avg\", avg, \"grade\", letter) in print_report.",
       "starter": "def average(a, b, c):\n    return\n\ndef grade(score):\n    if score >= 90:\n        return \"A\"\n    else:\n        return \"B\"\n\ndef print_report(name, a, b, c):\n    avg = average(a, b, c)\n    letter = grade(avg)\n    print()\n\nprint_report(\"Maya\", 92, 88, 90)",
       "gradingNote": "Pass if average returns the mean, grade returns a letter, print_report uses both, and a report line prints."
     },
     {
       "text": "Finish area(w, h) and describe(w, h). describe should call area and print the result. Call describe once.",
-      "hint": "area returns width times height. describe is ready. You need the return in area and one call to describe at the bottom.",
+      "hint": "area returns width times height and describe is already ready. You need the return in area and one call to describe at the bottom.",
       "starterTip": "Use return w * h in area, then add describe(4, 3) on a blank line at the end.",
       "starter": "def area(w, h):\n    return\n\ndef describe(w, h):\n    a = area(w, h)\n    print(\"Area:\", a)\n\n",
       "gradingNote": "Pass if area returns w*h, describe calls area and prints, and describe is called at least once."
@@ -98,8 +98,8 @@
           "correct": false
         }
       ],
-      "correct": "Small, focused functions are easier to understand, reuse, and fix.",
-      "wrong": "The real benefit is readability and reuse. Each function does one clear job."
+      "correct": "Right, small focused functions are easier to understand, reuse, and fix.",
+      "wrong": "The real benefit is readability and reuse, since each function does one clear job."
     },
     {
       "question": "What makes a good function name?",
@@ -121,8 +121,8 @@
           "correct": false
         }
       ],
-      "correct": "Names like average or print_report tell readers the job.",
-      "wrong": "Pick names that describe the function’s one job."
+      "correct": "Yes, names like average or print_report tell readers the job.",
+      "wrong": "Pick names that describe the function's one job."
     },
     {
       "question": "In a well-designed report program, where should the letter-grade rules live?",
@@ -144,13 +144,13 @@
           "correct": false
         }
       ],
-      "correct": "Keep the grade rules in one function so every caller shares them.",
+      "correct": "Right, keeping the grade rules in one function means every caller shares them.",
       "wrong": "One helper for grading keeps the design clean."
     }
   ],
   "project": {
     "title": "Student Report Card",
-    "desc": "Build a tiny report card with separate functions: average of three scores, a letter grade from that average, and print_report that uses both. Use fixed numbers. No input().",
+    "desc": "Build a tiny report card with separate functions: the average of three scores, a letter grade from that average, and print_report that uses both. Use fixed numbers and no input().",
     "starter": "def average(a, b, c):\n    return\n\ndef grade(score):\n    if score >= 90:\n        return \"A\"\n    elif score >= 70:\n        return \"B\"\n    else:\n        return \"C\"\n\ndef print_report(name, a, b, c):\n    avg = average(a, b, c)\n    letter = grade(avg)\n    print()\n\nprint_report(\"Ava\", 90, 80, 85)"
   },
   "prev": {

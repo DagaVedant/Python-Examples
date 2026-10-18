@@ -6,13 +6,13 @@
   "unitTitle": "Repetition & Loops",
   "title": "while Loops",
   "readTime": 22,
-  "goal": "In this lesson you will learn how a while loop repeats as long as a condition is True, using a counter that changes each time.",
+  "goal": "By the end of this lesson you will know how a while loop repeats as long as a condition is True, using a counter that changes each time.",
   "learn": [
     "Write a while loop with a condition",
     "Change a counter inside the loop",
     "See when the condition becomes False"
   ],
-  "idea": "A <strong>while loop</strong> keeps going as long as its condition is True. Before each pass, Python checks the condition. When it becomes False, the loop stops.\n\nIn this course, while loops use a <strong>counter</strong> you update yourself. For example <code>count = count - 1</code>. That way the loop always reaches a stop. No <code>input()</code> needed.",
+  "idea": "A <strong>while loop</strong> keeps going as long as its condition is True. Before each pass Python checks the condition, and when it turns False the loop stops.\n\nIn this course, while loops use a <strong>counter</strong> that you update yourself, for example <code>count = count - 1</code>. That way the loop always reaches a stop, and you never need <code>input()</code> to end it.",
   "code": {
     "filename": "countdown_while.py",
     "lines": [
@@ -31,7 +31,7 @@
       "Done!"
     ]
   },
-  "changeOneLine": "In the editor above, change <code>count = 5</code> to <code>count = 3</code>. Press <strong>Run</strong>. The countdown should print 3, 2, 1, then Done!.",
+  "changeOneLine": "In the editor above, change <code>count = 5</code> to <code>count = 3</code> and press <strong>Run</strong>. The countdown should print 3, 2, 1, then Done!.",
   "code2": {
     "filename": "grow.py",
     "lines": [
@@ -85,8 +85,8 @@
           "correct": false
         }
       ],
-      "correct": "while checks the condition before each pass and stops when it is False.",
-      "wrong": "while keeps going only while the condition is True."
+      "correct": "Right, while checks before each pass and stops when the condition is False.",
+      "wrong": "while only keeps going while the condition is True."
     },
     {
       "question": "Why change count inside the loop?",
@@ -108,8 +108,8 @@
           "correct": false
         }
       ],
-      "correct": "Updating the counter is what lets a while loop finish safely.",
-      "wrong": "If nothing changes, the condition may stay True forever."
+      "correct": "Yes, updating the counter is what lets the loop finish.",
+      "wrong": "If nothing changes, the condition can stay True forever."
     },
     {
       "question": "Which loop is usually clearer when you already know the exact count, like 1 to 10?",
@@ -131,13 +131,13 @@
           "correct": false
         }
       ],
-      "correct": "for with range is a clear fit when you know how many times to repeat.",
-      "wrong": "Use for + range for a known count. Use while when you stop on a condition."
+      "correct": "Right, for with range is a clear fit when you know how many times to repeat.",
+      "wrong": "Use for with range for a known count, and while when you stop on a condition."
     }
   ],
   "project": {
     "title": "Battery Drain",
-    "desc": "Start battery at 100. While battery is greater than 0, print the battery level, then subtract 25. After the loop, print Battery empty.",
+    "desc": "Start battery at 100. While battery is greater than 0, print the battery level and then subtract 25. After the loop, print Battery empty.",
     "starter": "battery = 100\nwhile battery > 0:\n    print(\"Battery:\", battery)\n    # Subtract 25\n    \nprint(\"Battery empty\")"
   },
   "prev": {

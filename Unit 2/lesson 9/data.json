@@ -6,13 +6,13 @@
   "unitTitle": "Number Calculations & Data",
   "title": "The math Module",
   "readTime": 23,
-  "goal": "In this lesson you will learn how to import the math module and use a few of its tools.",
+  "goal": "By the end of this lesson you will know how to import the math module and use a few of its tools.",
   "learn": [
     "Import math with import math",
     "Call tools like math.sqrt()",
     "Use math.pi for circle math"
   ],
-  "idea": "A <strong>module</strong> is a ready-made toolkit. The <code>math</code> module has extra number tools.\n\nWrite <code>import math</code> at the top. Then use a name like <code>math.sqrt(16)</code> for square root, or <code>math.pi</code> for the number π.\n\nYou must import before you use it.",
+  "idea": "A <strong>module</strong> is basically a ready-made toolkit. The <code>math</code> module has extra number tools that Python does not load by default.\n\nFirstly write <code>import math</code> at the top of the file. After that you can use names like <code>math.sqrt(16)</code> for a square root, or <code>math.pi</code> for the number pi. If you forget the import, Python will give you an error.",
   "code": {
     "filename": "math_intro.py",
     "lines": [
@@ -25,7 +25,7 @@
       "# Pi",
       "print(math.pi)",
       "",
-      "# Circle area ≈ pi * r * r",
+      "# Circle area ~ pi * r * r",
       "r = 3",
       "area = math.pi * r * r",
       "print(\"Area:\", area)"
@@ -37,7 +37,7 @@
       "Area: 28.274333882308138"
     ]
   },
-  "changeOneLine": "In the editor above, change <code>r = 3</code> to <code>r = 2</code>. Press <strong>Run</strong>. Area should be about <code>12.566...</code>.",
+  "changeOneLine": "In the editor above, change <code>r = 3</code> to <code>r = 2</code> and press <strong>Run</strong>. Area should be about <code>12.566...</code>.",
   "code2": {
     "filename": "powers.py",
     "lines": [
@@ -62,7 +62,7 @@
     },
     {
       "text": "Use math.pi and radius 5 to print a circle's circumference: 2 * pi * r.",
-      "hint": "Circumference means go around the circle once: 2 times pi times the radius. Use math.pi, not 3.14 in quotes.",
+      "hint": "Circumference means going around the circle once, which is 2 times pi times the radius. Use math.pi and not 3.14.",
       "starterTip": "Try circ = 2 * math.pi * r. With r already 5, that should print about 31.4.",
       "starter": "import math\nr = 5\ncirc = \nprint(\"Circumference:\", circ)",
       "gradingNote": "Pass if circ uses 2 * math.pi * r (or equivalent) and prints a float near 31.4."
@@ -89,7 +89,7 @@
           "correct": false
         }
       ],
-      "correct": "Import the module first: import math.",
+      "correct": "Right, you have to write import math first.",
       "wrong": "Without import math, math.sqrt will fail."
     },
     {
@@ -112,7 +112,7 @@
           "correct": false
         }
       ],
-      "correct": "Square root of 36 is 6.0.",
+      "correct": "Yes, the square root of 36 is 6.0.",
       "wrong": "sqrt finds the number that times itself makes 36."
     },
     {
@@ -123,7 +123,7 @@
           "correct": false
         },
         {
-          "text": "The number π (about 3.14159…)",
+          "text": "The number π (about 3.14159...)",
           "correct": true
         },
         {
@@ -135,13 +135,13 @@
           "correct": false
         }
       ],
-      "correct": "math.pi stores a precise value of π.",
+      "correct": "Right, math.pi stores a precise value of pi.",
       "wrong": "pi is the circle constant, roughly 3.14."
     }
   ],
   "project": {
     "title": "Square Garden",
-    "desc": "A square garden has area 49. Import math, use math.sqrt to find the side length, and print it.",
+    "desc": "A square garden has an area of 49. Import math, use math.sqrt to find the side length, and print it.",
     "starter": "import math\narea = 49\nside = \nprint(\"Side length:\", side)"
   },
   "prev": {

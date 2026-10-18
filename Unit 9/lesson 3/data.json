@@ -15,13 +15,13 @@
     "starter.txt": "This line was already here.\n",
     "todo.txt": "1. Feed the cat\n2. Finish homework\n"
   },
-  "goal": "In this lesson you will learn how to read a file one line at a time with a for loop.",
+  "goal": "This lesson covers how to read a file one line at a time with a for loop.",
   "learn": [
-    "Loop for line in file",
+    "Loop with for line in file",
     "Print each line",
-    "Use strip() to clean newlines"
+    "Use strip() to clean up the newlines"
   ],
-  "idea": "You can loop over a file: <code>for line in f:</code>. Each turn gives you one line of text (often with a newline at the end).\n\n<code>line.strip()</code> removes extra spaces and newlines so printing looks tidy.",
+  "idea": "You can loop over a file with <code>for line in f:</code>. Each turn gives you one line of text, usually with a newline on the end.\n\n<code>line.strip()</code> removes the extra spaces and newlines so the printing looks tidy.",
   "code": {
     "filename": "lines.py",
     "lines": [
@@ -36,7 +36,7 @@
       "Mia 92"
     ]
   },
-  "changeOneLine": "In the editor above, change <code>print(line.strip())</code> to <code>print(\"Line:\", line.strip())</code>. Press <strong>Run</strong>.",
+  "changeOneLine": "In the editor above, change <code>print(line.strip())</code> to <code>print(\"Line:\", line.strip())</code> and press <strong>Run</strong>.",
   "code2": {
     "filename": "story_lines.py",
     "lines": [
@@ -61,7 +61,7 @@
     },
     {
       "text": "Count how many lines are in scores.txt and print the count.",
-      "hint": "The loop already adds 1 each time you visit a line. After f.close(), print the count variable.",
+      "hint": "The loop already adds 1 for every line. After f.close(), print the count variable.",
       "starterTip": "Use print(count) at the end. Scores.txt has three lines, so you should see 3.",
       "starter": "count = 0\nf = open(\"scores.txt\")\nfor line in f:\n    count = count + 1\nf.close()\nprint()",
       "gradingNote": "Pass if count is 3 and printed."
@@ -88,8 +88,8 @@
           "correct": false
         }
       ],
-      "correct": "Looping a file visits one line at a time.",
-      "wrong": "Each iteration is the next line."
+      "correct": "Right, looping over a file visits one line at a time.",
+      "wrong": "Each turn of the loop is the next line."
     },
     {
       "question": "Why use strip() on a line?",
@@ -111,8 +111,8 @@
           "correct": false
         }
       ],
-      "correct": "strip() cleans edges of the string.",
-      "wrong": "Lines often end with \\n; strip removes it."
+      "correct": "Yes, lines often end with a newline and strip removes it.",
+      "wrong": "Lines often end with \\n, and strip takes that off."
     },
     {
       "question": "When should you close the file after a line loop?",
@@ -134,13 +134,13 @@
           "correct": false
         }
       ],
-      "correct": "Close when you are done reading.",
+      "correct": "Right, you close once the loop has finished.",
       "wrong": "f.close() belongs after the loop."
     }
   ],
   "project": {
     "title": "Line Highlighter",
-    "desc": "Print each scores.txt line with a number prefix like 1) Ava 90.",
+    "desc": "Print each line of scores.txt with a number in front, like 1) Ava 90.",
     "starter": "n = 1\nf = open(\"scores.txt\")\nfor line in f:\n    print()\n    n = n + 1\nf.close()"
   },
   "prev": {

@@ -6,13 +6,13 @@
   "unitTitle": "Imports",
   "title": "from import",
   "readTime": 22,
-  "goal": "In this lesson you will learn from module import name so you can call a tool without the module prefix.",
+  "goal": "This lesson covers from module import name, so you can call a tool without typing the module name first.",
   "learn": [
     "Write from math import sqrt",
     "Call sqrt() directly",
     "Know when the short name is handy"
   ],
-  "idea": "<code>from math import sqrt</code> pulls one tool into your file. Then you can write <code>sqrt(16)</code> without <code>math.</code> in front.\n\nUseful for a few favorites. If you need many tools, plain <code>import math</code> can stay clearer.",
+  "idea": "<code>from math import sqrt</code> pulls one tool into your file. Then you can write <code>sqrt(16)</code> without <code>math.</code> in front.\n\nIt is useful for a few favorites. If you need lots of tools, plain <code>import math</code> can be clearer.",
   "code": {
     "filename": "from_import.py",
     "lines": [
@@ -25,7 +25,7 @@
       "3"
     ]
   },
-  "changeOneLine": "In the editor above, change <code>sqrt(16)</code> to <code>sqrt(100)</code>. Press <strong>Run</strong>. First line should be 10.0.",
+  "changeOneLine": "In the editor above, change <code>sqrt(16)</code> to <code>sqrt(100)</code> and press <strong>Run</strong>. The first line should be 10.0.",
   "code2": {
     "filename": "from_random.py",
     "lines": [
@@ -49,7 +49,7 @@
     },
     {
       "text": "from random import seed, randint. seed(1), print one roll 1 to 6.",
-      "hint": "seed(1) is already there. Fill print() with randint(1, 6). That picks a dice roll from 1 to 6.",
+      "hint": "seed(1) is already there. Fill print() with randint(1, 6), which picks a dice roll from 1 to 6.",
       "starterTip": "Try print(randint(1, 6)). With seed(1), you should see 2.",
       "starter": "from random import seed, randint\nseed(1)\nprint()",
       "gradingNote": "Pass if seed(1) used and 2 prints from randint(1,6)."
@@ -76,8 +76,8 @@
           "correct": false
         }
       ],
-      "correct": "The name is imported directly.",
-      "wrong": "sqrt(16) works after from import."
+      "correct": "Right, the name is imported directly.",
+      "wrong": "sqrt(16) works after a from import."
     },
     {
       "question": "Which is valid?",
@@ -99,7 +99,7 @@
           "correct": false
         }
       ],
-      "correct": "from module import name.",
+      "correct": "Yes, it goes from module import name.",
       "wrong": "Remember the order."
     },
     {
@@ -122,13 +122,13 @@
           "correct": false
         }
       ],
-      "correct": "You only got the names you imported.",
-      "wrong": "from import is selective."
+      "correct": "Right, you only get the names you imported.",
+      "wrong": "A from import is selective."
     }
   ],
   "project": {
     "title": "Short Names",
-    "desc": "from math import sqrt, ceil. Print sqrt(9) and ceil(2.1).",
+    "desc": "Use from math import sqrt, ceil. Print sqrt(9) and ceil(2.1).",
     "starter": "from math import sqrt, ceil\nprint()\nprint()"
   },
   "prev": {

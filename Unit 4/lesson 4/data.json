@@ -6,13 +6,13 @@
   "unitTitle": "Repetition & Loops",
   "title": "range() Start and Step",
   "readTime": 23,
-  "goal": "In this lesson you will learn the start and step parts of range() so you can count from any number and skip by a fixed jump.",
+  "goal": "By the end of this lesson you will know the start and step parts of range(), so you can count from any number and skip by a fixed jump.",
   "learn": [
     "Use range(start, stop) to choose where counting begins",
     "Use range(start, stop, step) to jump by a step",
     "Count down with a negative step"
   ],
-  "idea": "<code>range()</code> can take up to three numbers: <strong>start</strong>, <strong>stop</strong>, and <strong>step</strong>.\n\n<code>range(1, 5)</code> is 1, 2, 3, 4. It still stops before the stop value. <code>range(0, 11, 2)</code> jumps by 2: 0, 2, 4, 6, 8, 10. A <strong>negative step</strong> counts backwards, like <code>range(5, 0, -1)</code>.",
+  "idea": "<code>range()</code> can take up to three numbers: <strong>start</strong>, <strong>stop</strong>, and <strong>step</strong>.\n\n<code>range(1, 5)</code> gives 1, 2, 3, 4, and it still stops before the stop value. <code>range(0, 11, 2)</code> jumps by 2, so you get 0, 2, 4, 6, 8, 10. A <strong>negative step</strong> counts backwards, like <code>range(5, 0, -1)</code>.",
   "code": {
     "filename": "start_step.py",
     "lines": [
@@ -46,7 +46,7 @@
       "Go!"
     ]
   },
-  "changeOneLine": "In the editor above, change the countdown from <code>range(3, 0, -1)</code> to <code>range(5, 0, -1)</code>. Press <strong>Run</strong>. Go! should follow 5, 4, 3, 2, 1.",
+  "changeOneLine": "In the editor above, change the countdown from <code>range(3, 0, -1)</code> to <code>range(5, 0, -1)</code> and press <strong>Run</strong>. Go! should come after 5, 4, 3, 2, 1.",
   "code2": {
     "filename": "odds.py",
     "lines": [
@@ -72,7 +72,7 @@
     },
     {
       "text": "Finish the countdown from 5 to 1, then print Go!.",
-      "hint": "Inside the loop, print n for 5 down to 1. After the loop (back at the left edge, no extra indent), print Go!.",
+      "hint": "Inside the loop, print n for 5 down to 1. After the loop, back at the left edge with no extra indent, print Go!.",
       "starterTip": "Use print(n) inside the for block, then print(\"Go!\") on the last line. Not indented under for.",
       "starter": "for n in range(5, 0, -1):\n    print()\nprint()",
       "gradingNote": "Pass if 5 through 1 print, then Go! (or similar) after the loop."
@@ -99,8 +99,8 @@
           "correct": false
         }
       ],
-      "correct": "It starts at 10, steps down by 2, and stops before 0.",
-      "wrong": "Stop is not included. range(10, 0, -2) never reaches 0."
+      "correct": "Right, it starts at 10, steps down by 2, and stops before 0.",
+      "wrong": "The stop is not included, so range(10, 0, -2) never reaches 0."
     },
     {
       "question": "In range(1, 10, 2), what does the 2 mean?",
@@ -122,8 +122,8 @@
           "correct": false
         }
       ],
-      "correct": "The third number is the step. How much to add each time.",
-      "wrong": "range(start, stop, step). The last number is the step size."
+      "correct": "Yes, the third number is the step, which is how much to add each time.",
+      "wrong": "In range(start, stop, step), the last number is the step size."
     },
     {
       "question": "What numbers does range(2, 6) produce?",
@@ -145,8 +145,8 @@
           "correct": false
         }
       ],
-      "correct": "Start at 2, stop before 6: 2, 3, 4, 5.",
-      "wrong": "range(start, stop) includes start but not stop."
+      "correct": "Right, it starts at 2 and stops before 6.",
+      "wrong": "range(start, stop) includes the start but not the stop."
     }
   ],
   "project": {

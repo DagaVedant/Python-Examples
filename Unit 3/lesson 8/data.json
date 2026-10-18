@@ -6,13 +6,13 @@
   "unitTitle": "Making Decisions",
   "title": "or",
   "readTime": 22,
-  "goal": "In this lesson you will learn how or is True when at least one side is True.",
+  "goal": "This lesson covers how or is True when at least one side is True.",
   "learn": [
     "Combine conditions with or",
-    "Know one True side is enough",
+    "Know that one True side is enough",
     "Use or inside an if"
   ],
-  "idea": "The keyword <code>or</code> joins two conditions. The whole expression is <code>True</code> if <strong>at least one</strong> side is True.\n\n<code>False or True</code> → True. Only <code>False or False</code> is False.\n\nUse it when either option is enough. Like a coupon <em>or</em> a member pass.",
+  "idea": "The keyword <code>or</code> joins two conditions. The whole thing is <code>True</code> if <strong>at least one</strong> side is True, so the only way to get False is <code>False or False</code>.\n\nUse it when either option is enough, like having a coupon <em>or</em> a member pass.",
   "code": {
     "filename": "or_demo.py",
     "lines": [
@@ -34,7 +34,7 @@
       "Discount unlocked"
     ]
   },
-  "changeOneLine": "In the editor above, change <code>is_member = True</code> to <code>is_member = False</code>. Press <strong>Run</strong>. You should see <code>Full price</code>.",
+  "changeOneLine": "In the editor above, change <code>is_member = True</code> to <code>is_member = False</code> and press <strong>Run</strong>. You should see <code>Full price</code>.",
   "code2": {
     "filename": "escape.py",
     "lines": [
@@ -52,14 +52,14 @@
   "practice": [
     {
       "text": "Set raining and snowing. Make raining True and snowing False. If either is True, print Stay inside.",
-      "hint": "<code>or</code> is True when at least one side is True. Raining is already True, so you only need one <code>if</code> that checks both weather flags.",
+      "hint": "or is True when at least one side is True. Raining is already True, so you only need one if that checks both weather flags.",
       "starterTip": "Try <code>if raining or snowing:</code> then indented below: <code>print(\"Stay inside\")</code>.",
       "starter": "raining = True\nsnowing = False\n# if with or",
       "gradingNote": "Pass if or is used and Stay inside prints."
     },
     {
       "text": "Print the value of <code>(3 == 4) or (3 < 5)</code>.",
-      "hint": "One side of <code>or</code> can be False as long as the other is True. Wrap the whole expression in <code>print()</code>.",
+      "hint": "One side of or can be False as long as the other side is True. Wrap the whole expression in print().",
       "starterTip": "Try <code>print((3 == 4) or (3 < 5))</code>. The first part is False but the second is True, so the result is True.",
       "starter": "print()",
       "gradingNote": "Pass if output is True using or."
@@ -86,8 +86,8 @@
           "correct": false
         }
       ],
-      "correct": "One True side is enough for or.",
-      "wrong": "or fails only when both sides are False."
+      "correct": "Right, one True side is enough for or.",
+      "wrong": "or only fails when both sides are False."
     },
     {
       "question": "What is <code>False or False</code>?",
@@ -109,8 +109,8 @@
           "correct": false
         }
       ],
-      "correct": "No True side means False.",
-      "wrong": "or needs at least one True."
+      "correct": "Yes, with no True side the answer is False.",
+      "wrong": "or needs at least one True side."
     },
     {
       "question": "How is or different from and?",
@@ -132,13 +132,13 @@
           "correct": false
         }
       ],
-      "correct": "and = both; or = at least one.",
-      "wrong": "Remember: and is stricter than or."
+      "correct": "Right, or needs one True and and needs both.",
+      "wrong": "Remember that and is stricter than or."
     }
   ],
   "project": {
     "title": "Club Entry",
-    "desc": "has_ticket is False and knows_password is True. If either is True, print Come in. Else print Denied.",
+    "desc": "has_ticket is False and knows_password is True. If either one is True print Come in, and else print Denied.",
     "starter": "has_ticket = False\nknows_password = True\n# if / else with or"
   },
   "prev": {

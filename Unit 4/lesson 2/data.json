@@ -6,13 +6,13 @@
   "unitTitle": "Repetition & Loops",
   "title": "for Loops",
   "readTime": 22,
-  "goal": "In this lesson you will learn how a for loop visits each item in a list and runs an indented block once per item.",
+  "goal": "By the end of this lesson you will know how a for loop visits each item in a list and runs an indented block once per item.",
   "learn": [
     "Write a for loop with for and in",
     "Indent the lines that should repeat",
     "Use the loop variable inside the block"
   ],
-  "idea": "A <strong>for loop</strong> runs a block of code once for each item in a sequence (like a list).\n\nYou write <code>for name in names:</code>. The name between <code>for</code> and <code>in</code> is the <strong>loop variable</strong>. Each time through, it holds the next item.\n\nIndent the lines under the <code>for</code> line. Those indented lines are the block that repeats.",
+  "idea": "A <strong>for loop</strong> runs a block of code once for each item in a sequence, like a list.\n\nYou write <code>for name in names:</code>. The name between <code>for</code> and <code>in</code> is the <strong>loop variable</strong>, and each time through the loop it holds the next item. Also indent the lines under the <code>for</code> line, because those indented lines are the block that repeats.",
   "code": {
     "filename": "greetings.py",
     "lines": [
@@ -30,7 +30,7 @@
       "All greeted"
     ]
   },
-  "changeOneLine": "In the editor above, add <code>\"Diana\"</code> to the names list so it has four names. Press <strong>Run</strong>. You should see a fourth Hello line for Diana.",
+  "changeOneLine": "In the editor above, add <code>\"Diana\"</code> to the names list so it has four names and press <strong>Run</strong>. You should see a fourth Hello line for Diana.",
   "code2": {
     "filename": "scores.py",
     "lines": [
@@ -54,7 +54,7 @@
     },
     {
       "text": "Loop over the colors list and print Color: then each color.",
-      "hint": "Use the loop variable color in print. You can show a label and the value in one line.",
+      "hint": "Use the loop variable color in print(). You can show a label and the value in one line.",
       "starterTip": "Try print(\"Color:\", color) on the indented line under for color in colors:.",
       "starter": "colors = [\"red\", \"blue\", \"green\"]\nfor color in colors:\n    # Print Color: and the color\n    print()",
       "gradingNote": "Pass if a for loop prints each color, preferably with the word Color."
@@ -81,7 +81,7 @@
           "correct": false
         }
       ],
-      "correct": "There are three items, so the loop body runs three times.",
+      "correct": "Right, there are three items, so the loop body runs three times.",
       "wrong": "Count the items in the list. The loop runs once per item."
     },
     {
@@ -104,7 +104,7 @@
           "correct": false
         }
       ],
-      "correct": "color is the loop variable. It holds one item each time.",
+      "correct": "Yes, color is the loop variable and it holds one item each time.",
       "wrong": "The name between for and in is the loop variable."
     },
     {
@@ -127,13 +127,13 @@
           "correct": false
         }
       ],
-      "correct": "Indented lines belong to the loop and run each time through.",
-      "wrong": "In Python, indentation shows which lines are inside the loop."
+      "correct": "Right, the indented lines belong to the loop and run every time through.",
+      "wrong": "In Python, the indentation shows which lines are inside the loop."
     }
   ],
   "project": {
     "title": "Team Roster",
-    "desc": "Loop through a list of three player names. Print Player: then each name. After the loop, print Roster complete.",
+    "desc": "Loop through a list of three player names and print Player: then each name. After the loop, print Roster complete.",
     "starter": "players = [\"Maya\", \"Sam\", \"Leo\"]\nfor player in players:\n    print()\n\n# After the loop\nprint()"
   },
   "prev": {

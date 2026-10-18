@@ -6,13 +6,13 @@
   "unitTitle": "Classes",
   "title": "Objects Together",
   "readTime": 25,
-  "goal": "In this lesson you will learn how multiple objects can work together in one program.",
+  "goal": "This lesson covers how several objects can work together in one program.",
   "learn": [
     "Create several objects",
     "Store objects in a list",
     "Loop to call the same method on each"
   ],
-  "idea": "Programs get interesting when objects work <strong>together</strong>. Make several players, put them in a list, and loop:\n\n<code>for p in team: p.card()</code>\n\nSame class, many objects, one loop. Powerful and tidy.",
+  "idea": "Programs get interesting when objects work <strong>together</strong>. Make several players, put them in a list, and loop with <code>for p in team: p.card()</code>.\n\nIt is the same class, many objects, and one loop. That is powerful and tidy.",
   "code": {
     "filename": "together.py",
     "lines": [
@@ -34,7 +34,7 @@
       "Mia - Level 2"
     ]
   },
-  "changeOneLine": "In the editor above, change Mia's level to <code>5</code>. Press <strong>Run</strong>. Last card should show Level 5.",
+  "changeOneLine": "In the editor above, change Mia's level to <code>5</code> and press <strong>Run</strong>. The last card should show Level 5.",
   "code2": {
     "filename": "pets_together.py",
     "lines": [
@@ -56,14 +56,14 @@
   "practice": [
     {
       "text": "Make a list of two Dog objects and loop to print each name.",
-      "hint": "Inside the for loop, d is each Dog. Print d.name so Rex and Zoey show up one line each.",
+      "hint": "Inside the for loop, d is each Dog. Print d.name so Rex and Zoey show up on one line each.",
       "starterTip": "Replace print() in the loop with print(d.name).",
       "starter": "class Dog:\n    def __init__(self, name):\n        self.name = name\ndogs = [Dog(\"Rex\"), Dog(\"Zoey\")]\nfor d in dogs:\n    print()",
       "gradingNote": "Pass if Rex and Zoey print via a loop over objects."
     },
     {
       "text": "Create three Players in a list. Loop and call a greet method you define.",
-      "hint": "Fill greet's print with self.name. team = should be a list of three Player(...) objects with different names.",
+      "hint": "Fill greet's print with self.name. Then team = should be a list of three Player(...) objects with different names.",
       "starterTip": "team = [Player(\"Ava\"), Player(\"Leo\"), Player(\"Mia\")] and in greet: print(\"Hi,\", self.name).",
       "starter": "class Player:\n    def __init__(self, name):\n        self.name = name\n    def greet(self):\n        print()\nteam = \nfor p in team:\n    p.greet()",
       "gradingNote": "Pass if three greetings print from looped objects."
@@ -90,8 +90,8 @@
           "correct": false
         }
       ],
-      "correct": "Lists of objects + loops scale well.",
-      "wrong": "for p in team"
+      "correct": "Right, lists of objects and loops scale well.",
+      "wrong": "It looks like for p in team."
     },
     {
       "question": "Do objects in a list need the same class?",
@@ -113,8 +113,8 @@
           "correct": false
         }
       ],
-      "correct": "Same class makes looping methods easy.",
-      "wrong": "team of Players."
+      "correct": "Yes, the same class makes looping over methods easy.",
+      "wrong": "Think of a team of Players."
     },
     {
       "question": "What does for p in team: p.card() do?",
@@ -136,13 +136,13 @@
           "correct": false
         }
       ],
-      "correct": "One call per object.",
-      "wrong": "Team roll call."
+      "correct": "Right, you get one call per object.",
+      "wrong": "It is a team roll call."
     }
   ],
   "project": {
     "title": "Team Roll Call",
-    "desc": "Make a Player class with __init__ and shout. Put 4 players in a list. Loop shout for each.",
+    "desc": "Make a Player class with __init__ and a shout method. Put four players in a list and loop to shout for each one.",
     "starter": "class Player:\n    def __init__(self, name):\n        self.name = name\n    def shout(self):\n        print(self.name, \"is here!\")\nteam = \nfor p in team:\n    p.shout()"
   },
   "prev": {

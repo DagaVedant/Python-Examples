@@ -6,13 +6,13 @@
   "unitTitle": "Repetition & Loops",
   "title": "range() Basics",
   "readTime": 22,
-  "goal": "In this lesson you will learn how range() makes a sequence of numbers so a for loop can repeat a fixed number of times.",
+  "goal": "This lesson covers how range() makes a sequence of numbers so a for loop can repeat a fixed number of times.",
   "learn": [
     "Use range(n) to count from 0 up to n-1",
     "Pair for with range to repeat n times",
     "Remember that the stop number is not included"
   ],
-  "idea": "<code>range(n)</code> makes the numbers <code>0, 1, 2, …, n-1</code>. It stops <em>before</em> <code>n</code>.\n\nUse it with a for loop when you know how many times to repeat: <code>for i in range(5):</code> runs the block five times with <code>i</code> equal to 0, 1, 2, 3, then 4.\n\nYou do not need a list of numbers written by hand, <code>range</code> builds them for you.",
+  "idea": "<code>range(n)</code> makes the numbers <code>0, 1, 2</code> and so on up to <code>n-1</code>. It stops <em>before</em> <code>n</code>, which surprises a lot of beginners.\n\nUse it with a for loop when you know how many times to repeat. <code>for i in range(5):</code> runs the block five times, with <code>i</code> equal to 0, 1, 2, 3, then 4. You do not need to write the numbers by hand, since <code>range</code> builds them for you.",
   "code": {
     "filename": "count.py",
     "lines": [
@@ -35,7 +35,7 @@
       "Beep"
     ]
   },
-  "changeOneLine": "In the editor above, change <code>range(3)</code> to <code>range(4)</code> in the Beep loop. Press <strong>Run</strong>. You should see four Beep lines.",
+  "changeOneLine": "In the editor above, change <code>range(3)</code> to <code>range(4)</code> in the Beep loop and press <strong>Run</strong>. You should see four Beep lines.",
   "code2": {
     "filename": "laps.py",
     "lines": [
@@ -86,7 +86,7 @@
           "correct": false
         }
       ],
-      "correct": "range(4) is 0, 1, 2, 3. It stops before 4.",
+      "correct": "Right, range(4) is 0, 1, 2, 3 and it stops before 4.",
       "wrong": "With one argument, range starts at 0 and stops before that number."
     },
     {
@@ -109,7 +109,7 @@
           "correct": false
         }
       ],
-      "correct": "range(3) has three values, so the loop body runs three times.",
+      "correct": "Yes, range(3) has three values, so the loop runs three times.",
       "wrong": "Count the values: 0, 1, 2. That is three passes."
     },
     {
@@ -132,8 +132,8 @@
           "correct": false
         }
       ],
-      "correct": "The stop value is never included.",
-      "wrong": "range goes up to but not including the stop number."
+      "correct": "Right, the stop value is never included.",
+      "wrong": "range goes up to the stop number but does not include it."
     }
   ],
   "project": {

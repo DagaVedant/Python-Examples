@@ -6,13 +6,13 @@
   "unitTitle": "Dictionaries",
   "title": "Updating Values",
   "readTime": 22,
-  "goal": "In this lesson you will learn how to update a value that is already stored under a key.",
+  "goal": "This lesson covers how to update a value that is already stored under a key.",
   "learn": [
     "Change a value with the same assignment syntax",
     "See that the key stays and the value changes",
     "Update more than once"
   ],
-  "idea": "To <strong>update</strong> a value, assign to a key that already exists:\n\n<code>scores[\"Ava\"] = 95</code>\n\nSame syntax as adding! If the key exists, Python replaces the old value.",
+  "idea": "To <strong>update</strong> a value, assign to a key that already exists, like <code>scores[\"Ava\"] = 95</code>.\n\nIt is the same syntax as adding a key. The only difference is that when the key already exists, Python replaces the old value.",
   "code": {
     "filename": "update.py",
     "lines": [
@@ -30,7 +30,7 @@
       "{'Ava': 95, 'Leo': 90}"
     ]
   },
-  "changeOneLine": "In the editor above, change the update to <code>scores[\"Ava\"] = 100</code>. Press <strong>Run</strong>. Ava should be 100.",
+  "changeOneLine": "In the editor above, change the update to <code>scores[\"Ava\"] = 100</code> and press <strong>Run</strong>. Ava should be 100.",
   "code2": {
     "filename": "coins.py",
     "lines": [
@@ -55,7 +55,7 @@
     },
     {
       "text": "Add 10 coins to the bag using the current value, then print coins.",
-      "hint": "Read the old value with bag[\"coins\"], add 10, and store it back: bag[\"coins\"] = bag[\"coins\"] + 10.",
+      "hint": "Read the old value with bag[\"coins\"], add 10, and store it back with bag[\"coins\"] = bag[\"coins\"] + 10.",
       "starterTip": "On the blank line: bag[\"coins\"] = bag[\"coins\"] + 10. print(bag[\"coins\"]) should show 30.",
       "starter": "bag = {\"coins\": 20}\n# Increase coins by 10\n\nprint(bag[\"coins\"])",
       "gradingNote": "Pass if coins become 30 using an update."
@@ -63,7 +63,7 @@
   ],
   "quiz": [
     {
-      "question": "scores[\"Ava\"] = 95 when Ava already exists…",
+      "question": "scores[\"Ava\"] = 95 when Ava already exists...",
       "options": [
         {
           "text": "Adds a second Ava key",
@@ -82,7 +82,7 @@
           "correct": false
         }
       ],
-      "correct": "Existing keys get their value replaced.",
+      "correct": "Right, existing keys get their value replaced.",
       "wrong": "Assignment updates the value for that key."
     },
     {
@@ -105,11 +105,11 @@
           "correct": false
         }
       ],
-      "correct": "Add and update use the same assignment form.",
+      "correct": "Yes, adding and updating use the same dict[key] = value form.",
       "wrong": "Whether the key is new or old, assignment works."
     },
     {
-      "question": "After bag[\"coins\"] = bag[\"coins\"] + 5, if coins was 25…",
+      "question": "After bag[\"coins\"] = bag[\"coins\"] + 5, if coins was 25...",
       "options": [
         {
           "text": "coins is 25",
@@ -128,13 +128,13 @@
           "correct": false
         }
       ],
-      "correct": "You read the old value, add 5, store 30.",
+      "correct": "Right, you read the old value, add 5, and store 30.",
       "wrong": "25 + 5 becomes 30."
     }
   ],
   "project": {
     "title": "Level Up",
-    "desc": "Player starts at level 3. Update to 4 and print, then to 5 and print.",
+    "desc": "A player starts at level 3. Update it to 4 and print, and then update it to 5 and print.",
     "starter": "player = {\"name\": \"Sam\", \"level\": 3}\n# Level up to 4, print level\n\n# Level up to 5, print level\n"
   },
   "prev": {

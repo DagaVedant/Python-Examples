@@ -6,13 +6,13 @@
   "unitTitle": "Functions",
   "title": "Return Values",
   "readTime": 23,
-  "goal": "In this lesson you will learn how to send a result back out of a function with return so the caller can use that value.",
+  "goal": "This lesson covers how to send a result back out of a function with return, so the caller can use that value.",
   "learn": [
     "Use return to send a value back",
     "See that return leaves the function right away",
     "Tell print and return apart"
   ],
-  "idea": "<code>return</code> sends a value back to whoever called the function. That is different from only printing inside the function, because a returned value can be stored or used in another calculation.\n\nWhen Python hits <code>return</code>, it leaves the function immediately and hands the value back.",
+  "idea": "<code>return</code> sends a value back to whoever called the function. That is different from only printing inside the function, because a returned value can be stored or used in another calculation.\n\nWhen Python hits <code>return</code>, it leaves the function immediately and hands the value back. So any lines after the return inside that function never run.",
   "code": {
     "filename": "add.py",
     "lines": [
@@ -35,7 +35,7 @@
       "18"
     ]
   },
-  "changeOneLine": "In the editor above, change <code>print(double(4))</code> to <code>print(double(5))</code>. Press <strong>Run</strong>. That line of output should say 10.",
+  "changeOneLine": "In the editor above, change <code>print(double(4))</code> to <code>print(double(5))</code> and press <strong>Run</strong>. That line of the output should say 10.",
   "code2": {
     "filename": "grade.py",
     "lines": [
@@ -60,7 +60,7 @@
   "practice": [
     {
       "text": "Finish add(a, b) so it returns the sum. Print the result of calling it.",
-      "hint": "return sends a value back. Put the addition of a and b right after return, not a print inside the function.",
+      "hint": "return sends a value back. Put the addition of a and b right after return, and do not use a print inside the function.",
       "starterTip": "Change the lone return to return a + b. print(add(2, 3)) is already there; run it and you should see 5.",
       "starter": "def add(a, b):\n    return\n\nprint(add(2, 3))",
       "gradingNote": "Pass if add returns a + b (not only prints inside) and the sum appears in the output."
@@ -94,7 +94,7 @@
           "correct": false
         }
       ],
-      "correct": "return passes the value back to the caller. print only shows it on the screen.",
+      "correct": "Right, return gives the value back to your program while print only shows it.",
       "wrong": "return gives the value back to the rest of your program. print only shows it."
     },
     {
@@ -117,8 +117,8 @@
           "correct": false
         }
       ],
-      "correct": "add returns 5, and print shows that returned value.",
-      "wrong": "The function returns 2 + 3, which is 5, and print displays it."
+      "correct": "Yes, add returns 2 + 3, which is 5, and print shows that value.",
+      "wrong": "The function returns 5 and print displays it."
     },
     {
       "question": "What happens when Python hits a return line?",
@@ -140,13 +140,13 @@
           "correct": false
         }
       ],
-      "correct": "return exits the function immediately with the value.",
-      "wrong": "After return, the rest of that function body does not run."
+      "correct": "Right, return exits the function immediately with the value.",
+      "wrong": "After a return, the rest of that function body does not run."
     }
   ],
   "project": {
     "title": "Mini Calculator Returns",
-    "desc": "Finish four tiny functions that each take two numbers and return a result: add, subtract, multiply, and divide. Print each answer. Use fixed numbers. No input().",
+    "desc": "Finish four tiny functions that each take two numbers and return a result: add, subtract, multiply, and divide. Print each answer using fixed numbers, with no input().",
     "starter": "def add(a, b):\n    return a + b\n\ndef subtract(a, b):\n    return\n\ndef multiply(a, b):\n    return a * b\n\ndef divide(a, b):\n    return\n\nprint(\"Add:\", add(10, 2))\nprint(\"Subtract:\", subtract(10, 2))\nprint()\nprint()"
   },
   "prev": {

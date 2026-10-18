@@ -9,10 +9,10 @@
   "goal": "In this lesson you will combine and, or, and not, and use parentheses to keep the meaning clear.",
   "learn": [
     "Mix and, or, and not safely",
-    "Use parentheses to group logic",
+    "Use parentheses to group the logic",
     "Build a real decision from several facts"
   ],
-  "idea": "Real decisions often need more than one operator. Parentheses <code>()</code> show what groups together, just like in math.\n\nExample: <code>(has_ticket or is_vip) and not banned</code> means you need a ticket or VIP status, and you must not be banned.\n\nWrite conditions so a human can read them. When unsure, add parentheses.",
+  "idea": "Real decisions often need more than one operator. Parentheses <code>()</code> show what groups together, just like in math class.\n\nFor example, <code>(has_ticket or is_vip) and not banned</code> means you need a ticket or VIP status, and you must not be banned. Write your conditions so a human can read them, and when you are unsure, add parentheses.",
   "code": {
     "filename": "complex.py",
     "lines": [
@@ -35,7 +35,7 @@
       "Award earned"
     ]
   },
-  "changeOneLine": "In the editor above, change <code>banned = False</code> to <code>banned = True</code>. Press <strong>Run</strong>. First message should be <code>Entry blocked</code>.",
+  "changeOneLine": "In the editor above, change <code>banned = False</code> to <code>banned = True</code> and press <strong>Run</strong>. The first message should be <code>Entry blocked</code>.",
   "code2": {
     "filename": "weather_plan.py",
     "lines": [
@@ -54,14 +54,14 @@
   "practice": [
     {
       "text": "Set has_key True, door_locked True, alarm_off True. If has_key and door_locked and alarm_off, print Safe to open.",
-      "hint": "All three variables are True, so chain them with <code>and</code> in one <code>if</code> line. Every part must be True for the message to print.",
+      "hint": "All three variables are True, so chain them with and in one if line. Every part has to be True for the message to print.",
       "starterTip": "Try <code>if has_key and door_locked and alarm_off:</code> then indented below: <code>print(\"Safe to open\")</code>.",
       "starter": "has_key = True\ndoor_locked = True\nalarm_off = True\n# if with and",
       "gradingNote": "Pass if all three are and-ed and Safe to open prints."
     },
     {
       "text": "Use parentheses: allow entry if (age >= 12 or with_adult) and not closed. Set age=10, with_adult=True, closed=False.",
-      "hint": "Parentheses group the <code>or</code> first: age 10 fails alone but <code>with_adult</code> saves it. Then <code>and not closed</code> must also be True.",
+      "hint": "The parentheses group the or first. Age 10 fails alone but with_adult saves it, and then and not closed must also be True.",
       "starterTip": "Try <code>if (age >= 12 or with_adult) and not closed:</code> then print something like <code>print(\"Come in\")</code> indented underneath.",
       "starter": "age = 10\nwith_adult = True\nclosed = False\n# if (age >= 12 or with_adult) and not closed",
       "gradingNote": "Pass if parentheses group or, and not closed is used, and a success message prints."
@@ -88,8 +88,8 @@
           "correct": false
         }
       ],
-      "correct": "Parentheses control which parts combine first.",
-      "wrong": "Grouping avoids mix-ups between and and or."
+      "correct": "Right, parentheses make the grouping clear so the logic means what you intend.",
+      "wrong": "Parentheses control which parts combine first."
     },
     {
       "question": "What does <code>(True or False) and not False</code> equal?",
@@ -111,8 +111,8 @@
           "correct": false
         }
       ],
-      "correct": "(True or False) is True; not False is True; True and True is True.",
-      "wrong": "Work inside parens first, then and."
+      "correct": "Yes, (True or False) is True, not False is True, and True and True is True.",
+      "wrong": "Work inside the parentheses first, then the and."
     },
     {
       "question": "Which best matches: ticket or VIP, and not banned?",
@@ -134,13 +134,13 @@
           "correct": false
         }
       ],
-      "correct": "Group the or, then require not banned.",
-      "wrong": "Parentheses around ticket/VIP keep the meaning right."
+      "correct": "Right, group the or and then require not banned.",
+      "wrong": "Parentheses around ticket and VIP keep the meaning right."
     }
   ],
   "project": {
     "title": "Launch Checklist",
-    "desc": "fuel_ok True, weather_ok True, abort False. If (fuel_ok and weather_ok) and not abort, print Launch. Else print Hold.",
+    "desc": "fuel_ok is True, weather_ok is True, and abort is False. If (fuel_ok and weather_ok) and not abort, print Launch, and else print Hold.",
     "starter": "fuel_ok = True\nweather_ok = True\nabort = False\n# complex if / else"
   },
   "prev": {

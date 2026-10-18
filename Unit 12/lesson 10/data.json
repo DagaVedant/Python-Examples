@@ -8,12 +8,12 @@
   "readTime": 25,
   "goal": "In this lesson you will design a small program with a class that has data, __init__, and methods working together.",
   "learn": [
-    "Choose attributes your thing needs",
+    "Choose the attributes your thing needs",
     "Set them in __init__",
     "Add methods for actions",
-    "Use objects in a tiny scene"
+    "Use the objects in a tiny scene"
   ],
-  "idea": "Design tip: pick a real thing (shop item, pet, hero). List what it <strong>knows</strong> (attributes) and what it <strong>does</strong> (methods). Put setup in <code>__init__</code>.\n\nThen create objects and call methods to tell a tiny story. That is designing with classes!",
+  "idea": "Here is a design tip. Pick a real thing, like a shop item, a pet, or a hero. List what it <strong>knows</strong> (attributes) and what it <strong>does</strong> (methods), and put the setup in <code>__init__</code>.\n\nThen create some objects and call their methods to tell a tiny story. That is designing with classes.",
   "code": {
     "filename": "shop.py",
     "lines": [
@@ -44,7 +44,7 @@
       "Apple - $1 x2"
     ]
   },
-  "changeOneLine": "In the editor above, change starting stock to <code>6</code>. Press <strong>Run</strong>. First label should show x6.",
+  "changeOneLine": "In the editor above, change the starting stock to <code>6</code> and press <strong>Run</strong>. The first label should show x6.",
   "code2": {
     "filename": "pet_design.py",
     "lines": [
@@ -68,7 +68,7 @@
   "practice": [
     {
       "text": "Design Book with title, pages in __init__, and a blurb method. Create one and call blurb.",
-      "hint": "__init__ should save title and pages on self. blurb prints something that uses self.title and/or self.pages.",
+      "hint": "__init__ should save title and pages on self. blurb prints something that uses self.title or self.pages.",
       "starterTip": "self.title = title, self.pages = pages, and blurb: print(self.title, \"has\", self.pages, \"pages\").",
       "starter": "class Book:\n    def __init__(self, title, pages):\n        \n    def blurb(self):\n        print()\nb = Book(\"Wonder\", 310)\nb.blurb()",
       "gradingNote": "Pass if blurb uses attributes from __init__."
@@ -102,8 +102,8 @@
           "correct": false
         }
       ],
-      "correct": "Attributes + methods = design.",
-      "wrong": "Data and actions."
+      "correct": "Right, a class design is data plus actions.",
+      "wrong": "List what it knows and what it does."
     },
     {
       "question": "Where should starting data be set?",
@@ -125,8 +125,8 @@
           "correct": false
         }
       ],
-      "correct": "Init builds a ready object.",
-      "wrong": "Constructor setup."
+      "correct": "Yes, init builds a ready object.",
+      "wrong": "That is constructor setup."
     },
     {
       "question": "What makes a tiny class scene?",
@@ -148,13 +148,13 @@
           "correct": false
         }
       ],
-      "correct": "Objects acting tells the story.",
-      "wrong": "Design then demo."
+      "correct": "Right, objects acting out is what tells the story.",
+      "wrong": "Design first and then demo."
     }
   ],
   "project": {
     "title": "Tiny Shop",
-    "desc": "Item class with name, price, stock; methods label and sell. Make two items, label both, sell from one, label again.",
+    "desc": "Make an Item class with name, price, and stock, and with label and sell methods. Make two items, label both, sell from one, and label again.",
     "starter": "class Item:\n    def __init__(self, name, price, stock):\n        \n    def label(self):\n        print()\n    def sell(self, n):\n        \n# make two items, demo labels and a sell\n"
   },
   "prev": {

@@ -6,13 +6,13 @@
   "unitTitle": "Errors",
   "title": "Error Practice",
   "readTime": 25,
-  "goal": "In this lesson you will practice spotting, catching, and fixing errors in short programs.",
+  "goal": "This lesson covers how to spot, catch, and fix errors in short programs, and how to choose between fixing and catching.",
   "learn": [
-    "Spot common error types",
-    "Use try/except with friendly messages",
-    "Fix root causes when you can"
+    "Spot the common error types",
+    "Use try and except with friendly messages",
+    "Fix the root cause when you can"
   ],
-  "idea": "Practice time! Sometimes you <strong>fix</strong> the bug (best). Sometimes you <strong>catch</strong> a risk you cannot avoid (like bad text becoming a number).\n\nRead the message, choose fix vs catch, and keep the program kind to the next kid who runs it.",
+  "idea": "Practice time. Sometimes you <strong>fix</strong> the bug, which is the best option. Other times you <strong>catch</strong> a risk you cannot avoid, like bad text turning into a number.\n\nRead the message, choose between fixing and catching, and keep the program kind to the next person who runs it.",
   "code": {
     "filename": "practice_demo.py",
     "lines": [
@@ -33,7 +33,7 @@
       "Skip: oops (not a number)"
     ]
   },
-  "changeOneLine": "In the editor above, change the first value from <code>\"10\"</code> to <code>\"5\"</code>. Press <strong>Run</strong>. First result should be 20.0.",
+  "changeOneLine": "In the editor above, change the first value from <code>\"10\"</code> to <code>\"5\"</code> and press <strong>Run</strong>. The first result should be 20.0.",
   "code2": {
     "filename": "fix_name.py",
     "lines": [
@@ -48,14 +48,14 @@
   "practice": [
     {
       "text": "Loop ['3','0','x']. For each, try 9/int(item). Catch ValueError and ZeroDivisionError with different messages.",
-      "hint": "Inside try:, compute print(9 / int(item)). \"3\" works, \"0\" hits ZeroDivisionError, \"x\" hits ValueError. Give each except its own message.",
+      "hint": "Inside try:, print(9 / int(item)). \"3\" works, \"0\" hits ZeroDivisionError, and \"x\" hits ValueError. Give each except its own message.",
       "starterTip": "In try: add print(9 / int(item)). In except blocks try print(\"Not a number!\") and print(\"Cannot divide by zero!\").",
       "starter": "items = [\"3\", \"0\", \"x\"]\nfor item in items:\n    try:\n        \n    except ValueError:\n        print()\n    except ZeroDivisionError:\n        print()",
       "gradingNote": "Pass if 3.0 prints, zero-divide is caught, and x triggers ValueError message."
     },
     {
       "text": "Fix the NameError (do not use try). Print the sum of a and b.",
-      "hint": "There is no variable c. Only a and b exist. The sum of 4 and 6 should be 10.",
+      "hint": "There is no variable c, only a and b. The sum of 4 and 6 should be 10.",
       "starterTip": "Change print(a + c) to print(a + b). No try/except needed, just fix the typo.",
       "starter": "a = 4\nb = 6\nprint(a + c)",
       "gradingNote": "Pass if print uses a + b and shows 10 with no error."
@@ -82,8 +82,8 @@
           "correct": false
         }
       ],
-      "correct": "Typos should be fixed; risky input may be caught.",
-      "wrong": "Choose the right tool."
+      "correct": "Right, typos should be fixed and risky input can be caught.",
+      "wrong": "Choose the right tool for the job."
     },
     {
       "question": "Can one try have more than one except?",
@@ -105,7 +105,7 @@
           "correct": false
         }
       ],
-      "correct": "Stack specific except blocks.",
+      "correct": "Yes, you can stack specific except blocks for different error types.",
       "wrong": "ValueError and ZeroDivisionError can both appear."
     },
     {
@@ -128,13 +128,13 @@
           "correct": false
         }
       ],
-      "correct": "Clear handling builds confidence.",
-      "wrong": "Clues + kindness."
+      "correct": "Right, clear handling builds your confidence.",
+      "wrong": "Clues and kindness."
     }
   ],
   "project": {
     "title": "Error Detective",
-    "desc": "Build a tiny tool that tries to convert each of '8', '0', 'hi' and print 16/n. Use specific excepts. End with All checked.",
+    "desc": "Build a tiny tool that tries to convert each of '8', '0', and 'hi' and prints 16 / n. Use specific excepts and end with All checked.",
     "starter": "samples = [\"8\", \"0\", \"hi\"]\nfor s in samples:\n    try:\n        n = int(s)\n        print(16 / n)\n    except ValueError:\n        print()\n    except ZeroDivisionError:\n        print()\nprint(\"All checked\")"
   },
   "prev": {

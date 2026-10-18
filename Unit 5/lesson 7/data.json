@@ -6,13 +6,13 @@
   "unitTitle": "Functions",
   "title": "Functions Calling Functions",
   "readTime": 23,
-  "goal": "In this lesson you will learn how one function can call another so you can build bigger behavior from small pieces.",
+  "goal": "This lesson covers how one function can call another, so you can build bigger behavior out of small pieces.",
   "learn": [
     "Call one function from inside another",
     "Use a returned value from the inner call",
     "Keep each function focused on one job"
   ],
-  "idea": "One function can <strong>call</strong> another. That is normal and useful.\n\nExample: <code>grade</code> picks a letter. <code>print_report</code> calls <code>grade</code>, then prints a full line. Each function does one clear job. Together they make a small report.",
+  "idea": "One function can <strong>call</strong> another, and that is completely normal.\n\nFor example <code>grade</code> picks a letter, and <code>print_report</code> calls <code>grade</code> and then prints a full line. Each function does one clear job, and together they make a small report.",
   "code": {
     "filename": "report.py",
     "lines": [
@@ -38,7 +38,7 @@
       "Leo scored 60 - Grade: C"
     ]
   },
-  "changeOneLine": "In the editor above, change Ava's score from <code>95</code> to <code>88</code>. Press <strong>Run</strong>. Ava's line should now show Grade: B.",
+  "changeOneLine": "In the editor above, change Ava's score from <code>95</code> to <code>88</code> and press <strong>Run</strong>. Ava's line should now show Grade: B.",
   "code2": {
     "filename": "team.py",
     "lines": [
@@ -60,7 +60,7 @@
   "practice": [
     {
       "text": "Finish grade(score) and print_report(name, score). The report function should call grade and print one line.",
-      "hint": "print_report already calls grade and saves the letter. Fill in print() with name, score, and letter in one message.",
+      "hint": "print_report already calls grade and saves the letter. Fill in print() with the name, score, and letter in one message.",
       "starterTip": "Try print(name, \"scored\", score, \"- Grade:\", letter) inside print_report. Like the lesson example.",
       "starter": "def grade(score):\n    if score >= 90:\n        return \"A\"\n    else:\n        return \"B\"\n\ndef print_report(name, score):\n    letter = grade(score)\n    print()\n\nprint_report(\"Maya\", 92)",
       "gradingNote": "Pass if grade returns a letter, print_report calls grade, and a report line is printed using name and score."
@@ -94,7 +94,7 @@
           "correct": false
         }
       ],
-      "correct": "Functions can call other functions to build bigger behavior from small pieces.",
+      "correct": "Right, functions can call other functions to build bigger behavior from small pieces.",
       "wrong": "Yes, one function can call another. That is common and useful."
     },
     {
@@ -117,7 +117,7 @@
           "correct": false
         }
       ],
-      "correct": "grade does one job (pick the letter). print_report does one job (show the report).",
+      "correct": "Yes, grade does one job by picking the letter and print_report does one job by showing the report.",
       "wrong": "grade returns the letter. print_report calls grade and prints the line."
     },
     {
@@ -140,7 +140,7 @@
           "correct": false
         }
       ],
-      "correct": "One helper, many callers. Easier to fix and reuse.",
+      "correct": "Right, one helper can have many callers and is easier to fix and reuse.",
       "wrong": "Reuse and clear jobs are the point of calling helpers."
     }
   ],

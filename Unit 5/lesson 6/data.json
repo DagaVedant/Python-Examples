@@ -6,13 +6,13 @@
   "unitTitle": "Functions",
   "title": "Using What You Return",
   "readTime": 23,
-  "goal": "In this lesson you will learn how to store a return value in a variable and use it later in prints or other calculations.",
+  "goal": "By the end of this lesson you will know how to store a return value in a variable and use it later in prints or other calculations.",
   "learn": [
     "Store a return value in a variable",
     "Use that variable in print or math",
     "Call a function inside a bigger expression"
   ],
-  "idea": "When a function returns a value, you can <strong>catch</strong> it: <code>result = add(3, 7)</code>. Then use <code>result</code> as many times as you want.\n\nYou can also use a call inside another expression, like <code>print(add(4, 6) * 2)</code>. Storing the answer makes longer programs easier to read.",
+  "idea": "When a function returns a value, you can <strong>catch</strong> it with something like <code>result = add(3, 7)</code>. After that you can use <code>result</code> as many times as you want.\n\nYou can also put a call inside another expression, like <code>print(add(4, 6) * 2)</code>. Storing the answer in a variable basically makes longer programs easier to read.",
   "code": {
     "filename": "use_return.py",
     "lines": [
@@ -32,7 +32,7 @@
       "Another: 20"
     ]
   },
-  "changeOneLine": "In the editor above, change <code>result = add(3, 7)</code> to <code>result = add(5, 5)</code>. Press <strong>Run</strong>. The first two lines should use 10 as the stored result.",
+  "changeOneLine": "In the editor above, change <code>result = add(3, 7)</code> to <code>result = add(5, 5)</code> and press <strong>Run</strong>. The first two lines should use 10 as the stored result.",
   "code2": {
     "filename": "tax.py",
     "lines": [
@@ -51,14 +51,14 @@
   "practice": [
     {
       "text": "Finish add(a, b) so it returns the sum. Store the result of add(2, 3) and print it.",
-      "hint": "Finish return with a + b, then print whatever is stored in result. That variable catches the returned value.",
+      "hint": "Finish the return with a + b, then print whatever is stored in result. That variable catches the returned value.",
       "starterTip": "Use return a + b in add, and replace the empty print() with print(result).",
       "starter": "def add(a, b):\n    return\n\nresult = add(2, 3)\nprint()",
       "gradingNote": "Pass if add returns a+b, the return value is stored in a variable, and that value is printed."
     },
     {
       "text": "Finish double(n) so it returns n * 2. Store double(8) in answer, then print answer and answer + 1.",
-      "hint": "double should return n times 2. The second print line should use answer in a little math.",
+      "hint": "double should return n times 2. The second print line should use answer in a little bit of math.",
       "starterTip": "Try return n * 2 in double, and print(answer + 1) on the last blank print(). First line should show 16.",
       "starter": "def double(n):\n    return\n\nanswer = double(8)\nprint(answer)\nprint()",
       "gradingNote": "Pass if double returns n*2, answer is 16, and a second print uses answer (like 17)."
@@ -85,7 +85,7 @@
           "correct": false
         }
       ],
-      "correct": "Storing the result lets you reuse it in prints or other calculations.",
+      "correct": "Right, storing the result lets you reuse it in prints or other calculations.",
       "wrong": "The main reason is so you can use the answer again later."
     },
     {
@@ -108,7 +108,7 @@
           "correct": false
         }
       ],
-      "correct": "add returns 5, and that value is stored in result.",
+      "correct": "Yes, add returns 5 and that value is stored in result.",
       "wrong": "The variable holds whatever the function returned."
     },
     {
@@ -131,13 +131,13 @@
           "correct": false
         }
       ],
-      "correct": "A returned number can be multiplied, added, or printed like any other value.",
+      "correct": "Right, a returned number can go into a bigger expression like any other value.",
       "wrong": "Calls that return values can sit inside larger expressions."
     }
   ],
   "project": {
     "title": "Shopping Math",
-    "desc": "Write subtotal(a, b) that returns a + b, and with_tax(amount) that returns amount * 1.1. Store a subtotal of two prices, then store the taxed total, then print both.",
+    "desc": "Write subtotal(a, b) that returns a + b, and with_tax(amount) that returns amount * 1.1. Store a subtotal of two prices, store the taxed total, and then print both.",
     "starter": "def subtotal(a, b):\n    return\n\ndef with_tax(amount):\n    return\n\nbill = subtotal(12, 8)\ntotal = with_tax(bill)\nprint(\"Bill:\", bill)\nprint(\"Total:\", total)"
   },
   "prev": {

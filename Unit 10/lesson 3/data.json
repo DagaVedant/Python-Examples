@@ -6,13 +6,13 @@
   "unitTitle": "Errors",
   "title": "Common Errors",
   "readTime": 22,
-  "goal": "In this lesson you will recognize common errors: NameError, ZeroDivisionError, and TypeError.",
+  "goal": "This lesson covers how to recognize three common errors: NameError, ZeroDivisionError, and TypeError.",
   "learn": [
-    "NameError: unknown name",
-    "ZeroDivisionError: divide by zero",
-    "TypeError: wrong types mixed"
+    "NameError means Python does not know the name",
+    "ZeroDivisionError means you divided by zero",
+    "TypeError means you mixed types that do not go together"
   ],
-  "idea": "Three common errors:\n\n<strong>NameError</strong>. You used a name Python does not know (often a typo).\n<strong>ZeroDivisionError</strong>. You divided by zero.\n<strong>TypeError</strong>. You mixed types that do not go together, like adding a number to text.",
+  "idea": "Here are three common errors.\n\n<strong>NameError</strong> means you used a name Python does not know, which is often a typo.\n<strong>ZeroDivisionError</strong> means you divided by zero.\n<strong>TypeError</strong> means you mixed types that do not go together, like adding a number to text.",
   "code": {
     "filename": "common.py",
     "lines": [
@@ -28,7 +28,7 @@
       "Fix the cause, then rerun"
     ]
   },
-  "changeOneLine": "In the editor above, add a fifth print that says <code>\"You can fix these!\"</code>. Press <strong>Run</strong>.",
+  "changeOneLine": "In the editor above, add a fifth print that says <code>\"You can fix these!\"</code> and press <strong>Run</strong>.",
   "code2": {
     "filename": "safe_math.py",
     "lines": [
@@ -45,7 +45,7 @@
   "practice": [
     {
       "text": "Fix the ZeroDivisionError by changing friends so the division works. Print the result.",
-      "hint": "You cannot divide by zero. Change friends to a number greater than 0. Then cookies / friends will work.",
+      "hint": "You cannot divide by zero. Change friends to a number greater than 0 and then cookies / friends will work.",
       "starterTip": "Try friends = 3 (or 4, or 6). Run again. You should see 4.0 or another number, not a crash.",
       "starter": "cookies = 12\nfriends = 0\nprint(cookies / friends)",
       "gradingNote": "Pass if division runs with non-zero friends and prints a number."
@@ -79,8 +79,8 @@
           "correct": false
         }
       ],
-      "correct": "Unknown names raise NameError.",
-      "wrong": "Check spelling."
+      "correct": "Right, unknown names raise a NameError.",
+      "wrong": "Check the spelling."
     },
     {
       "question": "Which error is 10 / 0?",
@@ -102,8 +102,8 @@
           "correct": false
         }
       ],
-      "correct": "Division by zero is ZeroDivisionError.",
-      "wrong": "Do not divide by zero."
+      "correct": "Yes, dividing by zero is a ZeroDivisionError.",
+      "wrong": "Never divide by zero."
     },
     {
       "question": "Which error is 5 + \"pts\"?",
@@ -125,13 +125,13 @@
           "correct": false
         }
       ],
-      "correct": "Mixing int and str with + causes TypeError.",
+      "correct": "Right, mixing a number and text with + causes a TypeError.",
       "wrong": "Cast with str() or use commas in print."
     }
   ],
   "project": {
     "title": "Error Zoo",
-    "desc": "Print a one-line tip for NameError, ZeroDivisionError, and TypeError (three tips total).",
+    "desc": "Print a one-line tip for each of NameError, ZeroDivisionError, and TypeError. That makes three tips in total.",
     "starter": "print(\"NameError tip:\", )\nprint()\nprint()"
   },
   "prev": {

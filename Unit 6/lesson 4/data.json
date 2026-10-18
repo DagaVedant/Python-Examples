@@ -6,13 +6,13 @@
   "unitTitle": "Lists",
   "title": "Changing Items",
   "readTime": 22,
-  "goal": "In this lesson you will learn how to replace a value already in a list by assigning to an index.",
+  "goal": "By the end of this lesson you will know how to replace a value that is already in a list by assigning to an index.",
   "learn": [
     "Change an item with list[index] = value",
     "The list updates in place",
     "Other indexes stay the same"
   ],
-  "idea": "Lists can change after you create them. To replace one item, put the index on the left of <code>=</code>:\n\n    <code>scores[1] = 95</code>\n\n    That swaps only that spot. The rest of the list stays the same.",
+  "idea": "Lists can change after you create them. To replace one item, put the index on the left side of the <code>=</code>, like <code>scores[1] = 95</code>.\n\nThat swaps only that one spot, and the rest of the list stays exactly the same.",
   "code": {
     "filename": "update.py",
     "lines": [
@@ -33,7 +33,7 @@
       "Final: [72, 85, 90]"
     ]
   },
-  "changeOneLine": "In the editor above, change <code>scores[1] = 85</code> to <code>scores[1] = 99</code>. Press <strong>Run</strong>. The middle number should become <code>99</code>.",
+  "changeOneLine": "In the editor above, change <code>scores[1] = 85</code> to <code>scores[1] = 99</code> and press <strong>Run</strong>. The middle number should become <code>99</code>.",
   "code2": {
     "filename": "roster.py",
     "lines": [
@@ -50,14 +50,14 @@
   "practice": [
     {
       "text": "Change the second color to <code>\"purple\"</code> and print the list.",
-      "hint": "The second item is index 1 (not 2). Assign a new string to that spot with colors[1] = ...",
+      "hint": "The second item is index 1 and not 2. Assign a new string to that spot with colors[1] = ...",
       "starterTip": "Add colors[1] = \"purple\" between the comment and print(colors).",
       "starter": "colors = [\"red\", \"blue\", \"green\"]\n# Change index 1\n\nprint(colors)",
       "gradingNote": "Pass if colors[1] is set to \"purple\" and the list is printed."
     },
     {
       "text": "Fix the typo: change <code>\"appple\"</code> to <code>\"apple\"</code> using an index assignment, then print.",
-      "hint": "The misspelled word is the first item, so use index 0 on the left side of = to replace it.",
+      "hint": "The misspelled word is the first item, so use index 0 on the left side of the = to replace it.",
       "starterTip": "Write fruit[0] = \"apple\" under the comment, then run print(fruit).",
       "starter": "fruit = [\"appple\", \"banana\", \"cherry\"]\n# Fix index 0\n\nprint(fruit)",
       "gradingNote": "Pass if fruit[0] becomes \"apple\" via assignment and the list is printed."
@@ -84,7 +84,7 @@
           "correct": false
         }
       ],
-      "correct": "Assignment to an index replaces that item.",
+      "correct": "Right, assigning to an index replaces that item.",
       "wrong": "list[index] = value changes that one spot."
     },
     {
@@ -107,8 +107,8 @@
           "correct": false
         }
       ],
-      "correct": "Index 2 is the third item, so it becomes 9.",
-      "wrong": "Index 2 is the last item in a 3-item list."
+      "correct": "Yes, index 2 is the third item, so it becomes 9.",
+      "wrong": "Index 2 is the last item in a list of three."
     },
     {
       "question": "Does changing one index change the other items?",
@@ -130,13 +130,13 @@
           "correct": false
         }
       ],
-      "correct": "Only the assigned index is replaced.",
-      "wrong": "Other positions keep their old values."
+      "correct": "Right, only the index you assign to gets replaced.",
+      "wrong": "The other positions keep their old values."
     }
   ],
   "project": {
     "title": "Score Correction",
-    "desc": "You have three quiz scores. Change the lowest one to a better score, then print the updated list.",
+    "desc": "You have three quiz scores. Change the lowest one to a better score and then print the updated list.",
     "starter": "scores = [60, 88, 91]\n# Raise the first score\n\nprint(scores)"
   },
   "prev": {

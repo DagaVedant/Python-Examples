@@ -6,13 +6,13 @@
   "unitTitle": "Number Calculations & Data",
   "title": "Multi-step Math",
   "readTime": 23,
-  "goal": "In this lesson you will learn to break a bigger calculation into clear steps using variables.",
+  "goal": "This lesson covers how to break a bigger calculation into clear steps using variables.",
   "learn": [
     "Store middle results in variables",
     "Build a final answer in steps",
     "Print labels so each step is clear"
   ],
-  "idea": "Big math is easier when you do it in steps. Save each middle answer in a variable, then use those variables later.\n\nThis is clearer than one giant line. You can also print each step to check your work.\n\nThink: first find the subtotal, then tax or discount, then the final total.",
+  "idea": "Big math is easier when you do it in steps. Save each middle answer in a variable and use those variables later, instead of writing one giant line that nobody can read.\n\nIt also lets you print each step to check your work. A good order to think in is subtotal first, then tax or discount, then the final total.",
   "code": {
     "filename": "steps.py",
     "lines": [
@@ -33,7 +33,7 @@
       "Total: 22"
     ]
   },
-  "changeOneLine": "In the editor above, change <code>discount = 3</code> to <code>discount = 5</code>. Press <strong>Run</strong>. Total should say <code>20</code>.",
+  "changeOneLine": "In the editor above, change <code>discount = 3</code> to <code>discount = 5</code> and press <strong>Run</strong>. Total should say <code>20</code>.",
   "code2": {
     "filename": "trip.py",
     "lines": [
@@ -55,14 +55,14 @@
   "practice": [
     {
       "text": "Tickets cost 9 each. Buy 4. Then add a snack of 6. Use step variables and print the final cost.",
-      "hint": "First find the ticket total in tickets, then add snack in final. Do not skip the middle variable.",
+      "hint": "First find the ticket total in tickets, then add the snack in final. Do not skip the middle variable.",
       "starterTip": "Try tickets = price * count (9 times 4), then final = tickets + snack so final is 42.",
       "starter": "price = 9\ncount = 4\ntickets = \nsnack = 6\nfinal = \nprint(\"Final:\", final)",
       "gradingNote": "Pass if tickets is 36 and final is 42, built with step variables."
     },
     {
       "text": "Start with 100 points. Multiply by 2 for a bonus round, then subtract 25 for a miss. Print the end score.",
-      "hint": "Update points twice: first double it for the bonus, then take away 25 for the miss.",
+      "hint": "Update points twice. First double it for the bonus round, then take away 25 for the miss.",
       "starterTip": "Under Bonus round try points = points * 2. Under Miss try points = points - 25.",
       "starter": "points = 100\n# Bonus round\npoints = \n# Miss\npoints = \nprint(\"End score:\", points)",
       "gradingNote": "Pass if end score is 175 (100*2 - 25)."
@@ -89,7 +89,7 @@
           "correct": false
         }
       ],
-      "correct": "Steps are easier to read and check.",
+      "correct": "Right, steps are easier to read and check.",
       "wrong": "Variables help you build and check a calculation piece by piece."
     },
     {
@@ -112,8 +112,8 @@
           "correct": false
         }
       ],
-      "correct": "b stores 10 * 2, which is 20.",
-      "wrong": "a is 10, then b becomes 20."
+      "correct": "Yes, a is 10, so b becomes 20.",
+      "wrong": "a is 10 and b is a * 2, which is 20."
     },
     {
       "question": "What should you print while building steps?",
@@ -135,13 +135,13 @@
           "correct": false
         }
       ],
-      "correct": "Printing steps helps you catch mistakes early.",
-      "wrong": "Labeled prints of middle results make debugging easier."
+      "correct": "Right, printing the steps helps you catch mistakes early.",
+      "wrong": "Labeled prints of the middle results make mistakes easier to find."
     }
   ],
   "project": {
     "title": "Party Budget",
-    "desc": "Cups cost 2 each (buy 20). Juice costs 15. Decorations cost 10. Compute cups cost, then add juice and decorations in steps. Print each stage.",
+    "desc": "Cups cost 2 each and you buy 20. Juice costs 15 and decorations cost 10. Work out the cups cost first, then add the juice and decorations in steps, and print each stage.",
     "starter": "cup_price = 2\ncup_count = 20\ncups = \nprint(\"Cups:\", cups)\njuice = 15\ndecor = 10\ntotal = \nprint(\"Party total:\", total)"
   },
   "prev": {

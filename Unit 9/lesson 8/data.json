@@ -15,13 +15,13 @@
     "starter.txt": "This line was already here.\n",
     "todo.txt": "1. Feed the cat\n2. Finish homework\n"
   },
-  "goal": "In this lesson you will put reading, writing, and processing together in a small file project.",
+  "goal": "In this lesson you will put reading, writing, and processing together in one small file project.",
   "learn": [
     "Read data from a practice file",
     "Write a short report file",
     "Process lines into a clear summary"
   ],
-  "idea": "Mini project time! Read scores from a practice file, process each line, then write a neat report to another practice file.\n\nUse <code>with open</code> for reading and writing. Keep everything in the practice folder. No real disk, and no <code>input()</code>.",
+  "idea": "Mini project time. You read scores from a practice file, process each line, and then write a neat report to another practice file.\n\nUse <code>with open</code> for both reading and writing, and keep everything in the practice folder. There is no real disk and no <code>input()</code>.",
   "code": {
     "filename": "mini_project_demo.py",
     "lines": [
@@ -49,7 +49,7 @@
       ""
     ]
   },
-  "changeOneLine": "In the editor above, change the report title write to <code>\"CLASS SCORES\\n\"</code>. Press <strong>Run</strong>. The first line should update.",
+  "changeOneLine": "In the editor above, change the report title write to <code>\"CLASS SCORES\\n\"</code> and press <strong>Run</strong>. The first line should update.",
   "code2": {
     "filename": "copy_tips.py",
     "lines": [
@@ -69,7 +69,7 @@
   "practice": [
     {
       "text": "Read hello.txt and write the same text into hello_copy.txt using with open. Print the copy.",
-      "hint": "You already have text from hello.txt. Open hello_copy.txt with \"w\" in a with block and f.write(text) to save a copy.",
+      "hint": "You already have text from hello.txt. Open hello_copy.txt with \"w\" in a with block and f.write(text) to save the copy.",
       "starterTip": "Add: with open(\"hello_copy.txt\", \"w\") as f: then f.write(text). The last block prints the copy for you.",
       "starter": "with open(\"hello.txt\") as f:\n    text = f.read()\n# Write hello_copy.txt\n\nwith open(\"hello_copy.txt\") as f:\n    print(f.read())",
       "gradingNote": "Pass if hello_copy.txt matches hello.txt and is printed."
@@ -103,8 +103,8 @@
           "correct": false
         }
       ],
-      "correct": "Combine the file skills you learned.",
-      "wrong": "Practice folder only. No real disk."
+      "correct": "Right, you combine the file skills you learned so far.",
+      "wrong": "It all happens in the practice folder, never on your real disk."
     },
     {
       "question": "Which pattern is best for open/close safety?",
@@ -126,8 +126,8 @@
           "correct": false
         }
       ],
-      "correct": "with open is the safe habit.",
-      "wrong": "Prefer with in projects."
+      "correct": "Yes, with open is the safe habit for projects.",
+      "wrong": "Prefer with so closing is automatic."
     },
     {
       "question": "Are practice report files on your real disk?",
@@ -149,13 +149,13 @@
           "correct": false
         }
       ],
-      "correct": "Still the fake practice folder.",
-      "wrong": "Safe sandbox for learning."
+      "correct": "Right, the report files stay in the practice folder on the page.",
+      "wrong": "It is a safe sandbox for learning."
     }
   ],
   "project": {
     "title": "Team Score File Helper",
-    "desc": "Read scores.txt. Write report.txt with each player line plus a final total. Print the report.",
+    "desc": "Read scores.txt. Write report.txt with a line for each player and a final total, and then print the report.",
     "starter": "total = 0\nwith open(\"report.txt\", \"w\") as out:\n    out.write(\"Team Scores\\n\")\n    with open(\"scores.txt\") as f:\n        for line in f:\n            parts = line.split()\n            # write a neat line; add to total\n            \n    out.write(\"Total: \" + str(total) + \"\\n\")\n\nwith open(\"report.txt\") as f:\n    print(f.read())"
   },
   "prev": {

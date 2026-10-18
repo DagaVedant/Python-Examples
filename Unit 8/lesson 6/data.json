@@ -6,13 +6,13 @@
   "unitTitle": "Dictionaries",
   "title": "Removing Keys",
   "readTime": 22,
-  "goal": "In this lesson you will learn how to remove a key with pop and see the dictionary shrink.",
+  "goal": "By the end of this lesson you will know how to remove a key with pop and see the dictionary shrink.",
   "learn": [
     "Remove a key with .pop(key)",
     "Capture the removed value",
     "Confirm the key is gone"
   ],
-  "idea": "<code>.pop(key)</code> removes that key from the dictionary and <strong>gives you the value back</strong>.\n\n<code>removed = bag.pop(\"map\")</code>\n\nAfter that, the key is gone.",
+  "idea": "<code>.pop(key)</code> removes that key from the dictionary and <strong>gives you the value back</strong>, like <code>removed = bag.pop(\"map\")</code>.\n\nAfter that the key is gone, so looking it up again will give you an error.",
   "code": {
     "filename": "remove.py",
     "lines": [
@@ -29,7 +29,7 @@
       "{'coins': 10, 'keys': 2}"
     ]
   },
-  "changeOneLine": "In the editor above, change <code>bag.pop(\"map\")</code> to <code>bag.pop(\"keys\")</code>. Press <strong>Run</strong>. Removed should be 2.",
+  "changeOneLine": "In the editor above, change <code>bag.pop(\"map\")</code> to <code>bag.pop(\"keys\")</code> and press <strong>Run</strong>. Removed should be 2.",
   "code2": {
     "filename": "shop.py",
     "lines": [
@@ -46,7 +46,7 @@
   "practice": [
     {
       "text": "Pop the \"sword\" key. Print what was removed, then print the bag.",
-      "hint": "Use bag.pop(\"sword\") on the right side of gone =. Pop takes the key out and hands you the value (1).",
+      "hint": "Use bag.pop(\"sword\") on the right side of gone = . Pop takes the key out and hands you the value, which is 1.",
       "starterTip": "Try gone = bag.pop(\"sword\") on the line after the bag = ... line. The print lines below already show gone and bag.",
       "starter": "bag = {\"coins\": 5, \"sword\": 1, \"keys\": 2}\ngone = \nprint(\"Removed:\", gone)\nprint(bag)",
       "gradingNote": "Pass if sword is popped, value 1 printed, and bag no longer has sword."
@@ -80,11 +80,11 @@
           "correct": false
         }
       ],
-      "correct": "pop removes the key and returns the value.",
-      "wrong": "pop takes the key out and gives the value back."
+      "correct": "Right, pop takes the key out and gives the value back.",
+      "wrong": "pop removes the key and returns the value."
     },
     {
-      "question": "After popping a key, looking it up with [ ] usually…",
+      "question": "After popping a key, looking it up with [ ] usually...",
       "options": [
         {
           "text": "Returns 0",
@@ -103,8 +103,8 @@
           "correct": false
         }
       ],
-      "correct": "The key is gone, so [ ] lookup fails.",
-      "wrong": "Missing keys error with square-bracket lookup."
+      "correct": "Yes, the key is gone, so looking it up with [ ] fails.",
+      "wrong": "Missing keys cause an error with square bracket lookup."
     },
     {
       "question": "If stock.pop(\"bread\") returns 2, what was stored under bread?",
@@ -126,13 +126,13 @@
           "correct": false
         }
       ],
-      "correct": "pop returns the value that was stored.",
+      "correct": "Right, pop returns the value that was stored.",
       "wrong": "The return value is the old value for that key."
     }
   ],
   "project": {
     "title": "Cleanup Crew",
-    "desc": "Pop two keys one at a time. Print each removed value, then the final bag.",
+    "desc": "Pop two keys one at a time. Print each removed value and then the final bag.",
     "starter": "bag = {\"coins\": 10, \"rocks\": 4, \"keys\": 1, \"dust\": 99}\n# Pop rocks, print it\n\n# Pop dust, print it\n\nprint(\"Left:\", bag)"
   },
   "prev": {

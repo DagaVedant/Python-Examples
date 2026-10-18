@@ -6,13 +6,13 @@
   "unitTitle": "Lists",
   "title": "List Methods",
   "readTime": 24,
-  "goal": "In this lesson you will learn handy list tools: sort, in, count, and index.",
+  "goal": "This lesson covers a few handy list tools: sort, in, count, and index.",
   "learn": [
     "sort() puts items in order",
     "in checks whether a value is present",
     "count() and index() find matches"
   ],
-  "idea": "<code>sort()</code> rearranges the list from small to big (or A to Z).\n\n    The word <code>in</code> asks “is this value here?” and gives True or False. <code>count(value)</code> tells how many times it appears. <code>index(value)</code> gives the position of the first match.",
+  "idea": "<code>sort()</code> rearranges the list from small to big, or from A to Z for text.\n\nThe word <code>in</code> asks if a value is in the list and gives back True or False. <code>count(value)</code> tells you how many times a value appears, and <code>index(value)</code> gives the position of the first match.",
   "code": {
     "filename": "helpers.py",
     "lines": [
@@ -34,7 +34,7 @@
       "fish at: 3"
     ]
   },
-  "changeOneLine": "In the editor above, change <code>\"bird\" in pets</code> to <code>\"dog\" in pets</code>. Press <strong>Run</strong>. That line of output should become <code>True</code>.",
+  "changeOneLine": "In the editor above, change <code>\"bird\" in pets</code> to <code>\"dog\" in pets</code> and press <strong>Run</strong>. That line of the output should become <code>True</code>.",
   "code2": {
     "filename": "alpha.py",
     "lines": [
@@ -53,14 +53,14 @@
   "practice": [
     {
       "text": "Sort <code>scores</code> and print the sorted list.",
-      "hint": "Call scores.sort() on its own line. It rearranges the list in place, then print shows the new order.",
+      "hint": "Call scores.sort() on its own line. It rearranges the list in place, and then print shows the new order.",
       "starterTip": "Put scores.sort() between the comment and print(scores).",
       "starter": "scores = [88, 72, 95, 60]\n# Sort then print\n\nprint(scores)",
       "gradingNote": "Pass if sort() is called and the printed list is ascending."
     },
     {
       "text": "Print whether <code>\"blue\"</code> is in colors, then print how many times <code>\"red\"</code> appears.",
-      "hint": "First print uses \"blue\" in colors. Second print uses colors.count(\"red\").",
+      "hint": "The first print uses \"blue\" in colors. The second print uses colors.count(\"red\").",
       "starterTip": "Try print(\"blue\" in colors) on the first blank line and print(colors.count(\"red\")) on the second.",
       "starter": "colors = [\"red\", \"blue\", \"red\", \"green\"]\nprint()\nprint()",
       "gradingNote": "Pass if one print uses in for \"blue\" and one uses count(\"red\")."
@@ -87,7 +87,7 @@
           "correct": false
         }
       ],
-      "correct": "sort changes the list into sorted order.",
+      "correct": "Right, sort changes the list into sorted order.",
       "wrong": "sort rearranges the existing items."
     },
     {
@@ -110,7 +110,7 @@
           "correct": false
         }
       ],
-      "correct": "in checks membership and returns a boolean.",
+      "correct": "Yes, in checks membership and gives back a boolean.",
       "wrong": "Membership tests give True or False."
     },
     {
@@ -133,7 +133,7 @@
           "correct": false
         }
       ],
-      "correct": "count returns the number of matching items.",
+      "correct": "Right, count returns the number of matching items.",
       "wrong": "count tallies how often a value shows up."
     }
   ],

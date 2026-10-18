@@ -6,13 +6,13 @@
   "unitTitle": "Dictionaries",
   "title": "Looking Up Keys",
   "readTime": 22,
-  "goal": "In this lesson you will learn how to look up a value with square brackets and a key.",
+  "goal": "This lesson covers how to look up a value with square brackets and a key.",
   "learn": [
     "Look up with dict[\"key\"]",
     "Print values one at a time",
-    "Mix looked-up values in one print"
+    "Mix looked up values in one print"
   ],
-  "idea": "To get a value, put the key in square brackets: <code>pet[\"name\"]</code>.\n\nPython finds that key and gives you its value. If you mistype the key, you get an error. So spell keys carefully!",
+  "idea": "To get a value, put the key in square brackets, like <code>pet[\"name\"]</code>.\n\nPython finds that key and gives you its value. If you mistype the key you get an error, so spell your keys carefully.",
   "code": {
     "filename": "lookup.py",
     "lines": [
@@ -33,7 +33,7 @@
       "Mochi is a cat"
     ]
   },
-  "changeOneLine": "In the editor above, change the first print to <code>pet[\"type\"]</code>. Press <strong>Run</strong>. The first line should say <code>cat</code>.",
+  "changeOneLine": "In the editor above, change the first print to <code>pet[\"type\"]</code> and press <strong>Run</strong>. The first line should say <code>cat</code>.",
   "code2": {
     "filename": "player_card.py",
     "lines": [
@@ -51,14 +51,14 @@
   "practice": [
     {
       "text": "Print the book title and pages using key lookups.",
-      "hint": "Use square brackets with the key inside quotes: book[\"title\"] and book[\"pages\"]. One print per value.",
+      "hint": "Use square brackets with the key inside quotes, like book[\"title\"] and book[\"pages\"]. Use one print() per value.",
       "starterTip": "First line: print(book[\"title\"]). Second: print(book[\"pages\"]). You should see Wonder and 310.",
       "starter": "book = {\"title\": \"Wonder\", \"pages\": 310}\nprint()\nprint()",
       "gradingNote": "Pass if two prints look up book[\"title\"] and book[\"pages\"] and show Wonder and 310."
     },
     {
       "text": "Print a sentence like Cookie costs 2 using snack keys.",
-      "hint": "Look up snack[\"name\"] and snack[\"cost\"] inside one print(). You can mix words in quotes with the looked-up values.",
+      "hint": "Look up snack[\"name\"] and snack[\"cost\"] inside one print(). You can mix words in quotes with the looked up values.",
       "starterTip": "Try print(snack[\"name\"], \"costs\", snack[\"cost\"]). That prints Cookie costs 2.",
       "starter": "snack = {\"name\": \"Cookie\", \"cost\": 2}\nprint()",
       "gradingNote": "Pass if one print uses snack keys to show Cookie and 2."
@@ -85,8 +85,8 @@
           "correct": false
         }
       ],
-      "correct": "Square brackets with a key look up that key's value.",
-      "wrong": "pet[\"name\"] returns the value Mochi."
+      "correct": "Right, square brackets with a key look up that key's value.",
+      "wrong": "pet[\"name\"] gives back the value Mochi."
     },
     {
       "question": "What happens if you look up a key that is not there?",
@@ -108,8 +108,8 @@
           "correct": false
         }
       ],
-      "correct": "A missing key causes a KeyError (until you learn safer tools).",
-      "wrong": "Mistyped keys often cause KeyError."
+      "correct": "Yes, a missing key causes a KeyError until you learn safer tools.",
+      "wrong": "Mistyped keys often cause a KeyError."
     },
     {
       "question": "Which line looks up the level?",
@@ -131,13 +131,13 @@
           "correct": false
         }
       ],
-      "correct": "Use square brackets and the key string.",
+      "correct": "Right, lookup uses square brackets and the key as a string.",
       "wrong": "Dictionary lookup uses [\"key\"], not a bare word."
     }
   ],
   "project": {
     "title": "Pet Lookups",
-    "desc": "Print name, type, and age on separate lines, then one sentence using all three keys.",
+    "desc": "Print the name, type, and age on separate lines, and then print one sentence that uses all three keys.",
     "starter": "pet = {\"name\": \"Buddy\", \"type\": \"dog\", \"age\": 5}\nprint(\"Name:\", pet[\"name\"])\nprint()\nprint()\n\n# One sentence using all three keys\nprint()"
   },
   "prev": {

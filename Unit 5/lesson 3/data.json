@@ -6,13 +6,13 @@
   "unitTitle": "Functions",
   "title": "One Parameter",
   "readTime": 22,
-  "goal": "In this lesson you will learn how to give a function one parameter so the same function can work with different values each time you call it.",
+  "goal": "This lesson covers how to give a function one parameter, so the same function can work with different values each time you call it.",
   "learn": [
     "Add one parameter in the def line",
     "Pass one argument when calling",
     "Use the parameter name inside the function"
   ],
-  "idea": "A <strong>parameter</strong> is a variable you write inside the parentheses on the <code>def</code> line. An <strong>argument</strong> is the real value you pass in when you call the function.\n\nWith one parameter, you can greet Alice and Bob using the same <code>greet</code> function. Only the argument changes.",
+  "idea": "A <strong>parameter</strong> is a variable you write inside the parentheses on the <code>def</code> line. An <strong>argument</strong> is the real value you pass in when you call the function.\n\nWith one parameter, you can greet Alice and Bob using the same <code>greet</code> function, and only the argument changes between the two calls.",
   "code": {
     "filename": "greet_name.py",
     "lines": [
@@ -35,7 +35,7 @@
       "Cool !!!"
     ]
   },
-  "changeOneLine": "In the editor above, change the first call from <code>greet(\"Alice\")</code> to <code>greet(\"Maya\")</code>. Press <strong>Run</strong>. The first line should say Hello, Maya.",
+  "changeOneLine": "In the editor above, change the first call from <code>greet(\"Alice\")</code> to <code>greet(\"Maya\")</code> and press <strong>Run</strong>. The first line should say Hello, Maya.",
   "code2": {
     "filename": "double_print.py",
     "lines": [
@@ -53,14 +53,14 @@
   "practice": [
     {
       "text": "Finish greet(name) so it prints a hello using the name. Call it with two different names.",
-      "hint": "Use the parameter name inside print. For example print(\"Hello,\", name). Add a second greet(\"...\") call with a different name.",
+      "hint": "Use the parameter name inside print(), for example print(\"Hello,\", name). Then add a second greet call with a different name.",
       "starterTip": "Try print(\"Hello,\", name) in the function body, then add greet(\"Alex\") on the blank line below greet(\"Sam\").",
       "starter": "def greet(name):\n    print()\n\ngreet(\"Sam\")\n",
       "gradingNote": "Pass if greet has a name parameter, prints using that parameter, and is called at least twice with different string arguments."
     },
     {
       "text": "Finish square(n) so it prints n times n. Call it with two different numbers.",
-      "hint": "Multiply n by itself with n * n (or n ** 2) inside print. Call square twice with different numbers like 3 and 5.",
+      "hint": "Multiply n by itself with n * n (or n ** 2) inside print(). Call square twice with different numbers like 3 and 5.",
       "starterTip": "Try print(n, \"squared is\", n * n) inside square, then add square(5) on the blank line below square(3).",
       "starter": "def square(n):\n    print()\n\nsquare(3)\n",
       "gradingNote": "Pass if square takes one parameter, prints n*n (or equivalent), and is called at least twice."
@@ -87,8 +87,8 @@
           "correct": false
         }
       ],
-      "correct": "name sits in the def line, so it is a parameter.",
-      "wrong": "Names listed inside the parentheses on the def line are parameters."
+      "correct": "Right, name is in the def line, so it is a parameter.",
+      "wrong": "Names inside the parentheses on the def line are parameters."
     },
     {
       "question": "What does greet(\"Ava\") pass into the function?",
@@ -110,8 +110,8 @@
           "correct": false
         }
       ],
-      "correct": "\"Ava\" is the argument passed into the name parameter.",
-      "wrong": "The value inside the call's parentheses is the argument."
+      "correct": "Yes, \"Ava\" is the argument that gets passed into the name parameter.",
+      "wrong": "The value inside the parentheses of the call is the argument."
     },
     {
       "question": "Why use a parameter?",
@@ -133,8 +133,8 @@
           "correct": false
         }
       ],
-      "correct": "Parameters let the same function handle many different values.",
-      "wrong": "Different arguments in, same function body. That is the point."
+      "correct": "Right, parameters let one function handle many different values.",
+      "wrong": "Different arguments go in, the same function body runs. That is the point."
     }
   ],
   "project": {

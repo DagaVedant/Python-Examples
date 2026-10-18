@@ -18,10 +18,10 @@
   "goal": "In this lesson you will learn how to create or overwrite a practice file with mode \"w\" and write().",
   "learn": [
     "Open for writing with mode \"w\"",
-    "Write text with write()",
-    "Read the file back to check"
+    "Put text in with write()",
+    "Read the file back to check it"
   ],
-  "idea": "To <strong>write</strong>, open with mode <code>\"w\"</code>: <code>f = open(\"diary.txt\", \"w\")</code>. Then <code>f.write(\"text\\n\")</code>.\n\nMode <code>\"w\"</code> creates the file or <strong>replaces</strong> old contents. Still only in the practice folder on this page!",
+  "idea": "To <strong>write</strong> a file, open it with mode <code>\"w\"</code>, like <code>f = open(\"diary.txt\", \"w\")</code>. Then use <code>f.write(\"text\\n\")</code>.\n\nMode <code>\"w\"</code> creates the file, or <strong>replaces</strong> the old contents if it already exists. It is still only the practice folder on this page.",
   "code": {
     "filename": "write_diary.py",
     "lines": [
@@ -40,7 +40,7 @@
       ""
     ]
   },
-  "changeOneLine": "In the editor above, change the second write string to <code>\"I wrote this myself!\\n\"</code>. Press <strong>Run</strong>.",
+  "changeOneLine": "In the editor above, change the second write to <code>\"I wrote this myself!\\n\"</code> and press <strong>Run</strong>.",
   "code2": {
     "filename": "write_list.py",
     "lines": [
@@ -61,14 +61,14 @@
   "practice": [
     {
       "text": "Write \"Hello, file!\" plus a newline into hello_out.txt, then read and print it.",
-      "hint": "f.write() needs a string. Put the message in quotes and add \\n at the end so it becomes its own line.",
+      "hint": "f.write() needs a string. Put your message in quotes and add \\n at the end so it becomes its own line.",
       "starterTip": "Try f.write(\"Hello, file!\\n\"). The rest of the starter already reads and prints the file for you.",
       "starter": "f = open(\"hello_out.txt\", \"w\")\nf.write()\nf.close()\nf = open(\"hello_out.txt\")\nprint(f.read())\nf.close()",
       "gradingNote": "Pass if hello_out.txt is written with Hello, file! and then read/printed."
     },
     {
       "text": "Overwrite starter.txt with a new short message, then read and print it.",
-      "hint": "Mode \"w\" replaces everything. Pick any short sentence, write it with f.write(\"your message\\n\"), then use the read block to check.",
+      "hint": "Mode \"w\" replaces everything, so pick any short sentence and write it with f.write(\"your message\\n\"). The read block below checks it.",
       "starterTip": "Example: f.write(\"My new note!\\n\"). Run it and the printed text should be your message, not the old starter line.",
       "starter": "f = open(\"starter.txt\", \"w\")\nf.write()\nf.close()\nf = open(\"starter.txt\")\nprint(f.read())\nf.close()",
       "gradingNote": "Pass if starter.txt is overwritten and the new text is printed."
@@ -95,8 +95,8 @@
           "correct": false
         }
       ],
-      "correct": "\"w\" overwrites existing practice file contents.",
-      "wrong": "Write mode starts fresh."
+      "correct": "Right, \"w\" wipes the old contents and starts fresh.",
+      "wrong": "Write mode starts with an empty file."
     },
     {
       "question": "Which call puts text into the file?",
@@ -118,8 +118,8 @@
           "correct": false
         }
       ],
-      "correct": "write() saves the string into the file.",
-      "wrong": "Use write for output to the file."
+      "correct": "Yes, write() puts the string into the file.",
+      "wrong": "Use write for output into the file."
     },
     {
       "question": "Do these writes change your real computer files?",
@@ -141,13 +141,13 @@
           "correct": false
         }
       ],
-      "correct": "Practice files stay in the fake folder.",
-      "wrong": "Lessons do not touch your real disk."
+      "correct": "Right, only the practice folder on the page changes.",
+      "wrong": "These lessons never touch your real disk."
     }
   ],
   "project": {
     "title": "Diary Entry",
-    "desc": "Write two lines to my_day.txt, close, then read and print the whole file.",
+    "desc": "Write two lines to my_day.txt, close it, and then read and print the whole file.",
     "starter": "f = open(\"my_day.txt\", \"w\")\n# write two lines\n\nf.close()\n\nf = open(\"my_day.txt\")\nprint(f.read())\nf.close()"
   },
   "prev": {

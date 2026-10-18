@@ -6,13 +6,13 @@
   "unitTitle": "Dictionaries",
   "title": "Creating Dictionaries",
   "readTime": 22,
-  "goal": "In this lesson you will learn how to create a dictionary with curly braces and key: value pairs.",
+  "goal": "By the end of this lesson you will know how to create a dictionary with curly braces and key: value pairs.",
   "learn": [
     "Write curly braces to start a dictionary",
     "Put a colon between each key and value",
-    "Separate pairs with commas"
+    "Separate the pairs with commas"
   ],
-  "idea": "Create a dictionary like this: <code>pet = {\"name\": \"Mochi\", \"age\": 3}</code>.\n\nEach pair is <code>key: value</code>. Put commas between pairs. Keys are often strings in quotes. Values can be strings, numbers, or True/False.",
+  "idea": "You create a dictionary like this: <code>pet = {\"name\": \"Mochi\", \"age\": 3}</code>.\n\nEach pair is written as <code>key: value</code>, with commas between the pairs. Keys are often strings in quotes, and values can be strings, numbers, or True and False.",
   "code": {
     "filename": "create.py",
     "lines": [
@@ -29,7 +29,7 @@
       "<class 'dict'>"
     ]
   },
-  "changeOneLine": "In the editor above, change <code>\"age\": 3</code> to <code>\"age\": 5</code>. Press <strong>Run</strong>. The printed age should be 5.",
+  "changeOneLine": "In the editor above, change <code>\"age\": 3</code> to <code>\"age\": 5</code> and press <strong>Run</strong>. The printed age should be 5.",
   "code2": {
     "filename": "player.py",
     "lines": [
@@ -43,14 +43,14 @@
   "practice": [
     {
       "text": "Finish the book dictionary with title and pages, then print it.",
-      "hint": "Inside the curly braces, add another pair: a key \"pages\" with the number 310. Use a colon between key and value, and a comma after Wonder's line.",
+      "hint": "Inside the curly braces, add another pair with the key \"pages\" and the number 310. Use a colon between the key and value, and a comma after the Wonder line.",
       "starterTip": "Add a line like \"pages\": 310, before the closing }. print(book) is already there.",
       "starter": "book = {\n    \"title\": \"Wonder\",\n    # Add pages: 310\n}\nprint(book)",
       "gradingNote": "Pass if book has title Wonder and pages 310 and is printed."
     },
     {
       "text": "Create a snack dictionary with name Cookie and cost 2. Print it.",
-      "hint": "After snack = , write curly braces with two pairs: \"name\" and \"cost\". Strings get quotes; 2 is a number with no quotes.",
+      "hint": "After snack = , write curly braces with two pairs, \"name\" and \"cost\". Strings get quotes, but 2 is a number so it has none.",
       "starterTip": "Try snack = {\"name\": \"Cookie\", \"cost\": 2} then print(snack).",
       "starter": "# snack with name Cookie and cost 2\nsnack = \nprint(snack)",
       "gradingNote": "Pass if a dict with Cookie and 2 is created and printed."
@@ -77,8 +77,8 @@
           "correct": false
         }
       ],
-      "correct": "Curly braces with key: value pairs create a dictionary.",
-      "wrong": "Use {\"name\": \"Sam\"} with a colon between key and value."
+      "correct": "Right, curly braces with key: value pairs create a dictionary.",
+      "wrong": "Use {\"name\": \"Sam\"} with a colon between the key and value."
     },
     {
       "question": "What goes between a key and its value?",
@@ -100,8 +100,8 @@
           "correct": false
         }
       ],
-      "correct": "Write key: value with a colon.",
-      "wrong": "Commas separate pairs. Colons join key to value."
+      "correct": "Yes, a colon joins the key to its value.",
+      "wrong": "Commas separate the pairs and colons join each key to its value."
     },
     {
       "question": "Can a dictionary value be a number?",
@@ -123,13 +123,13 @@
           "correct": false
         }
       ],
-      "correct": "Values can be many types, including numbers.",
-      "wrong": "Keys are often strings; values can be numbers too."
+      "correct": "Right, values can be many types, including numbers.",
+      "wrong": "Keys are often strings but values can be numbers too."
     }
   ],
   "project": {
     "title": "Pet Profile Draft",
-    "desc": "Create a pet dictionary with name, type, and age. Print it.",
+    "desc": "Create a pet dictionary with a name, a type, and an age. Print it.",
     "starter": "pet = {\n    \"name\": \"Buddy\",\n    \"type\": \"dog\",\n    \"age\": 5,\n}\nprint()"
   },
   "prev": {

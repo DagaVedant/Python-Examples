@@ -6,13 +6,13 @@
   "unitTitle": "Errors",
   "title": "Friendly Messages",
   "readTime": 22,
-  "goal": "In this lesson you will learn how to show kid-friendly messages in except instead of scary crashes.",
+  "goal": "This lesson covers how to show a friendly message in except instead of a scary crash.",
   "learn": [
     "Print a clear message in except",
     "Set a safe fallback value",
     "Keep the rest of the program calm"
   ],
-  "idea": "In <code>except</code>, speak to a human: short, clear, kind. Example: <code>print(\"That score is not a number. Using 0.\")</code>.\n\nAlso set a safe value so the program can continue. Friendly messages + fallbacks beat scary red text.",
+  "idea": "In <code>except</code>, talk to a person. Keep it short, clear, and kind, like <code>print(\"That score is not a number. Using 0.\")</code>.\n\nAlso set a safe value so the program can carry on. A friendly message plus a fallback beats scary red text.",
   "code": {
     "filename": "friendly.py",
     "lines": [
@@ -31,7 +31,7 @@
       "Let's play!"
     ]
   },
-  "changeOneLine": "In the editor above, change the fallback lives from <code>3</code> to <code>5</code>. Press <strong>Run</strong>.",
+  "changeOneLine": "In the editor above, change the fallback lives from <code>3</code> to <code>5</code> and press <strong>Run</strong>.",
   "code2": {
     "filename": "friendly_div.py",
     "lines": [
@@ -49,14 +49,14 @@
   "practice": [
     {
       "text": "Try int(\"abc\"). In except, print a friendly message and set n = 0. Print n.",
-      "hint": "int(\"abc\") will fail. That is expected. In except, tell the user what happened in plain words, then set n = 0 so print(n) works.",
+      "hint": "int(\"abc\") will fail, and that is expected. In except, say what happened in plain words and then set n = 0 so print(n) works.",
       "starterTip": "Inside except:, try print(\"That was not a number. Using 0.\") then n = 0 on the next indented line.",
       "starter": "text = \"abc\"\ntry:\n    n = int(text)\nexcept:\n    \nprint(n)",
       "gradingNote": "Pass if friendly message prints and n is 0."
     },
     {
       "text": "On divide-by-zero, print a kind tip (not just Error). Then print OK.",
-      "hint": "The empty print() in except should say something helpful to a kid. Like asking them to pick a number that is not zero.",
+      "hint": "The empty print() in except should say something helpful, like asking them to pick a number that is not zero.",
       "starterTip": "Fill except with print(\"Cannot divide by zero. Try a different number.\"). OK should still print after the try/except block.",
       "starter": "try:\n    print(1 / 0)\nexcept:\n    print()\nprint(\"OK\")",
       "gradingNote": "Pass if except prints a clear human message and OK still prints."
@@ -83,7 +83,7 @@
           "correct": false
         }
       ],
-      "correct": "Speak to the kid playing the program.",
+      "correct": "Right, speak to the person using the program.",
       "wrong": "Friendly beats cryptic."
     },
     {
@@ -106,8 +106,8 @@
           "correct": false
         }
       ],
-      "correct": "Fallbacks keep later lines working.",
-      "wrong": "Example: lives = 3."
+      "correct": "Yes, a fallback keeps the later lines working.",
+      "wrong": "For example lives = 3."
     },
     {
       "question": "Should except just crash harder?",
@@ -129,13 +129,13 @@
           "correct": false
         }
       ],
-      "correct": "The point is to handle the problem.",
-      "wrong": "Catch, message, continue."
+      "correct": "Right, the point is to handle the problem.",
+      "wrong": "Catch it, say something, and carry on."
     }
   ],
   "project": {
     "title": "Kind Calculator",
-    "desc": "try to divide 10 by 0. except with a friendly message and set result = None. Print result and a goodbye line.",
+    "desc": "Try to divide 10 by 0. In except, print a friendly message and set result = None. Print result and then a goodbye line.",
     "starter": "try:\n    result = 10 / 0\nexcept:\n    print()\n    result = None\nprint(result)\nprint()"
   },
   "prev": {

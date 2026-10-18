@@ -8,11 +8,11 @@
   "readTime": 25,
   "goal": "In this lesson you will build a tiny toolkit that mixes import styles and useful tools.",
   "learn": [
-    "Choose import vs from import",
+    "Choose between import and from import",
     "Seed random in toolkit demos",
-    "Ship a small multi-tool script"
+    "Put together a small multi-tool script"
   ],
-  "idea": "Mini toolkit time! Combine <code>import math</code>, <code>import random</code>, and maybe <code>from math import sqrt</code> for a favorite.\n\nAlways <code>random.seed(1)</code> in lesson demos. Print a short menu of results so it feels like a pocket utility.",
+  "idea": "Mini toolkit time. Combine <code>import math</code>, <code>import random</code>, and maybe <code>from math import sqrt</code> for a favorite.\n\nAlways call <code>random.seed(1)</code> in lesson demos. Print a short menu of results so it feels like a pocket utility.",
   "code": {
     "filename": "toolkit.py",
     "lines": [
@@ -34,7 +34,7 @@
       "dice: 5"
     ]
   },
-  "changeOneLine": "In the editor above, change <code>sqrt(36)</code> to <code>sqrt(49)</code>. Press <strong>Run</strong>. That line should show 7.0.",
+  "changeOneLine": "In the editor above, change <code>sqrt(36)</code> to <code>sqrt(49)</code> and press <strong>Run</strong>. That line should show 7.0.",
   "code2": {
     "filename": "kit2.py",
     "lines": [
@@ -53,7 +53,7 @@
   "practice": [
     {
       "text": "Build a 3-line toolkit printout: sqrt(16), a seeded dice roll, and math.pi rounded to 2 decimals.",
-      "hint": "Line 1: print(sqrt(16)). Line 2: print(random.randint(1, 6)) after seed(1). Line 3: print(round(math.pi, 2)).",
+      "hint": "Line 1 is print(sqrt(16)). Line 2 is print(random.randint(1, 6)) after seed(1). Line 3 is print(round(math.pi, 2)).",
       "starterTip": "Expect 4.0, then dice 2, then 3.14 when you Run with the starter imports and seed(1).",
       "starter": "import math\nimport random\nfrom math import sqrt\nrandom.seed(1)\nprint()\nprint()\nprint()",
       "gradingNote": "Pass if 4.0, dice 2, and 3.14 style pi appear with seed(1)."
@@ -87,8 +87,8 @@
           "correct": false
         }
       ],
-      "correct": "Show a small useful combo.",
-      "wrong": "math + random is enough."
+      "correct": "Right, a small combo of tools is all it takes.",
+      "wrong": "math and random are enough."
     },
     {
       "question": "Must every tool use from import?",
@@ -110,8 +110,8 @@
           "correct": false
         }
       ],
-      "correct": "Both styles are fine.",
-      "wrong": "Pick clear code."
+      "correct": "Yes, both styles are fine, so pick whatever reads clearly.",
+      "wrong": "You can mix them."
     },
     {
       "question": "What should you do before practice rolls?",
@@ -133,13 +133,13 @@
           "correct": false
         }
       ],
-      "correct": "Seed keeps checks fair.",
-      "wrong": "Lesson rule: seed(1)."
+      "correct": "Right, the seed keeps the checks fair.",
+      "wrong": "Our lesson rule is seed(1)."
     }
   ],
   "project": {
     "title": "Pocket Toolkit",
-    "desc": "Print a banner, then: sqrt(81), ceil(2.2), two seeded dice rolls, and round(pi, 2). Use seed(1).",
+    "desc": "Print a banner, and then sqrt(81), ceil(2.2), two seeded dice rolls, and round(pi, 2). Use seed(1).",
     "starter": "import math\nimport random\nfrom math import sqrt, ceil\nrandom.seed(1)\nprint(\"=== Pocket Toolkit ===\")\nprint()\nprint()\nprint()\nprint()\nprint()"
   },
   "prev": {

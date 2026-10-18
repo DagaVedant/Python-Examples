@@ -6,13 +6,13 @@
   "unitTitle": "Lists",
   "title": "Creating Lists",
   "readTime": 22,
-  "goal": "In this lesson you will learn how to create lists with square brackets, including empty lists and lists that mix types.",
+  "goal": "By the end of this lesson you will know how to create lists with square brackets, including empty lists and lists that mix types.",
   "learn": [
     "Create a list with square brackets",
     "Separate items with commas",
     "Lists can be empty or mix types"
   ],
-  "idea": "You create a list with <strong>square brackets</strong>. Put commas between items: <code>[\"red\", \"blue\"]</code>.\n\n    An <strong>empty list</strong> is just <code>[]</code>. Useful when you will add items later. Lists can hold strings, numbers, and True/False together.",
+  "idea": "You create a list with <strong>square brackets</strong> and put commas between the items, like <code>[\"red\", \"blue\"]</code>.\n\nAn <strong>empty list</strong> is just <code>[]</code>, which is useful when you plan to add items later. A list can also hold strings, numbers, and True or False values all together.",
   "code": {
     "filename": "make_lists.py",
     "lines": [
@@ -39,7 +39,7 @@
       "['Sam', 11, True]"
     ]
   },
-  "changeOneLine": "In the editor above, change <code>scores = [10, 20, 30]</code> to <code>scores = [5, 15, 25]</code>. Press <strong>Run</strong>. The second printed line should show those new numbers.",
+  "changeOneLine": "In the editor above, change <code>scores = [10, 20, 30]</code> to <code>scores = [5, 15, 25]</code> and press <strong>Run</strong>. The second printed line should show those new numbers.",
   "code2": {
     "filename": "starter.py",
     "lines": [
@@ -93,8 +93,8 @@
           "correct": false
         }
       ],
-      "correct": "Square brackets with commas create a list.",
-      "wrong": "Use square brackets: [\"red\", \"blue\"]."
+      "correct": "Right, square brackets with commas make a list.",
+      "wrong": "Use square brackets, like [\"red\", \"blue\"]."
     },
     {
       "question": "What is <code>[]</code>?",
@@ -116,7 +116,7 @@
           "correct": false
         }
       ],
-      "correct": "[] means a list with no items yet.",
+      "correct": "Yes, [] is a list with no items in it yet.",
       "wrong": "Empty square brackets make an empty list."
     },
     {
@@ -139,13 +139,13 @@
           "correct": false
         }
       ],
-      "correct": "Python lists can mix strings, numbers, and booleans.",
+      "correct": "Right, Python lists can mix strings, numbers, and booleans.",
       "wrong": "Mixed lists like [\"Sam\", 11, True] are allowed."
     }
   ],
   "project": {
     "title": "Player Card List",
-    "desc": "Create a list for a game character: name (string), level (number), and ready (True/False). Print the list.",
+    "desc": "Create a list for a game character with a name (string), a level (number), and ready (True or False). Print the list.",
     "starter": "# name, level, ready\nhero = \nprint()"
   },
   "prev": {

@@ -6,13 +6,13 @@
   "unitTitle": "Classes",
   "title": "Objects",
   "readTime": 22,
-  "goal": "In this lesson you will learn how to make objects from a class by calling the class name with ().",
+  "goal": "This lesson covers how to make objects from a class by calling the class name with parentheses.",
   "learn": [
     "Make an object with ClassName()",
     "Store objects in variables",
     "Make more than one object"
   ],
-  "idea": "An <strong>object</strong> is one real thing built from the class blueprint. Make one by calling the class name like a function: <code>dog1 = Dog()</code>.\n\nYou can make many objects from the same class. Each is a separate thing.",
+  "idea": "An <strong>object</strong> is one real thing built from the class blueprint. You make one by calling the class name like a function, like <code>dog1 = Dog()</code>.\n\nYou can make as many objects from the same class as you like, and each one is a separate thing.",
   "code": {
     "filename": "objects.py",
     "lines": [
@@ -31,7 +31,7 @@
       "Two different dogs"
     ]
   },
-  "changeOneLine": "In the editor above, create <code>dog3 = Dog()</code> and print it. Press <strong>Run</strong>.",
+  "changeOneLine": "In the editor above, create <code>dog3 = Dog()</code> and print a message about it, then press <strong>Run</strong>.",
   "code2": {
     "filename": "players.py",
     "lines": [
@@ -55,7 +55,7 @@
     },
     {
       "text": "Create three Coin objects. Print how many you made (3).",
-      "hint": "Use three variables (or names you like) and assign Coin() to each. Your print should show the number 3.",
+      "hint": "Use three variables with any names you like and assign Coin() to each. Your print should show the number 3.",
       "starterTip": "c1 = Coin(), c2 = Coin(), c3 = Coin(), then print(\"Made\", 3) or print(3).",
       "starter": "class Coin:\n    pass\n\n\n\nprint()",
       "gradingNote": "Pass if three Coin() creations and print shows 3."
@@ -82,8 +82,8 @@
           "correct": false
         }
       ],
-      "correct": "Call the class name with parentheses.",
-      "wrong": "dog = Dog()"
+      "correct": "Right, you call the class name with parentheses.",
+      "wrong": "It looks like dog = Dog()."
     },
     {
       "question": "Are dog1 and dog2 the same object?",
@@ -105,8 +105,8 @@
           "correct": false
         }
       ],
-      "correct": "Each call makes a new object.",
-      "wrong": "Two builds from one blueprint."
+      "correct": "Yes, every call makes a new object.",
+      "wrong": "It is two builds from one blueprint."
     },
     {
       "question": "What do you store Dog() in?",
@@ -128,13 +128,13 @@
           "correct": false
         }
       ],
-      "correct": "Names like dog1 hold the object.",
-      "wrong": "dog1 = Dog()"
+      "correct": "Right, a variable holds the object.",
+      "wrong": "Names like dog1 hold it."
     }
   ],
   "project": {
     "title": "Object Factory",
-    "desc": "Define Robot with pass. Make three robots. Print a labeled line for each variable name you used.",
+    "desc": "Define Robot with pass. Make three robots and print a labeled line for each variable name you used.",
     "starter": "class Robot:\n    pass\nr1 = Robot()\nr2 = Robot()\nr3 = Robot()\nprint()\nprint()\nprint()"
   },
   "prev": {

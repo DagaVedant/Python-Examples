@@ -6,13 +6,13 @@
   "unitTitle": "Number Calculations & Data",
   "title": "Remainder",
   "readTime": 22,
-  "goal": "In this lesson you will learn how % finds the leftover after dividing into whole pieces.",
+  "goal": "This lesson covers how % finds the leftover after dividing into whole groups.",
   "learn": [
     "Use % to get a remainder",
-    "See leftover after // packs",
+    "See what is left over after //",
     "Pair // and % to split a total"
   ],
-  "idea": "The percent sign <code>%</code> is the <strong>remainder</strong> (modulo) operator. It tells you what is left after dividing into whole groups.\n\n<code>17 % 5</code> is <code>2</code>, because 5 goes into 17 three times (15), and 2 are left over.\n\nTogether, <code>//</code> gives full groups and <code>%</code> gives leftovers.",
+  "idea": "The percent sign <code>%</code> is the <strong>remainder</strong> operator, also called modulo. It tells you what is left after you divide into whole groups.\n\n<code>17 % 5</code> is <code>2</code>, because 5 goes into 17 three times (that is 15) and 2 is left over. Basically, <code>//</code> gives you the full groups and <code>%</code> gives you the leftovers.",
   "code": {
     "filename": "remainder.py",
     "lines": [
@@ -37,7 +37,7 @@
       "Left over: 3"
     ]
   },
-  "changeOneLine": "In the editor above, change <code>stickers = 23</code> to <code>stickers = 30</code>. Press <strong>Run</strong>. You should see <code>Full packs: 3</code> and <code>Left over: 0</code>.",
+  "changeOneLine": "In the editor above, change <code>stickers = 23</code> to <code>stickers = 30</code> and press <strong>Run</strong>. You should see <code>Full packs: 3</code> and <code>Left over: 0</code>.",
   "code2": {
     "filename": "even_check.py",
     "lines": [
@@ -54,14 +54,14 @@
   "practice": [
     {
       "text": "There are 29 beads. Bracelets need 8 beads each. Print how many beads are left over using %.",
-      "hint": "% tells you what is left after making whole bracelets. Use beads and needed in one expression.",
+      "hint": "% tells you what is left after making whole bracelets. Use beads and needed together in one expression.",
       "starterTip": "Try left = beads % needed. That is 29 divided by 8, but only the leftover part.",
       "starter": "beads = 29\nneeded = 8\nleft = \nprint(\"Left over:\", left)",
       "gradingNote": "Pass if left is 5 (29 % 8) and printed. Must use %."
     },
     {
       "text": "Print both <code>25 // 4</code> and <code>25 % 4</code> with labels like <code>Full: 6</code> and <code>Left: 1</code>.",
-      "hint": "Use two print() lines. // gives full groups; % gives what is left over after those groups.",
+      "hint": "Use two print() lines. // gives the full groups and % gives what is left over after those groups.",
       "starterTip": "For example: print(\"Full:\", 25 // 4) on one line and print(\"Left:\", 25 % 4) on the next.",
       "starter": "print()\nprint()",
       "gradingNote": "Pass if output shows 6 from // and 1 from %."
@@ -88,8 +88,8 @@
           "correct": false
         }
       ],
-      "correct": "5 goes into 14 twice (10), leftover 4.",
-      "wrong": "% is the leftover after whole division. 14 − 10 = 4."
+      "correct": "Right, 5 goes into 14 twice (10), so the leftover is 4.",
+      "wrong": "% is the leftover after whole division. 14 - 10 is 4."
     },
     {
       "question": "If <code>n % 2</code> is 0, what does that mean?",
@@ -111,8 +111,8 @@
           "correct": false
         }
       ],
-      "correct": "Even numbers divide by 2 with remainder 0.",
-      "wrong": "Remainder 0 when dividing by 2 means the number is even."
+      "correct": "Yes, an even number divides by 2 with nothing left over.",
+      "wrong": "A remainder of 0 when dividing by 2 means the number is even."
     },
     {
       "question": "What is <code>9 % 3</code>?",
@@ -134,13 +134,13 @@
           "correct": false
         }
       ],
-      "correct": "3 goes into 9 exactly, so leftover is 0.",
-      "wrong": "No leftover means remainder 0."
+      "correct": "Right, 3 goes into 9 exactly, so the leftover is 0.",
+      "wrong": "If nothing is left over, the remainder is 0."
     }
   ],
   "project": {
     "title": "Egg Cartons",
-    "desc": "You have 40 eggs. Cartons hold 12. Print full cartons with // and leftover eggs with %.",
+    "desc": "You have 40 eggs and cartons hold 12. Print the full cartons with // and the leftover eggs with %.",
     "starter": "eggs = 40\ncarton = 12\nfull = \nleft = \nprint(\"Full cartons:\", full)\nprint(\"Loose eggs:\", left)"
   },
   "prev": {

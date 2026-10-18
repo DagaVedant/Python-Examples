@@ -6,13 +6,13 @@
   "unitTitle": "Making Decisions",
   "title": "if",
   "readTime": 22,
-  "goal": "In this lesson you will learn how an if statement runs code only when a condition is True.",
+  "goal": "This lesson covers the if statement, which runs code only when a condition is True.",
   "learn": [
     "Write if condition:",
-    "Indent the block under if",
-    "Skip the block when False"
+    "Indent the block under the if",
+    "Skip the block when the condition is False"
   ],
-  "idea": "An <code>if</code> statement checks a condition. If it is <code>True</code>, Python runs the indented block underneath. If it is <code>False</code>, Python skips that block.\n\nAlways end the if line with a colon <code>:</code>. Indent the lines that belong to the if (usually 4 spaces).\n\nOnly one path runs for that if. When the condition is true.",
+  "idea": "An <code>if</code> statement checks a condition. If it is <code>True</code>, Python runs the indented block underneath it. If it is <code>False</code>, Python skips that block completely.\n\nFirstly, always end the if line with a colon <code>:</code>. Also indent the lines that belong to the if, usually with 4 spaces, because that indent is how Python knows which lines are part of it.",
   "code": {
     "filename": "if_demo.py",
     "lines": [
@@ -31,7 +31,7 @@
       "Check complete"
     ]
   },
-  "changeOneLine": "In the editor above, change <code>score = 90</code> to <code>score = 100</code>. Press <strong>Run</strong>. You should see both <code>Great job!</code> and <code>Perfect score!</code>.",
+  "changeOneLine": "In the editor above, change <code>score = 90</code> to <code>score = 100</code> and press <strong>Run</strong>. You should see both <code>Great job!</code> and <code>Perfect score!</code>.",
   "code2": {
     "filename": "gate.py",
     "lines": [
@@ -48,14 +48,14 @@
   "practice": [
     {
       "text": "If <code>temp</code> is greater than 30, print <code>Hot day</code>. Set temp to 35.",
-      "hint": "Write <code>if temp > 30:</code> with a colon, then indent the next line with 4 spaces. Only that indented line runs when the condition is True.",
+      "hint": "Write if temp > 30: with the colon, then indent the next line with 4 spaces. Only that indented line runs when the condition is True.",
       "starterTip": "After the comment, add <code>if temp > 30:</code> and on the next line (indented) <code>print(\"Hot day\")</code>.",
       "starter": "temp = 35\n# Add an if block",
       "gradingNote": "Pass if if temp > 30: prints Hot day (indentation required)."
     },
     {
       "text": "Set <code>lives = 0</code>. If lives equal 0, print <code>Game over</code>. Also print <code>Done</code> after the if.",
-      "hint": "Use <code>==</code> to check if lives equals 0. Put the if block between lives and the Done print. Done should not be indented under the if.",
+      "hint": "Use == to check that lives equals 0. Put the if block between lives and the Done print, and do not indent Done.",
       "starterTip": "Add <code>if lives == 0:</code> with an indented <code>print(\"Game over\")</code> above <code>print(\"Done\")</code> so Done always runs.",
       "starter": "lives = 0\n\nprint(\"Done\")",
       "gradingNote": "Pass if if lives == 0 prints Game over, then Done outside the if."
@@ -82,8 +82,8 @@
           "correct": false
         }
       ],
-      "correct": "if condition: needs a colon.",
-      "wrong": "Python if lines end with :"
+      "correct": "Right, an if line has to end with a colon.",
+      "wrong": "Python if lines end with a colon."
     },
     {
       "question": "When does the indented block under if run?",
@@ -105,8 +105,8 @@
           "correct": false
         }
       ],
-      "correct": "The block runs only if the condition is True.",
-      "wrong": "False conditions skip the indented lines."
+      "correct": "Yes, the block only runs when the condition is True.",
+      "wrong": "A False condition skips the indented lines."
     },
     {
       "question": "Why indent under if?",
@@ -128,8 +128,8 @@
           "correct": false
         }
       ],
-      "correct": "Indentation marks the if block.",
-      "wrong": "Without indent, Python does not know what belongs to the if."
+      "correct": "Right, the indent tells Python which lines belong to the if.",
+      "wrong": "Without the indent, Python does not know what belongs to the if."
     }
   ],
   "project": {
