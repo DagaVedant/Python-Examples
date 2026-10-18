@@ -1,6 +1,7 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { getGuestCompletions, lessonCompletionKey } from './useGuestProgress';
 import { useAuth } from './useAuth';
+import { mergeGuestCompletions } from '../lib/markLessonComplete';
 import { supabase } from '../lib/supabase';
 
 /** Merged guest + signed-in completion keys (`"unit-lesson"`). */
@@ -8,13 +9,21 @@ export function useCompletions() {
   const { user, loading: authLoading } = useAuth();
   const [completions, setCompletions] = useState<string[]>(() => getGuestCompletions());
   const [loading, setLoading] = useState(true);
+  /** Tracks which user id already had guest progress merged this session. */
+  const mergedUserIdRef = useRef<string | null>(null);
 
   const refresh = useCallback(async () => {
     const guest = getGuestCompletions();
     if (!user) {
+      mergedUserIdRef.current = null;
       setCompletions(guest);
       setLoading(false);
       return;
+    }
+
+    if (mergedUserIdRef.current !== user.id) {
+      await mergeGuestCompletions(user.id);
+      mergedUserIdRef.current = user.id;
     }
 
     const { data, error } = await supabase

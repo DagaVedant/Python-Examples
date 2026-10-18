@@ -1,6 +1,49 @@
-import { markGuestLessonComplete } from '../hooks/useGuestProgress';
+import { getGuestCompletions, markGuestLessonComplete } from '../hooks/useGuestProgress';
 import { recordActivity } from '../hooks/useStreaks';
 import { supabase } from './supabase';
+
+function parseCompletionKey(key: string): { unit: number; lesson: number } | null {
+  const parts = key.split('-');
+  if (parts.length !== 2) return null;
+  const unit = Number(parts[0]);
+  const lesson = Number(parts[1]);
+  if (!Number.isInteger(unit) || !Number.isInteger(lesson) || unit < 1 || lesson < 1) {
+    return null;
+  }
+  return { unit, lesson };
+}
+
+/**
+ * Merge guest localStorage completions into Supabase for a signed-in user.
+ * Upserts rows and ignores unique conflicts so existing remote progress is kept.
+ */
+export async function mergeGuestCompletions(userId: string): Promise<void> {
+  const guest = getGuestCompletions();
+  if (guest.length === 0) return;
+
+  const rows: { user_id: string; unit: number; lesson: number }[] = [];
+  for (const key of guest) {
+    const parsed = parseCompletionKey(key);
+    if (!parsed) continue;
+    rows.push({ user_id: userId, unit: parsed.unit, lesson: parsed.lesson });
+  }
+  if (rows.length === 0) return;
+
+  const { error } = await supabase.from('completions').upsert(rows, {
+    onConflict: 'user_id,unit,lesson',
+    ignoreDuplicates: true,
+  });
+
+  if (!error) return;
+
+  // Fallback when upsert is unavailable: insert missing rows, ignore duplicates.
+  for (const row of rows) {
+    const { error: insertError } = await supabase.from('completions').insert(row);
+    if (insertError && insertError.code !== '23505') {
+      console.warn('Could not merge guest completion', insertError.message);
+    }
+  }
+}
 
 /**
  * Persist lesson completion for guest (localStorage) or signed-in user (Supabase).
@@ -26,7 +69,7 @@ export async function markLessonComplete(
   });
 
   if (error) {
-    // Unique violation → already done
+    // Unique violation -> already done
     if (error.code === '23505') return false;
     console.warn('Could not save completion', error.message);
     return false;
