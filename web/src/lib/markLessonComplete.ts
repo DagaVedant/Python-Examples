@@ -1,9 +1,11 @@
 import { markGuestLessonComplete } from '../hooks/useGuestProgress';
+import { recordActivity } from '../hooks/useStreaks';
 import { supabase } from './supabase';
 
 /**
  * Persist lesson completion for guest (localStorage) or signed-in user (Supabase).
  * Dispatches `lesson-complete` when newly completed (guest path) or after a successful insert.
+ * Always records streak activity on a new completion.
  */
 export async function markLessonComplete(
   unit: number,
@@ -12,7 +14,9 @@ export async function markLessonComplete(
 ): Promise<boolean> {
   const userId = opts?.userId;
   if (!userId) {
-    return markGuestLessonComplete(unit, lesson);
+    const added = markGuestLessonComplete(unit, lesson);
+    if (added) recordActivity();
+    return added;
   }
 
   const { error } = await supabase.from('completions').insert({
@@ -28,6 +32,7 @@ export async function markLessonComplete(
     return false;
   }
 
+  recordActivity();
   window.dispatchEvent(new CustomEvent('lesson-complete'));
   return true;
 }

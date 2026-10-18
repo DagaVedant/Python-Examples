@@ -13,6 +13,10 @@ export function lessonCompletionKey(unit: number, lesson: number): string {
 }
 
 const GUEST_COMPLETIONS_KEY = 'guest-completions';
+const EMPTY_COMPLETIONS: readonly string[] = [];
+
+let cachedRaw: string | null = null;
+let cachedSnapshot: readonly string[] = EMPTY_COMPLETIONS;
 
 function subscribeGuestCompletions(onStoreChange: () => void): () => void {
   const onStorage = (event: StorageEvent) => {
@@ -22,20 +26,30 @@ function subscribeGuestCompletions(onStoreChange: () => void): () => void {
   };
   window.addEventListener('storage', onStorage);
   window.addEventListener('guest-completions-updated', onStoreChange);
+  window.addEventListener('lesson-complete', onStoreChange);
   return () => {
     window.removeEventListener('storage', onStorage);
     window.removeEventListener('guest-completions-updated', onStoreChange);
+    window.removeEventListener('lesson-complete', onStoreChange);
   };
 }
 
 function getGuestCompletionSnapshot(): readonly string[] {
   try {
     const raw = localStorage.getItem(GUEST_COMPLETIONS_KEY);
-    if (!raw) return [];
+    if (raw === cachedRaw) return cachedSnapshot;
+    cachedRaw = raw;
+    if (!raw) {
+      cachedSnapshot = EMPTY_COMPLETIONS;
+      return cachedSnapshot;
+    }
     const parsed: unknown = JSON.parse(raw);
-    return Array.isArray(parsed) ? (parsed as string[]) : [];
+    cachedSnapshot = Array.isArray(parsed) ? (parsed as string[]) : EMPTY_COMPLETIONS;
+    return cachedSnapshot;
   } catch {
-    return [];
+    cachedRaw = null;
+    cachedSnapshot = EMPTY_COMPLETIONS;
+    return cachedSnapshot;
   }
 }
 
@@ -44,7 +58,7 @@ export function useGuestCompletionKeys(): readonly string[] {
   return useSyncExternalStore(
     subscribeGuestCompletions,
     getGuestCompletionSnapshot,
-    () => [],
+    () => EMPTY_COMPLETIONS,
   );
 }
 
