@@ -1,7 +1,14 @@
 import { Link } from 'react-router-dom';
+import { usePageMeta } from '../hooks/usePageMeta';
 import '../styles/auth.css';
 
 export function TermsPage() {
+  usePageMeta({
+    title: 'Terms of Use',
+    description: 'Terms for using the free Learn Python browser course at pythonexamples.vercel.app.',
+    path: '/terms',
+  });
+
   return (
     <div className="auth-page legal-page">
       <article className="auth-card legal-card">

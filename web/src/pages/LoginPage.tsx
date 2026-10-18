@@ -1,9 +1,16 @@
 import { FormEvent, useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../hooks/useAuth';
+import { usePageMeta } from '../hooks/usePageMeta';
 import '../styles/auth.css';
 
 export function LoginPage() {
+  usePageMeta({
+    title: 'Log in',
+    description: 'Log in to Learn Python to save progress across devices and use AI practice checks.',
+    path: '/login',
+  });
+
   const navigate = useNavigate();
   const { session, loading, signInWithPassword } = useAuth();
   const [email, setEmail] = useState('');

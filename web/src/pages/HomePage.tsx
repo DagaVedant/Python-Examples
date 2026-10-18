@@ -7,6 +7,7 @@ import { CourseTree } from '../components/CourseTree';
 import { HomeRoadmap } from '../components/HomeRoadmap';
 import { StreakBadge } from '../components/StreakBadge';
 import { useCompletions } from '../hooks/useCompletions';
+import { usePageMeta } from '../hooks/usePageMeta';
 import { loadCourseInfo } from '../lib/loadCourseInfo';
 import type { CourseUnit } from '../types/courseInfo';
 import '../styles/home.css';
@@ -18,6 +19,13 @@ export function HomePage() {
   const [units, setUnits] = useState<CourseUnit[] | null>(null);
   const [error, setError] = useState<string | null>(null);
   const { completions } = useCompletions();
+
+  usePageMeta({
+    title: 'Free beginner course in the browser',
+    description:
+      'A free beginner Python course that runs in your browser. Optional accounts save progress. AI practice feedback for signed-in users.',
+    path: '/',
+  });
 
   useEffect(() => {
     let cancelled = false;

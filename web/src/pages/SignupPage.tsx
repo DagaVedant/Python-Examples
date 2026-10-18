@@ -1,9 +1,17 @@
 import { FormEvent, useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../hooks/useAuth';
+import { usePageMeta } from '../hooks/usePageMeta';
 import '../styles/auth.css';
 
 export function SignupPage() {
+  usePageMeta({
+    title: 'Sign up',
+    description:
+      'Create an optional Learn Python account to save progress and get AI practice feedback.',
+    path: '/signup',
+  });
+
   const navigate = useNavigate();
   const { session, loading, signUp } = useAuth();
   const [email, setEmail] = useState('');

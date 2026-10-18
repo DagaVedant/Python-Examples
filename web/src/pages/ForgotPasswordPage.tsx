@@ -1,9 +1,17 @@
 import { FormEvent, useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../hooks/useAuth';
+import { usePageMeta } from '../hooks/usePageMeta';
 import '../styles/auth.css';
 
 export function ForgotPasswordPage() {
+  usePageMeta({
+    title: 'Forgot password',
+    description: 'Reset your Learn Python account password by email.',
+    path: '/forgot-password',
+    noIndex: true,
+  });
+
   const navigate = useNavigate();
   const { session, loading, resetPasswordForEmail } = useAuth();
   const [email, setEmail] = useState('');

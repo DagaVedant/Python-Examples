@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState, type ReactNode } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
+import { usePageMeta } from '../hooks/usePageMeta';
 import { loadCourseInfo } from '../lib/loadCourseInfo';
 import type { CourseUnit } from '../types/courseInfo';
 import './CertificatePage.css';
@@ -188,13 +189,22 @@ export function CertificatePage() {
     };
   }, [mode, units, loadError]);
 
-  useEffect(() => {
-    if (!content || 'error' in content) {
-      document.title = 'Certificate | Learn Python';
-      return;
-    }
-    document.title = content.documentTitle;
-  }, [content]);
+  const certPath =
+    mode.type === 'course'
+      ? '/certificate?course=1'
+      : mode.type === 'unit'
+        ? `/certificate?unit=${mode.unit}`
+        : '/certificate';
+
+  usePageMeta({
+    title:
+      content && !('error' in content)
+        ? content.documentTitle.replace(/\s*\|\s*Learn Python$/, '')
+        : 'Certificate',
+    description: 'View or print a Learn Python course or unit completion certificate.',
+    path: certPath,
+    noIndex: true,
+  });
 
   function handleNameChange(value: string) {
     setNameInput(value);

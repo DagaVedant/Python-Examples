@@ -1,7 +1,15 @@
 import { Link } from 'react-router-dom';
+import { usePageMeta } from '../hooks/usePageMeta';
 import '../styles/auth.css';
 
 export function PrivacyPage() {
+  usePageMeta({
+    title: 'Privacy Policy',
+    description:
+      'How Learn Python handles accounts, progress data, analytics, and AI practice feedback.',
+    path: '/privacy',
+  });
+
   return (
     <div className="auth-page legal-page">
       <article className="auth-card legal-card">

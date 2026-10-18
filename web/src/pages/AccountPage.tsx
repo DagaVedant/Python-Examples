@@ -1,9 +1,17 @@
 import { FormEvent, useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../hooks/useAuth';
+import { usePageMeta } from '../hooks/usePageMeta';
 import '../styles/auth.css';
 
 export function AccountPage() {
+  usePageMeta({
+    title: 'Account',
+    description: 'Manage your Learn Python account, password, and data.',
+    path: '/account',
+    noIndex: true,
+  });
+
   const navigate = useNavigate();
   const { user, loading, signOut, updatePassword, deleteAccount } = useAuth();
   const [password, setPassword] = useState('');
