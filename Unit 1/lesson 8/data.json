@@ -6,13 +6,13 @@
   "unitTitle": "Getting Started with Python",
   "title": "Changing Variables",
   "readTime": 22,
-  "goal": "In this lesson you will learn how to update a variable so it holds a new value.",
+  "goal": "By the end of this lesson you will know how to update a variable so it holds a new value.",
   "learn": [
     "Assign a new value with = again",
     "The new value replaces the old one",
-    "Later print() calls show the new value"
+    "Any print() after the update shows the new value"
   ],
-  "idea": "Variables can change. When you assign a new value with <code>=</code>, the old value is replaced.\n\nThe next time you print that variable, you see the new value. Not the old one.",
+  "idea": "Variables can change, which is why they are called variables. When you assign a new value with <code>=</code>, the old value gets replaced.\n\nThe next time you print that variable you see the new value, not the old one. Order matters here, so you have to update the variable first and print after if you want to see the change.",
   "code": {
     "filename": "score.py",
     "lines": [
@@ -28,7 +28,7 @@
       "Now: 3"
     ]
   },
-  "changeOneLine": "In the editor above, change the first <code>goals = 2</code> to <code>goals = 5</code>. Press <strong>Run</strong>. The first line should say Goals: 5 (the second line still updates goals to 3).",
+  "changeOneLine": "In the editor above, change the first <code>goals = 2</code> to <code>goals = 5</code> and press <strong>Run</strong>. The first line should say Goals: 5, and the second line still updates goals to 3.",
   "code2": {
     "filename": "level.py",
     "lines": [
@@ -48,14 +48,14 @@
   "practice": [
     {
       "text": "Start a variable at 0, print it, update it to 10, and print it again. Finish the blanks.",
-      "hint": "After the first print(score), assign a new number to score with =. Then fill the empty print() so it shows score again.",
+      "hint": "After the first print(score), give score a new number with =. Then fill in the empty print() so it shows score again.",
       "starterTip": "Under the update comment, add score = 10. In the blank print(), write print(score) so you see 0 then 10.",
       "starter": "score = 0\nprint(score)\n# Update score to 10\n\n# Print score again\nprint()",
       "gradingNote": "Pass if score starts at 0, is printed, is then assigned 10, and is printed again so output shows 0 then 10."
     },
     {
       "text": "Store a name, print it, change the name to a different friend, and print again.",
-      "hint": "Use friend = again with a new name in quotes. The second print(friend) will show the new name, not Sam.",
+      "hint": "Use friend = again with a new name in quotes. The second print(friend) will show the new name instead of Sam.",
       "starterTip": "Under the change comment, add something like friend = \"Alex\" (any name in quotes). The last print(friend) stays as is.",
       "starter": "friend = \"Sam\"\nprint(friend)\n# Change friend to a new name\n\nprint(friend)",
       "gradingNote": "Pass if friend is assigned twice to different non-empty strings and both values are printed in order."
@@ -82,8 +82,8 @@
           "correct": false
         }
       ],
-      "correct": "The last value stored in x is 10, so that is what prints.",
-      "wrong": "Variables can be updated. The newest value replaces the old one."
+      "correct": "Right, the last value stored in x is 10, so that is what prints.",
+      "wrong": "Variables can be updated, and the newest value replaces the old one."
     },
     {
       "question": "After <code>n = 1</code> then <code>n = 2</code>, what is in n?",
@@ -105,8 +105,8 @@
           "correct": false
         }
       ],
-      "correct": "The newest assignment wins: n holds 2.",
-      "wrong": "A new assignment replaces the old value."
+      "correct": "Yes, the newest assignment wins, so n holds 2.",
+      "wrong": "A new assignment replaces the old value, so n only holds one thing at a time."
     },
     {
       "question": "When do you see the new value after changing a variable?",
@@ -128,8 +128,8 @@
           "correct": false
         }
       ],
-      "correct": "Prints that run after the new assignment show the new value.",
-      "wrong": "Order matters: update first, then print to see the change."
+      "correct": "Right, any print() that runs after the new assignment shows the new value.",
+      "wrong": "Order matters. Update first, then print, and you will see the change."
     }
   ],
   "project": {

@@ -6,13 +6,13 @@
   "unitTitle": "Getting Started with Python",
   "title": "print() Basics",
   "readTime": 20,
-  "goal": "In this lesson you will learn how print() shows text on the screen.",
+  "goal": "By the end of this lesson you will know how print() puts text on the screen.",
   "learn": [
-    "print() displays something on the screen",
-    "Put text inside quotes inside the parentheses",
-    "Run the program to see the output"
+    "print() shows something on the screen",
+    "The text goes inside quotes, and the quotes go inside the parentheses",
+    "Press Run to see the output"
   ],
-  "idea": "<code>print()</code> is how you make Python show something on the screen. Put the text inside quotes, and put those quotes inside the parentheses.\n\nWhen you press <strong>Run</strong>, Python follows the instruction and the words appear in the output area.",
+  "idea": "<code>print()</code> is how you make Python show something on the screen. Put your text inside quotes, and put those quotes inside the parentheses.\n\nWhen you press <strong>Run</strong>, Python follows the instruction and your words show up in the output area. If nothing shows up, check the quotes and parentheses first, because that is where most beginner mistakes happen.",
   "code": {
     "filename": "hello.py",
     "lines": [
@@ -24,7 +24,7 @@
       "I am learning Python."
     ]
   },
-  "changeOneLine": "In the editor above, change <code>Hello, world!</code> to <code>Hello, Python!</code>. Press <strong>Run</strong>. The first line of output should update.",
+  "changeOneLine": "In the editor above, change <code>Hello, world!</code> to <code>Hello, Python!</code> and press <strong>Run</strong>. The first line of the output should update.",
   "code2": {
     "filename": "hi.py",
     "lines": [
@@ -39,14 +39,14 @@
   "practice": [
     {
       "text": "Finish the greeting. Keep the first print. Fill in the second blank so it prints a second message.",
-      "hint": "Keep print(\"Hello!\"). On the blank line, add a second message inside quotes inside print().",
+      "hint": "Keep print(\"Hello!\") as it is. On the blank line, add a second message inside quotes inside print().",
       "starterTip": "Under the comment, try: print(\"Nice to meet you!\"). Then press Run.",
       "starter": "print(\"Hello!\")\n# Add your second message\nprint()",
       "gradingNote": "Pass if there are two print() calls that each display a non-empty string."
     },
     {
       "text": "Print your favourite animal in one print() call. Replace the blank.",
-      "hint": "One print() is enough. Put your animal name (or a short sentence) inside quotes.",
+      "hint": "One print() is enough. Put your animal (or a short sentence about it) inside quotes.",
       "starterTip": "Replace the blank with something like: print(\"panda\") or print(\"I like dogs\").",
       "starter": "# One print with your favourite animal\nprint()",
       "gradingNote": "Pass if one print() shows a non-empty string (animal name or sentence). Empty print() fails."
@@ -73,8 +73,8 @@
           "correct": false
         }
       ],
-      "correct": "print() shows the text on the screen.",
-      "wrong": "print() displays text. It does not create a variable by itself."
+      "correct": "Right, print() shows the text on the screen.",
+      "wrong": "Not this one. print() only displays text, it does not create a variable or save anything."
     },
     {
       "question": "Which line is written correctly?",
@@ -96,8 +96,8 @@
           "correct": false
         }
       ],
-      "correct": "Use lowercase print, parentheses, and quotes around the text.",
-      "wrong": "Text needs quotes, and print needs parentheses. Spelling is lowercase print."
+      "correct": "Yes, you need a lowercase print, parentheses, and quotes around the text.",
+      "wrong": "Check both parts. The text needs quotes, and print has to be lowercase with parentheses."
     },
     {
       "question": "Why do we put quotes around Hello in print(\"Hello\")?",
@@ -125,7 +125,7 @@
   ],
   "project": {
     "title": "Mini Greeting",
-    "desc": "Print two lines: a hello, and one fun fact about you. Keep both messages in quotes.",
+    "desc": "Print two lines: a hello and one fun fact about you. Keep both messages in quotes.",
     "starter": "print(\"Hello!\")\n# Fun fact\nprint()"
   },
   "prev": {

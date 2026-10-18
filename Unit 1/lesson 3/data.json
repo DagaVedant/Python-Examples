@@ -6,13 +6,13 @@
   "unitTitle": "Getting Started with Python",
   "title": "Comments",
   "readTime": 20,
-  "goal": "In this lesson you will learn how to write comments that explain your code to people.",
+  "goal": "This lesson covers comments, which are notes you leave in your code so people can understand it.",
   "learn": [
     "A comment starts with #",
-    "Python ignores comments",
-    "Comments help humans understand the code"
+    "Python ignores comments completely",
+    "Comments help the humans reading the code"
   ],
-  "idea": "A <strong>comment</strong> is a note for people reading the code. In Python, a comment starts with <code>#</code>.\n\nPython skips that part. It does not print the comment and does not treat it as an instruction. Use comments to label what a line is for.",
+  "idea": "A <strong>comment</strong> is a note for the people reading your code. In Python, a comment starts with <code>#</code>.\n\nPython skips that whole line. It does not print it and it does not treat it as an instruction. Use comments to label what a line is for, because you will forget what your own code does within a week.",
   "code": {
     "filename": "notes.py",
     "lines": [
@@ -50,7 +50,7 @@
     },
     {
       "text": "Keep the comment. Finish the blank print so the program still has a note plus one message.",
-      "hint": "Leave the # line alone. It is already a comment. Fill in print() with a colour name inside quotes.",
+      "hint": "Leave the # line alone because it is already a comment. Fill in print() with a colour name inside quotes.",
       "starterTip": "Keep # My favourite colour, then try print(\"blue\") on the blank line below it.",
       "starter": "# My favourite colour\nprint()",
       "gradingNote": "Pass if a # comment remains and one print() shows a non-empty string."
@@ -77,8 +77,8 @@
           "correct": false
         }
       ],
-      "correct": "A # starts a comment. Python skips it.",
-      "wrong": "Comments are for people. Python does not run or print them."
+      "correct": "Yes, a # starts a comment and Python skips it.",
+      "wrong": "Comments are for people. Python does not run them or print them."
     },
     {
       "question": "Which line is a comment?",
@@ -100,8 +100,8 @@
           "correct": false
         }
       ],
-      "correct": "A line that starts with # is a comment.",
-      "wrong": "Look for a line that begins with # outside of quotes."
+      "correct": "Right, a line that starts with # is a comment.",
+      "wrong": "Look for the line that begins with # and is not inside quotes."
     },
     {
       "question": "Why write comments?",
@@ -123,13 +123,13 @@
           "correct": false
         }
       ],
-      "correct": "Comments explain the code to humans.",
-      "wrong": "Comments help readers. They are not what makes print work."
+      "correct": "Exactly, comments explain the code to humans.",
+      "wrong": "Comments help readers. They have nothing to do with making print() work or making the program faster."
     }
   ],
   "project": {
     "title": "Labeled About Me",
-    "desc": "Print your name and a hobby. Put a clear # comment above each print.",
+    "desc": "Print your name and a hobby, and put a clear # comment above each print.",
     "starter": "# Name\nprint(\"Name: ___\")\n\n# Hobby\nprint(\"Hobby: ___\")"
   },
   "prev": {

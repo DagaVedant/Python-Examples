@@ -6,13 +6,13 @@
   "unitTitle": "Getting Started with Python",
   "title": "Variables",
   "readTime": 22,
-  "goal": "In this lesson you will learn what a variable is and how to store a value so you can reuse it.",
+  "goal": "This lesson covers variables, which let you store a value once and reuse it wherever you need it.",
   "learn": [
-    "A variable is a named box for a value",
-    "Use = to store a value",
-    "Print the variable name to show its value"
+    "A variable is a named box that holds a value",
+    "Use = to store a value in it",
+    "Print the variable name to show what is inside"
   ],
-  "idea": "A <strong>variable</strong> is a named box that holds a value. You put something in the box with <code>=</code>, then use the name later instead of typing the value again.\n\nText still needs quotes when you store it. Numbers do not need quotes.",
+  "idea": "A <strong>variable</strong> is a named box that holds a value. You put something in the box with <code>=</code>, and after that you can use the name instead of typing the value again.\n\nText still needs quotes when you store it, but numbers do not. So <code>name = \"Ava\"</code> works and <code>age = 11</code> works, but <code>name = Ava</code> would not.",
   "code": {
     "filename": "name_tag.py",
     "lines": [
@@ -26,7 +26,7 @@
       "Ava is 11"
     ]
   },
-  "changeOneLine": "In the editor above, change <code>name = \"Ava\"</code> to your own name (keep the quotes). Press <strong>Run</strong>. Both lines that use <code>name</code> should update.",
+  "changeOneLine": "In the editor above, change <code>name = \"Ava\"</code> to your own name and keep the quotes. Press <strong>Run</strong> and both lines that use <code>name</code> should update, which is the whole point of a variable.",
   "code2": {
     "filename": "team.py",
     "lines": [
@@ -40,15 +40,15 @@
   },
   "practice": [
     {
-      "text": "Store your name and age in variables. Use ONE print to show them in a sentence. Fill in the blank.",
-      "hint": "Do not retype \"Sam\" or 11 inside print. Use the variable names name and age so Python shows what is stored.",
+      "text": "Store a name and an age in variables, then use ONE print to show them in a sentence. Fill in the blank.",
+      "hint": "Do not retype \"Sam\" or 11 inside print. Use the variable names name and age so Python shows whatever is stored.",
       "starterTip": "Try: print(name, \"is\", age, \"years old\"). Commas add spaces between the words and numbers.",
       "starter": "name = \"Sam\"\nage = 11\n# One print that uses both variables\nprint()",
       "gradingNote": "Pass if name and age are assigned to variables and a single print uses both variable names (not only hardcoded text for both)."
     },
     {
-      "text": "Create a variable for a favourite colour and print a sentence that uses it.",
-      "hint": "The colour variable is already set. Your print should include the word colour (the variable name), not only the word blue in quotes.",
+      "text": "The colour variable is already set. Print a sentence that uses it.",
+      "hint": "Your print should include the variable colour, not only the word blue in quotes.",
       "starterTip": "Example: print(\"My favourite colour is\", colour). You can change the sentence, but keep colour in the print.",
       "starter": "# Store a colour\ncolour = \"blue\"\nprint()",
       "gradingNote": "Pass if a colour (or color) variable holds a non-empty string and print uses that variable name."
@@ -75,8 +75,8 @@
           "correct": false
         }
       ],
-      "correct": "Text needs quotes, and the variable name goes on the left of =.",
-      "wrong": "Put the variable name on the left, and put quotes around text values."
+      "correct": "Right, the text needs quotes and the variable name goes on the left of the =.",
+      "wrong": "The variable name goes on the left, and text values need quotes."
     },
     {
       "question": "What is a variable?",
@@ -98,8 +98,8 @@
           "correct": false
         }
       ],
-      "correct": "A variable stores a value under a name you choose.",
-      "wrong": "Think of a labeled box. The name lets you reuse the value."
+      "correct": "Yes, a variable stores a value under a name you choose.",
+      "wrong": "Think of a labeled box. The name is how you find the value again."
     },
     {
       "question": "Why use a variable instead of typing the same value many times?",
@@ -121,13 +121,13 @@
           "correct": false
         }
       ],
-      "correct": "Variables let you reuse a value without rewriting it everywhere.",
-      "wrong": "The main reason is reuse. Not speed or a Python rule."
+      "correct": "Right, a variable lets you reuse a value without rewriting it everywhere.",
+      "wrong": "The main reason is reuse. It has nothing to do with speed or a Python rule."
     }
   ],
   "project": {
     "title": "Player Card",
-    "desc": "Store a player name and a score in variables. Print two lines that use those variables.",
+    "desc": "Store a player name and a score in variables, then print two lines that use those variables.",
     "starter": "player = \"Alex\"\nscore = 7\nprint()\nprint()"
   },
   "prev": {

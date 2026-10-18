@@ -6,13 +6,13 @@
   "unitTitle": "Getting Started with Python",
   "title": "What is a Program",
   "readTime": 20,
-  "goal": "In this lesson you will learn what a program is and how Python reads instructions from top to bottom.",
+  "goal": "A program is just a list of instructions, and by the end of this lesson you will know how Python reads them.",
   "learn": [
-    "A program is a list of instructions",
-    "Python runs lines from top to bottom",
-    "Each instruction does one small job"
+    "A program is a list of instructions the computer follows",
+    "Python reads from the top of the file to the bottom",
+    "Every instruction does one small job"
   ],
-  "idea": "A <strong>program</strong> is a list of instructions for the computer. Python starts at the top of the file and runs each line in order, one at a time.\n\nThink of it like a recipe: step 1, then step 2, then step 3. You do not skip around unless a later lesson teaches a special command.",
+  "idea": "A <strong>program</strong> is basically a list of instructions for the computer. Python starts at the top of the file and runs each line in order, one at a time, so the order you write things in actually matters.\n\nThink of it like a recipe. Step 1 happens, then step 2, then step 3. Python will not jump around on its own, and later on you will learn the special commands that let it skip or repeat steps.",
   "code": {
     "filename": "steps.py",
     "lines": [
@@ -29,7 +29,7 @@
       "Step 3: try the code"
     ]
   },
-  "changeOneLine": "In the editor above, change <code>Step 2: read the page</code> to <code>Step 2: write a note</code>. Press <strong>Run</strong>. The middle line of output should update.",
+  "changeOneLine": "In the editor above, change <code>Step 2: read the page</code> to <code>Step 2: write a note</code> and press <strong>Run</strong>. Only the middle line of the output should change, which shows you that each line does its own job.",
   "code2": {
     "filename": "morning.py",
     "lines": [
@@ -45,15 +45,15 @@
   },
   "practice": [
     {
-      "text": "Finish a three-step morning routine. Keep the comments. Fill in the blank print lines so the program shows three steps in order.",
-      "hint": "You already have Step 1. For Step 2 and Step 3, put words inside the empty print() calls, and keep the quotes.",
+      "text": "Finish this three step morning routine. Keep the comments and fill in the two empty print lines so the program shows all three steps in order.",
+      "hint": "Step 1 is already done for you. For Steps 2 and 3, put words inside the empty print() calls and keep the quotes around them.",
       "starterTip": "Try something like print(\"Brush teeth\") under Step 2, then another print(\"...\") under Step 3.",
       "starter": "# Step 1\nprint(\"Wake up\")\n\n# Step 2\nprint()\n\n# Step 3\nprint()",
       "gradingNote": "Pass if there are three print() calls with non-empty text, in a clear top-to-bottom order. Empty print() fails."
     },
     {
       "text": "Write a tiny program with exactly two instructions that print two different messages. Use the starter.",
-      "hint": "You need two print() lines. Each one should show a different message inside quotes.",
+      "hint": "You need two print() lines, and each one should show a different message inside quotes.",
       "starterTip": "Fill both blank lines, for example: print(\"Hello\") on the first and print(\"Goodbye\") on the second.",
       "starter": "# Two instructions, top to bottom\nprint()\nprint()",
       "gradingNote": "Pass if exactly two print() calls each show a non-empty string."
@@ -80,8 +80,8 @@
           "correct": false
         }
       ],
-      "correct": "A program is a list of instructions the computer follows.",
-      "wrong": "Think of a recipe: steps the computer follows in order."
+      "correct": "Right, a program is a list of instructions the computer follows.",
+      "wrong": "Not quite. Think of a recipe: a list of steps the computer follows in order."
     },
     {
       "question": "In what order does Python run the lines in a simple program?",
@@ -103,8 +103,8 @@
           "correct": false
         }
       ],
-      "correct": "Python reads from the top of the file downward.",
-      "wrong": "Simple programs run from the first line to the last."
+      "correct": "Yes, Python reads from the top of the file down.",
+      "wrong": "Not this one. A simple program runs from the first line to the last."
     },
     {
       "question": "If a program has three print() lines, how many lines of output do you usually get?",
@@ -126,13 +126,13 @@
           "correct": false
         }
       ],
-      "correct": "Each print() usually makes one line of output.",
-      "wrong": "Each working print() adds another line to the output."
+      "correct": "Exactly, each print() usually makes one line of output.",
+      "wrong": "Count the print() calls. Each one that runs adds another line to the output."
     }
   ],
   "project": {
     "title": "My Day in Three Steps",
-    "desc": "Write a short program that prints three steps of your day in order. Keep a comment above each step.",
+    "desc": "Write a short program that prints three steps of your day in order. Keep a comment above each step so a reader knows what each part is for.",
     "starter": "# Morning\nprint(\"Step 1: ___\")\n\n# Afternoon\nprint(\"Step 2: ___\")\n\n# Evening\nprint(\"Step 3: ___\")"
   },
   "prev": null,

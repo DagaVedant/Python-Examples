@@ -6,13 +6,13 @@
   "unitTitle": "Getting Started with Python",
   "title": "Fancy print()",
   "readTime": 22,
-  "goal": "In this lesson you will learn how to print several values in one line and how to make a blank line.",
+  "goal": "By the end of this lesson you will know how to print several values on one line and how to make a blank line.",
   "learn": [
-    "Pass several values to print() with commas",
-    "Python puts a space between those values",
-    "Empty print() makes a blank line"
+    "Give print() several values separated by commas",
+    "Python puts a space between those values for you",
+    "An empty print() makes a blank line"
   ],
-  "idea": "You can give <code>print()</code> several things separated by commas. Python puts a space between them automatically.\n\nAn empty <code>print()</code> with nothing inside the parentheses prints a blank line. Useful for spacing your output.",
+  "idea": "You can give <code>print()</code> several things separated by commas, and Python puts a space between them automatically. You do not have to type the spaces yourself.\n\nAn empty <code>print()</code> with nothing inside the parentheses prints a blank line, which is useful for spacing out your output so it is easier to read.",
   "code": {
     "filename": "scoreboard.py",
     "lines": [
@@ -30,7 +30,7 @@
       "Game over"
     ]
   },
-  "changeOneLine": "In the editor above, change <code>10</code> to <code>25</code> in the first print. Press <strong>Run</strong>. The first line should say <code>Score: 25 points</code>.",
+  "changeOneLine": "In the editor above, change <code>10</code> to <code>25</code> in the first print and press <strong>Run</strong>. The first line should say <code>Score: 25 points</code>.",
   "code2": {
     "filename": "ticket.py",
     "lines": [
@@ -47,14 +47,14 @@
   "practice": [
     {
       "text": "Finish the mini scoreboard. Each player should print on one line like <code>Alice: 42 points</code>. Fill in the blank print.",
-      "hint": "Copy the Alice line’s pattern: a name in quotes, a number, and the word points, all inside one print() with commas between them.",
+      "hint": "Copy the pattern from the Alice line: a name in quotes, a number, and the word points, all inside one print() with commas between them.",
       "starterTip": "Fill the blank print like: print(\"Bob:\", 30, \"points\"). Change the name and number to your second player.",
       "starter": "print(\"Alice:\", 42, \"points\")\n# Player 2. Finish this line\nprint()",
       "gradingNote": "Pass if there are two print lines that each show a player name, a number, and the word points (commas between values is fine). Empty print() fails."
     },
     {
       "text": "Print a title, then a blank line, then a message. Use one empty print() for the blank line.",
-      "hint": "You already have the title and the empty print() for spacing. Only the last print() needs text inside quotes.",
+      "hint": "The title and the empty print() for spacing are already there. Only the last print() needs text inside quotes.",
       "starterTip": "Leave print(\"NEWS\") and print() as they are. Fill the bottom blank with something like print(\"Breaking story here\").",
       "starter": "print(\"NEWS\")\n# Blank line\nprint()\n# Message after the blank line\nprint()",
       "gradingNote": "Pass if output has a title print, one empty print() for a blank line, and another print with non-empty text after it."
@@ -81,8 +81,8 @@
           "correct": false
         }
       ],
-      "correct": "Commas in print() put a space between the values.",
-      "wrong": "print() with commas inserts a space between each value. It does not add a comma."
+      "correct": "Right, commas in print() put a space between the values.",
+      "wrong": "print() inserts a space between each value. It does not add a comma."
     },
     {
       "question": "What does an empty <code>print()</code> do?",
@@ -104,8 +104,8 @@
           "correct": false
         }
       ],
-      "correct": "Yes. Empty print() makes a blank line.",
-      "wrong": "Empty print() does not error. It prints a blank line."
+      "correct": "Yes, an empty print() makes a blank line.",
+      "wrong": "An empty print() does not cause an error. It just prints a blank line."
     },
     {
       "question": "How many values can you pass to one print()?",
@@ -127,13 +127,13 @@
           "correct": false
         }
       ],
-      "correct": "You can list several values separated by commas.",
-      "wrong": "One print() can take many values separated by commas."
+      "correct": "Right, you can list as many values as you want, separated by commas.",
+      "wrong": "One print() can take lots of values as long as they are separated by commas."
     }
   ],
   "project": {
     "title": "Receipt Printer",
-    "desc": "Finish the fake store receipt. Keep two items with prices, a blank line, then a total that uses commas in print().",
+    "desc": "Finish the fake store receipt. Keep the two items with prices, add a blank line, then a total that uses commas in print().",
     "starter": "print(\"=== RECEIPT ===\")\nprint(\"Apple:\", 1)\n# Add one more item with commas\nprint()\n\n# Blank line then total\nprint()\nprint(\"Total:\", 3)"
   },
   "prev": {

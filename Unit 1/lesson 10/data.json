@@ -6,13 +6,13 @@
   "unitTitle": "Getting Started with Python",
   "title": "Data Types & Casting",
   "readTime": 25,
-  "goal": "In this lesson you will learn the three main beginner data types and how to convert between them for math.",
+  "goal": "By the end of this lesson you will know the three main beginner data types and how to convert between them so you can do math.",
   "learn": [
-    "Tell apart str, int, and float",
-    "Know that digit text is still a string",
+    "Tell str, int, and float apart",
+    "Know that digits in quotes are still a string",
     "Convert types with int() and float()"
   ],
-  "idea": "Every value in Python has a <strong>type</strong>. Text is a string (<code>str</code>). Whole numbers are integers (<code>int</code>). Numbers with a decimal point are floats (<code>float</code>).\n\n<code>input()</code> always gives back a string. Even if someone types <code>14</code>. Digits in quotes like <code>\"14\"</code> are also text. For math, convert (cast) with <code>int()</code> or <code>float()</code> first. Adding two strings sticks them together. Adding two numbers does math.",
+  "idea": "Every value in Python has a <strong>type</strong>. Text is a string (<code>str</code>), whole numbers are integers (<code>int</code>), and numbers with a decimal point are floats (<code>float</code>).\n\n<code>input()</code> always gives back a string, even if someone types <code>14</code>. Digits inside quotes like <code>\"14\"</code> are text too. So for math you have to convert (cast) with <code>int()</code> or <code>float()</code> first. Adding two strings sticks them together, while adding two numbers does actual math.",
   "code": {
     "filename": "next_year.py",
     "lines": [
@@ -36,7 +36,7 @@
       "Total: 7.5"
     ]
   },
-  "changeOneLine": "Press <strong>Run</strong>. Type an age like <code>10</code>, then a price and quantity. Check that the “next year” line uses your age + 1.",
+  "changeOneLine": "Press <strong>Run</strong>. Type an age like <code>10</code>, then a price and a quantity. Check that the \"next year\" line uses your age plus 1.",
   "code2": {
     "filename": "types.py",
     "lines": [
@@ -54,15 +54,15 @@
   },
   "practice": [
     {
-      "text": "Two number answers are stored as text. Cast both to int and print their sum (math, not stuck-together text).",
-      "hint": "\"6\" and \"7\" are strings. Wrap each in int() before you add, or Python will join them into \"67\".",
+      "text": "Two number answers are stored as text. Cast both to int and print their sum, so it is real math and not stuck together text.",
+      "hint": "\"6\" and \"7\" are strings. Wrap each one in int() before you add them, or Python will join them into \"67\".",
       "starterTip": "Try: print(int(n1) + int(n2)). You should see 13, not 67.",
       "starter": "n1 = \"6\"\nn2 = \"7\"\n# Cast and add, then print the sum\nprint()",
       "gradingNote": "Pass if both values are converted with int() (or equivalent casting) and the printed result is the numeric sum 13, not the string 67."
     },
     {
       "text": "A price and a quantity are stored as text. Cast them, multiply, and print the total.",
-      "hint": "Use float() for price (it has a decimal) and int() for qty. Multiply the numbers, then store or print that result.",
+      "hint": "Use float() for the price since it has a decimal, and int() for the quantity. Replace total = 0 with the real multiplication, then print it.",
       "starterTip": "Replace total = 0 with total = float(price) * int(qty). Print(total) should show 13.0 for 3.25 times 4.",
       "starter": "price = \"3.25\"\nqty = \"4\"\n# Cast, multiply, print the total\ntotal = 0\nprint(total)",
       "gradingNote": "Pass if price is cast to float, qty to int (or both numeric), multiplied, and printed so the value is 13.0 (or 13) for 3.25*4."
@@ -89,7 +89,7 @@
           "correct": false
         }
       ],
-      "correct": "Quotes make a string. Cast with int() or float() before math.",
+      "correct": "Right, quotes make it a string, so you have to cast it with int() or float() before doing math.",
       "wrong": "Even digits in quotes are a string until you cast them."
     },
     {
@@ -112,8 +112,8 @@
           "correct": false
         }
       ],
-      "correct": "Adding strings sticks them together: 34.",
-      "wrong": "With strings, + joins text. Use int() if you want 7."
+      "correct": "Yes, adding strings sticks them together, so you get 34.",
+      "wrong": "With strings, + joins the text. Use int() first if you want 7."
     },
     {
       "question": "Which call turns the text \"2.5\" into a number you can multiply?",
@@ -135,13 +135,13 @@
           "correct": false
         }
       ],
-      "correct": "float() is for numbers with a decimal point.",
-      "wrong": "int(\"2.5\") fails. Use float() for decimals."
+      "correct": "Right, float() is for numbers with a decimal point.",
+      "wrong": "int(\"2.5\") fails because of the decimal. Use float() for that."
     }
   ],
   "project": {
     "title": "Tip Calculator",
-    "desc": "A meal price and tip percent are stored as text. Cast them, compute tip and total, then print both.",
+    "desc": "A meal price and a tip percent are stored as text. Cast them, work out the tip and the total, then print both.",
     "starter": "price_text = \"40\"\ntip_percent_text = \"15\"\nprice = float(price_text)\ntip_percent = float(tip_percent_text)\n# tip = price * tip_percent / 100\n# total = price + tip\ntip = 0\ntotal = 0\nprint(\"Tip:\", tip)\nprint(\"Total:\", total)"
   },
   "prev": {
