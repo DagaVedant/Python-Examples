@@ -1,4 +1,4 @@
-.app-split {
+﻿.app-split {
   display: grid;
   grid-template-columns: 270px minmax(0, 1fr);
   align-items: start;
@@ -13,6 +13,39 @@
   border-right: 1px solid var(--border);
   background: var(--surface);
   font-size: 13px;
+}
+
+.course-tree-search {
+  padding: 0 8px 10px;
+}
+
+.course-tree-search-input {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 32px;
+  padding: 6px 8px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background: var(--bg);
+  color: var(--text);
+  font: inherit;
+  font-size: 13px;
+}
+
+.course-tree-search-input::placeholder {
+  color: var(--text2);
+}
+
+.course-tree-search-input:focus {
+  outline: 2px solid var(--blue-tx);
+  outline-offset: 1px;
+}
+
+.course-tree-search-meta {
+  margin: 6px 0 0;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text2);
 }
 
 .course-tree-head {
@@ -167,3 +200,4 @@ body.dark .course-tree-file.is-done .course-tree-state {
     transition: none;
   }
 }
+

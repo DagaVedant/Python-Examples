@@ -1,8 +1,10 @@
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useCompletions } from '../hooks/useCompletions';
 import { loadCourseInfo } from '../lib/loadCourseInfo';
+import { loadSearchIndex } from '../lib/loadSearchIndex';
 import type { CourseInfo } from '../types/courseInfo';
+import type { SearchLesson } from '../types/searchIndex';
 import './CourseTree.css';
 
 type Props = {
@@ -18,8 +20,16 @@ function slug(title: string): string {
     .replace(/^-|-$/g, '');
 }
 
+function matchesQuery(entry: SearchLesson, q: string): boolean {
+  if (!q) return true;
+  return `${entry.title} ${entry.goal}`.toLowerCase().includes(q);
+}
+
 export function CourseTree({ unit, lesson }: Props) {
+  const navigate = useNavigate();
   const [course, setCourse] = useState<CourseInfo | null>(null);
+  const [index, setIndex] = useState<SearchLesson[] | null>(null);
+  const [query, setQuery] = useState('');
   const [open, setOpen] = useState<Record<number, boolean>>(unit ? { [unit]: true } : { 1: true });
   const { isLessonComplete, completions } = useCompletions();
 
@@ -38,15 +48,86 @@ export function CourseTree({ unit, lesson }: Props) {
   }, []);
 
   useEffect(() => {
+    let cancelled = false;
+    loadSearchIndex()
+      .then((data) => {
+        if (!cancelled) setIndex(data.lessons);
+      })
+      .catch(() => {
+        if (!cancelled) setIndex([]);
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
+  useEffect(() => {
     if (unit) setOpen((prev) => ({ ...prev, [unit]: true }));
   }, [unit]);
+
+  const q = query.toLowerCase().trim();
+  const matches = index && q ? index.filter((entry) => matchesQuery(entry, q)) : [];
+  const matchKeys =
+    q.length > 0 ? new Set(matches.map((m) => `${m.unit}:${m.lesson}`)) : null;
+
+  useEffect(() => {
+    if (!q || !index) return;
+    const matched = index.filter((entry) => matchesQuery(entry, q));
+    if (matched.length === 0) return;
+    const next: Record<number, boolean> = {};
+    for (const m of matched) next[m.unit] = true;
+    setOpen((prev) => ({ ...prev, ...next }));
+  }, [q, index]);
 
   if (!course) return <aside className="course-tree" aria-hidden="true" />;
 
   const total = course.units.reduce((n, u) => n + u.lessons.length, 0);
 
+  const visibleUnits = course.units
+    .map((u) => ({
+      unit: u,
+      lessons: matchKeys
+        ? u.lessons.filter((l) => matchKeys.has(`${u.number}:${l.number}`))
+        : u.lessons,
+    }))
+    .filter((row) => row.lessons.length > 0);
+
+  function openTopResult() {
+    if (matches.length === 0) return;
+    const top = matches[0];
+    navigate(`/lesson?unit=${top.unit}&lesson=${top.lesson}`);
+  }
+
   return (
     <nav className="course-tree" aria-label="Course outline">
+      <div className="course-tree-search">
+        <label className="sr-only" htmlFor="course-tree-search-input">
+          Search lessons
+        </label>
+        <input
+          id="course-tree-search-input"
+          type="search"
+          className="course-tree-search-input"
+          placeholder="Search lessons"
+          value={query}
+          autoComplete="off"
+          spellCheck={false}
+          onChange={(e) => setQuery(e.target.value)}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter') {
+              e.preventDefault();
+              openTopResult();
+            }
+          }}
+        />
+        {q && (
+          <p className="course-tree-search-meta" aria-live="polite">
+            {matches.length === 0
+              ? 'No matches'
+              : `${matches.length} match${matches.length === 1 ? '' : 'es'}`}
+          </p>
+        )}
+      </div>
       <div className="course-tree-head">
         <span>python-course</span>
         <span>
@@ -54,7 +135,7 @@ export function CourseTree({ unit, lesson }: Props) {
         </span>
       </div>
       <ul className="course-tree-units">
-        {course.units.map((u) => {
+        {visibleUnits.map(({ unit: u, lessons }) => {
           const isOpen = Boolean(open[u.number]);
           const done = u.lessons.filter((l) => isLessonComplete(u.number, l.number)).length;
           return (
@@ -75,7 +156,7 @@ export function CourseTree({ unit, lesson }: Props) {
               </button>
               {isOpen && (
                 <ul className="course-tree-lessons">
-                  {u.lessons.map((l) => {
+                  {lessons.map((l) => {
                     const current = u.number === unit && l.number === lesson;
                     const complete = isLessonComplete(u.number, l.number);
                     return (
