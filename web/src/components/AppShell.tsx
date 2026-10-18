@@ -1,6 +1,7 @@
 import { useCallback, useState, type ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../hooks/useAuth';
+import { StatusBanner } from './StatusBanner';
 import '../styles/auth.css';
 
 type Theme = 'light' | 'dark';
@@ -67,6 +68,7 @@ export function AppShell({ children }: AppShellProps) {
           </button>
         </div>
       </nav>
+      <StatusBanner />
       {children}
       <footer className="site-footer">
         <span>Learn Python</span>

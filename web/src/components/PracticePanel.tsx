@@ -4,6 +4,7 @@ import { useAuth } from '../hooks/useAuth';
 import { requestAiPracticeGrade, AI_CHECKS_PER_DAY } from '../lib/gradePractice';
 import { gradePracticeLocally, type LocalGradeResult } from '../lib/practiceGrade';
 import { resolveHint, resolveStarterTip } from '../lib/practiceHints';
+import { PYODIDE_LOAD_MESSAGE } from '../lib/serviceMessages';
 import { usePyodide } from '../hooks/usePyodide';
 import type { LessonData, PracticeTask } from '../types/lesson';
 import { PythonEditor, type PythonEditorTheme } from './PythonEditor';
@@ -404,7 +405,7 @@ export function PracticePanel({ lesson, theme }: PracticePanelProps) {
       <h2 id="practice-panel-heading">Practice</h2>
       {loadError ? (
         <p className="practice-panel__load-note" role="alert">
-          Python runtime failed to load: {loadError}
+          {PYODIDE_LOAD_MESSAGE}
         </p>
       ) : null}
       <ul className="practice-panel__list">

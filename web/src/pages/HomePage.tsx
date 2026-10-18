@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { CertificatesPanel } from '../components/CertificatesPanel';
 import { ContinueCard } from '../components/ContinueCard';
@@ -9,7 +9,13 @@ import { StreakBadge } from '../components/StreakBadge';
 import { useCompletions } from '../hooks/useCompletions';
 import { usePageMeta } from '../hooks/usePageMeta';
 import { loadCourseInfo } from '../lib/loadCourseInfo';
+import {
+  COURSE_LOAD_MESSAGE,
+  OFFLINE_MESSAGE,
+  isLikelyOffline,
+} from '../lib/serviceMessages';
 import type { CourseUnit } from '../types/courseInfo';
+import '../styles/auth.css';
 import '../styles/home.css';
 
 const PYTHON_LOGO =
@@ -18,6 +24,7 @@ const PYTHON_LOGO =
 export function HomePage() {
   const [units, setUnits] = useState<CourseUnit[] | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const [retryToken, setRetryToken] = useState(0);
   const { completions } = useCompletions();
 
   usePageMeta({
@@ -27,21 +34,30 @@ export function HomePage() {
     path: '/',
   });
 
+  const reloadCourse = useCallback(() => {
+    setError(null);
+    setUnits(null);
+    setRetryToken((n) => n + 1);
+  }, []);
+
   useEffect(() => {
     let cancelled = false;
     loadCourseInfo()
       .then((info) => {
-        if (!cancelled) setUnits(info.units);
-      })
-      .catch((err: unknown) => {
         if (!cancelled) {
-          setError(err instanceof Error ? err.message : 'Could not load course');
+          setUnits(info.units);
+          setError(null);
+        }
+      })
+      .catch(() => {
+        if (!cancelled) {
+          setError(isLikelyOffline() ? OFFLINE_MESSAGE : COURSE_LOAD_MESSAGE);
         }
       });
     return () => {
       cancelled = true;
     };
-  }, []);
+  }, [retryToken]);
 
   return (
     <div className="home-page">
@@ -79,8 +95,15 @@ export function HomePage() {
 
       <ContinueCard />
 
-      {error && <p className="home-error">{error}</p>}
-      {units === null && !error && <p className="home-loading">Loading course…</p>}
+      {error ? (
+        <div className="home-error-panel" role="alert">
+          <p>{error}</p>
+          <button type="button" onClick={reloadCourse}>
+            Try again
+          </button>
+        </div>
+      ) : null}
+      {units === null && !error && <p className="home-loading">Loading course...</p>}
       {units && <HomeRoadmap units={units} completedKeys={completions} />}
       {units && <CertificatesPanel units={units} completedKeys={completions} />}
       </div>

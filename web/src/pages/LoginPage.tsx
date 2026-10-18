@@ -2,6 +2,7 @@ import { FormEvent, useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../hooks/useAuth';
 import { usePageMeta } from '../hooks/usePageMeta';
+import { SUPABASE_DOWN_MESSAGE, looksLikeNetworkError } from '../lib/serviceMessages';
 import '../styles/auth.css';
 
 export function LoginPage() {
@@ -36,7 +37,7 @@ export function LoginPage() {
     setSubmitting(false);
 
     if (authError) {
-      setError(authError.message);
+      setError(looksLikeNetworkError(authError) ? SUPABASE_DOWN_MESSAGE : authError.message);
       return;
     }
 

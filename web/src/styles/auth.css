@@ -254,3 +254,48 @@ body.dark .auth-success {
 .site-footer a:hover {
   text-decoration: underline;
 }
+
+.status-banner {
+  padding: 10px clamp(20px, 6vw, 120px);
+  font-size: 13px;
+  line-height: 1.45;
+  border-bottom: 1px solid var(--border);
+}
+
+.status-banner--warn {
+  background: #fff7ed;
+  color: #9a3412;
+  border-bottom-color: #fed7aa;
+}
+
+html.dark .status-banner--warn,
+body.dark .status-banner--warn {
+  background: #1c1410;
+  color: #fdba74;
+  border-bottom-color: #7c2d12;
+}
+
+.home-error-panel {
+  max-width: none;
+  margin: 0 auto;
+  padding: 24px clamp(20px, 4vw, 72px);
+}
+
+.home-error-panel p {
+  margin: 0 0 12px;
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--text2);
+}
+
+.home-error-panel button {
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  cursor: pointer;
+}

@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
-import { useSearchParams } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 import { recordLastLesson } from '../hooks/useGuestProgress';
 import { usePageMeta } from '../hooks/usePageMeta';
 import { loadLessonJson } from '../lib/loadLesson';
+import { OFFLINE_MESSAGE, isLikelyOffline } from '../lib/serviceMessages';
 import type { LessonData } from '../types/lesson';
 import { LessonLoadedView } from './lesson/LessonLoadedView';
 import './LessonPage.css';
@@ -49,14 +50,15 @@ export function LessonPage() {
   }, [data]);
 
   if (error) {
+    const friendly = isLikelyOffline()
+      ? OFFLINE_MESSAGE
+      : `Could not load lesson ${unit}.${lesson}. It may not exist, or the network failed. Try another lesson from home.`;
     return (
       <main className="lesson-page">
         <div className="lesson-wrap">
+          <p role="alert">{friendly}</p>
           <p>
-            Could not load lesson {unit}.{lesson}: {error}
-          </p>
-          <p>
-            Ensure <code>web/public/lessons/{unit}-{lesson}.json</code> exists.
+            <Link to="/">Back to home</Link>
           </p>
         </div>
       </main>

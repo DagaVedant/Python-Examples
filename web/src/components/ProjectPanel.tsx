@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import type { LessonData, ProjectSpec } from '../types/lesson';
+import { PYODIDE_LOAD_MESSAGE } from '../lib/serviceMessages';
 import { usePyodide } from '../hooks/usePyodide';
 import { PythonEditor } from './PythonEditor';
 import './ProjectPanel.css';
@@ -85,7 +86,7 @@ export function ProjectPanel({
   onCheck,
 }: ProjectPanelProps) {
   const theme = useEditorTheme();
-  const { runIsolated, loading: pyodideLoading } = usePyodide();
+  const { runIsolated, loading: pyodideLoading, ensureLoaded, loadError } = usePyodide();
   const starter = project.starter ?? '';
 
   const [editorOpen, setEditorOpen] = useState(false);
@@ -109,6 +110,12 @@ export function ProjectPanel({
     setRunError(null);
     setCheckRow({ show: false, tone: 'neutral', text: '' });
   }, [unit, lesson, project.starter]);
+
+  useEffect(() => {
+    void ensureLoaded().catch(() => {
+      /* loadError state is shown below */
+    });
+  }, [ensureLoaded]);
 
   const toggleDone = useCallback(() => {
     setDone((prev) => {
@@ -202,6 +209,12 @@ export function ProjectPanel({
             <p className="project-desc">{project.desc}</p>
           </div>
         </div>
+
+        {loadError ? (
+          <p className="project-load-note" role="alert">
+            {PYODIDE_LOAD_MESSAGE}
+          </p>
+        ) : null}
 
         {starter ? (
           <>

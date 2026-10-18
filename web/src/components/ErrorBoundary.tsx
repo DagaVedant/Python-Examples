@@ -1,4 +1,5 @@
 import { Component, type ErrorInfo, type ReactNode } from 'react';
+import { GENERIC_RENDER_MESSAGE } from '../lib/serviceMessages';
 
 type Props = { children: ReactNode };
 type State = { error: Error | null };
@@ -17,13 +18,12 @@ export class ErrorBoundary extends Component<Props, State> {
   render() {
     if (this.state.error) {
       return (
-        <main style={{ padding: 24, fontFamily: 'Inter, system-ui, sans-serif' }}>
-          <h1>Something broke</h1>
-          <pre style={{ whiteSpace: 'pre-wrap', color: '#b91c1c' }}>
-            {this.state.error.message}
-            {'\n'}
-            {this.state.error.stack}
-          </pre>
+        <main className="error-fallback">
+          <h1>Something went wrong</h1>
+          <p>{GENERIC_RENDER_MESSAGE}</p>
+          <button type="button" className="error-fallback-btn" onClick={() => window.location.reload()}>
+            Refresh page
+          </button>
         </main>
       );
     }
