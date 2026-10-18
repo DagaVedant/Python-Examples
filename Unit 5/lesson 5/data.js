@@ -69,7 +69,7 @@ When Python hits <code>return</code>, it leaves the function immediately and han
     practice: [
         {
             text: `Finish add(a, b) so it returns the sum. Print the result of calling it.`,
-            hint: `return sends a value back — put the addition of a and b right after return, not a print inside the function.`,
+            hint: `return sends a value back. Put the addition of a and b right after return, not a print inside the function.`,
             starterTip: `Change the lone return to return a + b. print(add(2, 3)) is already there; run it and you should see 5.`,
             starter: [
                 `def add(a, b):`,
@@ -135,7 +135,7 @@ When Python hits <code>return</code>, it leaves the function immediately and han
 
     project: {
         title: "Mini Calculator Returns",
-        desc: "Finish four tiny functions that each take two numbers and return a result: add, subtract, multiply, and divide. Print each answer. Use fixed numbers — no input().",
+        desc: "Finish four tiny functions that each take two numbers and return a result: add, subtract, multiply, and divide. Print each answer. Use fixed numbers. No input().",
         starter: [
             `def add(a, b):`,
             `    return a + b`,

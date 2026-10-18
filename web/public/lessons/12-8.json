@@ -12,7 +12,7 @@
     "Set starting values like lives or balance",
     "Create ready-to-use objects in one line"
   ],
-  "idea": "<code>__init__</code> can set many fields at once: name, level, lives, score…\n\nYou can also give starting values that callers do not pass — like <code>self.lives = 3</code> always. One construction line, fully ready object.",
+  "idea": "<code>__init__</code> can set many fields at once: name, level, lives, score…\n\nYou can also give starting values that callers do not pass. Like <code>self.lives = 3</code> always. One construction line, fully ready object.",
   "code": {
     "filename": "rich_init.py",
     "lines": [
@@ -56,7 +56,7 @@
     {
       "text": "Monster __init__(name, hp). Also set self.power = 5. Create one and print all three.",
       "hint": "Store name and hp from the parameters on self, then set self.power = 5 even though callers do not pass power.",
-      "starterTip": "self.name = name, self.hp = hp, and self.power = 5 — the three prints at the bottom should work.",
+      "starterTip": "self.name = name, self.hp = hp, and self.power = 5. The three prints at the bottom should work.",
       "starter": "class Monster:\n    def __init__(self, name, hp):\n        \nm = Monster(\"Slime\", 8)\nprint(m.name)\nprint(m.hp)\nprint(m.power)",
       "gradingNote": "Pass if power defaults to 5 and name/hp stored."
     },
@@ -77,7 +77,7 @@
           "correct": false
         },
         {
-          "text": "Yes — assign defaults on self",
+          "text": "Yes, assign defaults on self",
           "correct": true
         },
         {

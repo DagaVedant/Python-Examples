@@ -72,7 +72,7 @@ Defining a function does <em>not</em> run it. The code inside only runs when you
     practice: [
         {
             text: `Finish say_hi() so it prints a short hello. Then call it twice.`,
-            hint: `Put a print() with a greeting inside say_hi — keep it indented. Defining the function does not run it; you must call say_hi() twice below.`,
+            hint: `Put a print() with a greeting inside say_hi. Keep it indented. Defining the function does not run it; you must call say_hi() twice below.`,
             starterTip: `Try print("Hi there!") inside the function, then add say_hi() on each blank line under the comment.`,
             starter: [
                 `def say_hi():`,

@@ -50,8 +50,8 @@ Text still needs quotes when you store it. Numbers do not need quotes.`,
     practice: [
         {
             text: `Store your name and age in variables. Use ONE print to show them in a sentence. Fill in the blank.`,
-            hint: `Do not retype "Sam" or 11 inside print — use the variable names name and age so Python shows what is stored.`,
-            starterTip: `Try: print(name, "is", age, "years old") — commas add spaces between the words and numbers.`,
+            hint: `Do not retype "Sam" or 11 inside print. Use the variable names name and age so Python shows what is stored.`,
+            starterTip: `Try: print(name, "is", age, "years old"). Commas add spaces between the words and numbers.`,
             starter: [
                 `name = "Sam"`,
                 `age = 11`,
@@ -63,7 +63,7 @@ Text still needs quotes when you store it. Numbers do not need quotes.`,
         {
             text: `Create a variable for a favourite colour and print a sentence that uses it.`,
             hint: `The colour variable is already set. Your print should include the word colour (the variable name), not only the word blue in quotes.`,
-            starterTip: `Example: print("My favourite colour is", colour) — you can change the sentence, but keep colour in the print.`,
+            starterTip: `Example: print("My favourite colour is", colour). You can change the sentence, but keep colour in the print.`,
             starter: [
                 `# Store a colour`,
                 `colour = "blue"`,
@@ -94,7 +94,7 @@ Text still needs quotes when you store it. Numbers do not need quotes.`,
                 { text: "A blank line in the output", correct: false },
             ],
             correct: "A variable stores a value under a name you choose.",
-            wrong: "Think of a labeled box — the name lets you reuse the value.",
+            wrong: "Think of a labeled box. The name lets you reuse the value.",
         },
         {
             question: `Why use a variable instead of typing the same value many times?`,
@@ -105,7 +105,7 @@ Text still needs quotes when you store it. Numbers do not need quotes.`,
                 { text: "Comments only work with variables", correct: false },
             ],
             correct: "Variables let you reuse a value without rewriting it everywhere.",
-            wrong: "The main reason is reuse — not speed or a Python rule.",
+            wrong: "The main reason is reuse. Not speed or a Python rule.",
         },
     ],
 

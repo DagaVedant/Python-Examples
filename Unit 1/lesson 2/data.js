@@ -49,7 +49,7 @@ When you press <strong>Run</strong>, Python follows the instruction and the word
         {
             text: `Finish the greeting. Keep the first print. Fill in the second blank so it prints a second message.`,
             hint: `Keep print("Hello!"). On the blank line, add a second message inside quotes inside print().`,
-            starterTip: `Under the comment, try: print("Nice to meet you!") — then press Run.`,
+            starterTip: `Under the comment, try: print("Nice to meet you!"). Then press Run.`,
             starter: [
                 `print("Hello!")`,
                 `# Add your second message`,
@@ -100,7 +100,7 @@ When you press <strong>Run</strong>, Python follows the instruction and the word
                 { text: "Quotes turn print into a comment", correct: false },
                 { text: "Quotes are only for numbers", correct: false },
             ],
-            correct: "Quotes mark a string — text for Python to print.",
+            correct: "Quotes mark a string. Text for Python to print.",
             wrong: "Quotes tell Python the words are text, not a variable name.",
         },
     ],

@@ -17,7 +17,7 @@ export default {
 
     idea: `You create a list with <strong>square brackets</strong>. Put commas between items: <code>["red", "blue"]</code>.
 
-    An <strong>empty list</strong> is just <code>[]</code> — useful when you will add items later. Lists can hold strings, numbers, and True/False together.`,
+    An <strong>empty list</strong> is just <code>[]</code>. Useful when you will add items later. Lists can hold strings, numbers, and True/False together.`,
 
     code: {
         filename: "make_lists.py",

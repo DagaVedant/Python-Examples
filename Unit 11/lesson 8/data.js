@@ -104,7 +104,7 @@ Always <code>random.seed(1)</code> in lesson demos. Print a short menu of result
             question: `Must every tool use from import?`,
             options: [
                 { text: `Yes, always`, correct: false },
-                { text: `No — mix styles as needed`, correct: true },
+                { text: `No. Mix styles as needed`, correct: true },
                 { text: `from import bans math`, correct: false },
                 { text: `import is illegal now`, correct: false },
             ],

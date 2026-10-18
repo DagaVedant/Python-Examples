@@ -66,7 +66,7 @@ Together, <code>//</code> gives full groups and <code>%</code> gives leftovers.`
         {
             text: `There are 29 beads. Bracelets need 8 beads each. Print how many beads are left over using %.`,
             hint: `% tells you what is left after making whole bracelets. Use beads and needed in one expression.`,
-            starterTip: `Try left = beads % needed — that is 29 divided by 8, but only the leftover part.`,
+            starterTip: `Try left = beads % needed. That is 29 divided by 8, but only the leftover part.`,
             starter: [
                 `beads = 29`,
                 `needed = 8`,

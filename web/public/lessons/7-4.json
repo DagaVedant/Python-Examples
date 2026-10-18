@@ -12,7 +12,7 @@
     "Only that cell changes",
     "Print the grid to confirm"
   ],
-  "idea": "To change one cell, put two indexes on the left of <code>=</code>:\n\n    <code>grid[1][1] = 0</code>\n\n    That updates only that spot — like placing a piece on a board. Other cells stay the same.",
+  "idea": "To change one cell, put two indexes on the left of <code>=</code>:\n\n    <code>grid[1][1] = 0</code>\n\n    That updates only that spot. Like placing a piece on a board. Other cells stay the same.",
   "code": {
     "filename": "update_cell.py",
     "lines": [

@@ -136,7 +136,7 @@ export function LessonLoadedView({ data }: LessonLoadedViewProps) {
           <section className="lesson-fake-files" aria-labelledby="fake-files-heading">
             <h2 id="fake-files-heading">Practice files</h2>
             <p className="lesson-fake-note">
-              These files live in a practice folder on this page — not on your computer. Your code
+              These files live in a practice folder on this page, not on your computer. Your code
               can open them by name.
             </p>
             {Object.entries(lesson.fakeFiles).map(([name, body]) => (

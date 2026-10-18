@@ -15,7 +15,7 @@ export default {
         "Use -1 to get the last item",
     ],
 
-    idea: `Every item in a list has an <strong>index</strong> — its position. Python counts from <code>0</code>, so the first item is <code>list[0]</code>, the second is <code>list[1]</code>, and so on.
+    idea: `Every item in a list has an <strong>index</strong>. Its position. Python counts from <code>0</code>, so the first item is <code>list[0]</code>, the second is <code>list[1]</code>, and so on.
 
     <code>-1</code> means the last item. That is handy when you do not want to count the length yourself.`,
 
@@ -72,7 +72,7 @@ export default {
             gradingNote: `Pass if two prints use indexes to show the first item and the last item (0 and -1 or 2).`,
         },
         {
-            text: `Print the middle item of this four-item list (index 1 or 2 — pick one and print it).`,
+            text: `Print the middle item of this four-item list (index 1 or 2. Pick one and print it).`,
             hint: `Index 0 is 10, index 1 is 20, index 2 is 30. Pick one of the middle numbers and use nums[that index] inside print.`,
             starterTip: `Either print(nums[1]) to show 20 or print(nums[2]) to show 30.`,
             starter: [
@@ -93,7 +93,7 @@ export default {
                 { text: "0, because Python counts from 0", correct: false },
                 { text: "-1 is the only possible answer", correct: false },
             ],
-            correct: "With 4 items the indexes are 0, 1, 2, 3 — so the last is at index 3.",
+            correct: "With 4 items the indexes are 0, 1, 2, 3. So the last is at index 3.",
             wrong: "Indexes start at 0, so four items use indexes 0 through 3.",
         },
         {
@@ -113,7 +113,7 @@ export default {
                 { text: `"a"`, correct: false },
                 { text: `"b"`, correct: true },
                 { text: `"c"`, correct: false },
-                { text: `Nothing — index 1 is invalid`, correct: false },
+                { text: `Nothing. Index 1 is invalid`, correct: false },
             ],
             correct: "Index 0 is a, index 1 is b, index 2 is c.",
             wrong: "Remember: the first item is index 0, so index 1 is the second item.",

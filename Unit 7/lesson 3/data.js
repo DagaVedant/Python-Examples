@@ -72,8 +72,8 @@ export default {
     practice: [
         {
             text: `Print the center cell of the 3x3 grid.`,
-            hint: `One cell needs two indexes: row first, then column. The center is the middle row and middle column — both index 1.`,
-            starterTip: `Use print(grid[1][1]) — that should show 5.`,
+            hint: `One cell needs two indexes: row first, then column. The center is the middle row and middle column. Both index 1.`,
+            starterTip: `Use print(grid[1][1]). That should show 5.`,
             starter: [
                 `grid = [`,
                 `    [1, 2, 3],`,
@@ -114,7 +114,7 @@ export default {
             wrong: "Remember: row first, then column.",
         },
         {
-            question: `In a 3x3 number grid 1–9, what is <code>grid[0][2]</code>?`,
+            question: `In a 3x3 number grid 1 to 9, what is <code>grid[0][2]</code>?`,
             options: [
                 { text: "1", correct: false },
                 { text: "3", correct: true },

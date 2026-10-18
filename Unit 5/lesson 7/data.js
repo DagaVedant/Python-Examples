@@ -70,7 +70,7 @@ Example: <code>grade</code> picks a letter. <code>print_report</code> calls <cod
         {
             text: `Finish grade(score) and print_report(name, score). The report function should call grade and print one line.`,
             hint: `print_report already calls grade and saves the letter. Fill in print() with name, score, and letter in one message.`,
-            starterTip: `Try print(name, "scored", score, "- Grade:", letter) inside print_report — like the lesson example.`,
+            starterTip: `Try print(name, "scored", score, "- Grade:", letter) inside print_report. Like the lesson example.`,
             starter: [
                 `def grade(score):`,
                 `    if score >= 90:`,
@@ -88,7 +88,7 @@ Example: <code>grade</code> picks a letter. <code>print_report</code> calls <cod
         },
         {
             text: `Finish double(n) so it returns n * 2, and show(n) so it prints the doubled value by calling double. Call show once.`,
-            hint: `show already uses double(n) — finish double's return, then add one line at the bottom that calls show with a number.`,
+            hint: `show already uses double(n). Finish double's return, then add one line at the bottom that calls show with a number.`,
             starterTip: `Use return n * 2 in double, then add show(6) (or any number) on a blank line at the end.`,
             starter: [
                 `def double(n):`,
@@ -109,7 +109,7 @@ Example: <code>grade</code> picks a letter. <code>print_report</code> calls <cod
             question: `Can one function call another function?`,
             options: [
                 { text: "No, that always causes an error", correct: false },
-                { text: "Yes — that is a normal way to build programs", correct: true },
+                { text: "Yes. That is a normal way to build programs", correct: true },
                 { text: "Only if both functions are named main", correct: false },
                 { text: "Only inside print()", correct: false },
             ],
@@ -121,7 +121,7 @@ Example: <code>grade</code> picks a letter. <code>print_report</code> calls <cod
             options: [
                 { text: "print_report does the if/elif checks", correct: false },
                 { text: "grade returns the letter; print_report uses it", correct: true },
-                { text: "Neither — Python picks a random grade", correct: false },
+                { text: "Neither. Python picks a random grade", correct: false },
                 { text: "Only print decides the grade", correct: false },
             ],
             correct: "grade does one job (pick the letter). print_report does one job (show the report).",
@@ -135,7 +135,7 @@ Example: <code>grade</code> picks a letter. <code>print_report</code> calls <cod
                 { text: "Python requires at least ten functions", correct: false },
                 { text: "Helper functions cannot return values", correct: false },
             ],
-            correct: "One helper, many callers — easier to fix and reuse.",
+            correct: "One helper, many callers. Easier to fix and reuse.",
             wrong: "Reuse and clear jobs are the point of calling helpers.",
         },
     ],

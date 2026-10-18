@@ -12,7 +12,7 @@
     "Store objects in a list",
     "Loop to call the same method on each"
   ],
-  "idea": "Programs get interesting when objects work <strong>together</strong>. Make several players, put them in a list, and loop:\n\n<code>for p in team: p.card()</code>\n\nSame class, many objects, one loop — powerful and tidy.",
+  "idea": "Programs get interesting when objects work <strong>together</strong>. Make several players, put them in a list, and loop:\n\n<code>for p in team: p.card()</code>\n\nSame class, many objects, one loop. Powerful and tidy.",
   "code": {
     "filename": "together.py",
     "lines": [

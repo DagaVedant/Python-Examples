@@ -60,7 +60,7 @@
   "practice": [
     {
       "text": "Finish add(a, b) so it returns the sum. Print the result of calling it.",
-      "hint": "return sends a value back — put the addition of a and b right after return, not a print inside the function.",
+      "hint": "return sends a value back. Put the addition of a and b right after return, not a print inside the function.",
       "starterTip": "Change the lone return to return a + b. print(add(2, 3)) is already there; run it and you should see 5.",
       "starter": "def add(a, b):\n    return\n\nprint(add(2, 3))",
       "gradingNote": "Pass if add returns a + b (not only prints inside) and the sum appears in the output."
@@ -146,7 +146,7 @@
   ],
   "project": {
     "title": "Mini Calculator Returns",
-    "desc": "Finish four tiny functions that each take two numbers and return a result: add, subtract, multiply, and divide. Print each answer. Use fixed numbers — no input().",
+    "desc": "Finish four tiny functions that each take two numbers and return a result: add, subtract, multiply, and divide. Print each answer. Use fixed numbers. No input().",
     "starter": "def add(a, b):\n    return a + b\n\ndef subtract(a, b):\n    return\n\ndef multiply(a, b):\n    return a * b\n\ndef divide(a, b):\n    return\n\nprint(\"Add:\", add(10, 2))\nprint(\"Subtract:\", subtract(10, 2))\nprint()\nprint()"
   },
   "prev": {

@@ -92,7 +92,7 @@ Then create objects and call methods to tell a tiny story. That is designing wit
         {
             text: `Design Battery with percent in __init__ and use(n) that lowers percent. Demo one use.`,
             hint: `In use, subtract n from self.percent. After b.use(20) on a Battery at 100, b.percent should be 80.`,
-            starterTip: `self.percent = self.percent - n inside use — the final print(b.percent) checks your work.`,
+            starterTip: `self.percent = self.percent - n inside use. The final print(b.percent) checks your work.`,
             starter: [
                 "class Battery:",
                 "    def __init__(self, percent):",

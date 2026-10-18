@@ -89,7 +89,7 @@ export default {
         },
         {
             text: `Print the board so each row shows three cells separated by spaces (use print with commas or build a line).`,
-            hint: `You need three printed lines — one per row. Commas in print() put spaces between values on the same line.`,
+            hint: `You need three printed lines. One per row. Commas in print() put spaces between values on the same line.`,
             starterTip: `Try for row in board: then print(row[0], row[1], row[2]) so each row looks like X O X.`,
             starter: [
                 `board = [`,
@@ -141,7 +141,7 @@ export default {
 
     project: {
         title: "Pretty Tic-Tac-Toe",
-        desc: "Make a 3x3 board with some X and O marks. Print it neatly — one row per line with spaces between cells.",
+        desc: "Make a 3x3 board with some X and O marks. Print it neatly. One row per line with spaces between cells.",
         starter: [
             `board = [`,
             `    ["X", ".", "O"],`,

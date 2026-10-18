@@ -67,7 +67,7 @@ export default {
         },
         {
             text: `Define empty classes Car and Bike. Print two ready lines.`,
-            hint: `Write class Car: and class Bike:, each with an indented pass. Then two print() calls — one message per class.`,
+            hint: `Write class Car: and class Bike:, each with an indented pass. Then two print() calls. One message per class.`,
             starterTip: `Write class Car: with pass under it, then class Bike: with pass, then print("Car ready") and print("Bike ready").`,
             starter: [
                 "# two classes",

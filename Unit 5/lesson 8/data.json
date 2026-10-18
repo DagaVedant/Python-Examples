@@ -64,14 +64,14 @@
   "practice": [
     {
       "text": "Finish average and grade. Make print_report call both and print one line for Maya.",
-      "hint": "average should add the three scores and divide by 3. print_report already has avg and letter — put them in print().",
+      "hint": "average should add the three scores and divide by 3. print_report already has avg and letter. Put them in print().",
       "starterTip": "Try return (a + b + c) / 3 in average, and print(name, \"avg\", avg, \"grade\", letter) in print_report.",
       "starter": "def average(a, b, c):\n    return\n\ndef grade(score):\n    if score >= 90:\n        return \"A\"\n    else:\n        return \"B\"\n\ndef print_report(name, a, b, c):\n    avg = average(a, b, c)\n    letter = grade(avg)\n    print()\n\nprint_report(\"Maya\", 92, 88, 90)",
       "gradingNote": "Pass if average returns the mean, grade returns a letter, print_report uses both, and a report line prints."
     },
     {
       "text": "Finish area(w, h) and describe(w, h). describe should call area and print the result. Call describe once.",
-      "hint": "area returns width times height. describe is ready — you need the return in area and one call to describe at the bottom.",
+      "hint": "area returns width times height. describe is ready. You need the return in area and one call to describe at the bottom.",
       "starterTip": "Use return w * h in area, then add describe(4, 3) on a blank line at the end.",
       "starter": "def area(w, h):\n    return\n\ndef describe(w, h):\n    a = area(w, h)\n    print(\"Area:\", a)\n\n",
       "gradingNote": "Pass if area returns w*h, describe calls area and prints, and describe is called at least once."
@@ -99,7 +99,7 @@
         }
       ],
       "correct": "Small, focused functions are easier to understand, reuse, and fix.",
-      "wrong": "The real benefit is readability and reuse — each function does one clear job."
+      "wrong": "The real benefit is readability and reuse. Each function does one clear job."
     },
     {
       "question": "What makes a good function name?",
@@ -150,7 +150,7 @@
   ],
   "project": {
     "title": "Student Report Card",
-    "desc": "Build a tiny report card with separate functions: average of three scores, a letter grade from that average, and print_report that uses both. Use fixed numbers — no input().",
+    "desc": "Build a tiny report card with separate functions: average of three scores, a letter grade from that average, and print_report that uses both. Use fixed numbers. No input().",
     "starter": "def average(a, b, c):\n    return\n\ndef grade(score):\n    if score >= 90:\n        return \"A\"\n    elif score >= 70:\n        return \"B\"\n    else:\n        return \"C\"\n\ndef print_report(name, a, b, c):\n    avg = average(a, b, c)\n    letter = grade(avg)\n    print()\n\nprint_report(\"Ava\", 90, 80, 85)"
   },
   "prev": {

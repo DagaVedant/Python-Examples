@@ -50,7 +50,7 @@
     {
       "text": "Start with one player. Add Riley with score 70. Print the board.",
       "hint": "Assign to a new key with square brackets: board[\"Riley\"] = 70. That adds Riley without changing Sam.",
-      "starterTip": "On the blank line, write board[\"Riley\"] = 70, then run — print(board) should show Sam and Riley.",
+      "starterTip": "On the blank line, write board[\"Riley\"] = 70, then run. Print(board) should show Sam and Riley.",
       "starter": "board = {\"Sam\": 50}\n# Add Riley: 70\n\nprint(board)",
       "gradingNote": "Pass if Riley: 70 is added and board is printed with both players."
     },
@@ -94,7 +94,7 @@
           "correct": false
         },
         {
-          "text": "Adds the key–value pair",
+          "text": "Adds the key-value pair",
           "correct": true
         },
         {
@@ -117,7 +117,7 @@
           "correct": false
         },
         {
-          "text": "Yes — it returns 2",
+          "text": "Yes. It returns 2",
           "correct": true
         },
         {

@@ -56,7 +56,7 @@ You can make many objects from the same class. Each is a separate thing.`,
     practice: [
         {
             text: `Make two Pet objects and print a message that you made two pets.`,
-            hint: `Finish a = and b = with Pet() — call the class like a function. Then print() a sentence saying you made two pets.`,
+            hint: `Finish a = and b = with Pet(). Call the class like a function. Then print() a sentence saying you made two pets.`,
             starterTip: `a = Pet() and b = Pet(), then print("Made two pets") or similar.`,
             starter: [
                 "class Pet:",
@@ -99,7 +99,7 @@ You can make many objects from the same class. Each is a separate thing.`,
             question: `Are dog1 and dog2 the same object?`,
             options: [
                 { text: `Yes, always aliases`, correct: false },
-                { text: `No — they are separate objects`, correct: true },
+                { text: `No. They are separate objects`, correct: true },
                 { text: `They share one memory forever forced`, correct: false },
                 { text: `Objects cannot be two`, correct: false },
             ],

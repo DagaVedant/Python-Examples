@@ -64,7 +64,7 @@ export function SignupPage() {
       <div className="auth-card">
         <h1>Sign Up for Learn Python</h1>
         <p className="auth-lead">
-          Optional — create an account to save progress across devices and get AI practice
+          Creating an account is optional. It lets you save your progress across devices and get AI practice
           feedback
         </p>
 

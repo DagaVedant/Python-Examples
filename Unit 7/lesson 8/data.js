@@ -84,7 +84,7 @@ export default {
     practice: [
         {
             text: `Build a 3x3 grid of zeros. Set the center to 1. Print each row, then print the sum of all cells.`,
-            hint: `The center is row 1, column 1 — use grid[1][1] = 1. Print rows with a loop, then add every cell into total.`,
+            hint: `The center is row 1, column 1. Use grid[1][1] = 1. Print rows with a loop, then add every cell into total.`,
             starterTip: `After grid[1][1] = 1, print with for row in grid: print(row[0], row[1], row[2]). Use nested loops to add each cell to total and print it.`,
             starter: [
                 `grid = [`,
@@ -123,7 +123,7 @@ export default {
                 { text: "input() is required", correct: false },
             ],
             correct: "Mini projects combine the 2D list tools you learned.",
-            wrong: "Change, display, and analyze — those are the usual pieces.",
+            wrong: "Change, display, and analyze. Those are the usual pieces.",
         },
         {
             question: `Why keep the project on a 3x3 grid?`,

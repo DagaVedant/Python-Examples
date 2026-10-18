@@ -31,7 +31,7 @@
     runBtn.disabled = true;
     output.textContent = '';
     output.classList.add('is-running');
-    // Lightweight simulated run — Pyodide would add multi-MB load for a 2-line print.
+    // Lightweight simulated run. Pyodide would add multi-MB load for a 2-line print.
     await new Promise((r) => setTimeout(r, 280));
     await typeOutput(DEMO_OUTPUT);
     runBtn.disabled = false;

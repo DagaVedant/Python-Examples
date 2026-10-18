@@ -12,7 +12,7 @@
     "Know one True side is enough",
     "Use or inside an if"
   ],
-  "idea": "The keyword <code>or</code> joins two conditions. The whole expression is <code>True</code> if <strong>at least one</strong> side is True.\n\n<code>False or True</code> → True. Only <code>False or False</code> is False.\n\nUse it when either option is enough — like a coupon <em>or</em> a member pass.",
+  "idea": "The keyword <code>or</code> joins two conditions. The whole expression is <code>True</code> if <strong>at least one</strong> side is True.\n\n<code>False or True</code> → True. Only <code>False or False</code> is False.\n\nUse it when either option is enough. Like a coupon <em>or</em> a member pass.",
   "code": {
     "filename": "or_demo.py",
     "lines": [
@@ -60,7 +60,7 @@
     {
       "text": "Print the value of <code>(3 == 4) or (3 < 5)</code>.",
       "hint": "One side of <code>or</code> can be False as long as the other is True. Wrap the whole expression in <code>print()</code>.",
-      "starterTip": "Try <code>print((3 == 4) or (3 < 5))</code> — the first part is False but the second is True, so the result is True.",
+      "starterTip": "Try <code>print((3 == 4) or (3 < 5))</code>. The first part is False but the second is True, so the result is True.",
       "starter": "print()",
       "gradingNote": "Pass if output is True using or."
     }

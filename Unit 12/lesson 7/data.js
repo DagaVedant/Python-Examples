@@ -65,7 +65,7 @@ export default {
         {
             text: `Finish __init__ to store name and color. Create one Car and print both attributes.`,
             hint: `You already save self.name = name. Add self.color = color so the red from Car("Zoom", "red") sticks on the object.`,
-            starterTip: `Add self.color = color on the blank line in __init__ — prints should already show Zoom and red.`,
+            starterTip: `Add self.color = color on the blank line in __init__. Prints should already show Zoom and red.`,
             starter: [
                 "class Car:",
                 "    def __init__(self, name, color):",
@@ -79,7 +79,7 @@ export default {
         },
         {
             text: `Make Book(title, pages) with __init__. Create one and print title.`,
-            hint: `In __init__, assign both parameters to self — self.title = title and self.pages = pages.`,
+            hint: `In __init__, assign both parameters to self. Self.title = title and self.pages = pages.`,
             starterTip: `self.title = title and self.pages = pages inside __init__; print(b.title) should show Wonder.`,
             starter: [
                 "class Book:",

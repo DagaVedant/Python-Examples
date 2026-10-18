@@ -55,8 +55,8 @@ For now, include <code>self</code> as the first parameter (next lesson explains 
     practice: [
         {
             text: `Finish greet so it prints a hello using self.name. Call it once.`,
-            hint: `Inside greet, use print with self.name — the Player's name is set on p before you call p.greet().`,
-            starterTip: `In the blank under greet, try: print("Hello,", self.name) — then run; Ava's name should appear.`,
+            hint: `Inside greet, use print with self.name. The Player's name is set on p before you call p.greet().`,
+            starterTip: `In the blank under greet, try: print("Hello,", self.name). Then run; Ava's name should appear.`,
             starter: [
                 "class Player:",
                 "    def greet(self):",
@@ -71,7 +71,7 @@ For now, include <code>self</code> as the first parameter (next lesson explains 
         {
             text: `Add a method spin that prints Weee! Call it on a Toy object.`,
             hint: `The spin method body needs one indented print line. t.spin() at the bottom calls it.`,
-            starterTip: `Inside spin, add: print("Weee!") — indented under def spin(self):.`,
+            starterTip: `Inside spin, add: print("Weee!"). Indented under def spin(self):.`,
             starter: [
                 "class Toy:",
                 "    def spin(self):",
@@ -114,7 +114,7 @@ For now, include <code>self</code> as the first parameter (next lesson explains 
                 { text: `file`, correct: false },
                 { text: `except`, correct: false },
             ],
-            correct: `self means this object — next lesson!`,
+            correct: `self means this object. Next lesson!`,
             wrong: `def bark(self):`,
         },
     ],

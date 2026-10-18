@@ -50,12 +50,12 @@ Put <code>not</code> in front of a condition or a bool variable.`,
         lines: [
             `door_open = False`,
             `if not door_open:`,
-            `    print("Door is closed — all good")`,
+            `    print("Door is closed, all good")`,
             `else:`,
-            `    print("Door is open — check it")`,
+            `    print("Door is open. Check it")`,
         ],
         output: [
-            "Door is closed — all good",
+            "Door is closed, all good",
         ],
     },
 
@@ -72,7 +72,7 @@ Put <code>not</code> in front of a condition or a bool variable.`,
         },
         {
             text: `Print <code>not (3 == 3)</code> and explain in a comment that it is False.`,
-            hint: `<code>3 == 3</code> is True, and <code>not</code> flips it to False. Your comment can say that flip happens — then print the expression.`,
+            hint: `<code>3 == 3</code> is True, and <code>not</code> flips it to False. Your comment can say that flip happens. Then print the expression.`,
             starterTip: `Keep or add a comment like the starter, then try <code>print(not (3 == 3))</code>. The output should be False.`,
             starter: [
                 `# 3 == 3 is True, so not flips it`,

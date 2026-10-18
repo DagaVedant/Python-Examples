@@ -58,7 +58,7 @@ Indent the lines under the <code>for</code> line. Those indented lines are the b
     practice: [
         {
             text: `Finish the loop so it prints each fruit on its own line.`,
-            hint: `Inside the loop, print the loop variable fruit — it holds apple, then banana, then cherry.`,
+            hint: `Inside the loop, print the loop variable fruit. It holds apple, then banana, then cherry.`,
             starterTip: `Replace print() with print(fruit) (keep the four spaces so it stays inside the for block).`,
             starter: [
                 `fruits = ["apple", "banana", "cherry"]`,

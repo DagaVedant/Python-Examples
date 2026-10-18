@@ -18,7 +18,7 @@ export default {
 
 <code>for p in team: p.card()</code>
 
-Same class, many objects, one loop — powerful and tidy.`,
+Same class, many objects, one loop. Powerful and tidy.`,
 
     code: {
         filename: "together.py",

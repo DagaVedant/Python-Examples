@@ -30,7 +30,7 @@ export function CertificatesPanel({ units, completedKeys }: Props) {
   return (
     <section className="certificates-panel" aria-label="Certificates" id="certificates-slot">
       <h2 className="certificates-heading">Certificates</h2>
-      <p className="certificates-blurb">You finished these — open a certificate to print or share.</p>
+      <p className="certificates-blurb">You finished these. Open a certificate to print or share.</p>
       <div className="certificates-links">
         {doneNums.map((n) => {
           const title = byNumber[n]?.title ?? `Unit ${n}`;
@@ -42,7 +42,7 @@ export function CertificatesPanel({ units, completedKeys }: Props) {
         })}
         {courseComplete ? (
           <Link className="cert-link cert-link-course" to="/certificate?course=1">
-            Course complete — Learn Python
+            Course complete: Learn Python
           </Link>
         ) : null}
       </div>

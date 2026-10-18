@@ -12,7 +12,7 @@
     "Run one path or the other",
     "Know else has no condition"
   ],
-  "idea": "<code>else</code> is the backup plan. It runs only when the <code>if</code> condition is <code>False</code>.\n\nWrite <code>else:</code> at the same indent as <code>if</code>, then indent the else block.\n\nExactly one of the two blocks runs — never both, never neither (for a simple if/else).",
+  "idea": "<code>else</code> is the backup plan. It runs only when the <code>if</code> condition is <code>False</code>.\n\nWrite <code>else:</code> at the same indent as <code>if</code>, then indent the else block.\n\nExactly one of the two blocks runs. Never both, never neither (for a simple if/else).",
   "code": {
     "filename": "else_demo.py",
     "lines": [
@@ -48,14 +48,14 @@
     {
       "text": "If <code>age</code> is at least 12, print <code>Teen ticket</code>. Else print <code>Kid ticket</code>. Set age to 10.",
       "hint": "Use <code>if age >= 12:</code> for the first message, then <code>else:</code> at the same indent as if for the backup. Indent each print under its line.",
-      "starterTip": "With age 10, the if fails — so the else block should print <code>Kid ticket</code>.",
+      "starterTip": "With age 10, the if fails. So the else block should print <code>Kid ticket</code>.",
       "starter": "age = 10\n# if / else",
       "gradingNote": "Pass if else path prints Kid ticket for age 10."
     },
     {
       "text": "Set <code>found = True</code>. If found, print <code>Key found</code>, else print <code>Keep looking</code>.",
       "hint": "A bool variable can go straight in the if: <code>if found:</code> means “if found is True.” Pair it with else: for the other message.",
-      "starterTip": "After <code>found = True</code>, write if/else with indented prints — you should see Key found because found is True.",
+      "starterTip": "After <code>found = True</code>, write if/else with indented prints. You should see Key found because found is True.",
       "starter": "found = True",
       "gradingNote": "Pass if if/else prints Key found when found is True."
     }
@@ -92,7 +92,7 @@
           "correct": false
         },
         {
-          "text": "No — it means \"otherwise\"",
+          "text": "No. It means \"otherwise\"",
           "correct": true
         },
         {
@@ -115,7 +115,7 @@
           "correct": false
         },
         {
-          "text": "No — only one block runs",
+          "text": "No. Only one block runs",
           "correct": true
         },
         {

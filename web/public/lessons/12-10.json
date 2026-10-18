@@ -76,7 +76,7 @@
     {
       "text": "Design Battery with percent in __init__ and use(n) that lowers percent. Demo one use.",
       "hint": "In use, subtract n from self.percent. After b.use(20) on a Battery at 100, b.percent should be 80.",
-      "starterTip": "self.percent = self.percent - n inside use — the final print(b.percent) checks your work.",
+      "starterTip": "self.percent = self.percent - n inside use. The final print(b.percent) checks your work.",
       "starter": "class Battery:\n    def __init__(self, percent):\n        self.percent = percent\n    def use(self, n):\n        \nb = Battery(100)\nb.use(20)\nprint(b.percent)",
       "gradingNote": "Pass if percent becomes 80 after use(20)."
     }

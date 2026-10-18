@@ -116,7 +116,7 @@ This pattern works for summing a range, adding scores from a list, or counting h
                 { text: "Before the loop starts", correct: false },
                 { text: "After the loop finishes", correct: true },
                 { text: "Only inside an if with no loop", correct: false },
-                { text: "Never — totals cannot print", correct: false },
+                { text: "Never. Totals cannot print", correct: false },
             ],
             correct: "After the loop, total has every value added in.",
             wrong: "Print after the loop so you see the completed sum.",

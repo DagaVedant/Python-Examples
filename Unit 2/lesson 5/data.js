@@ -17,7 +17,7 @@ export default {
 
     idea: `The operator <code>//</code> is <strong>integer division</strong> (also called floor division). It divides and keeps only the whole part.
 
-<code>7 // 2</code> is <code>3</code> — not 3.5. The leftover fraction is dropped (for positive numbers).
+<code>7 // 2</code> is <code>3</code>. Not 3.5. The leftover fraction is dropped (for positive numbers).
 
 Use <code>/</code> when you want a decimal. Use <code>//</code> when you only want whole pieces.`,
 
@@ -66,7 +66,7 @@ Use <code>/</code> when you want a decimal. Use <code>//</code> when you only wa
     practice: [
         {
             text: `Use // to find how many full weeks are in 30 days. Print the answer.`,
-            hint: `One week is 7 days. Integer division // drops leftover days — you want whole weeks only.`,
+            hint: `One week is 7 days. Integer division // drops leftover days. You want whole weeks only.`,
             starterTip: `Try weeks = days // 7 on the blank line (30 // 7 is 4).`,
             starter: [
                 `days = 30`,
@@ -78,7 +78,7 @@ Use <code>/</code> when you want a decimal. Use <code>//</code> when you only wa
         {
             text: `Print both <code>19 / 5</code> and <code>19 // 5</code> on separate lines so you can compare them.`,
             hint: `You need two print() lines: one with / (decimal answer) and one with // (whole number only).`,
-            starterTip: `First line print(19 / 5), second line print(19 // 5) — run and compare 3.8 vs 3.`,
+            starterTip: `First line print(19 / 5), second line print(19 // 5). Run and compare 3.8 vs 3.`,
             starter: [
                 `print()`,
                 `print()`,

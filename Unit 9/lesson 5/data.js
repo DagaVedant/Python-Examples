@@ -87,7 +87,7 @@ export default {
         },
         {
             text: `Append one new tip line to tips.txt, then print the whole tips file.`,
-            hint: `You already opened tips.txt in append mode. f.write() adds at the end — include \\n so your tip is on its own line.`,
+            hint: `You already opened tips.txt in append mode. f.write() adds at the end. Include \\n so your tip is on its own line.`,
             starterTip: `Try f.write("Take breaks when coding.\\n") or any short tip you like, then run and check all tips print.`,
             starter: [
                 "f = open(\"tips.txt\", \"a\")",

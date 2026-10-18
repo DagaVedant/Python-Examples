@@ -12,7 +12,7 @@
     "The new value replaces the old one",
     "Later print() calls show the new value"
   ],
-  "idea": "Variables can change. When you assign a new value with <code>=</code>, the old value is replaced.\n\nThe next time you print that variable, you see the new value — not the old one.",
+  "idea": "Variables can change. When you assign a new value with <code>=</code>, the old value is replaced.\n\nThe next time you print that variable, you see the new value. Not the old one.",
   "code": {
     "filename": "score.py",
     "lines": [
@@ -101,7 +101,7 @@
           "correct": false
         },
         {
-          "text": "Nothing — the variable is deleted",
+          "text": "Nothing. The variable is deleted",
           "correct": false
         }
       ],
@@ -120,7 +120,7 @@
           "correct": true
         },
         {
-          "text": "Never — print always shows the first value",
+          "text": "Never. Print always shows the first value",
           "correct": false
         },
         {

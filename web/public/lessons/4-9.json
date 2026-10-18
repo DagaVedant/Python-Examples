@@ -54,14 +54,14 @@
     {
       "text": "Loop from 1 to 10. Print Buzz when n is divisible by 5; otherwise print n.",
       "hint": "When n % 5 == 0, print a word like \"Buzz\". In the else branch, print the number n itself.",
-      "starterTip": "Try print(\"Buzz\") in the if block and print(n) in the else block — keep both indented under if/else.",
+      "starterTip": "Try print(\"Buzz\") in the if block and print(n) in the else block. Keep both indented under if/else.",
       "starter": "for n in range(1, 11):\n    if n % 5 == 0:\n        print()\n    else:\n        print()",
       "gradingNote": "Pass if multiples of 5 print Buzz (or similar) and other numbers print themselves."
     },
     {
       "text": "Loop through temps. Print Hot if a temp is greater than 80, else print OK.",
       "hint": "Use the variable t from the loop. The if branch is for temps above 80; the else branch covers the rest.",
-      "starterTip": "Try print(\"Hot\") when t > 80 and print(\"OK\") in the else — use quotes around the words you print.",
+      "starterTip": "Try print(\"Hot\") when t > 80 and print(\"OK\") in the else. Use quotes around the words you print.",
       "starter": "temps = [72, 85, 68, 91]\nfor t in temps:\n    if t > 80:\n        print()\n    else:\n        print()",
       "gradingNote": "Pass if temps over 80 print Hot (or similar) and others print OK (or similar)."
     }
@@ -106,7 +106,7 @@
           "correct": false
         },
         {
-          "text": "Never — if cannot be inside for",
+          "text": "Never. If cannot be inside for",
           "correct": false
         }
       ],

@@ -17,7 +17,7 @@ export default {
 
     idea: `You can give <code>print()</code> several things separated by commas. Python puts a space between them automatically.
 
-An empty <code>print()</code> with nothing inside the parentheses prints a blank line — useful for spacing your output.`,
+An empty <code>print()</code> with nothing inside the parentheses prints a blank line. Useful for spacing your output.`,
 
     code: {
         filename: "scoreboard.py",
@@ -56,11 +56,11 @@ An empty <code>print()</code> with nothing inside the parentheses prints a blank
     practice: [
         {
             text: `Finish the mini scoreboard. Each player should print on one line like <code>Alice: 42 points</code>. Fill in the blank print.`,
-            hint: `Copy the Alice line’s pattern: a name in quotes, a number, and the word points — all inside one print() with commas between them.`,
-            starterTip: `Fill the blank print like: print("Bob:", 30, "points") — change the name and number to your second player.`,
+            hint: `Copy the Alice line’s pattern: a name in quotes, a number, and the word points, all inside one print() with commas between them.`,
+            starterTip: `Fill the blank print like: print("Bob:", 30, "points"). Change the name and number to your second player.`,
             starter: [
                 `print("Alice:", 42, "points")`,
-                `# Player 2 — finish this line`,
+                `# Player 2. Finish this line`,
                 `print()`,
             ].join("\n"),
             gradingNote: `Pass if there are two print lines that each show a player name, a number, and the word points (commas between values is fine). Empty print() fails.`,
@@ -100,7 +100,7 @@ An empty <code>print()</code> with nothing inside the parentheses prints a blank
                 { text: "It prints a blank line", correct: true },
                 { text: "It deletes the last line", correct: false },
             ],
-            correct: "Yes — empty print() makes a blank line.",
+            correct: "Yes. Empty print() makes a blank line.",
             wrong: "Empty print() does not error. It prints a blank line.",
         },
         {

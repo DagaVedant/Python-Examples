@@ -19,7 +19,7 @@ export default {
 
 Write <code>else:</code> at the same indent as <code>if</code>, then indent the else block.
 
-Exactly one of the two blocks runs — never both, never neither (for a simple if/else).`,
+Exactly one of the two blocks runs. Never both, never neither (for a simple if/else).`,
 
     code: {
         filename: "else_demo.py",
@@ -59,7 +59,7 @@ Exactly one of the two blocks runs — never both, never neither (for a simple i
         {
             text: `If <code>age</code> is at least 12, print <code>Teen ticket</code>. Else print <code>Kid ticket</code>. Set age to 10.`,
             hint: `Use <code>if age >= 12:</code> for the first message, then <code>else:</code> at the same indent as if for the backup. Indent each print under its line.`,
-            starterTip: `With age 10, the if fails — so the else block should print <code>Kid ticket</code>.`,
+            starterTip: `With age 10, the if fails. So the else block should print <code>Kid ticket</code>.`,
             starter: [
                 `age = 10`,
                 `# if / else`,
@@ -69,7 +69,7 @@ Exactly one of the two blocks runs — never both, never neither (for a simple i
         {
             text: `Set <code>found = True</code>. If found, print <code>Key found</code>, else print <code>Keep looking</code>.`,
             hint: `A bool variable can go straight in the if: <code>if found:</code> means “if found is True.” Pair it with else: for the other message.`,
-            starterTip: `After <code>found = True</code>, write if/else with indented prints — you should see Key found because found is True.`,
+            starterTip: `After <code>found = True</code>, write if/else with indented prints. You should see Key found because found is True.`,
             starter: [
                 `found = True`,
             ].join("\n"),
@@ -93,7 +93,7 @@ Exactly one of the two blocks runs — never both, never neither (for a simple i
             question: `Does else need its own condition?`,
             options: [
                 { text: "Yes, always", correct: false },
-                { text: "No — it means \"otherwise\"", correct: true },
+                { text: "No. It means \"otherwise\"", correct: true },
                 { text: "Only for numbers", correct: false },
                 { text: "Only for strings", correct: false },
             ],
@@ -104,7 +104,7 @@ Exactly one of the two blocks runs — never both, never neither (for a simple i
             question: `Can if and else both print in one run of a simple if/else?`,
             options: [
                 { text: "Yes", correct: false },
-                { text: "No — only one block runs", correct: true },
+                { text: "No. Only one block runs", correct: true },
                 { text: "Only on Fridays", correct: false },
                 { text: "Only if you indent wrong", correct: false },
             ],

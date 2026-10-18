@@ -6,7 +6,7 @@ export default {
     unitTitle: "Dictionaries",
     title: "What is a Dictionary",
     readTime: 20,
-    goal: "In this lesson you will learn that a dictionary stores labeled facts as key–value pairs.",
+    goal: "In this lesson you will learn that a dictionary stores labeled facts as key-value pairs.",
 
     learn: [
         "A dictionary holds labeled data",
@@ -49,9 +49,9 @@ Example: key <code>"name"</code> might hold value <code>"Mochi"</code>. Later yo
 
     practice: [
         {
-            text: `Print a short note that a dictionary stores key–value pairs. Fill in the blank.`,
-            hint: `Use one print() with a sentence inside quotes. Mention that a dictionary has keys and values (or key–value pairs).`,
-            starterTip: `Try print("A dictionary stores key-value pairs") or similar — any clear sentence about keys and values works.`,
+            text: `Print a short note that a dictionary stores key-value pairs. Fill in the blank.`,
+            hint: `Use one print() with a sentence inside quotes. Mention that a dictionary has keys and values (or key-value pairs).`,
+            starterTip: `Try print("A dictionary stores key-value pairs") or similar, any clear sentence about keys and values works.`,
             starter: [
                 "# One clear sentence",
                 "print()"
@@ -60,7 +60,7 @@ Example: key <code>"name"</code> might hold value <code>"Mochi"</code>. Later yo
         },
         {
             text: `Create any tiny dictionary with one key and print it.`,
-            hint: `The starter already has info with one key. Fill in print() so it shows the whole dictionary — pass info inside the parentheses.`,
+            hint: `The starter already has info with one key. Fill in print() so it shows the whole dictionary. Pass info inside the parentheses.`,
             starterTip: `Use print(info) so Python prints {'color': 'blue'} (or whatever your one key holds).`,
             starter: [
                 "info = {\"color\": \"blue\"}",
@@ -75,9 +75,9 @@ Example: key <code>"name"</code> might hold value <code>"Mochi"</code>. Later yo
             question: `What does a dictionary store?`,
             options: [
                 { text: `Only numbers in a row`, correct: false },
-                { text: `Labeled facts as key–value pairs`, correct: true },
+                { text: `Labeled facts as key-value pairs`, correct: true },
                 { text: `Only comments`, correct: false },
-                { text: `Nothing — dictionaries are empty forever`, correct: false },
+                { text: `Nothing. Dictionaries are empty forever`, correct: false },
             ],
             correct: `Dictionaries store labeled data: each key maps to a value.`,
             wrong: `Think of labels (keys) stuck on boxes (values).`,

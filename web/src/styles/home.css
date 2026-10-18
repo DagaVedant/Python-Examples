@@ -20,17 +20,17 @@ body.dark .home-page {
 }
 
 .home-streak-bar {
-  max-width: 720px;
+  max-width: none;
   margin: 0 auto;
-  padding: 12px 24px 0;
+  padding: 12px clamp(16px, 3vw, 48px) 0;
   display: flex;
   justify-content: flex-end;
 }
 
 .hero {
-  max-width: 720px;
+  max-width: none;
   margin: 0 auto;
-  padding: 40px 24px 32px;
+  padding: 40px clamp(16px, 3vw, 48px) 32px;
   display: grid;
   grid-template-columns: 1fr;
   gap: 28px;
@@ -41,7 +41,7 @@ body.dark .home-page {
     grid-template-columns: 1.1fr 0.9fr;
     align-items: center;
     gap: 36px;
-    padding: 48px 24px 36px;
+    padding: 48px clamp(16px, 3vw, 48px) 36px;
   }
 }
 
@@ -258,15 +258,15 @@ body:not(.dark) .hero-demo {
 }
 
 #continue-slot {
-  max-width: 680px;
+  max-width: none;
   margin: 0 auto 24px;
-  padding: 0 24px;
+  padding: 0 clamp(16px, 3vw, 48px);
 }
 
 .course {
-  max-width: 680px;
+  max-width: none;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 clamp(16px, 3vw, 48px);
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -389,7 +389,7 @@ body.dark .num {
 
 .home-loading,
 .home-error {
-  max-width: 680px;
+  max-width: none;
   margin: 0 auto;
   padding: 24px;
   font-size: 15px;

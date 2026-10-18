@@ -15,7 +15,7 @@ export default {
         "Print True and False",
     ],
 
-    idea: `A <strong>boolean</strong> (bool) is a value that is only <code>True</code> or <code>False</code> — like a yes/no switch.
+    idea: `A <strong>boolean</strong> (bool) is a value that is only <code>True</code> or <code>False</code>. Like a yes/no switch.
 
 In Python, spell them with a capital T and F: <code>True</code>, <code>False</code>.
 
@@ -73,7 +73,7 @@ Programs use booleans to remember answers like "door is open" or "score is high 
         },
         {
             text: `Set <code>raining</code> to False and <code>umbrella</code> to True. Print both values.`,
-            hint: `Fill in each variable with <code>False</code> or <code>True</code> — no quotes around them. The print lines are already set up for you.`,
+            hint: `Fill in each variable with <code>False</code> or <code>True</code>. No quotes around them. The print lines are already set up for you.`,
             starterTip: `Use <code>raining = False</code> and <code>umbrella = True</code>, then run to see both labels print.`,
             starter: [
                 `raining = `,
@@ -117,7 +117,7 @@ Programs use booleans to remember answers like "door is open" or "score is high 
                 { text: "\"True\"", correct: false },
             ],
             correct: "Capital T, rest lowercase: True.",
-            wrong: "It must be True — not true, TRUE, or a string.",
+            wrong: "It must be True. Not true, TRUE, or a string.",
         },
     ],
 

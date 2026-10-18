@@ -73,7 +73,7 @@
     },
     {
       "text": "Print the board so each row shows three cells separated by spaces (use print with commas or build a line).",
-      "hint": "You need three printed lines — one per row. Commas in print() put spaces between values on the same line.",
+      "hint": "You need three printed lines. One per row. Commas in print() put spaces between values on the same line.",
       "starterTip": "Try for row in board: then print(row[0], row[1], row[2]) so each row looks like X O X.",
       "starter": "board = [\n    [\"X\", \"O\", \"X\"],\n    [\"O\", \"X\", \"O\"],\n    [\"X\", \"O\", \"X\"],\n]\n",
       "gradingNote": "Pass if each of the three rows is printed in a readable spaced format."
@@ -152,7 +152,7 @@
   ],
   "project": {
     "title": "Pretty Tic-Tac-Toe",
-    "desc": "Make a 3x3 board with some X and O marks. Print it neatly — one row per line with spaces between cells.",
+    "desc": "Make a 3x3 board with some X and O marks. Print it neatly. One row per line with spaces between cells.",
     "starter": "board = [\n    [\"X\", \".\", \"O\"],\n    [\".\", \"X\", \".\"],\n    [\"O\", \".\", \"X\"],\n]\n# pretty print\n"
   },
   "prev": {

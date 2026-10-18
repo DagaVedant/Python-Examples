@@ -57,7 +57,7 @@ export default {
     practice: [
         {
             text: `Catch only ZeroDivisionError around 8/0. Print a specific message.`,
-            hint: `except ZeroDivisionError: is already there — you just need a clear message inside it that mentions dividing by zero.`,
+            hint: `except ZeroDivisionError: is already there. You just need a clear message inside it that mentions dividing by zero.`,
             starterTip: `Try print("You cannot divide by zero!") inside the except block (indented under except ZeroDivisionError:).`,
             starter: [
                 "try:",

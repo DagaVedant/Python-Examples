@@ -14,7 +14,7 @@ export default {
         "Classes group data and actions",
     ],
 
-    idea: `A <strong>class</strong> is a blueprint for a kind of thing — pets, players, accounts. Why bother? So you can make many similar things without copy-pasting the same variables over and over.
+    idea: `A <strong>class</strong> is a blueprint for a kind of thing. Pets, players, accounts. Why bother? So you can make many similar things without copy-pasting the same variables over and over.
 
 Classes group <strong>data</strong> (what it knows) and later <strong>actions</strong> (what it can do).`,
 
@@ -59,7 +59,7 @@ Classes group <strong>data</strong> (what it knows) and later <strong>actions</s
         },
         {
             text: `Print an example of one class name and two different object ideas.`,
-            hint: `You already have Class: Pet. Fill the two blank prints with two different pet names or ideas — they should not be the same.`,
+            hint: `You already have Class: Pet. Fill the two blank prints with two different pet names or ideas. They should not be the same.`,
             starterTip: `For example: print("Object: Mochi the cat") and print("Object: Buddy the dog").`,
             starter: [
                 "print(\"Class: Pet\")",
@@ -97,7 +97,7 @@ Classes group <strong>data</strong> (what it knows) and later <strong>actions</s
             question: `Do all objects from a class share the exact same data?`,
             options: [
                 { text: `Yes, always identical forever`, correct: false },
-                { text: `No — each can store its own values`, correct: true },
+                { text: `No. Each can store its own values`, correct: true },
                 { text: `They cannot store data`, correct: false },
                 { text: `Only numbers`, correct: false },
             ],

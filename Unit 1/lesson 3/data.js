@@ -33,7 +33,7 @@ Python skips that part. It does not print the comment and does not treat it as a
         ],
     },
 
-    changeOneLine: `In the editor above, change the first comment to <code># Greeting for a friend</code>. Press <strong>Run</strong>. The output should stay the same — comments do not print.`,
+    changeOneLine: `In the editor above, change the first comment to <code># Greeting for a friend</code>. Press <strong>Run</strong>. The output should stay the same. Comments do not print.`,
 
     code2: {
         filename: "labeled.py",
@@ -52,7 +52,7 @@ Python skips that part. It does not print the comment and does not treat it as a
     practice: [
         {
             text: `Add a helpful # comment above each print so someone knows what that line shows. Keep both prints.`,
-            hint: `A comment is its own line starting with #. Python skips it — only print() shows text on the screen.`,
+            hint: `A comment is its own line starting with #. Python skips it. Only print() shows text on the screen.`,
             starterTip: `Add a line like # Name above print("Maya"), and # Hobby above print("soccer").`,
             starter: [
                 `print("Maya")`,
@@ -62,7 +62,7 @@ Python skips that part. It does not print the comment and does not treat it as a
         },
         {
             text: `Keep the comment. Finish the blank print so the program still has a note plus one message.`,
-            hint: `Leave the # line alone — it is already a comment. Fill in print() with a colour name inside quotes.`,
+            hint: `Leave the # line alone. It is already a comment. Fill in print() with a colour name inside quotes.`,
             starterTip: `Keep # My favourite colour, then try print("blue") on the blank line below it.`,
             starter: [
                 `# My favourite colour`,
@@ -78,7 +78,7 @@ Python skips that part. It does not print the comment and does not treat it as a
             options: [
                 { text: "It runs the line like any other instruction", correct: false },
                 { text: "It prints the # and the rest of the line", correct: false },
-                { text: "It ignores the line — it is a comment", correct: true },
+                { text: "It ignores the line. It is a comment", correct: true },
                 { text: "It stops the whole program", correct: false },
             ],
             correct: "A # starts a comment. Python skips it.",

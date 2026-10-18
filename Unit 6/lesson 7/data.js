@@ -63,7 +63,7 @@ export default {
     practice: [
         {
             text: `Loop over the fruit list and print each fruit on its own line.`,
-            hint: `Write for something in fruit: — pick any name for the loop variable, then indent a print line underneath.`,
+            hint: `Write for something in fruit:. Pick any name for the loop variable, then indent a print line underneath.`,
             starterTip: `For example: for f in fruit: then print(f) indented four spaces.`,
             starter: [
                 `fruit = ["apple", "banana", "cherry"]`,
@@ -105,7 +105,7 @@ export default {
                 { text: "0", correct: false },
                 { text: "Always 10", correct: false },
             ],
-            correct: "Once per item — five items means five passes.",
+            correct: "Once per item. Five items means five passes.",
             wrong: "The body runs once for each item in the list.",
         },
         {

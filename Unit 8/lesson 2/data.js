@@ -102,7 +102,7 @@ Each pair is <code>key: value</code>. Put commas between pairs. Keys are often s
             question: `Can a dictionary value be a number?`,
             options: [
                 { text: `No, only strings`, correct: false },
-                { text: `Yes — numbers, strings, and more`, correct: true },
+                { text: `Yes. Numbers, strings, and more`, correct: true },
                 { text: `Only True/False`, correct: false },
                 { text: `Only empty values`, correct: false },
             ],

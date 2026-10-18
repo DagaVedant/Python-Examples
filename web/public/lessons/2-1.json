@@ -56,7 +56,7 @@
       "text": "A game starts with 30 stars. You earn 12 more, then lose 7. Finish the code so it prints the final number of stars.",
       "hint": "After earning 12, stars is 42. On the blank line, subtract 7 from stars and store the answer back in stars.",
       "starterTip": "Try stars = stars - 7 on the line after the comment about losing 7.",
-      "starter": "stars = 30\n# Earn 12\nstars = stars + 12\n# Lose 7 — finish this line\nstars = \nprint(\"Stars:\", stars)",
+      "starter": "stars = 30\n# Earn 12\nstars = stars + 12\n# Lose 7. Finish this line\nstars = \nprint(\"Stars:\", stars)",
       "gradingNote": "Pass if stars ends up as 35 (30+12-7) and is printed. Must use subtraction."
     },
     {

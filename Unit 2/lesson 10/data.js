@@ -69,7 +69,7 @@ These tools clean up messy numbers when you need whole counts or the biggest/sma
         {
             text: `Print the absolute value of -42 using abs().`,
             hint: `abs() drops the minus sign and keeps the distance from zero. Put -42 inside abs().`,
-            starterTip: `Fill the print line with abs(-42) — the output should be 42, not -42.`,
+            starterTip: `Fill the print line with abs(-42). The output should be 42, not -42.`,
             starter: [
                 `print()`,
             ].join("\n"),

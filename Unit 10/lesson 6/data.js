@@ -14,7 +14,7 @@ export default {
         "Keep the rest of the program calm",
     ],
 
-    idea: `In <code>except</code>, speak to a human: short, clear, kind. Example: <code>print("That score is not a number — using 0.")</code>.
+    idea: `In <code>except</code>, speak to a human: short, clear, kind. Example: <code>print("That score is not a number. Using 0.")</code>.
 
 Also set a safe value so the program can continue. Friendly messages + fallbacks beat scary red text.`,
 
@@ -47,18 +47,18 @@ Also set a safe value so the program can continue. Friendly messages + fallbacks
             `try:`,
             `    print(left / right)`,
             `except:`,
-            `    print("Cannot divide by zero — try a different number.")`,
+            `    print("Cannot divide by zero. Try a different number.")`,
         ],
         output: [
-            "Cannot divide by zero — try a different number.",
+            "Cannot divide by zero. Try a different number.",
         ],
     },
 
     practice: [
         {
             text: `Try int("abc"). In except, print a friendly message and set n = 0. Print n.`,
-            hint: `int("abc") will fail — that is expected. In except, tell the user what happened in plain words, then set n = 0 so print(n) works.`,
-            starterTip: `Inside except:, try print("That was not a number — using 0.") then n = 0 on the next indented line.`,
+            hint: `int("abc") will fail. That is expected. In except, tell the user what happened in plain words, then set n = 0 so print(n) works.`,
+            starterTip: `Inside except:, try print("That was not a number. Using 0.") then n = 0 on the next indented line.`,
             starter: [
                 "text = \"abc\"",
                 "try:",
@@ -71,8 +71,8 @@ Also set a safe value so the program can continue. Friendly messages + fallbacks
         },
         {
             text: `On divide-by-zero, print a kind tip (not just Error). Then print OK.`,
-            hint: `The empty print() in except should say something helpful to a kid — like asking them to pick a number that is not zero.`,
-            starterTip: `Fill except with print("Cannot divide by zero — try a different number.") — OK should still print after the try/except block.`,
+            hint: `The empty print() in except should say something helpful to a kid. Like asking them to pick a number that is not zero.`,
+            starterTip: `Fill except with print("Cannot divide by zero. Try a different number."). OK should still print after the try/except block.`,
             starter: [
                 "try:",
                 "    print(1 / 0)",
@@ -111,7 +111,7 @@ Also set a safe value so the program can continue. Friendly messages + fallbacks
             question: `Should except just crash harder?`,
             options: [
                 { text: `Yes always`, correct: false },
-                { text: `No — catch and explain`, correct: true },
+                { text: `No. Catch and explain`, correct: true },
                 { text: `Yes with louder beeps`, correct: false },
                 { text: `Crashing is the goal`, correct: false },
             ],

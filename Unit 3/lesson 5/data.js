@@ -7,7 +7,7 @@ export default {
     title: "elif",
     readTime: 23,
 
-    goal: "In this lesson you will learn elif — another check that runs only if earlier if/elif checks were False.",
+    goal: "In this lesson you will learn elif, another check that runs only if earlier if/elif checks were False.",
 
     learn: [
         "Add elif between if and else",
@@ -61,8 +61,8 @@ Order matters: put the most specific checks first when needed.`,
     practice: [
         {
             text: `Set <code>temp = 15</code>. If temp >= 25 print Hot, elif temp >= 10 print Mild, else print Cold.`,
-            hint: `Build a chain: if, then elif, then else — all at the same indent. Python picks the first condition that is True.`,
-            starterTip: `15 is not hot enough for the first check, but it is >= 10 — so the elif branch should print Mild.`,
+            hint: `Build a chain: if, then elif, then else, all at the same indent. Python picks the first condition that is True.`,
+            starterTip: `15 is not hot enough for the first check, but it is >= 10. So the elif branch should print Mild.`,
             starter: [
                 `temp = 15`,
                 `# if / elif / else`,
@@ -72,7 +72,7 @@ Order matters: put the most specific checks first when needed.`,
         {
             text: `Set <code>size = "M"</code>. If size is S print Small, elif M print Medium, else print Other.`,
             hint: `Compare size to strings with <code>==</code>, like <code>size == "S"</code>. Each branch needs a colon and an indented print.`,
-            starterTip: `Try <code>elif size == "M":</code> with <code>print("Medium")</code> indented under it — size is already "M".`,
+            starterTip: `Try <code>elif size == "M":</code> with <code>print("Medium")</code> indented under it. Size is already "M".`,
             starter: [
                 `size = "M"`,
             ].join("\n"),
@@ -96,7 +96,7 @@ Order matters: put the most specific checks first when needed.`,
             question: `If the first if is True, do later elifs run?`,
             options: [
                 { text: "Yes, all of them", correct: false },
-                { text: "No — Python stops at the first True branch", correct: true },
+                { text: "No. Python stops at the first True branch", correct: true },
                 { text: "Only else runs", correct: false },
                 { text: "Only the last elif", correct: false },
             ],

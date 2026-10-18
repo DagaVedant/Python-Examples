@@ -56,7 +56,7 @@ Read the message, choose fix vs catch, and keep the program kind to the next kid
     practice: [
         {
             text: `Loop ['3','0','x']. For each, try 9/int(item). Catch ValueError and ZeroDivisionError with different messages.`,
-            hint: `Inside try:, compute print(9 / int(item)). "3" works, "0" hits ZeroDivisionError, "x" hits ValueError — give each except its own message.`,
+            hint: `Inside try:, compute print(9 / int(item)). "3" works, "0" hits ZeroDivisionError, "x" hits ValueError. Give each except its own message.`,
             starterTip: `In try: add print(9 / int(item)). In except blocks try print("Not a number!") and print("Cannot divide by zero!").`,
             starter: [
                 "items = [\"3\", \"0\", \"x\"]",
@@ -72,8 +72,8 @@ Read the message, choose fix vs catch, and keep the program kind to the next kid
         },
         {
             text: `Fix the NameError (do not use try). Print the sum of a and b.`,
-            hint: `There is no variable c — only a and b exist. The sum of 4 and 6 should be 10.`,
-            starterTip: `Change print(a + c) to print(a + b) — no try/except needed, just fix the typo.`,
+            hint: `There is no variable c. Only a and b exist. The sum of 4 and 6 should be 10.`,
+            starterTip: `Change print(a + c) to print(a + b). No try/except needed, just fix the typo.`,
             starter: [
                 "a = 4",
                 "b = 6",
@@ -99,7 +99,7 @@ Read the message, choose fix vs catch, and keep the program kind to the next kid
             question: `Can one try have more than one except?`,
             options: [
                 { text: `No, never`, correct: false },
-                { text: `Yes — for different error types`, correct: true },
+                { text: `Yes. For different error types`, correct: true },
                 { text: `Only with dictionaries`, correct: false },
                 { text: `Only in Unit 1`, correct: false },
             ],

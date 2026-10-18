@@ -66,7 +66,7 @@ Remember: <code>=</code> assigns. <code>==</code> compares.`,
     practice: [
         {
             text: `Set <code>age = 11</code>. Print whether age is greater than or equal to 10.`,
-            hint: `Put a comparison inside print() — the operator <code>&gt;=</code> means “greater than or equal to.” The answer will be True or False.`,
+            hint: `Put a comparison inside print(). The operator <code>&gt;=</code> means “greater than or equal to.” The answer will be True or False.`,
             starterTip: `Try <code>print(age >= 10)</code> on the second line. With age 11, you should see True.`,
             starter: [
                 `age = 11`,
@@ -77,7 +77,7 @@ Remember: <code>=</code> assigns. <code>==</code> compares.`,
         {
             text: `Compare the strings <code>"blue"</code> and <code>"Blue"</code> with == and print the result.`,
             hint: `Use <code>==</code> inside print() to ask “are these equal?” Python cares about capital letters in strings.`,
-            starterTip: `Try <code>print("blue" == "Blue")</code> — lowercase b and uppercase B are different, so expect False.`,
+            starterTip: `Try <code>print("blue" == "Blue")</code>. Lowercase b and uppercase B are different, so expect False.`,
             starter: [
                 `print()`,
             ].join("\n"),

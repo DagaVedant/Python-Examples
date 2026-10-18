@@ -6,7 +6,7 @@ An interactive Python learning course for beginners, all in your browser. No dow
 
 Try it here: [https://dagavedant.github.io/Python-Examples/](https://dagavedant.github.io/Python-Examples/)
 
-Every lesson is free — no account needed. You can read them, run real Python right in the browser (including input()), and take the quizzes. After your first lesson, you can optionally create a free account to save progress across devices and get AI feedback on practice code.
+Every lesson is free. No account needed. You can read them, run real Python right in the browser (including input()), and take the quizzes. After your first lesson, you can optionally create a free account to save progress across devices and get AI feedback on practice code.
 
 ## Quick Peak
 
@@ -16,7 +16,7 @@ Theres also a short demo video at `public/video/demo.mp4` if you want to see it 
 
 ## What You Get
 
-- 110 short lessons across 12 units (AP CSP style — one idea per lesson), from your first program through dictionaries, files, errors, imports, and classes
+- 110 short lessons across 12 units (AP CSP style. One idea per lesson), from your first program through dictionaries, files, errors, imports, and classes
 - A built in code editor with line wrapping and AI feedback on your practice code
 - Optional free account to save progress across devices and unlock AI practice checks
 - A quiz and two practice tasks in every lesson
@@ -43,7 +43,7 @@ You dont even need Python installed to follow the lessons in the browser, but if
 
 ## The Course
 
-Each unit is split into short lessons — one idea at a time — like an AP CSP unit plan.
+Each unit is split into short lessons. One idea at a time. Like an AP CSP unit plan.
 
 ### Unit 1 - Getting Started with Python (10)
 What is a Program · print() Basics · Comments · Many Lines of Output · Strings and Quotes · Fancy print() · Variables · Changing Variables · Using Answers · Data Types & Casting

@@ -69,7 +69,7 @@ export default {
         },
         {
             text: `Find the sum of <code>points</code>. Print only the final total.`,
-            hint: `points has three numbers — loop over points and add each number into total before you print.`,
+            hint: `points has three numbers. Loop over points and add each number into total before you print.`,
             starterTip: `Add for p in points: and total = total + p (indented) between total = 0 and print(total).`,
             starter: [
                 `points = [10, 20, 30]`,
@@ -110,7 +110,7 @@ export default {
                 { text: "Before the loop starts", correct: false },
                 { text: "Usually after the loop finishes", correct: true },
                 { text: "Only inside a comment", correct: false },
-                { text: "Never — totals cannot print", correct: false },
+                { text: "Never. Totals cannot print", correct: false },
             ],
             correct: "After the loop, total includes every item.",
             wrong: "Print after all numbers have been added.",

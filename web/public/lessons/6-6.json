@@ -59,14 +59,14 @@
   "practice": [
     {
       "text": "Remove <code>\"spam\"</code> from the list, then print what is left.",
-      "hint": "Use inbox.remove() and pass the exact word \"spam\" in quotes — same spelling as in the list.",
+      "hint": "Use inbox.remove() and pass the exact word \"spam\" in quotes. Same spelling as in the list.",
       "starterTip": "Add a line like inbox.remove(\"spam\") under the comment, before print(inbox).",
       "starter": "inbox = [\"hello\", \"spam\", \"news\"]\n# Remove spam\n\nprint(inbox)",
       "gradingNote": "Pass if remove(\"spam\") is used and inbox no longer contains spam."
     },
     {
       "text": "Pop the last item into a variable called <code>last</code>, then print <code>last</code> and the list.",
-      "hint": "nums.pop() with nothing inside grabs the last item and gives it back — save that return value in last.",
+      "hint": "nums.pop() with nothing inside grabs the last item and gives it back. Save that return value in last.",
       "starterTip": "On the blank line, try last = nums.pop() so last becomes 30.",
       "starter": "nums = [10, 20, 30]\nlast = \nprint(last)\nprint(nums)",
       "gradingNote": "Pass if last = nums.pop() (or pop of last index) and both last and nums are printed; last should be 30."
@@ -85,7 +85,7 @@
           "correct": true
         },
         {
-          "text": "Nothing — it clears the list",
+          "text": "Nothing. It clears the list",
           "correct": false
         },
         {

@@ -25,7 +25,7 @@ export default {
 
     idea: `Mini project time! Read scores from a practice file, process each line, then write a neat report to another practice file.
 
-Use <code>with open</code> for reading and writing. Keep everything in the practice folder — no real disk, and no <code>input()</code>.`,
+Use <code>with open</code> for reading and writing. Keep everything in the practice folder. No real disk, and no <code>input()</code>.`,
 
     code: {
         filename: "mini_project_demo.py",
@@ -78,7 +78,7 @@ Use <code>with open</code> for reading and writing. Keep everything in the pract
         {
             text: `Read hello.txt and write the same text into hello_copy.txt using with open. Print the copy.`,
             hint: `You already have text from hello.txt. Open hello_copy.txt with "w" in a with block and f.write(text) to save a copy.`,
-            starterTip: `Add: with open("hello_copy.txt", "w") as f: then f.write(text) — the last block prints the copy for you.`,
+            starterTip: `Add: with open("hello_copy.txt", "w") as f: then f.write(text). The last block prints the copy for you.`,
             starter: [
                 "with open(\"hello.txt\") as f:",
                 "    text = f.read()",
@@ -115,7 +115,7 @@ Use <code>with open</code> for reading and writing. Keep everything in the pract
                 { text: `Ignoring with open`, correct: false },
             ],
             correct: `Combine the file skills you learned.`,
-            wrong: `Practice folder only — no real disk.`,
+            wrong: `Practice folder only. No real disk.`,
         },
         {
             question: `Which pattern is best for open/close safety?`,
@@ -132,7 +132,7 @@ Use <code>with open</code> for reading and writing. Keep everything in the pract
             question: `Are practice report files on your real disk?`,
             options: [
                 { text: `Yes, Documents folder`, correct: false },
-                { text: `No — they stay in the page practice folder`, correct: true },
+                { text: `No. They stay in the page practice folder`, correct: true },
                 { text: `Yes, always Downloads`, correct: false },
                 { text: `Yes, the recycle bin`, correct: false },
             ],

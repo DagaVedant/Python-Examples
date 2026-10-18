@@ -61,8 +61,8 @@ export function LessonCompleteBar({ unit, lesson, quizAllPassed, userId }: Props
       {nudgeOpen ? (
         <div className="signup-nudge" role="status">
           <p>
-            Nice work on your first lesson. Create a free account if you want to save progress across
-            devices — optional.
+            Nice work on your first lesson. You can create a free account if you want to save your progress across
+            devices, but it is optional.
           </p>
           <div className="signup-nudge-actions">
             <Link className="signup-nudge-primary" to="/signup">

@@ -12,7 +12,7 @@
     "Indexing starts at 0",
     "Use -1 to get the last item"
   ],
-  "idea": "Every item in a list has an <strong>index</strong> — its position. Python counts from <code>0</code>, so the first item is <code>list[0]</code>, the second is <code>list[1]</code>, and so on.\n\n    <code>-1</code> means the last item. That is handy when you do not want to count the length yourself.",
+  "idea": "Every item in a list has an <strong>index</strong>. Its position. Python counts from <code>0</code>, so the first item is <code>list[0]</code>, the second is <code>list[1]</code>, and so on.\n\n    <code>-1</code> means the last item. That is handy when you do not want to count the length yourself.",
   "code": {
     "filename": "snacks.py",
     "lines": [
@@ -57,7 +57,7 @@
       "gradingNote": "Pass if two prints use indexes to show the first item and the last item (0 and -1 or 2)."
     },
     {
-      "text": "Print the middle item of this four-item list (index 1 or 2 — pick one and print it).",
+      "text": "Print the middle item of this four-item list (index 1 or 2. Pick one and print it).",
       "hint": "Index 0 is 10, index 1 is 20, index 2 is 30. Pick one of the middle numbers and use nums[that index] inside print.",
       "starterTip": "Either print(nums[1]) to show 20 or print(nums[2]) to show 30.",
       "starter": "nums = [10, 20, 30, 40]\n# Print one middle item\nprint()",
@@ -85,7 +85,7 @@
           "correct": false
         }
       ],
-      "correct": "With 4 items the indexes are 0, 1, 2, 3 — so the last is at index 3.",
+      "correct": "With 4 items the indexes are 0, 1, 2, 3. So the last is at index 3.",
       "wrong": "Indexes start at 0, so four items use indexes 0 through 3."
     },
     {
@@ -127,7 +127,7 @@
           "correct": false
         },
         {
-          "text": "Nothing — index 1 is invalid",
+          "text": "Nothing. Index 1 is invalid",
           "correct": false
         }
       ],

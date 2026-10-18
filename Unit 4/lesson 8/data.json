@@ -12,7 +12,7 @@
     "Always change the value the condition checks",
     "Prefer a clear counter update every pass"
   ],
-  "idea": "A while loop that never changes its condition runs <strong>forever</strong> — and can freeze your program.\n\nSafe rule: whatever the condition looks at (like <code>count</code>), something inside the loop must change it. Shrinking, growing, or stepping a counter is the usual fix.\n\nIn this course we only write <strong>finite</strong> while loops with counters. No <code>input()</code>, and no loops that wait forever.",
+  "idea": "A while loop that never changes its condition runs <strong>forever</strong>, and can freeze your program.\n\nSafe rule: whatever the condition looks at (like <code>count</code>), something inside the loop must change it. Shrinking, growing, or stepping a counter is the usual fix.\n\nIn this course we only write <strong>finite</strong> while loops with counters. No <code>input()</code>, and no loops that wait forever.",
   "code": {
     "filename": "safe_stop.py",
     "lines": [
@@ -72,7 +72,7 @@
       "hint": "steps starts at 0. Each pass should print the current steps, then bump steps up by 1 before the while checks again.",
       "starterTip": "Fill the blank with steps = steps + 1 (inside the while). Output should be 0, 1, 2, 3, 4, then Finished.",
       "starter": "steps = 0\nwhile steps < 5:\n    print(steps)\n    \nprint(\"Finished\")",
-      "gradingNote": "Pass if 0..4 print, steps increases, and Finished prints after — finite while only."
+      "gradingNote": "Pass if 0..4 print, steps increases, and Finished prints after. Finite while only."
     }
   ],
   "quiz": [
@@ -80,7 +80,7 @@
       "question": "What is wrong with: x = 5 then while x > 0: print(x) with no other lines?",
       "options": [
         {
-          "text": "Nothing — it prints 5 once and stops",
+          "text": "Nothing. It prints 5 once and stops",
           "correct": false
         },
         {
@@ -149,7 +149,7 @@
   "project": {
     "title": "Safe Timer",
     "desc": "Start seconds at 5. While seconds > 0, print the seconds left, then subtract 1. After the loop, print Time is up! Make sure the counter always updates.",
-    "starter": "seconds = 5\nwhile seconds > 0:\n    print(\"Seconds left:\", seconds)\n    # Subtract 1 — required for a safe stop\n    \nprint(\"Time is up!\")"
+    "starter": "seconds = 5\nwhile seconds > 0:\n    print(\"Seconds left:\", seconds)\n    # Subtract 1. Required for a safe stop\n    \nprint(\"Time is up!\")"
   },
   "prev": {
     "unit": 4,

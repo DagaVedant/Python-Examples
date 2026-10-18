@@ -17,12 +17,12 @@ export default {
 
     idea: `Every value in Python has a <strong>type</strong>. Text is a string (<code>str</code>). Whole numbers are integers (<code>int</code>). Numbers with a decimal point are floats (<code>float</code>).
 
-<code>input()</code> always gives back a string — even if someone types <code>14</code>. Digits in quotes like <code>"14"</code> are also text. For math, convert (cast) with <code>int()</code> or <code>float()</code> first. Adding two strings sticks them together. Adding two numbers does math.`,
+<code>input()</code> always gives back a string. Even if someone types <code>14</code>. Digits in quotes like <code>"14"</code> are also text. For math, convert (cast) with <code>int()</code> or <code>float()</code> first. Adding two strings sticks them together. Adding two numbers does math.`,
 
     code: {
         filename: "next_year.py",
         lines: [
-            `# input() always returns text — cast before math`,
+            `# input() always returns text. Cast before math`,
             `age_text = input("How old are you? ")`,
             `age = int(age_text)`,
             `print("Next year you will be", age + 1)`,
@@ -65,7 +65,7 @@ export default {
         {
             text: `Two number answers are stored as text. Cast both to int and print their sum (math, not stuck-together text).`,
             hint: `"6" and "7" are strings. Wrap each in int() before you add, or Python will join them into "67".`,
-            starterTip: `Try: print(int(n1) + int(n2)) — you should see 13, not 67.`,
+            starterTip: `Try: print(int(n1) + int(n2)). You should see 13, not 67.`,
             starter: [
                 `n1 = "6"`,
                 `n2 = "7"`,
@@ -77,7 +77,7 @@ export default {
         {
             text: `A price and a quantity are stored as text. Cast them, multiply, and print the total.`,
             hint: `Use float() for price (it has a decimal) and int() for qty. Multiply the numbers, then store or print that result.`,
-            starterTip: `Replace total = 0 with total = float(price) * int(qty) — print(total) should show 13.0 for 3.25 times 4.`,
+            starterTip: `Replace total = 0 with total = float(price) * int(qty). Print(total) should show 13.0 for 3.25 times 4.`,
             starter: [
                 `price = "3.25"`,
                 `qty = "4"`,

@@ -64,7 +64,7 @@ You often start <code>count = 0</code> before the loop, then <code>count = count
     practice: [
         {
             text: `Count how many numbers from 1 to 20 are divisible by 3. Print the count at the end.`,
-            hint: `Start count at 0. Each time n % 3 == 0, add 1 to count — do not print every n, just track how many match.`,
+            hint: `Start count at 0. Each time n % 3 == 0, add 1 to count. Do not print every n, just track how many match.`,
             starterTip: `Inside the if, try count = count + 1. After the loop, count should be 6 when you print Count:`,
             starter: [
                 `count = 0`,

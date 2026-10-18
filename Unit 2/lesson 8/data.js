@@ -120,7 +120,7 @@ Think: first find the subtotal, then tax or discount, then the final total.`,
         {
             question: `What should you print while building steps?`,
             options: [
-                { text: "Nothing — only the final answer", correct: false },
+                { text: "Nothing. Only the final answer", correct: false },
                 { text: "Middle results with labels to check work", correct: true },
                 { text: "Only errors", correct: false },
                 { text: "Random numbers", correct: false },

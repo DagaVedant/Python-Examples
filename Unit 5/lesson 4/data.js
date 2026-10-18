@@ -75,7 +75,7 @@ When you call the function, pass the same number of arguments in the <strong>sam
         },
         {
             text: `Finish intro(name, age) so it prints a line using both values. Call it twice.`,
-            hint: `One print can use both parameters — name and age — with commas between the pieces of text. Call intro again with a different name and age.`,
+            hint: `One print can use both parameters. Name and age. With commas between the pieces of text. Call intro again with a different name and age.`,
             starterTip: `Try print(name, "is", age, "years old") inside intro, then add intro("Maya", 12) on the blank line below intro("Sam", 11).`,
             starter: [
                 `def intro(name, age):`,
@@ -117,7 +117,7 @@ When you call the function, pass the same number of arguments in the <strong>sam
                 { text: "Python fills in a random second value", correct: false },
                 { text: "You usually get an error about missing arguments", correct: true },
                 { text: "The function runs twice", correct: false },
-                { text: "Nothing — Python ignores parameters", correct: false },
+                { text: "Nothing. Python ignores parameters", correct: false },
             ],
             correct: "The number of arguments should match the number of parameters.",
             wrong: "Pass one argument per parameter, in order.",

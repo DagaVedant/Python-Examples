@@ -67,7 +67,7 @@ export default {
     practice: [
         {
             text: `Print the middle row of the grid (index 1).`,
-            hint: `One index on grid gives you a whole row. The middle row is index 1 — the second row, with 4, 5, and 6.`,
+            hint: `One index on grid gives you a whole row. The middle row is index 1. The second row, with 4, 5, and 6.`,
             starterTip: `Put grid[1] inside print(), like print(grid[1]).`,
             starter: [
                 `grid = [`,
@@ -117,14 +117,14 @@ export default {
                 { text: "0", correct: false },
                 { text: "-3 only", correct: false },
             ],
-            correct: "Rows are indexed 0, 1, 2 — so the last is 2.",
+            correct: "Rows are indexed 0, 1, 2. So the last is 2.",
             wrong: "Indexing still starts at 0.",
         },
         {
             question: `Can you loop over <code>grid[1]</code>?`,
             options: [
-                { text: "No — rows are not lists", correct: false },
-                { text: "Yes — a row is a normal list", correct: true },
+                { text: "No. Rows are not lists", correct: false },
+                { text: "Yes, a row is a normal list", correct: true },
                 { text: "Only with input()", correct: false },
                 { text: "Only if the grid is empty", correct: false },
             ],

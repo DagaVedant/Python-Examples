@@ -62,7 +62,7 @@ export default {
     practice: [
         {
             text: `Sort <code>scores</code> and print the sorted list.`,
-            hint: `Call scores.sort() on its own line — it rearranges the list in place, then print shows the new order.`,
+            hint: `Call scores.sort() on its own line. It rearranges the list in place, then print shows the new order.`,
             starterTip: `Put scores.sort() between the comment and print(scores).`,
             starter: [
                 `scores = [88, 72, 95, 60]`,

@@ -75,7 +75,7 @@ Each object can have different attribute values even if they share a class.`,
         {
             text: `Make two Players with different levels. Print both levels.`,
             hint: `Levels are already set on a and b. Print each player's level with print(a.level) and print(b.level).`,
-            starterTip: `Fill the two print() lines with print(a.level) and print(b.level) — you should see 2 then 7.`,
+            starterTip: `Fill the two print() lines with print(a.level) and print(b.level). You should see 2 then 7.`,
             starter: [
                 "class Player:",
                 "    pass",
@@ -106,7 +106,7 @@ Each object can have different attribute values even if they share a class.`,
             question: `Do dog1.age and dog2.age have to match?`,
             options: [
                 { text: `Yes, forced equal`, correct: false },
-                { text: `No — each object has its own`, correct: true },
+                { text: `No. Each object has its own`, correct: true },
                 { text: `Ages cannot exist`, correct: false },
                 { text: `Only if names match`, correct: false },
             ],

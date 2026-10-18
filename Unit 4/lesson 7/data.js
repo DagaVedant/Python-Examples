@@ -15,7 +15,7 @@ export default {
         "Print the counter each time through",
     ],
 
-    idea: `A <strong>counter</strong> is an integer you change by a fixed amount each pass — usually +1 or -1.
+    idea: `A <strong>counter</strong> is an integer you change by a fixed amount each pass. Usually +1 or -1.
 
 Count up: start at 1, while the counter is less than or equal to a limit, print it, then add 1. Count down: start high, while greater than 0, print, then subtract 1.
 
@@ -72,7 +72,7 @@ Keep the update on its own line so you can see how the loop will end.`,
         {
             text: `Count up from 1 to 7 with a while loop. Print each number.`,
             hint: `Fill the empty print() with n, then add 1 to n each pass so the loop reaches 7 and stops.`,
-            starterTip: `Try print(n) in the blank line, then n = n + 1 under the comment — both indented under while.`,
+            starterTip: `Try print(n) in the blank line, then n = n + 1 under the comment. Both indented under while.`,
             starter: [
                 `n = 1`,
                 `while n <= 7:`,
@@ -118,7 +118,7 @@ Keep the update on its own line so you can see how the loop will end.`,
                 { text: "Nothing", correct: false },
             ],
             correct: "The loop runs while n is 1, 2, and 3, then stops.",
-            wrong: "Trace it: print, add 1, check again — stop when n becomes 4.",
+            wrong: "Trace it: print, add 1, check again. Stop when n becomes 4.",
         },
         {
             question: `Why is a fixed +/- update a good counter pattern?`,

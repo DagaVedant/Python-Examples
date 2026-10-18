@@ -7,7 +7,7 @@ export default {
     title: "Lists Inside Lists",
     readTime: 22,
 
-    goal: "In this lesson you will learn what a 2D list is — a list where each item is another list — and picture it as a small grid.",
+    goal: "In this lesson you will learn what a 2D list is, a list where each item is another list, and picture it as a small grid.",
 
     learn: [
         "A 2D list is a list of lists",
@@ -17,7 +17,7 @@ export default {
 
     idea: `A <strong>2D list</strong> is a list where every item is itself another list. Picture a table: the outer list holds the <strong>rows</strong>, and each inner list holds the values in that row.
 
-    We will keep grids small — usually <strong>3 rows by 3 columns</strong> — so you can see the whole board at once.`,
+    We will keep grids small. Usually <strong>3 rows by 3 columns</strong>. So you can see the whole board at once.`,
 
     code: {
         filename: "grid.py",
@@ -67,8 +67,8 @@ export default {
 
     practice: [
         {
-            text: `Create a 3x3 number grid (1–9) and print it.`,
-            hint: `The outer list holds three inner lists — one per row. Fill each row with three numbers so the grid goes 1 through 9.`,
+            text: `Create a 3x3 number grid (1 to 9) and print it.`,
+            hint: `The outer list holds three inner lists. One per row. Fill each row with three numbers so the grid goes 1 through 9.`,
             starterTip: `Try three rows like [1, 2, 3], [4, 5, 6], and [7, 8, 9] inside grid = [ ... ], then run print(grid).`,
             starter: [
                 `grid = [`,
@@ -81,8 +81,8 @@ export default {
             gradingNote: `Pass if grid is a list of three 3-item lists and is printed.`,
         },
         {
-            text: `Make a 3x3 grid of emoji-free letters (like A–I or all "A"). Print how many rows with len.`,
-            hint: `letters is already a 3x3 grid. You need one print() that asks Python how many rows are in the list — use len().`,
+            text: `Make a 3x3 grid of emoji-free letters (like A-I or all "A"). Print how many rows with len.`,
+            hint: `letters is already a 3x3 grid. You need one print() that asks Python how many rows are in the list. Use len().`,
             starterTip: `Fill the blank print with len(letters) so the output shows 3.`,
             starter: [
                 `letters = [`,
@@ -105,7 +105,7 @@ export default {
                 { text: "A list that cannot be printed", correct: false },
                 { text: "A dictionary with two keys", correct: false },
             ],
-            correct: "2D lists are lists of lists — like rows in a table.",
+            correct: "2D lists are lists of lists. Like rows in a table.",
             wrong: "Each outer item is itself a list (a row).",
         },
         {

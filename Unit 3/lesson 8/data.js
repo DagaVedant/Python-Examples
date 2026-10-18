@@ -19,7 +19,7 @@ export default {
 
 <code>False or True</code> → True. Only <code>False or False</code> is False.
 
-Use it when either option is enough — like a coupon <em>or</em> a member pass.`,
+Use it when either option is enough. Like a coupon <em>or</em> a member pass.`,
 
     code: {
         filename: "or_demo.py",
@@ -75,7 +75,7 @@ Use it when either option is enough — like a coupon <em>or</em> a member pass.
         {
             text: `Print the value of <code>(3 == 4) or (3 < 5)</code>.`,
             hint: `One side of <code>or</code> can be False as long as the other is True. Wrap the whole expression in <code>print()</code>.`,
-            starterTip: `Try <code>print((3 == 4) or (3 < 5))</code> — the first part is False but the second is True, so the result is True.`,
+            starterTip: `Try <code>print((3 == 4) or (3 < 5))</code>. The first part is False but the second is True, so the result is True.`,
             starter: [
                 `print()`,
             ].join("\n"),

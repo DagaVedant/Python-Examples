@@ -64,7 +64,7 @@ export default {
     practice: [
         {
             text: `Open hello.txt, read it, close it, and print the text.`,
-            hint: `After open, call f.read() and save it in text. Then close the file and print(text) — not an empty print().`,
+            hint: `After open, call f.read() and save it in text. Then close the file and print(text). Not an empty print().`,
             starterTip: `Use text = f.read() on the blank line, then print(text) in the last print().`,
             starter: [
                 "f = open(\"hello.txt\")",
@@ -76,7 +76,7 @@ export default {
         },
         {
             text: `Read story.txt and print only the first 16 characters using a slice.`,
-            hint: `A slice uses square brackets: text[start:end]. The first 16 characters are text[0:16] — or just text[:16].`,
+            hint: `A slice uses square brackets: text[start:end]. The first 16 characters are text[0:16]. Or just text[:16].`,
             starterTip: `Print print(text[:16]) so you see "Once upon a time." without the rest of the story.`,
             starter: [
                 "f = open(\"story.txt\")",
@@ -96,7 +96,7 @@ export default {
                 { text: `A list of numbers`, correct: false },
                 { text: `The whole file as one string`, correct: true },
                 { text: `Only the file name`, correct: false },
-                { text: `Nothing — it only prints`, correct: false },
+                { text: `Nothing. It only prints`, correct: false },
             ],
             correct: `read() loads the entire file into one string.`,
             wrong: `f.read() gives you the file's text as a string.`,

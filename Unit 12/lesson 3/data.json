@@ -48,7 +48,7 @@
   "practice": [
     {
       "text": "Make two Pet objects and print a message that you made two pets.",
-      "hint": "Finish a = and b = with Pet() — call the class like a function. Then print() a sentence saying you made two pets.",
+      "hint": "Finish a = and b = with Pet(). Call the class like a function. Then print() a sentence saying you made two pets.",
       "starterTip": "a = Pet() and b = Pet(), then print(\"Made two pets\") or similar.",
       "starter": "class Pet:\n    pass\na = \nb = \nprint()",
       "gradingNote": "Pass if two Pet() objects are created and a message prints."
@@ -93,7 +93,7 @@
           "correct": false
         },
         {
-          "text": "No — they are separate objects",
+          "text": "No. They are separate objects",
           "correct": true
         },
         {

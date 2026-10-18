@@ -16,7 +16,7 @@ export default {
 
     idea: `<code>__init__</code> can set many fields at once: name, level, lives, score…
 
-You can also give starting values that callers do not pass — like <code>self.lives = 3</code> always. One construction line, fully ready object.`,
+You can also give starting values that callers do not pass. Like <code>self.lives = 3</code> always. One construction line, fully ready object.`,
 
     code: {
         filename: "rich_init.py",
@@ -64,7 +64,7 @@ You can also give starting values that callers do not pass — like <code>self.l
         {
             text: `Monster __init__(name, hp). Also set self.power = 5. Create one and print all three.`,
             hint: `Store name and hp from the parameters on self, then set self.power = 5 even though callers do not pass power.`,
-            starterTip: `self.name = name, self.hp = hp, and self.power = 5 — the three prints at the bottom should work.`,
+            starterTip: `self.name = name, self.hp = hp, and self.power = 5. The three prints at the bottom should work.`,
             starter: [
                 "class Monster:",
                 "    def __init__(self, name, hp):",
@@ -96,7 +96,7 @@ You can also give starting values that callers do not pass — like <code>self.l
             question: `Can __init__ set attributes not passed as parameters?`,
             options: [
                 { text: `No, never`, correct: false },
-                { text: `Yes — assign defaults on self`, correct: true },
+                { text: `Yes, assign defaults on self`, correct: true },
                 { text: `Only with files`, correct: false },
                 { text: `Only with random`, correct: false },
             ],

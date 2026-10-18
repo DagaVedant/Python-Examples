@@ -44,7 +44,7 @@
     {
       "text": "Import math. Print the square root of 81.",
       "hint": "After import math, use the dot pattern: math.sqrt(...) inside print(). The number inside sqrt should be 81.",
-      "starterTip": "Try print(math.sqrt(81)) — you should see 9.0 when you Run.",
+      "starterTip": "Try print(math.sqrt(81)). You should see 9.0 when you Run.",
       "starter": "import math\nprint()",
       "gradingNote": "Pass if math.sqrt(81) prints 9.0."
     },
@@ -111,7 +111,7 @@
           "correct": false
         },
         {
-          "text": "No — it is a value you can print",
+          "text": "No. It is a value you can print",
           "correct": true
         },
         {

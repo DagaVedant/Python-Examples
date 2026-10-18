@@ -51,7 +51,7 @@ Read top to bottom. The last part often points at the bad line. Fix that line fi
     practice: [
         {
             text: `Print the three parts of an error message: type, description, line tip.`,
-            hint: `You need three print() lines — one for the error type (like NameError), one for what went wrong, and one tip about checking the line number.`,
+            hint: `You need three print() lines. One for the error type (like NameError), one for what went wrong, and one tip about checking the line number.`,
             starterTip: `Fill the blanks, for example: print("Type:", "NameError"), then two more prints like print("Description: ...") and print("Tip: check the line").`,
             starter: [
                 "print(\"Type:\", )",
@@ -63,7 +63,7 @@ Read top to bottom. The last part often points at the bad line. Fix that line fi
         {
             text: `Fix the typo so the program prints 42.`,
             hint: `The variable is answer, but print() uses a misspelled name. Python only knows names you spelled correctly when you created them.`,
-            starterTip: `Change print(anser) to print(answer) — copy the spelling from the line answer = 42.`,
+            starterTip: `Change print(anser) to print(answer). Copy the spelling from the line answer = 42.`,
             starter: [
                 "answer = 42",
                 "print(anser)"

@@ -14,7 +14,7 @@ export default {
         "Use random.randint(a, b)",
     ],
 
-    idea: `The <code>random</code> module picks chance values for games. In lessons we call <code>random.seed(1)</code> first so the “random” numbers stay the same every Run — fair for checking answers.
+    idea: `The <code>random</code> module picks chance values for games. In lessons we call <code>random.seed(1)</code> first so the “random” numbers stay the same every Run. Fair for checking answers.
 
 <code>random.randint(1, 6)</code> rolls a dice from 1 to 6.`,
 
@@ -53,7 +53,7 @@ export default {
 
     practice: [
         {
-            text: `Import random, seed(1), print two dice rolls 1–6.`,
+            text: `Import random, seed(1), print two dice rolls 1 to 6.`,
             hint: `Fill both empty print() lines with random.randint(1, 6). Keep random.seed(1) so your rolls match the lesson.`,
             starterTip: `Try print(random.randint(1, 6)) twice. With seed(1), expect 2 then 5.`,
             starter: [

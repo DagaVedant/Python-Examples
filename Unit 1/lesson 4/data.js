@@ -88,7 +88,7 @@ Python still runs top to bottom, so the first <code>print()</code> appears first
                 { text: "Use three comment lines with #", correct: false },
                 { text: "Python only allows one print per program", correct: false },
             ],
-            correct: "Stack print() calls — each one makes another line.",
+            correct: "Stack print() calls. Each one makes another line.",
             wrong: "Comments do not print. You need multiple print() calls.",
         },
         {

@@ -20,7 +20,7 @@ export default {
     learn: [
         "Write with open(...) as f:",
         "Do your work inside the indented block",
-        "Skip manual close — with handles it",
+        "Skip manual close. With handles it",
     ],
 
     idea: `The safe style is <code>with open("story.txt") as f:</code>. Inside the indented block, use <code>f.read()</code> or <code>f.write(...)</code>.
@@ -66,7 +66,7 @@ When the block ends, Python closes the file for you. Less chance of forgetting <
     practice: [
         {
             text: `Use with open to read hello.txt and print it.`,
-            hint: `Inside the with block, read into text with f.read(). The print goes outside the block — but still uses that variable.`,
+            hint: `Inside the with block, read into text with f.read(). The print goes outside the block. But still uses that variable.`,
             starterTip: `Fill text = f.read() (indented), then print(text) on the last line.`,
             starter: [
                 "with open(\"hello.txt\") as f:",
@@ -78,7 +78,7 @@ When the block ends, Python closes the file for you. Less chance of forgetting <
         {
             text: `Use with open in "w" mode to write bye.txt, then with open to read and print it.`,
             hint: `In the first with block, f.write() needs a string with \\n. The second with block already prints f.read() for you.`,
-            starterTip: `Try f.write("Goodbye!\\n") inside the "w" block — then run and you should see Goodbye! printed from the read block.`,
+            starterTip: `Try f.write("Goodbye!\\n") inside the "w" block. Then run and you should see Goodbye! printed from the read block.`,
             starter: [
                 "with open(\"bye.txt\", \"w\") as f:",
                 "    f.write()",
@@ -117,7 +117,7 @@ When the block ends, Python closes the file for you. Less chance of forgetting <
             question: `Do you need f.close() with with open?`,
             options: [
                 { text: `Yes, always twice`, correct: false },
-                { text: `Usually no — with closes for you`, correct: true },
+                { text: `Usually no. With closes for you`, correct: true },
                 { text: `Yes, or the computer melts`, correct: false },
                 { text: `Only for append`, correct: false },
             ],

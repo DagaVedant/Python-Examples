@@ -14,14 +14,14 @@ export default {
         "Errors help you fix the line",
     ],
 
-    idea: `Sometimes Python cannot finish a line. It stops and shows an <strong>error</strong> — a message that names the problem.
+    idea: `Sometimes Python cannot finish a line. It stops and shows an <strong>error</strong>, a message that names the problem.
 
 Errors are not “you failed.” They are clues. Read the name, find the bad line, and fix it.`,
 
     code: {
         filename: "oops.py",
         lines: [
-            `# This line has a typo — score is misspelled`,
+            `# This line has a typo. Score is misspelled`,
             `score = 10`,
             `print(scor)`,
             ``,
@@ -51,7 +51,7 @@ Errors are not “you failed.” They are clues. Read the name, find the bad lin
     practice: [
         {
             text: `Fix the NameError by printing the real variable name.`,
-            hint: `Python stored the value in points, but print() uses a different spelling. Match the name exactly — same letters, same order.`,
+            hint: `Python stored the value in points, but print() uses a different spelling. Match the name exactly. Same letters, same order.`,
             starterTip: `Change print(point) to print(points) so it matches the line above.`,
             starter: [
                 "points = 5",
@@ -61,7 +61,7 @@ Errors are not “you failed.” They are clues. Read the name, find the bad lin
         },
         {
             text: `Write a tiny program that runs with no error and prints Ready.`,
-            hint: `The task wants one word in the output: Ready. Put it inside quotes inside print() — empty print() will not pass.`,
+            hint: `The task wants one word in the output: Ready. Put it inside quotes inside print(). Empty print() will not pass.`,
             starterTip: `Replace print() with print("Ready") and press Run. No red error text means success.`,
             starter: [
                 "# No errors please",
@@ -81,13 +81,13 @@ Errors are not “you failed.” They are clues. Read the name, find the bad lin
                 { text: `A new dictionary key`, correct: false },
             ],
             correct: `Errors pause the program and explain the issue.`,
-            wrong: `Read the message — it is a clue.`,
+            wrong: `Read the message. It is a clue.`,
         },
         {
             question: `Are errors only for 'bad' programmers?`,
             options: [
                 { text: `Yes, only beginners`, correct: false },
-                { text: `No — everyone sees errors while learning`, correct: true },
+                { text: `No. Everyone sees errors while learning`, correct: true },
                 { text: `Yes, forever`, correct: false },
                 { text: `Errors mean quit coding`, correct: false },
             ],

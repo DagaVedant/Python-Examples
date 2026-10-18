@@ -73,7 +73,7 @@ Name functions for what they do: <code>average</code>, <code>grade</code>, <code
     practice: [
         {
             text: `Finish average and grade. Make print_report call both and print one line for Maya.`,
-            hint: `average should add the three scores and divide by 3. print_report already has avg and letter — put them in print().`,
+            hint: `average should add the three scores and divide by 3. print_report already has avg and letter. Put them in print().`,
             starterTip: `Try return (a + b + c) / 3 in average, and print(name, "avg", avg, "grade", letter) in print_report.`,
             starter: [
                 `def average(a, b, c):`,
@@ -96,7 +96,7 @@ Name functions for what they do: <code>average</code>, <code>grade</code>, <code
         },
         {
             text: `Finish area(w, h) and describe(w, h). describe should call area and print the result. Call describe once.`,
-            hint: `area returns width times height. describe is ready — you need the return in area and one call to describe at the bottom.`,
+            hint: `area returns width times height. describe is ready. You need the return in area and one call to describe at the bottom.`,
             starterTip: `Use return w * h in area, then add describe(4, 3) on a blank line at the end.`,
             starter: [
                 `def area(w, h):`,
@@ -122,7 +122,7 @@ Name functions for what they do: <code>average</code>, <code>grade</code>, <code
                 { text: "Python requires at least three functions in every program", correct: false },
             ],
             correct: "Small, focused functions are easier to understand, reuse, and fix.",
-            wrong: "The real benefit is readability and reuse — each function does one clear job.",
+            wrong: "The real benefit is readability and reuse. Each function does one clear job.",
         },
         {
             question: `What makes a good function name?`,
@@ -150,7 +150,7 @@ Name functions for what they do: <code>average</code>, <code>grade</code>, <code
 
     project: {
         title: "Student Report Card",
-        desc: "Build a tiny report card with separate functions: average of three scores, a letter grade from that average, and print_report that uses both. Use fixed numbers — no input().",
+        desc: "Build a tiny report card with separate functions: average of three scores, a letter grade from that average, and print_report that uses both. Use fixed numbers. No input().",
         starter: [
             `def average(a, b, c):`,
             `    return`,

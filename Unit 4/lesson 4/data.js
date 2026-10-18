@@ -17,7 +17,7 @@ export default {
 
     idea: `<code>range()</code> can take up to three numbers: <strong>start</strong>, <strong>stop</strong>, and <strong>step</strong>.
 
-<code>range(1, 5)</code> is 1, 2, 3, 4 — it still stops before the stop value. <code>range(0, 11, 2)</code> jumps by 2: 0, 2, 4, 6, 8, 10. A <strong>negative step</strong> counts backwards, like <code>range(5, 0, -1)</code>.`,
+<code>range(1, 5)</code> is 1, 2, 3, 4. It still stops before the stop value. <code>range(0, 11, 2)</code> jumps by 2: 0, 2, 4, 6, 8, 10. A <strong>negative step</strong> counts backwards, like <code>range(5, 0, -1)</code>.`,
 
     code: {
         filename: "start_step.py",
@@ -86,7 +86,7 @@ export default {
         {
             text: `Finish the countdown from 5 to 1, then print Go!.`,
             hint: `Inside the loop, print n for 5 down to 1. After the loop (back at the left edge, no extra indent), print Go!.`,
-            starterTip: `Use print(n) inside the for block, then print("Go!") on the last line — not indented under for.`,
+            starterTip: `Use print(n) inside the for block, then print("Go!") on the last line. Not indented under for.`,
             starter: [
                 `for n in range(5, 0, -1):`,
                 `    print()`,
@@ -116,8 +116,8 @@ export default {
                 { text: "Step by 2 each time", correct: true },
                 { text: "Run the loop twice", correct: false },
             ],
-            correct: "The third number is the step — how much to add each time.",
-            wrong: "range(start, stop, step) — the last number is the step size.",
+            correct: "The third number is the step. How much to add each time.",
+            wrong: "range(start, stop, step). The last number is the step size.",
         },
         {
             question: `What numbers does range(2, 6) produce?`,

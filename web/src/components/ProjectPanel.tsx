@@ -155,7 +155,7 @@ export function ProjectPanel({
         : {
             passed: false,
             feedback:
-              'Project AI check is not wired in the React app yet — use Run to verify output, or mark yourself done.',
+              'Project AI check is not wired in the React app yet. Use Run to verify output, or mark yourself done.',
           };
 
       setCheckRow({
@@ -172,7 +172,7 @@ export function ProjectPanel({
       setCheckRow({
         show: true,
         tone: 'wrong',
-        text: 'Could not check your code right now — try again in a moment.',
+        text: 'Could not check your code right now. Try again in a moment.',
       });
     } finally {
       setChecking(false);
@@ -244,8 +244,8 @@ export function ProjectPanel({
                   </button>
                 ) : (
                   <p className="project-guest-note">
-                    AI check needs a free account —{' '}
-                    <Link to="/signup">sign up</Link>. You can still Run and mark yourself done.
+                    AI check needs a free account.{' '}
+                    <Link to="/signup">Sign up</Link> to use it. You can still Run and mark yourself done.
                   </p>
                 )}
               </div>

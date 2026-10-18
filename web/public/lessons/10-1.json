@@ -12,11 +12,11 @@
     "Error messages name the kind of problem",
     "Errors help you fix the line"
   ],
-  "idea": "Sometimes Python cannot finish a line. It stops and shows an <strong>error</strong> — a message that names the problem.\n\nErrors are not “you failed.” They are clues. Read the name, find the bad line, and fix it.",
+  "idea": "Sometimes Python cannot finish a line. It stops and shows an <strong>error</strong>, a message that names the problem.\n\nErrors are not “you failed.” They are clues. Read the name, find the bad line, and fix it.",
   "code": {
     "filename": "oops.py",
     "lines": [
-      "# This line has a typo — score is misspelled",
+      "# This line has a typo. Score is misspelled",
       "score = 10",
       "print(scor)",
       "",
@@ -43,14 +43,14 @@
   "practice": [
     {
       "text": "Fix the NameError by printing the real variable name.",
-      "hint": "Python stored the value in points, but print() uses a different spelling. Match the name exactly — same letters, same order.",
+      "hint": "Python stored the value in points, but print() uses a different spelling. Match the name exactly. Same letters, same order.",
       "starterTip": "Change print(point) to print(points) so it matches the line above.",
       "starter": "points = 5\nprint(point)",
       "gradingNote": "Pass if points prints 5 with no NameError."
     },
     {
       "text": "Write a tiny program that runs with no error and prints Ready.",
-      "hint": "The task wants one word in the output: Ready. Put it inside quotes inside print() — empty print() will not pass.",
+      "hint": "The task wants one word in the output: Ready. Put it inside quotes inside print(). Empty print() will not pass.",
       "starterTip": "Replace print() with print(\"Ready\") and press Run. No red error text means success.",
       "starter": "# No errors please\nprint()",
       "gradingNote": "Pass if Ready (or similar) prints with no crash."
@@ -78,7 +78,7 @@
         }
       ],
       "correct": "Errors pause the program and explain the issue.",
-      "wrong": "Read the message — it is a clue."
+      "wrong": "Read the message. It is a clue."
     },
     {
       "question": "Are errors only for 'bad' programmers?",
@@ -88,7 +88,7 @@
           "correct": false
         },
         {
-          "text": "No — everyone sees errors while learning",
+          "text": "No. Everyone sees errors while learning",
           "correct": true
         },
         {

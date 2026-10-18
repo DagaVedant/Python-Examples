@@ -64,7 +64,7 @@ When you press <strong>Run</strong> here, a box will pop up for your answer. Typ
         {
             text: `Ask for a favourite colour with input(), then print a sentence like <code>Your favourite colour is blue.</code>`,
             hint: `input() already saves the answer in colour. Build a full sentence in print that includes the colour variable.`,
-            starterTip: `Try: print("Your favourite colour is", colour, ".") — or put words and colour together with commas in one print().`,
+            starterTip: `Try: print("Your favourite colour is", colour, "."). Or put words and colour together with commas in one print().`,
             starter: [
                 `colour = input("Favourite colour? ")`,
                 `# Print a full sentence using colour`,
@@ -75,7 +75,7 @@ When you press <strong>Run</strong> here, a box will pop up for your answer. Typ
         {
             text: `Ask for a noun and a verb with two input() calls, then print them in one sentence.`,
             hint: `Both answers are stored in noun and verb. One print() should use both names so the sentence mentions what the user typed.`,
-            starterTip: `Example: print("The", noun, verb, "quickly.") — swap in your own words, but keep noun and verb in the print.`,
+            starterTip: `Example: print("The", noun, verb, "quickly."). Swap in your own words, but keep noun and verb in the print.`,
             starter: [
                 `noun = input("Noun? ")`,
                 `verb = input("Verb? ")`,

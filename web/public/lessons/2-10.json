@@ -58,7 +58,7 @@
     {
       "text": "Print the absolute value of -42 using abs().",
       "hint": "abs() drops the minus sign and keeps the distance from zero. Put -42 inside abs().",
-      "starterTip": "Fill the print line with abs(-42) — the output should be 42, not -42.",
+      "starterTip": "Fill the print line with abs(-42). The output should be 42, not -42.",
       "starter": "print()",
       "gradingNote": "Pass if abs(-42) is used and output is 42."
     },

@@ -15,7 +15,7 @@ export default {
         "Reuse beats copy-and-paste",
     ],
 
-    idea: `Sometimes you need the <strong>same group of steps</strong> in more than one place — a banner, a cheer, a little report line.
+    idea: `Sometimes you need the <strong>same group of steps</strong> in more than one place, a banner, a cheer, a little report line.
 
 You could copy those lines again and again. That gets long, and fixing a typo means editing every copy.
 
@@ -24,7 +24,7 @@ A <strong>function</strong> gives that chunk a name. You write it once, then run
     code: {
         filename: "copied_banner.py",
         lines: [
-            `# Same banner written twice — messy`,
+            `# Same banner written twice. Messy`,
             `print("*****")`,
             `print(" Welcome ")`,
             `print("*****")`,
@@ -68,7 +68,7 @@ A <strong>function</strong> gives that chunk a name. You write it once, then run
 
     practice: [
         {
-            text: `Print a two-line cheer twice (four prints total), with a blank line between the two cheers. No function yet — just notice the repetition.`,
+            text: `Print a two-line cheer twice (four prints total), with a blank line between the two cheers. No function yet. Just notice the repetition.`,
             hint: `You need four print lines for the cheers, plus one empty print() in the middle for a blank line. Copy the same two cheer lines twice.`,
             starterTip: `Fill the three blank print() calls: print("Go!"), print("Win!"), then after print() repeat print("Go!") and print("Win!").`,
             starter: [
@@ -82,7 +82,7 @@ A <strong>function</strong> gives that chunk a name. You write it once, then run
         },
         {
             text: `Print the same three-star banner twice using separate print lines.`,
-            hint: `Each banner is three lines: stars, middle line, stars. You already have one full banner — fill in the second banner the same way.`,
+            hint: `Each banner is three lines: stars, middle line, stars. You already have one full banner. Fill in the second banner the same way.`,
             starterTip: `For the first banner middle line try print("Hi"). For the second banner use print("***"), print("Hi"), print("***") again.`,
             starter: [
                 `print("***")`,

@@ -32,7 +32,7 @@ export function resolveStarterTip(task) {
   }
   const starter = task?.starter || '';
   if (/\bprint\s*\(\s*\)/.test(starter)) {
-    return 'Look at the starter: put text inside the empty print() — like print("your words").';
+    return 'Look at the starter: put text inside the empty print(). Like print("your words").';
   }
   if (starter.includes('___') || starter.includes('...')) {
     return 'Look at the starter: replace the blanks with your own words, then press Run.';

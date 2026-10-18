@@ -12,7 +12,7 @@
     "Pass one argument when calling",
     "Use the parameter name inside the function"
   ],
-  "idea": "A <strong>parameter</strong> is a variable you write inside the parentheses on the <code>def</code> line. An <strong>argument</strong> is the real value you pass in when you call the function.\n\nWith one parameter, you can greet Alice and Bob using the same <code>greet</code> function — only the argument changes.",
+  "idea": "A <strong>parameter</strong> is a variable you write inside the parentheses on the <code>def</code> line. An <strong>argument</strong> is the real value you pass in when you call the function.\n\nWith one parameter, you can greet Alice and Bob using the same <code>greet</code> function. Only the argument changes.",
   "code": {
     "filename": "greet_name.py",
     "lines": [
@@ -53,7 +53,7 @@
   "practice": [
     {
       "text": "Finish greet(name) so it prints a hello using the name. Call it with two different names.",
-      "hint": "Use the parameter name inside print — for example print(\"Hello,\", name). Add a second greet(\"...\") call with a different name.",
+      "hint": "Use the parameter name inside print. For example print(\"Hello,\", name). Add a second greet(\"...\") call with a different name.",
       "starterTip": "Try print(\"Hello,\", name) in the function body, then add greet(\"Alex\") on the blank line below greet(\"Sam\").",
       "starter": "def greet(name):\n    print()\n\ngreet(\"Sam\")\n",
       "gradingNote": "Pass if greet has a name parameter, prints using that parameter, and is called at least twice with different string arguments."
@@ -98,7 +98,7 @@
           "correct": true
         },
         {
-          "text": "Nothing — greet needs no values",
+          "text": "Nothing. Greet needs no values",
           "correct": false
         },
         {
@@ -134,7 +134,7 @@
         }
       ],
       "correct": "Parameters let the same function handle many different values.",
-      "wrong": "Different arguments in, same function body — that is the point."
+      "wrong": "Different arguments in, same function body. That is the point."
     }
   ],
   "project": {

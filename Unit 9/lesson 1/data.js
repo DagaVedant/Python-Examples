@@ -15,7 +15,7 @@ export default {
         "starter.txt": "This line was already here.\n",
         "todo.txt": "1. Feed the cat\n2. Finish homework\n",
     },
-    goal: "In this lesson you will learn what a practice file is and that it lives in a fake folder on this page — not on your real computer.",
+    goal: "In this lesson you will learn what a practice file is and that it lives in a fake folder on this page. Not on your real computer.",
 
     learn: [
         "A file stores text you can reuse",
@@ -23,7 +23,7 @@ export default {
         "File names end with extensions like .txt",
     ],
 
-    idea: `A <strong>file</strong> holds text your program can read later — like a note saved under a name such as <code>story.txt</code>.
+    idea: `A <strong>file</strong> holds text your program can read later. Like a note saved under a name such as <code>story.txt</code>.
 
 In these lessons, files live in a <strong>practice folder on this page</strong>. They are not saved to your real desktop. That keeps practice safe and simple.`,
 
@@ -60,7 +60,7 @@ In these lessons, files live in a <strong>practice folder on this page</strong>.
     practice: [
         {
             text: `Print two sentences: what a file stores, and where practice files live.`,
-            hint: `Use two print() lines. One should say that a file stores text (or information). The other should say practice files live on this page — not on your real computer.`,
+            hint: `Use two print() lines. One should say that a file stores text (or information). The other should say practice files live on this page. Not on your real computer.`,
             starterTip: `Try print("A file stores text you can read later") and print("Practice files live in a fake folder on this page").`,
             starter: [
                 "print()",
@@ -70,7 +70,7 @@ In these lessons, files live in a <strong>practice folder on this page</strong>.
         },
         {
             text: `Print three practice file names from this lesson.`,
-            hint: `Each name should be a string in quotes and end with .txt. story.txt is already in the starter — fill in two more from this lesson, like note.txt or hello.txt.`,
+            hint: `Each name should be a string in quotes and end with .txt. story.txt is already in the starter. Fill in two more from this lesson, like note.txt or hello.txt.`,
             starterTip: `Add print("note.txt") and print("hello.txt") on the blank lines (or any two other .txt names from the lesson).`,
             starter: [
                 "print(\"story.txt\")",
@@ -90,7 +90,7 @@ In these lessons, files live in a <strong>practice folder on this page</strong>.
                 { text: `On the Moon`, correct: false },
                 { text: `Inside your email`, correct: false },
             ],
-            correct: `These are practice files seeded into the page — not your real disk.`,
+            correct: `These are practice files seeded into the page. Not your real disk.`,
             wrong: `The files are practice files in a fake folder on the page.`,
         },
         {

@@ -1,6 +1,6 @@
 #certificates-slot,
 .certificates-panel {
-  max-width: 680px;
+  max-width: none;
   margin: 28px auto 0;
   padding: 20px;
   background: #ffffff;

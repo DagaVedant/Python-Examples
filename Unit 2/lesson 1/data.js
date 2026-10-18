@@ -71,7 +71,7 @@ You can print the answer right away, or save it in a variable and use it later.`
                 `stars = 30`,
                 `# Earn 12`,
                 `stars = stars + 12`,
-                `# Lose 7 — finish this line`,
+                `# Lose 7. Finish this line`,
                 `stars = `,
                 `print("Stars:", stars)`,
             ].join("\n"),

@@ -76,13 +76,13 @@ function renderCertificateLinksHTML(completedKeys, unitsList) {
   });
 
   if (isCourseComplete(completedKeys, list)) {
-    links.push(`<a class="cert-link cert-link-course" href="${certificateHrefForCourse()}">Course complete — Learn Python</a>`);
+    links.push(`<a class="cert-link cert-link-course" href="${certificateHrefForCourse()}">Course complete. Learn Python</a>`);
   }
 
   return `
     <section class="certificates-panel" aria-label="Certificates">
       <h2 class="certificates-heading">Certificates</h2>
-      <p class="certificates-blurb">You finished these — open a certificate to print or share.</p>
+      <p class="certificates-blurb">You finished these. Open a certificate to print or share.</p>
       <div class="certificates-links">${links.join('')}</div>
     </section>
   `;

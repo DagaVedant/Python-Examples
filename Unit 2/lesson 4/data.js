@@ -17,7 +17,7 @@ export default {
 
     idea: `The slash <code>/</code> is called <strong>float division</strong>. It divides and keeps decimal parts.
 
-<code>5 / 2</code> is <code>2.5</code>. <code>8 / 2</code> is <code>4.0</code> — still a float, even though there is no leftover.
+<code>5 / 2</code> is <code>2.5</code>. <code>8 / 2</code> is <code>4.0</code>. Still a float, even though there is no leftover.
 
 A float is a number that can have a decimal point.`,
 
@@ -65,7 +65,7 @@ A float is a number that can have a decimal point.`,
     practice: [
         {
             text: `Divide 17 by 2 and print the result. It should show a decimal.`,
-            hint: `Use the / operator inside print() so Python does float division — you should see 8.5, not a whole number.`,
+            hint: `Use the / operator inside print() so Python does float division. You should see 8.5, not a whole number.`,
             starterTip: `Try print(17 / 2) on the blank line.`,
             starter: [
                 `# Print 17 / 2`,
@@ -76,7 +76,7 @@ A float is a number that can have a decimal point.`,
         {
             text: `A ribbon is 25 cm long. Split it into 4 equal pieces. Print how long each piece is.`,
             hint: `Equal pieces means divide the ribbon length by how many pieces. Use / so the answer can be a decimal.`,
-            starterTip: `Try each = ribbon / pieces on the blank line — that gives 6.25.`,
+            starterTip: `Try each = ribbon / pieces on the blank line. That gives 6.25.`,
             starter: [
                 `ribbon = 25`,
                 `pieces = 4`,

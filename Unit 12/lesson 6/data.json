@@ -12,7 +12,7 @@
     "Use self.attr to read or change data",
     "You do not pass self yourself when calling"
   ],
-  "idea": "Inside a method, <code>self</code> means <strong>this object</strong> — the one before the dot.\n\nWhen you write <code>dog.bark()</code>, Python sends <code>dog</code> into <code>self</code> automatically. Use <code>self.name</code> to reach that object's attributes. You do not type <code>self</code> in the call.",
+  "idea": "Inside a method, <code>self</code> means <strong>this object</strong>. The one before the dot.\n\nWhen you write <code>dog.bark()</code>, Python sends <code>dog</code> into <code>self</code> automatically. Use <code>self.name</code> to reach that object's attributes. You do not type <code>self</code> in the call.",
   "code": {
     "filename": "self_demo.py",
     "lines": [
@@ -62,7 +62,7 @@
   "practice": [
     {
       "text": "In shout, print self.name in all caps message. Call it.",
-      "hint": "self.name is \"Sam\" on f. You can print a loud message with self.name inside — try .upper() on the name for ALL CAPS.",
+      "hint": "self.name is \"Sam\" on f. You can print a loud message with self.name inside. Try .upper() on the name for ALL CAPS.",
       "starterTip": "print(self.name.upper(), \"cheers!\") or print(\"GO\", self.name.upper() + \"!\") inside shout.",
       "starter": "class Fan:\n    def shout(self):\n        print()\nf = Fan()\nf.name = \"Sam\"\nf.shout()",
       "gradingNote": "Pass if shout uses self.name in the print."
@@ -70,7 +70,7 @@
     {
       "text": "Finish deposit so it adds amount to self.balance. Show before/after.",
       "hint": "Inside deposit, update self.balance by adding amount to the old balance. After b.deposit(5), print(b.balance) should show 15.",
-      "starterTip": "self.balance = self.balance + amount — same idea as the PiggyBank lesson.",
+      "starterTip": "self.balance = self.balance + amount. Same idea as the PiggyBank lesson.",
       "starter": "class Bank:\n    def deposit(self, amount):\n        \nb = Bank()\nb.balance = 10\nb.deposit(5)\nprint(b.balance)",
       "gradingNote": "Pass if balance becomes 15 via self.balance update."
     }
@@ -107,7 +107,7 @@
           "correct": false
         },
         {
-          "text": "No — Python fills self for you",
+          "text": "No. Python fills self for you",
           "correct": true
         },
         {

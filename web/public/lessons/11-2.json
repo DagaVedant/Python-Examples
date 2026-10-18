@@ -47,7 +47,7 @@
     },
     {
       "text": "Import both math and random. Print ok.",
-      "hint": "Fill the two blank lines under the comment with import math and import random — one per line.",
+      "hint": "Fill the two blank lines under the comment with import math and import random. One per line.",
       "starterTip": "Line 2: import math. Line 3: import random. The print(\"ok\") at the bottom can stay as-is.",
       "starter": "# two imports\n\n\nprint(\"ok\")",
       "gradingNote": "Pass if both modules imported and ok prints."
@@ -108,7 +108,7 @@
           "correct": false
         },
         {
-          "text": "No — it loads them for later use",
+          "text": "No. It loads them for later use",
           "correct": true
         },
         {

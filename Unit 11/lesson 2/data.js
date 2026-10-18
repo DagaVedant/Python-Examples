@@ -58,7 +58,7 @@ After that line runs, the module name is available. Next lesson you will call to
         },
         {
             text: `Import both math and random. Print ok.`,
-            hint: `Fill the two blank lines under the comment with import math and import random — one per line.`,
+            hint: `Fill the two blank lines under the comment with import math and import random. One per line.`,
             starterTip: `Line 2: import math. Line 3: import random. The print("ok") at the bottom can stay as-is.`,
             starter: [
                 "# two imports",
@@ -97,7 +97,7 @@ After that line runs, the module name is available. Next lesson you will call to
             question: `Does import run tools by itself?`,
             options: [
                 { text: `Yes, it prints everything`, correct: false },
-                { text: `No — it loads them for later use`, correct: true },
+                { text: `No. It loads them for later use`, correct: true },
                 { text: `Yes, it rolls dice always`, correct: false },
                 { text: `Yes, it closes files`, correct: false },
             ],

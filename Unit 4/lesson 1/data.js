@@ -15,7 +15,7 @@ export default {
         "Loops exist so one block can run many times",
     ],
 
-    idea: `Sometimes a program must do the <strong>same kind of step</strong> again and again — print five stars, count to ten, or greet every player.
+    idea: `Sometimes a program must do the <strong>same kind of step</strong> again and again. Print five stars, count to ten, or greet every player.
 
 You <em>could</em> copy the same line many times. That works for a tiny example, but it is slow to write and easy to mess up when you change one number.
 
@@ -67,7 +67,7 @@ A <strong>loop</strong> is Python’s way to say: “run this block more than on
         {
             text: `Finish a cheer that prints Go! three times, then prints Yay!. Use separate print lines (no loop yet).`,
             hint: `You already have one Go!. Fill the two empty print() lines so Go! shows three times in a row before Yay!.`,
-            starterTip: `Try print("Go!") in both blank lines — then Run and check you see three Go! lines, then Yay!.`,
+            starterTip: `Try print("Go!") in both blank lines. Then Run and check you see three Go! lines, then Yay!.`,
             starter: [
                 `# Cheer three times`,
                 `print("Go!")`,
@@ -79,7 +79,7 @@ A <strong>loop</strong> is Python’s way to say: “run this block more than on
         },
         {
             text: `Print the word Step four times on four lines. Fill in the blanks.`,
-            hint: `Each empty print() should show the same word as the first line — Step inside quotes.`,
+            hint: `Each empty print() should show the same word as the first line. Step inside quotes.`,
             starterTip: `Copy the idea from line 1: put print("Step") inside each of the three blank print() calls.`,
             starter: [
                 `print("Step")`,

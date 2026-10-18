@@ -17,18 +17,18 @@ export default {
 
     idea: `A <strong>list</strong> is a collection of values kept in order inside one variable. Instead of making <code>score1</code>, <code>score2</code>, and <code>score3</code>, you keep them together: <code>scores = [80, 90, 75]</code>.
 
-    Think of a shopping list or a playlist — many items, one place, always in order.`,
+    Think of a shopping list or a playlist. Many items, one place, always in order.`,
 
     code: {
         filename: "idea.py",
         lines: [
-            `# Three separate variables — messy`,
+            `# Three separate variables. Messy`,
             `a = "apple"`,
             `b = "banana"`,
             `c = "cherry"`,
             `print(a, b, c)`,
             ``,
-            `# One list — cleaner`,
+            `# One list. Cleaner`,
             `fruit = ["apple", "banana", "cherry"]`,
             `print(fruit)`,
             `print("How many:", len(fruit))`,
@@ -70,7 +70,7 @@ export default {
         },
         {
             text: `Create a list of four colors and print only the length of the list.`,
-            hint: `The colors list is already there. You only need one print — pass len(colors) to print so you see the number 4.`,
+            hint: `The colors list is already there. You only need one print. Pass len(colors) to print so you see the number 4.`,
             starterTip: `Fill in the blank print like this: print(len(colors)).`,
             starter: [
                 `colors = ["red", "blue", "green", "yellow"]`,
@@ -91,7 +91,7 @@ export default {
                 { text: "Drawing pictures only", correct: false },
             ],
             correct: "A list keeps many ordered values in one variable.",
-            wrong: "Lists hold collections — names, scores, and more — in order.",
+            wrong: "Lists hold collections. Names, scores, and more. In order.",
         },
         {
             question: `Why use a list instead of score1, score2, score3?`,

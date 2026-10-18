@@ -23,7 +23,7 @@ function unitByNumber(units: CourseUnit[], n: number): CourseUnit | undefined {
   return units.find((u) => u.number === n);
 }
 
-/** Course grid composed from per-unit section components (swarm jobs 16–27). */
+/** Course grid composed from per-unit section components (swarm jobs 16 to 27). */
 export function HomeUnitSections({ units, completedKeys }: Props) {
   const keys = [...completedKeys];
 

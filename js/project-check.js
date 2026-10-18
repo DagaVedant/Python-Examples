@@ -95,7 +95,7 @@ export async function initProjectCheck({ L, getCode, db, runIsolated }) {
     if (footer && !footer.querySelector('.project-guest-note')) {
       const note = document.createElement('p');
       note.className = 'project-guest-note';
-      note.innerHTML = 'AI check needs a free account — <a href="signup.html">sign up</a>. You can still Run and mark yourself done.';
+      note.innerHTML = 'AI check needs a free account, <a href="signup.html">sign up</a>. You can still Run and mark yourself done.';
       footer.appendChild(note);
     }
     return;
@@ -171,18 +171,18 @@ export async function initProjectCheck({ L, getCode, db, runIsolated }) {
           fb.className = 'practice-ai-row show wrong';
           if (body?.error === 'rate_limited_minute') {
             let secs = body.retryAfterSeconds || 30;
-            fb.textContent = `AI feedback is busy — you can retry in ${secs}s`;
+            fb.textContent = `AI feedback is busy. You can retry in ${secs}s`;
             const countdown = setInterval(() => {
               secs--;
               if (secs <= 0) { clearInterval(countdown); fb.className = 'practice-ai-row'; }
-              else fb.textContent = `AI feedback is busy — you can retry in ${secs}s`;
+              else fb.textContent = `AI feedback is busy. You can retry in ${secs}s`;
             }, 1000);
           } else if (body?.error === 'rate_limited_day' || body?.error === 'quota_global') {
             const h = Math.floor((body.resetsInMinutes || 0) / 60);
             const m = (body.resetsInMinutes || 0) % 60;
-            fb.textContent = `Good practice today! The checker is resting — it'll be back in ${h}h ${m}m.`;
+            fb.textContent = `Good practice today! The checker is resting. It'll be back in ${h}h ${m}m.`;
           } else {
-            fb.textContent = 'The checker had a hiccup — try again in a moment.';
+            fb.textContent = 'The checker had a hiccup. Try again in a moment.';
           }
         }
         return;
@@ -194,7 +194,7 @@ export async function initProjectCheck({ L, getCode, db, runIsolated }) {
       clearInterval(ticker);
       if (fb) {
         fb.className = 'practice-ai-row show wrong';
-        fb.textContent = 'Could not check your code right now — try again in a moment.';
+        fb.textContent = 'Could not check your code right now. Try again in a moment.';
       }
     } finally {
       checkBtn.disabled = false;

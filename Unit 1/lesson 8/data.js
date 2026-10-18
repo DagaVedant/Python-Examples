@@ -17,7 +17,7 @@ export default {
 
     idea: `Variables can change. When you assign a new value with <code>=</code>, the old value is replaced.
 
-The next time you print that variable, you see the new value — not the old one.`,
+The next time you print that variable, you see the new value. Not the old one.`,
 
     code: {
         filename: "score.py",
@@ -102,7 +102,7 @@ The next time you print that variable, you see the new value — not the old one
                 { text: "1", correct: false },
                 { text: "2", correct: true },
                 { text: "1 and 2 at the same time", correct: false },
-                { text: "Nothing — the variable is deleted", correct: false },
+                { text: "Nothing. The variable is deleted", correct: false },
             ],
             correct: "The newest assignment wins: n holds 2.",
             wrong: "A new assignment replaces the old value.",
@@ -112,7 +112,7 @@ The next time you print that variable, you see the new value — not the old one
             options: [
                 { text: "Only in comments", correct: false },
                 { text: "In print() calls that run after the update", correct: true },
-                { text: "Never — print always shows the first value", correct: false },
+                { text: "Never. Print always shows the first value", correct: false },
                 { text: "Only if you restart the computer", correct: false },
             ],
             correct: "Prints that run after the new assignment show the new value.",

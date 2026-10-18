@@ -16,7 +16,7 @@ export default {
 
     idea: `To get a value, put the key in square brackets: <code>pet["name"]</code>.
 
-Python finds that key and gives you its value. If you mistype the key, you get an error — so spell keys carefully!`,
+Python finds that key and gives you its value. If you mistype the key, you get an error. So spell keys carefully!`,
 
     code: {
         filename: "lookup.py",
@@ -60,7 +60,7 @@ Python finds that key and gives you its value. If you mistype the key, you get a
         {
             text: `Print the book title and pages using key lookups.`,
             hint: `Use square brackets with the key inside quotes: book["title"] and book["pages"]. One print per value.`,
-            starterTip: `First line: print(book["title"]). Second: print(book["pages"]) — you should see Wonder and 310.`,
+            starterTip: `First line: print(book["title"]). Second: print(book["pages"]). You should see Wonder and 310.`,
             starter: [
                 "book = {\"title\": \"Wonder\", \"pages\": 310}",
                 "print()",
@@ -71,7 +71,7 @@ Python finds that key and gives you its value. If you mistype the key, you get a
         {
             text: `Print a sentence like Cookie costs 2 using snack keys.`,
             hint: `Look up snack["name"] and snack["cost"] inside one print(). You can mix words in quotes with the looked-up values.`,
-            starterTip: `Try print(snack["name"], "costs", snack["cost"]) — that prints Cookie costs 2.`,
+            starterTip: `Try print(snack["name"], "costs", snack["cost"]). That prints Cookie costs 2.`,
             starter: [
                 "snack = {\"name\": \"Cookie\", \"cost\": 2}",
                 "print()"

@@ -60,7 +60,7 @@
     },
     {
       "text": "Finish intro(name, age) so it prints a line using both values. Call it twice.",
-      "hint": "One print can use both parameters — name and age — with commas between the pieces of text. Call intro again with a different name and age.",
+      "hint": "One print can use both parameters. Name and age. With commas between the pieces of text. Call intro again with a different name and age.",
       "starterTip": "Try print(name, \"is\", age, \"years old\") inside intro, then add intro(\"Maya\", 12) on the blank line below intro(\"Sam\", 11).",
       "starter": "def intro(name, age):\n    print()\n\nintro(\"Sam\", 11)\n",
       "gradingNote": "Pass if intro has two parameters, uses both in a print, and is called at least twice."
@@ -129,7 +129,7 @@
           "correct": false
         },
         {
-          "text": "Nothing — Python ignores parameters",
+          "text": "Nothing. Python ignores parameters",
           "correct": false
         }
       ],

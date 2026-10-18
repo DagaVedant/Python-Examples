@@ -97,9 +97,9 @@ Same syntax as adding! If the key exists, Python replaces the old value.`,
         {
             question: `Is the syntax for update different from add?`,
             options: [
-                { text: `Yes — you must use .update only`, correct: false },
-                { text: `No — same dict[key] = value syntax`, correct: true },
-                { text: `Yes — you need a special keyword change`, correct: false },
+                { text: `Yes. You must use .update only`, correct: false },
+                { text: `No. Same dict[key] = value syntax`, correct: true },
+                { text: `Yes. You need a special keyword change`, correct: false },
                 { text: `Updates are impossible`, correct: false },
             ],
             correct: `Add and update use the same assignment form.`,

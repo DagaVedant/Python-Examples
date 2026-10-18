@@ -63,7 +63,7 @@ Combine skills: check with <code>in</code>, read with <code>get</code>, remove w
         {
             text: `Print whether "potion" is in the bag using in.`,
             hint: `"potion" in bag is True if potion is a key, False if not. Put that expression inside print().`,
-            starterTip: `Try print("potion" in bag) — potion is not in the bag, so you should see False.`,
+            starterTip: `Try print("potion" in bag). Potion is not in the bag, so you should see False.`,
             starter: [
                 "bag = {\"coins\": 5, \"keys\": 1}",
                 "print()"
@@ -105,7 +105,7 @@ Combine skills: check with <code>in</code>, read with <code>get</code>, remove w
                 { text: `Always 0`, correct: false },
             ],
             correct: `len on a dict is the number of keys.`,
-            wrong: `Each key–value pair counts as one.`,
+            wrong: `Each key-value pair counts as one.`,
         },
         {
             question: `Which tool removes a key and returns its value?`,

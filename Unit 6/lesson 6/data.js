@@ -68,7 +68,7 @@ export default {
     practice: [
         {
             text: `Remove <code>"spam"</code> from the list, then print what is left.`,
-            hint: `Use inbox.remove() and pass the exact word "spam" in quotes — same spelling as in the list.`,
+            hint: `Use inbox.remove() and pass the exact word "spam" in quotes. Same spelling as in the list.`,
             starterTip: `Add a line like inbox.remove("spam") under the comment, before print(inbox).`,
             starter: [
                 `inbox = ["hello", "spam", "news"]`,
@@ -80,7 +80,7 @@ export default {
         },
         {
             text: `Pop the last item into a variable called <code>last</code>, then print <code>last</code> and the list.`,
-            hint: `nums.pop() with nothing inside grabs the last item and gives it back — save that return value in last.`,
+            hint: `nums.pop() with nothing inside grabs the last item and gives it back. Save that return value in last.`,
             starterTip: `On the blank line, try last = nums.pop() so last becomes 30.`,
             starter: [
                 `nums = [10, 20, 30]`,
@@ -98,7 +98,7 @@ export default {
             options: [
                 { text: "An index number only", correct: false },
                 { text: "The value to delete", correct: true },
-                { text: "Nothing — it clears the list", correct: false },
+                { text: "Nothing. It clears the list", correct: false },
                 { text: "A brand-new list name", correct: false },
             ],
             correct: "remove looks for a matching value, not an index.",

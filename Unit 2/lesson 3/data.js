@@ -17,7 +17,7 @@ export default {
 
     idea: `Python follows the same order as math class: multiply and divide first, then add and subtract.
 
-So <code>3 + 4 * 2</code> is 3 + 8, which is 11 — not 14.
+So <code>3 + 4 * 2</code> is 3 + 8, which is 11. Not 14.
 
 Put parentheses <code>()</code> around the part you want done first. <code>(3 + 4) * 2</code> adds first, then multiplies.`,
 
@@ -78,7 +78,7 @@ Put parentheses <code>()</code> around the part you want done first. <code>(3 + 
         {
             text: `Without changing the numbers, add parentheses so this prints 4.0 instead of 8.0.`,
             hint: `Right now 12 / 2 runs before 20 - 6. Group the subtraction so 20 - 12 happens first, then divide by 2.`,
-            starterTip: `Change the line to print((20 - 12) / 2) — parentheses around 20 - 12 only.`,
+            starterTip: `Change the line to print((20 - 12) / 2). Parentheses around 20 - 12 only.`,
             starter: [
                 `# Should print 4.0`,
                 `print(20 - 12 / 2)`,

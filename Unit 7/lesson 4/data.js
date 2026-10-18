@@ -19,7 +19,7 @@ export default {
 
     <code>grid[1][1] = 0</code>
 
-    That updates only that spot — like placing a piece on a board. Other cells stay the same.`,
+    That updates only that spot. Like placing a piece on a board. Other cells stay the same.`,
 
     code: {
         filename: "update_cell.py",

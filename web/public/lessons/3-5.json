@@ -6,7 +6,7 @@
   "unitTitle": "Making Decisions",
   "title": "elif",
   "readTime": 23,
-  "goal": "In this lesson you will learn elif — another check that runs only if earlier if/elif checks were False.",
+  "goal": "In this lesson you will learn elif, another check that runs only if earlier if/elif checks were False.",
   "learn": [
     "Add elif between if and else",
     "Check conditions in order",
@@ -50,15 +50,15 @@
   "practice": [
     {
       "text": "Set <code>temp = 15</code>. If temp >= 25 print Hot, elif temp >= 10 print Mild, else print Cold.",
-      "hint": "Build a chain: if, then elif, then else — all at the same indent. Python picks the first condition that is True.",
-      "starterTip": "15 is not hot enough for the first check, but it is >= 10 — so the elif branch should print Mild.",
+      "hint": "Build a chain: if, then elif, then else, all at the same indent. Python picks the first condition that is True.",
+      "starterTip": "15 is not hot enough for the first check, but it is >= 10. So the elif branch should print Mild.",
       "starter": "temp = 15\n# if / elif / else",
       "gradingNote": "Pass if Mild is printed for temp 15 using elif."
     },
     {
       "text": "Set <code>size = \"M\"</code>. If size is S print Small, elif M print Medium, else print Other.",
       "hint": "Compare size to strings with <code>==</code>, like <code>size == \"S\"</code>. Each branch needs a colon and an indented print.",
-      "starterTip": "Try <code>elif size == \"M\":</code> with <code>print(\"Medium\")</code> indented under it — size is already \"M\".",
+      "starterTip": "Try <code>elif size == \"M\":</code> with <code>print(\"Medium\")</code> indented under it. Size is already \"M\".",
       "starter": "size = \"M\"",
       "gradingNote": "Pass if Medium prints via elif size == \"M\"."
     }
@@ -95,7 +95,7 @@
           "correct": false
         },
         {
-          "text": "No — Python stops at the first True branch",
+          "text": "No. Python stops at the first True branch",
           "correct": true
         },
         {

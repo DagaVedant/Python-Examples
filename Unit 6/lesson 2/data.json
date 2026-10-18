@@ -12,7 +12,7 @@
     "Separate items with commas",
     "Lists can be empty or mix types"
   ],
-  "idea": "You create a list with <strong>square brackets</strong>. Put commas between items: <code>[\"red\", \"blue\"]</code>.\n\n    An <strong>empty list</strong> is just <code>[]</code> — useful when you will add items later. Lists can hold strings, numbers, and True/False together.",
+  "idea": "You create a list with <strong>square brackets</strong>. Put commas between items: <code>[\"red\", \"blue\"]</code>.\n\n    An <strong>empty list</strong> is just <code>[]</code>. Useful when you will add items later. Lists can hold strings, numbers, and True/False together.",
   "code": {
     "filename": "make_lists.py",
     "lines": [

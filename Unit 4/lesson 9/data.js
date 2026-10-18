@@ -63,7 +63,7 @@ Write the loop first, then indent an <code>if</code> inside it. The <code>if</co
         {
             text: `Loop from 1 to 10. Print Buzz when n is divisible by 5; otherwise print n.`,
             hint: `When n % 5 == 0, print a word like "Buzz". In the else branch, print the number n itself.`,
-            starterTip: `Try print("Buzz") in the if block and print(n) in the else block — keep both indented under if/else.`,
+            starterTip: `Try print("Buzz") in the if block and print(n) in the else block. Keep both indented under if/else.`,
             starter: [
                 `for n in range(1, 11):`,
                 `    if n % 5 == 0:`,
@@ -76,7 +76,7 @@ Write the loop first, then indent an <code>if</code> inside it. The <code>if</co
         {
             text: `Loop through temps. Print Hot if a temp is greater than 80, else print OK.`,
             hint: `Use the variable t from the loop. The if branch is for temps above 80; the else branch covers the rest.`,
-            starterTip: `Try print("Hot") when t > 80 and print("OK") in the else — use quotes around the words you print.`,
+            starterTip: `Try print("Hot") when t > 80 and print("OK") in the else. Use quotes around the words you print.`,
             starter: [
                 `temps = [72, 85, 68, 91]`,
                 `for t in temps:`,
@@ -107,7 +107,7 @@ Write the loop first, then indent an <code>if</code> inside it. The <code>if</co
                 { text: "Only once, before the loop", correct: false },
                 { text: "Once per loop pass, for the current n", correct: true },
                 { text: "Only after the loop ends", correct: false },
-                { text: "Never — if cannot be inside for", correct: false },
+                { text: "Never. If cannot be inside for", correct: false },
             ],
             correct: "Each time the loop runs, the if checks that pass’s n.",
             wrong: "The if is inside the loop body, so it runs every pass.",

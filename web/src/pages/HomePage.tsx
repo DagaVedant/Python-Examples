@@ -48,7 +48,7 @@ export function HomePage() {
             <img src={PYTHON_LOGO} alt="" />
             <p className="hero-brand">Learn Python</p>
           </div>
-          <h1>Write your first program today — free</h1>
+          <h1>Write your first program today, for free</h1>
           <p className="hero-lead">
             Start in the browser with Lesson 1. No install. Account optional if you want to save
             progress.

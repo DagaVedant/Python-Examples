@@ -81,7 +81,7 @@
           "correct": false
         }
       ],
-      "correct": "Stack print() calls — each one makes another line.",
+      "correct": "Stack print() calls. Each one makes another line.",
       "wrong": "Comments do not print. You need multiple print() calls."
     },
     {

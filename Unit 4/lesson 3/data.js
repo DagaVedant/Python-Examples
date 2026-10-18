@@ -19,7 +19,7 @@ export default {
 
 Use it with a for loop when you know how many times to repeat: <code>for i in range(5):</code> runs the block five times with <code>i</code> equal to 0, 1, 2, 3, then 4.
 
-You do not need a list of numbers written by hand — <code>range</code> builds them for you.`,
+You do not need a list of numbers written by hand, <code>range</code> builds them for you.`,
 
     code: {
         filename: "count.py",
@@ -64,7 +64,7 @@ You do not need a list of numbers written by hand — <code>range</code> builds 
         {
             text: `Use range to print Hi! exactly four times.`,
             hint: `range(4) runs the loop body four times. Put your message inside print() on the indented line.`,
-            starterTip: `Use print("Hi!") with four spaces before it — that line must sit inside for i in range(4):.`,
+            starterTip: `Use print("Hi!") with four spaces before it. That line must sit inside for i in range(4):.`,
             starter: [
                 `for i in range(4):`,
                 `    print()`,
@@ -72,9 +72,9 @@ You do not need a list of numbers written by hand — <code>range</code> builds 
             gradingNote: `Pass if Hi! (or similar greeting) prints four times using for + range.`,
         },
         {
-            text: `Print the numbers from range(5) — one number per line.`,
+            text: `Print the numbers from range(5). One number per line.`,
             hint: `Each trip through the loop, n is the next number: 0, then 1, 2, 3, and 4. Print n.`,
-            starterTip: `Change print() to print(n) — you should get five lines: 0 through 4.`,
+            starterTip: `Change print() to print(n). You should get five lines: 0 through 4.`,
             starter: [
                 `for n in range(5):`,
                 `    print()`,
@@ -92,7 +92,7 @@ You do not need a list of numbers written by hand — <code>range</code> builds 
                 { text: "0, 1, 2, 3, 4", correct: false },
                 { text: "4 only", correct: false },
             ],
-            correct: "range(4) is 0, 1, 2, 3 — it stops before 4.",
+            correct: "range(4) is 0, 1, 2, 3. It stops before 4.",
             wrong: "With one argument, range starts at 0 and stops before that number.",
         },
         {
@@ -104,13 +104,13 @@ You do not need a list of numbers written by hand — <code>range</code> builds 
                 { text: "Forever", correct: false },
             ],
             correct: "range(3) has three values, so the loop body runs three times.",
-            wrong: "Count the values: 0, 1, 2 — that is three passes.",
+            wrong: "Count the values: 0, 1, 2. That is three passes.",
         },
         {
             question: `Does range(5) include the number 5?`,
             options: [
                 { text: "Yes", correct: false },
-                { text: "No — it stops before 5", correct: true },
+                { text: "No. It stops before 5", correct: true },
                 { text: "Only on Fridays", correct: false },
                 { text: "Only inside while loops", correct: false },
             ],

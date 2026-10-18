@@ -18,7 +18,7 @@ export default {
 
 <code>for name, score in scores.items():</code>
 
-Each turn unpacks a pair. You already have <code>score</code> — no second lookup needed.`,
+Each turn unpacks a pair. You already have <code>score</code>. No second lookup needed.`,
 
     code: {
         filename: "items.py",
@@ -53,7 +53,7 @@ Each turn unpacks a pair. You already have <code>score</code> — no second look
     practice: [
         {
             text: `Use .items() to print each snack and price like cookie: 2.`,
-            hint: `You already have for name, price in prices.items(): — use both variables inside print() with a colon between them.`,
+            hint: `You already have for name, price in prices.items():. Use both variables inside print() with a colon between them.`,
             starterTip: `Try print(name + ":", price) or print(name, ":", price) inside the loop for each snack line.`,
             starter: [
                 "prices = {\"cookie\": 2, \"apple\": 1, \"juice\": 3}",
@@ -64,8 +64,8 @@ Each turn unpacks a pair. You already have <code>score</code> — no second look
         },
         {
             text: `Loop with .items() over ages and print Name is age years.`,
-            hint: `name and age are ready each turn — build a sentence with print and the word "years" at the end.`,
-            starterTip: `Example: print(name, "is", age, "years") — Sam should show as 11 years old.`,
+            hint: `name and age are ready each turn. Build a sentence with print and the word "years" at the end.`,
+            starterTip: `Example: print(name, "is", age, "years"). Sam should show as 11 years old.`,
             starter: [
                 "ages = {\"Sam\": 11, \"Riley\": 12}",
                 "for name, age in ages.items():",
@@ -102,7 +102,7 @@ Each turn unpacks a pair. You already have <code>score</code> — no second look
             question: `Do you need scores[name] inside an .items() loop?`,
             options: [
                 { text: `Always required`, correct: false },
-                { text: `No — you already have the value variable`, correct: true },
+                { text: `No. You already have the value variable`, correct: true },
                 { text: `Yes, or Python crashes`, correct: false },
                 { text: `Only on Tuesdays`, correct: false },
             ],

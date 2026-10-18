@@ -19,7 +19,7 @@ export default {
 
 Always end the if line with a colon <code>:</code>. Indent the lines that belong to the if (usually 4 spaces).
 
-Only one path runs for that if — when the condition is true.`,
+Only one path runs for that if. When the condition is true.`,
 
     code: {
         filename: "if_demo.py",
@@ -69,7 +69,7 @@ Only one path runs for that if — when the condition is true.`,
         },
         {
             text: `Set <code>lives = 0</code>. If lives equal 0, print <code>Game over</code>. Also print <code>Done</code> after the if.`,
-            hint: `Use <code>==</code> to check if lives equals 0. Put the if block between lives and the Done print — Done should not be indented under the if.`,
+            hint: `Use <code>==</code> to check if lives equals 0. Put the if block between lives and the Done print. Done should not be indented under the if.`,
             starterTip: `Add <code>if lives == 0:</code> with an indented <code>print("Game over")</code> above <code>print("Done")</code> so Done always runs.`,
             starter: [
                 `lives = 0`,

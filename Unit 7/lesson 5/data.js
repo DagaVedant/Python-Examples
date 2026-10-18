@@ -17,7 +17,7 @@ export default {
 
     idea: `To visit every cell you need <strong>nested loops</strong>: an outer loop picks each row, and an inner loop goes through every item in that row.
 
-    Together they reach every cell — left to right, then down to the next row — like reading a tiny table.`,
+    Together they reach every cell. Left to right, then down to the next row. Like reading a tiny table.`,
 
     code: {
         filename: "nested.py",
@@ -90,7 +90,7 @@ export default {
         },
         {
             text: `Visit every cell and print only the ones that are greater than 5.`,
-            hint: `Keep your nested loops, but only print when the cell is bigger than 5 — use if cell > 5:`,
+            hint: `Keep your nested loops, but only print when the cell is bigger than 5. Use if cell > 5:`,
             starterTip: `Inside for cell in row:, add if cell > 5: then print(cell) indented under the if.`,
             starter: [
                 `grid = [`,
@@ -139,7 +139,7 @@ export default {
                 { text: "1", correct: false },
             ],
             correct: "3 rows × 3 cells = 9 visits.",
-            wrong: "Every cell is visited once — nine times total.",
+            wrong: "Every cell is visited once. Nine times total.",
         },
     ],
 

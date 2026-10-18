@@ -52,7 +52,7 @@ The pattern is always <code>module.name</code>. The module owns the tool; the do
         {
             text: `Import math. Print the square root of 81.`,
             hint: `After import math, use the dot pattern: math.sqrt(...) inside print(). The number inside sqrt should be 81.`,
-            starterTip: `Try print(math.sqrt(81)) — you should see 9.0 when you Run.`,
+            starterTip: `Try print(math.sqrt(81)). You should see 9.0 when you Run.`,
             starter: [
                 "import math",
                 "print()"
@@ -99,7 +99,7 @@ The pattern is always <code>module.name</code>. The module owns the tool; the do
             question: `Is math.pi a function call?`,
             options: [
                 { text: `Yes, it needs () always`, correct: false },
-                { text: `No — it is a value you can print`, correct: true },
+                { text: `No. It is a value you can print`, correct: true },
                 { text: `Yes, it rolls dice`, correct: false },
                 { text: `It is an error`, correct: false },
             ],

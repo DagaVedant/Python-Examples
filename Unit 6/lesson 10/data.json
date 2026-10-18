@@ -12,7 +12,7 @@
     "Append items one by one",
     "Use the finished list afterward"
   ],
-  "idea": "Sometimes you do not know every item when you write the program. Start with <code>[]</code>, then <code>append</code> values as you go — often inside a loop.\n\n    When building is done, you can print, total, or search the list you made.",
+  "idea": "Sometimes you do not know every item when you write the program. Start with <code>[]</code>, then <code>append</code> values as you go. Often inside a loop.\n\n    When building is done, you can print, total, or search the list you made.",
   "code": {
     "filename": "build.py",
     "lines": [
@@ -52,7 +52,7 @@
   "practice": [
     {
       "text": "Build a new list of each number plus 1. Print the new list.",
-      "hint": "Loop over nums and each time append n + 1 to plus_one — grow the list, do not replace it.",
+      "hint": "Loop over nums and each time append n + 1 to plus_one. Grow the list, do not replace it.",
       "starterTip": "for n in nums: then plus_one.append(n + 1) indented under the comment.",
       "starter": "nums = [10, 20, 30]\nplus_one = []\n# append n + 1 for each n\n\nprint(plus_one)",
       "gradingNote": "Pass if plus_one becomes [11, 21, 31] via append in a loop."
@@ -116,7 +116,7 @@
       "question": "After building, what can you do with the list?",
       "options": [
         {
-          "text": "Nothing — building lists is useless",
+          "text": "Nothing. Building lists is useless",
           "correct": false
         },
         {

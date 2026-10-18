@@ -6,7 +6,7 @@
   "unitTitle": "Dictionaries",
   "title": "What is a Dictionary",
   "readTime": 20,
-  "goal": "In this lesson you will learn that a dictionary stores labeled facts as key–value pairs.",
+  "goal": "In this lesson you will learn that a dictionary stores labeled facts as key-value pairs.",
   "learn": [
     "A dictionary holds labeled data",
     "Each fact has a key and a value",
@@ -41,15 +41,15 @@
   },
   "practice": [
     {
-      "text": "Print a short note that a dictionary stores key–value pairs. Fill in the blank.",
-      "hint": "Use one print() with a sentence inside quotes. Mention that a dictionary has keys and values (or key–value pairs).",
-      "starterTip": "Try print(\"A dictionary stores key-value pairs\") or similar — any clear sentence about keys and values works.",
+      "text": "Print a short note that a dictionary stores key-value pairs. Fill in the blank.",
+      "hint": "Use one print() with a sentence inside quotes. Mention that a dictionary has keys and values (or key-value pairs).",
+      "starterTip": "Try print(\"A dictionary stores key-value pairs\") or similar, any clear sentence about keys and values works.",
       "starter": "# One clear sentence\nprint()",
       "gradingNote": "Pass if one non-empty print mentions keys, values, or dictionary."
     },
     {
       "text": "Create any tiny dictionary with one key and print it.",
-      "hint": "The starter already has info with one key. Fill in print() so it shows the whole dictionary — pass info inside the parentheses.",
+      "hint": "The starter already has info with one key. Fill in print() so it shows the whole dictionary. Pass info inside the parentheses.",
       "starterTip": "Use print(info) so Python prints {'color': 'blue'} (or whatever your one key holds).",
       "starter": "info = {\"color\": \"blue\"}\nprint()",
       "gradingNote": "Pass if the dictionary is printed (shows color/blue)."
@@ -64,7 +64,7 @@
           "correct": false
         },
         {
-          "text": "Labeled facts as key–value pairs",
+          "text": "Labeled facts as key-value pairs",
           "correct": true
         },
         {
@@ -72,7 +72,7 @@
           "correct": false
         },
         {
-          "text": "Nothing — dictionaries are empty forever",
+          "text": "Nothing. Dictionaries are empty forever",
           "correct": false
         }
       ],

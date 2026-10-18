@@ -15,7 +15,7 @@ export default {
         "Prefer a clear counter update every pass",
     ],
 
-    idea: `A while loop that never changes its condition runs <strong>forever</strong> — and can freeze your program.
+    idea: `A while loop that never changes its condition runs <strong>forever</strong>, and can freeze your program.
 
 Safe rule: whatever the condition looks at (like <code>count</code>), something inside the loop must change it. Shrinking, growing, or stepping a counter is the usual fix.
 
@@ -96,7 +96,7 @@ In this course we only write <strong>finite</strong> while loops with counters. 
                 `    `,
                 `print("Finished")`,
             ].join("\n"),
-            gradingNote: `Pass if 0..4 print, steps increases, and Finished prints after — finite while only.`,
+            gradingNote: `Pass if 0..4 print, steps increases, and Finished prints after. Finite while only.`,
         },
     ],
 
@@ -104,7 +104,7 @@ In this course we only write <strong>finite</strong> while loops with counters. 
         {
             question: `What is wrong with: x = 5 then while x > 0: print(x) with no other lines?`,
             options: [
-                { text: "Nothing — it prints 5 once and stops", correct: false },
+                { text: "Nothing. It prints 5 once and stops", correct: false },
                 { text: "It runs forever because x never changes", correct: true },
                 { text: "It causes a SyntaxError", correct: false },
                 { text: "It prints nothing because 5 > 0 is False", correct: false },
@@ -143,7 +143,7 @@ In this course we only write <strong>finite</strong> while loops with counters. 
             `seconds = 5`,
             `while seconds > 0:`,
             `    print("Seconds left:", seconds)`,
-            `    # Subtract 1 — required for a safe stop`,
+            `    # Subtract 1. Required for a safe stop`,
             `    `,
             `print("Time is up!")`,
         ].join("\n"),

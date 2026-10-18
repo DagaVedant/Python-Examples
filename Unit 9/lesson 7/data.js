@@ -64,7 +64,7 @@ Example: <code>"Ava 90".split()</code> becomes <code>["Ava", "90"]</code>. Then 
     practice: [
         {
             text: `Loop scores.txt. Print only the names (first part of each line).`,
-            hint: `After split(), the name is the first piece — index 0. Print parts[0], not the whole line or the score.`,
+            hint: `After split(), the name is the first piece. Index 0. Print parts[0], not the whole line or the score.`,
             starterTip: `Use print(parts[0]) inside the loop. You should see Ava, then Leo, then Mia.`,
             starter: [
                 "with open(\"scores.txt\") as f:",

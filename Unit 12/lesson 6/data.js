@@ -14,7 +14,7 @@ export default {
         "You do not pass self yourself when calling",
     ],
 
-    idea: `Inside a method, <code>self</code> means <strong>this object</strong> — the one before the dot.
+    idea: `Inside a method, <code>self</code> means <strong>this object</strong>. The one before the dot.
 
 When you write <code>dog.bark()</code>, Python sends <code>dog</code> into <code>self</code> automatically. Use <code>self.name</code> to reach that object's attributes. You do not type <code>self</code> in the call.`,
 
@@ -70,7 +70,7 @@ When you write <code>dog.bark()</code>, Python sends <code>dog</code> into <code
     practice: [
         {
             text: `In shout, print self.name in all caps message. Call it.`,
-            hint: `self.name is "Sam" on f. You can print a loud message with self.name inside — try .upper() on the name for ALL CAPS.`,
+            hint: `self.name is "Sam" on f. You can print a loud message with self.name inside. Try .upper() on the name for ALL CAPS.`,
             starterTip: `print(self.name.upper(), "cheers!") or print("GO", self.name.upper() + "!") inside shout.`,
             starter: [
                 "class Fan:",
@@ -85,7 +85,7 @@ When you write <code>dog.bark()</code>, Python sends <code>dog</code> into <code
         {
             text: `Finish deposit so it adds amount to self.balance. Show before/after.`,
             hint: `Inside deposit, update self.balance by adding amount to the old balance. After b.deposit(5), print(b.balance) should show 15.`,
-            starterTip: `self.balance = self.balance + amount — same idea as the PiggyBank lesson.`,
+            starterTip: `self.balance = self.balance + amount. Same idea as the PiggyBank lesson.`,
             starter: [
                 "class Bank:",
                 "    def deposit(self, amount):",
@@ -115,7 +115,7 @@ When you write <code>dog.bark()</code>, Python sends <code>dog</code> into <code
             question: `Do you pass self when calling dog.bark()?`,
             options: [
                 { text: `Yes, dog.bark(self)`, correct: false },
-                { text: `No — Python fills self for you`, correct: true },
+                { text: `No. Python fills self for you`, correct: true },
                 { text: `Yes, twice`, correct: false },
                 { text: `Yes, as a string`, correct: false },
             ],

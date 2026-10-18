@@ -77,7 +77,7 @@ You must import before you use it.`,
         {
             text: `Use math.pi and radius 5 to print a circle's circumference: 2 * pi * r.`,
             hint: `Circumference means go around the circle once: 2 times pi times the radius. Use math.pi, not 3.14 in quotes.`,
-            starterTip: `Try circ = 2 * math.pi * r — with r already 5, that should print about 31.4.`,
+            starterTip: `Try circ = 2 * math.pi * r. With r already 5, that should print about 31.4.`,
             starter: [
                 `import math`,
                 `r = 5`,

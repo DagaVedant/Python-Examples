@@ -17,7 +17,7 @@ export default {
 
     idea: `A <strong>parameter</strong> is a variable you write inside the parentheses on the <code>def</code> line. An <strong>argument</strong> is the real value you pass in when you call the function.
 
-With one parameter, you can greet Alice and Bob using the same <code>greet</code> function — only the argument changes.`,
+With one parameter, you can greet Alice and Bob using the same <code>greet</code> function. Only the argument changes.`,
 
     code: {
         filename: "greet_name.py",
@@ -62,7 +62,7 @@ With one parameter, you can greet Alice and Bob using the same <code>greet</code
     practice: [
         {
             text: `Finish greet(name) so it prints a hello using the name. Call it with two different names.`,
-            hint: `Use the parameter name inside print — for example print("Hello,", name). Add a second greet("...") call with a different name.`,
+            hint: `Use the parameter name inside print. For example print("Hello,", name). Add a second greet("...") call with a different name.`,
             starterTip: `Try print("Hello,", name) in the function body, then add greet("Alex") on the blank line below greet("Sam").`,
             starter: [
                 `def greet(name):`,
@@ -104,7 +104,7 @@ With one parameter, you can greet Alice and Bob using the same <code>greet</code
             question: `What does greet("Ava") pass into the function?`,
             options: [
                 { text: "The argument \"Ava\"", correct: true },
-                { text: "Nothing — greet needs no values", correct: false },
+                { text: "Nothing. Greet needs no values", correct: false },
                 { text: "Only the word greet", correct: false },
                 { text: "A blank line", correct: false },
             ],
@@ -120,7 +120,7 @@ With one parameter, you can greet Alice and Bob using the same <code>greet</code
                 { text: "So loops stop working", correct: false },
             ],
             correct: "Parameters let the same function handle many different values.",
-            wrong: "Different arguments in, same function body — that is the point.",
+            wrong: "Different arguments in, same function body. That is the point.",
         },
     ],
 

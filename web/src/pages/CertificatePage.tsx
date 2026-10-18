@@ -154,11 +154,11 @@ export function CertificatePage() {
         titleLine: 'Course Complete',
         achievement: (
           <>
-            for completing every unit in <strong>Learn Python</strong> — from first
+            for completing every unit in <strong>Learn Python</strong>. From first
             programs through classes.
           </>
         ),
-        documentTitle: 'Course Certificate — Learn Python',
+        documentTitle: 'Course Certificate | Learn Python',
       };
     }
     if (mode.type === 'unit') {
@@ -179,7 +179,7 @@ export function CertificatePage() {
             in Learn Python.
           </>
         ),
-        documentTitle: `Unit ${unit.number} Certificate — Learn Python`,
+        documentTitle: `Unit ${unit.number} Certificate | Learn Python`,
       };
     }
     return {
@@ -190,7 +190,7 @@ export function CertificatePage() {
 
   useEffect(() => {
     if (!content || 'error' in content) {
-      document.title = 'Certificate — Learn Python';
+      document.title = 'Certificate | Learn Python';
       return;
     }
     document.title = content.documentTitle;

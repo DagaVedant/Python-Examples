@@ -47,7 +47,7 @@
   "practice": [
     {
       "text": "Finish the loop so it prints each fruit on its own line.",
-      "hint": "Inside the loop, print the loop variable fruit — it holds apple, then banana, then cherry.",
+      "hint": "Inside the loop, print the loop variable fruit. It holds apple, then banana, then cherry.",
       "starterTip": "Replace print() with print(fruit) (keep the four spaces so it stays inside the for block).",
       "starter": "fruits = [\"apple\", \"banana\", \"cherry\"]\nfor fruit in fruits:\n    print()",
       "gradingNote": "Pass if a for loop walks the fruits list and prints each fruit (or a line that includes each fruit)."

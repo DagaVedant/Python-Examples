@@ -119,7 +119,7 @@
       "question": "What should you print while building steps?",
       "options": [
         {
-          "text": "Nothing — only the final answer",
+          "text": "Nothing. Only the final answer",
           "correct": false
         },
         {

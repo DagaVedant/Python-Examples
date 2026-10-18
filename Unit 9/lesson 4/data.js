@@ -70,7 +70,7 @@ Mode <code>"w"</code> creates the file or <strong>replaces</strong> old contents
         {
             text: `Write "Hello, file!" plus a newline into hello_out.txt, then read and print it.`,
             hint: `f.write() needs a string. Put the message in quotes and add \\n at the end so it becomes its own line.`,
-            starterTip: `Try f.write("Hello, file!\\n") — the rest of the starter already reads and prints the file for you.`,
+            starterTip: `Try f.write("Hello, file!\\n"). The rest of the starter already reads and prints the file for you.`,
             starter: [
                 "f = open(\"hello_out.txt\", \"w\")",
                 "f.write()",
@@ -84,7 +84,7 @@ Mode <code>"w"</code> creates the file or <strong>replaces</strong> old contents
         {
             text: `Overwrite starter.txt with a new short message, then read and print it.`,
             hint: `Mode "w" replaces everything. Pick any short sentence, write it with f.write("your message\\n"), then use the read block to check.`,
-            starterTip: `Example: f.write("My new note!\\n") — run it and the printed text should be your message, not the old starter line.`,
+            starterTip: `Example: f.write("My new note!\\n"). Run it and the printed text should be your message, not the old starter line.`,
             starter: [
                 "f = open(\"starter.txt\", \"w\")",
                 "f.write()",
@@ -124,7 +124,7 @@ Mode <code>"w"</code> creates the file or <strong>replaces</strong> old contents
             question: `Do these writes change your real computer files?`,
             options: [
                 { text: `Yes, always the desktop`, correct: false },
-                { text: `No — only the practice folder on the page`, correct: true },
+                { text: `No. Only the practice folder on the page`, correct: true },
                 { text: `Yes, your photos`, correct: false },
                 { text: `Yes, system files`, correct: false },
             ],

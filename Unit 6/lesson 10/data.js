@@ -15,7 +15,7 @@ export default {
         "Use the finished list afterward",
     ],
 
-    idea: `Sometimes you do not know every item when you write the program. Start with <code>[]</code>, then <code>append</code> values as you go — often inside a loop.
+    idea: `Sometimes you do not know every item when you write the program. Start with <code>[]</code>, then <code>append</code> values as you go. Often inside a loop.
 
     When building is done, you can print, total, or search the list you made.`,
 
@@ -61,7 +61,7 @@ export default {
     practice: [
         {
             text: `Build a new list of each number plus 1. Print the new list.`,
-            hint: `Loop over nums and each time append n + 1 to plus_one — grow the list, do not replace it.`,
+            hint: `Loop over nums and each time append n + 1 to plus_one. Grow the list, do not replace it.`,
             starterTip: `for n in nums: then plus_one.append(n + 1) indented under the comment.`,
             starter: [
                 `nums = [10, 20, 30]`,
@@ -114,7 +114,7 @@ export default {
         {
             question: `After building, what can you do with the list?`,
             options: [
-                { text: "Nothing — building lists is useless", correct: false },
+                { text: "Nothing. Building lists is useless", correct: false },
                 { text: "Print, total, search, or loop like any list", correct: true },
                 { text: "Only delete it", correct: false },
                 { text: "Only convert it to a string forever", correct: false },

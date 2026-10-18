@@ -57,13 +57,13 @@
     {
       "text": "Finish __init__ to store name and color. Create one Car and print both attributes.",
       "hint": "You already save self.name = name. Add self.color = color so the red from Car(\"Zoom\", \"red\") sticks on the object.",
-      "starterTip": "Add self.color = color on the blank line in __init__ — prints should already show Zoom and red.",
+      "starterTip": "Add self.color = color on the blank line in __init__. Prints should already show Zoom and red.",
       "starter": "class Car:\n    def __init__(self, name, color):\n        self.name = name\n        \ncar = Car(\"Zoom\", \"red\")\nprint(car.name)\nprint(car.color)",
       "gradingNote": "Pass if color stored on self and both prints show Zoom and red."
     },
     {
       "text": "Make Book(title, pages) with __init__. Create one and print title.",
-      "hint": "In __init__, assign both parameters to self — self.title = title and self.pages = pages.",
+      "hint": "In __init__, assign both parameters to self. Self.title = title and self.pages = pages.",
       "starterTip": "self.title = title and self.pages = pages inside __init__; print(b.title) should show Wonder.",
       "starter": "class Book:\n    def __init__(self, title, pages):\n        \nb = Book(\"Wonder\", 310)\nprint(b.title)",
       "gradingNote": "Pass if __init__ stores title/pages and Wonder prints."

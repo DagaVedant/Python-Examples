@@ -7,7 +7,7 @@ export default {
     title: "Complex Conditions",
     readTime: 25,
 
-    goal: "In this lesson you will combine and, or, and not — and use parentheses to keep the meaning clear.",
+    goal: "In this lesson you will combine and, or, and not, and use parentheses to keep the meaning clear.",
 
     learn: [
         "Mix and, or, and not safely",

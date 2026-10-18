@@ -17,7 +17,7 @@ export default {
 
     idea: `A <strong>while loop</strong> keeps going as long as its condition is True. Before each pass, Python checks the condition. When it becomes False, the loop stops.
 
-In this course, while loops use a <strong>counter</strong> you update yourself — for example <code>count = count - 1</code>. That way the loop always reaches a stop. No <code>input()</code> needed.`,
+In this course, while loops use a <strong>counter</strong> you update yourself. For example <code>count = count - 1</code>. That way the loop always reaches a stop. No <code>input()</code> needed.`,
 
     code: {
         filename: "countdown_while.py",
@@ -74,7 +74,7 @@ In this course, while loops use a <strong>counter</strong> you update yourself �
         },
         {
             text: `Start at n = 1. While n is less than 16, print n and double it.`,
-            hint: `Each time through the loop, n should become twice as big — then the while checks n < 16 again.`,
+            hint: `Each time through the loop, n should become twice as big. Then the while checks n < 16 again.`,
             starterTip: `After print(n), add n = n * 2 inside the while. You should see 1, 2, 4, 8 before it stops.`,
             starter: [
                 `n = 1`,
