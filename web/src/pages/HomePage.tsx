@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom';
 import { CertificatesPanel } from '../components/CertificatesPanel';
 import { ContinueCard } from '../components/ContinueCard';
 import { HeroDemo } from '../components/HeroDemo';
-import { HomeUnitSections } from '../components/HomeUnitSections';
+import { CourseTree } from '../components/CourseTree';
+import { HomeRoadmap } from '../components/HomeRoadmap';
 import { StreakBadge } from '../components/StreakBadge';
 import { useCompletions } from '../hooks/useCompletions';
 import { loadCourseInfo } from '../lib/loadCourseInfo';
@@ -36,6 +37,9 @@ export function HomePage() {
 
   return (
     <div className="home-page">
+      <div className="app-split">
+      <CourseTree />
+      <div className="home-main">
       <div className="home-streak-bar">
         <div id="streak-slot">
           <StreakBadge />
@@ -69,8 +73,10 @@ export function HomePage() {
 
       {error && <p className="home-error">{error}</p>}
       {units === null && !error && <p className="home-loading">Loading course…</p>}
-      {units && <HomeUnitSections units={units} completedKeys={completions} />}
+      {units && <HomeRoadmap units={units} completedKeys={completions} />}
       {units && <CertificatesPanel units={units} completedKeys={completions} />}
+      </div>
+      </div>
     </div>
   );
 }

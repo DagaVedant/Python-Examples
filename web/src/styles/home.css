@@ -22,7 +22,7 @@ body.dark .home-page {
 .home-streak-bar {
   max-width: none;
   margin: 0 auto;
-  padding: 12px clamp(20px, 6vw, 120px) 0;
+  padding: 12px clamp(20px, 4vw, 72px) 0;
   display: flex;
   justify-content: flex-end;
 }
@@ -30,7 +30,7 @@ body.dark .home-page {
 .hero {
   max-width: none;
   margin: 0 auto;
-  padding: 40px clamp(20px, 6vw, 120px) 32px;
+  padding: 40px clamp(20px, 4vw, 72px) 32px;
   display: grid;
   grid-template-columns: 1fr;
   gap: 28px;
@@ -41,7 +41,7 @@ body.dark .home-page {
     grid-template-columns: 1.1fr 0.9fr;
     align-items: center;
     gap: 36px;
-    padding: 48px clamp(20px, 6vw, 120px) 36px;
+    padding: 48px clamp(20px, 4vw, 72px) 36px;
   }
 }
 
@@ -71,7 +71,7 @@ body.dark .hero-brand {
 }
 
 .hero h1 {
-  font-size: 22px;
+  font-size: 32px;
   font-weight: 600;
   color: #111827;
   margin: 0 0 10px;
@@ -295,13 +295,13 @@ body:not(.dark) .hero-demo-out.is-running::after {
 #continue-slot {
   max-width: none;
   margin: 0 auto 24px;
-  padding: 0 clamp(20px, 6vw, 120px);
+  padding: 0 clamp(20px, 4vw, 72px);
 }
 
 .course {
   max-width: none;
   margin: 0 auto;
-  padding: 0 clamp(20px, 6vw, 120px);
+  padding: 0 clamp(20px, 4vw, 72px);
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -434,4 +434,8 @@ body.dark .num {
 body.dark .home-loading,
 body.dark .home-error {
   color: #9da3b4;
+}
+
+.home-main {
+  min-width: 0;
 }

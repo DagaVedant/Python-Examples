@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { CourseTree } from '../../components/CourseTree';
 import { LessonCompleteBar } from '../../components/LessonCompleteBar';
 import { PracticePanel } from '../../components/PracticePanel';
 import { ProjectPanelFromLesson } from '../../components/ProjectPanel';
@@ -10,7 +11,7 @@ import { loadCourseInfo } from '../../lib/loadCourseInfo';
 import { getLessonNeighbors, type LessonNavLink } from '../../lib/lessonNav';
 import type { LessonData } from '../../types/lesson';
 import { LessonCodeBlock } from './LessonCodeBlock';
-import { LessonSidebar } from './LessonSidebar';
+import { LessonStepper } from './LessonStepper';
 
 function lessonHref(unit: number, lesson: number): string {
   return `/lesson?unit=${unit}&lesson=${lesson}`;
@@ -69,8 +70,6 @@ export function LessonLoadedView({ data }: LessonLoadedViewProps) {
     setQuizAllPassed(allPassed);
   }, []);
 
-  const lessonsInUnit = lesson.unitLessons || 5;
-  const progressPct = Math.round((lesson.lesson / lessonsInUnit) * 100);
   const quizCount = useMemo(
     () => (Array.isArray(lesson.quiz) ? lesson.quiz.length : 1),
     [lesson.quiz],
@@ -81,56 +80,37 @@ export function LessonLoadedView({ data }: LessonLoadedViewProps) {
 
   return (
     <main className="lesson-page">
-      <div className="lesson-layout">
-      <LessonSidebar unit={lesson.unit} lesson={lesson.lesson} />
-      <div className="lesson-wrap">
-        <header className="lesson-header">
-          <p className="lesson-crumb">
-            <Link to="/">Home</Link>
-            <span aria-hidden="true">/</span>
-            <span>
-              Unit {lesson.unit}: {lesson.unitTitle}
-            </span>
-            <span aria-hidden="true">/</span>
-            <b>
-              {lesson.unit}.{lesson.lesson} {lesson.title}
-            </b>
-          </p>
-          <div className="lesson-progress">
-            <span className="lesson-progress-label">
-              {lesson.lesson} / {lessonsInUnit}
-            </span>
-            <div className="lesson-progress-track" aria-hidden="true">
-              <div className="lesson-progress-fill" style={{ width: `${progressPct}%` }} />
-            </div>
-          </div>
-          <p className="lesson-tag">
-            Lesson {lesson.unit}.{lesson.lesson}
-          </p>
-          <h1>{lesson.title}</h1>
-          {lesson.readTime != null && (
-            <div className="lesson-meta">
-              <span>{lesson.readTime} min</span>
-              <span>{lesson.practice.length} practice tasks</span>
+      <div className="app-split">
+        <CourseTree unit={lesson.unit} lesson={lesson.lesson} />
+        <div className="lesson-main">
+          <header className="lesson-header">
+            <p className="lesson-crumb">
+              <Link to="/">Home</Link>
+              <span aria-hidden="true">/</span>
               <span>
-                {quizCount} check question{quizCount === 1 ? '' : 's'}
+                Unit {lesson.unit}: {lesson.unitTitle}
               </span>
-            </div>
-          )}
-        </header>
+              {lesson.readTime != null && <span>{lesson.readTime} min</span>}
+            </p>
+            <h1>
+              {lesson.unit}.{lesson.lesson} {lesson.title}
+            </h1>
+          </header>
 
+          <LessonStepper
+            steps={[
+              { id: 'step-read', label: 'Read' },
+              { id: 'step-try', label: 'Try it' },
+              { id: 'step-practice', label: 'Practice' },
+              { id: 'step-quiz', label: 'Quiz' },
+            ]}
+          />
+
+          <div className="lesson-two">
+            <div className="lesson-wrap">
         <p className="lesson-goal">{lesson.goal}</p>
 
-        <section className="lesson-learn" aria-labelledby="lesson-learn-heading">
-          <h2 id="lesson-learn-heading">What you will learn</h2>
-          <ul className="lesson-learn-grid">
-            {lesson.learn.map((item) => (
-              <li key={item}>{item}</li>
-            ))}
-          </ul>
-        </section>
-
-        <section className="lesson-idea" aria-labelledby="lesson-idea-heading">
+        <section id="step-read" className="lesson-idea" aria-labelledby="lesson-idea-heading">
           <h2 id="lesson-idea-heading">Idea</h2>
           <div dangerouslySetInnerHTML={{ __html: lesson.idea }} />
         </section>
@@ -151,7 +131,7 @@ export function LessonLoadedView({ data }: LessonLoadedViewProps) {
           </section>
         )}
 
-        <section className="lesson-code-section" aria-labelledby="lesson-code-heading">
+        <section id="step-try" className="lesson-code-section" aria-labelledby="lesson-code-heading">
           <h2 id="lesson-code-heading">Example</h2>
           <LessonCodeBlock
             filename={lesson.code.filename}
@@ -186,9 +166,13 @@ export function LessonLoadedView({ data }: LessonLoadedViewProps) {
           </section>
         )}
 
-        <PracticePanel lesson={lesson} theme={editorTheme} />
+        <div id="step-practice">
+          <PracticePanel lesson={lesson} theme={editorTheme} />
+        </div>
 
-        <QuizPanel quiz={lesson.quiz} onPassedChange={onQuizPassedChange} />
+        <div id="step-quiz">
+          <QuizPanel quiz={lesson.quiz} onPassedChange={onQuizPassedChange} />
+        </div>
 
         <LessonCompleteBar
           unit={lesson.unit}
@@ -219,7 +203,26 @@ export function LessonLoadedView({ data }: LessonLoadedViewProps) {
             </Link>
           ) : null}
         </nav>
-      </div>
+            </div>
+
+            <aside className="lesson-side" aria-label="Lesson summary">
+              <h2>You will learn</h2>
+              <ul>
+                {lesson.learn.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+              <h2>Practice</h2>
+              <ul>
+                {lesson.practice.map((task, i) => (
+                  <li key={i}>
+                    <a href="#step-practice">{task.text}</a>
+                  </li>
+                ))}
+              </ul>
+            </aside>
+          </div>
+        </div>
       </div>
     </main>
   );

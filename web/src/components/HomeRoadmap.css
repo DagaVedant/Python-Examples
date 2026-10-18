@@ -1,0 +1,92 @@
+.roadmap {
+  padding: 0 clamp(20px, 4vw, 72px);
+}
+
+.roadmap-route {
+  list-style: none;
+  position: relative;
+  margin: 28px 0 0 14px;
+  padding: 0 0 0 36px;
+  border-left: 2px solid var(--border);
+}
+
+.roadmap-stop {
+  position: relative;
+  padding: 0 0 30px;
+}
+
+.roadmap-stop::before {
+  content: '';
+  position: absolute;
+  left: -46px;
+  top: 6px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 2px solid var(--text2);
+}
+
+.roadmap-stop.is-done::before {
+  background: #16a34a;
+  border-color: #16a34a;
+}
+
+.roadmap-stop.is-now::before {
+  background: var(--blue-tx);
+  border-color: var(--blue-tx);
+  box-shadow: 0 0 0 4px var(--blue-lt);
+}
+
+.roadmap-stop h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: var(--text);
+}
+
+.roadmap-stop p {
+  margin: 2px 0 10px;
+  font-size: 14px;
+  color: var(--text2);
+}
+
+.roadmap-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.roadmap-chip {
+  display: inline-block;
+  padding: 4px 11px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text2);
+  text-decoration: none;
+}
+
+.roadmap-chip:hover {
+  border-color: var(--blue-tx);
+  color: var(--text);
+}
+
+.roadmap-chip:focus-visible {
+  outline: 2px solid var(--blue-tx);
+  outline-offset: 2px;
+}
+
+.roadmap-chip.is-done {
+  background: var(--surface);
+  color: var(--text);
+}
+
+.roadmap-chip.is-here {
+  border-color: var(--blue-tx);
+  color: var(--blue-tx);
+  font-weight: 500;
+}

@@ -1,5 +1,150 @@
 .lesson-page {
-  padding: 1.5rem clamp(20px, 6vw, 120px) 3rem;
+  padding: 0;
+}
+
+.lesson-main {
+  min-width: 0;
+  padding: 1.75rem clamp(20px, 4vw, 72px) 3rem;
+}
+
+.lesson-two {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 280px;
+  gap: clamp(24px, 4vw, 56px);
+  align-items: start;
+}
+
+.lesson-side {
+  position: sticky;
+  top: 1.5rem;
+  font-size: 14px;
+}
+
+.lesson-side h2 {
+  font-size: 1rem;
+  margin: 0 0 6px;
+}
+
+.lesson-side ul {
+  list-style: none;
+  margin: 0 0 1.5rem;
+  padding: 0;
+}
+
+.lesson-side li {
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border);
+  color: var(--text2);
+  line-height: 1.4;
+}
+
+.lesson-side a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.lesson-side a:hover {
+  color: var(--text);
+  text-decoration: underline;
+}
+
+.lesson-stepper {
+  display: flex;
+  list-style: none;
+  margin: 1.1rem 0 1.75rem;
+  padding: 0;
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  overflow: hidden;
+}
+
+.lesson-stepper li {
+  flex: 1;
+  border-right: 1px solid var(--border);
+}
+
+.lesson-stepper li:last-child {
+  border-right: 0;
+}
+
+.lesson-stepper a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+  padding: 0 16px;
+  color: var(--text2);
+  font-size: 13px;
+  text-decoration: none;
+}
+
+.lesson-stepper a:hover {
+  background: var(--surface);
+}
+
+.lesson-stepper a:focus-visible {
+  outline: 2px solid var(--blue-tx);
+  outline-offset: -2px;
+}
+
+.lesson-stepper .is-done a {
+  color: var(--text);
+}
+
+.lesson-stepper .is-now a {
+  background: var(--blue-lt);
+  color: var(--blue-tx);
+  font-weight: 600;
+}
+
+.lesson-stepper-dot {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  width: 16px;
+  height: 16px;
+  border: 1.5px solid currentColor;
+  border-radius: 50%;
+  font-size: 10px;
+  color: var(--text2);
+}
+
+.is-done .lesson-stepper-dot {
+  background: #16a34a;
+  border-color: #16a34a;
+  color: #fff;
+}
+
+.is-now .lesson-stepper-dot {
+  background: var(--blue-tx);
+  border-color: var(--blue-tx);
+  box-shadow: inset 0 0 0 3px var(--blue-lt);
+}
+
+#step-read,
+#step-try,
+#step-practice,
+#step-quiz {
+  scroll-margin-top: 1rem;
+}
+
+@media (max-width: 1100px) {
+  .lesson-two {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .lesson-side {
+    position: static;
+  }
+}
+
+@media (max-width: 700px) {
+  .lesson-stepper {
+    flex-wrap: wrap;
+  }
+  .lesson-stepper li {
+    flex: 1 1 50%;
+  }
 }
 
 .lesson-wrap {
@@ -75,7 +220,7 @@ body.dark .lesson-progress-fill {
 
 .lesson-header h1 {
   margin: 0;
-  font-size: clamp(1.5rem, 4vw, 1.85rem);
+  font-size: clamp(1.9rem, 4vw, 2.5rem);
   line-height: 1.2;
   color: var(--text);
 }
@@ -287,179 +432,4 @@ body.dark .lesson-nav-btn--next {
   background: var(--blue-md);
   border-color: var(--blue-md);
   color: #fff;
-}
-
-/* Course outline tree */
-.lesson-layout {
-  display: grid;
-  grid-template-columns: 280px minmax(0, 1fr);
-  gap: clamp(24px, 4vw, 56px);
-  align-items: start;
-}
-
-.lesson-tree {
-  position: sticky;
-  top: 1rem;
-  max-height: calc(100vh - 2rem);
-  overflow-y: auto;
-  padding-right: 8px;
-  font-size: 14px;
-}
-
-.lesson-tree-title {
-  margin: 0 0 0.6rem;
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: var(--text2);
-}
-
-.lesson-tree ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.lesson-tree-unit {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  width: 100%;
-  min-height: 40px;
-  padding: 6px 8px;
-  border: 0;
-  border-radius: var(--rsm);
-  background: none;
-  color: var(--text);
-  font: inherit;
-  font-weight: 600;
-  text-align: left;
-  cursor: pointer;
-}
-
-.lesson-tree-unit:hover {
-  background: var(--surface);
-}
-
-.lesson-tree-chevron {
-  flex: none;
-  color: var(--text2);
-  transition: transform 0.15s ease;
-}
-
-.lesson-tree-chevron.is-open {
-  transform: rotate(90deg);
-}
-
-.lesson-tree-unit-name {
-  flex: 1;
-  min-width: 0;
-}
-
-.lesson-tree-unit-num {
-  display: inline-block;
-  min-width: 1.4em;
-  color: var(--text2);
-  font-variant-numeric: tabular-nums;
-}
-
-.lesson-tree-count {
-  font-size: 12px;
-  font-weight: 400;
-  color: var(--text2);
-  font-variant-numeric: tabular-nums;
-}
-
-.lesson-tree-lessons {
-  margin: 2px 0 8px 15px !important;
-  padding-left: 10px !important;
-  border-left: 1px solid var(--border);
-}
-
-.lesson-tree-lesson {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  min-height: 36px;
-  padding: 7px 10px;
-  border-radius: var(--rsm);
-  color: var(--text2);
-  text-decoration: none;
-  line-height: 1.35;
-}
-
-.lesson-tree-lesson:hover {
-  background: var(--surface);
-  color: var(--text);
-}
-
-.lesson-tree-lesson:focus-visible,
-.lesson-tree-unit:focus-visible {
-  outline: 2px solid var(--blue-tx);
-  outline-offset: 1px;
-}
-
-.lesson-tree-lesson.is-current {
-  background: var(--blue-lt);
-  color: var(--blue-tx);
-  font-weight: 600;
-}
-
-.lesson-tree-lesson-num {
-  font-variant-numeric: tabular-nums;
-  opacity: 0.75;
-}
-
-.lesson-tree-dot {
-  flex: none;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 16px;
-  height: 16px;
-  margin-top: 2px;
-  border-radius: 50%;
-  border: 1.5px solid var(--text2);
-  color: #fff;
-}
-
-.lesson-tree-dot.is-done {
-  background: #16a34a;
-  border-color: #16a34a;
-}
-
-.lesson-tree-lesson.is-current .lesson-tree-dot:not(.is-done) {
-  border-color: var(--blue-tx);
-  background: var(--blue-tx);
-  box-shadow: inset 0 0 0 3px var(--blue-lt);
-}
-
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
-  white-space: nowrap;
-}
-
-@media (max-width: 960px) {
-  .lesson-layout {
-    grid-template-columns: minmax(0, 1fr);
-  }
-  .lesson-tree {
-    position: static;
-    max-height: 320px;
-    padding: 12px;
-    border: 1px solid var(--border);
-    border-radius: var(--r);
-    background: var(--surface);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .lesson-tree-chevron {
-    transition: none;
-  }
 }
