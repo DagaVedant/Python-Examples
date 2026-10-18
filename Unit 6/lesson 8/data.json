@@ -1,0 +1,149 @@
+{
+  "format": "v2",
+  "unit": 6,
+  "lesson": 8,
+  "unitLessons": 10,
+  "unitTitle": "Lists",
+  "title": "Totals from Lists",
+  "readTime": 24,
+  "goal": "In this lesson you will learn how to add up numbers in a list with a running total inside a for loop.",
+  "learn": [
+    "Start a total at 0",
+    "Add each list number to the total",
+    "Print the final sum after the loop"
+  ],
+  "idea": "To add everything in a number list, keep a <strong>running total</strong>. Start at <code>0</code>. Each loop, add the current number: <code>total = total + score</code>.\n\n    When the loop ends, <code>total</code> holds the sum of every item.",
+  "code": {
+    "filename": "sum_scores.py",
+    "lines": [
+      "scores = [72, 88, 91, 65]",
+      "total = 0",
+      "",
+      "for score in scores:",
+      "    total = total + score",
+      "",
+      "print(\"Total:\", total)",
+      "print(\"Count:\", len(scores))"
+    ],
+    "output": [
+      "Total: 316",
+      "Count: 4"
+    ]
+  },
+  "changeOneLine": "In the editor above, change the last score from <code>65</code> to <code>70</code>. Press <strong>Run</strong>. The total should become <code>321</code>.",
+  "code2": {
+    "filename": "coins.py",
+    "lines": [
+      "coins = [5, 10, 25, 1]",
+      "total = 0",
+      "for c in coins:",
+      "    total = total + c",
+      "print(\"Cents:\", total)"
+    ],
+    "output": [
+      "Cents: 41"
+    ]
+  },
+  "practice": [
+    {
+      "text": "Add up all the prices and print the total.",
+      "hint": "Make a for loop that visits each price, and add each one to total inside the loop.",
+      "starterTip": "Try for price in prices: then total = total + price (indented) before the final print.",
+      "starter": "prices = [3, 5, 2, 4]\ntotal = 0\n# for loop to add each price\n\nprint(\"Total:\", total)",
+      "gradingNote": "Pass if a for loop adds each price into total and prints 14."
+    },
+    {
+      "text": "Find the sum of <code>points</code>. Print only the final total.",
+      "hint": "points has three numbers — loop over points and add each number into total before you print.",
+      "starterTip": "Add for p in points: and total = total + p (indented) between total = 0 and print(total).",
+      "starter": "points = [10, 20, 30]\ntotal = 0\n\nprint(total)",
+      "gradingNote": "Pass if total becomes 60 via a loop that adds each point."
+    }
+  ],
+  "quiz": [
+    {
+      "question": "Why start <code>total = 0</code> before the loop?",
+      "options": [
+        {
+          "text": "So you have a starting sum to add into",
+          "correct": true
+        },
+        {
+          "text": "Because lists must begin at zero",
+          "correct": false
+        },
+        {
+          "text": "To delete the list",
+          "correct": false
+        },
+        {
+          "text": "Python requires total to be a string",
+          "correct": false
+        }
+      ],
+      "correct": "Zero is the empty sum before you add any numbers.",
+      "wrong": "You need a starting value before you add each item."
+    },
+    {
+      "question": "What does <code>total = total + score</code> do?",
+      "options": [
+        {
+          "text": "Replaces total with only score",
+          "correct": false
+        },
+        {
+          "text": "Adds score onto the running total",
+          "correct": true
+        },
+        {
+          "text": "Prints score",
+          "correct": false
+        },
+        {
+          "text": "Removes score from the list",
+          "correct": false
+        }
+      ],
+      "correct": "It grows the total by the current score.",
+      "wrong": "This is the classic running-total pattern."
+    },
+    {
+      "question": "When should you print the final total?",
+      "options": [
+        {
+          "text": "Before the loop starts",
+          "correct": false
+        },
+        {
+          "text": "Usually after the loop finishes",
+          "correct": true
+        },
+        {
+          "text": "Only inside a comment",
+          "correct": false
+        },
+        {
+          "text": "Never — totals cannot print",
+          "correct": false
+        }
+      ],
+      "correct": "After the loop, total includes every item.",
+      "wrong": "Print after all numbers have been added."
+    }
+  ],
+  "project": {
+    "title": "Weekly Points",
+    "desc": "Add up five daily point values. Print the total and how many days (use len).",
+    "starter": "daily = [8, 10, 7, 9, 6]\ntotal = 0\n# loop and add\n\nprint(\"Total:\", total)\nprint(\"Days:\", )"
+  },
+  "prev": {
+    "unit": 6,
+    "lesson": 7,
+    "title": "for over Lists"
+  },
+  "next": {
+    "unit": 6,
+    "lesson": 9,
+    "title": "List Methods"
+  }
+}

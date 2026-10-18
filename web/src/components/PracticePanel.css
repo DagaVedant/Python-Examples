@@ -1,0 +1,226 @@
+.practice-panel {
+  --practice-code: #1e1e2e;
+  --practice-code-sep: #313244;
+  --practice-code-out: #181825;
+  --practice-cst: #a6e3a1;
+  --practice-ccm: #9399b2;
+  margin-bottom: 1.75rem;
+}
+
+body:not(.dark) .practice-panel {
+  --practice-code: #f8fafc;
+  --practice-code-sep: #d0d7de;
+  --practice-code-out: #f0f4f8;
+  --practice-cst: #166534;
+  --practice-ccm: var(--text2);
+}
+
+.practice-panel__list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+}
+
+.practice-panel__item {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  padding: 0.8rem 1rem;
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text);
+}
+
+.practice-panel__num {
+  min-width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--blue-lt);
+  color: var(--blue-tx);
+  border: 1px solid var(--blue-md);
+  font-size: 11.5px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.practice-panel__content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  min-width: 0;
+}
+
+.practice-panel__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  align-items: center;
+}
+
+.practice-panel__toggle,
+.practice-panel__hint-btn {
+  align-self: flex-start;
+  font-size: 12px;
+  color: var(--blue-tx);
+  background: var(--blue-lt);
+  border: 1px solid var(--blue-md);
+  border-radius: 5px;
+  padding: 3px 10px;
+  cursor: pointer;
+  font-family: inherit;
+  transition: opacity 0.15s;
+}
+
+.practice-panel__toggle:hover,
+.practice-panel__hint-btn:hover:not(:disabled) {
+  opacity: 0.8;
+}
+
+.practice-panel__hint-btn:disabled {
+  opacity: 0.65;
+  cursor: default;
+}
+
+.practice-panel__editor-wrap {
+  background: var(--practice-code);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  overflow: hidden;
+}
+
+.practice-panel__editor-wrap .cm-editor {
+  border: none !important;
+  border-radius: 0 !important;
+}
+
+.practice-panel__footer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0.5rem 0.8rem;
+  border-top: 1px solid var(--practice-code-sep);
+  background: var(--practice-code);
+}
+
+.practice-panel__run-btn {
+  font-size: 12px;
+  font-weight: 600;
+  color: #166534;
+  background: rgba(22, 101, 52, 0.08);
+  border: 1px solid rgba(22, 101, 52, 0.2);
+  border-radius: 5px;
+  padding: 4px 12px;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+body.dark .practice-panel__run-btn {
+  color: var(--practice-cst);
+  background: rgba(166, 227, 161, 0.08);
+  border-color: rgba(166, 227, 161, 0.25);
+}
+
+.practice-panel__run-btn:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.practice-panel__save-btn {
+  font-size: 12px;
+  color: var(--practice-ccm);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 5px;
+  padding: 3px 10px;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+body:not(.dark) .practice-panel__save-btn {
+  color: var(--text2);
+  background: rgba(0, 0, 0, 0.05);
+  border-color: rgba(0, 0, 0, 0.12);
+}
+
+.practice-panel__save-status {
+  font-size: 11px;
+  color: var(--practice-ccm);
+  font-family: ui-monospace, monospace;
+}
+
+.practice-panel__output-box {
+  background: var(--practice-code-out);
+  border-top: 1px solid var(--practice-code-sep);
+  padding: 0.75rem 1.2rem;
+}
+
+.practice-panel__output-label {
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--practice-ccm);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 5px;
+}
+
+.practice-panel__output-line {
+  font-family: ui-monospace, monospace;
+  font-size: 13px;
+  color: var(--practice-cst);
+  line-height: 1.7;
+  white-space: pre-wrap;
+}
+
+.practice-panel__output-line--error {
+  color: #f87171;
+}
+
+.practice-panel__output-line--muted {
+  color: var(--practice-ccm);
+}
+
+.practice-panel__hint-box {
+  padding: 0.65rem 1.2rem;
+  border-top: 1px solid var(--practice-code-sep);
+  background: var(--blue-lt);
+  color: var(--blue-tx);
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+body:not(.dark) .practice-panel__hint-box {
+  border-top-color: #d0d7de;
+}
+
+.practice-panel__hint-label {
+  display: block;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  opacity: 0.85;
+  margin-bottom: 0.2rem;
+}
+
+.practice-panel__hint-extra {
+  margin-top: 0.55rem;
+  padding-top: 0.55rem;
+  border-top: 1px solid var(--blue-md);
+}
+
+.practice-panel__load-note {
+  font-size: 13px;
+  color: var(--text2);
+  margin: 0 0 0.75rem;
+}

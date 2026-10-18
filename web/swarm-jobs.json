@@ -1,0 +1,502 @@
+[
+  {
+    "id": 1,
+    "name": "HomePage",
+    "prompt": "Port index.html hero + course list into web/src/pages/HomePage.tsx using /course-info.json. Include Start lesson 1 CTA, continue slot, streak slot placeholders."
+  },
+  {
+    "id": 2,
+    "name": "CourseGrid",
+    "prompt": "Create web/src/components/CourseGrid.tsx rendering all units/lessons from /course-info.json with links to /lesson?unit=&lesson=."
+  },
+  {
+    "id": 3,
+    "name": "AppShell",
+    "prompt": "Create web/src/components/AppShell.tsx with nav brand Learn Python, theme toggle (localStorage theme), outlet/children."
+  },
+  {
+    "id": 4,
+    "name": "PythonEditor",
+    "prompt": "Create web/src/components/PythonEditor.tsx wrapping CodeMirror 6 + python lang + oneDark; props value/onChange/theme."
+  },
+  {
+    "id": 5,
+    "name": "usePyodide",
+    "prompt": "Create web/src/hooks/usePyodide.ts: load pyodide, runIsolated(code), support input() via prompt, return {output,error}."
+  },
+  {
+    "id": 6,
+    "name": "PracticePanel",
+    "prompt": "Create web/src/components/PracticePanel.tsx: list practices from LessonData, editor toggle, Run, Hint/More help using hint+starterTip, Save localStorage."
+  },
+  {
+    "id": 7,
+    "name": "QuizPanel",
+    "prompt": "Create web/src/components/QuizPanel.tsx: multi-question quiz from LessonData.quiz array or single, score, next/prev."
+  },
+  {
+    "id": 8,
+    "name": "ProjectPanel",
+    "prompt": "Create web/src/components/ProjectPanel.tsx: project editor, Run, I am done, Check stub for signed-in."
+  },
+  {
+    "id": 9,
+    "name": "useGuestProgress",
+    "prompt": "Create web/src/hooks/useGuestProgress.ts: guest-completions, last-lesson, project-done keys matching static site."
+  },
+  {
+    "id": 10,
+    "name": "supabaseClient",
+    "prompt": "Create web/src/lib/supabase.ts + useAuth hook; wire LoginPage and SignupPage to real auth like legacy HTML."
+  },
+  {
+    "id": 11,
+    "name": "Celebrate",
+    "prompt": "Port js/celebrate.js to web/src/hooks/useCelebrate.ts + SoundToggle component; listen for lesson-complete."
+  },
+  {
+    "id": 12,
+    "name": "Streaks",
+    "prompt": "Port js/streaks.js to web/src/hooks/useStreaks.ts + StreakBadge component for HomePage."
+  },
+  {
+    "id": 13,
+    "name": "ContinueCard",
+    "prompt": "Port continue-lesson to web/src/components/ContinueCard.tsx for HomePage."
+  },
+  {
+    "id": 14,
+    "name": "CertificatePage",
+    "prompt": "Port certificate.html into web/src/pages/CertificatePage.tsx (unit/course query params, print, cert-name)."
+  },
+  {
+    "id": 15,
+    "name": "LessonPageWire",
+    "prompt": "Wire LessonPage.tsx to use AppShell + PythonEditor + Practice + Quiz + Project + loadLessonJson; record last-lesson."
+  },
+  {
+    "id": 16,
+    "name": "UnitSection1",
+    "prompt": "Create web/src/components/units/Unit1Section.tsx for unit 1 (Getting Started with Python) listing its lessons from course-info with progress hooks ready. Export from web/src/components/units/index.ts (create if needed)."
+  },
+  {
+    "id": 17,
+    "name": "UnitSection2",
+    "prompt": "Create web/src/components/units/Unit2Section.tsx for unit 2 (Number Calculations & Data) listing its lessons from course-info with progress hooks ready. Export from web/src/components/units/index.ts (create if needed)."
+  },
+  {
+    "id": 18,
+    "name": "UnitSection3",
+    "prompt": "Create web/src/components/units/Unit3Section.tsx for unit 3 (Making Decisions) listing its lessons from course-info with progress hooks ready. Export from web/src/components/units/index.ts (create if needed)."
+  },
+  {
+    "id": 19,
+    "name": "UnitSection4",
+    "prompt": "Create web/src/components/units/Unit4Section.tsx for unit 4 (Repetition & Loops) listing its lessons from course-info with progress hooks ready. Export from web/src/components/units/index.ts (create if needed)."
+  },
+  {
+    "id": 20,
+    "name": "UnitSection5",
+    "prompt": "Create web/src/components/units/Unit5Section.tsx for unit 5 (Functions) listing its lessons from course-info with progress hooks ready. Export from web/src/components/units/index.ts (create if needed)."
+  },
+  {
+    "id": 21,
+    "name": "UnitSection6",
+    "prompt": "Create web/src/components/units/Unit6Section.tsx for unit 6 (Lists) listing its lessons from course-info with progress hooks ready. Export from web/src/components/units/index.ts (create if needed)."
+  },
+  {
+    "id": 22,
+    "name": "UnitSection7",
+    "prompt": "Create web/src/components/units/Unit7Section.tsx for unit 7 (2D Lists) listing its lessons from course-info with progress hooks ready. Export from web/src/components/units/index.ts (create if needed)."
+  },
+  {
+    "id": 23,
+    "name": "UnitSection8",
+    "prompt": "Create web/src/components/units/Unit8Section.tsx for unit 8 (Dictionaries) listing its lessons from course-info with progress hooks ready. Export from web/src/components/units/index.ts (create if needed)."
+  },
+  {
+    "id": 24,
+    "name": "UnitSection9",
+    "prompt": "Create web/src/components/units/Unit9Section.tsx for unit 9 (Files) listing its lessons from course-info with progress hooks ready. Export from web/src/components/units/index.ts (create if needed)."
+  },
+  {
+    "id": 25,
+    "name": "UnitSection10",
+    "prompt": "Create web/src/components/units/Unit10Section.tsx for unit 10 (Errors) listing its lessons from course-info with progress hooks ready. Export from web/src/components/units/index.ts (create if needed)."
+  },
+  {
+    "id": 26,
+    "name": "UnitSection11",
+    "prompt": "Create web/src/components/units/Unit11Section.tsx for unit 11 (Imports) listing its lessons from course-info with progress hooks ready. Export from web/src/components/units/index.ts (create if needed)."
+  },
+  {
+    "id": 27,
+    "name": "UnitSection12",
+    "prompt": "Create web/src/components/units/Unit12Section.tsx for unit 12 (Classes) listing its lessons from course-info with progress hooks ready. Export from web/src/components/units/index.ts (create if needed)."
+  },
+  {
+    "id": 28,
+    "name": "LessonJSON 1-1,1-2",
+    "prompt": "Validate data.json for: Unit 1/lesson 1 (What is a Program); Unit 1/lesson 2 (print() Basics). Ensure web/public/lessons/N-M.json matches. If invalid, fix JSON only. Add a tiny smoke note file web/src/content/checks/1-1-1-2.md listing title+practice count. Do not edit unrelated lessons."
+  },
+  {
+    "id": 29,
+    "name": "LessonJSON 1-3,1-4",
+    "prompt": "Validate data.json for: Unit 1/lesson 3 (Comments); Unit 1/lesson 4 (Many Lines of Output). Ensure web/public/lessons/N-M.json matches. If invalid, fix JSON only. Add a tiny smoke note file web/src/content/checks/1-3-1-4.md listing title+practice count. Do not edit unrelated lessons."
+  },
+  {
+    "id": 30,
+    "name": "LessonJSON 1-5,1-6",
+    "prompt": "Validate data.json for: Unit 1/lesson 5 (Strings and Quotes); Unit 1/lesson 6 (Fancy print()). Ensure web/public/lessons/N-M.json matches. If invalid, fix JSON only. Add a tiny smoke note file web/src/content/checks/1-5-1-6.md listing title+practice count. Do not edit unrelated lessons."
+  },
+  {
+    "id": 31,
+    "name": "LessonJSON 1-7,1-8",
+    "prompt": "Validate data.json for: Unit 1/lesson 7 (Variables); Unit 1/lesson 8 (Changing Variables). Ensure web/public/lessons/N-M.json matches. If invalid, fix JSON only. Add a tiny smoke note file web/src/content/checks/1-7-1-8.md listing title+practice count. Do not edit unrelated lessons."
+  },
+  {
+    "id": 32,
+    "name": "LessonJSON 1-9,1-10",
+    "prompt": "Validate data.json for: Unit 1/lesson 9 (Using Answers); Unit 1/lesson 10 (Data Types & Casting). Ensure web/public/lessons/N-M.json matches. If invalid, fix JSON only. Add a tiny smoke note file web/src/content/checks/1-9-1-10.md listing title+practice count. Do not edit unrelated lessons."
+  },
+  {
+    "id": 33,
+    "name": "LessonJSON 2-1,2-2",
+    "prompt": "Validate data.json for: Unit 2/lesson 1 (Plus and Minus); Unit 2/lesson 2 (Multiply and Divide). Ensure web/public/lessons/N-M.json matches. If invalid, fix JSON only. Add a tiny smoke note file web/src/content/checks/2-1-2-2.md listing title+practice count. Do not edit unrelated lessons."
+  },
+  {
+    "id": 34,
+    "name": "LessonJSON 2-3,2-4",
+    "prompt": "Validate data.json for: Unit 2/lesson 3 (Order of Operations); Unit 2/lesson 4 (Float Division). Ensure web/public/lessons/N-M.json matches. If invalid, fix JSON only. Add a tiny smoke note file web/src/content/checks/2-3-2-4.md listing title+practice count. Do not edit unrelated lessons."
+  },
+  {
+    "id": 35,
+    "name": "LessonJSON 2-5,2-6",
+    "prompt": "Validate data.json for: Unit 2/lesson 5 (Integer Division); Unit 2/lesson 6 (Remainder). Ensure web/public/lessons/N-M.json matches. If invalid, fix JSON only. Add a tiny smoke note file web/src/content/checks/2-5-2-6.md listing title+practice count. Do not edit unrelated lessons."
+  },
+  {
+    "id": 36,
+    "name": "LessonJSON 2-7,2-8",
+    "prompt": "Validate data.json for: Unit 2/lesson 7 (Text into Numbers); Unit 2/lesson 8 (Multi-step Math). Ensure web/public/lessons/N-M.json matches. If invalid, fix JSON only. Add a tiny smoke note file web/src/content/checks/2-7-2-8.md listing title+practice count. Do not edit unrelated lessons."
+  },
+  {
+    "id": 37,
+    "name": "LessonJSON 2-9,2-10",
+    "prompt": "Validate data.json for: Unit 2/lesson 9 (The math Module); Unit 2/lesson 10 (Useful math Tools). Ensure web/public/lessons/N-M.json matches. If invalid, fix JSON only. Add a tiny smoke note file web/src/content/checks/2-9-2-10.md listing title+practice count. Do not edit unrelated lessons."
+  },
+  {
+    "id": 38,
+    "name": "LessonJSON 3-1,3-2",
+    "prompt": "Validate data.json for: Unit 3/lesson 1 (True and False); Unit 3/lesson 2 (Comparing Values). Ensure web/public/lessons/N-M.json matches. If invalid, fix JSON only. Add a tiny smoke note file web/src/content/checks/3-1-3-2.md listing title+practice count. Do not edit unrelated lessons."
+  },
+  {
+    "id": 39,
+    "name": "LessonJSON 3-3,3-4",
+    "prompt": "Validate data.json for: Unit 3/lesson 3 (if); Unit 3/lesson 4 (else). Ensure web/public/lessons/N-M.json matches. If invalid, fix JSON only. Add a tiny smoke note file web/src/content/checks/3-3-3-4.md listing title+practice count. Do not edit unrelated lessons."
+  },
+  {
+    "id": 40,
+    "name": "LessonJSON 3-5,3-6",
+    "prompt": "Validate data.json for: Unit 3/lesson 5 (elif); Unit 3/lesson 6 (Many Branches). Ensure web/public/lessons/N-M.json matches. If invalid, fix JSON only. Add a tiny smoke note file web/src/content/checks/3-5-3-6.md listing title+practice count. Do not edit unrelated lessons."
+  },
+  {
+    "id": 41,
+    "name": "LessonJSON 3-7,3-8",
+    "prompt": "Validate data.json for: Unit 3/lesson 7 (and); Unit 3/lesson 8 (or). Ensure web/public/lessons/N-M.json matches. If invalid, fix JSON only. Add a tiny smoke note file web/src/content/checks/3-7-3-8.md listing title+practice count. Do not edit unrelated lessons."
+  },
+  {
+    "id": 42,
+    "name": "LessonJSON 3-9,3-10",
+    "prompt": "Validate data.json for: Unit 3/lesson 9 (not); Unit 3/lesson 10 (Complex Conditions). Ensure web/public/lessons/N-M.json matches. If invalid, fix JSON only. Add a tiny smoke note file web/src/content/checks/3-9-3-10.md listing title+practice count. Do not edit unrelated lessons."
+  },
+  {
+    "id": 43,
+    "name": "LessonJSON 4-1,4-2",
+    "prompt": "Validate data.json for: Unit 4/lesson 1 (Why Loops); Unit 4/lesson 2 (for Loops). Ensure web/public/lessons/N-M.json matches. If invalid, fix JSON only. Add a tiny smoke note file web/src/content/checks/4-1-4-2.md listing title+practice count. Do not edit unrelated lessons."
+  },
+  {
+    "id": 44,
+    "name": "LessonJSON 4-3,4-4",
+    "prompt": "Validate data.json for: Unit 4/lesson 3 (range() Basics); Unit 4/lesson 4 (range() Start and Step). Ensure web/public/lessons/N-M.json matches. If invalid, fix JSON only. Add a tiny smoke note file web/src/content/checks/4-3-4-4.md listing title+practice count. Do not edit unrelated lessons."
+  },
+  {
+    "id": 45,
+    "name": "LessonJSON 4-5,4-6",
+    "prompt": "Validate data.json for: Unit 4/lesson 5 (Looping and Totals); Unit 4/lesson 6 (while Loops). Ensure web/public/lessons/N-M.json matches. If invalid, fix JSON only. Add a tiny smoke note file web/src/content/checks/4-5-4-6.md listing title+practice count. Do not edit unrelated lessons."
+  },
+  {
+    "id": 46,
+    "name": "LessonJSON 4-7,4-8",
+    "prompt": "Validate data.json for: Unit 4/lesson 7 (while Counters); Unit 4/lesson 8 (Loops That Stop Safely). Ensure web/public/lessons/N-M.json matches. If invalid, fix JSON only. Add a tiny smoke note file web/src/content/checks/4-7-4-8.md listing title+practice count. Do not edit unrelated lessons."
+  },
+  {
+    "id": 47,
+    "name": "LessonJSON 4-9,4-10",
+    "prompt": "Validate data.json for: Unit 4/lesson 9 (if Inside Loops); Unit 4/lesson 10 (Filter with Loops). Ensure web/public/lessons/N-M.json matches. If invalid, fix JSON only. Add a tiny smoke note file web/src/content/checks/4-9-4-10.md listing title+practice count. Do not edit unrelated lessons."
+  },
+  {
+    "id": 48,
+    "name": "LessonJSON 5-1,5-2",
+    "prompt": "Validate data.json for: Unit 5/lesson 1 (Why Functions); Unit 5/lesson 2 (Defining and Calling). Ensure web/public/lessons/N-M.json matches. If invalid, fix JSON only. Add a tiny smoke note file web/src/content/checks/5-1-5-2.md listing title+practice count. Do not edit unrelated lessons."
+  },
+  {
+    "id": 49,
+    "name": "LessonJSON 5-3,5-4",
+    "prompt": "Validate data.json for: Unit 5/lesson 3 (One Parameter); Unit 5/lesson 4 (Multiple Parameters). Ensure web/public/lessons/N-M.json matches. If invalid, fix JSON only. Add a tiny smoke note file web/src/content/checks/5-3-5-4.md listing title+practice count. Do not edit unrelated lessons."
+  },
+  {
+    "id": 50,
+    "name": "LessonJSON 5-5,5-6",
+    "prompt": "Validate data.json for: Unit 5/lesson 5 (Return Values); Unit 5/lesson 6 (Using What You Return). Ensure web/public/lessons/N-M.json matches. If invalid, fix JSON only. Add a tiny smoke note file web/src/content/checks/5-5-5-6.md listing title+practice count. Do not edit unrelated lessons."
+  },
+  {
+    "id": 51,
+    "name": "LessonJSON 5-7,5-8",
+    "prompt": "Validate data.json for: Unit 5/lesson 7 (Functions Calling Functions); Unit 5/lesson 8 (Designing with Functions). Ensure web/public/lessons/N-M.json matches. If invalid, fix JSON only. Add a tiny smoke note file web/src/content/checks/5-7-5-8.md listing title+practice count. Do not edit unrelated lessons."
+  },
+  {
+    "id": 52,
+    "name": "LessonJSON 6-1,6-2",
+    "prompt": "Validate data.json for: Unit 6/lesson 1 (What is a List); Unit 6/lesson 2 (Creating Lists). Ensure web/public/lessons/N-M.json matches. If invalid, fix JSON only. Add a tiny smoke note file web/src/content/checks/6-1-6-2.md listing title+practice count. Do not edit unrelated lessons."
+  },
+  {
+    "id": 53,
+    "name": "LessonJSON 6-3,6-4",
+    "prompt": "Validate data.json for: Unit 6/lesson 3 (Indexes); Unit 6/lesson 4 (Changing Items). Ensure web/public/lessons/N-M.json matches. If invalid, fix JSON only. Add a tiny smoke note file web/src/content/checks/6-3-6-4.md listing title+practice count. Do not edit unrelated lessons."
+  },
+  {
+    "id": 54,
+    "name": "LessonJSON 6-5,6-6",
+    "prompt": "Validate data.json for: Unit 6/lesson 5 (append and insert); Unit 6/lesson 6 (remove and pop). Ensure web/public/lessons/N-M.json matches. If invalid, fix JSON only. Add a tiny smoke note file web/src/content/checks/6-5-6-6.md listing title+practice count. Do not edit unrelated lessons."
+  },
+  {
+    "id": 55,
+    "name": "LessonJSON 6-7,6-8",
+    "prompt": "Validate data.json for: Unit 6/lesson 7 (for over Lists); Unit 6/lesson 8 (Totals from Lists). Ensure web/public/lessons/N-M.json matches. If invalid, fix JSON only. Add a tiny smoke note file web/src/content/checks/6-7-6-8.md listing title+practice count. Do not edit unrelated lessons."
+  },
+  {
+    "id": 56,
+    "name": "LessonJSON 6-9,6-10",
+    "prompt": "Validate data.json for: Unit 6/lesson 9 (List Methods); Unit 6/lesson 10 (Building Lists). Ensure web/public/lessons/N-M.json matches. If invalid, fix JSON only. Add a tiny smoke note file web/src/content/checks/6-9-6-10.md listing title+practice count. Do not edit unrelated lessons."
+  },
+  {
+    "id": 57,
+    "name": "LessonJSON 7-1,7-2",
+    "prompt": "Validate data.json for: Unit 7/lesson 1 (Lists Inside Lists); Unit 7/lesson 2 (Reading Rows). Ensure web/public/lessons/N-M.json matches. If invalid, fix JSON only. Add a tiny smoke note file web/src/content/checks/7-1-7-2.md listing title+practice count. Do not edit unrelated lessons."
+  },
+  {
+    "id": 58,
+    "name": "LessonJSON 7-3,7-4",
+    "prompt": "Validate data.json for: Unit 7/lesson 3 (Cells and Columns); Unit 7/lesson 4 (Changing a Cell). Ensure web/public/lessons/N-M.json matches. If invalid, fix JSON only. Add a tiny smoke note file web/src/content/checks/7-3-7-4.md listing title+practice count. Do not edit unrelated lessons."
+  },
+  {
+    "id": 59,
+    "name": "LessonJSON 7-5,7-6",
+    "prompt": "Validate data.json for: Unit 7/lesson 5 (Nested Loops); Unit 7/lesson 6 (Printing a Grid). Ensure web/public/lessons/N-M.json matches. If invalid, fix JSON only. Add a tiny smoke note file web/src/content/checks/7-5-7-6.md listing title+practice count. Do not edit unrelated lessons."
+  },
+  {
+    "id": 60,
+    "name": "LessonJSON 7-7,7-8",
+    "prompt": "Validate data.json for: Unit 7/lesson 7 (Searching a Grid); Unit 7/lesson 8 (Grid Mini Project). Ensure web/public/lessons/N-M.json matches. If invalid, fix JSON only. Add a tiny smoke note file web/src/content/checks/7-7-7-8.md listing title+practice count. Do not edit unrelated lessons."
+  },
+  {
+    "id": 61,
+    "name": "LessonJSON 8-1,8-2",
+    "prompt": "Validate data.json for: Unit 8/lesson 1 (What is a Dictionary); Unit 8/lesson 2 (Creating Dictionaries). Ensure web/public/lessons/N-M.json matches. If invalid, fix JSON only. Add a tiny smoke note file web/src/content/checks/8-1-8-2.md listing title+practice count. Do not edit unrelated lessons."
+  },
+  {
+    "id": 62,
+    "name": "LessonJSON 8-3,8-4",
+    "prompt": "Validate data.json for: Unit 8/lesson 3 (Looking Up Keys); Unit 8/lesson 4 (Adding Keys). Ensure web/public/lessons/N-M.json matches. If invalid, fix JSON only. Add a tiny smoke note file web/src/content/checks/8-3-8-4.md listing title+practice count. Do not edit unrelated lessons."
+  },
+  {
+    "id": 63,
+    "name": "LessonJSON 8-5,8-6",
+    "prompt": "Validate data.json for: Unit 8/lesson 5 (Updating Values); Unit 8/lesson 6 (Removing Keys). Ensure web/public/lessons/N-M.json matches. If invalid, fix JSON only. Add a tiny smoke note file web/src/content/checks/8-5-8-6.md listing title+practice count. Do not edit unrelated lessons."
+  },
+  {
+    "id": 64,
+    "name": "LessonJSON 8-7,8-8",
+    "prompt": "Validate data.json for: Unit 8/lesson 7 (Looping Keys); Unit 8/lesson 8 (Looping Items). Ensure web/public/lessons/N-M.json matches. If invalid, fix JSON only. Add a tiny smoke note file web/src/content/checks/8-7-8-8.md listing title+practice count. Do not edit unrelated lessons."
+  },
+  {
+    "id": 65,
+    "name": "LessonJSON 8-9",
+    "prompt": "Validate data.json for: Unit 8/lesson 9 (Safe Lookup with get). Ensure web/public/lessons/N-M.json matches. If invalid, fix JSON only. Add a tiny smoke note file web/src/content/checks/8-9.md listing title+practice count. Do not edit unrelated lessons."
+  },
+  {
+    "id": 66,
+    "name": "LessonJSON 8-10",
+    "prompt": "Validate data.json for: Unit 8/lesson 10 (Dictionary Methods). Ensure web/public/lessons/N-M.json matches. If invalid, fix JSON only. Add a tiny smoke note file web/src/content/checks/8-10.md listing title+practice count. Do not edit unrelated lessons."
+  },
+  {
+    "id": 67,
+    "name": "LessonJSON 9-1",
+    "prompt": "Validate data.json for: Unit 9/lesson 1 (What is a File). Ensure web/public/lessons/N-M.json matches. If invalid, fix JSON only. Add a tiny smoke note file web/src/content/checks/9-1.md listing title+practice count. Do not edit unrelated lessons."
+  },
+  {
+    "id": 68,
+    "name": "LessonJSON 9-2",
+    "prompt": "Validate data.json for: Unit 9/lesson 2 (Opening and Reading). Ensure web/public/lessons/N-M.json matches. If invalid, fix JSON only. Add a tiny smoke note file web/src/content/checks/9-2.md listing title+practice count. Do not edit unrelated lessons."
+  },
+  {
+    "id": 69,
+    "name": "LessonJSON 9-3",
+    "prompt": "Validate data.json for: Unit 9/lesson 3 (Reading Lines). Ensure web/public/lessons/N-M.json matches. If invalid, fix JSON only. Add a tiny smoke note file web/src/content/checks/9-3.md listing title+practice count. Do not edit unrelated lessons."
+  },
+  {
+    "id": 70,
+    "name": "LessonJSON 9-4",
+    "prompt": "Validate data.json for: Unit 9/lesson 4 (Writing Files). Ensure web/public/lessons/N-M.json matches. If invalid, fix JSON only. Add a tiny smoke note file web/src/content/checks/9-4.md listing title+practice count. Do not edit unrelated lessons."
+  },
+  {
+    "id": 71,
+    "name": "LessonJSON 9-5",
+    "prompt": "Validate data.json for: Unit 9/lesson 5 (Append Mode). Ensure web/public/lessons/N-M.json matches. If invalid, fix JSON only. Add a tiny smoke note file web/src/content/checks/9-5.md listing title+practice count. Do not edit unrelated lessons."
+  },
+  {
+    "id": 72,
+    "name": "LessonJSON 9-6",
+    "prompt": "Validate data.json for: Unit 9/lesson 6 (with open). Ensure web/public/lessons/N-M.json matches. If invalid, fix JSON only. Add a tiny smoke note file web/src/content/checks/9-6.md listing title+practice count. Do not edit unrelated lessons."
+  },
+  {
+    "id": 73,
+    "name": "LessonJSON 9-7",
+    "prompt": "Validate data.json for: Unit 9/lesson 7 (Processing File Text). Ensure web/public/lessons/N-M.json matches. If invalid, fix JSON only. Add a tiny smoke note file web/src/content/checks/9-7.md listing title+practice count. Do not edit unrelated lessons."
+  },
+  {
+    "id": 74,
+    "name": "LessonJSON 9-8",
+    "prompt": "Validate data.json for: Unit 9/lesson 8 (File Mini Project). Ensure web/public/lessons/N-M.json matches. If invalid, fix JSON only. Add a tiny smoke note file web/src/content/checks/9-8.md listing title+practice count. Do not edit unrelated lessons."
+  },
+  {
+    "id": 75,
+    "name": "LessonJSON 10-1",
+    "prompt": "Validate data.json for: Unit 10/lesson 1 (What is an Error). Ensure web/public/lessons/N-M.json matches. If invalid, fix JSON only. Add a tiny smoke note file web/src/content/checks/10-1.md listing title+practice count. Do not edit unrelated lessons."
+  },
+  {
+    "id": 76,
+    "name": "LessonJSON 10-2",
+    "prompt": "Validate data.json for: Unit 10/lesson 2 (Reading Error Messages). Ensure web/public/lessons/N-M.json matches. If invalid, fix JSON only. Add a tiny smoke note file web/src/content/checks/10-2.md listing title+practice count. Do not edit unrelated lessons."
+  },
+  {
+    "id": 77,
+    "name": "LessonJSON 10-3",
+    "prompt": "Validate data.json for: Unit 10/lesson 3 (Common Errors). Ensure web/public/lessons/N-M.json matches. If invalid, fix JSON only. Add a tiny smoke note file web/src/content/checks/10-3.md listing title+practice count. Do not edit unrelated lessons."
+  },
+  {
+    "id": 78,
+    "name": "LessonJSON 10-4",
+    "prompt": "Validate data.json for: Unit 10/lesson 4 (try). Ensure web/public/lessons/N-M.json matches. If invalid, fix JSON only. Add a tiny smoke note file web/src/content/checks/10-4.md listing title+practice count. Do not edit unrelated lessons."
+  },
+  {
+    "id": 79,
+    "name": "LessonJSON 10-5",
+    "prompt": "Validate data.json for: Unit 10/lesson 5 (except). Ensure web/public/lessons/N-M.json matches. If invalid, fix JSON only. Add a tiny smoke note file web/src/content/checks/10-5.md listing title+practice count. Do not edit unrelated lessons."
+  },
+  {
+    "id": 80,
+    "name": "LessonJSON 10-6",
+    "prompt": "Validate data.json for: Unit 10/lesson 6 (Friendly Messages). Ensure web/public/lessons/N-M.json matches. If invalid, fix JSON only. Add a tiny smoke note file web/src/content/checks/10-6.md listing title+practice count. Do not edit unrelated lessons."
+  },
+  {
+    "id": 81,
+    "name": "LessonJSON 10-7",
+    "prompt": "Validate data.json for: Unit 10/lesson 7 (Specific except). Ensure web/public/lessons/N-M.json matches. If invalid, fix JSON only. Add a tiny smoke note file web/src/content/checks/10-7.md listing title+practice count. Do not edit unrelated lessons."
+  },
+  {
+    "id": 82,
+    "name": "LessonJSON 10-8",
+    "prompt": "Validate data.json for: Unit 10/lesson 8 (Error Practice). Ensure web/public/lessons/N-M.json matches. If invalid, fix JSON only. Add a tiny smoke note file web/src/content/checks/10-8.md listing title+practice count. Do not edit unrelated lessons."
+  },
+  {
+    "id": 83,
+    "name": "LessonJSON 11-1",
+    "prompt": "Validate data.json for: Unit 11/lesson 1 (Why Import). Ensure web/public/lessons/N-M.json matches. If invalid, fix JSON only. Add a tiny smoke note file web/src/content/checks/11-1.md listing title+practice count. Do not edit unrelated lessons."
+  },
+  {
+    "id": 84,
+    "name": "LessonJSON 11-2",
+    "prompt": "Validate data.json for: Unit 11/lesson 2 (import module). Ensure web/public/lessons/N-M.json matches. If invalid, fix JSON only. Add a tiny smoke note file web/src/content/checks/11-2.md listing title+practice count. Do not edit unrelated lessons."
+  },
+  {
+    "id": 85,
+    "name": "LessonJSON 11-3",
+    "prompt": "Validate data.json for: Unit 11/lesson 3 (module.name). Ensure web/public/lessons/N-M.json matches. If invalid, fix JSON only. Add a tiny smoke note file web/src/content/checks/11-3.md listing title+practice count. Do not edit unrelated lessons."
+  },
+  {
+    "id": 86,
+    "name": "LessonJSON 11-4",
+    "prompt": "Validate data.json for: Unit 11/lesson 4 (from import). Ensure web/public/lessons/N-M.json matches. If invalid, fix JSON only. Add a tiny smoke note file web/src/content/checks/11-4.md listing title+practice count. Do not edit unrelated lessons."
+  },
+  {
+    "id": 87,
+    "name": "LessonJSON 11-5",
+    "prompt": "Validate data.json for: Unit 11/lesson 5 (random). Ensure web/public/lessons/N-M.json matches. If invalid, fix JSON only. Add a tiny smoke note file web/src/content/checks/11-5.md listing title+practice count. Do not edit unrelated lessons."
+  },
+  {
+    "id": 88,
+    "name": "LessonJSON 11-6",
+    "prompt": "Validate data.json for: Unit 11/lesson 6 (math Tools). Ensure web/public/lessons/N-M.json matches. If invalid, fix JSON only. Add a tiny smoke note file web/src/content/checks/11-6.md listing title+practice count. Do not edit unrelated lessons."
+  },
+  {
+    "id": 89,
+    "name": "LessonJSON 11-7",
+    "prompt": "Validate data.json for: Unit 11/lesson 7 (Combining Modules). Ensure web/public/lessons/N-M.json matches. If invalid, fix JSON only. Add a tiny smoke note file web/src/content/checks/11-7.md listing title+practice count. Do not edit unrelated lessons."
+  },
+  {
+    "id": 90,
+    "name": "LessonJSON 11-8",
+    "prompt": "Validate data.json for: Unit 11/lesson 8 (Mini Toolkit). Ensure web/public/lessons/N-M.json matches. If invalid, fix JSON only. Add a tiny smoke note file web/src/content/checks/11-8.md listing title+practice count. Do not edit unrelated lessons."
+  },
+  {
+    "id": 91,
+    "name": "LessonJSON 12-1",
+    "prompt": "Validate data.json for: Unit 12/lesson 1 (Why Classes). Ensure web/public/lessons/N-M.json matches. If invalid, fix JSON only. Add a tiny smoke note file web/src/content/checks/12-1.md listing title+practice count. Do not edit unrelated lessons."
+  },
+  {
+    "id": 92,
+    "name": "LessonJSON 12-2",
+    "prompt": "Validate data.json for: Unit 12/lesson 2 (Your First Class). Ensure web/public/lessons/N-M.json matches. If invalid, fix JSON only. Add a tiny smoke note file web/src/content/checks/12-2.md listing title+practice count. Do not edit unrelated lessons."
+  },
+  {
+    "id": 93,
+    "name": "LessonJSON 12-3",
+    "prompt": "Validate data.json for: Unit 12/lesson 3 (Objects). Ensure web/public/lessons/N-M.json matches. If invalid, fix JSON only. Add a tiny smoke note file web/src/content/checks/12-3.md listing title+practice count. Do not edit unrelated lessons."
+  },
+  {
+    "id": 94,
+    "name": "LessonJSON 12-4",
+    "prompt": "Validate data.json for: Unit 12/lesson 4 (Attributes). Ensure web/public/lessons/N-M.json matches. If invalid, fix JSON only. Add a tiny smoke note file web/src/content/checks/12-4.md listing title+practice count. Do not edit unrelated lessons."
+  },
+  {
+    "id": 95,
+    "name": "LessonJSON 12-5",
+    "prompt": "Validate data.json for: Unit 12/lesson 5 (Methods). Ensure web/public/lessons/N-M.json matches. If invalid, fix JSON only. Add a tiny smoke note file web/src/content/checks/12-5.md listing title+practice count. Do not edit unrelated lessons."
+  },
+  {
+    "id": 96,
+    "name": "LessonJSON 12-6",
+    "prompt": "Validate data.json for: Unit 12/lesson 6 (self). Ensure web/public/lessons/N-M.json matches. If invalid, fix JSON only. Add a tiny smoke note file web/src/content/checks/12-6.md listing title+practice count. Do not edit unrelated lessons."
+  },
+  {
+    "id": 97,
+    "name": "LessonJSON 12-7",
+    "prompt": "Validate data.json for: Unit 12/lesson 7 (__init__). Ensure web/public/lessons/N-M.json matches. If invalid, fix JSON only. Add a tiny smoke note file web/src/content/checks/12-7.md listing title+practice count. Do not edit unrelated lessons."
+  },
+  {
+    "id": 98,
+    "name": "LessonJSON 12-8",
+    "prompt": "Validate data.json for: Unit 12/lesson 8 (More __init__). Ensure web/public/lessons/N-M.json matches. If invalid, fix JSON only. Add a tiny smoke note file web/src/content/checks/12-8.md listing title+practice count. Do not edit unrelated lessons."
+  },
+  {
+    "id": 99,
+    "name": "LessonJSON 12-9",
+    "prompt": "Validate data.json for: Unit 12/lesson 9 (Objects Together). Ensure web/public/lessons/N-M.json matches. If invalid, fix JSON only. Add a tiny smoke note file web/src/content/checks/12-9.md listing title+practice count. Do not edit unrelated lessons."
+  },
+  {
+    "id": 100,
+    "name": "LessonJSON 12-10",
+    "prompt": "Validate data.json for: Unit 12/lesson 10 (Designing with Classes). Ensure web/public/lessons/N-M.json matches. If invalid, fix JSON only. Add a tiny smoke note file web/src/content/checks/12-10.md listing title+practice count. Do not edit unrelated lessons."
+  }
+]

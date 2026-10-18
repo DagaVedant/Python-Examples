@@ -1,0 +1,154 @@
+{
+  "format": "v2",
+  "unit": 6,
+  "lesson": 7,
+  "unitLessons": 10,
+  "unitTitle": "Lists",
+  "title": "for over Lists",
+  "readTime": 22,
+  "goal": "In this lesson you will learn how to visit every item in a list with a for loop.",
+  "learn": [
+    "for item in list visits each value",
+    "The loop variable holds the current item",
+    "You can print or use each item"
+  ],
+  "idea": "A <code>for</code> loop can walk through a list one item at a time:\n\n    <code>for name in team:</code>\n\n    Each time, <code>name</code> holds the current value. This is how you print every item without writing a separate line for each one.",
+  "code": {
+    "filename": "visit.py",
+    "lines": [
+      "team = [\"Ava\", \"Ben\", \"Cara\"]",
+      "",
+      "for name in team:",
+      "    print(\"Hello,\", name)",
+      "",
+      "scores = [80, 90, 75]",
+      "for score in scores:",
+      "    print(\"Score:\", score)"
+    ],
+    "output": [
+      "Hello, Ava",
+      "Hello, Ben",
+      "Hello, Cara",
+      "Score: 80",
+      "Score: 90",
+      "Score: 75"
+    ]
+  },
+  "changeOneLine": "In the editor above, change <code>\"Hello,\"</code> to <code>\"Hi,\"</code>. Press <strong>Run</strong>. Each greeting should start with <code>Hi,</code>.",
+  "code2": {
+    "filename": "levels.py",
+    "lines": [
+      "levels = [1, 2, 3, 4]",
+      "for level in levels:",
+      "    print(\"Level\", level)"
+    ],
+    "output": [
+      "Level 1",
+      "Level 2",
+      "Level 3",
+      "Level 4"
+    ]
+  },
+  "practice": [
+    {
+      "text": "Loop over the fruit list and print each fruit on its own line.",
+      "hint": "Write for something in fruit: — pick any name for the loop variable, then indent a print line underneath.",
+      "starterTip": "For example: for f in fruit: then print(f) indented four spaces.",
+      "starter": "fruit = [\"apple\", \"banana\", \"cherry\"]\n# for loop here\n",
+      "gradingNote": "Pass if a for loop prints each item in fruit."
+    },
+    {
+      "text": "Print each number in <code>nums</code> with the word <code>n:</code> in front.",
+      "hint": "Inside print(), you can combine text and the variable with a comma, like print(\"n:\", n).",
+      "starterTip": "Fill the empty print with something like print(\"n:\", n) so each number gets a label.",
+      "starter": "nums = [2, 4, 6]\nfor n in nums:\n    print()",
+      "gradingNote": "Pass if each number is printed with a label like n: 2."
+    }
+  ],
+  "quiz": [
+    {
+      "question": "What does <code>for x in items:</code> do?",
+      "options": [
+        {
+          "text": "Deletes items",
+          "correct": false
+        },
+        {
+          "text": "Visits each item, setting x to the current value",
+          "correct": true
+        },
+        {
+          "text": "Only visits the first item",
+          "correct": false
+        },
+        {
+          "text": "Sorts the list first",
+          "correct": false
+        }
+      ],
+      "correct": "The loop variable gets each list value in order.",
+      "wrong": "for walks through every item from start to end."
+    },
+    {
+      "question": "How many times does the loop body run for a 5-item list?",
+      "options": [
+        {
+          "text": "1",
+          "correct": false
+        },
+        {
+          "text": "5",
+          "correct": true
+        },
+        {
+          "text": "0",
+          "correct": false
+        },
+        {
+          "text": "Always 10",
+          "correct": false
+        }
+      ],
+      "correct": "Once per item — five items means five passes.",
+      "wrong": "The body runs once for each item in the list."
+    },
+    {
+      "question": "In <code>for name in team:</code>, what is name?",
+      "options": [
+        {
+          "text": "The whole list",
+          "correct": false
+        },
+        {
+          "text": "The current item from the list",
+          "correct": true
+        },
+        {
+          "text": "Always the last item only",
+          "correct": false
+        },
+        {
+          "text": "A comment",
+          "correct": false
+        }
+      ],
+      "correct": "name is the loop variable holding the current value.",
+      "wrong": "Each pass, name is one item from team."
+    }
+  ],
+  "project": {
+    "title": "Attendance Roll",
+    "desc": "Loop over a list of five classmates and print each name with the word Present.",
+    "starter": "classmates = [\"Ava\", \"Ben\", \"Cara\", \"Diego\", \"Eve\"]\n# Print: Present Ava (and so on)\n"
+  },
+  "prev": {
+    "unit": 6,
+    "lesson": 6,
+    "title": "remove and pop"
+  },
+  "next": {
+    "unit": 6,
+    "lesson": 8,
+    "title": "Totals from Lists"
+  }
+}

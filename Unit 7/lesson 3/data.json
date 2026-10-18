@@ -1,0 +1,165 @@
+{
+  "format": "v2",
+  "unit": 7,
+  "lesson": 3,
+  "unitLessons": 8,
+  "unitTitle": "2D Lists",
+  "title": "Cells and Columns",
+  "readTime": 23,
+  "goal": "In this lesson you will learn how to read one cell with two indexes and how to read a column down the grid.",
+  "learn": [
+    "grid[row][col] picks one cell",
+    "Row comes first, then column",
+    "Loop rows and use the same column index"
+  ],
+  "idea": "One <strong>cell</strong> needs two indexes: first the row, then the column. <code>grid[1][2]</code> means row 1, column 2.\n\n    To read a <strong>column</strong>, loop through each row and print the same column index each time.",
+  "code": {
+    "filename": "cells.py",
+    "lines": [
+      "grid = [",
+      "    [1, 2, 3],",
+      "    [4, 5, 6],",
+      "    [7, 8, 9],",
+      "]",
+      "",
+      "print(\"Center:\", grid[1][1])",
+      "print(\"Top-right:\", grid[0][2])",
+      "print(\"Bottom-left:\", grid[2][0])",
+      "",
+      "# Column 1 (middle column)",
+      "print(\"Column 1:\")",
+      "print(grid[0][1])",
+      "print(grid[1][1])",
+      "print(grid[2][1])"
+    ],
+    "output": [
+      "Center: 5",
+      "Top-right: 3",
+      "Bottom-left: 7",
+      "Column 1:",
+      "2",
+      "5",
+      "8"
+    ]
+  },
+  "changeOneLine": "In the editor above, change <code>grid[1][1]</code> in the first print to <code>grid[2][2]</code>. Press <strong>Run</strong>. The first line should show <code>Center: 9</code> (even if the label still says Center).",
+  "code2": {
+    "filename": "col_loop.py",
+    "lines": [
+      "grid = [",
+      "    [1, 2, 3],",
+      "    [4, 5, 6],",
+      "    [7, 8, 9],",
+      "]",
+      "for row in grid:",
+      "    print(row[0])"
+    ],
+    "output": [
+      "1",
+      "4",
+      "7"
+    ]
+  },
+  "practice": [
+    {
+      "text": "Print the center cell of the 3x3 grid.",
+      "hint": "One cell needs two indexes: row first, then column. The center is the middle row and middle column — both index 1.",
+      "starterTip": "Use print(grid[1][1]) — that should show 5.",
+      "starter": "grid = [\n    [1, 2, 3],\n    [4, 5, 6],\n    [7, 8, 9],\n]\nprint()",
+      "gradingNote": "Pass if grid[1][1] is printed (value 5)."
+    },
+    {
+      "text": "Print every value in column 2 (the right column) using a loop.",
+      "hint": "Each time through the loop, row is one full row list. The right column is always at index 2 in every row.",
+      "starterTip": "Inside the loop, use print(row[2]) so you get 3, then 6, then 9.",
+      "starter": "grid = [\n    [1, 2, 3],\n    [4, 5, 6],\n    [7, 8, 9],\n]\nfor row in grid:\n    print()",
+      "gradingNote": "Pass if the loop prints 3, 6, and 9 via row[2]."
+    }
+  ],
+  "quiz": [
+    {
+      "question": "What does <code>grid[2][0]</code> mean?",
+      "options": [
+        {
+          "text": "Row 0, column 2",
+          "correct": false
+        },
+        {
+          "text": "Row 2, column 0",
+          "correct": true
+        },
+        {
+          "text": "The whole second row",
+          "correct": false
+        },
+        {
+          "text": "Always the number 20",
+          "correct": false
+        }
+      ],
+      "correct": "First index is row; second is column.",
+      "wrong": "Remember: row first, then column."
+    },
+    {
+      "question": "In a 3x3 number grid 1–9, what is <code>grid[0][2]</code>?",
+      "options": [
+        {
+          "text": "1",
+          "correct": false
+        },
+        {
+          "text": "3",
+          "correct": true
+        },
+        {
+          "text": "7",
+          "correct": false
+        },
+        {
+          "text": "9",
+          "correct": false
+        }
+      ],
+      "correct": "Top row is [1,2,3], so column 2 is 3.",
+      "wrong": "Row 0 is the top row; index 2 is the right cell."
+    },
+    {
+      "question": "How do you read one column?",
+      "options": [
+        {
+          "text": "Use one index only on the outer list",
+          "correct": false
+        },
+        {
+          "text": "Loop each row and use the same column index",
+          "correct": true
+        },
+        {
+          "text": "Call grid.column()",
+          "correct": false
+        },
+        {
+          "text": "Columns cannot be read in Python",
+          "correct": false
+        }
+      ],
+      "correct": "Visit every row and pick the same column spot.",
+      "wrong": "for row in grid: print(row[col]) is the pattern."
+    }
+  ],
+  "project": {
+    "title": "Corner Check",
+    "desc": "Print all four corner cells of a 3x3 grid, then print the middle column top to bottom.",
+    "starter": "grid = [\n    [1, 2, 3],\n    [4, 5, 6],\n    [7, 8, 9],\n]\n# four corners\nprint()\nprint()\nprint()\nprint()\n# middle column\n"
+  },
+  "prev": {
+    "unit": 7,
+    "lesson": 2,
+    "title": "Reading Rows"
+  },
+  "next": {
+    "unit": 7,
+    "lesson": 4,
+    "title": "Changing a Cell"
+  }
+}

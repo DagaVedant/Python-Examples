@@ -1,0 +1,156 @@
+{
+  "format": "v2",
+  "unit": 2,
+  "lesson": 2,
+  "unitLessons": 10,
+  "unitTitle": "Number Calculations & Data",
+  "title": "Multiply and Divide",
+  "readTime": 20,
+  "goal": "In this lesson you will learn how Python multiplies with * and divides with /.",
+  "learn": [
+    "Multiply numbers with *",
+    "Divide numbers with /",
+    "Save a product or quotient in a variable"
+  ],
+  "idea": "In Python, multiplication uses a star <code>*</code> (not ×). Division uses a slash <code>/</code>.\n\n<code>4 * 3</code> means 4 times 3. <code>12 / 3</code> means 12 divided by 3.\n\nDivision with <code>/</code> often gives a decimal answer, even when it divides evenly.",
+  "code": {
+    "filename": "times_divide.py",
+    "lines": [
+      "# Multiply",
+      "print(6 * 4)",
+      "print(10 * 10)",
+      "",
+      "# Divide",
+      "print(20 / 4)",
+      "print(15 / 2)",
+      "",
+      "# Store a result",
+      "packs = 5",
+      "each = 8",
+      "total = packs * each",
+      "print(\"Stickers:\", total)"
+    ],
+    "output": [
+      "24",
+      "100",
+      "5.0",
+      "7.5",
+      "Stickers: 40"
+    ]
+  },
+  "changeOneLine": "In the editor above, change <code>each = 8</code> to <code>each = 10</code>. Press <strong>Run</strong>. The last line should say <code>Stickers: 50</code>.",
+  "code2": {
+    "filename": "sharing.py",
+    "lines": [
+      "candies = 24",
+      "friends = 4",
+      "each = candies / friends",
+      "print(\"Each friend gets:\", each)"
+    ],
+    "output": [
+      "Each friend gets: 6.0"
+    ]
+  },
+  "practice": [
+    {
+      "text": "There are 7 rows of chairs with 9 chairs in each row. Finish the code so it prints the total chairs.",
+      "hint": "Total chairs means rows times per row. Use the * operator with the two variables already set up.",
+      "starterTip": "Try total = rows * per_row on the blank line before the print.",
+      "starter": "rows = 7\nper_row = 9\n# Multiply to get total\ntotal = \nprint(\"Chairs:\", total)",
+      "gradingNote": "Pass if total is 63 (7*9) and printed. Must use *."
+    },
+    {
+      "text": "Divide 48 by 6 and print the result labeled like <code>Groups: 8.0</code>.",
+      "hint": "Put \"Groups:\" in quotes, then a comma, then 48 / 6 so Python divides and shows a decimal.",
+      "starterTip": "Try print(\"Groups:\", 48 / 6) in the empty print() line.",
+      "starter": "# Print Groups: then 48 / 6\nprint()",
+      "gradingNote": "Pass if output shows Groups: and 8.0 (or 8). Must use /."
+    }
+  ],
+  "quiz": [
+    {
+      "question": "Which symbol multiplies in Python?",
+      "options": [
+        {
+          "text": "x",
+          "correct": false
+        },
+        {
+          "text": "*",
+          "correct": true
+        },
+        {
+          "text": "×",
+          "correct": false
+        },
+        {
+          "text": "^",
+          "correct": false
+        }
+      ],
+      "correct": "Python uses * for multiply.",
+      "wrong": "Write * between numbers, like 3 * 4."
+    },
+    {
+      "question": "What does <code>print(8 / 2)</code> show?",
+      "options": [
+        {
+          "text": "4",
+          "correct": false
+        },
+        {
+          "text": "4.0",
+          "correct": true
+        },
+        {
+          "text": "82",
+          "correct": false
+        },
+        {
+          "text": "An error",
+          "correct": false
+        }
+      ],
+      "correct": "Division with / returns a float, so you see 4.0.",
+      "wrong": "Even when it divides evenly, / gives a decimal like 4.0."
+    },
+    {
+      "question": "What is <code>5 * 3</code>?",
+      "options": [
+        {
+          "text": "8",
+          "correct": false
+        },
+        {
+          "text": "53",
+          "correct": false
+        },
+        {
+          "text": "15",
+          "correct": true
+        },
+        {
+          "text": "2",
+          "correct": false
+        }
+      ],
+      "correct": "5 times 3 is 15.",
+      "wrong": "* multiplies: 5 × 3 = 15."
+    }
+  ],
+  "project": {
+    "title": "Cookie Packs",
+    "desc": "You have 6 packs of cookies. Each pack has 12 cookies. Multiply to find the total, then divide by 4 friends. Print how many each friend gets.",
+    "starter": "packs = 6\nper_pack = 12\ntotal = \nfriends = 4\neach = \nprint(\"Each friend:\", each)"
+  },
+  "prev": {
+    "unit": 2,
+    "lesson": 1,
+    "title": "Plus and Minus"
+  },
+  "next": {
+    "unit": 2,
+    "lesson": 3,
+    "title": "Order of Operations"
+  }
+}
