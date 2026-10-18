@@ -3,7 +3,7 @@
   --quiz-green-lt: var(--green-lt, #f0fdf4);
   --quiz-red: var(--red, #dc2626);
   --quiz-red-lt: var(--red-lt, #fef2f2);
-  --quiz-blue: var(--navy, #1f3a5f);
+  --quiz-blue: var(--blue-tx, #1f3a5f);
   --quiz-surface2: var(--surface2, #f0f2f5);
   --quiz-border2: var(--border2, #d1d5db);
   --quiz-rlg: var(--rlg, 14px);

@@ -1,6 +1,6 @@
 .unit-progress {
   font-size: 12px;
-  color: #9ca3af;
+  color: var(--text2);
   flex-shrink: 0;
 }
 

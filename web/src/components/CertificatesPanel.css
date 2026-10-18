@@ -27,7 +27,7 @@ body.dark .certificates-heading {
 .certificates-blurb {
   margin: 0 0 14px;
   font-size: 13px;
-  color: #6b7280;
+  color: var(--text2);
   line-height: 1.45;
 }
 

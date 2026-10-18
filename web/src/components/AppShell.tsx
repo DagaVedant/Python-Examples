@@ -13,6 +13,7 @@ function readTheme(): Theme {
 }
 
 function applyBodyTheme(theme: Theme) {
+  document.documentElement.classList.toggle('dark', theme === 'dark');
   document.body.classList.toggle('dark', theme === 'dark');
 }
 
@@ -102,9 +103,9 @@ function MoonIcon() {
 
 function navStyle(isDark: boolean): React.CSSProperties {
   return {
-    background: isDark ? '#1a1d27' : '#ffffff',
-    borderBottom: `1px solid ${isDark ? '#2d3148' : '#e2e5ea'}`,
-    padding: '14px 24px',
+    background: 'var(--bg)',
+    borderBottom: '1px solid var(--border)',
+    padding: '14px clamp(20px, 6vw, 120px)',
     position: 'sticky',
     top: 0,
     zIndex: 100,
@@ -119,7 +120,7 @@ function brandStyle(isDark: boolean): React.CSSProperties {
   return {
     fontWeight: 600,
     fontSize: 15,
-    color: isDark ? '#93b4e0' : '#1f3a5f',
+    color: 'var(--blue-tx)',
     textDecoration: 'none',
   };
 }
@@ -134,11 +135,11 @@ function accountLinkStyle(isDark: boolean): React.CSSProperties {
   return {
     fontSize: 13,
     fontWeight: 500,
-    color: isDark ? '#93b4e0' : '#1f3a5f',
+    color: 'var(--blue-tx)',
     padding: '6px 12px',
-    border: `1px solid ${isDark ? '#2d3148' : '#e2e5ea'}`,
+    border: '1px solid var(--border)',
     borderRadius: 8,
-    background: isDark ? '#222535' : '#f7f8fa',
+    background: 'var(--surface)',
     textDecoration: 'none',
   };
 }
@@ -156,13 +157,13 @@ function themeBtnStyle(isDark: boolean): React.CSSProperties {
     width: 36,
     height: 36,
     borderRadius: '50%',
-    background: isDark ? '#222535' : '#f0f2f5',
-    border: `1px solid ${isDark ? '#2d3148' : '#e2e5ea'}`,
+    background: 'var(--surface)',
+    border: '1px solid var(--border)',
     cursor: 'pointer',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    color: isDark ? '#9da3b4' : '#4b5563',
+    color: 'var(--text2)',
     transition: 'background 0.2s, border-color 0.2s, color 0.2s',
   };
 }

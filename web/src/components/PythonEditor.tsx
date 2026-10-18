@@ -3,6 +3,7 @@ import { python } from '@codemirror/lang-python';
 import { oneDark } from '@codemirror/theme-one-dark';
 import { Compartment } from '@codemirror/state';
 import { EditorView, basicSetup } from 'codemirror';
+import { useBodyTheme } from '../hooks/useBodyTheme';
 
 export type PythonEditorTheme = 'light' | 'dark';
 
@@ -20,9 +21,9 @@ function themeExtensions(theme: PythonEditorTheme) {
 export function PythonEditor({
   value,
   onChange,
-  theme = 'light',
   className,
 }: PythonEditorProps) {
+  const theme = useBodyTheme();
   const containerRef = useRef<HTMLDivElement>(null);
   const viewRef = useRef<EditorView | null>(null);
   const themeCompartment = useRef(new Compartment());

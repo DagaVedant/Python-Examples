@@ -13,6 +13,37 @@
   color: var(--cert-ink);
 }
 
+body.dark .certificate-page {
+  --cert-navy: #93b4e0;
+  --cert-navy-mid: #7fa3d4;
+  --cert-ink: #e8eaf0;
+  --cert-muted: #9da3b4;
+  --cert-line: #2a2f3a;
+  --cert-paper: #171a22;
+  --cert-cream: #1d212b;
+  background: linear-gradient(160deg, #0f1117 0%, #141720 45%, #0f1117 100%);
+}
+
+body.dark .certificate-page .name-field input {
+  background: var(--bg);
+}
+
+body.dark .certificate-page .certificate {
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+}
+
+@media print {
+  body.dark .certificate-page {
+    --cert-navy: #1f3a5f;
+    --cert-navy-mid: #2a4d7a;
+    --cert-ink: #1a2332;
+    --cert-muted: #5b6575;
+    --cert-line: #c5d0e0;
+    --cert-paper: #fafbfc;
+    --cert-cream: #f3f6fa;
+  }
+}
+
 .certificate-page .toolbar {
   max-width: 820px;
   margin: 0 auto 20px;
@@ -56,7 +87,7 @@
   border: 1px solid var(--cert-line);
   border-radius: 8px;
   min-width: 160px;
-  background: white;
+  background: var(--bg);
   color: var(--cert-ink);
 }
 
@@ -315,5 +346,15 @@
     flex-direction: column;
     justify-content: center;
     page-break-inside: avoid;
+  }
+}
+
+body.dark .certificate-page .print-btn {
+  color: #0f1117;
+}
+
+@media print {
+  body.dark .certificate-page .print-btn {
+    color: #fff;
   }
 }

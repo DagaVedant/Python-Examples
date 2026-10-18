@@ -1,5 +1,5 @@
 .lesson-page {
-  padding: 1.5rem 1.25rem 3rem;
+  padding: 1.5rem clamp(20px, 6vw, 120px) 3rem;
 }
 
 .lesson-wrap {
@@ -203,21 +203,22 @@ body.dark .lesson-progress-fill {
 .lesson-output-box {
   padding: 0.65rem 0.85rem;
   border-top: 1px solid var(--border);
-  background: #11111b;
-  color: #cdd6f4;
+  background: #f0f4f8;
+  color: #166534;
   font-family: ui-monospace, monospace;
   font-size: 13px;
 }
 
 body.dark .lesson-output-box {
-  background: #0c0c12;
+  background: #181825;
+  color: #a6e3a1;
 }
 
 .lesson-output-label {
   font-size: 11px;
   text-transform: uppercase;
   letter-spacing: 0.04em;
-  color: #6c7086;
+  color: var(--text2);
   margin-bottom: 0.35rem;
 }
 
@@ -230,7 +231,7 @@ body.dark .lesson-output-box {
 }
 
 .lesson-output-line--muted {
-  color: #6c7086;
+  color: var(--text2);
 }
 
 .lesson-try-step {
