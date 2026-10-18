@@ -1,98 +1,76 @@
-# Python Examples
+# Learn Python
 
-An interactive Python learning course for beginners, all in your browser. No downloads, no paywalls. Its broken into small units with the basic fundamental skills, with tons of lessons including code examples, lesson goals, mini quizzes, practice problems, and projects. Basically everything you need to finally learn Python!!!
+A free, browser-based Python course for total beginners. 110 short lessons, a real code editor, quizzes, and practice tasks. No install required.
 
-## Live Demo
+**Live site:** [https://pythonexamples.vercel.app](https://pythonexamples.vercel.app)
 
-Try it here: [https://dagavedant.github.io/Python-Examples/](https://dagavedant.github.io/Python-Examples/)
+![Course homepage](web/public/images/preview.png)
 
-Every lesson is free. No account needed. You can read them, run real Python right in the browser (including input()), and take the quizzes. After your first lesson, you can optionally create a free account to save progress across devices and get AI feedback on practice code.
+## Features
 
-## Quick Peak
+- 110 lessons across 12 units, one idea per lesson
+- In-browser Python via Pyodide (including `input()`)
+- CodeMirror 6 editor for examples and practice
+- Quiz and practice tasks in every lesson
+- Optional free account to save progress across devices
+- AI practice feedback for signed-in users (via OpenRouter, server-side)
+- Guest progress stored in the browser with localStorage
+- Certificates when you finish a unit
 
-![How it looks](public/images/preview.png)
+## Stack
 
-Theres also a short demo video at `public/video/demo.mp4` if you want to see it in action.
+- React + TypeScript + Vite (`web/`)
+- React Router for pages
+- Supabase for auth and progress
+- Pyodide for Python in the browser
+- CodeMirror 6 for the editor
+- Hosted on Vercel
 
-## What You Get
+Lesson content lives in `Unit N/lesson M/data.json` and is loaded through the `@content` alias at build time.
 
-- 110 short lessons across 12 units (AP CSP style. One idea per lesson), from your first program through dictionaries, files, errors, imports, and classes
-- A built in code editor with line wrapping and AI feedback on your practice code
-- Optional free account to save progress across devices and unlock AI practice checks
-- A quiz and two practice tasks in every lesson
-
-## How does it Work
-
-Its a static site (just HTML, CSS, and JS) with a [Supabase](https://supabase.com) backend doing the heavy lifting:
-
-- An optional account stores lesson progress in Supabase so it follows you across devices.
-- Your practice code gets checked by a Supabase function that uses AI. The API key stays on the server, so its never exposed in the browser.
-- Each lesson loads all its content from a `data.js` file inside `Unit X/lesson Y/`. The `lesson.html` page reads the `?unit=` and `?lesson=` from the URL and renders the right lesson automatically.
-
-## Running it Locally
-
-Since its all static, you can serve the folder with pretty much anything:
+## Run locally
 
 ```bash
-python -m http.server 8000
+cd web
+npm install
+npm run dev
 ```
 
-Then open `http://localhost:8000` in your browser.
+Open the URL Vite prints (usually `http://localhost:5173`).
 
-You dont even need Python installed to follow the lessons in the browser, but if you want to run the practice code in your own editor you'll need Python 3.x. I love VS Code, but any IDE works perfect.
+Copy `web/.env.example` to `web/.env.local` and fill in your Supabase keys if you want auth and progress sync. The course still works without them for guest browsing.
 
-## The Course
+## Build
 
-Each unit is split into short lessons. One idea at a time. Like an AP CSP unit plan.
+```bash
+cd web
+npm run build
+npm run preview
+```
 
-### Unit 1 - Getting Started with Python (10)
-What is a Program · print() Basics · Comments · Many Lines of Output · Strings and Quotes · Fancy print() · Variables · Changing Variables · Using Answers · Data Types & Casting
+## Deploy
 
-### Unit 2 - Number Calculations & Data (10)
-Plus and Minus · Multiply and Divide · Order of Operations · Float Division · Integer Division · Remainder · Text into Numbers · Multi-step Math · The math Module · Useful math Tools
+The repo root `vercel.json` builds the Vite app from `web/` and serves `web/dist`. Connect the GitHub repo to a Vercel project, set the same env vars as local (Supabase URL and anon key), and deploy from `main`.
 
-### Unit 3 - Making Decisions (10)
-True and False · Comparing Values · if · else · elif · Many Branches · and · or · not · Complex Conditions
+Site URL used in auth redirects: `https://pythonexamples.vercel.app`
 
-### Unit 4 - Repetition & Loops (10)
-Why Loops · for Loops · range() Basics · range() Start and Step · Looping and Totals · while Loops · while Counters · Loops That Stop Safely · if Inside Loops · Filter with Loops
+## Course outline
 
-### Unit 5 - Functions (8)
-Why Functions · Defining and Calling · One Parameter · Multiple Parameters · Return Values · Using What You Return · Functions Calling Functions · Designing with Functions
+| Unit | Topic | Lessons |
+| --- | --- | --- |
+| 1 | Getting Started with Python | 10 |
+| 2 | Number Calculations and Data | 10 |
+| 3 | Making Decisions | 10 |
+| 4 | Repetition and Loops | 10 |
+| 5 | Functions | 8 |
+| 6 | Lists | 10 |
+| 7 | 2D Lists | 8 |
+| 8 | Dictionaries | 10 |
+| 9 | Files | 8 |
+| 10 | Errors | 8 |
+| 11 | Imports | 8 |
+| 12 | Classes | 10 |
 
-### Unit 6 - Lists (10)
-What is a List · Creating Lists · Indexes · Changing Items · append and insert · remove and pop · for over Lists · Totals from Lists · List Methods · Building Lists
+## License
 
-### Unit 7 - 2D Lists (8)
-Lists Inside Lists · Reading Rows · Cells and Columns · Changing a Cell · Nested Loops · Printing a Grid · Searching a Grid · Grid Mini Project
-
-### Unit 8 - Dictionaries (10)
-What is a Dictionary · Creating Dictionaries · Looking Up Keys · Adding Keys · Updating Values · Removing Keys · Looping Keys · Looping Items · Safe Lookup with get · Dictionary Methods
-
-### Unit 9 - Files (8)
-What is a File · Opening and Reading · Reading Lines · Writing Files · Append Mode · with open · Processing File Text · File Mini Project
-
-### Unit 10 - Errors (8)
-What is an Error · Reading Error Messages · Common Errors · try · except · Friendly Messages · Specific except · Error Practice
-
-### Unit 11 - Imports (8)
-Why Import · import module · module.name · from import · random · math Tools · Combining Modules · Mini Toolkit
-
-### Unit 12 - Classes (10)
-Why Classes · Your First Class · Objects · Attributes · Methods · self · __init__ · More __init__ · Objects Together · Designing with Classes
-
-## Totals
-
-- 12 units
-- 110 lessons
-- 110 projects (one per lesson)
-- 110 quizzes (one per lesson)
-- 220 practice tasks (two per lesson)
-
-## Credits
-
-Its built by Vedant Daga [https://github.com/DagaVedant](https://github.com/DagaVedant)
-
-Also using different fonts from [Google Fonts](https://fonts.google.com)
-
-I have used AI to help with coding (mainly supabase setup) and other integrations, but most of the design was done by me like Figma design for website and I made all the questions and information on the lessons
+See [LICENSE](LICENSE).
