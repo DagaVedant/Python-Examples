@@ -1,13 +1,21 @@
 .roadmap {
-  padding: 0 clamp(20px, 4vw, 72px);
+  padding: 0 clamp(16px, 4vw, 72px);
+  min-width: 0;
 }
 
 .roadmap-route {
   list-style: none;
   position: relative;
-  margin: 28px 0 0 14px;
-  padding: 0 0 0 36px;
+  margin: 28px 0 0 10px;
+  padding: 0 0 0 28px;
   border-left: 2px solid var(--border);
+}
+
+@media (min-width: 480px) {
+  .roadmap-route {
+    margin-left: 14px;
+    padding-left: 36px;
+  }
 }
 
 .roadmap-stop {
@@ -18,13 +26,19 @@
 .roadmap-stop::before {
   content: '';
   position: absolute;
-  left: -46px;
+  left: -38px;
   top: 6px;
   width: 14px;
   height: 14px;
   border-radius: 50%;
   background: var(--bg);
   border: 2px solid var(--text2);
+}
+
+@media (min-width: 480px) {
+  .roadmap-stop::before {
+    left: -46px;
+  }
 }
 
 .roadmap-stop.is-done::before {
@@ -60,8 +74,10 @@
 }
 
 .roadmap-chip {
-  display: inline-block;
-  padding: 4px 11px;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 6px 12px;
   border: 1px solid var(--border);
   border-radius: 999px;
   font-family: var(--font-mono);

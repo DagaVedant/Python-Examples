@@ -8,8 +8,18 @@ export function HeroDemo() {
   const [busy, setBusy] = useState(false);
   const animatingRef = useRef(false);
 
+  const prefersReducedMotion = () =>
+    typeof window !== 'undefined' &&
+    window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
   const typeOutput = useCallback((text: string) => {
     return new Promise<void>((resolve) => {
+      if (prefersReducedMotion()) {
+        setOutput(text);
+        setRunning(false);
+        resolve();
+        return;
+      }
       setRunning(true);
       let i = 0;
       const tick = () => {
@@ -32,7 +42,9 @@ export function HeroDemo() {
     setBusy(true);
     setOutput('');
     setRunning(true);
-    await new Promise((r) => window.setTimeout(r, 280));
+    if (!prefersReducedMotion()) {
+      await new Promise((r) => window.setTimeout(r, 280));
+    }
     await typeOutput(DEMO_OUTPUT);
     setBusy(false);
     animatingRef.current = false;

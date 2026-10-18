@@ -18,9 +18,8 @@ export function NotFoundPage() {
           That link does not match a page on Learn Python. Head home to pick a lesson, or jump into
           lesson 1.
         </p>
-        <div className="auth-link">
+        <div className="auth-link not-found-actions">
           <Link to="/">Back to home</Link>
-          {' · '}
           <Link to="/lesson?unit=1&lesson=1">Start lesson 1</Link>
         </div>
       </div>

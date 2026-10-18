@@ -92,3 +92,15 @@ body.dark .celebrate-badge {
 .theme-btn.sound-muted {
   opacity: 0.55;
 }
+
+@media (prefers-reduced-motion: reduce) {
+  .celebrate-overlay,
+  .celebrate-piece,
+  .celebrate-badge {
+    animation: none !important;
+  }
+
+  .celebrate-overlay {
+    opacity: 0;
+  }
+}

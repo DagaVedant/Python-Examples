@@ -3,7 +3,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 1.5rem;
+  padding: 1.25rem;
   background: var(--surface);
 }
 
@@ -11,9 +11,16 @@
   background: var(--bg);
   border: 1px solid var(--border);
   border-radius: 12px;
-  padding: 32px;
+  padding: 28px 22px;
   width: 100%;
   max-width: 380px;
+  min-width: 0;
+}
+
+@media (min-width: 480px) {
+  .auth-card {
+    padding: 32px;
+  }
 }
 
 .auth-card h1 {
@@ -41,8 +48,9 @@
   width: 100%;
   border: 1px solid var(--border);
   border-radius: 8px;
+  min-height: 44px;
   padding: 10px 12px;
-  font-size: 14px;
+  font-size: 16px;
   font-family: inherit;
   margin-bottom: 14px;
   background: var(--bg);
@@ -51,11 +59,17 @@
 
 .auth-card input:focus {
   outline: none;
-  border-color: #2563eb;
+  border-color: var(--blue-tx);
+}
+
+.auth-card input:focus-visible {
+  outline: 2px solid var(--blue-tx);
+  outline-offset: 1px;
 }
 
 .auth-card button[type='submit'] {
   width: 100%;
+  min-height: 44px;
   padding: 11px;
   border-radius: 8px;
   border: none;
@@ -66,6 +80,11 @@
   margin-bottom: 8px;
   background: var(--navy);
   color: white;
+}
+
+.auth-card button[type='submit']:focus-visible {
+  outline: 2px solid var(--blue-tx);
+  outline-offset: 2px;
 }
 
 .auth-card button[type='submit']:disabled {
@@ -81,8 +100,9 @@
 }
 
 .auth-link a {
-  color: #2563eb;
-  text-decoration: none;
+  color: var(--blue-tx);
+  text-decoration: underline;
+  text-underline-offset: 2px;
 }
 
 .auth-error {
@@ -116,8 +136,12 @@ body.dark .auth-success {
 }
 
 .auth-forgot a {
-  color: #2563eb;
-  text-decoration: none;
+  color: var(--blue-tx);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
 }
 
 .auth-card-wide {
@@ -169,6 +193,7 @@ body.dark .auth-success {
   font-weight: 500;
   border-radius: 8px;
   cursor: pointer;
+  min-height: 44px;
   padding: 10px 14px;
 }
 
@@ -193,8 +218,10 @@ body.dark .auth-success {
 .auth-text-btn {
   background: none;
   border: none;
-  color: #2563eb;
-  padding: 0;
+  color: var(--blue-tx);
+  padding: 0 4px;
+  display: inline-flex;
+  align-items: center;
 }
 
 .legal-page {
@@ -223,17 +250,18 @@ body.dark .auth-success {
 }
 
 .legal-card a {
-  color: #2563eb;
-  text-decoration: none;
+  color: var(--blue-tx);
+  text-decoration: underline;
+  text-underline-offset: 2px;
 }
 
 .site-footer {
   border-top: 1px solid var(--border);
   background: var(--bg);
-  padding: 18px clamp(20px, 6vw, 120px);
+  padding: 14px clamp(16px, 6vw, 120px);
   display: flex;
   flex-wrap: wrap;
-  gap: 10px 20px;
+  gap: 8px 16px;
   align-items: center;
   justify-content: space-between;
   font-size: 13px;
@@ -243,23 +271,34 @@ body.dark .auth-success {
 .site-footer-links {
   display: flex;
   flex-wrap: wrap;
-  gap: 14px;
+  gap: 4px 8px;
 }
 
 .site-footer a {
   color: var(--blue-tx);
   text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 6px;
 }
 
 .site-footer a:hover {
   text-decoration: underline;
 }
 
+.site-footer a:focus-visible {
+  outline: 2px solid var(--blue-tx);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
 .status-banner {
-  padding: 10px clamp(20px, 6vw, 120px);
+  padding: 10px clamp(16px, 6vw, 120px);
   font-size: 13px;
   line-height: 1.45;
   border-bottom: 1px solid var(--border);
+  overflow-wrap: anywhere;
 }
 
 .status-banner--warn {
@@ -292,10 +331,30 @@ body.dark .status-banner--warn {
   font-family: inherit;
   font-size: 14px;
   font-weight: 500;
+  min-height: 44px;
   padding: 10px 14px;
   border-radius: 8px;
   border: 1px solid var(--border);
   background: var(--surface);
   color: var(--text);
   cursor: pointer;
+}
+
+.not-found-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  justify-content: center;
+  margin-top: 8px;
+}
+
+.not-found-actions a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0 4px;
+  color: var(--blue-tx);
+  text-decoration: underline;
+  text-underline-offset: 2px;
 }

@@ -22,8 +22,8 @@
 .course-tree-search-input {
   box-sizing: border-box;
   width: 100%;
-  min-height: 32px;
-  padding: 6px 8px;
+  min-height: 44px;
+  padding: 8px 10px;
   border: 1px solid var(--border);
   border-radius: 4px;
   background: var(--bg);
@@ -68,8 +68,8 @@
   align-items: center;
   gap: 6px;
   width: 100%;
-  min-height: 36px;
-  padding: 6px;
+  min-height: 44px;
+  padding: 8px 6px;
   border: 0;
   border-radius: 4px;
   background: none;
@@ -120,8 +120,8 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  min-height: 32px;
-  padding: 5px 8px;
+  min-height: 44px;
+  padding: 8px;
   margin-left: -1px;
   border-left: 2px solid transparent;
   color: var(--text2);
@@ -173,15 +173,6 @@ body.dark .course-tree-file.is-done .course-tree-state {
   white-space: nowrap;
 }
 
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
-  white-space: nowrap;
-}
-
 @media (max-width: 960px) {
   .app-split {
     grid-template-columns: minmax(0, 1fr);
@@ -189,9 +180,17 @@ body.dark .course-tree-file.is-done .course-tree-state {
   .course-tree {
     position: static;
     height: auto;
-    max-height: 320px;
+    max-height: 280px;
     border-right: 0;
     border-bottom: 1px solid var(--border);
+    padding: 10px 6px;
+  }
+}
+
+@media (max-width: 400px) {
+  .course-tree {
+    max-height: 240px;
+    font-size: 12px;
   }
 }
 

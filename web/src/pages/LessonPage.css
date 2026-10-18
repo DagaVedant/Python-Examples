@@ -4,7 +4,7 @@
 
 .lesson-main {
   min-width: 0;
-  padding: 1.75rem clamp(20px, 4vw, 72px) 3rem;
+  padding: 1.25rem clamp(16px, 4vw, 72px) 2.5rem;
 }
 
 .lesson-two {
@@ -144,6 +144,24 @@
   }
   .lesson-stepper li {
     flex: 1 1 50%;
+    border-bottom: 1px solid var(--border);
+  }
+  .lesson-stepper li:nth-last-child(-n + 2) {
+    border-bottom: 0;
+  }
+}
+
+@media (max-width: 400px) {
+  .lesson-stepper li {
+    flex: 1 1 100%;
+    border-right: 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .lesson-stepper li:last-child {
+    border-bottom: 0;
+  }
+  .lesson-header h1 {
+    font-size: 1.55rem;
   }
 }
 
@@ -310,6 +328,7 @@ body.dark .lesson-progress-fill {
 
 .lesson-code-head {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   gap: 10px;
@@ -325,7 +344,8 @@ body.dark .lesson-progress-fill {
 }
 
 .lesson-run-btn {
-  padding: 0.35rem 0.9rem;
+  min-height: 44px;
+  padding: 0.45rem 0.9rem;
   border-radius: var(--rsm);
   border: 1px solid var(--border);
   background: var(--bg);
@@ -334,6 +354,11 @@ body.dark .lesson-progress-fill {
   font-weight: 500;
   cursor: pointer;
   font-family: inherit;
+}
+
+.lesson-run-btn:focus-visible {
+  outline: 2px solid var(--blue-tx);
+  outline-offset: 2px;
 }
 
 .lesson-run-btn:hover:not(:disabled) {
@@ -401,6 +426,7 @@ body.dark .lesson-output-box {
   display: inline-flex;
   align-items: center;
   gap: 6px;
+  min-height: 44px;
   padding: 0.55rem 0.9rem;
   border-radius: var(--rsm);
   border: 1px solid var(--border);
@@ -409,6 +435,11 @@ body.dark .lesson-output-box {
   font-size: 13px;
   text-decoration: none;
   max-width: 100%;
+}
+
+.lesson-nav-btn:focus-visible {
+  outline: 2px solid var(--blue-tx);
+  outline-offset: 2px;
 }
 
 .lesson-nav-btn:hover {
@@ -432,4 +463,13 @@ body.dark .lesson-nav-btn--next {
   background: var(--blue-md);
   border-color: var(--blue-md);
   color: #fff;
+}
+
+.lesson-fake-file-body,
+.lesson-code-block {
+  max-width: 100%;
+}
+
+.cm-editor {
+  max-width: 100%;
 }

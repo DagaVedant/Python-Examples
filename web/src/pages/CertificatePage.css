@@ -8,9 +8,16 @@
   --cert-cream: #f3f6fa;
 
   min-height: 100vh;
-  padding: 24px 16px 48px;
+  min-width: 0;
+  padding: 20px 12px 40px;
   background: linear-gradient(160deg, #e8eef5 0%, #f7f8fa 45%, #eef2f7 100%);
   color: var(--cert-ink);
+}
+
+@media (min-width: 480px) {
+  .certificate-page {
+    padding: 24px 16px 48px;
+  }
 }
 
 body.dark .certificate-page {
@@ -66,6 +73,9 @@ body.dark .certificate-page .certificate {
   font-weight: 500;
   color: var(--cert-navy);
   text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
 }
 
 .certificate-page .back:hover {
@@ -74,6 +84,7 @@ body.dark .certificate-page .certificate {
 
 .certificate-page .name-field {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 8px;
   font-size: 13px;
@@ -82,11 +93,13 @@ body.dark .certificate-page .certificate {
 
 .certificate-page .name-field input {
   font-family: inherit;
-  font-size: 14px;
+  font-size: 16px;
+  min-height: 44px;
   padding: 8px 12px;
   border: 1px solid var(--cert-line);
   border-radius: 8px;
-  min-width: 160px;
+  min-width: 0;
+  width: min(100%, 220px);
   background: var(--bg);
   color: var(--cert-ink);
 }
@@ -96,16 +109,28 @@ body.dark .certificate-page .certificate {
   border-color: var(--cert-navy);
 }
 
+.certificate-page .name-field input:focus-visible {
+  outline: 2px solid var(--cert-navy);
+  outline-offset: 1px;
+}
+
 .certificate-page .print-btn {
   font-family: inherit;
   font-size: 14px;
   font-weight: 600;
+  min-height: 44px;
   padding: 10px 18px;
   border: none;
   border-radius: 8px;
   background: var(--cert-navy);
   color: white;
   cursor: pointer;
+}
+
+.certificate-page .print-btn:focus-visible,
+.certificate-page .back:focus-visible {
+  outline: 2px solid var(--cert-navy);
+  outline-offset: 2px;
 }
 
 .certificate-page .print-btn:hover {
@@ -115,15 +140,22 @@ body.dark .certificate-page .certificate {
 .certificate-page .cert-wrap {
   max-width: 820px;
   margin: 0 auto;
+  min-width: 0;
 }
 
 .certificate-page .certificate {
   position: relative;
   background: var(--cert-paper);
   border: 2px solid var(--cert-navy);
-  padding: 48px 40px 40px;
+  padding: 28px 16px 24px;
   box-shadow: 0 12px 40px rgba(31, 58, 95, 0.12);
   overflow: hidden;
+}
+
+@media (min-width: 600px) {
+  .certificate-page .certificate {
+    padding: 48px 40px 40px;
+  }
 }
 
 .certificate-page .certificate::before {
@@ -236,10 +268,12 @@ body.dark .certificate-page .certificate {
   min-height: 1.2em;
   border-bottom: 1.5px solid var(--cert-line);
   display: inline-block;
-  min-width: 220px;
+  min-width: 0;
+  max-width: 100%;
   padding: 0 12px 6px;
   position: relative;
   z-index: 1;
+  overflow-wrap: anywhere;
 }
 
 .certificate-page .achievement {

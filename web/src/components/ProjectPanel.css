@@ -76,9 +76,16 @@ body.dark .project-panel .project-title {
   background: var(--blue-lt);
   border: 1px solid var(--blue-md);
   border-radius: 5px;
-  padding: 3px 10px;
+  min-height: 44px;
+  padding: 8px 14px;
   cursor: pointer;
   font-family: inherit;
+}
+
+.project-panel .practice-toggle-btn:focus-visible,
+.project-panel .run-btn:focus-visible {
+  outline: 2px solid var(--blue-tx);
+  outline-offset: 2px;
 }
 
 .project-panel .practice-toggle-btn:hover {
@@ -125,7 +132,8 @@ body.dark .project-panel .project-ide-footer {
   background: rgba(22, 101, 52, 0.08);
   border: 1px solid rgba(22, 101, 52, 0.2);
   border-radius: 5px;
-  padding: 3px 10px;
+  min-height: 44px;
+  padding: 8px 14px;
   cursor: pointer;
   font-family: inherit;
   transition: background 0.15s;

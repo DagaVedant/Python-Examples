@@ -42,7 +42,9 @@ body.dark .certificates-blurb {
 }
 
 .cert-link {
-  display: block;
+  display: flex;
+  align-items: center;
+  min-height: 44px;
   font-size: 14px;
   font-weight: 500;
   color: #1f3a5f;
@@ -52,6 +54,11 @@ body.dark .certificates-blurb {
   background: #f7f8fa;
   text-decoration: none;
   transition: background 0.1s, border-color 0.1s;
+}
+
+.cert-link:focus-visible {
+  outline: 2px solid var(--blue-tx);
+  outline-offset: 2px;
 }
 
 .cert-link:hover {

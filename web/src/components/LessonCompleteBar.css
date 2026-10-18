@@ -56,6 +56,7 @@ body.dark .complete-status.done {
 .signup-nudge-primary {
   display: inline-flex;
   align-items: center;
+  min-height: 44px;
   padding: 0.5rem 0.9rem;
   border-radius: var(--rsm);
   background: var(--navy);
@@ -63,6 +64,12 @@ body.dark .complete-status.done {
   font-size: 13px;
   font-weight: 500;
   text-decoration: none;
+}
+
+.signup-nudge-primary:focus-visible,
+.signup-nudge-dismiss:focus-visible {
+  outline: 2px solid var(--blue-tx);
+  outline-offset: 2px;
 }
 
 .signup-nudge-primary:hover {
@@ -76,6 +83,7 @@ body.dark .complete-status.done {
   background: transparent;
   border: 1px solid var(--border);
   border-radius: var(--rsm);
+  min-height: 44px;
   padding: 0.5rem 0.9rem;
   cursor: pointer;
 }

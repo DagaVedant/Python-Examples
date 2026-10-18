@@ -82,7 +82,8 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  padding: 0.65rem 0.9rem;
+  min-height: 44px;
+  padding: 0.7rem 0.9rem;
   border-radius: var(--rsm);
   border: 1px solid var(--border);
   cursor: pointer;
@@ -94,6 +95,11 @@
   text-align: left;
   width: 100%;
   font-family: inherit;
+}
+
+.quiz-panel .option:focus-visible {
+  outline: 2px solid var(--blue-tx);
+  outline-offset: 2px;
 }
 
 .quiz-panel .option:hover:not(:disabled) {
@@ -156,13 +162,21 @@
 .quiz-panel .check-btn,
 .quiz-panel .nav-btn-quiz,
 .quiz-panel .reset-btn {
-  padding: 0.45rem 1.2rem;
+  min-height: 44px;
+  padding: 0.5rem 1.2rem;
   border-radius: var(--rsm);
   font-size: 13.5px;
   font-weight: 500;
   cursor: pointer;
   font-family: inherit;
   transition: background 0.12s, border-color 0.12s, color 0.12s, opacity 0.12s;
+}
+
+.quiz-panel .check-btn:focus-visible,
+.quiz-panel .nav-btn-quiz:focus-visible,
+.quiz-panel .reset-btn:focus-visible {
+  outline: 2px solid var(--blue-tx);
+  outline-offset: 2px;
 }
 
 .quiz-panel .check-btn,

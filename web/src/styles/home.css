@@ -30,10 +30,11 @@ body.dark .home-page {
 .hero {
   max-width: none;
   margin: 0 auto;
-  padding: 40px clamp(20px, 4vw, 72px) 32px;
+  padding: 28px clamp(16px, 4vw, 72px) 28px;
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 28px;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 24px;
+  min-width: 0;
 }
 
 @media (min-width: 720px) {
@@ -71,7 +72,7 @@ body.dark .hero-brand {
 }
 
 .hero h1 {
-  font-size: 32px;
+  font-size: clamp(1.6rem, 6vw, 2rem);
   font-weight: 600;
   color: #111827;
   margin: 0 0 10px;
@@ -107,6 +108,7 @@ body.dark .hero-lead {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  min-height: 44px;
   padding: 11px 18px;
   border-radius: 8px;
   background: #1f3a5f;
@@ -114,6 +116,12 @@ body.dark .hero-lead {
   font-size: 14px;
   font-weight: 600;
   transition: background 0.15s;
+}
+
+.hero-cta-primary:focus-visible,
+.hero-cta-secondary:focus-visible {
+  outline: 2px solid var(--blue-tx);
+  outline-offset: 2px;
 }
 
 .hero-cta-primary:hover {
@@ -131,6 +139,7 @@ body.dark .hero-cta-primary:hover {
 .hero-cta-secondary {
   display: inline-flex;
   align-items: center;
+  min-height: 44px;
   font-size: 13px;
   font-weight: 500;
   color: #1f3a5f;
@@ -158,6 +167,8 @@ body.dark .hero-cta-secondary:hover {
   font-family: var(--font-mono);
   font-size: 13px;
   line-height: 1.55;
+  min-width: 0;
+  max-width: 100%;
 }
 
 body:not(.dark) .hero-demo {
@@ -222,13 +233,20 @@ body:not(.dark) .hero-demo-out.is-running::after {
   font-family: var(--font-body);
   font-size: 12px;
   font-weight: 600;
-  padding: 5px 12px;
+  min-height: 44px;
+  min-width: 44px;
+  padding: 8px 14px;
   border-radius: 6px;
   border: none;
   cursor: pointer;
   background: #16a34a;
   color: #fff;
   transition: background 0.15s, opacity 0.15s;
+}
+
+.hero-demo-run:focus-visible {
+  outline: 2px solid #86efac;
+  outline-offset: 2px;
 }
 
 .hero-demo-run:hover:not(:disabled) {
@@ -246,8 +264,10 @@ body:not(.dark) .hero-demo-out.is-running::after {
   color: #d1d5db;
   white-space: pre;
   overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
   user-select: none;
   pointer-events: none;
+  max-width: 100%;
 }
 
 .hero-demo-code .kw {
@@ -292,6 +312,12 @@ body:not(.dark) .hero-demo-out.is-running::after {
   }
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .hero-demo-out.is-running::after {
+    animation: none;
+  }
+}
+
 #continue-slot {
   max-width: none;
   margin: 0 auto 24px;
@@ -301,10 +327,11 @@ body:not(.dark) .hero-demo-out.is-running::after {
 .course {
   max-width: none;
   margin: 0 auto;
-  padding: 0 clamp(20px, 4vw, 72px);
+  padding: 0 clamp(16px, 4vw, 72px);
   display: flex;
   flex-direction: column;
   gap: 20px;
+  min-width: 0;
 }
 
 .unit {
@@ -321,11 +348,12 @@ body.dark .unit {
 }
 
 .unit-header {
-  padding: 16px 20px;
+  padding: 14px clamp(12px, 3vw, 20px);
   border-bottom: 1px solid #e2e5ea;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 12px;
   transition: border-color 0.2s;
 }
 
@@ -363,11 +391,17 @@ body.dark .unit-header strong {
   display: flex;
   align-items: center;
   gap: 12px;
-  padding: 13px 20px;
+  min-height: 44px;
+  padding: 12px clamp(12px, 3vw, 20px);
   border-bottom: 1px solid #f0f2f5;
   color: #111827;
   font-size: 14px;
   transition: background 0.1s, color 0.2s, border-color 0.2s;
+}
+
+.unit a:focus-visible {
+  outline: 2px solid var(--blue-tx);
+  outline-offset: -2px;
 }
 
 body.dark .unit a {
@@ -438,4 +472,10 @@ body.dark .home-error {
 
 .home-main {
   min-width: 0;
+}
+
+.home-streak-bar,
+#continue-slot {
+  padding-left: clamp(16px, 4vw, 72px);
+  padding-right: clamp(16px, 4vw, 72px);
 }
