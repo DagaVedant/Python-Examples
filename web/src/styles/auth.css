@@ -196,3 +196,61 @@ body.dark .auth-success {
   color: #2563eb;
   padding: 0;
 }
+
+.legal-page {
+  align-items: flex-start;
+  padding-top: 2rem;
+  padding-bottom: 3rem;
+}
+
+.legal-card {
+  max-width: 640px;
+}
+
+.legal-card h2 {
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 600;
+  margin: 22px 0 8px;
+  color: var(--text);
+}
+
+.legal-card p {
+  margin: 0 0 10px;
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--text2);
+}
+
+.legal-card a {
+  color: #2563eb;
+  text-decoration: none;
+}
+
+.site-footer {
+  border-top: 1px solid var(--border);
+  background: var(--bg);
+  padding: 18px clamp(20px, 6vw, 120px);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 20px;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 13px;
+  color: var(--text2);
+}
+
+.site-footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.site-footer a {
+  color: var(--blue-tx);
+  text-decoration: none;
+}
+
+.site-footer a:hover {
+  text-decoration: underline;
+}

@@ -1,6 +1,7 @@
 import { useCallback, useState, type ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../hooks/useAuth';
+import '../styles/auth.css';
 
 type Theme = 'light' | 'dark';
 
@@ -67,6 +68,13 @@ export function AppShell({ children }: AppShellProps) {
         </div>
       </nav>
       {children}
+      <footer className="site-footer">
+        <span>Learn Python</span>
+        <div className="site-footer-links">
+          <Link to="/privacy">Privacy</Link>
+          <Link to="/terms">Terms</Link>
+        </div>
+      </footer>
     </>
   );
 }

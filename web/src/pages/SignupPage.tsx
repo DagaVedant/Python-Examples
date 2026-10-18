@@ -120,6 +120,11 @@ export function SignupPage() {
               Already have an account? <Link to="/login">Log In</Link>
             </div>
 
+            <div className="auth-link">
+              By signing up you agree to the <Link to="/terms">Terms</Link> and{' '}
+              <Link to="/privacy">Privacy Policy</Link>.
+            </div>
+
             {error ? <div className="auth-error">{error}</div> : null}
           </>
         )}
