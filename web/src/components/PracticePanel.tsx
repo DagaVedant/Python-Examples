@@ -1,4 +1,8 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
+import { Link } from 'react-router-dom';
+import { useAuth } from '../hooks/useAuth';
+import { requestAiPracticeGrade, AI_CHECKS_PER_DAY } from '../lib/gradePractice';
+import { gradePracticeLocally, type LocalGradeResult } from '../lib/practiceGrade';
 import { resolveHint, resolveStarterTip } from '../lib/practiceHints';
 import { usePyodide } from '../hooks/usePyodide';
 import type { LessonData, PracticeTask } from '../types/lesson';
@@ -6,7 +10,7 @@ import { PythonEditor, type PythonEditorTheme } from './PythonEditor';
 import './PracticePanel.css';
 
 export type PracticePanelProps = {
-  lesson: Pick<LessonData, 'unit' | 'lesson' | 'practice' | 'fakeFiles'>;
+  lesson: Pick<LessonData, 'unit' | 'lesson' | 'title' | 'practice' | 'fakeFiles'>;
   theme?: PythonEditorTheme;
 };
 
@@ -38,6 +42,12 @@ function resolveEditorTheme(theme?: PythonEditorTheme): PythonEditorTheme {
   return localStorage.getItem('theme') === 'dark' ? 'dark' : 'light';
 }
 
+type AiFeedbackState =
+  | { status: 'idle' }
+  | { status: 'loading' }
+  | { status: 'ready'; passed: boolean; text: string }
+  | { status: 'note'; text: string };
+
 type TaskState = {
   code: string;
   editorOpen: boolean;
@@ -45,6 +55,10 @@ type TaskState = {
   output: { lines: string[]; isError: boolean } | null;
   running: boolean;
   saveStatus: string;
+  localGrade: LocalGradeResult | null;
+  lastRunOutput: string;
+  lastRunError: string | null;
+  ai: AiFeedbackState;
 };
 
 type PracticeTaskRowProps = {
@@ -52,10 +66,15 @@ type PracticeTaskRowProps = {
   task: PracticeTask;
   unit: number;
   lesson: number;
+  lessonTitle: string;
   editorTheme: PythonEditorTheme;
   fakeFiles?: Record<string, string>;
   onRun: (code: string, fakeFiles?: Record<string, string>) => Promise<{ output: string; error: string | null }>;
   pyodideLoading: boolean;
+  signedIn: boolean;
+  accessToken: string | null;
+  remainingChecks: number | null;
+  onRemainingChange: (n: number) => void;
 };
 
 function PracticeTaskRow({
@@ -63,10 +82,15 @@ function PracticeTaskRow({
   task,
   unit,
   lesson,
+  lessonTitle,
   editorTheme,
   fakeFiles,
   onRun,
   pyodideLoading,
+  signedIn,
+  accessToken,
+  remainingChecks,
+  onRemainingChange,
 }: PracticeTaskRowProps) {
   const [state, setState] = useState<TaskState>(() => {
     const initial = readInitialCode(unit, lesson, index, task);
@@ -77,6 +101,10 @@ function PracticeTaskRow({
       output: null,
       running: false,
       saveStatus: initial.saveStatus,
+      localGrade: null,
+      lastRunOutput: '',
+      lastRunError: null,
+      ai: { status: 'idle' },
     };
   });
 
@@ -98,14 +126,24 @@ function PracticeTaskRow({
   };
 
   const onRunClick = async () => {
-    setState((s) => ({ ...s, running: true, output: null }));
+    setState((s) => ({
+      ...s,
+      running: true,
+      output: null,
+      localGrade: null,
+      ai: { status: 'idle' },
+    }));
     try {
       const { output, error } = await onRun(state.code, fakeFiles);
+      const grade = gradePracticeLocally(task, state.code, error ? '' : output, error);
       if (error) {
         setState((s) => ({
           ...s,
           running: false,
           output: { lines: [error], isError: true },
+          localGrade: grade,
+          lastRunOutput: '',
+          lastRunError: error,
         }));
         return;
       }
@@ -116,18 +154,80 @@ function PracticeTaskRow({
         output: trimmed
           ? { lines: trimmed.split('\n'), isError: false }
           : { lines: ['No output'], isError: false },
+        localGrade: grade,
+        lastRunOutput: trimmed,
+        lastRunError: null,
       }));
     } catch {
       setState((s) => ({
         ...s,
         running: false,
         output: { lines: ['Could not run code. Try again.'], isError: true },
+        localGrade: {
+          passed: false,
+          feedback: 'Could not run code. Try again.',
+        },
+        lastRunOutput: '',
+        lastRunError: 'Could not run code. Try again.',
       }));
     }
   };
 
+  const onAiClick = async () => {
+    if (!signedIn || !accessToken) return;
+    if (state.localGrade == null && state.output == null) {
+      setState((s) => ({
+        ...s,
+        ai: { status: 'note', text: 'Press Run first, then ask for AI feedback.' },
+      }));
+      return;
+    }
+    setState((s) => ({ ...s, ai: { status: 'loading' } }));
+    const result = await requestAiPracticeGrade(
+      {
+        task: task.text,
+        code: state.code,
+        output: state.lastRunError ? state.lastRunError : state.lastRunOutput,
+        lessonTopic: lessonTitle,
+        gradingNote: task.gradingNote ?? null,
+        unit,
+        lesson,
+        taskIndex: index,
+      },
+      accessToken,
+    );
+    if (!result.ok) {
+      if (typeof result.error.remaining === 'number') {
+        onRemainingChange(result.error.remaining);
+      }
+      setState((s) => ({
+        ...s,
+        ai: { status: 'note', text: result.error.message },
+      }));
+      return;
+    }
+    onRemainingChange(result.result.remaining);
+    const hintPart =
+      !result.result.passed && result.result.hint.trim()
+        ? ` Hint: ${result.result.hint.trim()}`
+        : '';
+    setState((s) => ({
+      ...s,
+      ai: {
+        status: 'ready',
+        passed: result.result.passed,
+        text: result.result.feedback + hintPart,
+      },
+    }));
+  };
+
   const hintLabel =
     state.hintStage === 0 ? 'Hint' : state.hintStage === 1 ? 'More help' : 'Hints shown';
+
+  const remainingLabel =
+    remainingChecks == null
+      ? `${AI_CHECKS_PER_DAY} AI checks / day`
+      : `${remainingChecks} AI check${remainingChecks === 1 ? '' : 's'} left today`;
 
   return (
     <li className="practice-panel__item">
@@ -163,15 +263,33 @@ function PracticeTaskRow({
                 onClick={onRunClick}
                 disabled={state.running || pyodideLoading}
               >
-                {state.running ? 'Running…' : pyodideLoading ? 'Loading Python…' : 'Run'}
+                {state.running ? 'Running...' : pyodideLoading ? 'Loading Python...' : 'Run'}
               </button>
               <button type="button" className="practice-panel__save-btn" onClick={onSave}>
                 Save
               </button>
+              {signedIn ? (
+                <button
+                  type="button"
+                  className="practice-panel__ai-btn"
+                  onClick={() => void onAiClick()}
+                  disabled={state.ai.status === 'loading' || pyodideLoading}
+                >
+                  {state.ai.status === 'loading' ? 'Checking...' : 'AI feedback'}
+                </button>
+              ) : null}
               {state.saveStatus ? (
                 <span className="practice-panel__save-status">{state.saveStatus}</span>
               ) : null}
             </div>
+            {signedIn ? (
+              <p className="practice-panel__ai-meta">{remainingLabel}</p>
+            ) : (
+              <p className="practice-panel__guest-note">
+                Sign in for AI feedback.{' '}
+                <Link to="/login">Log in</Link> or <Link to="/signup">sign up</Link>.
+              </p>
+            )}
             {state.output && (
               <div className="practice-panel__output-box">
                 <div className="practice-panel__output-label">Output</div>
@@ -190,6 +308,41 @@ function PracticeTaskRow({
                     {line}
                   </div>
                 ))}
+              </div>
+            )}
+            {state.localGrade && (
+              <div
+                className={
+                  'practice-panel__grade' +
+                  (state.localGrade.passed
+                    ? ' practice-panel__grade--pass'
+                    : ' practice-panel__grade--fail')
+                }
+                role="status"
+              >
+                <span className="practice-panel__grade-label">
+                  {state.localGrade.passed ? 'Pass' : 'Not yet'}
+                </span>
+                <span>{state.localGrade.feedback}</span>
+              </div>
+            )}
+            {state.ai.status === 'ready' && (
+              <div
+                className={
+                  'practice-panel__ai-row' +
+                  (state.ai.passed
+                    ? ' practice-panel__ai-row--pass'
+                    : ' practice-panel__ai-row--fail')
+                }
+                role="status"
+              >
+                <span className="practice-panel__grade-label">AI</span>
+                <span>{state.ai.text}</span>
+              </div>
+            )}
+            {state.ai.status === 'note' && (
+              <div className="practice-panel__ai-row practice-panel__ai-row--note" role="status">
+                {state.ai.text}
               </div>
             )}
             {state.hintStage >= 1 && (
@@ -224,9 +377,11 @@ function PracticeTaskRow({
 }
 
 export function PracticePanel({ lesson, theme }: PracticePanelProps) {
-  const { unit, lesson: lessonNum, practice, fakeFiles } = lesson;
+  const { unit, lesson: lessonNum, title, practice, fakeFiles } = lesson;
   const { runIsolated, loading, ensureLoaded, loadError } = usePyodide();
+  const { session, user } = useAuth();
   const editorTheme = resolveEditorTheme(theme);
+  const [remainingChecks, setRemainingChecks] = useState<number | null>(null);
 
   useEffect(() => {
     void ensureLoaded();
@@ -260,10 +415,15 @@ export function PracticePanel({ lesson, theme }: PracticePanelProps) {
             task={task}
             unit={unit}
             lesson={lessonNum}
+            lessonTitle={title}
             editorTheme={editorTheme}
             fakeFiles={fakeFiles}
             onRun={run}
             pyodideLoading={loading}
+            signedIn={Boolean(user)}
+            accessToken={session?.access_token ?? null}
+            remainingChecks={remainingChecks}
+            onRemainingChange={setRemainingChecks}
           />
         ))}
       </ul>

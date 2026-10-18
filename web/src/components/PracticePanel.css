@@ -224,3 +224,96 @@ body:not(.dark) .practice-panel__hint-box {
   color: var(--text2);
   margin: 0 0 0.75rem;
 }
+
+.practice-panel__ai-btn {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--blue-tx);
+  background: var(--blue-lt);
+  border: 1px solid var(--blue-md);
+  border-radius: 5px;
+  padding: 4px 12px;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.practice-panel__ai-btn:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.practice-panel__ai-meta,
+.practice-panel__guest-note {
+  margin: 0;
+  padding: 0.45rem 1.2rem 0.55rem;
+  border-top: 1px solid var(--practice-code-sep);
+  font-size: 12px;
+  color: var(--practice-ccm);
+  line-height: 1.45;
+}
+
+.practice-panel__guest-note a {
+  color: var(--blue-tx);
+  text-decoration: underline;
+}
+
+.practice-panel__grade,
+.practice-panel__ai-row {
+  padding: 0.65rem 1.2rem;
+  border-top: 1px solid var(--practice-code-sep);
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.practice-panel__grade-label {
+  display: block;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  opacity: 0.85;
+  margin-bottom: 0.2rem;
+}
+
+.practice-panel__grade--pass {
+  background: rgba(22, 101, 52, 0.08);
+  color: #166534;
+}
+
+body.dark .practice-panel__grade--pass {
+  background: rgba(166, 227, 161, 0.1);
+  color: var(--practice-cst);
+}
+
+.practice-panel__grade--fail {
+  background: rgba(248, 113, 113, 0.1);
+  color: #b91c1c;
+}
+
+body.dark .practice-panel__grade--fail {
+  color: #f87171;
+}
+
+.practice-panel__ai-row--pass {
+  background: rgba(22, 101, 52, 0.06);
+  color: #166534;
+}
+
+body.dark .practice-panel__ai-row--pass {
+  background: rgba(166, 227, 161, 0.08);
+  color: var(--practice-cst);
+}
+
+.practice-panel__ai-row--fail {
+  background: rgba(248, 113, 113, 0.08);
+  color: #b91c1c;
+}
+
+body.dark .practice-panel__ai-row--fail {
+  color: #f87171;
+}
+
+.practice-panel__ai-row--note {
+  background: var(--blue-lt);
+  color: var(--blue-tx);
+}

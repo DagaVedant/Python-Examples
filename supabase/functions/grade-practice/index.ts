@@ -2,7 +2,7 @@ import { createClient } from "npm:@supabase/supabase-js@2";
 
 const MODEL = "nvidia/nemotron-3-super-120b-a12b:free";
 const PER_MINUTE_LIMIT = 5;
-const PER_DAY_LIMIT = 1000;
+const PER_DAY_LIMIT = 20;
 const GLOBAL_DAY_LIMIT = 1500;
 const MAX_CODE_CHARS = 2000;
 
@@ -66,6 +66,14 @@ Deno.serve(async (req) => {
     }
     if (code.length > MAX_CODE_CHARS) return json({ error: "invalid" }, 400);
 
+    const { dayStartIso, minutesUntilReset } = ESTDay();
+
+    const { count: dayCount } = await supabase.from("grade_log")
+      .select("*", { count: "exact", head: true })
+      .eq("user_id", userId).gte("created_at", dayStartIso);
+    const usedToday = dayCount ?? 0;
+    const remainingBefore = Math.max(0, PER_DAY_LIMIT - usedToday);
+
     const codeHash = await sha256(code);
     const { data: lastRow } = await supabase
       .from("grade_log")
@@ -75,31 +83,42 @@ Deno.serve(async (req) => {
       .limit(1)
       .maybeSingle();
     if (lastRow && lastRow.code_hash === codeHash && lastRow.response) {
-      return json(lastRow.response);
+      const cached = typeof lastRow.response === "object" && lastRow.response
+        ? { ...lastRow.response as Record<string, unknown> }
+        : { feedback: String(lastRow.response) };
+      return json({ ...cached, remaining: remainingBefore });
     }
 
-    const { dayStartIso, minutesUntilReset } = ESTDay();
     const minuteAgo = new Date(Date.now() - 60_000).toISOString();
 
     const { count: minuteCount } = await supabase.from("grade_log")
       .select("*", { count: "exact", head: true })
       .eq("user_id", userId).gte("created_at", minuteAgo);
     if ((minuteCount ?? 0) >= PER_MINUTE_LIMIT) {
-      return json({ error: "rate_limited_minute", retryAfterSeconds: 30 }, 429);
+      return json({
+        error: "rate_limited_minute",
+        retryAfterSeconds: 30,
+        remaining: remainingBefore,
+      }, 429);
     }
 
-    const { count: dayCount } = await supabase.from("grade_log")
-      .select("*", { count: "exact", head: true })
-      .eq("user_id", userId).gte("created_at", dayStartIso);
-    if ((dayCount ?? 0) >= PER_DAY_LIMIT) {
-      return json({ error: "rate_limited_day", resetsInMinutes: minutesUntilReset }, 429);
+    if (usedToday >= PER_DAY_LIMIT) {
+      return json({
+        error: "rate_limited_day",
+        resetsInMinutes: minutesUntilReset,
+        remaining: 0,
+      }, 429);
     }
 
     const { count: globalCount } = await supabase.from("grade_log")
       .select("*", { count: "exact", head: true })
       .gte("created_at", dayStartIso);
     if ((globalCount ?? 0) >= GLOBAL_DAY_LIMIT) {
-      return json({ error: "quota_global", resetsInMinutes: minutesUntilReset }, 429);
+      return json({
+        error: "quota_global",
+        resetsInMinutes: minutesUntilReset,
+        remaining: remainingBefore,
+      }, 429);
     }
 
     const userPrompt = `Lesson topic: ${lessonTopic ?? "unknown"}
@@ -119,7 +138,7 @@ ${output || "(no output)"}
       headers: {
         "Content-Type": "application/json",
         "Authorization": `Bearer ${Deno.env.get("OPENROUTER_API_KEY")}`,
-        "HTTP-Referer": "https://dagavedant.github.io/Python-Examples/",
+        "HTTP-Referer": "https://pythonexamples.vercel.app",
         "X-Title": "Learn Python",
       },
       body: JSON.stringify({
@@ -152,18 +171,22 @@ ${output || "(no output)"}
     });
 
     if (modelRes.status === 429) {
-      return json({ error: "rate_limited_minute", retryAfterSeconds: 30 }, 429);
+      return json({
+        error: "rate_limited_minute",
+        retryAfterSeconds: 30,
+        remaining: remainingBefore,
+      }, 429);
     }
     if (!modelRes.ok) {
       console.error(`OpenRouter error ${modelRes.status}: ${await modelRes.text()}`);
-      return json({ error: "model_error" }, 502);
+      return json({ error: "model_error", remaining: remainingBefore }, 502);
     }
 
     const modelData = await modelRes.json();
     const text = modelData.choices?.[0]?.message?.content;
     if (!text) {
       console.error(`OpenRouter empty response: ${JSON.stringify(modelData).slice(0, 500)}`);
-      return json({ error: "model_error" }, 502);
+      return json({ error: "model_error", remaining: remainingBefore }, 502);
     }
     const grade = JSON.parse(text);
 
@@ -171,9 +194,10 @@ ${output || "(no output)"}
       user_id: userId, unit, lesson, task_index: taskIndex,
       code_hash: codeHash, passed: grade.passed, response: grade,
     });
+    const remaining = Math.max(0, PER_DAY_LIMIT - usedToday - 1);
     console.log(`graded u${unit}l${lesson}t${taskIndex} user=${userId} passed=${grade.passed}`);
 
-    return json(grade);
+    return json({ ...grade, remaining });
   } catch (err) {
     console.error(`Unhandled: ${err}`);
     return json({ error: "model_error" }, 502);
