@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useState } from 'react';
 import type { Session, User } from '@supabase/supabase-js';
+import { emailConfirmRedirect, passwordResetRedirect } from '../lib/authRedirect';
 import { supabase } from '../lib/supabase';
 
 export function useAuth() {
@@ -37,12 +38,43 @@ export function useAuth() {
     return supabase.auth.signUp({
       email,
       password,
-      options: { emailRedirectTo: window.location.origin },
+      options: { emailRedirectTo: emailConfirmRedirect() },
     });
   }, []);
 
   const signOut = useCallback(async () => {
     return supabase.auth.signOut();
+  }, []);
+
+  const resetPasswordForEmail = useCallback(async (email: string) => {
+    return supabase.auth.resetPasswordForEmail(email, {
+      redirectTo: passwordResetRedirect(),
+    });
+  }, []);
+
+  const updatePassword = useCallback(async (password: string) => {
+    return supabase.auth.updateUser({ password });
+  }, []);
+
+  const deleteAccount = useCallback(async () => {
+    const { data: { session: s } } = await supabase.auth.getSession();
+    if (!s?.access_token) {
+      return { error: new Error('Not signed in') };
+    }
+
+    const { data, error } = await supabase.functions.invoke('delete-account', {
+      headers: { Authorization: `Bearer ${s.access_token}` },
+    });
+
+    if (error) {
+      return { error: new Error(error.message || 'Could not delete account') };
+    }
+    if (data && typeof data === 'object' && 'error' in data && data.error) {
+      return { error: new Error(String(data.error)) };
+    }
+
+    await supabase.auth.signOut();
+    return { error: null };
   }, []);
 
   const user: User | null = session?.user ?? null;
@@ -54,5 +86,8 @@ export function useAuth() {
     signInWithPassword,
     signUp,
     signOut,
+    resetPasswordForEmail,
+    updatePassword,
+    deleteAccount,
   };
 }

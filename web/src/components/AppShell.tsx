@@ -21,7 +21,7 @@ type AppShellProps = {
 };
 
 export function AppShell({ children }: AppShellProps) {
-  const { user, loading, signOut } = useAuth();
+  const { user, loading } = useAuth();
   const [theme, setTheme] = useState<Theme>(() => {
     const initial = readTheme();
     applyBodyTheme(initial);
@@ -48,13 +48,9 @@ export function AppShell({ children }: AppShellProps) {
         <div style={navRightStyle}>
           {!loading &&
             (user ? (
-              <button
-                type="button"
-                style={accountBtnStyle(isDark)}
-                onClick={() => void signOut()}
-              >
-                Sign out
-              </button>
+              <Link to="/account" style={accountLinkStyle(isDark)}>
+                Account
+              </Link>
             ) : (
               <Link to="/login" style={accountLinkStyle(isDark)}>
                 Sign in
@@ -140,14 +136,6 @@ function accountLinkStyle(isDark: boolean): React.CSSProperties {
     borderRadius: 8,
     background: 'var(--surface)',
     textDecoration: 'none',
-  };
-}
-
-function accountBtnStyle(isDark: boolean): React.CSSProperties {
-  return {
-    ...accountLinkStyle(isDark),
-    cursor: 'pointer',
-    fontFamily: 'inherit',
   };
 }
 

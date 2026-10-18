@@ -2,10 +2,13 @@ import { Route, Routes } from 'react-router-dom';
 import { AppShell } from './components/AppShell';
 import { ErrorBoundary } from './components/ErrorBoundary';
 import { CelebrateRoot } from './hooks/useCelebrate';
+import { AccountPage } from './pages/AccountPage';
 import { CertificatePage } from './pages/CertificatePage';
+import { ForgotPasswordPage } from './pages/ForgotPasswordPage';
 import { HomePage } from './pages/HomePage';
 import { LessonPage } from './pages/LessonPage';
 import { LoginPage } from './pages/LoginPage';
+import { ResetPasswordPage } from './pages/ResetPasswordPage';
 import { SignupPage } from './pages/SignupPage';
 
 export default function App() {
@@ -18,6 +21,9 @@ export default function App() {
             <Route path="/lesson" element={<LessonPage />} />
             <Route path="/login" element={<LoginPage />} />
             <Route path="/signup" element={<SignupPage />} />
+            <Route path="/forgot-password" element={<ForgotPasswordPage />} />
+            <Route path="/reset-password" element={<ResetPasswordPage />} />
+            <Route path="/account" element={<AccountPage />} />
             <Route path="/certificate" element={<CertificatePage />} />
           </Routes>
         </AppShell>

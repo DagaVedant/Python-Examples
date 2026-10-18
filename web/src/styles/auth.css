@@ -90,3 +90,109 @@
   font-size: 13px;
   margin-top: 8px;
 }
+
+.auth-success {
+  color: #166534;
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-radius: 8px;
+  font-size: 14px;
+  line-height: 1.45;
+  padding: 12px 14px;
+  margin-bottom: 12px;
+}
+
+html.dark .auth-success,
+body.dark .auth-success {
+  color: #86efac;
+  background: #052e16;
+  border-color: #166534;
+}
+
+.auth-forgot {
+  text-align: right;
+  margin: -6px 0 14px;
+  font-size: 13px;
+}
+
+.auth-forgot a {
+  color: #2563eb;
+  text-decoration: none;
+}
+
+.auth-card-wide {
+  max-width: 440px;
+}
+
+.account-section {
+  margin-bottom: 28px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--border);
+}
+
+.account-section:last-of-type {
+  border-bottom: none;
+  margin-bottom: 8px;
+  padding-bottom: 0;
+}
+
+.account-heading {
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0 0 10px;
+  color: var(--text);
+}
+
+.account-email {
+  margin: 0;
+  font-size: 14px;
+  color: var(--text2);
+  word-break: break-all;
+}
+
+.account-danger-lead {
+  margin-bottom: 12px;
+}
+
+.account-confirm-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.auth-secondary-btn,
+.auth-danger-btn,
+.auth-text-btn {
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 8px;
+  cursor: pointer;
+  padding: 10px 14px;
+}
+
+.auth-secondary-btn {
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+.auth-danger-btn {
+  background: #dc2626;
+  color: #fff;
+  border: none;
+}
+
+.auth-danger-btn:disabled,
+.auth-secondary-btn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.auth-text-btn {
+  background: none;
+  border: none;
+  color: #2563eb;
+  padding: 0;
+}

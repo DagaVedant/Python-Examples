@@ -10,6 +10,7 @@ export function SignupPage() {
   const [password, setPassword] = useState('');
   const [confirm, setConfirm] = useState('');
   const [error, setError] = useState('');
+  const [checkEmail, setCheckEmail] = useState(false);
   const [submitting, setSubmitting] = useState(false);
 
   useEffect(() => {
@@ -45,7 +46,7 @@ export function SignupPage() {
     if (data.session) {
       navigate('/', { replace: true });
     } else {
-      setError('Check your email to confirm your account.');
+      setCheckEmail(true);
     }
   }
 
@@ -53,7 +54,7 @@ export function SignupPage() {
     return (
       <div className="auth-page">
         <div className="auth-card">
-          <p className="auth-lead">Loading…</p>
+          <p className="auth-lead">Loading...</p>
         </div>
       </div>
     );
@@ -64,51 +65,64 @@ export function SignupPage() {
       <div className="auth-card">
         <h1>Sign Up for Learn Python</h1>
         <p className="auth-lead">
-          Creating an account is optional. It lets you save your progress across devices and get AI practice
-          feedback
+          Creating an account is optional. It lets you save your progress across devices and get AI
+          practice feedback
         </p>
 
-        <form onSubmit={handleSubmit}>
-          <label htmlFor="signup-email">Email</label>
-          <input
-            id="signup-email"
-            type="email"
-            autoComplete="email"
-            placeholder="you@example.com"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
+        {checkEmail ? (
+          <>
+            <div className="auth-success" role="status">
+              Check your email to confirm your account. Open the link in that message, then log in.
+            </div>
+            <div className="auth-link">
+              <Link to="/login">Go to log in</Link>
+            </div>
+          </>
+        ) : (
+          <>
+            <form onSubmit={handleSubmit}>
+              <label htmlFor="signup-email">Email</label>
+              <input
+                id="signup-email"
+                type="email"
+                autoComplete="email"
+                placeholder="you@example.com"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
 
-          <label htmlFor="signup-password">Password</label>
-          <input
-            id="signup-password"
-            type="password"
-            autoComplete="new-password"
-            placeholder="*******"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
+              <label htmlFor="signup-password">Password</label>
+              <input
+                id="signup-password"
+                type="password"
+                autoComplete="new-password"
+                placeholder="*******"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
 
-          <label htmlFor="signup-confirm">Confirm Password</label>
-          <input
-            id="signup-confirm"
-            type="password"
-            autoComplete="new-password"
-            placeholder="*******"
-            value={confirm}
-            onChange={(e) => setConfirm(e.target.value)}
-          />
+              <label htmlFor="signup-confirm">Confirm Password</label>
+              <input
+                id="signup-confirm"
+                type="password"
+                autoComplete="new-password"
+                placeholder="*******"
+                value={confirm}
+                onChange={(e) => setConfirm(e.target.value)}
+              />
 
-          <button type="submit" disabled={submitting}>
-            {submitting ? 'Signing up…' : 'Sign Up'}
-          </button>
-        </form>
+              <button type="submit" disabled={submitting}>
+                {submitting ? 'Signing up...' : 'Sign Up'}
+              </button>
+            </form>
 
-        <div className="auth-link">
-          Already have an account? <Link to="/login">Log In</Link>
-        </div>
+            <div className="auth-link">
+              Already have an account? <Link to="/login">Log In</Link>
+            </div>
 
-        {error ? <div className="auth-error">{error}</div> : null}
+            {error ? <div className="auth-error">{error}</div> : null}
+          </>
+        )}
       </div>
     </div>
   );

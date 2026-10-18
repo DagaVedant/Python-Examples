@@ -40,7 +40,7 @@ export function LoginPage() {
     return (
       <div className="auth-page">
         <div className="auth-card">
-          <p className="auth-lead">Loading…</p>
+          <p className="auth-lead">Loading...</p>
         </div>
       </div>
     );
@@ -75,8 +75,12 @@ export function LoginPage() {
             onChange={(e) => setPassword(e.target.value)}
           />
 
+          <div className="auth-forgot">
+            <Link to="/forgot-password">Forgot password?</Link>
+          </div>
+
           <button type="submit" disabled={submitting}>
-            {submitting ? 'Logging in…' : 'Log In'}
+            {submitting ? 'Logging in...' : 'Log In'}
           </button>
         </form>
 
