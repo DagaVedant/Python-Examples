@@ -10,6 +10,7 @@ import { loadCourseInfo } from '../../lib/loadCourseInfo';
 import { getLessonNeighbors, type LessonNavLink } from '../../lib/lessonNav';
 import type { LessonData } from '../../types/lesson';
 import { LessonCodeBlock } from './LessonCodeBlock';
+import { LessonSidebar } from './LessonSidebar';
 
 function lessonHref(unit: number, lesson: number): string {
   return `/lesson?unit=${unit}&lesson=${lesson}`;
@@ -80,6 +81,8 @@ export function LessonLoadedView({ data }: LessonLoadedViewProps) {
 
   return (
     <main className="lesson-page">
+      <div className="lesson-layout">
+      <LessonSidebar unit={lesson.unit} lesson={lesson.lesson} />
       <div className="lesson-wrap">
         <header className="lesson-header">
           <p className="lesson-crumb">
@@ -216,6 +219,7 @@ export function LessonLoadedView({ data }: LessonLoadedViewProps) {
             </Link>
           ) : null}
         </nav>
+      </div>
       </div>
     </main>
   );

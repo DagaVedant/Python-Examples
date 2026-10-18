@@ -1,7 +1,6 @@
 import { useCallback, useState, type ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../hooks/useAuth';
-import { SoundToggle } from './SoundToggle';
 
 type Theme = 'light' | 'dark';
 
@@ -61,7 +60,6 @@ export function AppShell({ children }: AppShellProps) {
                 Sign in
               </Link>
             ))}
-          <SoundToggle />
           <button
             type="button"
             style={themeBtnStyle(isDark)}
