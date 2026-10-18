@@ -169,7 +169,7 @@ body.dark .project-panel .practice-output-box {
 }
 
 .project-panel .output-line {
-  font-family: 'DM Mono', ui-monospace, monospace;
+  font-family: var(--font-mono);
   font-size: 13px;
   color: #166534;
   line-height: 1.5;

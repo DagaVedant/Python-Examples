@@ -156,7 +156,7 @@ body:not(.dark) .practice-panel__save-btn {
 .practice-panel__save-status {
   font-size: 11px;
   color: var(--practice-ccm);
-  font-family: ui-monospace, monospace;
+  font-family: var(--font-mono);
 }
 
 .practice-panel__output-box {
@@ -175,7 +175,7 @@ body:not(.dark) .practice-panel__save-btn {
 }
 
 .practice-panel__output-line {
-  font-family: ui-monospace, monospace;
+  font-family: var(--font-mono);
   font-size: 13px;
   color: var(--practice-cst);
   line-height: 1.7;

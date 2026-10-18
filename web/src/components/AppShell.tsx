@@ -118,8 +118,9 @@ function navStyle(isDark: boolean): React.CSSProperties {
 
 function brandStyle(isDark: boolean): React.CSSProperties {
   return {
+    fontFamily: 'var(--font-head)',
     fontWeight: 600,
-    fontSize: 15,
+    fontSize: 16,
     color: 'var(--blue-tx)',
     textDecoration: 'none',
   };

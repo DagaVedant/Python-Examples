@@ -155,7 +155,7 @@ body.dark .hero-cta-secondary:hover {
   border: 1px solid #2d3148;
   border-radius: 10px;
   overflow: hidden;
-  font-family: ui-monospace, 'Cascadia Code', 'Segoe UI Mono', Menlo, Consolas, monospace;
+  font-family: var(--font-mono);
   font-size: 13px;
   line-height: 1.55;
 }
@@ -215,11 +215,11 @@ body:not(.dark) .hero-demo-out.is-running::after {
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: #9da3b4;
-  font-family: 'DM Sans', sans-serif;
+  font-family: var(--font-body);
 }
 
 .hero-demo-run {
-  font-family: 'DM Sans', sans-serif;
+  font-family: var(--font-body);
   font-size: 12px;
   font-weight: 600;
   padding: 5px 12px;
@@ -270,7 +270,7 @@ body:not(.dark) .hero-demo-out.is-running::after {
 .hero-demo-out::before {
   content: 'Output';
   display: block;
-  font-family: 'DM Sans', sans-serif;
+  font-family: var(--font-body);
   font-size: 10px;
   font-weight: 600;
   letter-spacing: 0.06em;

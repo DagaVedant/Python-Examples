@@ -65,7 +65,7 @@ export function PythonEditor({
           },
           '.cm-scroller': {
             fontFamily:
-              'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace',
+              'var(--font-mono)',
             minHeight: '8rem',
           },
           '.cm-content': {

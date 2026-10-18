@@ -9,9 +9,12 @@
   --border: #e5e7eb;
   --surface: #f8fafc;
   --bg: #ffffff;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --font-head: 'Fraunces', Georgia, serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace;
   --r: 10px;
   --rsm: 6px;
-  font-family: 'DM Sans', system-ui, sans-serif;
+  font-family: var(--font-body);
   color: var(--text);
   background: var(--bg);
 }
@@ -24,6 +27,11 @@ body {
   color: var(--text);
 }
 a { color: inherit; }
+
+h1, h2, h3 {
+  font-family: var(--font-head);
+  font-weight: 600;
+}
 
 html.dark,
 body.dark {
