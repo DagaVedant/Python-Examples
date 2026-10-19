@@ -1,8 +1,16 @@
 import { createClient } from '@supabase/supabase-js';
 
-/** Public Supabase anon key (safe in the browser). */
-export const SUPABASE_URL = 'https://udzpwekkpedmtudcsyve.supabase.co';
-export const SUPABASE_ANON_KEY =
-  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVkenB3ZWtrcGVkbXR1ZGNzeXZlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODEwMzAzMjYsImV4cCI6MjA5NjYwNjMyNn0.xaMqyzNabeeE7bYVbAVwz8HCFIwQrGczF9x1FrXJv-A';
+/** Public Supabase config, set as VITE_ env vars (see .env.example). The anon key is safe in the browser. */
+const url = import.meta.env.VITE_SUPABASE_URL as string | undefined;
+const anonKey = import.meta.env.VITE_SUPABASE_ANON_KEY as string | undefined;
+
+if (!url || !anonKey) {
+  throw new Error(
+    'Missing VITE_SUPABASE_URL or VITE_SUPABASE_ANON_KEY. Copy web/.env.example to web/.env.local and fill both in.',
+  );
+}
+
+export const SUPABASE_URL: string = url;
+export const SUPABASE_ANON_KEY: string = anonKey;
 
 export const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
