@@ -13,7 +13,16 @@ type QuestionAnswer = {
 };
 
 export function QuizPanel({ quiz, onPassedChange }: QuizPanelProps) {
-  const quizList = useMemo(() => (Array.isArray(quiz) ? quiz : [quiz]), [quiz]);
+  const quizList = useMemo(
+    () =>
+      (Array.isArray(quiz) ? quiz : [quiz]).map((item) => {
+        const options = item.options.filter((option) => !option.correct);
+        const correct = item.options.filter((option) => option.correct);
+        options.splice(Math.floor(Math.random() * (options.length + 1)), 0, ...correct);
+        return { ...item, options };
+      }),
+    [quiz],
+  );
 
   const [quizIndex, setQuizIndex] = useState(0);
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
