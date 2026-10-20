@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Link, useSearchParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { recordLastLesson } from '../hooks/useGuestProgress';
 import { usePageMeta } from '../hooks/usePageMeta';
 import { loadLessonJson } from '../lib/loadLesson';
@@ -9,9 +9,9 @@ import { LessonLoadedView } from './lesson/LessonLoadedView';
 import './LessonPage.css';
 
 export function LessonPage() {
-  const [params] = useSearchParams();
-  const unit = Number(params.get('unit') || 1);
-  const lesson = Number(params.get('lesson') || 1);
+  const params = useParams();
+  const unit = Number(params.unit) || 1;
+  const lesson = Number(params.lesson) || 1;
   const [data, setData] = useState<LessonData | null>(null);
   const [error, setError] = useState<string | null>(null);
 
@@ -25,7 +25,7 @@ export function LessonPage() {
   usePageMeta({
     title: lessonTitle,
     description: lessonDescription,
-    path: `/lesson?unit=${unit}&lesson=${lesson}`,
+    path: `/lesson/${unit}/${lesson}`,
   });
 
   useEffect(() => {

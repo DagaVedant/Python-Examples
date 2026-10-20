@@ -4,7 +4,7 @@ import { getLastLesson, type LastLesson } from '../lib/lastLesson';
 import './ContinueCard.css';
 
 function lessonHref(unit: number, lesson: number): string {
-  return `/lesson?unit=${unit}&lesson=${lesson}`;
+  return `/lesson/${unit}/${lesson}`;
 }
 
 export function ContinueCard() {

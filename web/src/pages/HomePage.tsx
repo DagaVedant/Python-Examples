@@ -82,7 +82,7 @@ export function HomePage() {
             progress.
           </p>
           <div className="hero-ctas">
-            <Link className="hero-cta-primary" to="/lesson?unit=1&lesson=1">
+            <Link className="hero-cta-primary" to="/lesson/1/1">
               Start lesson 1
             </Link>
             <Link className="hero-cta-secondary" to="/signup">

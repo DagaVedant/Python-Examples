@@ -1,4 +1,4 @@
-import { Route, Routes } from 'react-router-dom';
+import { Navigate, Route, Routes, useSearchParams } from 'react-router-dom';
 import { AppShell } from './components/AppShell';
 import { ErrorBoundary } from './components/ErrorBoundary';
 import { CelebrateRoot } from './hooks/useCelebrate';
@@ -14,6 +14,11 @@ import { ResetPasswordPage } from './pages/ResetPasswordPage';
 import { SignupPage } from './pages/SignupPage';
 import { TermsPage } from './pages/TermsPage';
 
+function OldLessonLink() {
+  const [params] = useSearchParams();
+  return <Navigate replace to={`/lesson/${Number(params.get('unit')) || 1}/${Number(params.get('lesson')) || 1}`} />;
+}
+
 export default function App() {
   return (
     <ErrorBoundary>
@@ -21,7 +26,8 @@ export default function App() {
         <AppShell>
           <Routes>
             <Route path="/" element={<HomePage />} />
-            <Route path="/lesson" element={<LessonPage />} />
+            <Route path="/lesson" element={<OldLessonLink />} />
+            <Route path="/lesson/:unit/:lesson" element={<LessonPage />} />
             <Route path="/login" element={<LoginPage />} />
             <Route path="/signup" element={<SignupPage />} />
             <Route path="/forgot-password" element={<ForgotPasswordPage />} />

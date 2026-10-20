@@ -47,7 +47,7 @@ export function HomeRoadmap({ units, completedKeys }: Props) {
                   return (
                     <li key={l.number}>
                       <Link
-                        to={`/lesson?unit=${u.number}&lesson=${l.number}`}
+                        to={`/lesson/${u.number}/${l.number}`}
                         className={`roadmap-chip${d ? ' is-done' : ''}${here ? ' is-here' : ''}`}
                       >
                         {u.number}.{l.number} {l.title}

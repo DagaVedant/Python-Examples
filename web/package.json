@@ -4,11 +4,9 @@
   "version": "0.1.0",
   "type": "module",
   "scripts": {
-    "generate-search-index": "node scripts/generate-search-index.mjs",
-    "predev": "npm run generate-search-index",
+    "predev": "node scripts/build-content.mjs",
     "dev": "vite",
-    "prebuild": "npm run generate-search-index",
-    "build": "tsc -b && vite build",
+    "build": "node scripts/build-content.mjs && tsc -b && vite build && node scripts/prerender.mjs",
     "preview": "vite preview",
     "check:lessons": "node scripts/check-lessons.mjs"
   },

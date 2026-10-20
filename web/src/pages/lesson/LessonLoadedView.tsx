@@ -14,7 +14,7 @@ import { LessonCodeBlock } from './LessonCodeBlock';
 import { LessonStepper } from './LessonStepper';
 
 function lessonHref(unit: number, lesson: number): string {
-  return `/lesson?unit=${unit}&lesson=${lesson}`;
+  return `/lesson/${unit}/${lesson}`;
 }
 
 function resolveEditorTheme(): 'light' | 'dark' {

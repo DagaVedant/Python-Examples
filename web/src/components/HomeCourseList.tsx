@@ -6,7 +6,7 @@ type Props = {
 };
 
 function lessonHref(unit: number, lesson: number) {
-  return `/lesson?unit=${unit}&lesson=${lesson}`;
+  return `/lesson/${unit}/${lesson}`;
 }
 
 export function HomeCourseList({ units }: Props) {

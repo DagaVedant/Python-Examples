@@ -95,7 +95,7 @@ export function CourseTree({ unit, lesson }: Props) {
   function openTopResult() {
     if (matches.length === 0) return;
     const top = matches[0];
-    navigate(`/lesson?unit=${top.unit}&lesson=${top.lesson}`);
+    navigate(`/lesson/${top.unit}/${top.lesson}`);
   }
 
   return (
@@ -162,7 +162,7 @@ export function CourseTree({ unit, lesson }: Props) {
                     return (
                       <li key={l.number}>
                         <Link
-                          to={`/lesson?unit=${u.number}&lesson=${l.number}`}
+                          to={`/lesson/${u.number}/${l.number}`}
                           className={`course-tree-file${current ? ' is-current' : ''}${complete ? ' is-done' : ''}`}
                           aria-current={current ? 'page' : undefined}
                         >
