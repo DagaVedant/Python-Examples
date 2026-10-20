@@ -1,58 +1,24 @@
 # Learn Python
 
-A free, browser-based Python course for total beginners. 110 short lessons, a real code editor, quizzes, and practice tasks. No install required.
+A free Python course for complete beginners. 110 short lessons, each with a runnable example, practice tasks and a quiz. Python runs in your browser, so there is nothing to install and no account needed.
 
-**Live site:** [https://pythonexamples.vercel.app](https://pythonexamples.vercel.app)
+**[Start learning at pythonexamples.vercel.app](https://pythonexamples.vercel.app)**
 
-![Course homepage](web/public/images/preview.png)
+![Course home page](docs/screenshots/home.png)
 
-## Features
+## What you get
 
-- 110 lessons across 12 units, one idea per lesson
-- In-browser Python via Pyodide (including `input()`)
-- CodeMirror 6 editor for examples and practice
-- Quiz and practice tasks in every lesson
-- Optional free account to save progress across devices
-- AI practice feedback for signed-in users (via OpenRouter, server-side)
-- Guest progress stored in the browser with localStorage
-- Certificates when you finish a unit
+- 110 lessons in 12 units, one idea per lesson, written in plain language
+- A code editor on every page that runs real Python (Pyodide), including `input()` and file examples
+- Practice tasks checked against your output, and a short quiz at the end of each lesson
+- Progress saved in your browser, or across devices if you make a free account
+- A certificate when you finish a unit
+- Light and dark themes, keyboard friendly, works on a phone
 
-## Stack
-
-- React + TypeScript + Vite (`web/`)
-- React Router for pages
-- Supabase for auth and progress
-- Pyodide for Python in the browser
-- CodeMirror 6 for the editor
-- Hosted on Vercel
-
-Lesson content lives in `Unit N/lesson M/data.json` and is loaded through the `@content` alias at build time.
-
-## Run locally
-
-```bash
-cd web
-npm install
-npm run dev
-```
-
-Open the URL Vite prints (usually `http://localhost:5173`).
-
-Copy `web/.env.example` to `web/.env.local` and fill in your Supabase keys if you want auth and progress sync. The course still works without them for guest browsing.
-
-## Build
-
-```bash
-cd web
-npm run build
-npm run preview
-```
-
-## Deploy
-
-The repo root `vercel.json` builds the Vite app from `web/` and serves `web/dist`. Connect the GitHub repo to a Vercel project, set the same env vars as local (Supabase URL and anon key), and deploy from `main`.
-
-Site URL used in auth redirects: `https://pythonexamples.vercel.app`
+<p>
+  <img src="docs/screenshots/lesson.png" alt="A lesson with the example editor" width="68%">
+  <img src="docs/screenshots/mobile.png" alt="The same lesson on a phone" width="26%">
+</p>
 
 ## Course outline
 
@@ -71,6 +37,50 @@ Site URL used in auth redirects: `https://pythonexamples.vercel.app`
 | 11 | Imports | 8 |
 | 12 | Classes | 10 |
 
+## How it is built
+
+- **Front end:** Vite, React and TypeScript, with React Router. CodeMirror 6 is the editor.
+- **Python in the browser:** Pyodide, loaded from a CDN the first time you press Run.
+- **Lessons are data:** each lesson is a JSON file in `content/unit-N/lesson-M.json`, and `content/course.json` lists the units. A build step turns them into the files the app loads.
+- **SEO:** after `vite build`, `web/scripts/prerender.mjs` writes a static HTML page for the home page and all 110 lessons, each with its own title, description, canonical URL, Open Graph tags, JSON-LD and the lesson text. React takes over once the page loads. The sitemap and `robots.txt` are generated from the same lesson list.
+- **Accounts and progress:** Supabase auth and Postgres with row level security. Guests keep progress in `localStorage`.
+- **AI feedback (optional bonus):** signed-in users can get written feedback on a practice answer. It runs in a Supabase Edge Function (`supabase/functions/grade-practice`) so the API key never reaches the browser, and is limited per user per day.
+- **Hosting:** Vercel, built from the repo root with `vercel.json`.
+
+```
+content/             lesson JSON, the single source of truth
+web/src/             the React app
+web/scripts/         content build, prerender, lesson checker
+supabase/functions/  edge functions (AI grading, account deletion)
+supabase/migrations/ database schema and policies
+```
+
+## Run it locally
+
+You need Node 20 or newer.
+
+```bash
+cd web
+npm install
+npm run dev
+```
+
+Open the URL Vite prints (usually http://localhost:5173). Lessons and Python work with no setup.
+
+To turn on sign-in and progress sync, copy `web/.env.example` to `web/.env.local` and fill in `VITE_SUPABASE_URL` and `VITE_SUPABASE_ANON_KEY` from your own Supabase project. Run the SQL in `supabase/migrations` against it first.
+
+Other commands, from `web/`:
+
+```bash
+npm run build          # content, type check, bundle, prerender
+npm run preview        # serve the production build
+npm run check:lessons  # validate every lesson file
+```
+
+## Contributing
+
+Found a mistake in a lesson, a quiz answer that is wrong, or an example that does not run? Open an issue or send a pull request. See [CONTRIBUTING.md](CONTRIBUTING.md) for the short version.
+
 ## License
 
-See [LICENSE](LICENSE).
+[MIT](LICENSE)
