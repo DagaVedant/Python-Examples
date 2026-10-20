@@ -38,33 +38,30 @@ export type RunIsolatedOptions = {
 let pyodideSingleton: PyodideInterface | null = null;
 let pyodideLoadPromise: Promise<PyodideInterface> | null = null;
 
-function loadPyodideScript(): Promise<void> {
-  if (window.loadPyodide) return Promise.resolve();
-  return new Promise((resolve, reject) => {
-    const existing = document.querySelector<HTMLScriptElement>(
-      `script[src="${PYODIDE_INDEX_URL}pyodide.js"]`,
-    );
-    if (existing) {
-      if (window.loadPyodide) resolve();
-      else existing.addEventListener('load', () => resolve(), { once: true });
-      existing.addEventListener('error', () => reject(new Error('Failed to load Pyodide')), {
-        once: true,
-      });
-      return;
-    }
-    const script = document.createElement('script');
-    script.src = `${PYODIDE_INDEX_URL}pyodide.js`;
-    script.onload = () => resolve();
-    script.onerror = () => reject(new Error('Failed to load Pyodide'));
-    document.head.appendChild(script);
-  });
-}
-
 async function loadPyodideInstance(): Promise<PyodideInterface> {
   if (pyodideSingleton) return pyodideSingleton;
   if (!pyodideLoadPromise) {
     pyodideLoadPromise = (async () => {
-      await loadPyodideScript();
+      if (!window.loadPyodide) {
+        await new Promise<void>((resolve, reject) => {
+          const existing = document.querySelector<HTMLScriptElement>(
+            `script[src="${PYODIDE_INDEX_URL}pyodide.js"]`,
+          );
+          if (existing) {
+            if (window.loadPyodide) resolve();
+            else existing.addEventListener('load', () => resolve(), { once: true });
+            existing.addEventListener('error', () => reject(new Error('Failed to load Pyodide')), {
+              once: true,
+            });
+            return;
+          }
+          const script = document.createElement('script');
+          script.src = `${PYODIDE_INDEX_URL}pyodide.js`;
+          script.onload = () => resolve();
+          script.onerror = () => reject(new Error('Failed to load Pyodide'));
+          document.head.appendChild(script);
+        });
+      }
       if (!window.loadPyodide) {
         throw new Error('Pyodide loader not available');
       }
@@ -75,19 +72,16 @@ async function loadPyodideInstance(): Promise<PyodideInterface> {
   return pyodideLoadPromise;
 }
 
-function seedFakeFiles(py: PyodideInterface, fakeFiles?: Record<string, string>) {
-  if (!fakeFiles) return;
-  for (const [name, content] of Object.entries(fakeFiles)) {
-    py.FS.writeFile(name, content);
-  }
-}
-
-export async function runIsolated(
+async function runIsolated(
   code: string,
   { allowInput = true, fakeFiles }: RunIsolatedOptions = {},
 ): Promise<RunIsolatedResult> {
   const py = await loadPyodideInstance();
-  seedFakeFiles(py, fakeFiles);
+  if (fakeFiles) {
+    for (const [name, content] of Object.entries(fakeFiles)) {
+      py.FS.writeFile(name, content);
+    }
+  }
 
   let output = '';
   py.setStdout({ batched: (text) => {
