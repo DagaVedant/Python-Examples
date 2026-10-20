@@ -3,7 +3,6 @@ import { useCallback, useRef, useState } from 'react';
 const PYODIDE_VERSION = '0.26.2';
 const PYODIDE_INDEX_URL = `https://cdn.jsdelivr.net/pyodide/v${PYODIDE_VERSION}/full/`;
 
-/** Minimal Pyodide surface used by this app (loaded from CDN). */
 interface PyodideNamespace {
   destroy: () => void;
 }
@@ -32,9 +31,7 @@ export type RunIsolatedResult = {
 };
 
 export type RunIsolatedOptions = {
-  /** When false, stdin returns empty (project checks). Default true. */
   allowInput?: boolean;
-  /** Lesson fake files written into Pyodide FS before run. */
   fakeFiles?: Record<string, string>;
 };
 

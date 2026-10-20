@@ -4,12 +4,10 @@ import { useAuth } from './useAuth';
 import { mergeGuestCompletions } from '../lib/markLessonComplete';
 import { supabase } from '../lib/supabase';
 
-/** Merged guest + signed-in completion keys (`"unit-lesson"`). */
 export function useCompletions() {
   const { user, loading: authLoading } = useAuth();
   const [completions, setCompletions] = useState<string[]>(() => getGuestCompletions());
   const [loading, setLoading] = useState(true);
-  /** Tracks which user id already had guest progress merged this session. */
   const mergedUserIdRef = useRef<string | null>(null);
 
   const refresh = useCallback(async () => {

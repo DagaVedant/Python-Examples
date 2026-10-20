@@ -9,11 +9,7 @@ import { StreakBadge } from '../components/StreakBadge';
 import { useCompletions } from '../hooks/useCompletions';
 import { usePageMeta } from '../hooks/usePageMeta';
 import { loadCourseInfo } from '../lib/loadCourseInfo';
-import {
-  COURSE_LOAD_MESSAGE,
-  OFFLINE_MESSAGE,
-  isLikelyOffline,
-} from '../lib/serviceMessages';
+import { COURSE_LOAD_MESSAGE, OFFLINE_MESSAGE } from '../lib/serviceMessages';
 import type { CourseUnit } from '../types/courseInfo';
 import '../styles/auth.css';
 import '../styles/home.css';
@@ -51,7 +47,7 @@ export function HomePage() {
       })
       .catch(() => {
         if (!cancelled) {
-          setError(isLikelyOffline() ? OFFLINE_MESSAGE : COURSE_LOAD_MESSAGE);
+          setError(!navigator.onLine ? OFFLINE_MESSAGE : COURSE_LOAD_MESSAGE);
         }
       });
     return () => {

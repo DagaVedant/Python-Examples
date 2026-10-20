@@ -8,8 +8,13 @@ import { QuizPanel } from '../../components/QuizPanel';
 import { useAuth } from '../../hooks/useAuth';
 import { usePyodide } from '../../hooks/usePyodide';
 import { loadCourseInfo } from '../../lib/loadCourseInfo';
-import { getLessonNeighbors, type LessonNavLink } from '../../lib/lessonNav';
 import type { LessonData } from '../../types/lesson';
+
+type LessonNavLink = {
+  unit: number;
+  lesson: number;
+  title: string;
+};
 import { LessonCodeBlock } from './LessonCodeBlock';
 import { LessonStepper } from './LessonStepper';
 
@@ -50,7 +55,23 @@ export function LessonLoadedView({ data }: LessonLoadedViewProps) {
     let cancelled = false;
     loadCourseInfo()
       .then((info) => {
-        if (!cancelled) setNeighbors(getLessonNeighbors(info, lesson.unit, lesson.lesson));
+        if (!cancelled) {
+          const flat: LessonNavLink[] = [];
+          for (const unit of info.units) {
+            for (const item of unit.lessons) {
+              flat.push({ unit: unit.number, lesson: item.number, title: item.title });
+            }
+          }
+          const index = flat.findIndex((item) => item.unit === lesson.unit && item.lesson === lesson.lesson);
+          setNeighbors(
+            index < 0
+              ? { prev: null, next: null }
+              : {
+                  prev: index > 0 ? flat[index - 1] : null,
+                  next: index < flat.length - 1 ? flat[index + 1] : null,
+                },
+          );
+        }
       })
       .catch(() => {
         if (!cancelled) setNeighbors({ prev: null, next: null });

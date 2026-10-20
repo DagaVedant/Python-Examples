@@ -1,6 +1,5 @@
 import { createClient } from '@supabase/supabase-js';
 
-/** Public Supabase config, set as VITE_ env vars (see .env.example). The anon key is safe in the browser. */
 const url = import.meta.env.VITE_SUPABASE_URL as string | undefined;
 const anonKey = import.meta.env.VITE_SUPABASE_ANON_KEY as string | undefined;
 

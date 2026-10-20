@@ -1,18 +1,12 @@
 import { useEffect, useState } from 'react';
 
-export type BodyTheme = 'light' | 'dark';
-
-function read(): BodyTheme {
-  if (typeof document === 'undefined') return 'light';
-  return document.body.classList.contains('dark') ? 'dark' : 'light';
-}
-
-/** Follows the `dark` class on <body>, which the nav toggle sets. */
-export function useBodyTheme(): BodyTheme {
-  const [theme, setTheme] = useState<BodyTheme>(read);
+export function useBodyTheme(): 'light' | 'dark' {
+  const [theme, setTheme] = useState<'light' | 'dark'>(() =>
+    document.body.classList.contains('dark') ? 'dark' : 'light',
+  );
 
   useEffect(() => {
-    const sync = () => setTheme(read());
+    const sync = () => setTheme(document.body.classList.contains('dark') ? 'dark' : 'light');
     sync();
     const obs = new MutationObserver(sync);
     obs.observe(document.body, { attributes: true, attributeFilter: ['class'] });

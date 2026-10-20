@@ -4,7 +4,7 @@ const SITE_URL = 'https://pythonexamples.vercel.app';
 const DEFAULT_IMAGE = `${SITE_URL}/images/preview.png`;
 const SITE_NAME = 'Learn Python';
 
-export type PageMeta = {
+type PageMeta = {
   title: string;
   description: string;
   path?: string;
@@ -20,16 +20,6 @@ function upsertMeta(attr: 'name' | 'property', key: string, content: string) {
     document.head.appendChild(el);
   }
   el.setAttribute('content', content);
-}
-
-function upsertLink(rel: string, href: string) {
-  let el = document.head.querySelector<HTMLLinkElement>(`link[rel="${rel}"]`);
-  if (!el) {
-    el = document.createElement('link');
-    el.setAttribute('rel', rel);
-    document.head.appendChild(el);
-  }
-  el.setAttribute('href', href);
 }
 
 export function usePageMeta({ title, description, path = '/', image, noIndex }: PageMeta) {
@@ -55,6 +45,12 @@ export function usePageMeta({ title, description, path = '/', image, noIndex }: 
     upsertMeta('name', 'twitter:description', description);
     upsertMeta('name', 'twitter:image', ogImage);
 
-    upsertLink('canonical', url);
+    let link = document.head.querySelector<HTMLLinkElement>('link[rel="canonical"]');
+    if (!link) {
+      link = document.createElement('link');
+      link.setAttribute('rel', 'canonical');
+      document.head.appendChild(link);
+    }
+    link.setAttribute('href', url);
   }, [title, description, path, image, noIndex]);
 }

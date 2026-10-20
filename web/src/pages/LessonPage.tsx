@@ -3,7 +3,7 @@ import { Link, useParams } from 'react-router-dom';
 import { recordLastLesson } from '../hooks/useGuestProgress';
 import { usePageMeta } from '../hooks/usePageMeta';
 import { loadLessonJson } from '../lib/loadLesson';
-import { OFFLINE_MESSAGE, isLikelyOffline } from '../lib/serviceMessages';
+import { OFFLINE_MESSAGE } from '../lib/serviceMessages';
 import type { LessonData } from '../types/lesson';
 import { LessonLoadedView } from './lesson/LessonLoadedView';
 import './LessonPage.css';
@@ -50,7 +50,7 @@ export function LessonPage() {
   }, [data]);
 
   if (error) {
-    const friendly = isLikelyOffline()
+    const friendly = !navigator.onLine
       ? OFFLINE_MESSAGE
       : `Could not load lesson ${unit}.${lesson}. It may not exist, or the network failed. Try another lesson from home.`;
     return (

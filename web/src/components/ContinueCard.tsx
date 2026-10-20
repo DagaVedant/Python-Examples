@@ -1,11 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { getLastLesson, type LastLesson } from '../lib/lastLesson';
+import { getLastLesson, type LastLesson } from '../hooks/useGuestProgress';
 import './ContinueCard.css';
-
-function lessonHref(unit: number, lesson: number): string {
-  return `/lesson/${unit}/${lesson}`;
-}
 
 export function ContinueCard() {
   const [last, setLast] = useState<LastLesson>(getLastLesson);
@@ -25,7 +21,7 @@ export function ContinueCard() {
 
   return (
     <div className="continue-slot" id="continue-slot">
-      <Link className="continue-card" to={lessonHref(last.unit, last.lesson)}>
+      <Link className="continue-card" to={`/lesson/${last.unit}/${last.lesson}`}>
         <span className="continue-card-text">{label}</span>
         <svg
           width="16"

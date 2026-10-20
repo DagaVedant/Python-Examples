@@ -1,7 +1,6 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
-/** localStorage `streak-data`: { lastDate, count, best } */
-export type StreakData = {
+type StreakData = {
   lastDate: string | null;
   count: number;
   best: number;
@@ -9,26 +8,7 @@ export type StreakData = {
 
 const KEY = 'streak-data';
 
-export function todayLocal(): string {
-  const d = new Date();
-  const y = d.getFullYear();
-  const m = String(d.getMonth() + 1).padStart(2, '0');
-  const day = String(d.getDate()).padStart(2, '0');
-  return `${y}-${m}-${day}`;
-}
-
-function parseLocalDay(iso: string): Date {
-  const [y, m, d] = iso.split('-').map(Number);
-  return new Date(y, m - 1, d);
-}
-
-function dayDiff(fromIso: string, toIso: string): number {
-  const a = parseLocalDay(fromIso);
-  const b = parseLocalDay(toIso);
-  return Math.round((b.getTime() - a.getTime()) / 86400000);
-}
-
-export function getStreak(): StreakData {
+function getStreak(): StreakData {
   try {
     const raw = JSON.parse(localStorage.getItem(KEY) ?? 'null');
     if (raw && typeof raw === 'object') {
@@ -39,26 +19,25 @@ export function getStreak(): StreakData {
       };
     }
   } catch {
-    /* ignore */
   }
   return { lastDate: null, count: 0, best: 0 };
 }
 
-/**
- * Record activity for the local calendar day.
- * - today already counted → no change
- * - lastDate was yesterday → count++
- * - gap > 1 day (or first) → reset to 1
- */
 export function recordActivity(): StreakData {
-  const today = todayLocal();
+  const d = new Date();
+  const today = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
   const data = getStreak();
 
   if (data.lastDate === today) return data;
 
   let count = 1;
-  if (data.lastDate && dayDiff(data.lastDate, today) === 1) {
-    count = data.count + 1;
+  if (data.lastDate) {
+    const [ay, am, ad] = data.lastDate.split('-').map(Number);
+    const [by, bm, bd] = today.split('-').map(Number);
+    const diff = Math.round((new Date(by, bm - 1, bd).getTime() - new Date(ay, am - 1, ad).getTime()) / 86400000);
+    if (diff === 1) {
+      count = data.count + 1;
+    }
   }
 
   const best = Math.max(data.best || 0, count);
@@ -70,14 +49,6 @@ export function recordActivity(): StreakData {
 export function useStreaks() {
   const [streak, setStreak] = useState<StreakData>(() => getStreak());
 
-  const refresh = useCallback(() => {
-    setStreak(getStreak());
-  }, []);
-
-  const record = useCallback(() => {
-    setStreak(recordActivity());
-  }, []);
-
   useEffect(() => {
     const onLessonComplete = () => {
       setStreak(recordActivity());
@@ -86,5 +57,5 @@ export function useStreaks() {
     return () => window.removeEventListener('lesson-complete', onLessonComplete);
   }, []);
 
-  return { streak, refresh, recordActivity: record };
+  return { streak };
 }

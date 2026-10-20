@@ -29,10 +29,6 @@ type GradePracticePayload = {
   taskIndex: number;
 };
 
-function stripHtml(text: string): string {
-  return text.replace(/<[^>]+>/g, '');
-}
-
 export async function requestAiPracticeGrade(
   payload: GradePracticePayload,
   accessToken: string,
@@ -41,7 +37,7 @@ export async function requestAiPracticeGrade(
     headers: { Authorization: `Bearer ${accessToken}` },
     body: {
       ...payload,
-      task: stripHtml(payload.task),
+      task: payload.task.replace(/<[^>]+>/g, ''),
     },
   });
 

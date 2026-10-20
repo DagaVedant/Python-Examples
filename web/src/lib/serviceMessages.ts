@@ -1,4 +1,3 @@
-/** Friendly ASCII copy for common failure modes. */
 
 export const OFFLINE_MESSAGE =
   'You appear to be offline. Lessons you already opened may still work. Reconnect to load new content or sync progress.';
@@ -14,10 +13,6 @@ export const COURSE_LOAD_MESSAGE =
 
 export const GENERIC_RENDER_MESSAGE =
   'Something went wrong on this page. Try refreshing. Your progress on this device is usually still saved.';
-
-export function isLikelyOffline(): boolean {
-  return typeof navigator !== 'undefined' && navigator.onLine === false;
-}
 
 export function looksLikeNetworkError(err: unknown): boolean {
   if (err instanceof TypeError) return true;
