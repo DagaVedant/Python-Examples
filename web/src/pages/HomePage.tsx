@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { CertificatesPanel } from '../components/CertificatesPanel';
 import { ContinueCard } from '../components/ContinueCard';
@@ -29,12 +29,6 @@ export function HomePage() {
       'A free beginner Python course that runs in your browser. Optional accounts save progress. AI practice feedback for signed-in users.',
     path: '/',
   });
-
-  const reloadCourse = useCallback(() => {
-    setError(null);
-    setUnits(null);
-    setRetryToken((n) => n + 1);
-  }, []);
 
   useEffect(() => {
     let cancelled = false;
@@ -94,7 +88,14 @@ export function HomePage() {
       {error ? (
         <div className="home-error-panel" role="alert">
           <p>{error}</p>
-          <button type="button" onClick={reloadCourse}>
+          <button
+            type="button"
+            onClick={() => {
+              setError(null);
+              setUnits(null);
+              setRetryToken((n) => n + 1);
+            }}
+          >
             Try again
           </button>
         </div>

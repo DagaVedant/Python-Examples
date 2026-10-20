@@ -5,49 +5,10 @@ import { loadCourseInfo } from '../lib/loadCourseInfo';
 import type { CourseUnit } from '../types/courseInfo';
 import './CertificatePage.css';
 
-export const CERT_NAME_KEY = 'cert-name';
-
 type CertMode =
   | { type: 'course' }
   | { type: 'unit'; unit: number }
   | { type: 'invalid' };
-
-function parseParams(searchParams: URLSearchParams): CertMode {
-  const unitRaw = searchParams.get('unit');
-  const courseRaw = searchParams.get('course');
-  if (courseRaw === '1' || courseRaw === 'true') {
-    return { type: 'course' };
-  }
-  if (unitRaw != null && unitRaw !== '') {
-    const n = parseInt(unitRaw, 10);
-    if (!Number.isNaN(n)) return { type: 'unit', unit: n };
-  }
-  return { type: 'invalid' };
-}
-
-function formatDate(d: Date): string {
-  return d.toLocaleDateString(undefined, {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
-  });
-}
-
-function loadName(): string {
-  try {
-    return localStorage.getItem(CERT_NAME_KEY) || '';
-  } catch {
-    return '';
-  }
-}
-
-function saveName(value: string): void {
-  try {
-    localStorage.setItem(CERT_NAME_KEY, value);
-  } catch {
-    /* ignore quota / private mode */
-  }
-}
 
 function SealIcon() {
   return (
@@ -98,7 +59,7 @@ function CertificateCard({
       <div className="meta">
         <div className="meta-block">
           Date
-          <span>{formatDate(new Date())}</span>
+          <span>{new Date().toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' })}</span>
         </div>
         <div className="meta-block">
           Course
@@ -126,9 +87,26 @@ function CertificateError({ message }: { message: string }) {
 
 export function CertificatePage() {
   const [searchParams] = useSearchParams();
-  const mode = useMemo(() => parseParams(searchParams), [searchParams]);
+  const mode = useMemo((): CertMode => {
+    const unitRaw = searchParams.get('unit');
+    const courseRaw = searchParams.get('course');
+    if (courseRaw === '1' || courseRaw === 'true') {
+      return { type: 'course' };
+    }
+    if (unitRaw != null && unitRaw !== '') {
+      const n = parseInt(unitRaw, 10);
+      if (!Number.isNaN(n)) return { type: 'unit', unit: n };
+    }
+    return { type: 'invalid' };
+  }, [searchParams]);
 
-  const [nameInput, setNameInput] = useState(loadName);
+  const [nameInput, setNameInput] = useState(() => {
+    try {
+      return localStorage.getItem('cert-name') || '';
+    } catch {
+      return '';
+    }
+  });
   const [units, setUnits] = useState<CourseUnit[] | null>(null);
   const [loadError, setLoadError] = useState<string | null>(null);
 
@@ -206,11 +184,6 @@ export function CertificatePage() {
     noIndex: true,
   });
 
-  function handleNameChange(value: string) {
-    setNameInput(value);
-    saveName(value);
-  }
-
   return (
     <div className="certificate-page">
       <div className="toolbar">
@@ -223,7 +196,13 @@ export function CertificatePage() {
             <input
               type="text"
               value={nameInput}
-              onChange={(e) => handleNameChange(e.target.value)}
+              onChange={(e) => {
+                setNameInput(e.target.value);
+                try {
+                  localStorage.setItem('cert-name', e.target.value);
+                } catch {
+                }
+              }}
               placeholder="Optional"
               maxLength={80}
               autoComplete="name"

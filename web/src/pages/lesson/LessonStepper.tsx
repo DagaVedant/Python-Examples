@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 
 type Step = { id: string; label: string };
 
-/** Read / Try / Practice / Quiz tabs that follow the scroll position. */
 export function LessonStepper({ steps }: { steps: Step[] }) {
   const [active, setActive] = useState(0);
 

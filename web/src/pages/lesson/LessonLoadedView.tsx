@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { CourseTree } from '../../components/CourseTree';
 import { LessonCompleteBar } from '../../components/LessonCompleteBar';
@@ -6,6 +6,7 @@ import { PracticePanel } from '../../components/PracticePanel';
 import { ProjectPanelFromLesson } from '../../components/ProjectPanel';
 import { QuizPanel } from '../../components/QuizPanel';
 import { useAuth } from '../../hooks/useAuth';
+import { useBodyTheme } from '../../hooks/useBodyTheme';
 import { usePyodide } from '../../hooks/usePyodide';
 import { loadCourseInfo } from '../../lib/loadCourseInfo';
 import type { LessonData } from '../../types/lesson';
@@ -18,16 +19,6 @@ type LessonNavLink = {
 import { LessonCodeBlock } from './LessonCodeBlock';
 import { LessonStepper } from './LessonStepper';
 
-function lessonHref(unit: number, lesson: number): string {
-  return `/lesson/${unit}/${lesson}`;
-}
-
-function resolveEditorTheme(): 'light' | 'dark' {
-  if (typeof document === 'undefined') return 'light';
-  if (document.body.classList.contains('dark')) return 'dark';
-  return localStorage.getItem('theme') === 'dark' ? 'dark' : 'light';
-}
-
 export type LessonLoadedViewProps = {
   data: LessonData;
 };
@@ -36,7 +27,7 @@ export function LessonLoadedView({ data }: LessonLoadedViewProps) {
   const lesson = data;
   const { user } = useAuth();
   const { runIsolated, loading: pyodideLoading, ensureLoaded } = usePyodide();
-  const editorTheme = resolveEditorTheme();
+  const editorTheme = useBodyTheme();
   const [quizAllPassed, setQuizAllPassed] = useState(false);
   const [neighbors, setNeighbors] = useState<{
     prev: LessonNavLink | null;
@@ -81,20 +72,8 @@ export function LessonLoadedView({ data }: LessonLoadedViewProps) {
     };
   }, [lesson.unit, lesson.lesson]);
 
-  const run = useCallback(
-    (code: string, opts?: { fakeFiles?: Record<string, string> }) =>
-      runIsolated(code, { fakeFiles: opts?.fakeFiles }),
-    [runIsolated],
-  );
-
-  const onQuizPassedChange = useCallback((_passed: boolean[], allPassed: boolean) => {
-    setQuizAllPassed(allPassed);
-  }, []);
-
-  const quizCount = useMemo(
-    () => (Array.isArray(lesson.quiz) ? lesson.quiz.length : 1),
-    [lesson.quiz],
-  );
+  const run = (code: string, opts?: { fakeFiles?: Record<string, string> }) =>
+    runIsolated(code, { fakeFiles: opts?.fakeFiles });
 
   const mainCode = lesson.code.lines.join('\n');
   const code2Initial = lesson.code2?.lines.join('\n');
@@ -192,7 +171,7 @@ export function LessonLoadedView({ data }: LessonLoadedViewProps) {
         </div>
 
         <div id="step-quiz">
-          <QuizPanel quiz={lesson.quiz} onPassedChange={onQuizPassedChange} />
+          <QuizPanel quiz={lesson.quiz} onPassedChange={(_passed, allPassed) => setQuizAllPassed(allPassed)} />
         </div>
 
         <LessonCompleteBar
@@ -208,7 +187,7 @@ export function LessonLoadedView({ data }: LessonLoadedViewProps) {
           {neighbors.prev ? (
             <Link
               className="lesson-nav-btn"
-              to={lessonHref(neighbors.prev.unit, neighbors.prev.lesson)}
+              to={`/lesson/${neighbors.prev.unit}/${neighbors.prev.lesson}`}
             >
               ← {neighbors.prev.unit}.{neighbors.prev.lesson} {neighbors.prev.title}
             </Link>
@@ -218,7 +197,7 @@ export function LessonLoadedView({ data }: LessonLoadedViewProps) {
           {neighbors.next ? (
             <Link
               className="lesson-nav-btn lesson-nav-btn--next"
-              to={lessonHref(neighbors.next.unit, neighbors.next.lesson)}
+              to={`/lesson/${neighbors.next.unit}/${neighbors.next.lesson}`}
             >
               {neighbors.next.unit}.{neighbors.next.lesson} {neighbors.next.title} →
             </Link>
