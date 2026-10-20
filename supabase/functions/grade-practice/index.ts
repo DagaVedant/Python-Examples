@@ -31,21 +31,6 @@ function json(body: unknown, status = 200): Response {
   });
 }
 
-async function sha256(text: string): Promise<string> {
-  const buf = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(text));
-  return Array.from(new Uint8Array(buf)).map((b) => b.toString(16).padStart(2, "0")).join("");
-}
-
-function ESTDay() {
-  const now = new Date();
-  const la = new Date(now.toLocaleString("en-US", { timeZone: "America/New_York" }));
-  const msIntoDay = la.getHours() * 3600_000 + la.getMinutes() * 60_000 + la.getSeconds() * 1000;
-  return {
-    dayStartIso: new Date(now.getTime() - msIntoDay).toISOString(),
-    minutesUntilReset: Math.ceil((86_400_000 - msIntoDay) / 60_000),
-  };
-}
-
 Deno.serve(async (req) => {
   if (req.method === "OPTIONS") return new Response("ok", { headers: corsHeaders });
 
@@ -66,7 +51,11 @@ Deno.serve(async (req) => {
     }
     if (code.length > MAX_CODE_CHARS) return json({ error: "invalid" }, 400);
 
-    const { dayStartIso, minutesUntilReset } = ESTDay();
+    const nowDate = new Date();
+    const la = new Date(nowDate.toLocaleString("en-US", { timeZone: "America/New_York" }));
+    const msIntoDay = la.getHours() * 3600_000 + la.getMinutes() * 60_000 + la.getSeconds() * 1000;
+    const dayStartIso = new Date(nowDate.getTime() - msIntoDay).toISOString();
+    const minutesUntilReset = Math.ceil((86_400_000 - msIntoDay) / 60_000);
 
     const { count: dayCount } = await supabase.from("grade_log")
       .select("*", { count: "exact", head: true })
@@ -74,7 +63,8 @@ Deno.serve(async (req) => {
     const usedToday = dayCount ?? 0;
     const remainingBefore = Math.max(0, PER_DAY_LIMIT - usedToday);
 
-    const codeHash = await sha256(code);
+    const hashBuf = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(code));
+    const codeHash = Array.from(new Uint8Array(hashBuf)).map((b) => b.toString(16).padStart(2, "0")).join("");
     const { data: lastRow } = await supabase
       .from("grade_log")
       .select("code_hash, response")

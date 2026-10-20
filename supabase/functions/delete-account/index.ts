@@ -44,7 +44,6 @@ Deno.serve(async (req) => {
       .delete()
       .eq("user_id", userId);
     if (gradeError) {
-      // Table may not exist in older projects; log and continue if missing.
       console.error(`grade_log delete: ${gradeError.message}`);
     }
 
