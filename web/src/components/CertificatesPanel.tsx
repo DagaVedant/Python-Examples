@@ -8,18 +8,13 @@ type Props = {
   completedKeys: readonly string[];
 };
 
-function completedUnitNumbers(completedKeys: readonly string[], units: CourseUnit[]): number[] {
-  const set = new Set(completedKeys);
-  return units
-    .filter((unit) => unit.lessons.every((lesson) => set.has(`${unit.number}-${lesson.number}`)))
-    .map((unit) => unit.number);
-}
-
 export function CertificatesPanel({ units, completedKeys }: Props) {
-  const doneNums = useMemo(
-    () => completedUnitNumbers(completedKeys, units),
-    [completedKeys, units],
-  );
+  const doneNums = useMemo(() => {
+    const set = new Set(completedKeys);
+    return units
+      .filter((unit) => unit.lessons.every((lesson) => set.has(`${unit.number}-${lesson.number}`)))
+      .map((unit) => unit.number);
+  }, [completedKeys, units]);
 
   const courseComplete = doneNums.length > 0 && doneNums.length === units.length;
 

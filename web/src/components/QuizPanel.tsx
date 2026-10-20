@@ -12,29 +12,8 @@ type QuestionAnswer = {
   correct: boolean;
 };
 
-function normalizeQuiz(quiz: QuizItem | QuizItem[]): QuizItem[] {
-  if (Array.isArray(quiz)) return quiz;
-  return [quiz];
-}
-
-function optionClass(
-  index: number,
-  selectedIndex: number | null,
-  answer: QuestionAnswer | null,
-  options: QuizItem['options'],
-): string {
-  const parts = ['option'];
-  if (answer !== null) {
-    if (options[index].correct) parts.push('correct');
-    else if (index === answer.selectedIndex) parts.push('wrong');
-  } else if (selectedIndex === index) {
-    parts.push('selected');
-  }
-  return parts.join(' ');
-}
-
 export function QuizPanel({ quiz, onPassedChange }: QuizPanelProps) {
-  const quizList = useMemo(() => normalizeQuiz(quiz), [quiz]);
+  const quizList = useMemo(() => (Array.isArray(quiz) ? quiz : [quiz]), [quiz]);
 
   const [quizIndex, setQuizIndex] = useState(0);
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
@@ -168,7 +147,20 @@ export function QuizPanel({ quiz, onPassedChange }: QuizPanelProps) {
             <button
               key={`${quizIndex}-${i}-${opt.text.slice(0, 24)}`}
               type="button"
-              className={optionClass(i, selectedIndex, currentAnswer, current.options)}
+              className={[
+                'option',
+                currentAnswer !== null
+                  ? opt.correct
+                    ? 'correct'
+                    : i === currentAnswer.selectedIndex
+                      ? 'wrong'
+                      : ''
+                  : selectedIndex === i
+                    ? 'selected'
+                    : '',
+              ]
+                .filter(Boolean)
+                .join(' ')}
               role="radio"
               aria-checked={selectedIndex === i}
               disabled={locked}

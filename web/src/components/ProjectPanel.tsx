@@ -2,6 +2,7 @@ import { useCallback, useEffect, useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import type { LessonData, ProjectSpec } from '../types/lesson';
 import { PYODIDE_LOAD_MESSAGE } from '../lib/serviceMessages';
+import { useBodyTheme } from '../hooks/useBodyTheme';
 import { usePyodide } from '../hooks/usePyodide';
 import { PythonEditor } from './PythonEditor';
 import './ProjectPanel.css';
@@ -26,38 +27,7 @@ function writeDone(unit: number, lesson: number, done: boolean) {
     if (done) localStorage.setItem(key, '1');
     else localStorage.removeItem(key);
   } catch {
-    /* ignore */
   }
-}
-
-function useEditorTheme(): 'light' | 'dark' {
-  const [theme, setTheme] = useState<'light' | 'dark'>(() => {
-    if (typeof window === 'undefined') return 'light';
-    if (localStorage.getItem('theme') === 'dark') return 'dark';
-    if (document.documentElement.getAttribute('data-theme') === 'dark') return 'dark';
-    return 'light';
-  });
-
-  useEffect(() => {
-    const sync = () => {
-      const fromAttr = document.documentElement.getAttribute('data-theme');
-      if (fromAttr === 'dark' || fromAttr === 'light') {
-        setTheme(fromAttr);
-        return;
-      }
-      setTheme(localStorage.getItem('theme') === 'dark' ? 'dark' : 'light');
-    };
-    sync();
-    window.addEventListener('storage', sync);
-    const obs = new MutationObserver(sync);
-    obs.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme', 'class'] });
-    return () => {
-      window.removeEventListener('storage', sync);
-      obs.disconnect();
-    };
-  }, []);
-
-  return theme;
 }
 
 export type ProjectCheckResult = {
@@ -71,9 +41,7 @@ export type ProjectPanelProps = {
   lesson: number;
   title: string;
   project: ProjectSpec;
-  /** When true, show Check (stub until Supabase grading is wired). */
   signedIn?: boolean;
-  /** Optional real checker; defaults to stub message for signed-in users. */
   onCheck?: (code: string, output: string, runError?: string) => Promise<ProjectCheckResult>;
 };
 
@@ -85,7 +53,7 @@ export function ProjectPanel({
   signedIn = false,
   onCheck,
 }: ProjectPanelProps) {
-  const theme = useEditorTheme();
+  const theme = useBodyTheme();
   const { runIsolated, loading: pyodideLoading, ensureLoaded, loadError } = usePyodide();
   const starter = project.starter ?? '';
 
@@ -113,7 +81,6 @@ export function ProjectPanel({
 
   useEffect(() => {
     void ensureLoaded().catch(() => {
-      /* loadError state is shown below */
     });
   }, [ensureLoaded]);
 
@@ -289,7 +256,6 @@ export function ProjectPanel({
   );
 }
 
-/** Convenience wrapper when you already have full lesson data. */
 export function ProjectPanelFromLesson({
   lesson,
   signedIn,

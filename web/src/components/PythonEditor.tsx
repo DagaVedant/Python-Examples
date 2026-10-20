@@ -84,8 +84,6 @@ export function PythonEditor({
       view.destroy();
       viewRef.current = null;
     };
-    // Mount once; value/theme sync in separate effects.
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {

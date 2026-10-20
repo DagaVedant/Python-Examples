@@ -5,6 +5,7 @@ import { requestAiPracticeGrade, AI_CHECKS_PER_DAY } from '../lib/gradePractice'
 import { gradePracticeLocally, type LocalGradeResult } from '../lib/practiceGrade';
 import { resolveHint, resolveStarterTip } from '../lib/practiceHints';
 import { PYODIDE_LOAD_MESSAGE } from '../lib/serviceMessages';
+import { useBodyTheme } from '../hooks/useBodyTheme';
 import { usePyodide } from '../hooks/usePyodide';
 import type { LessonData, PracticeTask } from '../types/lesson';
 import { PythonEditor, type PythonEditorTheme } from './PythonEditor';
@@ -17,30 +18,6 @@ export type PracticePanelProps = {
 
 function guestSaveKey(unit: number, lesson: number, index: number): string {
   return `guest-save:${unit}:${lesson}:${index}`;
-}
-
-function defaultStarter(task: PracticeTask): string {
-  if (task.starter?.trim()) return task.starter;
-  const plain = task.text.replace(/<[^>]+>/g, '');
-  return `# ${plain}\n`;
-}
-
-function readInitialCode(unit: number, lesson: number, index: number, task: PracticeTask): {
-  code: string;
-  saveStatus: string;
-} {
-  const saved = localStorage.getItem(guestSaveKey(unit, lesson, index));
-  if (saved != null) {
-    return { code: saved, saveStatus: 'Previously saved' };
-  }
-  return { code: defaultStarter(task), saveStatus: '' };
-}
-
-function resolveEditorTheme(theme?: PythonEditorTheme): PythonEditorTheme {
-  if (theme) return theme;
-  if (typeof document === 'undefined') return 'light';
-  if (document.body.classList.contains('dark')) return 'dark';
-  return localStorage.getItem('theme') === 'dark' ? 'dark' : 'light';
 }
 
 type AiFeedbackState =
@@ -94,14 +71,14 @@ function PracticeTaskRow({
   onRemainingChange,
 }: PracticeTaskRowProps) {
   const [state, setState] = useState<TaskState>(() => {
-    const initial = readInitialCode(unit, lesson, index, task);
+    const saved = localStorage.getItem(guestSaveKey(unit, lesson, index));
     return {
-      code: initial.code,
+      code: saved ?? (task.starter?.trim() ? task.starter : `# ${task.text.replace(/<[^>]+>/g, '')}\n`),
       editorOpen: false,
       hintStage: 0,
       output: null,
       running: false,
-      saveStatus: initial.saveStatus,
+      saveStatus: saved != null ? 'Previously saved' : '',
       localGrade: null,
       lastRunOutput: '',
       lastRunError: null,
@@ -381,7 +358,8 @@ export function PracticePanel({ lesson, theme }: PracticePanelProps) {
   const { unit, lesson: lessonNum, title, practice, fakeFiles } = lesson;
   const { runIsolated, loading, ensureLoaded, loadError } = usePyodide();
   const { session, user } = useAuth();
-  const editorTheme = resolveEditorTheme(theme);
+  const bodyTheme = useBodyTheme();
+  const editorTheme = theme ?? bodyTheme;
   const [remainingChecks, setRemainingChecks] = useState<number | null>(null);
 
   useEffect(() => {

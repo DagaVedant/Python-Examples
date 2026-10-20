@@ -1,4 +1,4 @@
-import { useCallback, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 
 const DEMO_OUTPUT = 'Hello!\nYou can code.';
 
@@ -8,47 +8,38 @@ export function HeroDemo() {
   const [busy, setBusy] = useState(false);
   const animatingRef = useRef(false);
 
-  const prefersReducedMotion = () =>
-    typeof window !== 'undefined' &&
-    window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  const typeOutput = useCallback((text: string) => {
-    return new Promise<void>((resolve) => {
-      if (prefersReducedMotion()) {
-        setOutput(text);
-        setRunning(false);
-        resolve();
-        return;
-      }
-      setRunning(true);
-      let i = 0;
-      const tick = () => {
-        if (i <= text.length) {
-          setOutput(text.slice(0, i));
-          i += 1;
-          window.setTimeout(tick, 45);
-        } else {
-          setRunning(false);
-          resolve();
-        }
-      };
-      tick();
-    });
-  }, []);
-
-  const onRun = useCallback(async () => {
+  const onRun = async () => {
     if (animatingRef.current) return;
     animatingRef.current = true;
     setBusy(true);
     setOutput('');
     setRunning(true);
-    if (!prefersReducedMotion()) {
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
       await new Promise((r) => window.setTimeout(r, 280));
     }
-    await typeOutput(DEMO_OUTPUT);
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      setOutput(DEMO_OUTPUT);
+      setRunning(false);
+    } else {
+      await new Promise<void>((resolve) => {
+        setRunning(true);
+        let i = 0;
+        const tick = () => {
+          if (i <= DEMO_OUTPUT.length) {
+            setOutput(DEMO_OUTPUT.slice(0, i));
+            i += 1;
+            window.setTimeout(tick, 45);
+          } else {
+            setRunning(false);
+            resolve();
+          }
+        };
+        tick();
+      });
+    }
     setBusy(false);
     animatingRef.current = false;
-  }, [typeOutput]);
+  };
 
   return (
     <div className="hero-demo" aria-label="Try a tiny Python example">

@@ -8,17 +8,9 @@ import type { SearchLesson } from '../types/searchIndex';
 import './CourseTree.css';
 
 type Props = {
-  /** Current unit and lesson, if any. Used to highlight and to open that unit. */
   unit?: number;
   lesson?: number;
 };
-
-function slug(title: string): string {
-  return title
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/^-|-$/g, '');
-}
 
 function matchesQuery(entry: SearchLesson, q: string): boolean {
   if (!q) return true;
@@ -170,7 +162,7 @@ export function CourseTree({ unit, lesson }: Props) {
                             {complete ? '✓' : '·'}
                           </span>
                           <span className="course-tree-file-name">
-                            {u.number}.{l.number}_{slug(l.title)}.py
+                            {u.number}.{l.number}_{l.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')}.py
                           </span>
                           {complete && <span className="sr-only">Completed</span>}
                         </Link>

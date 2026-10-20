@@ -1,4 +1,4 @@
-import { useCallback, useState, type ReactNode } from 'react';
+import { useState, type ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../hooks/useAuth';
 import { StatusBanner } from './StatusBanner';
@@ -7,11 +7,6 @@ import '../styles/auth.css';
 type Theme = 'light' | 'dark';
 
 const THEME_KEY = 'theme';
-
-function readTheme(): Theme {
-  if (typeof window === 'undefined') return 'light';
-  return localStorage.getItem(THEME_KEY) === 'dark' ? 'dark' : 'light';
-}
 
 function applyBodyTheme(theme: Theme) {
   document.documentElement.classList.toggle('dark', theme === 'dark');
@@ -25,19 +20,19 @@ type AppShellProps = {
 export function AppShell({ children }: AppShellProps) {
   const { user, loading } = useAuth();
   const [theme, setTheme] = useState<Theme>(() => {
-    const initial = readTheme();
+    const initial: Theme = localStorage.getItem(THEME_KEY) === 'dark' ? 'dark' : 'light';
     applyBodyTheme(initial);
     return initial;
   });
 
-  const toggleTheme = useCallback(() => {
+  const toggleTheme = () => {
     setTheme((prev) => {
       const next: Theme = prev === 'dark' ? 'light' : 'dark';
       localStorage.setItem(THEME_KEY, next);
       applyBodyTheme(next);
       return next;
     });
-  }, []);
+  };
 
   const isDark = theme === 'dark';
 
