@@ -54,7 +54,7 @@ export function ProjectPanel({
   onCheck,
 }: ProjectPanelProps) {
   const theme = useBodyTheme();
-  const { runIsolated, loading: pyodideLoading, ensureLoaded, loadError } = usePyodide();
+  const { runIsolated, loading: pyodideLoading, loadError } = usePyodide();
   const starter = project.starter ?? '';
 
   const [editorOpen, setEditorOpen] = useState(false);
@@ -78,11 +78,6 @@ export function ProjectPanel({
     setRunError(null);
     setCheckRow({ show: false, tone: 'neutral', text: '' });
   }, [unit, lesson, project.starter]);
-
-  useEffect(() => {
-    void ensureLoaded().catch(() => {
-    });
-  }, [ensureLoaded]);
 
   const toggleDone = useCallback(() => {
     setDone((prev) => {

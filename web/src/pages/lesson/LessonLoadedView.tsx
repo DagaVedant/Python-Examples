@@ -35,7 +35,13 @@ export function LessonLoadedView({ data }: LessonLoadedViewProps) {
   }>({ prev: null, next: null });
 
   useEffect(() => {
-    void ensureLoaded();
+    const warmUp = () => void ensureLoaded().catch(() => {});
+    window.addEventListener('pointerdown', warmUp, { once: true });
+    window.addEventListener('keydown', warmUp, { once: true });
+    return () => {
+      window.removeEventListener('pointerdown', warmUp);
+      window.removeEventListener('keydown', warmUp);
+    };
   }, [ensureLoaded]);
 
   useEffect(() => {

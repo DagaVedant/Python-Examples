@@ -44,6 +44,7 @@ export function PythonEditor({
       extensions: [
         basicSetup,
         EditorView.lineWrapping,
+        EditorView.contentAttributes.of({ 'aria-label': 'Python code editor' }),
         python(),
         themeCompartment.current.of(themeExtensions(theme)),
         EditorView.updateListener.of((update) => {

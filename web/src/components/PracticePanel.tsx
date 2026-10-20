@@ -356,15 +356,11 @@ function PracticeTaskRow({
 
 export function PracticePanel({ lesson, theme }: PracticePanelProps) {
   const { unit, lesson: lessonNum, title, practice, fakeFiles } = lesson;
-  const { runIsolated, loading, ensureLoaded, loadError } = usePyodide();
+  const { runIsolated, loading, loadError } = usePyodide();
   const { session, user } = useAuth();
   const bodyTheme = useBodyTheme();
   const editorTheme = theme ?? bodyTheme;
   const [remainingChecks, setRemainingChecks] = useState<number | null>(null);
-
-  useEffect(() => {
-    void ensureLoaded();
-  }, [ensureLoaded]);
 
   const tasks = useMemo(() => practice, [practice]);
 
