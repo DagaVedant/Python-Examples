@@ -13,7 +13,7 @@ A free Python course for complete beginners. 110 short lessons, each with a runn
 - Practice tasks checked against your output, and a short quiz at the end of each lesson
 - Progress saved in your browser, or across devices if you make a free account
 - A certificate when you finish a unit
-- Light and dark themes, keyboard friendly, works on a phone
+- Dark theme, keyboard friendly, works on a phone
 
 <p>
   <img src="docs/screenshots/lesson.png" alt="A lesson with the example editor" width="68%">
