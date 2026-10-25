@@ -1,24 +1,16 @@
 import { useEffect, useRef } from 'react';
 import { python } from '@codemirror/lang-python';
 import { oneDark } from '@codemirror/theme-one-dark';
-import { Compartment } from '@codemirror/state';
 import { EditorView, basicSetup } from 'codemirror';
-import { useBodyTheme } from '../hooks/useBodyTheme';
-import type { PythonEditorProps, PythonEditorTheme } from './PythonEditor';
-
-function themeExtensions(theme: PythonEditorTheme) {
-  return theme === 'dark' ? [oneDark] : [];
-}
+import type { PythonEditorProps } from './PythonEditor';
 
 export default function CodeMirrorEditor({
   value,
   onChange,
   className,
 }: PythonEditorProps) {
-  const theme = useBodyTheme();
   const containerRef = useRef<HTMLDivElement>(null);
   const viewRef = useRef<EditorView | null>(null);
-  const themeCompartment = useRef(new Compartment());
   const onChangeRef = useRef(onChange);
   const valueRef = useRef(value);
 
@@ -38,7 +30,7 @@ export default function CodeMirrorEditor({
         EditorView.lineWrapping,
         EditorView.contentAttributes.of({ 'aria-label': 'Python code editor' }),
         python(),
-        themeCompartment.current.of(themeExtensions(theme)),
+        oneDark,
         EditorView.updateListener.of((update) => {
           if (!update.docChanged) return;
           const next = update.state.doc.toString();
@@ -78,14 +70,6 @@ export default function CodeMirrorEditor({
       viewRef.current = null;
     };
   }, []);
-
-  useEffect(() => {
-    const view = viewRef.current;
-    if (!view) return;
-    view.dispatch({
-      effects: themeCompartment.current.reconfigure(themeExtensions(theme)),
-    });
-  }, [theme]);
 
   useEffect(() => {
     const view = viewRef.current;

@@ -6,7 +6,6 @@ import { PracticePanel } from '../../components/PracticePanel';
 import { ProjectPanelFromLesson } from '../../components/ProjectPanel';
 import { QuizPanel } from '../../components/QuizPanel';
 import { useAuth } from '../../hooks/useAuth';
-import { useBodyTheme } from '../../hooks/useBodyTheme';
 import { usePyodide } from '../../hooks/usePyodide';
 import { loadCourseInfo } from '../../lib/loadCourseInfo';
 import type { LessonData } from '../../types/lesson';
@@ -27,7 +26,6 @@ export function LessonLoadedView({ data }: LessonLoadedViewProps) {
   const lesson = data;
   const { user } = useAuth();
   const { runIsolated, loading: pyodideLoading, ensureLoaded } = usePyodide();
-  const editorTheme = useBodyTheme();
   const [quizAllPassed, setQuizAllPassed] = useState(false);
   const [neighbors, setNeighbors] = useState<{
     prev: LessonNavLink | null;
@@ -143,7 +141,6 @@ export function LessonLoadedView({ data }: LessonLoadedViewProps) {
             filename={lesson.code.filename}
             initialCode={mainCode}
             expectedOutput={lesson.code.output}
-            theme={editorTheme}
             fakeFiles={lesson.fakeFiles}
             pyodideLoading={pyodideLoading}
             onRun={run}
@@ -164,7 +161,6 @@ export function LessonLoadedView({ data }: LessonLoadedViewProps) {
               filename={lesson.code2.filename}
               initialCode={code2Initial}
               expectedOutput={lesson.code2.output}
-              theme={editorTheme}
               fakeFiles={lesson.fakeFiles}
               pyodideLoading={pyodideLoading}
               onRun={run}
@@ -173,7 +169,7 @@ export function LessonLoadedView({ data }: LessonLoadedViewProps) {
         )}
 
         <div id="step-practice">
-          <PracticePanel lesson={lesson} theme={editorTheme} />
+          <PracticePanel lesson={lesson} />
         </div>
 
         <div id="step-quiz">

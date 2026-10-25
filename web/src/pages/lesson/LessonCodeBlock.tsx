@@ -1,11 +1,10 @@
 import { useState } from 'react';
-import { PythonEditor, type PythonEditorTheme } from '../../components/PythonEditor';
+import { PythonEditor } from '../../components/PythonEditor';
 
 export type LessonCodeBlockProps = {
   filename: string;
   initialCode: string;
   expectedOutput?: string[];
-  theme: PythonEditorTheme;
   fakeFiles?: Record<string, string>;
   pyodideLoading: boolean;
   onRun: (
@@ -18,7 +17,6 @@ export function LessonCodeBlock({
   filename,
   initialCode,
   expectedOutput,
-  theme,
   fakeFiles,
   pyodideLoading,
   onRun,
@@ -66,7 +64,7 @@ export function LessonCodeBlock({
           {running ? 'Running…' : pyodideLoading ? 'Loading Python…' : 'Run'}
         </button>
       </div>
-      <PythonEditor value={code} onChange={setCode} theme={theme} />
+      <PythonEditor value={code} onChange={setCode} />
       <div className="lesson-output-box">
         <div className="lesson-output-label">Output</div>
         {displayLines.map((line, i) => (

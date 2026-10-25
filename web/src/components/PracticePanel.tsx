@@ -5,15 +5,13 @@ import { requestAiPracticeGrade, AI_CHECKS_PER_DAY } from '../lib/gradePractice'
 import { gradePracticeLocally, type LocalGradeResult } from '../lib/practiceGrade';
 import { resolveHint, resolveStarterTip } from '../lib/practiceHints';
 import { PYODIDE_LOAD_MESSAGE } from '../lib/serviceMessages';
-import { useBodyTheme } from '../hooks/useBodyTheme';
 import { usePyodide } from '../hooks/usePyodide';
 import type { LessonData, PracticeTask } from '../types/lesson';
-import { PythonEditor, type PythonEditorTheme } from './PythonEditor';
+import { PythonEditor } from './PythonEditor';
 import './PracticePanel.css';
 
 export type PracticePanelProps = {
   lesson: Pick<LessonData, 'unit' | 'lesson' | 'title' | 'practice' | 'fakeFiles'>;
-  theme?: PythonEditorTheme;
 };
 
 function guestSaveKey(unit: number, lesson: number, index: number): string {
@@ -45,7 +43,6 @@ type PracticeTaskRowProps = {
   unit: number;
   lesson: number;
   lessonTitle: string;
-  editorTheme: PythonEditorTheme;
   fakeFiles?: Record<string, string>;
   onRun: (code: string, fakeFiles?: Record<string, string>) => Promise<{ output: string; error: string | null }>;
   pyodideLoading: boolean;
@@ -61,7 +58,6 @@ function PracticeTaskRow({
   unit,
   lesson,
   lessonTitle,
-  editorTheme,
   fakeFiles,
   onRun,
   pyodideLoading,
@@ -232,7 +228,6 @@ function PracticeTaskRow({
             <PythonEditor
               value={state.code}
               onChange={(code) => setState((s) => ({ ...s, code }))}
-              theme={editorTheme}
             />
             <div className="practice-panel__footer">
               <button
@@ -354,12 +349,10 @@ function PracticeTaskRow({
   );
 }
 
-export function PracticePanel({ lesson, theme }: PracticePanelProps) {
+export function PracticePanel({ lesson }: PracticePanelProps) {
   const { unit, lesson: lessonNum, title, practice, fakeFiles } = lesson;
   const { runIsolated, loading, loadError } = usePyodide();
   const { session, user } = useAuth();
-  const bodyTheme = useBodyTheme();
-  const editorTheme = theme ?? bodyTheme;
   const [remainingChecks, setRemainingChecks] = useState<number | null>(null);
 
   const tasks = useMemo(() => practice, [practice]);
@@ -391,7 +384,6 @@ export function PracticePanel({ lesson, theme }: PracticePanelProps) {
             unit={unit}
             lesson={lessonNum}
             lessonTitle={title}
-            editorTheme={editorTheme}
             fakeFiles={fakeFiles}
             onRun={run}
             pyodideLoading={loading}

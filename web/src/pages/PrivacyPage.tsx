@@ -57,7 +57,7 @@ export function PrivacyPage() {
 
         <h2>Cookies and local storage</h2>
         <p>
-          We use browser local storage for guest progress, theme preference, and similar app state.
+          We use browser local storage for guest progress and similar app state.
           Account sessions use Supabase auth storage as needed to keep you signed in.
         </p>
 

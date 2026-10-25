@@ -2,7 +2,6 @@ import { useCallback, useEffect, useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import type { LessonData, ProjectSpec } from '../types/lesson';
 import { PYODIDE_LOAD_MESSAGE } from '../lib/serviceMessages';
-import { useBodyTheme } from '../hooks/useBodyTheme';
 import { usePyodide } from '../hooks/usePyodide';
 import { PythonEditor } from './PythonEditor';
 import './ProjectPanel.css';
@@ -53,7 +52,6 @@ export function ProjectPanel({
   signedIn = false,
   onCheck,
 }: ProjectPanelProps) {
-  const theme = useBodyTheme();
   const { runIsolated, loading: pyodideLoading, loadError } = usePyodide();
   const starter = project.starter ?? '';
 
@@ -190,7 +188,7 @@ export function ProjectPanel({
             </button>
 
             <div className={`project-editor-wrap${editorOpen ? ' open' : ''}`}>
-              <PythonEditor value={code} onChange={setCode} theme={theme} />
+              <PythonEditor value={code} onChange={setCode} />
               <div className="project-ide-footer">
                 <button
                   type="button"
